@@ -66,26 +66,27 @@
     if (mount && window.ELIZA) buildTerm(mount, {});
   }
 
-  // ---- the easter egg: type "eliza" anywhere to summon the DOCTOR ----
+  // ---- the easter egg: type "eliza" anywhere to summon ELIZA (Anthony Hay's) ----
   var SECRET = 'eliza', buf = '', open = false;
+  var HAY = 'https://anthay.github.io/eliza.html';
   function openEgg() {
-    if (open || !window.ELIZA) return;
+    if (open) return;
     open = true;
     var overlay = el('div', 'egg-overlay');
     var close = el('button', 'egg-close', 'Esc ×');
     overlay.appendChild(close);
-    var holder = el('div');
-    holder.style.width = 'min(720px, 96vw)';
+    var holder = el('div', 'egg-embed');
+    var frame = el('iframe');
+    frame.src = HAY; frame.title = 'ELIZA'; frame.setAttribute('loading', 'lazy');
+    holder.appendChild(frame);
     overlay.appendChild(holder);
     document.body.appendChild(overlay);
-    var t = buildTerm(holder, { title: 'ELIZA wakes · type to the DOCTOR · Esc to close' });
     function shut() { if (!open) return; open = false; overlay.remove(); }
     close.addEventListener('click', shut);
     overlay.addEventListener('click', function (e) { if (e.target === overlay) shut(); });
     document.addEventListener('keydown', function esc(e) {
       if (e.key === 'Escape') { shut(); document.removeEventListener('keydown', esc); }
     });
-    setTimeout(function () { t.focus(); }, 60);
   }
 
   document.addEventListener('keydown', function (e) {

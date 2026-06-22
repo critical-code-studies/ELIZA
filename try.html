@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Try ELIZA · ELIZA (1966)</title>
   <meta name="description" content="Talk to a faithful re-creation of the 1966 ELIZA, running the genuine DOCTOR script in your browser.">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=202606222208">
-  <link rel="stylesheet" href="assets/css/site.css?v=202606222208">
-  <script src="assets/nav.js?v=202606222208" defer></script>
-  <script src="assets/eliza.js?v=202606222208" defer></script>
-  <script src="assets/term.js?v=202606222208" defer></script>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=202606222216">
+  <link rel="stylesheet" href="assets/css/site.css?v=202606222216">
+  <script src="assets/nav.js?v=202606222216" defer></script>
+  <script src="assets/eliza.js?v=202606222216" defer></script>
+  <script src="assets/term.js?v=202606222216" defer></script>
 
 </head>
 <body>
@@ -39,7 +39,7 @@
           <div class="nav-menu"><a href="code.html">The program</a><a href="doctor.html">The DOCTOR script</a><a href="how.html">How it works (demo)</a></div>
         </div>
         <a class="nav-top nav-direct" href="blog.html">Blog</a>
-        <a class="nav-top nav-direct" href="people.html">People</a>
+        <a class="nav-top nav-direct" href="people.html">TEAM-ELIZA</a>
         <a class="nav-top nav-direct" href="talks.html">Talks</a>
       </nav>
     </div>
@@ -50,24 +50,22 @@
 
       <span class="kicker">Try ELIZA</span>
       <h1 class="page">Talk to ELIZA</h1>
-      <div class="lede"><p>This is ELIZA running the genuine 1966 DOCTOR script: keyword ranking, decomposition and reassembly, equivalences, the memory rule, and the &ldquo;certain counting mechanism&rdquo; the recovered source revealed. Type a sentence and press enter.</p></div>
-      <p>Your conversation is private to your machine. Nothing you type is sent anywhere. Try opening with a feeling, or tell ELIZA about your mother. Type <code>*help</code> for the handful of commands. To see <em>how</em> each reply is built, step by step, visit <a href="how.html">How it works</a>.</p>
-      <div id="try-eliza-mount"></div>
-      <p class="post-meta" style="margin-top:1.4rem">A faithful re-implementation in JavaScript, after the algorithm in Weizenbaum (1966) and the recovered MAD-SLIP source. It reproduces the canonical 1966 conversation.</p>
+      <div class="rule">ANTHONY HAY&rsquo;S ELIZA</div>
+      <p>This is Anthony Hay&rsquo;s faithful recreation of the original MAD-SLIP ELIZA: it reproduces the 1966 program&rsquo;s behaviour exactly, down to the bugs, with the original asterisk commands, the CACM replay, and the ability to load custom scripts. It runs entirely in your browser; nothing you type is sent anywhere.</p>
+      <div class="eliza-embed"><iframe src="https://anthay.github.io/eliza.html" title="Anthony Hay&rsquo;s ELIZA" loading="lazy"></iframe></div>
+      <p class="post-meta" style="margin-top:0.8rem">Source: <a href="https://github.com/anthay/ELIZA">github.com/anthay/ELIZA</a>. Or open it <a href="https://anthay.github.io/eliza.html">full screen</a>.</p>
 
-      <div class="rule">THE COMPREHENSIVE VERSION</div>
-      <section class="block">
-        <h2>Anthony Hay&rsquo;s ELIZA</h2>
-        <p>For the definitive recreation, Anthony Hay&rsquo;s ELIZA reproduces the original MAD-SLIP program&rsquo;s behaviour exactly, down to the bugs, with full tracing, the original asterisk commands, the 1966 CACM replay, and the ability to load your own Weizenbaum-format scripts. It runs in the browser and is the most accurate ELIZA you can talk to.</p>
-        <div class="hero-actions"><a class="btn" href="https://anthay.github.io/eliza.html">Open the comprehensive ELIZA</a><a class="btn ghost" href="https://github.com/anthay/ELIZA">Source on GitHub</a></div>
-      </section>
+      <div class="rule">A SIMPLE SIMULATED ELIZA</div>
+      <div class="lede"><p>This is a simple simulated ELIZA. Type a sentence and press enter.</p></div>
+      <div id="try-eliza-mount"></div>
+      <p class="post-meta" style="margin-top:1.4rem">A lightweight model that drives the step-by-step <a href="how.html">How it works</a> walkthrough. For the authoritative ELIZA, use Anthony Hay&rsquo;s version above.</p>
 
     </article>
   </main>
 
   <footer class="site-footer">
     <div class="wrap">
-      <p class="micro">The ELIZA Archaeology Project ,  a Critical Code Studies reading of ELIZA (Joseph Weizenbaum, MIT, 1966), companion to the readings of <a href="https://critical-code-studies.github.io/SHRDLU/">SHRDLU</a> and <a href="https://spacewar1962.github.io/spacewar/">Spacewar!</a>. Source: <a href="https://github.com/critical-code-studies/ELIZA">github.com/critical-code-studies/ELIZA</a>. All project documents &copy; 2024&ndash;2026 the authors, except where indicated.</p>
+      <p class="micro">The ELIZA Archaeology Project ,  a Critical Code Studies reading of ELIZA (Joseph Weizenbaum, MIT, 1966). Source: <a href="https://github.com/critical-code-studies/ELIZA">github.com/critical-code-studies/ELIZA</a>. All project documents &copy; 2024&ndash;2026 the authors, except where indicated.</p>
     </div>
   </footer>
 

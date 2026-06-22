@@ -41,7 +41,7 @@ function nav(depth) {
           <div class="nav-menu"><a href="${p}code.html">The program</a><a href="${p}doctor.html">The DOCTOR script</a><a href="${p}how.html">How it works (demo)</a></div>
         </div>
         <a class="nav-top nav-direct" href="${p}blog.html">Blog</a>
-        <a class="nav-top nav-direct" href="${p}people.html">People</a>
+        <a class="nav-top nav-direct" href="${p}people.html">TEAM-ELIZA</a>
         <a class="nav-top nav-direct" href="${p}talks.html">Talks</a>
       </nav>`;
 }
@@ -80,7 +80,7 @@ ${main}
 
   <footer class="site-footer">
     <div class="wrap">
-      <p class="micro">The ELIZA Archaeology Project &mdash; a Critical Code Studies reading of ELIZA (Joseph Weizenbaum, MIT, 1966), companion to the readings of <a href="https://critical-code-studies.github.io/SHRDLU/">SHRDLU</a> and <a href="https://spacewar1962.github.io/spacewar/">Spacewar!</a>. Source: <a href="https://github.com/critical-code-studies/ELIZA">github.com/critical-code-studies/ELIZA</a>. All project documents &copy; 2024&ndash;2026 the authors, except where indicated.</p>
+      <p class="micro">The ELIZA Archaeology Project &mdash; a Critical Code Studies reading of ELIZA (Joseph Weizenbaum, MIT, 1966). Source: <a href="https://github.com/critical-code-studies/ELIZA">github.com/critical-code-studies/ELIZA</a>. All project documents &copy; 2024&ndash;2026 the authors, except where indicated.</p>
     </div>
   </footer>
 
@@ -210,7 +210,7 @@ write('overview.html', page({
 
       <h2>The machine it ran on</h2>
       <p>There were no screens. People talked to ELIZA on teletypes, electromechanical printers like the IBM 2741 and the Teletype Model 33, which struck characters onto a roll of paper at ten to fourteen characters a second. The conversation was a physical object: ink on a page, produced together by a person and a machine. <a href="blog/post.html?p=2-talking-to-eliza-on-an-asr-33-teletype">Talking to ELIZA on an ASR 33 &rsaquo;</a></p>
-      <figure class="figure">
+      <figure class="figure half">
         <img src="assets/images/eliza-1967-twenty-first-century.jpg" alt="ELIZA being used on a teletype in 1967" loading="lazy">
         <figcaption>ELIZA in use in 1967, filmed for the documentary <em>The Twenty-First Century</em>, &lsquo;The Communications Revolution&rsquo; (first broadcast 1967).</figcaption>
       </figure>
@@ -361,17 +361,15 @@ write('try.html', page({
   body: `
       <span class="kicker">Try ELIZA</span>
       <h1 class="page">Talk to ELIZA</h1>
-      <div class="lede"><p>This is ELIZA running the genuine 1966 DOCTOR script: keyword ranking, decomposition and reassembly, equivalences, the memory rule, and the &ldquo;certain counting mechanism&rdquo; the recovered source revealed. Type a sentence and press enter.</p></div>
-      <p>Your conversation is private to your machine. Nothing you type is sent anywhere. Try opening with a feeling, or tell ELIZA about your mother. Type <code>*help</code> for the handful of commands. To see <em>how</em> each reply is built, step by step, visit <a href="how.html">How it works</a>.</p>
-      <div id="try-eliza-mount"></div>
-      <p class="post-meta" style="margin-top:1.4rem">A faithful re-implementation in JavaScript, after the algorithm in Weizenbaum (1966) and the recovered MAD-SLIP source. It reproduces the canonical 1966 conversation.</p>
+      <div class="rule">ANTHONY HAY&rsquo;S ELIZA</div>
+      <p>This is Anthony Hay&rsquo;s faithful recreation of the original MAD-SLIP ELIZA: it reproduces the 1966 program&rsquo;s behaviour exactly, down to the bugs, with the original asterisk commands, the CACM replay, and the ability to load custom scripts. It runs entirely in your browser; nothing you type is sent anywhere.</p>
+      <div class="eliza-embed"><iframe src="https://anthay.github.io/eliza.html" title="Anthony Hay&rsquo;s ELIZA" loading="lazy"></iframe></div>
+      <p class="post-meta" style="margin-top:0.8rem">Source: <a href="https://github.com/anthay/ELIZA">github.com/anthay/ELIZA</a>. Or open it <a href="https://anthay.github.io/eliza.html">full screen</a>.</p>
 
-      <div class="rule">THE COMPREHENSIVE VERSION</div>
-      <section class="block">
-        <h2>Anthony Hay&rsquo;s ELIZA</h2>
-        <p>For the definitive recreation, Anthony Hay&rsquo;s ELIZA reproduces the original MAD-SLIP program&rsquo;s behaviour exactly, down to the bugs, with full tracing, the original asterisk commands, the 1966 CACM replay, and the ability to load your own Weizenbaum-format scripts. It runs in the browser and is the most accurate ELIZA you can talk to.</p>
-        <div class="hero-actions"><a class="btn" href="https://anthay.github.io/eliza.html">Open the comprehensive ELIZA</a><a class="btn ghost" href="https://github.com/anthay/ELIZA">Source on GitHub</a></div>
-      </section>
+      <div class="rule">A SIMPLE SIMULATED ELIZA</div>
+      <div class="lede"><p>This is a simple simulated ELIZA. Type a sentence and press enter.</p></div>
+      <div id="try-eliza-mount"></div>
+      <p class="post-meta" style="margin-top:1.4rem">A lightweight model that drives the step-by-step <a href="how.html">How it works</a> walkthrough. For the authoritative ELIZA, use Anthony Hay&rsquo;s version above.</p>
 `}));
 
 // ---------------------------------------------------------------------------
@@ -386,17 +384,17 @@ write('how.html', page({
       <div class="lede"><p>Type a sentence and step through exactly what ELIZA does with it.</p></div>
       <div id="trace-app"></div>
       <div class="rule">WHY THIS MATTERS</div>
-      <p>Joseph Weizenbaum was alarmed that people confided in ELIZA even when they knew it was a program. The distance between what the machine does (mechanical word-shuffling, shown above) and what we feel (that something understands us) is the <strong>ELIZA effect</strong>. It did not end in 1966: it is exactly the gap we navigate with today&rsquo;s chatbots.</p>
+      <p>Joseph Weizenbaum was alarmed that people confided in ELIZA even when they knew it was a program. The distance between what the machine does (mechanical word-shuffling, shown above) and what we feel (that something understands us) is the <strong>ELIZA effect</strong>.</p>
 `}));
 
 // ---------------------------------------------------------------------------
 // PEOPLE
 // ---------------------------------------------------------------------------
 write('people.html', page({
-  title: 'People', desc: 'The ELIZA Archaeology Project team.',
+  title: 'TEAM-ELIZA', desc: 'The ELIZA Archaeology Project team.',
   body: `
-      <span class="kicker">People</span>
-      <h1 class="page">The team</h1>
+      <span class="kicker">TEAM-ELIZA</span>
+      <h1 class="page">TEAM-ELIZA</h1>
       <div class="lede"><p>The ELIZA Archaeology Project is a collaboration of scholars, programmers, philosophers and artists, with diverse interests and many different voices.</p></div>
       <div class="people">
         ${TEAM.map(([n, r, b]) => `<div class="person-card"><p class="name">${n}</p><p class="role">${r}</p><p>${b}</p></div>`).join('\n        ')}
@@ -478,12 +476,7 @@ write('about.html', page({
       </figure>
       <div class="lede"><p>ELIZA is one of the most influential computer programs in history. Created by Joseph Weizenbaum at MIT in the mid-1960s, it was the world&rsquo;s first chatbot: the first program to let people hold a conversation with a computer.</p></div>
       <p>Its behaviour was controlled by scripts, of which DOCTOR is the most renowned, making ELIZA reply like a Rogerian psychotherapist: offering little of its own, instead asking leading questions. The program achieved remarkable cultural impact despite its modest size, about 420 lines of MAD-SLIP. Its descendants and echoes run from HAL 9000 to Siri and Alexa.</p>
-      <p>For decades after its 1966 publication in the Communications of the ACM, the original source code was unavailable. The team rediscovered the original ELIZA code in Weizenbaum&rsquo;s archive at MIT in 2021, making it possible to investigate the history of the chatbot through authentic artifacts. This site, and the book <a href="book.html"><em>Inventing ELIZA</em></a>, are the result.</p>
-      <h2>Contact</h2>
-      <div class="contacts">
-        <div class="contact"><p class="role">Project lead</p><p class="name">Prof. David M. Berry</p><p class="aff">University of Sussex</p><p><a href="mailto:d.m.berry@sussex.ac.uk">d.m.berry@sussex.ac.uk</a></p></div>
-        <div class="contact"><p class="role">Project lead</p><p class="name">Prof. Mark C. Marino</p><p class="aff">University of Southern California</p><p><a href="mailto:markcmarino@gmail.com">markcmarino@gmail.com</a></p></div>
-      </div>
+      <p>For decades after its 1966 publication in the Communications of the ACM, the original source code was unavailable. The team rediscovered the original ELIZA code in Weizenbaum&rsquo;s archive at MIT in 2021, making it possible to investigate the history of the chatbot through authentic artifacts. This site, and the book <a href="book.html"><em>Inventing ELIZA</em></a>, are the result. Meet the people behind it on the <a href="people.html">TEAM-ELIZA</a> page.</p>
 `}));
 
 // ---------------------------------------------------------------------------
