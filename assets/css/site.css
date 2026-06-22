@@ -146,15 +146,14 @@ a:hover { color: var(--bright); text-shadow: var(--glow); }
    source code; on wider screens it is anchored to the right, leaving the recovered
    source visible (and unobscured) on the left. */
 .hero-panel {
-  background: linear-gradient(135deg, rgba(18,20,25,0.90), rgba(18,20,25,0.70));
+  background: linear-gradient(135deg, rgba(18,20,25,0.62), rgba(18,20,25,0.40));
   border: 1px solid var(--line-soft); border-radius: 9px;
   padding: clamp(1rem, 2.2vw, 1.5rem) clamp(1.3rem, 3.5vw, 2.6rem) clamp(1.4rem, 3.5vw, 2.4rem);
-  backdrop-filter: blur(2px); max-width: 660px;
+  backdrop-filter: blur(3px); max-width: 660px; margin: 0 auto;
 }
 .hero-panel .boot { margin-bottom: 1rem; }
 @media (min-width: 900px) {
-  .hero .wrap { display: flex; justify-content: flex-end; }
-  .hero-panel { margin-left: auto; }
+  .hero .wrap { display: flex; justify-content: center; }
 }
 .boot { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 3px; color: var(--ink-dim); text-transform: uppercase; margin-bottom: 1.4rem; }
 .cursor { display: inline-block; width: 0.55em; height: 1.05em; vertical-align: -0.15em; background: var(--eliza); box-shadow: 0 0 8px var(--eliza); animation: blink 1.06s steps(1) infinite; margin-left: 2px; }

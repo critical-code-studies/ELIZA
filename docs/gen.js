@@ -8,7 +8,7 @@ const OUT = path.join(process.env.HOME, 'Projects', 'eliza');
 const BLOGDIR = path.join(OUT, 'blog');
 fs.mkdirSync(BLOGDIR, { recursive: true });
 
-const V = 5; // asset cache-buster
+const V = 6; // asset cache-buster
 
 // ---- shared chrome ----------------------------------------------------------
 function nav(depth) {
@@ -110,12 +110,8 @@ const homeHero = `  <section class="hero">
        <div class="hero-panel">
         <p class="boot">CTSS // IBM 7094 // PROJECT MAC // 1966<span class="cursor" aria-hidden="true"></span></p>
         <h1>ELIZA</h1>
-        <p class="sub">The first chatbot, read as code</p>
+        <p class="sub">The first chatbot</p>
         <p class="tagline">In 1966 Joseph Weizenbaum gave people their first conversation with a machine. In 2021 we found its lost source code. This is a close reading of ELIZA: its program, its DOCTOR script, its many versions, and what it still tells us about artificial intelligence.</p>
-        <div class="lampbank" aria-hidden="true">
-          <span class="lab">7094</span>
-          <span class="lamp r"></span><span class="lamp"></span><span class="lamp g"></span><span class="lamp b"></span><span class="lamp"></span><span class="lamp r"></span><span class="lamp g"></span><span class="lamp"></span><span class="lamp b"></span><span class="lamp r"></span>
-        </div>
         <div class="tt" id="tt-feed" aria-hidden="true"></div>
         <div class="hero-actions">
           <a class="btn" href="how.html">Watch it think</a>
