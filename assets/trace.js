@@ -6,8 +6,7 @@
 (function () {
   function init() {
     var app = document.getElementById('trace-app');
-    if (!app || !window.ELIZA) return;
-    var engine = window.ELIZA.make();
+    if (!app || !window.ElizaHay) return;
     var COLORS = ['var(--lamp-red)', 'var(--lamp-amber)', 'var(--lamp-green)', 'var(--lamp-blue)', '#c98bd9', '#6fd6cf'];
     function esc(s) { return (s == null ? '' : String(s)).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
     function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
@@ -189,10 +188,12 @@
     function run() {
       stop();
       var phrase = input.value.trim(); if (!phrase) return;
-      T = engine.trace(phrase);
-      stages = build(T);
-      setCtx();
-      show(0);
+      window.ElizaHay.trace(phrase).then(function (res) {
+        T = res;
+        stages = build(T);
+        setCtx();
+        show(0);
+      });
     }
 
     document.addEventListener('keydown', function (e) {

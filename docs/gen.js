@@ -76,7 +76,6 @@ function page(opts) {
   <link rel="icon" type="image/svg+xml" href="${p}assets/favicon.svg?v=${V}">
   <link rel="stylesheet" href="${p}assets/css/site.css?v=${V}">
   <script src="${p}assets/nav.js?v=${V}" defer></script>
-  <script src="${p}assets/eliza.js?v=${V}" defer></script>
   <script src="${p}assets/term.js?v=${V}" defer></script>
 ${scripts}
 </head>
@@ -383,11 +382,12 @@ write('try.html', page({
 // ---------------------------------------------------------------------------
 write('how.html', page({
   title: 'How it works', desc: 'Type a phrase and watch ELIZA process it step by step through the genuine DOCTOR script: keywords, ranking, decomposition and reassembly.',
-  scripts: ['trace.js'],
+  scripts: ['eliza-hay.js', 'trace.js'],
   body: `
       <h1 class="page">How it works</h1>
       <div class="lede"><p>Type a sentence and step through exactly what ELIZA does with it.</p></div>
       <div id="trace-app"></div>
+      <p class="post-meta" style="margin-top:1rem">Powered by Anthony Hay&rsquo;s CC0 ELIZA engine (<a href="https://github.com/anthay/ELIZA">source</a>) - the same authoritative engine you can talk to on the <a href="try.html">Try ELIZA</a> page, instrumented here to show each step.</p>
       <div class="rule">WHY THIS MATTERS</div>
       <p>Joseph Weizenbaum was alarmed that people confided in ELIZA even when they knew it was a program. The distance between what the machine does (mechanical word-shuffling, shown above) and what we feel (that something understands us) is the <strong>ELIZA effect</strong>.</p>
 `}));
