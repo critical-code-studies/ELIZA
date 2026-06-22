@@ -442,6 +442,7 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .chip.plain { color: var(--ink-dim); opacity: 0.75; }
 .chip.key { color: var(--lamp-red); border-color: var(--lamp-red); box-shadow: 0 0 8px rgba(225,84,46,0.18); }
 .chip.win { box-shadow: 0 0 10px rgba(225,84,46,0.35); }
+.chip.delim { border-style: dashed; }
 .chip-badge { font-size: 0.58rem; margin-left: 0.45rem; padding: 0.05em 0.35em; border-radius: 3px; background: var(--ink-dim); color: var(--bg); letter-spacing: 0.5px; }
 .swin { font-family: var(--mono); font-size: 0.9rem; color: var(--ink); margin: 0.7rem 0 0; }
 

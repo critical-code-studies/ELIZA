@@ -21,7 +21,7 @@
 
     var egs = el('div', 'trace-egs');
     egs.appendChild(el('span', 'trace-egs-lab', 'try:'));
-    ['Men are all alike.', 'I am unhappy.', 'My mother hates me.', 'You are afraid of me.', 'Computers worry me.'].forEach(function (x) {
+    ['Men are all alike.', 'You are not very aggressive but I think you don\'t want me to notice that.', 'I am unhappy.', 'My mother hates me.', 'Computers worry me.'].forEach(function (x) {
       var b = el('button', 'eg', esc(x)); b.addEventListener('click', function () { input.value = x; run(); }); egs.appendChild(b);
     });
     app.appendChild(egs);
@@ -63,19 +63,43 @@
 
     function build(T) {
       var S = [];
+      // work out how the input divides at ELIZA's delimiters (comma, full stop, BUT)
+      var DELIMS = { 'BUT': true, '.': true, ',': true };
+      var clauses = [], cur = [];
+      T.words.forEach(function (w) { if (DELIMS[w.raw]) { clauses.push({ words: cur, delim: w.raw }); cur = []; } else cur.push(w); });
+      if (cur.length) clauses.push({ words: cur, delim: null });
+      var keptIdx = -1;
+      for (var ci = 0; ci < clauses.length; ci++) { if (clauses[ci].words.length && clauses[ci].words.some(function (w) { return w.keyword; })) { keptIdx = ci; break; } }
+      var splitHappened = clauses.filter(function (c) { return c.words.length; }).length >= 2;
+      var scanWords = (splitHappened && keptIdx >= 0) ? clauses[keptIdx].words : T.words;
+
       S.push({ title: 'The input', node: function () {
         return el('div', 'paper', '<span class="who you">YOU</span>' + esc(T.input));
       }});
       S.push({ title: 'Clean and split into words', node: function () {
         var box = el('div');
-        box.appendChild(el('p', 'snote', 'Upper-cased and split into words. ELIZA also breaks the input into sub-clauses at three delimiters, the comma, the full stop, and the word &ldquo;BUT&rdquo;, then works on the clause that holds the first keyword. The &ldquo;BUT&rdquo; delimiter is in the recovered source but Weizenbaum never documented it, one of this project&rsquo;s findings.'));
-        box.appendChild(row('WORDS', T.words.map(function (w) { return chip(w.raw); })));
+        box.appendChild(el('p', 'snote', 'Upper-cased and split into words. ELIZA also breaks the input into clauses at three delimiters: the comma, the full stop, and the word &ldquo;BUT&rdquo; (the last undocumented by Weizenbaum, a finding of this project).'));
+        box.appendChild(row('WORDS', T.words.map(function (w) { return chip(w.raw, DELIMS[w.raw] ? 'delim' : '', null, DELIMS[w.raw] ? 'var(--lamp-amber)' : null); })));
+        return box;
+      }});
+      if (splitHappened) S.push({ title: 'Break at delimiters', node: function () {
+        var box = el('div');
+        box.appendChild(el('p', 'snote', 'At a delimiter, ELIZA keeps the first clause that contains a keyword and discards the rest. The &ldquo;BUT&rdquo; delimiter does the work here; it is in the recovered source but Weizenbaum never documented it.'));
+        clauses.forEach(function (c) {
+          if (!c.words.length) return;
+          var kept = (clauses.indexOf(c) === keptIdx);
+          var nodes = c.words.map(function (w) { return chip(w.raw, w.keyword ? 'key' : 'plain', null, w.keyword ? 'var(--lamp-red)' : null); });
+          if (c.delim) nodes.push(chip(c.delim, 'delim', null, 'var(--lamp-amber)'));
+          var r = row(kept ? 'KEEP' : 'DROP', nodes);
+          if (!kept) r.style.opacity = '0.4';
+          box.appendChild(r);
+        });
         return box;
       }});
       S.push({ title: 'Substitute and scan for keywords', node: function () {
         var box = el('div');
         box.appendChild(el('p', 'snote', 'Some words are swapped so the reply faces back at you (MY&rarr;YOUR, ME&rarr;YOU, I&rarr;YOU). Each word is looked up; the ones that are keywords are lit, with their rank.'));
-        box.appendChild(row('SCAN', T.words.map(function (w) {
+        box.appendChild(row('SCAN', scanWords.map(function (w) {
           var label = w.sub ? (w.raw + ' → ' + w.sub) : w.raw;
           return chip(label, w.keyword ? 'key' : 'plain', w.keyword ? ('r' + w.rank) : null, w.keyword ? 'var(--lamp-red)' : null);
         })));
