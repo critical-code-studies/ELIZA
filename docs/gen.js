@@ -131,9 +131,12 @@ function slipChain(values, opts) {
     if (i > 0) s += '<line x1="' + (x - 2) + '" y1="' + (yTop + 31) + '" x2="' + (x0 + (i - 1) * pitch + cellW + 3) + '" y2="' + (yTop + 31) + '" stroke="#f0a83a" stroke-width="1.4" marker-end="url(#bwd)"/>';
   }
   if (opts.labels) {
-    s += '<text x="' + (x0 + 12) + '" y="' + (yTop + cellH + 16) + '" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#9a9c95">prev</text>';
-    s += '<text x="' + (x0 + cellW / 2) + '" y="' + (yTop + cellH + 16) + '" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#9a9c95">datum</text>';
-    s += '<text x="' + (x0 + cellW - 12) + '" y="' + (yTop + cellH + 16) + '" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#9a9c95">next</text>';
+    for (var j = 0; j < n; j++) {
+      var xj = x0 + j * pitch, yl = yTop + cellH + 16;
+      s += '<text x="' + (xj + 12) + '" y="' + yl + '" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#9a9c95">prev</text>';
+      s += '<text x="' + (xj + cellW / 2) + '" y="' + yl + '" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#9a9c95">datum</text>';
+      s += '<text x="' + (xj + cellW - 12) + '" y="' + yl + '" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#9a9c95">next</text>';
+    }
   }
   s += '</svg>';
   return s;

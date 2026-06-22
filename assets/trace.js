@@ -200,15 +200,14 @@
       // full-width memory queue bar under the input line, numbered as ELIZA stores them
       memEl.innerHTML = '';
       memEl.appendChild(el('span', 'mlab', 'Memory'));
-      if (T.memory && T.memory.length) {
-        var ol = el('ol');
-        T.memory.forEach(function (m, i) {
-          ol.appendChild(el('li', null, '<span class="mn">' + (i + 1) + '</span><span>' + esc(m) + '</span>'));
-        });
-        memEl.appendChild(ol);
-      } else {
-        memEl.appendChild(el('span', 'empty', 'empty'));
+      var mem = T.memory || [];
+      var slots = Math.max(4, mem.length);   // four slots by default; grows if the queue does
+      var ol = el('ol');
+      for (var mi = 0; mi < slots; mi++) {
+        var m = mem[mi];
+        ol.appendChild(el('li', m ? null : 'slot-empty', '<span class="mn">' + (mi + 1) + '</span><span>' + (m ? esc(m) : 'empty') + '</span>'));
       }
+      memEl.appendChild(ol);
     }
 
     function show(i) {

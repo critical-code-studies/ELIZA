@@ -423,9 +423,10 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .demo-mem { background: #03100a; border-bottom: 1px solid rgba(89,192,138,0.16); padding: 0.55rem 1.2rem; }
 .demo-mem .mlab { font-family: var(--mono); font-size: 0.56rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--lamp-green); }
 .demo-mem .empty { font-family: var(--mono); font-size: 0.66rem; color: var(--ink-dim); opacity: 0.5; margin-left: 0.6rem; }
-.demo-mem ol { list-style: none; margin: 0.35rem 0 0; padding: 0; display: grid; gap: 0.25rem; }
-.demo-mem li { font-family: var(--mono); font-size: 0.68rem; line-height: 1.4; color: var(--ink-dim); display: flex; gap: 0.55rem; align-items: baseline; }
-.demo-mem .mn { color: var(--lamp-green); min-width: 1rem; text-align: right; }
+.demo-mem ol { list-style: none; margin: 0.3rem 0 0; padding: 0 0 0 1.4rem; display: grid; gap: 0.15rem; }
+.demo-mem li { font-family: var(--mono); font-size: 0.58rem; line-height: 1.45; color: var(--ink-dim); display: flex; gap: 0.5rem; align-items: baseline; }
+.demo-mem .mn { color: var(--lamp-green); min-width: 0.9rem; text-align: right; }
+.demo-mem li.slot-empty { opacity: 0.4; }
 .demo-stage { padding: 1.5rem 1.3rem; min-height: 16rem; display: flex; }
 .stage-card { width: 100%; opacity: 0; transition: opacity 0.22s ease; }
 .stage-card.in { opacity: 1; }
@@ -436,7 +437,8 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .demo-prog i { flex: 1; height: 3px; border-radius: 2px; background: var(--line-soft); transition: background 0.2s ease; }
 .demo-prog i.done { background: rgba(240,168,58,0.45); }
 .demo-prog i.on { background: var(--lamp-amber); }
-.demo-nav { display: flex; align-items: center; gap: 0.6rem; padding: 0.9rem 1.2rem 1rem; }
+.demo-nav { display: flex; align-items: center; gap: 0.6rem; padding: 0.9rem 1.2rem 1rem; background: #03100a; border-top: 1px solid rgba(89,192,138,0.14); }
+.demo-prog { padding-top: 0.6rem; }
 .demo-nav .btn { padding: 0.55rem 1rem; font-size: 0.72rem; }
 .demo-nav .btn:disabled { opacity: 0.35; cursor: default; }
 .demo-nav .spacer { margin-left: auto; }
