@@ -372,15 +372,10 @@ write('try.html', page({
   body: `
       <span class="kicker">Try ELIZA</span>
       <h1 class="page">Talk to ELIZA</h1>
-      <div class="rule">ANTHONY HAY&rsquo;S ELIZA</div>
-      <p>This is Anthony Hay&rsquo;s faithful recreation of the original MAD-SLIP ELIZA: it reproduces the 1966 program&rsquo;s behaviour exactly, down to the bugs, with the original asterisk commands, the CACM replay, and the ability to load custom scripts. It runs entirely in your browser; nothing you type is sent anywhere.</p>
+      <div class="lede"><p>This is Anthony Hay&rsquo;s faithful recreation of the original 1966 MAD-SLIP ELIZA. Type a sentence and press enter; it runs entirely in your browser and nothing you type is sent anywhere.</p></div>
+      <p>It reproduces the original program&rsquo;s behaviour exactly, down to the bugs, with the original asterisk commands (type <code>*help</code>), the CACM replay, and the ability to load custom scripts.</p>
       <div class="eliza-embed"><iframe src="https://anthay.github.io/eliza.html" title="Anthony Hay&rsquo;s ELIZA" loading="lazy"></iframe></div>
       <p class="post-meta" style="margin-top:0.8rem">Source: <a href="https://github.com/anthay/ELIZA">github.com/anthay/ELIZA</a>. Or open it <a href="https://anthay.github.io/eliza.html">full screen</a>.</p>
-
-      <div class="rule">A SIMPLE SIMULATED ELIZA</div>
-      <div class="lede"><p>This is a simple simulated ELIZA. Type a sentence and press enter.</p></div>
-      <div id="try-eliza-mount"></div>
-      <p class="post-meta" style="margin-top:1.4rem">A lightweight model that drives the step-by-step <a href="how.html">How it works</a> walkthrough. For the authoritative ELIZA, use Anthony Hay&rsquo;s version above.</p>
 `}));
 
 // ---------------------------------------------------------------------------
@@ -422,6 +417,11 @@ write('talks.html', page({
       <span class="kicker">Talks</span>
       <h1 class="page">Talks &amp; code critiques</h1>
       <ul class="timeline">
+        <li><span class="yr">2026</span><span class="vh">Roskilde University, Denmark</span><p>&ldquo;From Script to Vector: ELIZA and the Age of AI&rdquo; (29 April).</p></li>
+        <li><span class="yr">2026</span><span class="vh">Aarhus University, Denmark</span><p>&ldquo;From Script to Vector: ELIZA and the Age of AI&rdquo; (20 March).</p></li>
+        <li><span class="yr">2026</span><span class="vh">University of Birmingham</span><p>&ldquo;Generative AI and Computational Capitalism: Towards a Critical Theory of Artificial Intelligence&rdquo; (22 January).</p></li>
+        <li><span class="yr">2025</span><span class="vh">Weizenbaum Institute, Berlin</span><p>&ldquo;Generative AI and Computational Capitalism: Towards a Critical Theory of Artificial Intelligence&rdquo;, at the Workshop on Critical Theory of the Computational (16 October).</p></li>
+        <li><span class="yr">2025</span><span class="vh">Electronic Literature Organization, Toronto</span><p>&ldquo;Digital Kintsugi: The Art and Ethics of Reconstructing ELIZA&rsquo;s Digital Ruins&rdquo;, at <em>ELO25 @ 25: Love Letters to the Past and Future</em>, York University, Toronto, Canada (10&ndash;13 July).</p></li>
         <li><span class="yr">2023</span><span class="vh">Humboldt / Weizenbaum Institute, Berlin</span><p>&ldquo;Reading ELIZA: Understanding Weizenbaum through his code&rdquo;, at <em>Weizenbaum&rsquo;s Worlds: Technological Change and Computer Criticism in the U.S. and Germany, ca. 1960&ndash;1990</em> (3 November).</p></li>
         <li><span class="yr">2023</span><span class="vh">MIT</span><p>&ldquo;Getting to know ELIZA: ChatGPT&rsquo;s Great Grandmother&rdquo; (11 October).</p></li>
         <li><span class="yr">2022</span><span class="vh">Critical Code Studies Working Group</span><p>&ldquo;The Original ELIZA in MAD-SLIP&rdquo;, code critique. Thread leaders: Jeff Shrager, David M. Berry, Mark C. Marino, Jeremy Douglass.</p></li>
