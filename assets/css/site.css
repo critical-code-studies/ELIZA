@@ -418,11 +418,14 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .demo-ctx .lab { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-dim); }
 .demo-ctx .val { font-family: var(--mono); font-size: 0.85rem; color: var(--you); }
 .demo-ctx .val.key { color: var(--eliza); }
-.demo-mem { margin-left: auto; align-self: flex-start; max-width: 300px; border: 1px solid rgba(89,192,138,0.3); border-radius: 4px; padding: 0.35rem 0.6rem; background: rgba(89,192,138,0.06); }
-.demo-mem .mlab { display: block; font-family: var(--mono); font-size: 0.56rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--lamp-green); }
-.demo-mem ul { list-style: none; margin: 0.25rem 0 0; padding: 0; display: grid; gap: 0.2rem; }
-.demo-mem li { font-family: var(--mono); font-size: 0.62rem; line-height: 1.4; color: var(--ink-dim); }
-.demo-mem .empty { font-family: var(--mono); font-size: 0.62rem; color: var(--ink-dim); opacity: 0.55; }
+/* the memory queue: a full-width bar under the input line, set on a darker
+   ground so it reads as a distinct register (ELIZA's stored phrases) */
+.demo-mem { background: #03100a; border-bottom: 1px solid rgba(89,192,138,0.16); padding: 0.55rem 1.2rem; }
+.demo-mem .mlab { font-family: var(--mono); font-size: 0.56rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--lamp-green); }
+.demo-mem .empty { font-family: var(--mono); font-size: 0.66rem; color: var(--ink-dim); opacity: 0.5; margin-left: 0.6rem; }
+.demo-mem ol { list-style: none; margin: 0.35rem 0 0; padding: 0; display: grid; gap: 0.25rem; }
+.demo-mem li { font-family: var(--mono); font-size: 0.68rem; line-height: 1.4; color: var(--ink-dim); display: flex; gap: 0.55rem; align-items: baseline; }
+.demo-mem .mn { color: var(--lamp-green); min-width: 1rem; text-align: right; }
 .demo-stage { padding: 1.5rem 1.3rem; min-height: 16rem; display: flex; }
 .stage-card { width: 100%; opacity: 0; transition: opacity 0.22s ease; }
 .stage-card.in { opacity: 1; }

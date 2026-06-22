@@ -103,6 +103,42 @@ ${main}
 function clean(s) { return s.replace(/—/g, ' - '); }
 function write(file, html) { fs.writeFileSync(path.join(OUT, file), clean(html)); }
 
+// a doubly-linked (SLIP) list drawn as cells with forward (next) and backward
+// (prev) links. values = middle texts; opts.labels annotates the first cell's
+// fields and shows a legend.
+function slipChain(values, opts) {
+  opts = opts || {};
+  var cellW = 112, cellH = 46, pitch = 150, x0 = 24;
+  var yTop = opts.labels ? 42 : 28;
+  var H = opts.labels ? 124 : 92;
+  var n = values.length;
+  var s = '<svg viewBox="0 0 660 ' + H + '" role="img" aria-label="' + (opts.alt || 'doubly linked list') + '" style="width:100%;height:auto;display:block">';
+  s += '<defs>'
+    + '<marker id="fwd" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L8 5 L1 9" fill="none" stroke="#ef6f44" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>'
+    + '<marker id="bwd" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L8 5 L1 9" fill="none" stroke="#f0a83a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>'
+    + '</defs>';
+  if (opts.labels) {
+    s += '<text x="' + x0 + '" y="22" font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#ef6f44">&#8594; next link</text>';
+    s += '<text x="' + (x0 + 150) + '" y="22" font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#f0a83a">&#8592; prev link</text>';
+  }
+  for (var i = 0; i < n; i++) {
+    var x = x0 + i * pitch;
+    s += '<rect x="' + x + '" y="' + yTop + '" width="' + cellW + '" height="' + cellH + '" rx="4" fill="rgba(232,228,218,0.04)" stroke="rgba(232,228,218,0.3)"/>';
+    s += '<line x1="' + (x + 24) + '" y1="' + yTop + '" x2="' + (x + 24) + '" y2="' + (yTop + cellH) + '" stroke="rgba(232,228,218,0.18)"/>';
+    s += '<line x1="' + (x + cellW - 24) + '" y1="' + yTop + '" x2="' + (x + cellW - 24) + '" y2="' + (yTop + cellH) + '" stroke="rgba(232,228,218,0.18)"/>';
+    s += '<text x="' + (x + cellW / 2) + '" y="' + (yTop + cellH / 2 + 4) + '" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="13" fill="#e8e3d7">' + (values[i] || '') + '</text>';
+    if (i < n - 1) s += '<line x1="' + (x + cellW + 2) + '" y1="' + (yTop + 15) + '" x2="' + (x0 + (i + 1) * pitch - 3) + '" y2="' + (yTop + 15) + '" stroke="#ef6f44" stroke-width="1.4" marker-end="url(#fwd)"/>';
+    if (i > 0) s += '<line x1="' + (x - 2) + '" y1="' + (yTop + 31) + '" x2="' + (x0 + (i - 1) * pitch + cellW + 3) + '" y2="' + (yTop + 31) + '" stroke="#f0a83a" stroke-width="1.4" marker-end="url(#bwd)"/>';
+  }
+  if (opts.labels) {
+    s += '<text x="' + (x0 + 12) + '" y="' + (yTop + cellH + 16) + '" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#9a9c95">prev</text>';
+    s += '<text x="' + (x0 + cellW / 2) + '" y="' + (yTop + cellH + 16) + '" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#9a9c95">datum</text>';
+    s += '<text x="' + (x0 + cellW - 12) + '" y="' + (yTop + cellH + 16) + '" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#9a9c95">next</text>';
+  }
+  s += '</svg>';
+  return s;
+}
+
 const TEAM = [
   ['David M. Berry', 'Professor of Digital Humanities, University of Sussex', 'Writes widely on philosophy and technology, particularly computation, software and algorithms; recent work addresses explainability, human understanding, and the history of the university. Co-discovered the original ELIZA source in the MIT archive.'],
   ['Sarah Ciston', 'Mellon PhD Candidate, Media Arts + Practice, USC', 'Builds critical-creative tools to bring intersectional approaches to machine learning. Named AI Newcomer by the German Informatics Society and AI Anarchies Fellow at the Akademie der K&uuml;nste, Berlin. Author of <em>A Critical Field Guide to Working with Machine Learning Datasets</em> and founder of Code Collective.'],
@@ -300,6 +336,18 @@ write('slip.html', page({
 
       <h2>Why &ldquo;symmetric&rdquo;</h2>
       <p>SLIP&rsquo;s lists are <strong>doubly linked</strong>: every cell holds a pointer to the next cell and to the previous one. That two-way, symmetric linkage is where the name comes from. It lets a program walk a list forwards or backwards, splice cells in and out from either end, and treat any cell as a place to read from or write to. Free cells are kept on an <strong>Available Space List</strong> (AVSL); creating a list draws cells from it, deleting a list returns them.</p>
+
+      <figure class="figure" style="max-width:none">
+        ${slipChain(['', '', ''], { labels: true, alt: 'an abstract doubly linked list: each cell holds a datum with a forward and backward link' })}
+        <figcaption>Each cell carries a datum between two links: a <span style="color:var(--eliza)">next</span> pointer forward and a <span style="color:var(--lamp-amber)">prev</span> pointer back. Real SLIP lists also close into a ring through a header cell.</figcaption>
+      </figure>
+
+      <h2>A line of dialogue as a list</h2>
+      <p>When you type to ELIZA, your words become a SLIP list, one word per cell. Here is the opening line of the 1966 conversation, <em>Men are all alike</em>, held the way ELIZA holds it:</p>
+      <figure class="figure" style="max-width:none">
+        ${slipChain(['MEN', 'ARE', 'ALL', 'ALIKE'], { alt: 'the words MEN, ARE, ALL, ALIKE held as a doubly linked SLIP list' })}
+        <figcaption>ELIZA walks this list with a sequence reader (<code>SEQRDR</code> / <code>SEQLR</code>), matches it against a keyword&rsquo;s decomposition pattern, and builds the reply by splicing cells into a new list.</figcaption>
+      </figure>
 
       <h2>How ELIZA uses it</h2>
       <p>Almost every structure in ELIZA is a SLIP list. The user&rsquo;s input is read into a list of words. The script&rsquo;s keywords live in a hash table (<code>KEY</code>) of lists. Each keyword&rsquo;s decomposition and reassembly rules are lists of lists. The memory of what you said is a list of transformed sentences. To produce a reply, ELIZA walks these lists with SLIP&rsquo;s readers, matching and rebuilding as it goes.</p>

@@ -26,17 +26,19 @@
     });
     app.appendChild(egs);
 
-    var playRow = el('div', 'trace-egs');
     var playBtn = el('button', 'btn', '▶ Play the 1966 conversation');
-    playRow.appendChild(playBtn);
-    app.appendChild(playRow);
 
     var demo = el('div', 'demo');
     var ctx = el('div', 'demo-ctx'); demo.appendChild(ctx);
+    var memEl = el('div', 'demo-mem'); demo.appendChild(memEl);
     var stageEl = el('div', 'demo-stage'); demo.appendChild(stageEl);
     var prog = el('div', 'demo-prog'); demo.appendChild(prog);
     var nav = el('div', 'demo-nav'); demo.appendChild(nav);
     app.appendChild(demo);
+
+    var playRow = el('div', 'trace-egs');
+    playRow.appendChild(playBtn);
+    app.appendChild(playRow);
 
     var stages = [], cur = 0, autoTimer = null, T = null;
     var session = null, playing = false, playIdx = 0;
@@ -107,7 +109,7 @@
       }});
       if (splitHappened) S.push({ title: 'Break at delimiters', node: function () {
         var box = el('div');
-        box.appendChild(el('p', 'snote', 'At a delimiter, ELIZA keeps the first clause that contains a keyword and discards the rest. The &ldquo;BUT&rdquo; delimiter does the work here; it is in the recovered source but Weizenbaum never documented it.'));
+        box.appendChild(el('p', 'snote', 'At a delimiter, ELIZA keeps the first clause that contains a keyword and discards the rest. The &ldquo;BUT&rdquo; delimiter does the work here.'));
         clauses.forEach(function (c) {
           if (!c.words.length) return;
           var kept = (clauses.indexOf(c) === keptIdx);
@@ -195,17 +197,18 @@
         ctx.appendChild(el('span', 'lab', 'Keyword'));
         ctx.appendChild(el('span', 'val key', esc(T.keystack[0].word)));
       }
-      // memory queue box, top-right
-      var mem = el('div', 'demo-mem');
-      mem.appendChild(el('span', 'mlab', 'Memory'));
+      // full-width memory queue bar under the input line, numbered as ELIZA stores them
+      memEl.innerHTML = '';
+      memEl.appendChild(el('span', 'mlab', 'Memory'));
       if (T.memory && T.memory.length) {
-        var ul = el('ul');
-        T.memory.forEach(function (m) { ul.appendChild(el('li', null, esc(m))); });
-        mem.appendChild(ul);
+        var ol = el('ol');
+        T.memory.forEach(function (m, i) {
+          ol.appendChild(el('li', null, '<span class="mn">' + (i + 1) + '</span><span>' + esc(m) + '</span>'));
+        });
+        memEl.appendChild(ol);
       } else {
-        mem.appendChild(el('span', 'empty', 'empty'));
+        memEl.appendChild(el('span', 'empty', 'empty'));
       }
-      ctx.appendChild(mem);
     }
 
     function show(i) {
