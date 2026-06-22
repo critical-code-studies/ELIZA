@@ -44,7 +44,7 @@
     app.appendChild(playRow);
 
     var stages = [], cur = 0, autoTimer = null, T = null;
-    var session = null, playing = false, playIdx = 0, transcript = [];
+    var session = null, playing = false, paused = false, playIdx = 0, transcript = [];
     var CACM = [
       'Men are all alike.',
       'They\'re always bugging us about something or other.',
@@ -258,8 +258,8 @@
       autoTimer = setInterval(function () { if (cur >= stages.length - 1) stop(); else show(cur + 1); }, 2000);
       renderNav();
     }
-    function updatePlayBtn() { playBtn.innerHTML = playing ? '&#9632; Stop the 1966 conversation' : '&#9654; Play the 1966 conversation'; }
-    function stop() { playing = false; if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } updatePlayBtn(); renderNav(); }
+    function updatePlayBtn() { playBtn.innerHTML = playing ? '&#9632; Stop the 1966 conversation' : (paused ? '&#9632; Continue the 1966 conversation' : '&#9654; Play the 1966 conversation'); }
+    function stop() { playing = false; paused = false; if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } updatePlayBtn(); renderNav(); }
 
     function run() {
       stop();
@@ -281,35 +281,44 @@
 
     // replay the whole 1966 CACM conversation on one persistent engine, so memory
     // accumulates and is recalled, auto-stepping through each line until the end
+    function startAutoStep() {
+      if (autoTimer) clearInterval(autoTimer);
+      autoTimer = setInterval(function () {
+        if (!playing) { clearInterval(autoTimer); autoTimer = null; return; }
+        if (cur >= stages.length - 1) {
+          clearInterval(autoTimer); autoTimer = null;
+          setTimeout(playLine, 1600);   // hold on the reply, then the next line
+        } else show(cur + 1);
+      }, 1500);
+    }
     function playCacm() {
       stop();
       session = window.ElizaHay.make();
-      playing = true;
-      playIdx = 0;
-      transcript = [];
+      playing = true; paused = false; playIdx = 0; transcript = [];
       updatePlayBtn();
       playLine();
     }
     function playLine() {
       if (!playing) return;
-      if (playIdx >= CACM.length) { playing = false; updatePlayBtn(); return; }
+      if (playIdx >= CACM.length) { playing = false; paused = false; updatePlayBtn(); return; }
       var line = CACM[playIdx++];
       input.value = line;
       session.trace(line).then(function (res) {
         if (!playing) return;
         T = res; transcript.push({ who: 'you', text: line }); transcript.push({ who: 'eliza', text: res.output });
         stages = build(T); setCtx(); show(0);
-        autoTimer = setInterval(function () {
-          if (!playing) { clearInterval(autoTimer); autoTimer = null; return; }
-          if (cur >= stages.length - 1) {
-            clearInterval(autoTimer); autoTimer = null;
-            setTimeout(playLine, 1600);   // pause on the reply, then next line
-          } else show(cur + 1);
-        }, 1500);
+        startAutoStep();
         renderNav();
       });
     }
-    playBtn.addEventListener('click', function () { if (playing) stop(); else playCacm(); });
+    function pausePlay() { playing = false; paused = true; if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } updatePlayBtn(); renderNav(); }
+    function resumePlay() {
+      if (!session || playIdx >= CACM.length) { playCacm(); return; }
+      playing = true; paused = false; updatePlayBtn();
+      if (cur < stages.length - 1) startAutoStep();   // finish the current line
+      else setTimeout(playLine, 200);                 // current line done, go to the next
+    }
+    playBtn.addEventListener('click', function () { if (playing) pausePlay(); else if (paused) resumePlay(); else playCacm(); });
     resetBtn.addEventListener('click', reset);
 
     document.addEventListener('keydown', function (e) {
