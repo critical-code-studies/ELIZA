@@ -8,7 +8,7 @@ const OUT = path.join(process.env.HOME, 'Projects', 'eliza');
 const BLOGDIR = path.join(OUT, 'blog');
 fs.mkdirSync(BLOGDIR, { recursive: true });
 
-const V = 6; // asset cache-buster
+const V = 7; // asset cache-buster
 
 // ---- shared chrome ----------------------------------------------------------
 function nav(depth) {
