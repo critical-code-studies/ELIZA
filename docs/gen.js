@@ -8,7 +8,7 @@ const OUT = path.join(process.env.HOME, 'Projects', 'eliza');
 const BLOGDIR = path.join(OUT, 'blog');
 fs.mkdirSync(BLOGDIR, { recursive: true });
 
-const V = 9; // asset cache-buster
+const V = 10; // asset cache-buster
 
 // ---- shared chrome ----------------------------------------------------------
 function nav(depth) {
@@ -108,7 +108,7 @@ const homeHero = `  <section class="hero">
     <div class="hero-inner">
       <div class="wrap">
        <div class="hero-panel">
-        <p class="boot">CTSS // IBM 7094 // PROJECT MAC // 1966<span class="cursor" aria-hidden="true"></span></p>
+        <p class="boot">JOSEPH WEIZENBAUM // 1966<span class="cursor" aria-hidden="true"></span></p>
         <h1>ELIZA</h1>
         <p class="sub">The first chatbot</p>
         <p class="tagline">In 1966 Joseph Weizenbaum gave people their first conversation with a machine. In 2021 we found its lost source code. This is a close reading of ELIZA: its program, its DOCTOR script, its many versions, and what it still tells us about artificial intelligence.</p>
@@ -206,6 +206,10 @@ write('overview.html', page({
 
       <h2>The machine it ran on</h2>
       <p>There were no screens. People talked to ELIZA on teletypes, electromechanical printers like the IBM 2741 and the Teletype Model 33, which struck characters onto a roll of paper at ten to fourteen characters a second. The conversation was a physical object: ink on a page, produced together by a person and a machine. <a href="blog/post.html?p=2-talking-to-eliza-on-an-asr-33-teletype">Talking to ELIZA on an ASR 33 &rsaquo;</a></p>
+      <figure class="figure">
+        <img src="assets/images/eliza-1967-twenty-first-century.jpg" alt="ELIZA being used on a teletype in 1967" loading="lazy">
+        <figcaption>ELIZA in use in 1967, filmed for the documentary <em>The Twenty-First Century</em>, &lsquo;The Communications Revolution&rsquo; (first broadcast 1967).</figcaption>
+      </figure>
 
       <div class="rule">FURTHER</div>
       <div class="reading">
@@ -461,6 +465,10 @@ write('about.html', page({
       <span class="kicker">About</span>
       <h1 class="page">About the project</h1>
       <div class="lede"><p>ELIZA is one of the most influential computer programs in history. Created by Joseph Weizenbaum at MIT in the mid-1960s, it was the world&rsquo;s first chatbot: the first program to let people hold a conversation with a computer.</p></div>
+      <figure class="figure portrait">
+        <img src="assets/images/weizenbaum.jpg" alt="Joseph Weizenbaum" loading="lazy">
+        <figcaption>Joseph Weizenbaum (1923&ndash;2008), creator of ELIZA.</figcaption>
+      </figure>
       <p>Its behaviour was controlled by scripts, of which DOCTOR is the most renowned, making ELIZA reply like a Rogerian psychotherapist: offering little of its own, instead asking leading questions. The program achieved remarkable cultural impact despite its modest size, about 420 lines of MAD-SLIP. Its descendants and echoes run from HAL 9000 to Siri and Alexa.</p>
       <p>For decades after its 1966 publication in the Communications of the ACM, the original source code was unavailable. The team rediscovered the original ELIZA code in Weizenbaum&rsquo;s archive at MIT in 2021, making it possible to investigate the history of the chatbot through authentic artifacts. This site, and the book <a href="book.html"><em>Inventing ELIZA</em></a>, are the result.</p>
       <h2>Contact</h2>
