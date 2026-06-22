@@ -424,7 +424,7 @@ write('how.html', page({
       <div class="lede"><p>Type a sentence and step through exactly what ELIZA does with it.</p></div>
       <div id="trace-app"></div>
       <p class="post-meta" style="margin-top:1rem">Responses by Anthony Hay&rsquo;s CC0 ELIZA engine - the same engine you can talk to on the <a href="try.html">Try ELIZA</a> page.</p>
-      <p class="micro" style="margin-top:2.4rem">This visualisation repurposes Anthony Hay&rsquo;s faithful reconstruction of ELIZA (released CC0 public domain): his engine generates the responses exactly as Weizenbaum&rsquo;s 1966 program would, and we instrument it to surface each step. The code that does this is open: the step display in <a href="https://github.com/critical-code-studies/ELIZA/blob/main/assets/trace.js">trace.js</a> and the tracer that reads Hay&rsquo;s engine in <a href="https://github.com/critical-code-studies/ELIZA/blob/main/assets/eliza-hay.js">eliza-hay.js</a>.</p>
+      <p class="micro" style="margin-top:2.4rem;font-size:0.72rem;letter-spacing:0.5px">This visualisation repurposes Anthony Hay&rsquo;s faithful reconstruction of ELIZA (released CC0 public domain): his engine generates the responses exactly as Weizenbaum&rsquo;s 1966 program would, and we instrument it to surface each step. The code that does this is open: the step display in <a href="https://github.com/critical-code-studies/ELIZA/blob/main/assets/trace.js">trace.js</a> and the tracer that reads Hay&rsquo;s engine in <a href="https://github.com/critical-code-studies/ELIZA/blob/main/assets/eliza-hay.js">eliza-hay.js</a>.</p>
 `}));
 
 // ---------------------------------------------------------------------------
