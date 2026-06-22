@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SLIP · ELIZA (1966)</title>
+  <meta name="description" content="SLIP, Weizenbaum’s Symmetric List Processor: the list-processing library that the MAD half of MAD-SLIP relied on to run ELIZA.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ELIZA Archaeology Project">
+  <meta property="og:title" content="SLIP · ELIZA (1966)">
+  <meta property="og:description" content="SLIP, Weizenbaum’s Symmetric List Processor: the list-processing library that the MAD half of MAD-SLIP relied on to run ELIZA.">
+  <meta property="og:image" content="https://critical-code-studies.github.io/ELIZA/assets/images/share-card.png?v=202606222252">
+  <meta property="og:url" content="https://critical-code-studies.github.io/ELIZA/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SLIP · ELIZA (1966)">
+  <meta name="twitter:description" content="SLIP, Weizenbaum’s Symmetric List Processor: the list-processing library that the MAD half of MAD-SLIP relied on to run ELIZA.">
+  <meta name="twitter:image" content="https://critical-code-studies.github.io/ELIZA/assets/images/share-card.png?v=202606222252">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=202606222252">
+  <link rel="stylesheet" href="assets/css/site.css?v=202606222252">
+  <script src="assets/nav.js?v=202606222252" defer></script>
+  <script src="assets/term.js?v=202606222252" defer></script>
+
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html" aria-label="ELIZA home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 6 H22 L28 12 V26 H4 Z" fill="#d9cfbc"/><g fill="#14161b"><rect x="8" y="13" width="3" height="5" rx="0.8"/><rect x="14" y="13" width="3" height="5" rx="0.8"/></g><rect x="20" y="13" width="3" height="5" rx="0.8" fill="#ef6f44"/><text x="16" y="24" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="4.4" letter-spacing="0.3" fill="#14161b" opacity="0.5">000010</text></svg>
+        <span class="brand-block"><span class="brand-text">ELIZA</span><span class="brand-tagline">Critical Code Studies · MIT · 1966</span></span>
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span class="bars" aria-hidden="true">&#9776;</span>&nbsp;Menu</button>
+      <nav class="site-nav" id="site-nav">
+        <div class="nav-group">
+          <button class="nav-top" aria-expanded="false">Main <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu">
+            <a href="index.html">Home</a><a href="about.html">About</a><a href="try.html">Try ELIZA</a><a href="bibliography.html">Bibliography</a><a href="links.html">Links</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button class="nav-top" aria-expanded="false">ELIZA <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu">
+            <a href="overview.html">Overview</a><a href="doctor.html">The DOCTOR script</a><a href="versions.html">The versions</a><a href="book.html">The book</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button class="nav-top" aria-expanded="false">The code <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu"><a href="code.html">The program</a><a href="slip.html">SLIP</a><a href="doctor.html">The DOCTOR script</a><a href="how.html">How it works (demo)</a></div>
+        </div>
+        <a class="nav-top nav-direct" href="blog.html">Blog</a>
+        <a class="nav-top nav-direct" href="people.html">TEAM-ELIZA</a>
+        <a class="nav-top nav-direct" href="talks.html">Talks</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap content" style="padding-top:3rem;">
+    <article class="block">
+
+      <span class="kicker">The code</span>
+      <h1 class="page">SLIP</h1>
+      <div class="lede"><p>ELIZA is written in MAD-SLIP: the MAD procedural language, extended with SLIP, Joseph Weizenbaum&rsquo;s own list-processing library. SLIP is the half of MAD-SLIP that gives ELIZA its grip on structure: lists of words, tables of keywords, and the decomposition and reassembly rules that build a reply.</p></div>
+
+      <h2>What SLIP is</h2>
+      <p>SLIP stands for <strong>Symmetric LIst Processor</strong>. Weizenbaum designed it around 1962 and described it in the Communications of the ACM in 1963, when the list-processing ideas of IPL and LISP were still new. It is not a standalone language but a set of routines bolted onto a host language, first FORTRAN and then MAD. The version ELIZA used ran on MIT&rsquo;s CTSS on the IBM 7094: MAD for the procedures, SLIP for the lists.</p>
+
+      <h2>Why &ldquo;symmetric&rdquo;</h2>
+      <p>SLIP&rsquo;s lists are <strong>doubly linked</strong>: every cell holds a pointer to the next cell and to the previous one. That two-way, symmetric linkage is where the name comes from. It lets a program walk a list forwards or backwards, splice cells in and out from either end, and treat any cell as a place to read from or write to. Free cells are kept on an <strong>Available Space List</strong> (AVSL); creating a list draws cells from it, deleting a list returns them.</p>
+
+      <h2>How ELIZA uses it</h2>
+      <p>Almost every structure in ELIZA is a SLIP list. The user&rsquo;s input is read into a list of words. The script&rsquo;s keywords live in a hash table (<code>KEY</code>) of lists. Each keyword&rsquo;s decomposition and reassembly rules are lists of lists. The memory of what you said is a list of transformed sentences. To produce a reply, ELIZA walks these lists with SLIP&rsquo;s readers, matching and rebuilding as it goes.</p>
+
+      <h2>Reading the idioms</h2>
+      <p>Once you know they are SLIP calls, the dense lines of the recovered source begin to read. A few recur throughout:</p>
+      <ul>
+        <li><code>SEQRDR</code> / <code>SEQLR</code>: make a <em>sequence reader</em> for a list, then read its next cell left to right. This is how ELIZA scans a list.</li>
+        <li><code>POPTOP</code> / <code>POPBOT</code>: remove and return the cell at the top (or bottom) of a list.</li>
+        <li><code>NEWTOP</code> / <code>NEWBOT</code>: add a new cell at the top (or bottom) of a list.</li>
+        <li><code>HASH</code>: turn a word into a table index, used both for the keyword table and for the memory mechanism.</li>
+        <li><code>LSSCPY</code>, <code>SUBST</code>, <code>IRALST</code>: copy a list, substitute a cell, and return a list&rsquo;s cells to free space.</li>
+      </ul>
+      <p>These are the verbs of ELIZA. The <a href="code.html">close reading of the program</a> follows them through the main loop, and the <a href="how.html">step-by-step demo</a> shows the result.</p>
+
+      <div class="callout"><span class="kicker">A living implementation</span><p>SLIP did not stay locked in 1963. Arthur Schwarz, a member of this project, has written <strong>gSlip</strong>, a public-domain implementation of SLIP, which makes it possible to run and study SLIP code today rather than only read it.</p></div>
+
+      <div class="rule">REFERENCE</div>
+      <div class="bib"><p class="ref">Weizenbaum, J. (1963) &lsquo;Symmetric List Processor&rsquo;, <em>Communications of the ACM</em>, 6(9), pp. 524&ndash;536.</p></div>
+
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="micro">The ELIZA Archaeology Project ,  a Critical Code Studies reading of ELIZA (Joseph Weizenbaum, MIT, 1966). Source: <a href="https://github.com/critical-code-studies/ELIZA">github.com/critical-code-studies/ELIZA</a>. All project documents &copy; 2024&ndash;2026 the authors, except where indicated.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

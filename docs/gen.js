@@ -39,7 +39,7 @@ function nav(depth) {
         </div>
         <div class="nav-group">
           <button class="nav-top" aria-expanded="false">The code <span class="caret" aria-hidden="true">&#9662;</span></button>
-          <div class="nav-menu"><a href="${p}code.html">The program</a><a href="${p}doctor.html">The DOCTOR script</a><a href="${p}how.html">How it works (demo)</a></div>
+          <div class="nav-menu"><a href="${p}code.html">The program</a><a href="${p}slip.html">SLIP</a><a href="${p}doctor.html">The DOCTOR script</a><a href="${p}how.html">How it works (demo)</a></div>
         </div>
         <a class="nav-top nav-direct" href="${p}blog.html">Blog</a>
         <a class="nav-top nav-direct" href="${p}people.html">TEAM-ELIZA</a>
@@ -286,6 +286,42 @@ write('code.html', page({
 `}));
 
 // ---------------------------------------------------------------------------
+// SLIP
+// ---------------------------------------------------------------------------
+write('slip.html', page({
+  title: 'SLIP', desc: 'SLIP, Weizenbaum’s Symmetric List Processor: the list-processing library that the MAD half of MAD-SLIP relied on to run ELIZA.',
+  body: `
+      <span class="kicker">The code</span>
+      <h1 class="page">SLIP</h1>
+      <div class="lede"><p>ELIZA is written in MAD-SLIP: the MAD procedural language, extended with SLIP, Joseph Weizenbaum&rsquo;s own list-processing library. SLIP is the half of MAD-SLIP that gives ELIZA its grip on structure: lists of words, tables of keywords, and the decomposition and reassembly rules that build a reply.</p></div>
+
+      <h2>What SLIP is</h2>
+      <p>SLIP stands for <strong>Symmetric LIst Processor</strong>. Weizenbaum designed it around 1962 and described it in the Communications of the ACM in 1963, when the list-processing ideas of IPL and LISP were still new. It is not a standalone language but a set of routines bolted onto a host language, first FORTRAN and then MAD. The version ELIZA used ran on MIT&rsquo;s CTSS on the IBM 7094: MAD for the procedures, SLIP for the lists.</p>
+
+      <h2>Why &ldquo;symmetric&rdquo;</h2>
+      <p>SLIP&rsquo;s lists are <strong>doubly linked</strong>: every cell holds a pointer to the next cell and to the previous one. That two-way, symmetric linkage is where the name comes from. It lets a program walk a list forwards or backwards, splice cells in and out from either end, and treat any cell as a place to read from or write to. Free cells are kept on an <strong>Available Space List</strong> (AVSL); creating a list draws cells from it, deleting a list returns them.</p>
+
+      <h2>How ELIZA uses it</h2>
+      <p>Almost every structure in ELIZA is a SLIP list. The user&rsquo;s input is read into a list of words. The script&rsquo;s keywords live in a hash table (<code>KEY</code>) of lists. Each keyword&rsquo;s decomposition and reassembly rules are lists of lists. The memory of what you said is a list of transformed sentences. To produce a reply, ELIZA walks these lists with SLIP&rsquo;s readers, matching and rebuilding as it goes.</p>
+
+      <h2>Reading the idioms</h2>
+      <p>Once you know they are SLIP calls, the dense lines of the recovered source begin to read. A few recur throughout:</p>
+      <ul>
+        <li><code>SEQRDR</code> / <code>SEQLR</code>: make a <em>sequence reader</em> for a list, then read its next cell left to right. This is how ELIZA scans a list.</li>
+        <li><code>POPTOP</code> / <code>POPBOT</code>: remove and return the cell at the top (or bottom) of a list.</li>
+        <li><code>NEWTOP</code> / <code>NEWBOT</code>: add a new cell at the top (or bottom) of a list.</li>
+        <li><code>HASH</code>: turn a word into a table index, used both for the keyword table and for the memory mechanism.</li>
+        <li><code>LSSCPY</code>, <code>SUBST</code>, <code>IRALST</code>: copy a list, substitute a cell, and return a list&rsquo;s cells to free space.</li>
+      </ul>
+      <p>These are the verbs of ELIZA. The <a href="code.html">close reading of the program</a> follows them through the main loop, and the <a href="how.html">step-by-step demo</a> shows the result.</p>
+
+      <div class="callout"><span class="kicker">A living implementation</span><p>SLIP did not stay locked in 1963. Arthur Schwarz, a member of this project, has written <strong>gSlip</strong>, a public-domain implementation of SLIP, which makes it possible to run and study SLIP code today rather than only read it.</p></div>
+
+      <div class="rule">REFERENCE</div>
+      <div class="bib"><p class="ref">Weizenbaum, J. (1963) &lsquo;Symmetric List Processor&rsquo;, <em>Communications of the ACM</em>, 6(9), pp. 524&ndash;536.</p></div>
+`}));
+
+// ---------------------------------------------------------------------------
 // DOCTOR SCRIPT
 // ---------------------------------------------------------------------------
 write('doctor.html', page({
@@ -388,8 +424,6 @@ write('how.html', page({
       <div class="lede"><p>Type a sentence and step through exactly what ELIZA does with it.</p></div>
       <div id="trace-app"></div>
       <p class="post-meta" style="margin-top:1rem">Responses by Anthony Hay&rsquo;s CC0 ELIZA engine - the same engine you can talk to on the <a href="try.html">Try ELIZA</a> page.</p>
-      <div class="rule">WHY THIS MATTERS</div>
-      <p>Joseph Weizenbaum was alarmed that people confided in ELIZA even when they knew it was a program. The distance between what the machine does (mechanical word-shuffling, shown above) and what we feel (that something understands us) is the <strong>ELIZA effect</strong>.</p>
       <p class="micro" style="margin-top:2.4rem">This visualisation repurposes Anthony Hay&rsquo;s faithful reconstruction of ELIZA (released CC0 public domain): his engine generates the responses exactly as Weizenbaum&rsquo;s 1966 program would, and we instrument it to surface each step. The code that does this is open: the step display in <a href="https://github.com/critical-code-studies/ELIZA/blob/main/assets/trace.js">trace.js</a> and the tracer that reads Hay&rsquo;s engine in <a href="https://github.com/critical-code-studies/ELIZA/blob/main/assets/eliza-hay.js">eliza-hay.js</a>.</p>
 `}));
 
