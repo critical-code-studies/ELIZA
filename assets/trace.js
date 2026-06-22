@@ -26,6 +26,11 @@
     });
     app.appendChild(egs);
 
+    var playRow = el('div', 'trace-egs');
+    var playBtn = el('button', 'btn', '▶ Play the 1966 conversation');
+    playRow.appendChild(playBtn);
+    app.appendChild(playRow);
+
     var demo = el('div', 'demo');
     var ctx = el('div', 'demo-ctx'); demo.appendChild(ctx);
     var stageEl = el('div', 'demo-stage'); demo.appendChild(stageEl);
@@ -34,6 +39,24 @@
     app.appendChild(demo);
 
     var stages = [], cur = 0, autoTimer = null, T = null;
+    var session = null, playing = false, playIdx = 0;
+    var CACM = [
+      'Men are all alike.',
+      'They\'re always bugging us about something or other.',
+      'Well, my boyfriend made me come here.',
+      'He says I\'m depressed much of the time.',
+      'It\'s true. I am unhappy.',
+      'I need some help, that much seems certain.',
+      'Perhaps I could learn to get along with my mother.',
+      'My mother takes care of me.',
+      'My father.',
+      'You are like my father in some ways.',
+      'You are not very aggressive but I think you don\'t want me to notice that.',
+      'You don\'t argue with me.',
+      'You are afraid of me.',
+      'My father is afraid of everybody.',
+      'Bullies.'
+    ];
 
     function chip(text, cls, badge, color) {
       var c = el('span', 'chip' + (cls ? ' ' + cls : ''), esc(text));
@@ -78,7 +101,7 @@
       }});
       S.push({ title: 'Clean and split into words', node: function () {
         var box = el('div');
-        box.appendChild(el('p', 'snote', 'Upper-cased and split into words. ELIZA also breaks the input into clauses at three delimiters: the comma, the full stop, and the word &ldquo;BUT&rdquo; (the last undocumented by Weizenbaum, a finding of this project).'));
+        box.appendChild(el('p', 'snote', 'Upper-cased and split into words. ELIZA also breaks the input into clauses at three delimiters: the comma, the full stop, and the word &ldquo;BUT&rdquo; (the last undocumented by Weizenbaum).'));
         box.appendChild(row('WORDS', T.words.map(function (w) { return chip(w.raw, DELIMS[w.raw] ? 'delim' : '', null, DELIMS[w.raw] ? 'var(--lamp-amber)' : null); })));
         return box;
       }});
@@ -172,6 +195,17 @@
         ctx.appendChild(el('span', 'lab', 'Keyword'));
         ctx.appendChild(el('span', 'val key', esc(T.keystack[0].word)));
       }
+      // memory queue box, top-right
+      var mem = el('div', 'demo-mem');
+      mem.appendChild(el('span', 'mlab', 'Memory'));
+      if (T.memory && T.memory.length) {
+        var ul = el('ul');
+        T.memory.forEach(function (m) { ul.appendChild(el('li', null, esc(m))); });
+        mem.appendChild(ul);
+      } else {
+        mem.appendChild(el('span', 'empty', 'empty'));
+      }
+      ctx.appendChild(mem);
     }
 
     function show(i) {
@@ -207,7 +241,7 @@
       autoTimer = setInterval(function () { if (cur >= stages.length - 1) stop(); else show(cur + 1); }, 2000);
       renderNav();
     }
-    function stop() { if (autoTimer) { clearInterval(autoTimer); autoTimer = null; renderNav(); } }
+    function stop() { playing = false; if (autoTimer) { clearInterval(autoTimer); autoTimer = null; renderNav(); } }
 
     function run() {
       stop();
@@ -219,6 +253,35 @@
         show(0);
       });
     }
+
+    // replay the whole 1966 CACM conversation on one persistent engine, so memory
+    // accumulates and is recalled, auto-stepping through each line until the end
+    function playCacm() {
+      stop();
+      session = window.ElizaHay.make();
+      playing = true;
+      playIdx = 0;
+      playLine();
+    }
+    function playLine() {
+      if (!playing) return;
+      if (playIdx >= CACM.length) { playing = false; return; }
+      var line = CACM[playIdx++];
+      input.value = line;
+      session.trace(line).then(function (res) {
+        if (!playing) return;
+        T = res; stages = build(T); setCtx(); show(0);
+        autoTimer = setInterval(function () {
+          if (!playing) { clearInterval(autoTimer); autoTimer = null; return; }
+          if (cur >= stages.length - 1) {
+            clearInterval(autoTimer); autoTimer = null;
+            setTimeout(playLine, 1600);   // pause on the reply, then next line
+          } else show(cur + 1);
+        }, 1500);
+        renderNav();
+      });
+    }
+    playBtn.addEventListener('click', playCacm);
 
     document.addEventListener('keydown', function (e) {
       var tag = (e.target && e.target.tagName) || '';

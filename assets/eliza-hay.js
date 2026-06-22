@@ -2053,24 +2053,39 @@ class HayTrace extends nullTracer {
   }
 }
 
+function buildScriptOrThrow() {
+  var r = readScript(CACM_1966_01_DOCTOR_SCRIPT);
+  if (r[0] !== 'success') throw new Error('ELIZA script error: ' + r[0]);
+  return r[1];
+}
+
+// make a persistent ELIZA session: one engine whose memory queue, reply counter
+// and reassembly cycling carry across turns (so a whole conversation can be
+// replayed). session.trace(text) returns the structured trace for one turn,
+// including the current memory queue.
 window.ElizaHay = {
-  trace: async function (text) {
-    var r = readScript(CACM_1966_01_DOCTOR_SCRIPT);
-    if (r[0] !== 'success') throw new Error('ELIZA script error: ' + r[0]);
-    var script = r[1];
-    var tracer = new HayTrace();
-    var eliza = new Eliza(script.rules, script.memoryRule, tracer, 0);
-    var reply = await eliza.response(text);
-    var T = { input: text, cleaned: join(split(elizaUppercase(text))), steps: tracer.steps, keystack: tracer.keystack, output: reply };
-    T.words = split(elizaUppercase(text)).map(function (w) {
-      var has = script.rules.has(w) ? script.rules.get(w) : null;
-      var isKey = !!(has && has.hasTransformation());
-      var sub = has ? has.applyWordSubstitution(w) : w;
-      return { raw: w, sub: (sub !== w ? sub : null), keyword: isKey, rank: has ? has.getPrecedence() : 0 };
-    });
-    // fill the trailing reply text on memory-recall / none steps
-    T.steps.forEach(function (st) { if ((st.kind === 'memory-recall' || st.kind === 'none') && !st.output && !st.text) { if (st.kind === 'none') st.output = reply; else st.text = reply; } });
-    return T;
-  }
+  make: function () {
+    var script = buildScriptOrThrow();
+    var eliza = new Eliza(script.rules, script.memoryRule, new HayTrace(), 0);
+    return {
+      trace: async function (text) {
+        var tracer = new HayTrace();
+        eliza.tracer = tracer;
+        var reply = await eliza.response(text);
+        var T = { input: text, cleaned: join(split(elizaUppercase(text))), steps: tracer.steps, keystack: tracer.keystack, output: reply };
+        T.words = split(elizaUppercase(text)).map(function (w) {
+          var has = script.rules.has(w) ? script.rules.get(w) : null;
+          var isKey = !!(has && has.hasTransformation());
+          var sub = has ? has.applyWordSubstitution(w) : w;
+          return { raw: w, sub: (sub !== w ? sub : null), keyword: isKey, rank: has ? has.getPrecedence() : 0 };
+        });
+        T.steps.forEach(function (st) { if ((st.kind === 'memory-recall' || st.kind === 'none') && !st.output && !st.text) { if (st.kind === 'none') st.output = reply; else st.text = reply; } });
+        T.memory = script.memoryRule.memories.slice();   // current memory queue, oldest first
+        return T;
+      }
+    };
+  },
+  // single-shot trace in a fresh conversation
+  trace: function (text) { return window.ElizaHay.make().trace(text); }
 };
 })();
