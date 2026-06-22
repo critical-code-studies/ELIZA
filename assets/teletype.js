@@ -64,6 +64,7 @@
       if (i < txt.length) {
         el.insertBefore(document.createTextNode(txt.charAt(i)), cursor);
         i++;
+        feed.scrollTop = feed.scrollHeight; // keep the newest line in the window
         var c = txt.charAt(i - 1);
         timer = setTimeout(step, c === ' ' ? speed * 0.6 : speed);
       } else { if (turn.s) lampsOff(); done(); }

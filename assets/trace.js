@@ -30,7 +30,8 @@
     });
     app.appendChild(egs);
 
-    var stageWrap = el('div', 'stages'); app.appendChild(stageWrap);
+    var viewport = el('div', 'stage-viewport');
+    var stageWrap = el('div', 'stages'); viewport.appendChild(stageWrap); app.appendChild(viewport);
     var nav = el('div', 'trace-nav'); app.appendChild(nav);
 
     var stages = [], shown = 0, autoTimer = null;
@@ -158,9 +159,14 @@
         var body = el('div', 'stage-body'); body.appendChild(st.node()); card.appendChild(body);
         stageWrap.appendChild(card);
       });
-      // scroll newest into view
+      // move the current stage up into the reading window; older/newer stages
+      // scroll out past the faded top/bottom edges of the box
       var on = stageWrap.querySelectorAll('.stage.on');
-      if (on.length) on[on.length - 1].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      if (on.length) {
+        var cur = on[on.length - 1];
+        var top = cur.offsetTop - 80;          // headroom below the top fade
+        viewport.scrollTo({ top: top < 0 ? 0 : top, behavior: 'smooth' });
+      }
       renderNav();
     }
 

@@ -148,9 +148,10 @@ a:hover { color: var(--bright); text-shadow: var(--glow); }
 .hero-panel {
   background: linear-gradient(135deg, rgba(18,20,25,0.90), rgba(18,20,25,0.70));
   border: 1px solid var(--line-soft); border-radius: 9px;
-  padding: clamp(1.3rem, 3.5vw, 2.4rem) clamp(1.3rem, 3.5vw, 2.6rem);
+  padding: clamp(1rem, 2.2vw, 1.5rem) clamp(1.3rem, 3.5vw, 2.6rem) clamp(1.4rem, 3.5vw, 2.4rem);
   backdrop-filter: blur(2px); max-width: 660px;
 }
+.hero-panel .boot { margin-bottom: 1rem; }
 @media (min-width: 900px) {
   .hero .wrap { display: flex; justify-content: flex-end; }
   .hero-panel { margin-left: auto; }
@@ -186,7 +187,10 @@ a:hover { color: var(--bright); text-shadow: var(--glow); }
 /* the foreground teletype feed in the hero */
 .tt {
   margin-top: 1.6rem; font-family: var(--mono); font-size: clamp(0.8rem, 2vw, 0.95rem); line-height: 1.5;
-  max-width: 60ch; min-height: 7.5em;
+  max-width: 60ch; height: 9em; overflow: hidden;
+  /* a reading window: older lines fade out as they scroll up past the top edge */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 2.4em, #000 100%);
+          mask-image: linear-gradient(to bottom, transparent 0, #000 2.4em, #000 100%);
 }
 .tt-line { margin: 0.1rem 0; white-space: pre-wrap; }
 .tt-line.you { color: var(--you); }
@@ -370,7 +374,15 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .eg { background: rgba(232,228,218,0.04); border: 1px solid var(--line-soft); border-radius: 20px; color: var(--ink-dim); font-family: var(--mono); font-size: 0.72rem; padding: 0.3rem 0.8rem; cursor: pointer; }
 .eg:hover { border-color: var(--beam); color: var(--bright); }
 
-.stages { margin-top: 2rem; display: flex; flex-direction: column; gap: 0; }
+/* the reading window: stages scroll up through this box; everything past the
+   top and bottom edges is faded out (dimmed "outside the box") */
+.stage-viewport {
+  position: relative; margin-top: 1.8rem;
+  max-height: 60vh; overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 70px, #000 calc(100% - 44px), transparent 100%);
+          mask-image: linear-gradient(to bottom, transparent 0, #000 70px, #000 calc(100% - 44px), transparent 100%);
+}
+.stages { padding: 70px 0 44px; display: flex; flex-direction: column; gap: 0; }
 .stage { border-left: 2px solid var(--line-soft); padding: 0 0 1.6rem 1.6rem; margin-left: 0.8rem; position: relative; opacity: 0.25; filter: blur(0.4px); transition: opacity 0.4s ease, filter 0.4s ease; }
 .stage.on { opacity: 1; filter: none; }
 .stage:last-child { padding-bottom: 0; }
