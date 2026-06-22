@@ -81,6 +81,10 @@
     holder.appendChild(frame);
     overlay.appendChild(holder);
     document.body.appendChild(overlay);
+    // give focus to the ELIZA panel so you can type straight away
+    function focusFrame() { try { frame.focus(); if (frame.contentWindow) frame.contentWindow.focus(); } catch (e) {} }
+    frame.addEventListener('load', focusFrame);
+    setTimeout(focusFrame, 250);
     function shut() { if (!open) return; open = false; overlay.remove(); }
     close.addEventListener('click', shut);
     overlay.addEventListener('click', function (e) { if (e.target === overlay) shut(); });
