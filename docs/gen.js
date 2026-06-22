@@ -13,6 +13,7 @@ fs.mkdirSync(BLOGDIR, { recursive: true });
 // this as a version to bump, and do NOT bump the VERSION file or tag releases
 // for this repo (David's instruction, 2026-06-22).
 const V = new Date().toISOString().replace(/[^0-9]/g, '').slice(0, 12);
+const SITE = 'https://critical-code-studies.github.io/ELIZA';
 
 // ---- shared chrome ----------------------------------------------------------
 function nav(depth) {
@@ -62,6 +63,16 @@ function page(opts) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${opts.title} · ELIZA (1966)</title>
   <meta name="description" content="${opts.desc}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ELIZA Archaeology Project">
+  <meta property="og:title" content="${opts.title} · ELIZA (1966)">
+  <meta property="og:description" content="${opts.desc}">
+  <meta property="og:image" content="${SITE}/assets/images/share-card.png?v=${V}">
+  <meta property="og:url" content="${SITE}/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${opts.title} · ELIZA (1966)">
+  <meta name="twitter:description" content="${opts.desc}">
+  <meta name="twitter:image" content="${SITE}/assets/images/share-card.png?v=${V}">
   <link rel="icon" type="image/svg+xml" href="${p}assets/favicon.svg?v=${V}">
   <link rel="stylesheet" href="${p}assets/css/site.css?v=${V}">
   <script src="${p}assets/nav.js?v=${V}" defer></script>
@@ -175,7 +186,7 @@ const homeBody = `
 `;
 
 write('index.html', page({
-  title: 'The first chatbot, read as code',
+  title: 'The first chatbot',
   desc: 'A Critical Code Studies reading of ELIZA, Joseph Weizenbaum’s 1966 chatbot, built on the original source recovered from the MIT archive.',
   hero: homeHero, body: homeBody,
   scripts: ['source-wall.js', 'teletype.js']
@@ -379,8 +390,7 @@ write('how.html', page({
   title: 'How it works', desc: 'Type a phrase and watch ELIZA process it step by step through the genuine DOCTOR script: keywords, ranking, decomposition and reassembly.',
   scripts: ['trace.js'],
   body: `
-      <span class="kicker">How it works</span>
-      <h1 class="page">Watch ELIZA think</h1>
+      <h1 class="page">How it works</h1>
       <div class="lede"><p>Type a sentence and step through exactly what ELIZA does with it.</p></div>
       <div id="trace-app"></div>
       <div class="rule">WHY THIS MATTERS</div>
