@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The first chatbot, read as code · ELIZA (1966)</title>
+  <meta name="description" content="A Critical Code Studies reading of ELIZA, Joseph Weizenbaum’s 1966 chatbot, built on the original source recovered from the MIT archive.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/css/site.css?v=2">
+  <script src="assets/nav.js?v=2" defer></script>
+  <script src="assets/eliza.js?v=2" defer></script>
+  <script src="assets/term.js?v=2" defer></script>
+  <script src="assets/source-wall.js?v=2" defer></script>
+  <script src="assets/teletype.js?v=2" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html" aria-label="ELIZA home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="6" cy="9" r="3" fill="#e1542e"/><circle cx="16" cy="9" r="3" fill="#f0a83a"/><circle cx="26" cy="9" r="3" fill="#59c08a"/><path d="M5 18 L12 23 L5 28" fill="none" stroke="#e8e3d7" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><rect x="16" y="25" width="11" height="3" rx="0.8" fill="#ef6f44"/></svg>
+        <span class="brand-block"><span class="brand-text">ELIZA</span><span class="brand-tagline">Critical Code Studies · MIT · 1966</span></span>
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span class="bars" aria-hidden="true">&#9776;</span>&nbsp;Menu</button>
+      <nav class="site-nav" id="site-nav">
+        <div class="nav-group">
+          <button class="nav-top" aria-expanded="false">Main <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu">
+            <a href="index.html">Home</a><a href="about.html">About</a><a href="try.html">Try ELIZA</a><a href="bibliography.html">Bibliography</a><a href="links.html">Links</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button class="nav-top" aria-expanded="false">ELIZA <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu">
+            <a href="overview.html">Overview</a><a href="doctor.html">The DOCTOR script</a><a href="versions.html">The versions</a><a href="book.html">The book</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button class="nav-top" aria-expanded="false">The code <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu"><a href="code.html">The program</a><a href="doctor.html">The DOCTOR script</a></div>
+        </div>
+        <a class="nav-top nav-direct" href="blog.html">Blog</a>
+        <a class="nav-top nav-direct" href="people.html">People</a>
+        <a class="nav-top nav-direct" href="talks.html">Talks</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <canvas id="sourcewall" aria-hidden="true"></canvas>
+    <div class="hero-inner">
+      <div class="wrap">
+        <p class="boot">CTSS // IBM 7094 // PROJECT MAC // 1966<span class="cursor" aria-hidden="true"></span></p>
+        <h1>ELIZA</h1>
+        <p class="sub">The first chatbot, read as code</p>
+        <p class="tagline">In 1966 Joseph Weizenbaum gave people their first conversation with a machine. In 2021 we found its lost source code. This is a close reading of ELIZA: its program, its DOCTOR script, its many versions, and what it still tells us about artificial intelligence.</p>
+        <div class="lampbank" aria-hidden="true">
+          <span class="lab">7094</span>
+          <span class="lamp r"></span><span class="lamp"></span><span class="lamp g"></span><span class="lamp b"></span><span class="lamp"></span><span class="lamp r"></span><span class="lamp g"></span><span class="lamp"></span><span class="lamp b"></span><span class="lamp r"></span>
+        </div>
+        <div class="tt" id="tt-feed" aria-hidden="true"></div>
+        <div class="hero-actions">
+          <a class="btn" href="try.html">Talk to ELIZA</a>
+          <a class="btn ghost" href="overview.html">Start reading</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <main class="wrap content">
+
+    <section class="block lede">
+      <span class="kicker">The ELIZA Archaeology Project</span>
+      <p>ELIZA was a small program with an enormous afterlife. Written in MAD-SLIP on MIT&rsquo;s Compatible Time-Sharing System, it let a person type ordinary English and receive a reply that seemed to understand. People confided in it. Weizenbaum spent the rest of his life warning us not to.</p>
+    </section>
+
+    <section class="block">
+      <h2>What this site is</h2>
+      <p>This is an interdisciplinary investigation of ELIZA as a cultural and technical artifact, built around the original source code we recovered from Weizenbaum&rsquo;s papers in the MIT archive in 2021. We read the code, the DOCTOR script, the hardware it ran on, and the long shadow it cast over how we talk about thinking machines.</p>
+      <p>It is a companion to the Critical Code Studies group&rsquo;s readings of <a href="https://critical-code-studies.github.io/SHRDLU/">SHRDLU</a> (1968&ndash;70) and Spacewar! (1962), and the public face of the collectively authored book <a href="book.html"><em>Inventing ELIZA</em></a> (MIT Press).</p>
+      <div class="grid">
+        <div class="card r"><p class="obj">Read</p><h3><a href="overview.html">Overview</a></h3><p>What ELIZA actually was, and why DOCTOR is not the same thing as ELIZA.</p></div>
+        <div class="card b"><p class="obj">The code</p><h3><a href="code.html">The program</a></h3><p>A close reading of the recovered MAD-SLIP source, line by line.</p></div>
+        <div class="card y"><p class="obj">The script</p><h3><a href="doctor.html">DOCTOR</a></h3><p>Weizenbaum&rsquo;s Rogerian therapist script, and how its patterns work.</p></div>
+        <div class="card g"><p class="obj">Talk</p><h3><a href="try.html">Try ELIZA</a></h3><p>A faithful re-creation that runs the genuine 1966 script in your browser.</p></div>
+      </div>
+    </section>
+
+    <div class="rule">FROM ITS CODE TO ITS IMPACT ON TECHNOCULTURE</div>
+
+    <section class="block">
+      <h2>ELIZA is a multiplicity</h2>
+      <p>For sixty years a proliferation of BASIC and Lisp copies treated the DOCTOR therapy script as if it were ELIZA itself, rather than one demonstration of a general-purpose system. The archive tells a richer story: at least five major versions between 1965 and 1968, and scripts far beyond DOCTOR, from arithmetic tutoring to a Nixon parody.</p>
+      <div class="stat-strip">
+        <div class="stat"><div class="n">1966</div><div class="l">CACM paper</div></div>
+        <div class="stat"><div class="n">~420</div><div class="l">lines of MAD-SLIP</div></div>
+        <div class="stat"><div class="n">5+</div><div class="l">known versions</div></div>
+        <div class="stat"><div class="n">2021</div><div class="l">source recovered</div></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="cover-note">
+        <span class="kicker">Out 14 July 2026 &middot; MIT Press</span>
+        <h2>Inventing ELIZA</h2>
+        <p>How the First Chatbot Shaped the Future of AI. The recovery, the close reading, and the politics of the program, by the full project team. MIT Press, Software Studies series.</p>
+        <p><a href="https://mitpress.mit.edu/9780262052481/inventing-eliza/">Order from MIT Press &rsaquo;</a> &nbsp; <a href="book.html">About the book &rsaquo;</a></p>
+      </div>
+    </section>
+
+    <section class="block callout">
+      <span class="kicker">Hidden in the machine</span>
+      <p>Somewhere on this site the DOCTOR is still listening. If you find her, she will answer in the words of the genuine 1966 script. Nothing you say leaves your browser.</p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="micro">The ELIZA Archaeology Project ,  a Critical Code Studies reading of ELIZA (Joseph Weizenbaum, MIT, 1966), companion to the readings of <a href="https://critical-code-studies.github.io/SHRDLU/">SHRDLU</a> and <a href="https://spacewar1962.github.io/spacewar/">Spacewar!</a>. Source: <a href="https://github.com/critical-code-studies/ELIZA">github.com/critical-code-studies/ELIZA</a>. All project documents &copy; 2024&ndash;2026 the authors, except where indicated.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

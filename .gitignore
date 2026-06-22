@@ -1,0 +1,5 @@
+.DS_Store
+*.log
+
+# private working notes (not for publication)
+docs/*research-brief*.md

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Try ELIZA · ELIZA (1966)</title>
+  <meta name="description" content="Talk to a faithful re-creation of the 1966 ELIZA, running the genuine DOCTOR script in your browser.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/css/site.css?v=2">
+  <script src="assets/nav.js?v=2" defer></script>
+  <script src="assets/eliza.js?v=2" defer></script>
+  <script src="assets/term.js?v=2" defer></script>
+
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html" aria-label="ELIZA home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="6" cy="9" r="3" fill="#e1542e"/><circle cx="16" cy="9" r="3" fill="#f0a83a"/><circle cx="26" cy="9" r="3" fill="#59c08a"/><path d="M5 18 L12 23 L5 28" fill="none" stroke="#e8e3d7" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><rect x="16" y="25" width="11" height="3" rx="0.8" fill="#ef6f44"/></svg>
+        <span class="brand-block"><span class="brand-text">ELIZA</span><span class="brand-tagline">Critical Code Studies · MIT · 1966</span></span>
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span class="bars" aria-hidden="true">&#9776;</span>&nbsp;Menu</button>
+      <nav class="site-nav" id="site-nav">
+        <div class="nav-group">
+          <button class="nav-top" aria-expanded="false">Main <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu">
+            <a href="index.html">Home</a><a href="about.html">About</a><a href="try.html">Try ELIZA</a><a href="bibliography.html">Bibliography</a><a href="links.html">Links</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button class="nav-top" aria-expanded="false">ELIZA <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu">
+            <a href="overview.html">Overview</a><a href="doctor.html">The DOCTOR script</a><a href="versions.html">The versions</a><a href="book.html">The book</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button class="nav-top" aria-expanded="false">The code <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu"><a href="code.html">The program</a><a href="doctor.html">The DOCTOR script</a></div>
+        </div>
+        <a class="nav-top nav-direct" href="blog.html">Blog</a>
+        <a class="nav-top nav-direct" href="people.html">People</a>
+        <a class="nav-top nav-direct" href="talks.html">Talks</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap content" style="padding-top:3rem;">
+    <article class="block">
+
+      <span class="kicker">Try ELIZA</span>
+      <h1 class="page">Talk to ELIZA</h1>
+      <div class="lede"><p>This is ELIZA running the genuine 1966 DOCTOR script: keyword ranking, decomposition and reassembly, equivalences, the memory rule, and the &ldquo;certain counting mechanism&rdquo; the recovered source revealed. Type a sentence and press enter.</p></div>
+      <p>Your conversation is private to your machine. Nothing you type is sent anywhere. Try opening with a feeling, or tell ELIZA about your mother. Type <code>*help</code> for the handful of commands.</p>
+      <div id="try-eliza-mount"></div>
+      <p class="post-meta" style="margin-top:1.4rem">A faithful re-implementation in JavaScript, after the algorithm in Weizenbaum (1966) and the recovered MAD-SLIP source. It reproduces the canonical 1966 conversation.</p>
+
+      <div class="rule">THE COMPREHENSIVE VERSION</div>
+      <section class="block">
+        <h2>Anthony Hay&rsquo;s ELIZA</h2>
+        <p>For the definitive recreation, Anthony Hay&rsquo;s ELIZA reproduces the original MAD-SLIP program&rsquo;s behaviour exactly, down to the bugs, with full tracing, the original asterisk commands, the 1966 CACM replay, and the ability to load your own Weizenbaum-format scripts. It runs in the browser and is the most accurate ELIZA you can talk to.</p>
+        <div class="hero-actions"><a class="btn" href="https://anthay.github.io/eliza.html">Open the comprehensive ELIZA</a><a class="btn ghost" href="https://github.com/anthay/ELIZA">Source on GitHub</a></div>
+      </section>
+
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="micro">The ELIZA Archaeology Project ,  a Critical Code Studies reading of ELIZA (Joseph Weizenbaum, MIT, 1966), companion to the readings of <a href="https://critical-code-studies.github.io/SHRDLU/">SHRDLU</a> and <a href="https://spacewar1962.github.io/spacewar/">Spacewar!</a>. Source: <a href="https://github.com/critical-code-studies/ELIZA">github.com/critical-code-studies/ELIZA</a>. All project documents &copy; 2024&ndash;2026 the authors, except where indicated.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

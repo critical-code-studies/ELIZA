@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The DOCTOR script · ELIZA (1966)</title>
+  <meta name="description" content="Weizenbaum’s Rogerian therapist script for ELIZA, and how its keyword patterns work.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/css/site.css?v=2">
+  <script src="assets/nav.js?v=2" defer></script>
+  <script src="assets/eliza.js?v=2" defer></script>
+  <script src="assets/term.js?v=2" defer></script>
+
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html" aria-label="ELIZA home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="6" cy="9" r="3" fill="#e1542e"/><circle cx="16" cy="9" r="3" fill="#f0a83a"/><circle cx="26" cy="9" r="3" fill="#59c08a"/><path d="M5 18 L12 23 L5 28" fill="none" stroke="#e8e3d7" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><rect x="16" y="25" width="11" height="3" rx="0.8" fill="#ef6f44"/></svg>
+        <span class="brand-block"><span class="brand-text">ELIZA</span><span class="brand-tagline">Critical Code Studies · MIT · 1966</span></span>
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span class="bars" aria-hidden="true">&#9776;</span>&nbsp;Menu</button>
+      <nav class="site-nav" id="site-nav">
+        <div class="nav-group">
+          <button class="nav-top" aria-expanded="false">Main <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu">
+            <a href="index.html">Home</a><a href="about.html">About</a><a href="try.html">Try ELIZA</a><a href="bibliography.html">Bibliography</a><a href="links.html">Links</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button class="nav-top" aria-expanded="false">ELIZA <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu">
+            <a href="overview.html">Overview</a><a href="doctor.html">The DOCTOR script</a><a href="versions.html">The versions</a><a href="book.html">The book</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button class="nav-top" aria-expanded="false">The code <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu"><a href="code.html">The program</a><a href="doctor.html">The DOCTOR script</a></div>
+        </div>
+        <a class="nav-top nav-direct" href="blog.html">Blog</a>
+        <a class="nav-top nav-direct" href="people.html">People</a>
+        <a class="nav-top nav-direct" href="talks.html">Talks</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap content" style="padding-top:3rem;">
+    <article class="block">
+
+      <span class="kicker">The code</span>
+      <h1 class="page">The DOCTOR script</h1>
+      <div class="lede"><p>DOCTOR is the script that made ELIZA famous. It is a list of keywords, each with patterns for taking apart what you say and templates for putting a reply back together. Feed ELIZA this script and it answers like a Rogerian therapist.</p></div>
+
+      <h2>How a rule works</h2>
+      <p>Each keyword carries a rank and a set of rules. A <em>decomposition</em> pattern splits your sentence into numbered parts; a <em>reassembly</em> template builds a reply from those parts. Take the keyword <code>ALIKE</code>, ranked high so it wins over ordinary words:</p>
+      <pre class="listing">(ALIKE 10 (=DIT))
+
+(DIT
+    ((0)
+        (IN WHAT WAY)
+        (WHAT RESEMBLANCE DO YOU SEE)
+        (WHAT DOES THAT SIMILARITY SUGGEST TO YOU)))</pre>
+      <p>Say &ldquo;Men are all alike&rdquo; and <code>ALIKE</code> fires, hands off to <code>DIT</code>, and ELIZA replies &ldquo;IN WHAT WAY&rdquo;. The next time, it cycles to the following template. The famous opening of Weizenbaum&rsquo;s paper is nothing more than this.</p>
+
+      <h2>The canonical conversation</h2>
+      <p>This is the exchange Weizenbaum printed in the 1966 CACM paper. Every ELIZA line is produced by the rules in the DOCTOR script. <a href="try.html">Try it yourself &rsaquo;</a></p>
+      <div class="dialogue">
+        <div class="turn person"><span class="who">You</span><span class="msg">Men are all alike.</span></div>
+        <div class="turn eliza"><span class="who">ELIZA</span><span class="msg">IN WHAT WAY</span></div>
+        <div class="turn person"><span class="who">You</span><span class="msg">They're always bugging us about something or other.</span></div>
+        <div class="turn eliza"><span class="who">ELIZA</span><span class="msg">CAN YOU THINK OF A SPECIFIC EXAMPLE</span></div>
+        <div class="turn person"><span class="who">You</span><span class="msg">Well, my boyfriend made me come here.</span></div>
+        <div class="turn eliza"><span class="who">ELIZA</span><span class="msg">YOUR BOYFRIEND MADE YOU COME HERE</span></div>
+        <div class="turn person"><span class="who">You</span><span class="msg">He says I'm depressed much of the time.</span></div>
+        <div class="turn eliza"><span class="who">ELIZA</span><span class="msg">I AM SORRY TO HEAR YOU ARE DEPRESSED</span></div>
+        <div class="turn person"><span class="who">You</span><span class="msg">It's true. I am unhappy.</span></div>
+        <div class="turn eliza"><span class="who">ELIZA</span><span class="msg">DO YOU THINK COMING HERE WILL HELP YOU NOT TO BE UNHAPPY</span></div>
+        <div class="turn person"><span class="who">You</span><span class="msg">I need some help, that much seems certain.</span></div>
+        <div class="turn eliza"><span class="who">ELIZA</span><span class="msg">WHAT WOULD IT MEAN TO YOU IF YOU GOT SOME HELP</span></div>
+        <div class="turn person"><span class="who">You</span><span class="msg">Perhaps I could learn to get along with my mother.</span></div>
+        <div class="turn eliza"><span class="who">ELIZA</span><span class="msg">TELL ME MORE ABOUT YOUR FAMILY</span></div>
+        <div class="turn person"><span class="who">You</span><span class="msg">My mother takes care of me.</span></div>
+        <div class="turn eliza"><span class="who">ELIZA</span><span class="msg">WHO ELSE IN YOUR FAMILY TAKES CARE OF YOU</span></div>
+        <div class="turn person"><span class="who">You</span><span class="msg">You are like my father in some ways.</span></div>
+        <div class="turn eliza"><span class="who">ELIZA</span><span class="msg">WHAT RESEMBLANCE DO YOU SEE</span></div>
+      </div>
+
+      <h2>Three scripts, one in progress</h2>
+      <p>There are three known contemporaneous DOCTOR scripts: the one published as an appendix to the 1966 paper, and two more (<code>.TAPE. 102</code> and <code>.TAPE. 100</code>) on a printout in Weizenbaum&rsquo;s archive. They are clearly successive drafts: keywords gained extra replies, a misplaced line was fixed, redirects were simplified. The script was built incrementally, almost without a plan, each change improving ELIZA&rsquo;s ability to conceal its lack of understanding. <a href="blog/post.html?p=8-the-doctor-script-a-work-in-progress">The DOCTOR script, a work in progress &rsaquo;</a></p>
+
+      <div class="callout"><span class="kicker">Memory</span><p>One special rule, <code>MEMORY</code>, watches for when you mention something that is &ldquo;yours&rdquo;, stores a transformed version of it, and brings it back later (&ldquo;EARLIER YOU SAID YOUR&hellip;&rdquo;). It is the closest DOCTOR comes to keeping track of a conversation.</p></div>
+
+      <p class="post-meta" style="margin-top:2rem">The full DOCTOR script is transcribed in the <a href="https://github.com/critical-code-studies/ELIZA">repository</a> (<code>DOCTOR.txt</code>), from the CACM appendix, transcribed by Anthony Hay.</p>
+
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="micro">The ELIZA Archaeology Project ,  a Critical Code Studies reading of ELIZA (Joseph Weizenbaum, MIT, 1966), companion to the readings of <a href="https://critical-code-studies.github.io/SHRDLU/">SHRDLU</a> and <a href="https://spacewar1962.github.io/spacewar/">Spacewar!</a>. Source: <a href="https://github.com/critical-code-studies/ELIZA">github.com/critical-code-studies/ELIZA</a>. All project documents &copy; 2024&ndash;2026 the authors, except where indicated.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+[
+  {
+    "n": 1,
+    "slug": "1-a-certain-counting-mechanism",
+    "title": "A certain counting mechanism",
+    "date": "11 January 2024",
+    "author": "Anthony Hay"
+  },
+  {
+    "n": 2,
+    "slug": "2-talking-to-eliza-on-an-asr-33-teletype",
+    "title": "Talking to ELIZA on an ASR 33 Teletype",
+    "date": "15 March 2024",
+    "author": "Anthony Hay"
+  },
+  {
+    "n": 3,
+    "slug": "3-weizenbaums-secretary",
+    "title": "Weizenbaum's Secretary",
+    "date": "20 March 2024",
+    "author": "David M. Berry and Sarah Ciston"
+  },
+  {
+    "n": 4,
+    "slug": "4-judging-computation",
+    "title": "Judging Computation",
+    "date": "12 June 2024",
+    "author": "David M. Berry"
+  },
+  {
+    "n": 5,
+    "slug": "5-eliza-version-variation",
+    "title": "ELIZA Version Variation",
+    "date": "22 July 2024",
+    "author": "David M. Berry"
+  },
+  {
+    "n": 6,
+    "slug": "6-elliza-the-original-chatbot-applied-like-a-modern-llm",
+    "title": "ELLIZA: The Original Chatbot Applied Like a Modern LLM",
+    "date": "9 September 2024",
+    "author": "Jeff Shrager"
+  },
+  {
+    "n": 7,
+    "slug": "7-guest-post-berkeley-and-weizenbaum",
+    "title": "Edmund Berkeley and Joseph Weizenbaum",
+    "date": "20 November 2024",
+    "author": "Rebecca Roach (guest post)"
+  },
+  {
+    "n": 8,
+    "slug": "8-the-doctor-script-a-work-in-progress",
+    "title": "The DOCTOR script: a work in progress",
+    "date": "9 December 2024",
+    "author": "Anthony Hay"
+  },
+  {
+    "n": 9,
+    "slug": "9-guest-post-the-software-toolworks-eliza",
+    "title": "The Software Toolworks' ELIZA",
+    "date": "16 January 2025",
+    "author": "Walt Bilofsky (guest post)"
+  },
+  {
+    "n": 10,
+    "slug": "10-reconstructing-eliza",
+    "title": "Reconstructing ELIZA",
+    "date": "25 January 2025",
+    "author": "David M. Berry and Sarah Ciston"
+  },
+  {
+    "n": 11,
+    "slug": "11-the-plurality-of-eliza",
+    "title": "The Plurality of ELIZA: Code, History, and Computing’s Amnesia",
+    "date": "8 December 2025",
+    "author": "David M. Berry, Sarah Ciston, Anthony Hay, Mark C. Marino, Arthur Schwarz, Jeff Shrager, Peggy Weil and Peter Millican"
+  }
+]

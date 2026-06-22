@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The program · ELIZA (1966)</title>
+  <meta name="description" content="A close reading of the recovered ELIZA MAD-SLIP source code.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/css/site.css?v=2">
+  <script src="assets/nav.js?v=2" defer></script>
+  <script src="assets/eliza.js?v=2" defer></script>
+  <script src="assets/term.js?v=2" defer></script>
+
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html" aria-label="ELIZA home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="6" cy="9" r="3" fill="#e1542e"/><circle cx="16" cy="9" r="3" fill="#f0a83a"/><circle cx="26" cy="9" r="3" fill="#59c08a"/><path d="M5 18 L12 23 L5 28" fill="none" stroke="#e8e3d7" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><rect x="16" y="25" width="11" height="3" rx="0.8" fill="#ef6f44"/></svg>
+        <span class="brand-block"><span class="brand-text">ELIZA</span><span class="brand-tagline">Critical Code Studies · MIT · 1966</span></span>
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span class="bars" aria-hidden="true">&#9776;</span>&nbsp;Menu</button>
+      <nav class="site-nav" id="site-nav">
+        <div class="nav-group">
+          <button class="nav-top" aria-expanded="false">Main <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu">
+            <a href="index.html">Home</a><a href="about.html">About</a><a href="try.html">Try ELIZA</a><a href="bibliography.html">Bibliography</a><a href="links.html">Links</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button class="nav-top" aria-expanded="false">ELIZA <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu">
+            <a href="overview.html">Overview</a><a href="doctor.html">The DOCTOR script</a><a href="versions.html">The versions</a><a href="book.html">The book</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button class="nav-top" aria-expanded="false">The code <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu"><a href="code.html">The program</a><a href="doctor.html">The DOCTOR script</a></div>
+        </div>
+        <a class="nav-top nav-direct" href="blog.html">Blog</a>
+        <a class="nav-top nav-direct" href="people.html">People</a>
+        <a class="nav-top nav-direct" href="talks.html">Talks</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap content" style="padding-top:3rem;">
+    <article class="block">
+
+      <span class="kicker">The code</span>
+      <h1 class="page">The program</h1>
+      <div class="lede"><p>ELIZA was written in MAD-SLIP: the MAD procedural language, extended with SLIP, Weizenbaum&rsquo;s own Symmetric List Processor for handling lists. The recovered listing is about 420 lines. Reading it is an exercise in software archaeology.</p></div>
+
+      <h2>MAD, abbreviated</h2>
+      <p>MAD is a procedural language in the FORTRAN family, but with wordy keywords that programmers shortened: <code>W'R</code> for <code>WHENEVER</code>, <code>T'O</code> for <code>TRANSFER TO</code>, <code>T'H</code> for <code>THROUGH</code>. These contractions made sense at a teletype in 1965; decades later they are part of what makes the code hard to read. CTSS itself stored text in 6-bit BCD, packing six characters into a 36-bit word, a reminder of computing before ASCII was standard.</p>
+
+      <h2>The heart of the loop</h2>
+      <p>The main ELIZA function reads a sentence, hashes each word to find a keyword in the <code>KEY</code> table, matches the sentence with <code>YMATCH</code> (decomposition), and builds a reply with <code>ASSMBL</code> (reassembly). When nothing matches, it falls back to one of four holding phrases:</p>
+      <pre class="listing"><span class="seq">        </span><span class="lbl">ELIZA</span>   <span class="kw">MAD</span>
+            <span class="kw">EXTERNAL FUNCTION</span> (MYTRAN,KEY)
+            <span class="kw">NORMAL MODE IS INTEGER</span>
+            <span class="kw">PRINT COMMENT</span> <span class="str">$WHICH SCRIPT DO YOU WISH TO PLAY$</span>
+<span class="lbl">START</span>       LISTRD.(MTLIST.(INPUT),0)
+            T'H SCAN, FOR WORD=POPTOP.(INPUT)
+                I=<span class="kw">HASH</span>.(WORD,5)
+                <span class="kw">W'R</span> LISTMT.(KEY(I)) .NE. 0, <span class="kw">T'O</span> SCAN
+                S=SEQRDR.(KEY(I))
+<span class="lbl">FOUND</span>       KEYWRD=SEQLR.(S,F)
+<span class="lbl">TRY</span>         <span class="kw">W'R</span> YMATCH.(TOP.(ES),INPUT,MTLIST.(TEST)) .E. 0, <span class="kw">T'O</span> MATCH
+<span class="lbl">MATCH</span>       ASSMBL.(REASMB,TEST,OUTPUT)
+            TPRINT.(OUTPUT,0)
+            <span class="kw">T'O</span> START
+<span class="lbl">NOMATCH(1)</span>  <span class="kw">PRINT COMMENT</span> <span class="str">$PLEASE CONTINUE $</span>
+<span class="lbl">NOMATCH(2)</span>  <span class="kw">PRINT COMMENT</span> <span class="str">$HMMM $</span>
+<span class="lbl">NOMATCH(3)</span>  <span class="kw">PRINT COMMENT</span> <span class="str">$GO ON , PLEASE $</span>
+<span class="lbl">NOMATCH(4)</span>  <span class="kw">PRINT COMMENT</span> <span class="str">$I SEE $</span></pre>
+      <p class="post-meta" style="margin-top:1rem">Excerpt, ELIZA-1965b.mad. The full recovered source is in the <a href="https://github.com/critical-code-studies/ELIZA">repository</a> and the <a href="https://hdl.handle.net/1721.3/201699">MIT archive</a>.</p>
+
+      <h2>What the code revealed</h2>
+      <p>Some things in the source were never explained in the published paper.</p>
+      <div class="callout"><span class="kicker">The certain counting mechanism</span><p>Weizenbaum wrote that a memory is recalled when &ldquo;a certain counting mechanism is in a particular state&rdquo;, and implied the choice was random. The source shows otherwise: a counter cycles 1&ndash;4 through the replies, and only on 4 is a memory recalled; the memory template is chosen by a hash of the last word you typed. Nothing random about it. <a href="blog/post.html?p=1-a-certain-counting-mechanism">Read more &rsaquo;</a></p></div>
+
+      <div class="callout"><span class="kicker">PLEASE INSTRUCT ME</span><p>The recovered version contains a <code>CHANGE</code> function, an interactive editor that let a user rewrite ELIZA&rsquo;s script while it was running. It was barely mentioned in the 1966 paper and seems to have been lost from every later version. It anticipates, by decades, the idea of a system you reshape by talking to it.</p></div>
+
+      <h2>Reconstruction</h2>
+      <p>Several functions were missing from the recovered listing and had to be carefully rebuilt: <code>BCDIT</code> (binary to BCD), <code>INLST</code> (used by matching and assembly), <code>LETTER</code> (character classification), and various initialisation routines. The reconstructed ELIZA now runs on an emulated CTSS. As the team behind the emulation put it, &ldquo;running the original code feels good and authentic. Finding bugs in it only adds to the authenticity.&rdquo; <a href="blog/post.html?p=10-reconstructing-eliza">On reconstruction &rsaquo;</a></p>
+
+      <div class="rule">METHOD</div>
+      <p>We read the source the way Critical Code Studies reads any code: as a text, within its historical and material context, where naming, structure and even bugs carry meaning. The command vocabulary of the editor (<code>TYPE</code>, <code>SUBST</code>, <code>APPEND</code>, <code>ADD</code>, <code>START</code>, <code>RANK</code>, <code>DISPLA</code>) is a small grammar of power; the iteration over a fixed table is a trace of the machine&rsquo;s limits. <a href="https://electronicbookreview.com/essay/reading-eliza-critical-code-studies-in-action/">Reading ELIZA: CCS in Action &rsaquo;</a></p>
+
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="micro">The ELIZA Archaeology Project ,  a Critical Code Studies reading of ELIZA (Joseph Weizenbaum, MIT, 1966), companion to the readings of <a href="https://critical-code-studies.github.io/SHRDLU/">SHRDLU</a> and <a href="https://spacewar1962.github.io/spacewar/">Spacewar!</a>. Source: <a href="https://github.com/critical-code-studies/ELIZA">github.com/critical-code-studies/ELIZA</a>. All project documents &copy; 2024&ndash;2026 the authors, except where indicated.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
