@@ -8,7 +8,7 @@ const OUT = path.join(process.env.HOME, 'Projects', 'eliza');
 const BLOGDIR = path.join(OUT, 'blog');
 fs.mkdirSync(BLOGDIR, { recursive: true });
 
-const V = 11; // asset cache-buster
+const V = 12; // asset cache-buster
 
 // ---- shared chrome ----------------------------------------------------------
 function nav(depth) {
@@ -398,7 +398,7 @@ write('people.html', page({
         ${TEAM.map(([n, r, b]) => `<div class="person-card"><p class="name">${n}</p><p class="role">${r}</p><p>${b}</p></div>`).join('\n        ')}
       </div>
       <div class="rule">WITH THANKS</div>
-      <p>With thanks to guest contributors Rebecca Roach and Walt Bilofsky, to the MIT Libraries and Distinctive Collections, to the Charles Babbage Institute, and to Rupert Lane, Tom Van Vleck and Jerry Saltzer for help understanding CTSS.</p>
+      <p class="micro">With thanks to guest contributors Rebecca Roach and Walt Bilofsky, to the MIT Libraries and Distinctive Collections, to the Charles Babbage Institute, and to Rupert Lane, Tom Van Vleck and Jerry Saltzer for help understanding CTSS.</p>
 `}));
 
 // ---------------------------------------------------------------------------

@@ -1,9 +1,8 @@
-/* trace.js - the step-by-step demo. You type a phrase; it runs the genuine
-   DOCTOR script through assets/eliza.js and reveals, one stage at a time, exactly
-   what ELIZA does: clean the input, scan for keywords and rank them, decompose
-   the sentence into numbered parts, then reassemble those parts into a reply.
-   The point is pedagogical: you watch a mechanical word-shuffle and the "ELIZA
-   effect" evaporates. Mounts into #trace-app. */
+/* trace.js - the step-by-step demo, presented as a stable "machine display":
+   one step shown at a time in a fixed-size screen, advanced with Back / Step
+   (or the arrow keys / Auto-play). You type a phrase; it runs the genuine DOCTOR
+   script through assets/eliza.js and walks through clean -> scan -> rank ->
+   decompose -> reassemble -> reply. No scrolling, no jumpy reveal. */
 (function () {
   function init() {
     var app = document.getElementById('trace-app');
@@ -13,15 +12,13 @@
     function esc(s) { return (s == null ? '' : String(s)).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
     function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
 
-    // ---- controls ----
     var bar = el('div', 'trace-bar');
     var input = el('input', 'trace-input');
     input.type = 'text'; input.value = 'You are like my father in some ways.';
     input.setAttribute('aria-label', 'Phrase to trace');
     input.setAttribute('autocomplete', 'off'); input.setAttribute('spellcheck', 'false');
     var runBtn = el('button', 'btn', 'Trace it');
-    bar.appendChild(input); bar.appendChild(runBtn);
-    app.appendChild(bar);
+    bar.appendChild(input); bar.appendChild(runBtn); app.appendChild(bar);
 
     var egs = el('div', 'trace-egs');
     egs.appendChild(el('span', 'trace-egs-lab', 'try:'));
@@ -30,11 +27,14 @@
     });
     app.appendChild(egs);
 
-    var viewport = el('div', 'stage-viewport');
-    var stageWrap = el('div', 'stages'); viewport.appendChild(stageWrap); app.appendChild(viewport);
-    var nav = el('div', 'trace-nav'); app.appendChild(nav);
+    var demo = el('div', 'demo');
+    var ctx = el('div', 'demo-ctx'); demo.appendChild(ctx);
+    var stageEl = el('div', 'demo-stage'); demo.appendChild(stageEl);
+    var prog = el('div', 'demo-prog'); demo.appendChild(prog);
+    var nav = el('div', 'demo-nav'); demo.appendChild(nav);
+    app.appendChild(demo);
 
-    var stages = [], shown = 0, autoTimer = null;
+    var stages = [], cur = 0, autoTimer = null, T = null;
 
     function chip(text, cls, badge, color) {
       var c = el('span', 'chip' + (cls ? ' ' + cls : ''), esc(text));
@@ -48,11 +48,9 @@
       var box = el('div', 'srow-box'); nodes.forEach(function (n) { box.appendChild(n); }); r.appendChild(box);
       return r;
     }
-
     function patternNode(pattern) {
-      return pattern.map(function (p, i) {
-        var c = el('span', 'pat' + (p.any ? ' any' : '') + (p.set || p.tag ? ' set' : ''), esc(p.any ? p.t + ' (any words)' : p.t));
-        return c;
+      return pattern.map(function (p) {
+        return el('span', 'pat' + (p.any ? ' any' : '') + (p.set || p.tag ? ' set' : ''), esc(p.any ? p.t + ' (any words)' : p.t));
       });
     }
     function compNodes(components) {
@@ -64,22 +62,18 @@
       });
     }
 
-    // ---- build the stage list from a trace ----
     function build(T) {
       var S = [];
-      // 1. input
-      S.push({ title: 'The input', lamp: false, node: function () {
+      S.push({ title: 'The input', node: function () {
         return el('div', 'paper', '<span class="who you">YOU</span>' + esc(T.input));
       }});
-      // 2. clean / tokenise
       S.push({ title: 'Clean and split into words', node: function () {
-        var note = el('p', 'snote', 'Upper-cased, punctuation dropped, split on spaces. ELIZA only ever sees a list of words.');
-        var box = el('div'); box.appendChild(note);
+        var box = el('div');
+        box.appendChild(el('p', 'snote', 'Upper-cased, punctuation dropped, split on spaces. ELIZA only ever sees a list of words.'));
         box.appendChild(row('WORDS', T.words.map(function (w) { return chip(w.raw); })));
         return box;
       }});
-      // 3. substitute + scan
-      S.push({ title: 'Substitute and scan for keywords', lamp: true, node: function () {
+      S.push({ title: 'Substitute and scan for keywords', node: function () {
         var box = el('div');
         box.appendChild(el('p', 'snote', 'Some words are swapped so the reply faces back at you (MY&rarr;YOUR, ME&rarr;YOU, I&rarr;YOU). Each word is looked up; the ones that are keywords are lit, with their rank.'));
         box.appendChild(row('SCAN', T.words.map(function (w) {
@@ -88,7 +82,6 @@
         })));
         return box;
       }});
-      // 4. keystack
       if (T.keystack && T.keystack.length) S.push({ title: 'Rank the keywords', node: function () {
         var box = el('div');
         box.appendChild(el('p', 'snote', 'The keywords are sorted by rank. The highest wins and decides the reply. This is the whole of ELIZA&rsquo;s &ldquo;attention&rdquo;.'));
@@ -98,7 +91,6 @@
         if (T.keystack[0]) box.appendChild(el('p', 'swin', 'Winner: <b>' + esc(T.keystack[0].word) + '</b>'));
         return box;
       }});
-      // 5. each processing step
       T.steps.forEach(function (st) {
         if (st.kind === 'decompose') S.push({ title: 'Decompose with ' + st.keyword, node: function () {
           var box = el('div');
@@ -116,9 +108,9 @@
           box.appendChild(row('REBUILT', st.rebuilt.map(function (w) { return chip(w); })));
           return box;
         }});
-        else if (st.kind === 'reassemble') S.push({ title: 'Reassemble into a reply', lamp: true, node: function () {
+        else if (st.kind === 'reassemble') S.push({ title: 'Reassemble into a reply', node: function () {
           var box = el('div');
-          box.appendChild(el('p', 'snote', 'A reply template is chosen. The numbers in it are slots: each is replaced by the matching numbered part from above. Plain words are printed as-is.'));
+          box.appendChild(el('p', 'snote', 'A reply template is chosen. The numbers in it are slots: each is replaced by the matching numbered part. Plain words print as-is.'));
           var tnodes = st.template.map(function (tok) {
             if (/^\d+$/.test(tok)) {
               var idx = parseInt(tok, 10) - 1, col = COLORS[idx % COLORS.length];
@@ -140,61 +132,78 @@
           return el('div', 'memnote', 'Nothing in the sentence was a keyword, so ELIZA falls back to a content-free prompt to keep you talking: <b>' + esc(st.output) + '</b>.');
         }});
       });
-      // final
       S.push({ title: 'The reply', last: true, node: function () {
         var box = el('div');
         box.appendChild(el('div', 'paper out', '<span class="who eliza">ELIZA</span>' + esc(T.output)));
-        box.appendChild(el('p', 'debunk', 'ELIZA understood nothing. It picked the highest-ranked keyword, split your sentence on a fixed pattern, and poured your own words into a canned template. No meaning, no memory of you, no model of the world. That gap, between what it does and what we feel, is the ELIZA effect.'));
+        box.appendChild(el('p', 'debunk', 'ELIZA understood nothing. It picked the highest-ranked keyword, split your sentence on a fixed pattern, and poured your own words into a canned template. That gap, between what it does and what we feel, is the ELIZA effect.'));
         return box;
       }});
       return S;
     }
 
-    function render() {
-      stageWrap.innerHTML = '';
-      stages.forEach(function (st, i) {
-        var card = el('div', 'stage' + (i < shown ? ' on' : '') + (st.last ? ' final' : ''));
-        var h = el('div', 'stage-head', '<span class="stage-n">' + (i + 1) + '</span>' + esc(st.title));
-        card.appendChild(h);
-        var body = el('div', 'stage-body'); body.appendChild(st.node()); card.appendChild(body);
-        stageWrap.appendChild(card);
-      });
-      // move the current stage up into the reading window; older/newer stages
-      // scroll out past the faded top/bottom edges of the box
-      var on = stageWrap.querySelectorAll('.stage.on');
-      if (on.length) {
-        var cur = on[on.length - 1];
-        var top = cur.offsetTop - 80;          // headroom below the top fade
-        viewport.scrollTo({ top: top < 0 ? 0 : top, behavior: 'smooth' });
+    function setCtx() {
+      ctx.innerHTML = '';
+      ctx.appendChild(el('span', 'lab', 'Input'));
+      ctx.appendChild(el('span', 'val', esc(T.input)));
+      if (T.keystack && T.keystack.length) {
+        ctx.appendChild(el('span', 'lab', 'Keyword'));
+        ctx.appendChild(el('span', 'val key', esc(T.keystack[0].word)));
       }
-      renderNav();
     }
 
+    function show(i) {
+      cur = Math.max(0, Math.min(stages.length - 1, i));
+      var st = stages[cur];
+      stageEl.innerHTML = '';
+      var card = el('div', 'stage-card' + (st.last ? ' final' : ''));
+      card.appendChild(el('div', 'stage-head', '<span class="stage-n">' + (cur + 1) + '</span>' + esc(st.title)));
+      var body = el('div', 'stage-body'); body.appendChild(st.node()); card.appendChild(body);
+      stageEl.appendChild(card);
+      requestAnimationFrame(function () { card.classList.add('in'); });
+      renderProg(); renderNav();
+    }
+    function renderProg() {
+      prog.innerHTML = '';
+      stages.forEach(function (_, i) { var c = el('i'); if (i < cur) c.className = 'done'; else if (i === cur) c.className = 'on'; prog.appendChild(c); });
+    }
     function renderNav() {
       nav.innerHTML = '';
-      var done = shown >= stages.length;
-      var step = el('button', 'btn' + (done ? ' ghost' : ''), done ? 'Done' : 'Next step ▸');
-      step.disabled = done; step.addEventListener('click', next);
-      var auto = el('button', 'btn ghost', autoTimer ? 'Pause' : 'Auto-play ▸'); auto.addEventListener('click', toggleAuto);
-      var reset = el('button', 'btn ghost', 'Replay'); reset.addEventListener('click', function () { stopAuto(); shown = 1; render(); });
-      nav.appendChild(step); nav.appendChild(auto); nav.appendChild(reset);
-      nav.appendChild(el('span', 'trace-count', shown + ' / ' + stages.length));
+      var prev = el('button', 'btn ghost', '◀ Back'); prev.disabled = cur === 0; prev.addEventListener('click', function () { stop(); show(cur - 1); });
+      var atEnd = cur >= stages.length - 1;
+      var next = el('button', 'btn', atEnd ? 'End' : 'Step ▶'); next.disabled = atEnd; next.addEventListener('click', function () { stop(); show(cur + 1); });
+      var auto = el('button', 'btn ghost', autoTimer ? 'Pause' : 'Auto ▶'); auto.addEventListener('click', toggleAuto);
+      var replay = el('button', 'btn ghost', 'Replay'); replay.addEventListener('click', function () { stop(); show(0); });
+      nav.appendChild(prev); nav.appendChild(next); nav.appendChild(auto);
+      nav.appendChild(el('span', 'spacer'));
+      nav.appendChild(replay);
+      nav.appendChild(el('span', 'count', 'Step ' + (cur + 1) + ' / ' + stages.length));
     }
-
-    function next() { if (shown < stages.length) { shown++; render(); } else stopAuto(); }
-    function toggleAuto() { if (autoTimer) stopAuto(); else { autoTimer = setInterval(function () { if (shown >= stages.length) stopAuto(); else next(); }, 1500); renderNav(); } }
-    function stopAuto() { if (autoTimer) { clearInterval(autoTimer); autoTimer = null; renderNav(); } }
+    function toggleAuto() {
+      if (autoTimer) { stop(); return; }
+      if (cur >= stages.length - 1) show(0);
+      autoTimer = setInterval(function () { if (cur >= stages.length - 1) stop(); else show(cur + 1); }, 2000);
+      renderNav();
+    }
+    function stop() { if (autoTimer) { clearInterval(autoTimer); autoTimer = null; renderNav(); } }
 
     function run() {
-      stopAuto();
+      stop();
       var phrase = input.value.trim(); if (!phrase) return;
-      var T = engine.trace(phrase);
-      stages = build(T); shown = 1; render();
+      T = engine.trace(phrase);
+      stages = build(T);
+      setCtx();
+      show(0);
     }
 
+    document.addEventListener('keydown', function (e) {
+      var tag = (e.target && e.target.tagName) || '';
+      if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+      if (e.key === 'ArrowRight') { stop(); show(cur + 1); }
+      else if (e.key === 'ArrowLeft') { stop(); show(cur - 1); }
+    });
     runBtn.addEventListener('click', run);
     input.addEventListener('keydown', function (e) { if (e.key === 'Enter') run(); });
-    run(); // start with the default phrase, first stage shown
+    run();
   }
   if (document.readyState !== 'loading') init();
   else document.addEventListener('DOMContentLoaded', init);
