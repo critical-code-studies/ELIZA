@@ -9,6 +9,7 @@
     if (!app || !window.ElizaHay) return;
     var COLORS = ['var(--lamp-red)', 'var(--lamp-amber)', 'var(--lamp-green)', 'var(--lamp-blue)', '#c98bd9', '#6fd6cf'];
     function esc(s) { return (s == null ? '' : String(s)).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
+    function escAttr(s) { return esc(s).replace(/"/g, '&quot;'); }
     function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
 
     var bar = el('div', 'trace-bar');
@@ -43,7 +44,7 @@
     app.appendChild(playRow);
 
     var stages = [], cur = 0, autoTimer = null, T = null;
-    var session = null, playing = false, playIdx = 0;
+    var session = null, playing = false, playIdx = 0, transcript = [];
     var CACM = [
       'Men are all alike.',
       'They\'re always bugging us about something or other.',
@@ -201,15 +202,27 @@
       }
       // full-width memory queue bar under the input line, numbered as ELIZA stores them
       memEl.innerHTML = '';
-      memEl.appendChild(el('span', 'mlab', 'Memory'));
+      // left: the memory queue (four slots by default; grows if the queue does)
+      var left = el('div', 'mem-left');
+      left.appendChild(el('span', 'mlab', 'Memory'));
       var mem = T.memory || [];
-      var slots = Math.max(4, mem.length);   // four slots by default; grows if the queue does
+      var slots = Math.max(4, mem.length);
       var ol = el('ol');
       for (var mi = 0; mi < slots; mi++) {
         var m = mem[mi];
-        ol.appendChild(el('li', m ? null : 'slot-empty', '<span class="mn">' + (mi + 1) + '</span><span>' + (m ? esc(m) : 'empty') + '</span>'));
+        var li = el('li', m ? null : 'slot-empty');
+        li.innerHTML = '<span class="mn">' + (mi + 1) + '</span><span' + (m ? ' title="' + escAttr(m) + '"' : '') + '>' + (m ? esc(m) : 'empty') + '</span>';
+        ol.appendChild(li);
       }
-      memEl.appendChild(ol);
+      left.appendChild(ol);
+      // right: the conversation so far, in green, scrolling up
+      var right = el('div', 'mem-right');
+      right.appendChild(el('span', 'mlab', 'Conversation'));
+      var convo = el('div', 'mem-convo');
+      transcript.forEach(function (t) { convo.appendChild(el('div', 'cline ' + t.who, esc(t.text))); });
+      right.appendChild(convo);
+      memEl.appendChild(left); memEl.appendChild(right);
+      convo.scrollTop = convo.scrollHeight;
     }
 
     function show(i) {
@@ -253,6 +266,7 @@
       var phrase = input.value.trim(); if (!phrase) return;
       window.ElizaHay.trace(phrase).then(function (res) {
         T = res;
+        transcript = [{ who: 'you', text: T.input }, { who: 'eliza', text: T.output }];
         stages = build(T);
         setCtx();
         show(0);
@@ -272,6 +286,7 @@
       session = window.ElizaHay.make();
       playing = true;
       playIdx = 0;
+      transcript = [];
       updatePlayBtn();
       playLine();
     }
@@ -282,7 +297,8 @@
       input.value = line;
       session.trace(line).then(function (res) {
         if (!playing) return;
-        T = res; stages = build(T); setCtx(); show(0);
+        T = res; transcript.push({ who: 'you', text: line }); transcript.push({ who: 'eliza', text: res.output });
+        stages = build(T); setCtx(); show(0);
         autoTimer = setInterval(function () {
           if (!playing) { clearInterval(autoTimer); autoTimer = null; return; }
           if (cur >= stages.length - 1) {
