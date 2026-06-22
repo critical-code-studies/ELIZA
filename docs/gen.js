@@ -387,9 +387,10 @@ write('how.html', page({
       <h1 class="page">How it works</h1>
       <div class="lede"><p>Type a sentence and step through exactly what ELIZA does with it.</p></div>
       <div id="trace-app"></div>
-      <p class="post-meta" style="margin-top:1rem">Powered by Anthony Hay&rsquo;s CC0 ELIZA engine (<a href="https://github.com/anthay/ELIZA">source</a>) - the same authoritative engine you can talk to on the <a href="try.html">Try ELIZA</a> page, instrumented here to show each step.</p>
+      <p class="post-meta" style="margin-top:1rem">Responses by Anthony Hay&rsquo;s CC0 ELIZA engine - the same engine you can talk to on the <a href="try.html">Try ELIZA</a> page.</p>
       <div class="rule">WHY THIS MATTERS</div>
       <p>Joseph Weizenbaum was alarmed that people confided in ELIZA even when they knew it was a program. The distance between what the machine does (mechanical word-shuffling, shown above) and what we feel (that something understands us) is the <strong>ELIZA effect</strong>.</p>
+      <p class="micro" style="margin-top:2.4rem">This visualisation repurposes Anthony Hay&rsquo;s faithful reconstruction of ELIZA (released CC0 public domain): his engine generates the responses exactly as Weizenbaum&rsquo;s 1966 program would, and we instrument it to surface each step. The code that does this is open: the step display in <a href="https://github.com/critical-code-studies/ELIZA/blob/main/assets/trace.js">trace.js</a> and the tracer that reads Hay&rsquo;s engine in <a href="https://github.com/critical-code-studies/ELIZA/blob/main/assets/eliza-hay.js">eliza-hay.js</a>.</p>
 `}));
 
 // ---------------------------------------------------------------------------
@@ -416,16 +417,34 @@ write('talks.html', page({
   body: `
       <span class="kicker">Talks</span>
       <h1 class="page">Talks &amp; code critiques</h1>
-      <ul class="timeline">
-        <li><span class="yr">2026</span><span class="vh">Roskilde University, Denmark</span><p>&ldquo;From Script to Vector: ELIZA and the Age of AI&rdquo; (29 April).</p></li>
-        <li><span class="yr">2026</span><span class="vh">Aarhus University, Denmark</span><p>&ldquo;From Script to Vector: ELIZA and the Age of AI&rdquo; (20 March).</p></li>
-        <li><span class="yr">2026</span><span class="vh">University of Birmingham</span><p>&ldquo;Generative AI and Computational Capitalism: Towards a Critical Theory of Artificial Intelligence&rdquo; (22 January).</p></li>
-        <li><span class="yr">2025</span><span class="vh">Weizenbaum Institute, Berlin</span><p>&ldquo;Generative AI and Computational Capitalism: Towards a Critical Theory of Artificial Intelligence&rdquo;, at the Workshop on Critical Theory of the Computational (16 October).</p></li>
-        <li><span class="yr">2025</span><span class="vh">Electronic Literature Organization, Toronto</span><p>&ldquo;Digital Kintsugi: The Art and Ethics of Reconstructing ELIZA&rsquo;s Digital Ruins&rdquo;, at <em>ELO25 @ 25: Love Letters to the Past and Future</em>, York University, Toronto, Canada (10&ndash;13 July).</p></li>
-        <li><span class="yr">2023</span><span class="vh">Humboldt / Weizenbaum Institute, Berlin</span><p>&ldquo;Reading ELIZA: Understanding Weizenbaum through his code&rdquo;, at <em>Weizenbaum&rsquo;s Worlds: Technological Change and Computer Criticism in the U.S. and Germany, ca. 1960&ndash;1990</em> (3 November).</p></li>
-        <li><span class="yr">2023</span><span class="vh">MIT</span><p>&ldquo;Getting to know ELIZA: ChatGPT&rsquo;s Great Grandmother&rdquo; (11 October).</p></li>
-        <li><span class="yr">2022</span><span class="vh">Critical Code Studies Working Group</span><p>&ldquo;The Original ELIZA in MAD-SLIP&rdquo;, code critique. Thread leaders: Jeff Shrager, David M. Berry, Mark C. Marino, Jeremy Douglass.</p></li>
-        <li><span class="yr">2016</span><span class="vh">Critical Code Studies Working Group</span><p>&ldquo;Archaeologies of Code: Reading ELIZA&rdquo;, code critique. Thread leader: David M. Berry.</p></li>
+
+      <h2 class="yeargroup">2026</h2>
+      <ul class="talklist">
+        <li><span class="ttl">&ldquo;From Script to Vector: ELIZA and the Age of AI&rdquo;</span><span class="meta">Roskilde University, Denmark &middot; 29 April 2026</span></li>
+        <li><span class="ttl">&ldquo;From Script to Vector: ELIZA and the Age of AI&rdquo;</span><span class="meta">Aarhus University, Denmark &middot; 20 March 2026</span></li>
+        <li><span class="ttl">&ldquo;Generative AI and Computational Capitalism: Towards a Critical Theory of Artificial Intelligence&rdquo;</span><span class="meta">University of Birmingham &middot; 22 January 2026</span></li>
+      </ul>
+
+      <h2 class="yeargroup">2025</h2>
+      <ul class="talklist">
+        <li><span class="ttl">&ldquo;Generative AI and Computational Capitalism: Towards a Critical Theory of Artificial Intelligence&rdquo;</span><span class="meta">Workshop on Critical Theory of the Computational, Weizenbaum Institute, Berlin &middot; 16 October 2025</span></li>
+        <li><span class="ttl">&ldquo;Digital Kintsugi: The Art and Ethics of Reconstructing ELIZA&rsquo;s Digital Ruins&rdquo;</span><span class="meta">ELO25 @ 25: Love Letters to the Past and Future, Electronic Literature Organization, York University, Toronto, Canada &middot; 10&ndash;13 July 2025</span></li>
+      </ul>
+
+      <h2 class="yeargroup">2023</h2>
+      <ul class="talklist">
+        <li><span class="ttl">&ldquo;Reading ELIZA: Understanding Weizenbaum through his code&rdquo;</span><span class="meta">Weizenbaum&rsquo;s Worlds: Technological Change and Computer Criticism in the U.S. and Germany, ca. 1960&ndash;1990, Humboldt / Weizenbaum Institute, Berlin &middot; 3 November 2023</span></li>
+        <li><span class="ttl">&ldquo;Getting to know ELIZA: ChatGPT&rsquo;s Great Grandmother&rdquo;</span><span class="meta">MIT &middot; 11 October 2023</span></li>
+      </ul>
+
+      <h2 class="yeargroup">2022</h2>
+      <ul class="talklist">
+        <li><span class="ttl">&ldquo;The Original ELIZA in MAD-SLIP&rdquo;</span><span class="meta">Critical Code Studies Working Group, code critique &middot; thread leaders Jeff Shrager, David M. Berry, Mark C. Marino, Jeremy Douglass</span></li>
+      </ul>
+
+      <h2 class="yeargroup">2016</h2>
+      <ul class="talklist">
+        <li><span class="ttl">&ldquo;Archaeologies of Code: Reading ELIZA&rdquo;</span><span class="meta">Critical Code Studies Working Group, code critique &middot; thread leader David M. Berry</span></li>
       </ul>
 `}));
 
