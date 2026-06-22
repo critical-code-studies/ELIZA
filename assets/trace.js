@@ -36,8 +36,10 @@
     var nav = el('div', 'demo-nav'); demo.appendChild(nav);
     app.appendChild(demo);
 
+    var resetBtn = el('button', 'btn ghost', '↻ Reset');
     var playRow = el('div', 'trace-egs');
     playRow.appendChild(playBtn);
+    playRow.appendChild(resetBtn);
     app.appendChild(playRow);
 
     var stages = [], cur = 0, autoTimer = null, T = null;
@@ -243,7 +245,8 @@
       autoTimer = setInterval(function () { if (cur >= stages.length - 1) stop(); else show(cur + 1); }, 2000);
       renderNav();
     }
-    function stop() { playing = false; if (autoTimer) { clearInterval(autoTimer); autoTimer = null; renderNav(); } }
+    function updatePlayBtn() { playBtn.innerHTML = playing ? '&#9632; Stop the 1966 conversation' : '&#9654; Play the 1966 conversation'; }
+    function stop() { playing = false; if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } updatePlayBtn(); renderNav(); }
 
     function run() {
       stop();
@@ -256,6 +259,12 @@
       });
     }
 
+    function reset() {
+      stop();
+      input.value = 'You are like my father in some ways.';
+      run();
+    }
+
     // replay the whole 1966 CACM conversation on one persistent engine, so memory
     // accumulates and is recalled, auto-stepping through each line until the end
     function playCacm() {
@@ -263,11 +272,12 @@
       session = window.ElizaHay.make();
       playing = true;
       playIdx = 0;
+      updatePlayBtn();
       playLine();
     }
     function playLine() {
       if (!playing) return;
-      if (playIdx >= CACM.length) { playing = false; return; }
+      if (playIdx >= CACM.length) { playing = false; updatePlayBtn(); return; }
       var line = CACM[playIdx++];
       input.value = line;
       session.trace(line).then(function (res) {
@@ -283,7 +293,8 @@
         renderNav();
       });
     }
-    playBtn.addEventListener('click', playCacm);
+    playBtn.addEventListener('click', function () { if (playing) stop(); else playCacm(); });
+    resetBtn.addEventListener('click', reset);
 
     document.addEventListener('keydown', function (e) {
       var tag = (e.target && e.target.tagName) || '';

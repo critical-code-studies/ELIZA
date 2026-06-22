@@ -9,18 +9,18 @@
   <meta property="og:site_name" content="ELIZA Archaeology Project">
   <meta property="og:title" content="How it works · ELIZA (1966)">
   <meta property="og:description" content="Type a phrase and watch ELIZA process it step by step through the genuine DOCTOR script: keywords, ranking, decomposition and reassembly.">
-  <meta property="og:image" content="https://critical-code-studies.github.io/ELIZA/assets/images/share-card.png?v=202606222333">
+  <meta property="og:image" content="https://critical-code-studies.github.io/ELIZA/assets/images/share-card.png?v=202606222343">
   <meta property="og:url" content="https://critical-code-studies.github.io/ELIZA/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="How it works · ELIZA (1966)">
   <meta name="twitter:description" content="Type a phrase and watch ELIZA process it step by step through the genuine DOCTOR script: keywords, ranking, decomposition and reassembly.">
-  <meta name="twitter:image" content="https://critical-code-studies.github.io/ELIZA/assets/images/share-card.png?v=202606222333">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=202606222333">
-  <link rel="stylesheet" href="assets/css/site.css?v=202606222333">
-  <script src="assets/nav.js?v=202606222333" defer></script>
-  <script src="assets/term.js?v=202606222333" defer></script>
-  <script src="assets/eliza-hay.js?v=202606222333" defer></script>
-  <script src="assets/trace.js?v=202606222333" defer></script>
+  <meta name="twitter:image" content="https://critical-code-studies.github.io/ELIZA/assets/images/share-card.png?v=202606222343">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=202606222343">
+  <link rel="stylesheet" href="assets/css/site.css?v=202606222343">
+  <script src="assets/nav.js?v=202606222343" defer></script>
+  <script src="assets/term.js?v=202606222343" defer></script>
+  <script src="assets/eliza-hay.js?v=202606222343" defer></script>
+  <script src="assets/trace.js?v=202606222343" defer></script>
 </head>
 <body>
 
@@ -62,6 +62,14 @@
       <div class="lede"><p>Type a sentence and step through exactly what ELIZA does with it.</p></div>
       <div id="trace-app"></div>
       <p class="post-meta" style="margin-top:1rem">Responses by Anthony Hay&rsquo;s CC0 ELIZA engine - the same engine you can talk to on the <a href="try.html">Try ELIZA</a> page.</p>
+
+      <div class="rule">THE DELIMITERS</div>
+      <p>ELIZA does not read a whole sentence at once. It scans left to right and breaks the input at three delimiters: the comma, the full stop, and the word <strong>BUT</strong>. Leading clauses that contain no keyword are thrown away; as soon as a clause with a keyword is found, ELIZA stops at the next delimiter and works only on that clause. So &ldquo;You are not very aggressive but I think you don&rsquo;t want me to notice that&rdquo; is cut at <em>but</em>, and ELIZA replies only to &ldquo;you are not very aggressive&rdquo;. The comma and full stop are described in Weizenbaum&rsquo;s 1966 paper; the <strong>BUT</strong> delimiter is present in the recovered source though it is not mentioned there.</p>
+
+      <div class="rule">THE MEMORY</div>
+      <p>ELIZA can also remember. When you say something about what is <em>yours</em> (a sentence the <code>MY</code> keyword catches), ELIZA transforms it and files it away. It chooses from <strong>four</strong> memory templates, picked by a hash of the last word you typed, so &ldquo;my mother takes care of me&rdquo; becomes a stored phrase like <em>BUT YOUR MOTHER TAKES CARE OF YOU</em>. These phrases queue up in the order they were made.</p>
+      <p>A counter runs quietly alongside, cycling 1, 2, 3, 4. When it reaches <strong>4</strong> and your latest line contains no keyword, ELIZA reaches into the queue and replays the oldest stored phrase instead of a bland &ldquo;please go on&rdquo;. This is the &ldquo;certain counting mechanism&rdquo; Weizenbaum mentioned but never explained; the recovered source shows it exactly, four memory templates (<code>MYTRAN(4)</code>) and a one-to-four counter, with the stored phrases held in an open-ended list. Watch the memory bar in the demo above fill and then empty as you play the 1966 conversation.</p>
+
       <p class="micro" style="margin-top:2.4rem;font-size:0.72rem;letter-spacing:0.5px">This visualisation repurposes Anthony Hay&rsquo;s faithful reconstruction of ELIZA (released CC0 public domain): his engine generates the responses exactly as Weizenbaum&rsquo;s 1966 program would, and we use it to demo each step.</p>
       <p class="micro" style="margin-top:0.8rem;font-size:0.72rem;letter-spacing:0.5px">His code runs essentially unchanged. We lifted the engine out of his <code>eliza.html</code> (removing only its on-screen terminal) and left the algorithm untouched, then wrapped it in a small harness that loads the 1966 DOCTOR script and runs a single response. It talks to the demo through Hay&rsquo;s own tracer interface: ELIZA already supports a step-by-step trace mode, so we add a tracer that records each step the engine takes (keyword ranking, decomposition, reassembly, memory), and the display turns those records into the panels above. Both the harness and tracer (<a href="https://github.com/critical-code-studies/ELIZA/blob/main/assets/eliza-hay.js">eliza-hay.js</a>) and the display (<a href="https://github.com/critical-code-studies/ELIZA/blob/main/assets/trace.js">trace.js</a>) are available to view.</p>
 
