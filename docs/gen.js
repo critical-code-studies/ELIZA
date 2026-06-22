@@ -8,7 +8,7 @@ const OUT = path.join(process.env.HOME, 'Projects', 'eliza');
 const BLOGDIR = path.join(OUT, 'blog');
 fs.mkdirSync(BLOGDIR, { recursive: true });
 
-const V = 3; // asset cache-buster
+const V = 4; // asset cache-buster
 
 // ---- shared chrome ----------------------------------------------------------
 function nav(depth) {
@@ -107,6 +107,7 @@ const homeHero = `  <section class="hero">
     <canvas id="sourcewall" aria-hidden="true"></canvas>
     <div class="hero-inner">
       <div class="wrap">
+       <div class="hero-panel">
         <p class="boot">CTSS // IBM 7094 // PROJECT MAC // 1966<span class="cursor" aria-hidden="true"></span></p>
         <h1>ELIZA</h1>
         <p class="sub">The first chatbot, read as code</p>
@@ -121,6 +122,7 @@ const homeHero = `  <section class="hero">
           <a class="btn ghost" href="try.html">Talk to ELIZA</a>
           <a class="btn ghost" href="overview.html">Start reading</a>
         </div>
+       </div>
       </div>
     </div>
   </section>`;

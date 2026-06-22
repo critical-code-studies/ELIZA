@@ -140,8 +140,21 @@ a:hover { color: var(--bright); text-shadow: var(--glow); }
 
 /* ---------- hero: the teletype + lamp console ---------- */
 .hero { position: relative; min-height: 84vh; display: flex; align-items: center; overflow: hidden; border-bottom: 1px solid var(--line-soft); }
-#sourcewall { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.9; }
+#sourcewall { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.6; }
 .hero-inner { position: relative; z-index: 2; padding: 8vh 0; width: 100%; }
+/* the hero content sits in a darkened panel so it reads cleanly over the drifting
+   source code; on wider screens it is anchored to the right, leaving the recovered
+   source visible (and unobscured) on the left. */
+.hero-panel {
+  background: linear-gradient(135deg, rgba(18,20,25,0.90), rgba(18,20,25,0.70));
+  border: 1px solid var(--line-soft); border-radius: 9px;
+  padding: clamp(1.3rem, 3.5vw, 2.4rem) clamp(1.3rem, 3.5vw, 2.6rem);
+  backdrop-filter: blur(2px); max-width: 660px;
+}
+@media (min-width: 900px) {
+  .hero .wrap { display: flex; justify-content: flex-end; }
+  .hero-panel { margin-left: auto; }
+}
 .boot { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 3px; color: var(--ink-dim); text-transform: uppercase; margin-bottom: 1.4rem; }
 .cursor { display: inline-block; width: 0.55em; height: 1.05em; vertical-align: -0.15em; background: var(--eliza); box-shadow: 0 0 8px var(--eliza); animation: blink 1.06s steps(1) infinite; margin-left: 2px; }
 @keyframes blink { 50% { opacity: 0; } }
@@ -149,8 +162,8 @@ a:hover { color: var(--bright); text-shadow: var(--glow); }
 
 .hero h1 {
   font-family: var(--mono); font-weight: 800;
-  font-size: clamp(3rem, 13vw, 8rem); line-height: 0.92;
-  margin: 0; letter-spacing: 2px; color: var(--bright);
+  font-size: clamp(2.6rem, 9vw, 5.6rem); line-height: 0.95;
+  margin: 0; letter-spacing: 1px; color: var(--bright);
   text-shadow: 0 2px 0 rgba(0,0,0,0.35);
 }
 .hero .sub { font-family: var(--mono); font-size: clamp(0.85rem, 2.2vw, 1.05rem); letter-spacing: 2px; color: var(--ink); margin-top: 0.6rem; text-transform: uppercase; }
