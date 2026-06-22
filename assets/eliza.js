@@ -1,5 +1,5 @@
 /* ============================================================
-   eliza.js — a faithful re-implementation of Joseph Weizenbaum's
+   eliza.js - a faithful re-implementation of Joseph Weizenbaum's
    ELIZA, driven by the verbatim DOCTOR script published in the
    January 1966 Communications of the ACM (and recovered in the
    MIT archive printout, 1965). Pure pattern matching: keyword
@@ -517,31 +517,55 @@
     return out.join(" ").replace(/\s+/g, " ").replace(/\s+([,.!?'])/g, "$1").trim();
   }
 
+  // render a decomposition pattern as readable display tokens (for the trace UI)
+  function patternDisplay(decomp) {
+    if (decomp === "*") return [{ t: "0", any: true }];
+    return decomp.map(function (tok) {
+      if (tok === "0") return { t: "0", any: true };
+      if (typeof tok === "string") return { t: tok };
+      if (Array.isArray(tok)) {
+        var head = tok[0] || "";
+        if (head.charAt(0) === "*") return { t: "(" + tok.map(function (x) { return x.replace(/^\*/, ""); }).filter(Boolean).join(" | ") + ")", set: true };
+        if (head.charAt(0) === "/") return { t: "any " + tok.map(function (x) { return x.replace(/^\//, ""); }).filter(Boolean).join("/") + " word", tag: true };
+      }
+      return { t: String(tok) };
+    });
+  }
+
   // ---- the engine ----
   function make() {
     var S = buildScript(DOCTOR_SCRIPT);
     var memStack = [];
     var replyCount = 0;
 
-    function applyEntry(entry, words, depth) {
+    function applyEntry(entry, words, depth, T) {
       if (!entry || depth > 12) return null;
       for (var i = 0; i < entry.rules.length; i++) {
         var rule = entry.rules[i];
         var comps = rule.decomp === "*" ? [words.join(" ")]
                                         : match(rule.decomp, words, S.tagsOf);
         if (!comps) continue;
+        if (T) T.push({ kind: "decompose", keyword: entry.word, sentence: words.slice(),
+                        pattern: patternDisplay(rule.decomp), components: comps.slice() });
         var r = rule.reasm[(rule.idx || 0) % rule.reasm.length];
         rule.idx = (rule.idx || 0) + 1;
-        if (r.type === "tmpl") return reassemble(r.tokens, comps);
-        if (r.type === "newkey") return " NEWKEY";
+        if (r.type === "tmpl") {
+          var out = reassemble(r.tokens, comps);
+          if (T) T.push({ kind: "reassemble", keyword: entry.word, template: r.tokens.slice(),
+                          components: comps.slice(), output: out });
+          return out;
+        }
+        if (r.type === "newkey") { if (T) T.push({ kind: "newkey", from: entry.word }); return "NEWKEY"; }
         if (r.type === "goto") {
-          var res = applyEntry(S.keys[r.key], words, depth + 1);
+          if (T) T.push({ kind: "goto", from: entry.word, to: r.key });
+          var res = applyEntry(S.keys[r.key], words, depth + 1, T);
           if (res !== null) return res;
           continue;
         }
         if (r.type === "pre") {
           var nw = reassemble(r.template, comps).split(" ");
-          var res2 = applyEntry(S.keys[r.key], nw, depth + 1);
+          if (T) T.push({ kind: "pre", from: entry.word, to: r.key, template: r.template.slice(), rebuilt: nw.slice() });
+          var res2 = applyEntry(S.keys[r.key], nw, depth + 1, T);
           if (res2 !== null) return res2;
           continue;
         }
@@ -555,53 +579,63 @@
                  .replace(/\s+/g, " ").trim();
     }
 
-    function reply(text) {
+    // core: produce a reply. If T (a trace object) is given, fill it with the
+    // word scan, the keyword stack, the steps taken, and the output.
+    function respond(text, T) {
       replyCount++;
       var raw = clean(text);
-      if (!raw) return pickNone();
+      if (T) { T.input = text; T.cleaned = raw; T.words = []; T.keystack = []; T.steps = []; T.replyNo = replyCount; }
+      if (!raw) { var on = pickNone(); if (T) { T.output = on; T.steps.push({ kind: "none", output: on }); } return on; }
       var words0 = raw.split(" ");
       var words = [], stack = [];
       words0.forEach(function (w) {
         var e = S.keys[w];
         var sub = (e && e.subst) ? e.subst : w;
         words.push(sub);
-        if (e && (e.rules.length || e.rank > 0 || e.subst)) {
-          // a word counts as a keyword if it has rules (or is a ranked/equiv key)
-          if (e.rules.length || e.rank > 0) stack.push(e);
-        }
+        var isKey = !!(e && (e.rules.length || e.rank > 0));
+        if (isKey) stack.push(e);
+        if (T) T.words.push({ raw: w, sub: (sub !== w ? sub : null), keyword: isKey, rank: e ? e.rank : 0 });
       });
       // dedupe keep highest rank, stable; sort by rank desc
       var seen = {};
       stack = stack.filter(function (e) { if (seen[e.word]) return false; seen[e.word] = 1; return true; });
       stack.sort(function (a, b) { return b.rank - a.rank; });
+      if (T) T.keystack = stack.map(function (e) { return { word: e.word, rank: e.rank }; });
 
-      // memory: if MY fired, store a transformed memory for later recall
+      // memory: if the MEMORY keyword (MY) fired, store a transformed memory
       if (S.memory && seen[S.memory.key]) {
         var mr = S.memory.rules[hash(words[words.length - 1]) % S.memory.rules.length];
         var mc = match(mr.decomp, words, S.tagsOf);
-        if (mc) memStack.push(reassemble(mr.reasm, mc));
+        if (mc) { var mtext = reassemble(mr.reasm, mc); memStack.push(mtext); if (T) T.steps.push({ kind: "memory-store", text: mtext }); }
       }
 
       for (var i = 0; i < stack.length; i++) {
-        var res = applyEntry(stack[i], words, 0);
-        if (res === " NEWKEY") continue;
-        if (res !== null) return res;
+        var res = applyEntry(stack[i], words, 0, T ? T.steps : null);
+        if (res === "NEWKEY") continue;
+        if (res !== null) { if (T) T.output = res; return res; }
       }
-      // nothing matched: recall a memory on the 4th-state of the counter, else NONE
-      if (memStack.length && replyCount % 4 === 0) return memStack.shift();
-      return pickNone();
+      // nothing matched: recall a memory on the 4th state of the counter, else NONE
+      if (memStack.length && replyCount % 4 === 0) {
+        var m = memStack.shift();
+        if (T) { T.output = m; T.steps.push({ kind: "memory-recall", text: m }); }
+        return m;
+      }
+      var o2 = pickNone();
+      if (T) { T.output = o2; T.steps.push({ kind: "none", output: o2 }); }
+      return o2;
     }
 
     function pickNone() {
       if (!S.none) return "PLEASE GO ON";
-      return applyEntry(S.none, [""], 0) || "PLEASE GO ON";
+      return applyEntry(S.none, [""], 0, null) || "PLEASE GO ON";
     }
 
     function hash(w) { var h = 0; w = w || ""; for (var i = 0; i < w.length; i++) h = (h * 31 + w.charCodeAt(i)) >>> 0; return h; }
 
     return {
       greeting: function () { return S.greeting; },
-      reply: reply,
+      reply: function (text) { return respond(text, null); },
+      trace: function (text) { var T = {}; respond(text, T); return T; },
       keywords: function () { return Object.keys(S.keys).sort(); }
     };
   }

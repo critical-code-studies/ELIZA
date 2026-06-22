@@ -8,7 +8,7 @@ const OUT = path.join(process.env.HOME, 'Projects', 'eliza');
 const BLOGDIR = path.join(OUT, 'blog');
 fs.mkdirSync(BLOGDIR, { recursive: true });
 
-const V = 2; // asset cache-buster
+const V = 3; // asset cache-buster
 
 // ---- shared chrome ----------------------------------------------------------
 function nav(depth) {
@@ -34,7 +34,7 @@ function nav(depth) {
         </div>
         <div class="nav-group">
           <button class="nav-top" aria-expanded="false">The code <span class="caret" aria-hidden="true">&#9662;</span></button>
-          <div class="nav-menu"><a href="${p}code.html">The program</a><a href="${p}doctor.html">The DOCTOR script</a></div>
+          <div class="nav-menu"><a href="${p}code.html">The program</a><a href="${p}doctor.html">The DOCTOR script</a><a href="${p}how.html">How it works (demo)</a></div>
         </div>
         <a class="nav-top nav-direct" href="${p}blog.html">Blog</a>
         <a class="nav-top nav-direct" href="${p}people.html">People</a>
@@ -117,7 +117,8 @@ const homeHero = `  <section class="hero">
         </div>
         <div class="tt" id="tt-feed" aria-hidden="true"></div>
         <div class="hero-actions">
-          <a class="btn" href="try.html">Talk to ELIZA</a>
+          <a class="btn" href="how.html">Watch it think</a>
+          <a class="btn ghost" href="try.html">Talk to ELIZA</a>
           <a class="btn ghost" href="overview.html">Start reading</a>
         </div>
       </div>
@@ -138,6 +139,7 @@ const homeBody = `
         <div class="card r"><p class="obj">Read</p><h3><a href="overview.html">Overview</a></h3><p>What ELIZA actually was, and why DOCTOR is not the same thing as ELIZA.</p></div>
         <div class="card b"><p class="obj">The code</p><h3><a href="code.html">The program</a></h3><p>A close reading of the recovered MAD-SLIP source, line by line.</p></div>
         <div class="card y"><p class="obj">The script</p><h3><a href="doctor.html">DOCTOR</a></h3><p>Weizenbaum&rsquo;s Rogerian therapist script, and how its patterns work.</p></div>
+        <div class="card r"><p class="obj">Watch</p><h3><a href="how.html">How it works</a></h3><p>Type a phrase and step through ELIZA&rsquo;s rules, from keywords to reply.</p></div>
         <div class="card g"><p class="obj">Talk</p><h3><a href="try.html">Try ELIZA</a></h3><p>A faithful re-creation that runs the genuine 1966 script in your browser.</p></div>
       </div>
     </section>
@@ -200,6 +202,7 @@ write('overview.html', page({
         <li data-n="5"><b>Reassemble</b> &mdash; slot those parts into a reply template, and print it.</li>
         <li data-n="6"><b>Loop</b> &mdash; wait for the next line, and occasionally recall something you said earlier.</li>
       </ul>
+      <p style="margin-top:1.4rem"><a href="how.html">Watch these steps run on a phrase of your own &rsaquo;</a></p>
 
       <div class="callout"><span class="kicker">The trick, and the point</span><p>ELIZA never understands anything. It rearranges your own words. Weizenbaum was disturbed that people knew this and confided in it anyway. The gap between what the program does and what people believe it does is what he later called, and what we now call, the ELIZA effect.</p></div>
 
@@ -353,7 +356,7 @@ write('try.html', page({
       <span class="kicker">Try ELIZA</span>
       <h1 class="page">Talk to ELIZA</h1>
       <div class="lede"><p>This is ELIZA running the genuine 1966 DOCTOR script: keyword ranking, decomposition and reassembly, equivalences, the memory rule, and the &ldquo;certain counting mechanism&rdquo; the recovered source revealed. Type a sentence and press enter.</p></div>
-      <p>Your conversation is private to your machine. Nothing you type is sent anywhere. Try opening with a feeling, or tell ELIZA about your mother. Type <code>*help</code> for the handful of commands.</p>
+      <p>Your conversation is private to your machine. Nothing you type is sent anywhere. Try opening with a feeling, or tell ELIZA about your mother. Type <code>*help</code> for the handful of commands. To see <em>how</em> each reply is built, step by step, visit <a href="how.html">How it works</a>.</p>
       <div id="try-eliza-mount"></div>
       <p class="post-meta" style="margin-top:1.4rem">A faithful re-implementation in JavaScript, after the algorithm in Weizenbaum (1966) and the recovered MAD-SLIP source. It reproduces the canonical 1966 conversation.</p>
 
@@ -363,6 +366,21 @@ write('try.html', page({
         <p>For the definitive recreation, Anthony Hay&rsquo;s ELIZA reproduces the original MAD-SLIP program&rsquo;s behaviour exactly, down to the bugs, with full tracing, the original asterisk commands, the 1966 CACM replay, and the ability to load your own Weizenbaum-format scripts. It runs in the browser and is the most accurate ELIZA you can talk to.</p>
         <div class="hero-actions"><a class="btn" href="https://anthay.github.io/eliza.html">Open the comprehensive ELIZA</a><a class="btn ghost" href="https://github.com/anthay/ELIZA">Source on GitHub</a></div>
       </section>
+`}));
+
+// ---------------------------------------------------------------------------
+// HOW IT WORKS (step-by-step demo)
+// ---------------------------------------------------------------------------
+write('how.html', page({
+  title: 'How it works', desc: 'Type a phrase and watch ELIZA process it step by step through the genuine DOCTOR script: keywords, ranking, decomposition and reassembly.',
+  scripts: ['trace.js'],
+  body: `
+      <span class="kicker">How it works</span>
+      <h1 class="page">Watch ELIZA think</h1>
+      <div class="lede"><p>Type a sentence and step through exactly what ELIZA does with it: clean it up, scan for keywords and rank them, break the sentence into numbered parts, then pour those parts into a canned reply. There is no understanding anywhere in the chain, and seeing that is the point.</p></div>
+      <div id="trace-app"></div>
+      <div class="rule">WHY THIS MATTERS</div>
+      <p>Joseph Weizenbaum was alarmed that people confided in ELIZA even when they knew it was a program. The distance between what the machine does (mechanical word-shuffling, shown above) and what we feel (that something understands us) is the <strong>ELIZA effect</strong>. It did not end in 1966: it is exactly the gap we navigate with today&rsquo;s chatbots. Watching the rules run is one way to keep the two apart. <a href="doctor.html">More on the DOCTOR script &rsaquo;</a> &nbsp; <a href="try.html">Or just talk to ELIZA &rsaquo;</a></p>
 `}));
 
 // ---------------------------------------------------------------------------

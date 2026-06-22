@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The versions · ELIZA (1966)</title>
-  <meta name="description" content="At least five major versions of ELIZA between 1965 and 1968, and the scripts beyond DOCTOR.">
+  <title>How it works · ELIZA (1966)</title>
+  <meta name="description" content="Type a phrase and watch ELIZA process it step by step through the genuine DOCTOR script: keywords, ranking, decomposition and reassembly.">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="assets/css/site.css?v=3">
   <script src="assets/nav.js?v=3" defer></script>
   <script src="assets/eliza.js?v=3" defer></script>
   <script src="assets/term.js?v=3" defer></script>
-
+  <script src="assets/trace.js?v=3" defer></script>
 </head>
 <body>
 
@@ -48,22 +48,12 @@
   <main class="wrap content" style="padding-top:3rem;">
     <article class="block">
 
-      <span class="kicker">ELIZA</span>
-      <h1 class="page">The versions</h1>
-      <div class="lede"><p>There was never one ELIZA. The project documents at least five major versions between 1965 and 1968, each with distinct capabilities, and some likely lost for good. ELIZA is better understood as a multiplicity than as a single object.</p></div>
-
-      <ul class="timeline">
-        <li><span class="yr">1965a</span><span class="vh">earliest</span><p>Uses only &ldquo;.&rdquo; and &ldquo;,&rdquo; to break input into sentences.</p></li>
-        <li><span class="yr">1965b</span><span class="vh">recovered source</span><p>Adds &ldquo;but&rdquo; as a delimiter; lacks the NEWKEY function. This is the version whose printout we recovered, and the basis for the close reading on this site.</p></li>
-        <li><span class="yr">1966</span><span class="vh">CACM</span><p>The version described in Weizenbaum&rsquo;s Communications of the ACM paper. Introduces the NEWKEY function and a keyword stack, enabling more contextual memory.</p></li>
-        <li><span class="yr">1967</span><span class="vh">OPL</span><p>Sophisticated script handling: evaluators allowing expressions of unlimited complexity, and a generalised script system.</p></li>
-        <li><span class="yr">1968+</span><span class="vh">platform</span><p>Multiple simultaneous scripts, inter-script communication, and dynamic editing. Used for computer-assisted education at MIT and Harvard. No source for this version has yet been found.</p></li>
-      </ul>
-
-      <h2>Beyond DOCTOR</h2>
-      <p>The archive holds evidence of scripts well beyond the Rogerian therapist: <strong>ARITHM</strong> for mathematics tutoring, <strong>YAPYAP</strong> for psychiatric research at Massachusetts General Hospital, <strong>SPACKS</strong> engaging Barry Spacks&rsquo;s poetry about Belsen, and even a Nixon parody. Weizenbaum built ELIZA into a family of programs whose use has been largely forgotten. <a href="blog/post.html?p=11-the-plurality-of-eliza">The plurality of ELIZA &rsaquo;</a></p>
-
-      <div class="callout"><span class="kicker">What is lost</span><p>Despite extensive archival work, no source survives for ELIZA&rsquo;s sophisticated later versions. The OPL-based multi-script platform deployed in classrooms has simply disappeared, leaving only fragments in Project MAC progress reports. The tragedy is not only the missing code, but the absence of the institutional habits that would have preserved it. <a href="blog/post.html?p=5-eliza-version-variation">Version variation &rsaquo;</a></p></div>
+      <span class="kicker">How it works</span>
+      <h1 class="page">Watch ELIZA think</h1>
+      <div class="lede"><p>Type a sentence and step through exactly what ELIZA does with it: clean it up, scan for keywords and rank them, break the sentence into numbered parts, then pour those parts into a canned reply. There is no understanding anywhere in the chain, and seeing that is the point.</p></div>
+      <div id="trace-app"></div>
+      <div class="rule">WHY THIS MATTERS</div>
+      <p>Joseph Weizenbaum was alarmed that people confided in ELIZA even when they knew it was a program. The distance between what the machine does (mechanical word-shuffling, shown above) and what we feel (that something understands us) is the <strong>ELIZA effect</strong>. It did not end in 1966: it is exactly the gap we navigate with today&rsquo;s chatbots. Watching the rules run is one way to keep the two apart. <a href="doctor.html">More on the DOCTOR script &rsaquo;</a> &nbsp; <a href="try.html">Or just talk to ELIZA &rsaquo;</a></p>
 
     </article>
   </main>
