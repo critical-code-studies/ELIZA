@@ -8,7 +8,11 @@ const OUT = path.join(process.env.HOME, 'Projects', 'eliza');
 const BLOGDIR = path.join(OUT, 'blog');
 fs.mkdirSync(BLOGDIR, { recursive: true });
 
-const V = 12; // asset cache-buster
+// asset cache-buster: an automatic build stamp (NOT a release version). This
+// changes each build so browsers refetch changed CSS/JS/favicon. Do NOT treat
+// this as a version to bump, and do NOT bump the VERSION file or tag releases
+// for this repo (David's instruction, 2026-06-22).
+const V = new Date().toISOString().replace(/[^0-9]/g, '').slice(0, 12);
 
 // ---- shared chrome ----------------------------------------------------------
 function nav(depth) {
@@ -58,7 +62,7 @@ function page(opts) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${opts.title} · ELIZA (1966)</title>
   <meta name="description" content="${opts.desc}">
-  <link rel="icon" type="image/svg+xml" href="${p}assets/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="${p}assets/favicon.svg?v=${V}">
   <link rel="stylesheet" href="${p}assets/css/site.css?v=${V}">
   <script src="${p}assets/nav.js?v=${V}" defer></script>
   <script src="${p}assets/eliza.js?v=${V}" defer></script>
@@ -207,7 +211,7 @@ write('overview.html', page({
       <h2>The machine it ran on</h2>
       <p>There were no screens. People talked to ELIZA on teletypes, electromechanical printers like the IBM 2741 and the Teletype Model 33, which struck characters onto a roll of paper at ten to fourteen characters a second. The conversation was a physical object: ink on a page, produced together by a person and a machine. <a href="blog/post.html?p=2-talking-to-eliza-on-an-asr-33-teletype">Talking to ELIZA on an ASR 33 &rsaquo;</a></p>
       <figure class="figure">
-        <div class="vdu"><img src="assets/images/eliza-1967-twenty-first-century.jpg" alt="ELIZA being used on a teletype in 1967" loading="lazy"></div>
+        <img src="assets/images/eliza-1967-twenty-first-century.jpg" alt="ELIZA being used on a teletype in 1967" loading="lazy">
         <figcaption>ELIZA in use in 1967, filmed for the documentary <em>The Twenty-First Century</em>, &lsquo;The Communications Revolution&rsquo; (first broadcast 1967).</figcaption>
       </figure>
 
@@ -468,11 +472,11 @@ write('about.html', page({
   body: `
       <span class="kicker">About</span>
       <h1 class="page">About the project</h1>
-      <div class="lede"><p>ELIZA is one of the most influential computer programs in history. Created by Joseph Weizenbaum at MIT in the mid-1960s, it was the world&rsquo;s first chatbot: the first program to let people hold a conversation with a computer.</p></div>
       <figure class="figure portrait">
-        <div class="vdu"><img src="assets/images/weizenbaum.jpg" alt="Joseph Weizenbaum" loading="lazy"></div>
+        <img src="assets/images/weizenbaum.jpg" alt="Joseph Weizenbaum" loading="lazy">
         <figcaption>Joseph Weizenbaum (1923&ndash;2008), creator of ELIZA.</figcaption>
       </figure>
+      <div class="lede"><p>ELIZA is one of the most influential computer programs in history. Created by Joseph Weizenbaum at MIT in the mid-1960s, it was the world&rsquo;s first chatbot: the first program to let people hold a conversation with a computer.</p></div>
       <p>Its behaviour was controlled by scripts, of which DOCTOR is the most renowned, making ELIZA reply like a Rogerian psychotherapist: offering little of its own, instead asking leading questions. The program achieved remarkable cultural impact despite its modest size, about 420 lines of MAD-SLIP. Its descendants and echoes run from HAL 9000 to Siri and Alexa.</p>
       <p>For decades after its 1966 publication in the Communications of the ACM, the original source code was unavailable. The team rediscovered the original ELIZA code in Weizenbaum&rsquo;s archive at MIT in 2021, making it possible to investigate the history of the chatbot through authentic artifacts. This site, and the book <a href="book.html"><em>Inventing ELIZA</em></a>, are the result.</p>
       <h2>Contact</h2>
