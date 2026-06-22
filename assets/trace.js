@@ -68,7 +68,7 @@
       }});
       S.push({ title: 'Clean and split into words', node: function () {
         var box = el('div');
-        box.appendChild(el('p', 'snote', 'Upper-cased, punctuation dropped, split on spaces. ELIZA only ever sees a list of words.'));
+        box.appendChild(el('p', 'snote', 'Upper-cased and split into words. ELIZA also breaks the input into sub-clauses at three delimiters, the comma, the full stop, and the word &ldquo;BUT&rdquo;, then works on the clause that holds the first keyword. The &ldquo;BUT&rdquo; delimiter is in the recovered source but Weizenbaum never documented it, one of this project&rsquo;s findings.'));
         box.appendChild(row('WORDS', T.words.map(function (w) { return chip(w.raw); })));
         return box;
       }});
