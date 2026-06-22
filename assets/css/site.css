@@ -141,7 +141,7 @@ a:hover { color: var(--bright); text-shadow: var(--glow); }
 /* ---------- hero: the teletype + lamp console ---------- */
 .hero { position: relative; min-height: 84vh; display: flex; align-items: center; overflow: hidden; border-bottom: 1px solid var(--line-soft); }
 #sourcewall { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.6; }
-.hero-inner { position: relative; z-index: 2; padding: 8vh 0; width: 100%; }
+.hero-inner { position: relative; z-index: 2; padding: 4vh 0; width: 100%; }
 /* the hero content sits in a darkened panel so it reads cleanly over the drifting
    source code; on wider screens it is anchored to the right, leaving the recovered
    source visible (and unobscured) on the left. */
@@ -367,6 +367,19 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 /* ---------- figures (archive images) ---------- */
 .figure { margin: 2rem 0 0; }
 .figure img { width: 100%; height: auto; display: block; border: 1px solid var(--line-soft); border-radius: 4px; }
+
+/* 1960s VDU / phosphor treatment for archive photos: green monochrome, scanlines,
+   a faint screen glow and curvature. (Plain figures, e.g. the book cover, keep
+   true colour.) */
+.vdu { position: relative; display: block; overflow: hidden; border: 1px solid var(--line-soft); border-radius: 5px; background: #060a07; }
+.vdu img { display: block; width: 100%; height: auto; border: 0; border-radius: 0;
+  filter: grayscale(1) sepia(1) hue-rotate(70deg) saturate(2.4) brightness(0.92) contrast(1.12); }
+.vdu::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: repeating-linear-gradient(to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,0) 2px, rgba(0,0,0,0.22) 3px); }
+.vdu::before { content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 1;
+  box-shadow: inset 0 0 50px rgba(0,0,0,0.6), inset 0 0 14px rgba(89,192,138,0.18);
+  background: radial-gradient(ellipse 100% 100% at 50% 50%, rgba(89,192,138,0.06), transparent 70%); }
+@media (prefers-reduced-motion: no-preference) { .vdu img { transition: filter 0.3s ease; } }
 .figure figcaption { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.3px; color: var(--ink-dim); margin-top: 0.6rem; line-height: 1.55; max-width: 64ch; }
 .figure.portrait { max-width: 300px; }
 @media (min-width: 760px) {

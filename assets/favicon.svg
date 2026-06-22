@@ -3,8 +3,9 @@
   <!-- an IBM punch card with a row of punched holes (the recovered listing motif) -->
   <path d="M6 9 H22 L26 13 V25 H6 Z" fill="#d9cfbc"/>
   <g fill="#14161b">
-    <rect x="10" y="16" width="3" height="4" rx="0.7"/>
-    <rect x="15" y="16" width="3" height="4" rx="0.7"/>
+    <rect x="10" y="15" width="3" height="4" rx="0.7"/>
+    <rect x="15" y="15" width="3" height="4" rx="0.7"/>
   </g>
-  <rect x="20" y="16" width="3" height="4" rx="0.7" fill="#ef6f44"/>
+  <rect x="20" y="15" width="3" height="4" rx="0.7" fill="#ef6f44"/>
+  <text x="16" y="23.5" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="4" fill="#14161b" opacity="0.5">000010</text>
 </svg>

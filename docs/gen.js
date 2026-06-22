@@ -8,14 +8,14 @@ const OUT = path.join(process.env.HOME, 'Projects', 'eliza');
 const BLOGDIR = path.join(OUT, 'blog');
 fs.mkdirSync(BLOGDIR, { recursive: true });
 
-const V = 10; // asset cache-buster
+const V = 11; // asset cache-buster
 
 // ---- shared chrome ----------------------------------------------------------
 function nav(depth) {
   const p = depth ? '../' : '';
   return `
       <a class="brand" href="${p}index.html" aria-label="ELIZA home">
-        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 6 H22 L28 12 V26 H4 Z" fill="#d9cfbc"/><g fill="#14161b"><rect x="8" y="15" width="3" height="5" rx="0.8"/><rect x="14" y="15" width="3" height="5" rx="0.8"/></g><rect x="20" y="15" width="3" height="5" rx="0.8" fill="#ef6f44"/></svg>
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 6 H22 L28 12 V26 H4 Z" fill="#d9cfbc"/><g fill="#14161b"><rect x="8" y="13" width="3" height="5" rx="0.8"/><rect x="14" y="13" width="3" height="5" rx="0.8"/></g><rect x="20" y="13" width="3" height="5" rx="0.8" fill="#ef6f44"/><text x="16" y="24" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="4.4" letter-spacing="0.3" fill="#14161b" opacity="0.5">000010</text></svg>
         <span class="brand-block"><span class="brand-text">ELIZA</span><span class="brand-tagline">Critical Code Studies · MIT · 1966</span></span>
       </a>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span class="bars" aria-hidden="true">&#9776;</span>&nbsp;Menu</button>
@@ -207,7 +207,7 @@ write('overview.html', page({
       <h2>The machine it ran on</h2>
       <p>There were no screens. People talked to ELIZA on teletypes, electromechanical printers like the IBM 2741 and the Teletype Model 33, which struck characters onto a roll of paper at ten to fourteen characters a second. The conversation was a physical object: ink on a page, produced together by a person and a machine. <a href="blog/post.html?p=2-talking-to-eliza-on-an-asr-33-teletype">Talking to ELIZA on an ASR 33 &rsaquo;</a></p>
       <figure class="figure">
-        <img src="assets/images/eliza-1967-twenty-first-century.jpg" alt="ELIZA being used on a teletype in 1967" loading="lazy">
+        <div class="vdu"><img src="assets/images/eliza-1967-twenty-first-century.jpg" alt="ELIZA being used on a teletype in 1967" loading="lazy"></div>
         <figcaption>ELIZA in use in 1967, filmed for the documentary <em>The Twenty-First Century</em>, &lsquo;The Communications Revolution&rsquo; (first broadcast 1967).</figcaption>
       </figure>
 
@@ -379,10 +379,10 @@ write('how.html', page({
   body: `
       <span class="kicker">How it works</span>
       <h1 class="page">Watch ELIZA think</h1>
-      <div class="lede"><p>Type a sentence and step through exactly what ELIZA does with it: clean it up, scan for keywords and rank them, break the sentence into numbered parts, then pour those parts into a canned reply. There is no understanding anywhere in the chain, and seeing that is the point.</p></div>
+      <div class="lede"><p>Type a sentence and step through exactly what ELIZA does with it.</p></div>
       <div id="trace-app"></div>
       <div class="rule">WHY THIS MATTERS</div>
-      <p>Joseph Weizenbaum was alarmed that people confided in ELIZA even when they knew it was a program. The distance between what the machine does (mechanical word-shuffling, shown above) and what we feel (that something understands us) is the <strong>ELIZA effect</strong>. It did not end in 1966: it is exactly the gap we navigate with today&rsquo;s chatbots. Watching the rules run is one way to keep the two apart. <a href="doctor.html">More on the DOCTOR script &rsaquo;</a> &nbsp; <a href="try.html">Or just talk to ELIZA &rsaquo;</a></p>
+      <p>Joseph Weizenbaum was alarmed that people confided in ELIZA even when they knew it was a program. The distance between what the machine does (mechanical word-shuffling, shown above) and what we feel (that something understands us) is the <strong>ELIZA effect</strong>. It did not end in 1966: it is exactly the gap we navigate with today&rsquo;s chatbots.</p>
 `}));
 
 // ---------------------------------------------------------------------------
@@ -426,6 +426,10 @@ write('book.html', page({
       <span class="kicker">The book</span>
       <h1 class="page">Inventing ELIZA</h1>
       <div class="lede"><p>How the First Chatbot Shaped the Future of AI. A collectively authored study built on the recovered source code, published by MIT Press in the Software Studies series, out 14 July 2026.</p></div>
+      <figure class="figure portrait">
+        <a href="https://mitpress.mit.edu/9780262052481/inventing-eliza/"><img src="assets/images/inventing-eliza.jpg" alt="Inventing ELIZA book cover" loading="lazy"></a>
+        <figcaption>Inventing ELIZA (MIT Press, Software Studies, 2026).</figcaption>
+      </figure>
       <p>Working with MIT librarians, the project recovered the original ELIZA program code. The book is an in-depth reading of that code and its scripts, drawing on the methods of Critical Code Studies, and tracing the program from its code to its impact on technoculture.</p>
       <p>It makes a distinction often lost: although DOCTOR is routinely identified with ELIZA itself, it was only one of many possibilities for the ELIZA conversational system. The book also follows the program&rsquo;s namesake, Eliza Doolittle of <em>Pygmalion</em> and <em>My Fair Lady</em>, into the present, asking how the problematic assumptions of gender and class carried in that name resurface in later systems, from Microsoft&rsquo;s Tay to Alexa.</p>
       <div class="cover-note">
@@ -466,7 +470,7 @@ write('about.html', page({
       <h1 class="page">About the project</h1>
       <div class="lede"><p>ELIZA is one of the most influential computer programs in history. Created by Joseph Weizenbaum at MIT in the mid-1960s, it was the world&rsquo;s first chatbot: the first program to let people hold a conversation with a computer.</p></div>
       <figure class="figure portrait">
-        <img src="assets/images/weizenbaum.jpg" alt="Joseph Weizenbaum" loading="lazy">
+        <div class="vdu"><img src="assets/images/weizenbaum.jpg" alt="Joseph Weizenbaum" loading="lazy"></div>
         <figcaption>Joseph Weizenbaum (1923&ndash;2008), creator of ELIZA.</figcaption>
       </figure>
       <p>Its behaviour was controlled by scripts, of which DOCTOR is the most renowned, making ELIZA reply like a Rogerian psychotherapist: offering little of its own, instead asking leading questions. The program achieved remarkable cultural impact despite its modest size, about 420 lines of MAD-SLIP. Its descendants and echoes run from HAL 9000 to Siri and Alexa.</p>
