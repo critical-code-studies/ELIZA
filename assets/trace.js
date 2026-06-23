@@ -49,6 +49,10 @@
     // reaches the final "reply" stage, then teletyped in. pendingEliza holds it
     // meanwhile; typeToken cancels an in-flight teletype when a new turn starts.
     var pendingEliza = null, typeToken = 0, convoEl = null;
+    // the stage is a fixed-size screen; each step is scaled to fit it so the box
+    // never resizes and the whole panel stays inside the window. userZoom (driven
+    // by the - / + buttons) lets the reader enlarge or shrink on top of that fit.
+    var userZoom = 1, curCard = null;
     var CACM = [
       'Men are all alike.',
       'They\'re always bugging us about something or other.',
@@ -248,10 +252,28 @@
       card.appendChild(el('div', 'stage-head', '<span class="stage-n">' + (cur + 1) + '</span>' + esc(st.title)));
       var body = el('div', 'stage-body'); body.appendChild(st.node()); card.appendChild(body);
       stageEl.appendChild(card);
+      curCard = card; fitCard();
       requestAnimationFrame(function () { card.classList.add('in'); });
       renderProg(); renderNav();
       if (st.last) revealEliza();   // reached "(N) The reply": let ELIZA answer
     }
+    // scale the current step so it fits the fixed-height stage (never enlarging
+    // past 1 on its own), times the reader's chosen zoom
+    function fitCard() {
+      if (!curCard) return;
+      // measure at natural size, then scale via the CSS `zoom` property so the
+      // layout footprint shrinks too (a CSS transform would not, leaving the box
+      // scrollable with empty space)
+      curCard.style.zoom = 1;
+      var cs = getComputedStyle(stageEl);
+      var avail = stageEl.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+      var natural = curCard.scrollHeight;
+      var s = Math.min(1, avail / natural) * userZoom;
+      if (!isFinite(s) || s <= 0) s = 1;
+      curCard.style.zoom = s;
+    }
+    function zoomBy(delta) { userZoom = Math.min(1.8, Math.max(0.6, Math.round((userZoom + delta) * 10) / 10)); fitCard(); }
+    window.addEventListener('resize', fitCard);
     // teletype ELIZA's withheld reply into the conversation panel once revealed
     function revealEliza() {
       if (pendingEliza == null || !convoEl) return;
@@ -286,6 +308,11 @@
       nav.appendChild(el('span', 'spacer'));
       nav.appendChild(replay);
       nav.appendChild(el('span', 'count', 'Step ' + (cur + 1) + ' / ' + stages.length));
+      var zoom = el('div', 'demo-zoom');
+      var zout = el('button', 'zbtn', '&minus;'); zout.title = 'Smaller'; zout.setAttribute('aria-label', 'Shrink the panel'); zout.addEventListener('click', function () { zoomBy(-0.1); });
+      var zin = el('button', 'zbtn', '+'); zin.title = 'Larger'; zin.setAttribute('aria-label', 'Enlarge the panel'); zin.addEventListener('click', function () { zoomBy(0.1); });
+      zoom.appendChild(zout); zoom.appendChild(zin);
+      nav.appendChild(zoom);
     }
     function toggleAuto() {
       if (autoTimer) { stop(); return; }
