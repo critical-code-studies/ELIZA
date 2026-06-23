@@ -91,6 +91,7 @@
       // the raw rule, faint
       if (e.sexp) {
         var det = el('details', 'dict-raw');
+        det.open = true;
         det.appendChild(el('summary', null, 'Raw rule'));
         det.appendChild(el('pre', 'listing', esc(e.sexp)));
         card.appendChild(det);
