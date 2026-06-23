@@ -278,7 +278,7 @@ write('overview.html', page({
       </ul>
       <p style="margin-top:1.4rem"><a href="how.html">Watch these steps run on a phrase of your own &rsaquo;</a></p>
 
-      <div class="callout"><span class="kicker">The trick, and the point</span><p>ELIZA never understands anything. It rearranges your own words. Weizenbaum was disturbed that people knew this and confided in it anyway. The gap between what the program does and what people believe it does is what he later called, and what we now call, the ELIZA effect.</p></div>
+      <div class="callout"><span class="kicker">The trick, and the point</span><p>ELIZA never understands anything. It rearranges your own words. Weizenbaum was disturbed that people knew this and confided in it anyway. The gap between what the program does and what people believe it does is what we now call the ELIZA effect.</p></div>
 
       <h2>The machine it ran on</h2>
       <p>There were no screens. People talked to ELIZA on teletypes, electromechanical printers like the IBM 2741 and the Teletype Model 33, which struck characters onto a roll of paper at ten to fourteen characters a second. The conversation was a physical object: ink on a page, produced together by a person and a machine. <a href="blog/post.html?p=2-talking-to-eliza-on-an-asr-33-teletype">Talking to ELIZA on an ASR 33 &rsaquo;</a></p>
