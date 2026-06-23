@@ -2080,6 +2080,21 @@ window.ElizaHay = {
           return { raw: w, sub: (sub !== w ? sub : null), keyword: isKey, rank: has ? has.getPrecedence() : 0 };
         });
         T.steps.forEach(function (st) { if ((st.kind === 'memory-recall' || st.kind === 'none') && !st.output && !st.text) { if (st.kind === 'none') st.output = reply; else st.text = reply; } });
+        // for an equivalence deferral (e.g. LIKE -> DIT), surface what the target
+        // keyword actually is: its rank and the pool of replies it hands over.
+        T.steps.forEach(function (st) {
+          if (st.kind !== 'goto' || !st.to || !script.rules.has(st.to)) return;
+          var tr = script.rules.get(st.to);
+          st.toRank = tr.getPrecedence ? tr.getPrecedence() : null;
+          st.fromRank = (st.from && script.rules.has(st.from) && script.rules.get(st.from).getPrecedence) ? script.rules.get(st.from).getPrecedence() : null;
+          st.targetResponses = [];
+          (tr.transforms || []).forEach(function (k) {
+            (k.reassemblyRules || []).forEach(function (rr) {
+              var line = join(rr);
+              if (line && line !== 'NEWKEY' && line.charAt(0) !== '=') st.targetResponses.push(line);
+            });
+          });
+        });
         T.memory = script.memoryRule.memories.slice();   // current memory queue, oldest first
         return T;
       }

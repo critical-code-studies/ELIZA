@@ -9,18 +9,18 @@
   <meta property="og:site_name" content="ELIZA Archaeology Project">
   <meta property="og:title" content="The first chatbot · ELIZA (1966)">
   <meta property="og:description" content="A Critical Code Studies reading of ELIZA, Joseph Weizenbaum’s 1966 chatbot, built on the original source recovered from the MIT archive.">
-  <meta property="og:image" content="https://critical-code-studies.github.io/ELIZA/assets/images/share-card.png?v=202606222357">
+  <meta property="og:image" content="https://critical-code-studies.github.io/ELIZA/assets/images/share-card.png?v=202606230918">
   <meta property="og:url" content="https://critical-code-studies.github.io/ELIZA/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="The first chatbot · ELIZA (1966)">
   <meta name="twitter:description" content="A Critical Code Studies reading of ELIZA, Joseph Weizenbaum’s 1966 chatbot, built on the original source recovered from the MIT archive.">
-  <meta name="twitter:image" content="https://critical-code-studies.github.io/ELIZA/assets/images/share-card.png?v=202606222357">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=202606222357">
-  <link rel="stylesheet" href="assets/css/site.css?v=202606222357">
-  <script src="assets/nav.js?v=202606222357" defer></script>
-  <script src="assets/term.js?v=202606222357" defer></script>
-  <script src="assets/source-wall.js?v=202606222357" defer></script>
-  <script src="assets/teletype.js?v=202606222357" defer></script>
+  <meta name="twitter:image" content="https://critical-code-studies.github.io/ELIZA/assets/images/share-card.png?v=202606230918">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=202606230918">
+  <link rel="stylesheet" href="assets/css/site.css?v=202606230918">
+  <script src="assets/nav.js?v=202606230918" defer></script>
+  <script src="assets/term.js?v=202606230918" defer></script>
+  <script src="assets/source-wall.js?v=202606230918" defer></script>
+  <script src="assets/teletype.js?v=202606230918" defer></script>
 </head>
 <body>
 
@@ -105,6 +105,29 @@
         <div class="stat"><div class="n">5+</div><div class="l">known versions</div></div>
         <div class="stat"><div class="n">2021</div><div class="l">source recovered</div></div>
       </div>
+    </section>
+
+    <div class="rule">A KEYWORD THAT IS NOT A WORD</div>
+
+    <section class="block">
+      <span class="kicker">Inside the DOCTOR script</span>
+      <h2>DIT, and how ELIZA fakes a vocabulary</h2>
+      <p>One of DOCTOR&rsquo;s keywords, <code>DIT</code>, is not an English word at all. Weizenbaum invented it as a collecting point for a single set of replies, the ones about likeness and resemblance:</p>
+      <pre class="listing">(DIT
+    ((0)
+        (IN WHAT WAY)
+        (WHAT RESEMBLANCE DO YOU SEE)
+        (WHAT DOES THAT SIMILARITY SUGGEST TO YOU)
+        (WHAT OTHER CONNECTIONS DO YOU SEE)
+        (WHAT DO YOU SUPPOSE THAT RESEMBLANCE MEANS)
+        (WHAT IS THE CONNECTION, DO YOU SUPPOSE)
+        (COULD THERE REALLY BE SOME CONNECTION)
+        (HOW)))</pre>
+      <p>Three near-synonyms carry no replies of their own. Each is defined as nothing but a pointer to <code>DIT</code>:</p>
+      <pre class="listing">(ALIKE 10 (=DIT))
+(SAME  10 (=DIT))
+(LIKE  10 (=DIT))</pre>
+      <p>The <code>(=DIT)</code> directive tells ELIZA to substitute <code>DIT</code> and run its rules instead. So &ldquo;Men are all alike&rdquo; matches <code>ALIKE</code>, defers to <code>DIT</code>, and produces &ldquo;IN WHAT WAY&rdquo;, the famous first line of the 1966 dialogue. The <code>=</code> is how ELIZA builds <em>equivalence classes</em> of keywords: rather than repeat the resemblance replies under three headings, Weizenbaum routes them all through one artificial token. It is a small economy, and it gives away the whole trick. ELIZA recognises a keyword and pours your own words into a shared template; it understands nothing. <a href="how.html">Watch this happen step by step &rsaquo;</a></p>
     </section>
 
     <section class="block">

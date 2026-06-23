@@ -151,7 +151,17 @@
           return box;
         }});
         else if (st.kind === 'goto') S.push({ title: st.from + ' defers to ' + st.to, node: function () {
-          return el('div', 'defer', '<b>' + esc(st.from) + '</b> has no reply of its own. It hands over to <b>' + esc(st.to) + '</b>. <span class="arrow">&rarr;</span>');
+          var box = el('div', 'defer');
+          box.appendChild(el('p', 'snote', '<b>' + esc(st.from) + '</b> carries no replies of its own. Its rule is a pointer into an <em>equivalence class</em>: a shared pool of replies kept under the keyword <b>' + esc(st.to) + '</b>. ELIZA substitutes <b>' + esc(st.to) + '</b> and uses its rules instead. This is how synonyms (LIKE, SAME, ALIKE) share one set of answers without repeating them. (<b>' + esc(st.to) + '</b> is not an English word, just an internal label Weizenbaum chose.)'));
+          var ruleLine = '(' + esc(st.from) + (st.fromRank ? ' ' + st.fromRank : '') + ' (=' + esc(st.to) + '))';
+          box.appendChild(el('p', 'defer-rule', 'rule: ' + ruleLine));
+          if (st.targetResponses && st.targetResponses.length) {
+            box.appendChild(el('p', 'snote', 'The replies now in play, pooled under <b>' + esc(st.to) + '</b> (one is chosen, then cycled):'));
+            var ul = el('ul', 'defer-resp');
+            st.targetResponses.forEach(function (rr) { ul.appendChild(el('li', null, esc(rr))); });
+            box.appendChild(ul);
+          }
+          return box;
         }});
         else if (st.kind === 'pre') S.push({ title: st.from + ' rebuilds, then defers to ' + st.to, node: function () {
           var box = el('div');

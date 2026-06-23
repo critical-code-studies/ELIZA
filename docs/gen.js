@@ -208,6 +208,29 @@ const homeBody = `
       </div>
     </section>
 
+    <div class="rule">A KEYWORD THAT IS NOT A WORD</div>
+
+    <section class="block">
+      <span class="kicker">Inside the DOCTOR script</span>
+      <h2>DIT, and how ELIZA fakes a vocabulary</h2>
+      <p>One of DOCTOR&rsquo;s keywords, <code>DIT</code>, is not an English word at all. Weizenbaum invented it as a collecting point for a single set of replies, the ones about likeness and resemblance:</p>
+      <pre class="listing">(DIT
+    ((0)
+        (IN WHAT WAY)
+        (WHAT RESEMBLANCE DO YOU SEE)
+        (WHAT DOES THAT SIMILARITY SUGGEST TO YOU)
+        (WHAT OTHER CONNECTIONS DO YOU SEE)
+        (WHAT DO YOU SUPPOSE THAT RESEMBLANCE MEANS)
+        (WHAT IS THE CONNECTION, DO YOU SUPPOSE)
+        (COULD THERE REALLY BE SOME CONNECTION)
+        (HOW)))</pre>
+      <p>Three near-synonyms carry no replies of their own. Each is defined as nothing but a pointer to <code>DIT</code>:</p>
+      <pre class="listing">(ALIKE 10 (=DIT))
+(SAME  10 (=DIT))
+(LIKE  10 (=DIT))</pre>
+      <p>The <code>(=DIT)</code> directive tells ELIZA to substitute <code>DIT</code> and run its rules instead. So &ldquo;Men are all alike&rdquo; matches <code>ALIKE</code>, defers to <code>DIT</code>, and produces &ldquo;IN WHAT WAY&rdquo;, the famous first line of the 1966 dialogue. The <code>=</code> is how ELIZA builds <em>equivalence classes</em> of keywords: rather than repeat the resemblance replies under three headings, Weizenbaum routes them all through one artificial token. It is a small economy, and it gives away the whole trick. ELIZA recognises a keyword and pours your own words into a shared template; it understands nothing. <a href="how.html">Watch this happen step by step &rsaquo;</a></p>
+    </section>
+
     <section class="block">
       <div class="cover-note">
         <span class="kicker">Out 14 July 2026 &middot; MIT Press</span>

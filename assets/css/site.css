@@ -421,12 +421,12 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 /* the memory queue: a full-width bar under the input line, set on a darker
    ground so it reads as a distinct register (ELIZA's stored phrases) */
 .demo-mem { background: #03100a; border-bottom: 1px solid rgba(89,192,138,0.16); padding: 0.55rem 1.2rem; display: flex; gap: 1.2rem; align-items: stretch; }
-.mem-left, .mem-right { flex: 1 1 50%; min-width: 0; }
+.mem-left, .mem-right { flex: 1 1 50%; min-width: 0; overflow: hidden; }
 .mem-right { border-left: 1px solid rgba(89,192,138,0.16); padding-left: 1.2rem; }
 .demo-mem .mlab { display: block; font-family: var(--mono); font-size: 0.56rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--lamp-green); text-decoration: underline; text-underline-offset: 3px; }
-.demo-mem ol { list-style: none; margin: 0.3rem 0 0; padding: 0 0 0 1.2rem; display: grid; gap: 0; }
-.demo-mem li { font-family: var(--mono); font-size: 0.58rem; line-height: 1.1; color: var(--ink-dim); display: flex; gap: 0.5rem; align-items: center; }
-.demo-mem li > span:last-child { flex: 0 1 auto; min-width: 0; max-width: 40ch; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.demo-mem ol { list-style: none; margin: 0.3rem 0 0; padding: 0 0 0 1.2rem; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; }
+.demo-mem li { font-family: var(--mono); font-size: 0.58rem; line-height: 1.1; color: var(--ink-dim); display: flex; gap: 0.5rem; align-items: center; min-width: 0; }
+.demo-mem li > span:last-child { flex: 1 1 auto; min-width: 0; max-width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .demo-mem .mn { color: var(--lamp-green); min-width: 0.9rem; text-align: right; flex: 0 0 auto; }
 .demo-mem li.slot-empty { opacity: 0.4; }
 .mem-convo { margin-top: 0.3rem; max-height: 5em; overflow-y: auto; }
@@ -479,6 +479,10 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .paper.out { color: var(--eliza); text-transform: uppercase; }
 .defer { font-size: 0.98rem; color: var(--ink); }
 .defer .arrow { color: var(--lamp-red); }
+.defer-rule { font-family: var(--mono); font-size: 0.62rem; color: var(--ink-dim); opacity: 0.8; margin: 0.1rem 0 0.7rem; letter-spacing: 0.3px; }
+.defer-resp { list-style: none; margin: 0.4rem 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0.3rem 1.2rem; max-width: 64ch; }
+.defer-resp li { font-family: var(--mono); font-size: 0.72rem; color: var(--lamp-green); padding-left: 0.9rem; position: relative; }
+.defer-resp li::before { content: "\203A"; position: absolute; left: 0; color: var(--ink-dim); }
 .memnote { font-size: 0.95rem; color: var(--ink); border-left: 3px solid var(--lamp-amber); background: rgba(240,168,58,0.05); padding: 0.8rem 1.1rem; border-radius: 3px; max-width: 66ch; }
 .debunk { font-size: 1.05rem; color: var(--bright); border-top: 1px solid var(--line-soft); margin-top: 1.4rem; padding-top: 1.2rem; max-width: 64ch; }
 
