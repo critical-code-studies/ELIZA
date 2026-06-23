@@ -274,11 +274,25 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 
 /* book-cover homage: black text on coral */
 .cover-note { clear: both; background: var(--lamp-red); color: #140d09; border-radius: 4px; padding: 2.2rem 2.4rem; margin-top: 1.6rem; }
+/* home book promo: the cover render beside the red note */
+.book-promo { display: flex; gap: 2.2rem; align-items: center; flex-wrap: wrap; }
+.book-promo-img { flex: 0 0 auto; width: 260px; max-width: 100%; display: block; }
+.book-promo-img img { width: 100%; height: auto; display: block; filter: drop-shadow(0 12px 30px rgba(0,0,0,0.5)); }
+.book-promo .cover-note { flex: 1 1 320px; margin-top: 0; }
+@media (max-width: 600px) { .book-promo-img { width: 200px; margin: 0 auto; } }
 .cover-note .kicker { color: #140d09; opacity: 0.75; }
 .cover-note h2 { color: #140d09; }
 .cover-note p { color: #1c120c; max-width: 60ch; }
 .cover-note a { color: #140d09; border-bottom: 1px solid rgba(20,13,9,0.4); font-family: var(--mono); font-size: 0.85rem; }
 .cover-note a:hover { color: #000; text-shadow: none; }
+/* a quieter variant: a bordered box rather than a solid red panel, so it does
+   not compete with the (red) book cover beside it */
+.cover-note.muted { background: var(--panel); border: 1px solid var(--line-soft); border-left: 3px solid var(--lamp-red); color: var(--ink); }
+.cover-note.muted .kicker { color: var(--beam); opacity: 1; }
+.cover-note.muted h2 { color: var(--bright); }
+.cover-note.muted p { color: var(--ink); }
+.cover-note.muted a { color: var(--beam); border-bottom-color: rgba(236,106,66,0.4); }
+.cover-note.muted a:hover { color: var(--bright); }
 
 /* further reading */
 .reading ul { list-style: none; padding: 0; margin: 1rem 0 2rem; }

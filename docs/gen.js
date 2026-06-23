@@ -184,6 +184,10 @@ const homeBody = `
 
     <section class="block">
       <h2>Inventing ELIZA</h2>
+      <figure class="figure portrait">
+        <img src="assets/images/weizenbaum-1980s.jpg" alt="Joseph Weizenbaum in the 1980s" loading="lazy">
+        <figcaption>Joseph Weizenbaum, who wrote ELIZA and then spent his life warning against it (1980s).</figcaption>
+      </figure>
       <p>This is an interdisciplinary investigation of ELIZA as a cultural and technical artifact, built around the original source code we recovered from Weizenbaum&rsquo;s papers in the MIT archive in 2021. We read the code, the DOCTOR script, the hardware it ran on, and the long shadow it cast over how we talk about thinking machines.</p>
       <p>It is a companion to the Critical Code Studies group&rsquo;s collectively authored book <a href="book.html"><em>Inventing ELIZA</em></a> (MIT Press).</p>
       <div class="grid">
@@ -232,11 +236,14 @@ const homeBody = `
     </section>
 
     <section class="block">
-      <div class="cover-note">
-        <span class="kicker">Out 14 July 2026 &middot; MIT Press</span>
-        <h2>Inventing ELIZA</h2>
-        <p>How the First Chatbot Shaped the Future of AI. The recovery, the close reading, and the politics of the program, by the full project team. MIT Press, Software Studies series.</p>
-        <p><a href="https://mitpress.mit.edu/9780262052481/inventing-eliza/">Order from MIT Press &rsaquo;</a> &nbsp; <a href="book.html">About the book &rsaquo;</a></p>
+      <div class="book-promo">
+        <a class="book-promo-img" href="book.html"><img src="assets/images/eliza-book-2026.png" alt="Inventing ELIZA (MIT Press, Software Studies)" loading="lazy"></a>
+        <div class="cover-note">
+          <span class="kicker">MIT Press &middot; Software Studies</span>
+          <h2>Inventing ELIZA</h2>
+          <p>How the First Chatbot Shaped the Future of AI. The recovery, the close reading, and the politics of the program, by the full project team. MIT Press, Software Studies series.</p>
+          <p><a href="https://mitpress.mit.edu/9780262052481/inventing-eliza/">Order from MIT Press &rsaquo;</a> &nbsp; <a href="book.html">About the book &rsaquo;</a></p>
+        </div>
       </div>
     </section>
 
@@ -265,6 +272,11 @@ write('overview.html', page({
 
       <h2>A system, not a single program</h2>
       <p>ELIZA itself is an engine. It reads a <em>script</em> &mdash; a list of keywords and transformation rules &mdash; and uses it to turn what you type into a reply. DOCTOR, the script that made ELIZA famous, made it answer like a Rogerian psychotherapist: offering little of its own, mostly reflecting your words back as questions. DOCTOR is the most renowned script, but it is only one of many possibilities for the ELIZA system. <a href="doctor.html">Read the DOCTOR script &rsaquo;</a></p>
+
+      <figure class="figure">
+        <img src="assets/images/ai-pioneers-1968.jpg" alt="Claude Shannon, John McCarthy, Ed Fredkin and Joseph Weizenbaum at MIT, April 1968" loading="lazy">
+        <figcaption>The world ELIZA came from: Claude Shannon, John McCarthy, Ed Fredkin and Joseph Weizenbaum at MIT, April 1968.</figcaption>
+      </figure>
 
       <h2>How a reply is made</h2>
       <p>Weizenbaum&rsquo;s 1966 paper describes the whole mechanism in a few pages. The recovered source shows it working in detail:</p>
@@ -595,11 +607,12 @@ write('book.html', page({
         <a href="https://mitpress.mit.edu/9780262052481/inventing-eliza/"><img src="assets/images/inventing-eliza.jpg" alt="Inventing ELIZA book cover" loading="lazy"></a>
         <figcaption>Inventing ELIZA (MIT Press, Software Studies, 2026).</figcaption>
       </figure>
-      <div class="lede"><p>How the First Chatbot Shaped the Future of AI. A collectively authored study built on the recovered source code, published by MIT Press in the Software Studies series, out 14 July 2026.</p></div>
-      <p>Working with MIT librarians, the project recovered the original ELIZA program code. The book is an in-depth reading of that code and its scripts, drawing on the methods of Critical Code Studies, and tracing the program from its code to its impact on technoculture.</p>
-      <p>It makes a distinction often lost: although DOCTOR is routinely identified with ELIZA itself, it was only one of many possibilities for the ELIZA conversational system. The book also follows the program&rsquo;s namesake, Eliza Doolittle of <em>Pygmalion</em> and <em>My Fair Lady</em>, into the present, asking how the problematic assumptions of gender and class carried in that name resurface in later systems, from Microsoft&rsquo;s Tay to Alexa.</p>
-      <div class="cover-note">
-        <span class="kicker">Published 14 July 2026 &middot; MIT Press, Software Studies</span>
+      <div class="lede"><p>How the First Chatbot Shaped the Future of AI. A study by Sarah Ciston, David M. Berry, Anthony C. Hay, Mark C. Marino, Peter Millican, Arthur I. Schwarz, Jeff Shrager and Peggy Weil, built on the recovered source code, published by MIT Press in the Software Studies series.</p></div>
+      <p>As we reach the 60th anniversary of ELIZA&rsquo;s public debut, <em>Inventing ELIZA</em> offers the first comprehensive critical analysis of Joseph Weizenbaum&rsquo;s groundbreaking chatbot system through the lens of Critical Code Studies. Drawing on extensive archival research at MIT, Stanford, and UCLA, the book presents the rediscovered original source code of ELIZA alongside previously unseen scripts that had been missing for decades, revealing a far more sophisticated system than previously documented. The authors trace ELIZA&rsquo;s development (1965&ndash;1968), showing that Weizenbaum created a chatbot within a conversational programming environment, with previously unknown innovations well ahead of its time. Through close reading of both code and paratexts, the book reconstructs ELIZA&rsquo;s conceptual evolution and situates it within the historical context of early AI development.</p>
+      <p>Although DOCTOR is routinely identified with ELIZA itself, it was only one of many possibilities for the ELIZA conversational system. The book also follows the program&rsquo;s namesake, Eliza Doolittle of <em>Pygmalion</em> and <em>My Fair Lady</em>, into the present, asking how the problematic assumptions of gender and class carried in that name resurface in later systems, from Microsoft&rsquo;s Tay to Alexa.</p>
+      <p>The book&rsquo;s companion website, <a href="https://findingeliza.org">findingeliza.org</a>, includes a faithful recreation of the first chatbot and news about continued research.</p>
+      <div class="cover-note muted">
+        <span class="kicker">MIT Press &middot; Software Studies</span>
         <h2>Inventing ELIZA</h2>
         <p>Inventing ELIZA: How the First Chatbot Shaped the Future of AI. By Sarah Ciston, David M. Berry, Anthony C. Hay, Mark C. Marino, Peter Millican, Arthur I. Schwarz, Jeff Shrager and Peggy Weil.</p>
         <p><a href="https://mitpress.mit.edu/9780262052481/inventing-eliza/">mitpress.mit.edu/9780262052481 &rsaquo;</a></p>
@@ -641,6 +654,10 @@ write('about.html', page({
       <div class="lede"><p>ELIZA is one of the most influential computer programs in history. Created by Joseph Weizenbaum at MIT in the mid-1960s, it was the world&rsquo;s first chatbot: the first program to let people hold a conversation with a computer.</p></div>
       <p>Its behaviour was controlled by scripts, of which DOCTOR is the most renowned, making ELIZA reply like a Rogerian psychotherapist: offering little of its own, instead asking leading questions. The program achieved remarkable cultural impact despite its modest size, about 420 lines of MAD-SLIP. Its descendants and echoes run from HAL 9000 to Siri and Alexa.</p>
       <p>For decades after its 1966 publication in the Communications of the ACM, the original source code was unavailable. The team rediscovered the original ELIZA code in Weizenbaum&rsquo;s archive at MIT in 2021, making it possible to investigate the history of the chatbot through authentic artifacts. This site, and the book <a href="book.html"><em>Inventing ELIZA</em></a>, are the result. Meet the people behind it on the <a href="people.html">TEAM-ELIZA</a> page.</p>
+      <figure class="figure half">
+        <img src="assets/images/weizenbaum-mit-80s.jpg" alt="Joseph Weizenbaum at MIT in the 1980s" loading="lazy">
+        <figcaption>Joseph Weizenbaum at MIT in the 1980s.</figcaption>
+      </figure>
 `}));
 
 // ---------------------------------------------------------------------------
