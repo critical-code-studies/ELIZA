@@ -194,6 +194,7 @@ const homeBody = `
         <div class="card r"><p class="obj">Read</p><h3><a href="overview.html">Overview</a></h3><p>What ELIZA actually was, and why DOCTOR is not the same thing as ELIZA.</p></div>
         <div class="card b"><p class="obj">The code</p><h3><a href="code.html">The program</a></h3><p>A close reading of the recovered MAD-SLIP source, line by line.</p></div>
         <div class="card y"><p class="obj">The script</p><h3><a href="doctor.html">DOCTOR</a></h3><p>Weizenbaum&rsquo;s Rogerian therapist script, and how its patterns work.</p></div>
+        <div class="card b"><p class="obj">The dictionary</p><h3><a href="dictionary.html">DOCTOR dictionary</a></h3><p>Every keyword DOCTOR knows: filter the list, then read the rules behind each one.</p></div>
         <div class="card r"><p class="obj">Watch</p><h3><a href="how.html">How it works</a></h3><p>Type a phrase and step through ELIZA&rsquo;s rules, from keywords to reply.</p></div>
         <div class="card g"><p class="obj">Talk</p><h3><a href="try.html">Try ELIZA</a></h3><p>A faithful re-creation that runs the genuine 1966 script in your browser.</p></div>
       </div>
@@ -238,10 +239,10 @@ const homeBody = `
     <section class="block">
       <div class="book-promo">
         <a class="book-promo-img" href="book.html"><img src="assets/images/eliza-book-2026.png" alt="Inventing ELIZA (MIT Press, Software Studies)" loading="lazy"></a>
-        <div class="cover-note">
+        <div class="book-promo-text">
           <span class="kicker">MIT Press &middot; Software Studies</span>
           <h2>Inventing ELIZA</h2>
-          <p>How the First Chatbot Shaped the Future of AI. The recovery, the close reading, and the politics of the program, by the full project team. MIT Press, Software Studies series.</p>
+          <p>How the First Chatbot Shaped the Future of AI. The recovery, the close reading, and the politics of the program, by the full project team.</p>
           <p><a href="https://mitpress.mit.edu/9780262052481/inventing-eliza/">Order from MIT Press &rsaquo;</a> &nbsp; <a href="book.html">About the book &rsaquo;</a></p>
         </div>
       </div>
