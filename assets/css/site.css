@@ -449,7 +449,9 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .demo-stage { position: relative; padding: 1.3rem 1.3rem; height: clamp(16rem, 50vh, 26rem); overflow: auto; }
 .stage-card { width: 100%; opacity: 0; transition: opacity 0.22s ease; transform-origin: top left; }
 .stage-card.in { opacity: 1; }
-.demo-zoom { display: inline-flex; align-items: center; gap: 0.3rem; margin-left: 0.4rem; }
+.demo-zoom { display: inline-flex; flex-direction: column; align-items: center; gap: 0.18rem; margin-left: 0.7rem; padding-left: 0.9rem; border-left: 1px solid var(--line-soft); }
+.demo-zoom .zlab { font-family: var(--mono); font-size: 0.5rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-dim); }
+.demo-zoom .zbtns { display: inline-flex; gap: 0.3rem; }
 .zbtn { font-family: var(--mono); font-size: 0.95rem; line-height: 1; width: 1.7rem; height: 1.7rem; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--line); color: var(--ink-dim); background: transparent; border-radius: 3px; cursor: pointer; }
 .zbtn:hover { border-color: var(--ink); color: var(--bright); }
 .stage-head { font-family: var(--mono); font-weight: 700; color: var(--bright); font-size: 1rem; letter-spacing: 0.3px; display: flex; align-items: center; gap: 0.7rem; margin: 0 0 1.1rem; }

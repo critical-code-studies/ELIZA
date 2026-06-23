@@ -309,9 +309,12 @@
       nav.appendChild(replay);
       nav.appendChild(el('span', 'count', 'Step ' + (cur + 1) + ' / ' + stages.length));
       var zoom = el('div', 'demo-zoom');
+      zoom.appendChild(el('span', 'zlab', 'Zoom'));
+      var zbtns = el('div', 'zbtns');
       var zout = el('button', 'zbtn', '&minus;'); zout.title = 'Smaller'; zout.setAttribute('aria-label', 'Shrink the panel'); zout.addEventListener('click', function () { zoomBy(-0.1); });
       var zin = el('button', 'zbtn', '+'); zin.title = 'Larger'; zin.setAttribute('aria-label', 'Enlarge the panel'); zin.addEventListener('click', function () { zoomBy(0.1); });
-      zoom.appendChild(zout); zoom.appendChild(zin);
+      zbtns.appendChild(zout); zbtns.appendChild(zin);
+      zoom.appendChild(zbtns);
       nav.appendChild(zoom);
     }
     function toggleAuto() {
