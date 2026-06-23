@@ -229,7 +229,7 @@
       // (and can be flashed when the "Recall a memory" step is reached)
       var recalls = T.steps.some(function (s) { return s.kind === 'memory-recall'; });
       var mem = (recalls && T.memoryBefore && T.memoryBefore.length) ? T.memoryBefore : (T.memory || []);
-      var slots = Math.max(4, mem.length);
+      var slots = Math.max(5, mem.length);
       var ol = el('ol');
       recallSlotEl = null;
       for (var mi = 0; mi < slots; mi++) {
