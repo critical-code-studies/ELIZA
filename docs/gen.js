@@ -591,11 +591,11 @@ write('book.html', page({
   body: `
       <span class="kicker">The book</span>
       <h1 class="page">Inventing ELIZA</h1>
-      <div class="lede"><p>How the First Chatbot Shaped the Future of AI. A collectively authored study built on the recovered source code, published by MIT Press in the Software Studies series, out 14 July 2026.</p></div>
       <figure class="figure portrait">
         <a href="https://mitpress.mit.edu/9780262052481/inventing-eliza/"><img src="assets/images/inventing-eliza.jpg" alt="Inventing ELIZA book cover" loading="lazy"></a>
         <figcaption>Inventing ELIZA (MIT Press, Software Studies, 2026).</figcaption>
       </figure>
+      <div class="lede"><p>How the First Chatbot Shaped the Future of AI. A collectively authored study built on the recovered source code, published by MIT Press in the Software Studies series, out 14 July 2026.</p></div>
       <p>Working with MIT librarians, the project recovered the original ELIZA program code. The book is an in-depth reading of that code and its scripts, drawing on the methods of Critical Code Studies, and tracing the program from its code to its impact on technoculture.</p>
       <p>It makes a distinction often lost: although DOCTOR is routinely identified with ELIZA itself, it was only one of many possibilities for the ELIZA conversational system. The book also follows the program&rsquo;s namesake, Eliza Doolittle of <em>Pygmalion</em> and <em>My Fair Lady</em>, into the present, asking how the problematic assumptions of gender and class carried in that name resurface in later systems, from Microsoft&rsquo;s Tay to Alexa.</p>
       <div class="cover-note">
