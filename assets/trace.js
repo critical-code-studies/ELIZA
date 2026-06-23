@@ -18,7 +18,8 @@
     input.setAttribute('aria-label', 'Phrase to trace');
     input.setAttribute('autocomplete', 'off'); input.setAttribute('spellcheck', 'false');
     var runBtn = el('button', 'btn', 'Trace it');
-    bar.appendChild(input); bar.appendChild(runBtn); app.appendChild(bar);
+    var resetBtn = el('button', 'btn ghost', '↻ Reset');
+    bar.appendChild(input); bar.appendChild(runBtn); bar.appendChild(resetBtn); app.appendChild(bar);
 
     var egs = el('div', 'trace-egs');
     egs.appendChild(el('span', 'trace-egs-lab', 'try:'));
@@ -37,11 +38,9 @@
     var nav = el('div', 'demo-nav'); demo.appendChild(nav);
     app.appendChild(demo);
 
-    var resetBtn = el('button', 'btn ghost', '↻ Reset');
     var playRow = el('div', 'play-row');
     playRow.appendChild(el('span', 'play-lab', 'Or watch the original:'));
     playRow.appendChild(playBtn);
-    playRow.appendChild(resetBtn);
     app.appendChild(playRow);
 
     var stages = [], cur = 0, autoTimer = null, T = null;
