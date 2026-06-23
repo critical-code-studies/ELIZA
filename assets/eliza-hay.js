@@ -2101,6 +2101,46 @@ window.ElizaHay = {
     };
   },
   // single-shot trace in a fresh conversation
-  trace: function (text) { return window.ElizaHay.make().trace(text); }
+  trace: function (text) { return window.ElizaHay.make().trace(text); },
+
+  // the raw 1966 DOCTOR script as Hay transcribed it (CACM appendix), for listing
+  scriptText: CACM_1966_01_DOCTOR_SCRIPT,
+
+  // a structured index of every keyword rule in the DOCTOR script, in script
+  // order: rank, word substitution, dlist tags, equivalence link, and each
+  // transform's decomposition pattern with its reassembly templates. Drives the
+  // dictionary page (assets/dict.js).
+  dictionary: function () {
+    var r = readScript(CACM_1966_01_DOCTOR_SCRIPT);
+    if (r[0] !== 'success') throw new Error('ELIZA script error: ' + r[0]);
+    var script = r[1];
+    function transformsOf(rule) {
+      return (rule.transforms || []).map(function (t) {
+        return { decomposition: '(' + join(t.decomposition) + ')', reassembly: (t.reassemblyRules || []).map(function (rr) { return join(rr); }) };
+      });
+    }
+    var out = [];
+    script.rules.forEach(function (rule, key) {
+      out.push({
+        keyword: (key === SPECIAL_RULE_NONE) ? 'NONE' : key,
+        precedence: rule.getPrecedence ? rule.getPrecedence() : 0,
+        substitution: rule.wordSubstitution || '',
+        tags: (rule.dlistTags ? rule.dlistTags() : (rule.tags || [])).slice(),
+        link: rule.linkKeyword || '',
+        transforms: transformsOf(rule),
+        sexp: (rule.toString ? rule.toString() : '').trim()
+      });
+    });
+    var mr = script.memoryRule;
+    if (mr && mr.keyword) {
+      out.push({
+        keyword: 'MEMORY', isMemory: true, memoryKeyword: mr.keyword,
+        precedence: null, substitution: '', tags: [], link: '',
+        transforms: transformsOf(mr),
+        sexp: (mr.toString ? mr.toString() : '').trim()
+      });
+    }
+    return out;
+  }
 };
 })();

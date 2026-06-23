@@ -488,6 +488,43 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 
 @media (max-width: 560px) { .srow { grid-template-columns: 1fr; } .srow-lab { text-align: left; padding-top: 0; } }
 
+/* ---------- the DOCTOR dictionary (dictionary.html, dict.js) ---------- */
+.dict-bar { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0 1rem; }
+.dict-input { flex: 1; min-width: 240px; background: #0d0f13; border: 1px solid var(--line); border-radius: 4px; color: var(--you); font-family: var(--mono); font-size: 0.95rem; padding: 0.7rem 1rem; outline: none; }
+.dict-input:focus { border-color: var(--beam); }
+.dict-count { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-dim); }
+.dict-list { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.6rem; }
+.dict-key { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.5px; color: var(--ink); background: var(--panel); border: 1px solid var(--line-soft); border-radius: 3px; padding: 0.3rem 0.6rem; cursor: pointer; display: inline-flex; align-items: center; gap: 0.35rem; transition: border-color 0.12s, color 0.12s; }
+.dict-key:hover { border-color: var(--beam); color: var(--bright); }
+.dict-key.on { border-color: var(--lamp-red); color: var(--lamp-red); background: rgba(225,84,46,0.08); }
+.dict-key-mark { color: var(--ink-dim); font-size: 0.78rem; }
+.dict-card { border: 1px solid var(--line-soft); border-top: 2px solid var(--lamp-red); background: var(--panel); border-radius: 3px; padding: 1.3rem 1.5rem; }
+.dict-card-head { display: flex; align-items: center; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 0.4rem; }
+.dict-kw { font-family: var(--mono); font-size: 1.35rem; letter-spacing: 1px; color: var(--bright); }
+.dict-badge { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.6px; text-transform: uppercase; color: var(--ink-dim); border: 1px solid var(--line-soft); border-radius: 999px; padding: 0.12rem 0.55rem; }
+.dict-badge.rank { color: var(--lamp-red); border-color: rgba(225,84,46,0.5); }
+.dict-badge.mem { color: var(--lamp-amber); border-color: rgba(240,168,58,0.5); }
+.dict-badge.sub { color: var(--lamp-blue); border-color: rgba(77,146,224,0.5); text-transform: none; }
+.dict-badge.tag { color: var(--lamp-green); border-color: rgba(89,192,138,0.5); }
+.dict-note { font-size: 0.92rem; color: var(--ink); max-width: 66ch; margin: 0.2rem 0 1rem; }
+.dict-rule { border-top: 1px solid var(--line-soft); padding-top: 0.9rem; margin-top: 0.9rem; }
+.dict-rule:first-of-type { border-top: 0; padding-top: 0; margin-top: 0.6rem; }
+.dict-rule-lab { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 1.4px; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 0.4rem; }
+.dict-rl { font-family: var(--mono); font-size: 0.56rem; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-dim); margin-right: 0.5rem; }
+.dict-decomp { font-size: 0.85rem; margin-bottom: 0.5rem; }
+.dict-decomp code { font-family: var(--mono); font-size: 0.78rem; color: var(--lamp-amber); background: rgba(240,168,58,0.07); padding: 0.1em 0.4em; border-radius: 3px; }
+.dict-reasm { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0.25rem 1.4rem; }
+.dict-reasm li { font-family: var(--mono); font-size: 0.74rem; color: var(--lamp-green); padding-left: 0.9rem; position: relative; }
+.dict-reasm li::before { content: "\203A"; position: absolute; left: 0; color: var(--ink-dim); }
+.dict-reasm li.is-link { padding-left: 0; }
+.dict-reasm li.is-link::before { content: ""; }
+.dict-jump { font-family: var(--mono); font-size: 0.74rem; color: var(--lamp-red); background: none; border: 0; border-bottom: 1px dashed rgba(225,84,46,0.5); cursor: pointer; padding: 0; }
+.dict-jump:hover { color: var(--bright); }
+.dict-raw { margin-top: 1.1rem; }
+.dict-raw summary { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-dim); cursor: pointer; }
+.dict-raw pre.listing { margin-top: 0.6rem; }
+@media (max-width: 560px) { .dict-reasm { grid-template-columns: 1fr; } }
+
 /* ---------- markdown-rendered blog post content ---------- */
 #post pre, .content pre:not(.listing) {
   font-family: var(--mono); font-size: 0.8rem; line-height: 1.55;
