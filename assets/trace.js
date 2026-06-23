@@ -53,6 +53,7 @@
     // never resizes and the whole panel stays inside the window. userZoom (driven
     // by the - / + buttons) lets the reader enlarge or shrink on top of that fit.
     var userZoom = 1, curCard = null;
+    var recallSlotEl = null;   // the memory slot to flash when a recall step is shown
     var CACM = [
       'Men are all alike.',
       'They\'re always bugging us about something or other.',
@@ -194,7 +195,7 @@
         else if (st.kind === 'memory-store') S.push({ title: 'Store a memory', node: function () {
           return el('div', 'memnote', 'You mentioned something that is &ldquo;yours&rdquo;, so ELIZA quietly files a transformed copy away: <b>' + esc(st.text) + '</b>. It may resurface in a few turns (the &ldquo;certain counting mechanism&rdquo;).');
         }});
-        else if (st.kind === 'memory-recall') S.push({ title: 'Recall a memory', node: function () {
+        else if (st.kind === 'memory-recall') S.push({ title: 'Recall a memory', recall: true, node: function () {
           return el('div', 'memnote', 'No keyword fired and the counter is on its fourth turn, so ELIZA reaches back for a stored memory: <b>' + esc(st.text) + '</b>.');
         }});
         else if (st.kind === 'none') S.push({ title: 'No keyword: a holding phrase', node: function () {
@@ -223,14 +224,20 @@
       // left: the memory queue (four slots by default; grows if the queue does)
       var left = el('div', 'mem-left');
       left.appendChild(el('span', 'mlab', 'Memory'));
-      var mem = T.memory || [];
+      // on a turn that recalls a memory, ELIZA pops the oldest item; show the
+      // queue as it was *before* the pop so the recalled slot is still visible
+      // (and can be flashed when the "Recall a memory" step is reached)
+      var recalls = T.steps.some(function (s) { return s.kind === 'memory-recall'; });
+      var mem = (recalls && T.memoryBefore && T.memoryBefore.length) ? T.memoryBefore : (T.memory || []);
       var slots = Math.max(4, mem.length);
       var ol = el('ol');
+      recallSlotEl = null;
       for (var mi = 0; mi < slots; mi++) {
         var m = mem[mi];
         var li = el('li', m ? null : 'slot-empty');
         li.innerHTML = '<span class="mn">' + (mi + 1) + '</span><span' + (m ? ' title="' + escAttr(m) + '"' : '') + '>' + (m ? esc(m) : 'empty') + '</span>';
         ol.appendChild(li);
+        if (recalls && mi === 0) recallSlotEl = li;   // the oldest slot is the one recalled
       }
       left.appendChild(ol);
       // right: the conversation so far, in green, scrolling up
@@ -255,7 +262,15 @@
       curCard = card; fitCard();
       requestAnimationFrame(function () { card.classList.add('in'); });
       renderProg(); renderNav();
+      if (st.recall) flashRecall();   // light up the memory slot being pulled back
       if (st.last) revealEliza();   // reached "(N) The reply": let ELIZA answer
+    }
+    // pulse the recalled memory slot so the reader links the reply to the queue
+    function flashRecall() {
+      if (!recallSlotEl) return;
+      recallSlotEl.classList.remove('flash');
+      void recallSlotEl.offsetWidth;   // restart the animation if already applied
+      recallSlotEl.classList.add('flash');
     }
     // scale the current step so it fits the fixed-height stage (never enlarging
     // past 1 on its own), times the reader's chosen zoom

@@ -437,6 +437,12 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .demo-mem li > span:last-child { flex: 1 1 auto; min-width: 0; max-width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .demo-mem .mn { color: var(--lamp-green); min-width: 0.9rem; text-align: right; flex: 0 0 auto; }
 .demo-mem li.slot-empty { opacity: 0.4; }
+.demo-mem li.flash { border-radius: 3px; animation: memflash 0.7s ease-out 3; }
+@keyframes memflash {
+  0%, 100% { background: transparent; box-shadow: none; }
+  50% { background: rgba(240,168,58,0.38); box-shadow: 0 0 10px rgba(240,168,58,0.45); }
+}
+.demo-mem li.flash .mn, .demo-mem li.flash > span:last-child { color: var(--bright); }
 .mem-convo { margin-top: 0.3rem; max-height: 5em; overflow-y: auto; }
 .mem-convo .cline { font-family: var(--mono); font-size: 0.58rem; line-height: 1.35; white-space: pre-wrap; word-break: break-word; }
 .mem-convo .you { color: rgba(239,180,78,0.9); }

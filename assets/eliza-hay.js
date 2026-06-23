@@ -2071,8 +2071,10 @@ window.ElizaHay = {
       trace: async function (text) {
         var tracer = new HayTrace();
         eliza.tracer = tracer;
+        var memBefore = script.memoryRule.memories.slice();   // queue before this turn (a recall pops the oldest)
         var reply = await eliza.response(text);
         var T = { input: text, cleaned: join(split(elizaUppercase(text))), steps: tracer.steps, keystack: tracer.keystack, output: reply };
+        T.memoryBefore = memBefore;
         T.words = split(elizaUppercase(text)).map(function (w) {
           var has = script.rules.has(w) ? script.rules.get(w) : null;
           var isKey = !!(has && has.hasTransformation());
