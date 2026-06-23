@@ -185,7 +185,7 @@ const homeBody = `
     <section class="block">
       <h2>Inventing ELIZA</h2>
       <p>This is an interdisciplinary investigation of ELIZA as a cultural and technical artifact, built around the original source code we recovered from Weizenbaum&rsquo;s papers in the MIT archive in 2021. We read the code, the DOCTOR script, the hardware it ran on, and the long shadow it cast over how we talk about thinking machines.</p>
-      <p>It is a companion to the Critical Code Studies group&rsquo;s readings of <a href="https://critical-code-studies.github.io/SHRDLU/">SHRDLU</a> (1968&ndash;70) and Spacewar! (1962), and the public face of the collectively authored book <a href="book.html"><em>Inventing ELIZA</em></a> (MIT Press).</p>
+      <p>It is a companion to the Critical Code Studies group&rsquo;s collectively authored book <a href="book.html"><em>Inventing ELIZA</em></a> (MIT Press).</p>
       <div class="grid">
         <div class="card r"><p class="obj">Read</p><h3><a href="overview.html">Overview</a></h3><p>What ELIZA actually was, and why DOCTOR is not the same thing as ELIZA.</p></div>
         <div class="card b"><p class="obj">The code</p><h3><a href="code.html">The program</a></h3><p>A close reading of the recovered MAD-SLIP source, line by line.</p></div>
