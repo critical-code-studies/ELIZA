@@ -479,9 +479,9 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .paper.out { color: var(--eliza); text-transform: uppercase; }
 .defer { font-size: 0.98rem; color: var(--ink); }
 .defer .arrow { color: var(--lamp-red); }
-.defer-rule { font-family: var(--mono); font-size: 0.58rem; color: rgba(232,228,218,0.42); margin: 0.1rem 0 0.7rem; letter-spacing: 0.3px; }
+.defer-rule { font-family: var(--mono); font-size: 0.72rem; color: rgba(232,228,218,0.42); margin: 0.1rem 0 0.7rem; letter-spacing: 0.3px; }
 .defer-resp { list-style: none; margin: 0.4rem 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0.3rem 1.2rem; max-width: 64ch; }
-.defer-resp li { font-family: var(--mono); font-size: 0.58rem; color: var(--lamp-green); padding-left: 0.9rem; position: relative; }
+.defer-resp li { font-family: var(--mono); font-size: 0.72rem; color: var(--lamp-green); padding-left: 0.9rem; position: relative; }
 .defer-resp li::before { content: "\203A"; position: absolute; left: 0; color: var(--ink-dim); }
 .memnote { font-size: 0.95rem; color: var(--ink); border-left: 3px solid var(--lamp-amber); background: rgba(240,168,58,0.05); padding: 0.8rem 1.1rem; border-radius: 3px; max-width: 66ch; }
 .debunk { font-size: 1.05rem; color: var(--bright); border-top: 1px solid var(--line-soft); margin-top: 1.4rem; padding-top: 1.2rem; max-width: 64ch; }
