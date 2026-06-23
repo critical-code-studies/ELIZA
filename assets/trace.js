@@ -27,7 +27,7 @@
     });
     app.appendChild(egs);
 
-    var playBtn = el('button', 'btn', '▶ Play the 1966 conversation');
+    var playBtn = el('button', 'btn play', 'Play the 1966 conversation');
 
     var demo = el('div', 'demo');
     var ctx = el('div', 'demo-ctx'); demo.appendChild(ctx);
@@ -38,7 +38,8 @@
     app.appendChild(demo);
 
     var resetBtn = el('button', 'btn ghost', '↻ Reset');
-    var playRow = el('div', 'trace-egs');
+    var playRow = el('div', 'play-row');
+    playRow.appendChild(el('span', 'play-lab', 'Or watch the original:'));
     playRow.appendChild(playBtn);
     playRow.appendChild(resetBtn);
     app.appendChild(playRow);
@@ -268,7 +269,7 @@
       autoTimer = setInterval(function () { if (cur >= stages.length - 1) stop(); else show(cur + 1); }, 2000);
       renderNav();
     }
-    function updatePlayBtn() { playBtn.innerHTML = playing ? '&#9632; Stop the 1966 conversation' : (paused ? '&#9632; Continue the 1966 conversation' : '&#9654; Play the 1966 conversation'); }
+    function updatePlayBtn() { playBtn.innerHTML = playing ? 'Stop the 1966 conversation' : (paused ? 'Continue the 1966 conversation' : 'Play the 1966 conversation'); }
     function stop() { playing = false; paused = false; if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } updatePlayBtn(); renderNav(); }
 
     function run() {
