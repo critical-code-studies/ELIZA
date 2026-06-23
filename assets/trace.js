@@ -45,6 +45,10 @@
 
     var stages = [], cur = 0, autoTimer = null, T = null;
     var session = null, playing = false, paused = false, playIdx = 0, transcript = [];
+    // ELIZA's reply is withheld from the conversation panel until the walk-through
+    // reaches the final "reply" stage, then teletyped in. pendingEliza holds it
+    // meanwhile; typeToken cancels an in-flight teletype when a new turn starts.
+    var pendingEliza = null, typeToken = 0, convoEl = null;
     var CACM = [
       'Men are all alike.',
       'They\'re always bugging us about something or other.',
@@ -231,6 +235,7 @@
       var convo = el('div', 'mem-convo');
       transcript.forEach(function (t) { convo.appendChild(el('div', 'cline ' + t.who, esc(t.text))); });
       right.appendChild(convo);
+      convoEl = convo;
       memEl.appendChild(left); memEl.appendChild(right);
       convo.scrollTop = convo.scrollHeight;
     }
@@ -245,6 +250,26 @@
       stageEl.appendChild(card);
       requestAnimationFrame(function () { card.classList.add('in'); });
       renderProg(); renderNav();
+      if (st.last) revealEliza();   // reached "(N) The reply": let ELIZA answer
+    }
+    // teletype ELIZA's withheld reply into the conversation panel once revealed
+    function revealEliza() {
+      if (pendingEliza == null || !convoEl) return;
+      var text = pendingEliza; pendingEliza = null;
+      transcript.push({ who: 'eliza', text: text });   // commit to history
+      var line = el('div', 'cline eliza typing');
+      convoEl.appendChild(line);
+      typeInto(line, text);
+    }
+    function typeInto(node, text) {
+      var token = ++typeToken, i = 0;
+      (function tick() {
+        if (token !== typeToken) return;   // a new turn cancelled this teletype
+        node.textContent = text.slice(0, i);
+        if (convoEl) convoEl.scrollTop = convoEl.scrollHeight;
+        if (i <= text.length) { i++; setTimeout(tick, 32); }
+        else node.classList.remove('typing');
+      })();
     }
     function renderProg() {
       prog.innerHTML = '';
@@ -276,7 +301,8 @@
       var phrase = input.value.trim(); if (!phrase) return;
       window.ElizaHay.trace(phrase).then(function (res) {
         T = res;
-        transcript = [{ who: 'you', text: T.input }, { who: 'eliza', text: T.output }];
+        typeToken++; pendingEliza = T.output;          // withheld until the reply stage
+        transcript = [{ who: 'you', text: T.input }];
         stages = build(T);
         setCtx();
         show(0);
@@ -304,7 +330,7 @@
     function playCacm() {
       stop();
       session = window.ElizaHay.make();
-      playing = true; paused = false; playIdx = 0; transcript = [];
+      playing = true; paused = false; playIdx = 0; transcript = []; pendingEliza = null;
       updatePlayBtn();
       playLine();
     }
@@ -315,7 +341,7 @@
       input.value = line;
       session.trace(line).then(function (res) {
         if (!playing) return;
-        T = res; transcript.push({ who: 'you', text: line }); transcript.push({ who: 'eliza', text: res.output });
+        T = res; typeToken++; pendingEliza = res.output; transcript.push({ who: 'you', text: line });
         stages = build(T); setCtx(); show(0);
         startAutoStep();
         renderNav();

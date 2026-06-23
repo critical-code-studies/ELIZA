@@ -439,8 +439,10 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .demo-mem li.slot-empty { opacity: 0.4; }
 .mem-convo { margin-top: 0.3rem; max-height: 5em; overflow-y: auto; }
 .mem-convo .cline { font-family: var(--mono); font-size: 0.58rem; line-height: 1.35; white-space: pre-wrap; word-break: break-word; }
-.mem-convo .you { color: rgba(232,228,218,0.5); }
+.mem-convo .you { color: rgba(239,180,78,0.9); }
 .mem-convo .eliza { color: rgba(232,228,218,0.85); text-transform: uppercase; }
+.mem-convo .cline.typing::after { content: "\258B"; margin-left: 1px; color: rgba(232,228,218,0.85); animation: elblink 1s step-end infinite; }
+@keyframes elblink { 50% { opacity: 0; } }
 .demo-stage { padding: 1.3rem 1.3rem; min-height: 9rem; display: flex; }
 .stage-card { width: 100%; opacity: 0; transition: opacity 0.22s ease; }
 .stage-card.in { opacity: 1; }
