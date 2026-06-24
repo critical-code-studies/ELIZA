@@ -693,7 +693,7 @@ write('bibliography.html', page({
       <span class="kicker">Bibliography</span>
       <h1 class="page">Writings</h1>
       <div class="lede"><p>Selected writings by the project and its members on ELIZA, Joseph Weizenbaum, and the reading of code as a cultural text.</p></div>
-      <div class="bib">
+      ${fanfold('PRINT BIBLIO', `<div class="bib">
         <h3>By the project</h3>
         <p class="ref">Ciston, S., Berry, D. M., Hay, A. C., Marino, M. C., Millican, P., Schwarz, A. I., Shrager, J. and Weil, P. (2026) <em>Inventing ELIZA: How the First Chatbot Shaped the Future of AI</em>. Cambridge, MA: MIT Press (Software Studies). Available at: <a href="https://mitpress.mit.edu/9780262052481/inventing-eliza/">https://mitpress.mit.edu/9780262052481/inventing-eliza/</a></p>
         <p class="ref">Berry, D. M. and Marino, M. C. (2024) &lsquo;Reading ELIZA: Critical Code Studies in Action&rsquo;, <em>Electronic Book Review</em>. Available at: <a href="https://electronicbookreview.com/essay/reading-eliza-critical-code-studies-in-action/">https://electronicbookreview.com/essay/reading-eliza-critical-code-studies-in-action/</a></p>
@@ -711,7 +711,7 @@ write('bibliography.html', page({
         <p class="ref">Dillon, S. (2020) &lsquo;The Eliza Effect and its Dangers: From Demystification to Gender Critique&rsquo;, <em>Journal for Cultural Research</em>, 24(1), pp. 1&ndash;15.</p>
         <p class="ref">Marino, M. C. (2020) <em>Critical Code Studies</em>. Cambridge, MA: MIT Press.</p>
         <p class="ref">Turkle, S. (1997) <em>Life on the Screen: Identity in the Age of the Internet</em>. New York: Touchstone.</p>
-      </div>
+      </div>`)}
 `}));
 
 // ---------------------------------------------------------------------------

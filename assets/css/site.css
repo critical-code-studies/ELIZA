@@ -417,6 +417,12 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .bib h3 { margin-top: 2.2rem; color: var(--beam); }
 .bib .ref a { border-bottom: 1px solid var(--line-soft); word-break: break-word; }
 .bib .ref a:hover { border-bottom-color: var(--beam); }
+/* bibliography printed on the fanfold paper: dark ink instead of the dark-bg palette */
+.fanfold .bib h3 { color: #221a12; margin-top: 2rem; }
+.fanfold .bib h3:first-child { margin-top: 0; }
+.fanfold .bib .ref { color: #2c2318; }
+.fanfold .bib .ref a { color: #2c2318; border-bottom-color: rgba(20,13,9,0.3); }
+.fanfold .bib .ref a:hover { border-bottom-color: #221a12; }
 
 /* ---------- code listing ---------- */
 .listing {
