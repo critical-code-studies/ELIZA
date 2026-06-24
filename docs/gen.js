@@ -429,6 +429,10 @@ write('doctor.html', page({
       <h1 class="page">The DOCTOR script</h1>
       <div class="lede"><p>DOCTOR is the script that made ELIZA famous. It is a list of keywords, each with patterns for taking apart what you say and templates for putting a reply back together. Feed ELIZA this script and it answers like a Rogerian therapist.</p></div>
 
+      <div class="rule" id="dictionary">THE DICTIONARY</div>
+      <p>Every word DOCTOR knows, and the rules behind it. Type to filter the keyword list, then click a keyword to read its transformation rules: the <em>decomposition</em> patterns that take your sentence apart, and the <em>reassembly</em> templates that build a reply.</p>
+      <div id="dict-app"></div>
+
       <h2>How a rule works</h2>
       <p>Each keyword carries a rank and a set of rules. A <em>decomposition</em> pattern splits your sentence into numbered parts; a <em>reassembly</em> template builds a reply from those parts. Take the keyword <code>ALIKE</code>, ranked high so it wins over ordinary words:</p>
       <pre class="listing">(ALIKE 10 (=DIT))
@@ -469,10 +473,6 @@ write('doctor.html', page({
       <p>There are three known contemporaneous DOCTOR scripts: the one published as an appendix to the 1966 paper, and two more (<code>.TAPE. 102</code> and <code>.TAPE. 100</code>) on a printout in Weizenbaum&rsquo;s archive. They are clearly successive drafts: keywords gained extra replies, a misplaced line was fixed, redirects were simplified. The script was built incrementally, almost without a plan, each change improving ELIZA&rsquo;s ability to conceal its lack of understanding. <a href="blog/post.html?p=8-the-doctor-script-a-work-in-progress">The DOCTOR script, a work in progress &rsaquo;</a></p>
 
       <div class="callout"><span class="kicker">Memory</span><p>One special rule, <code>MEMORY</code>, watches for when you mention something that is &ldquo;yours&rdquo;, stores a transformed version of it, and brings it back later (&ldquo;EARLIER YOU SAID YOUR&hellip;&rdquo;). It is the closest DOCTOR comes to keeping track of a conversation.</p></div>
-
-      <div class="rule" id="dictionary">THE DICTIONARY</div>
-      <p>Every word DOCTOR knows, and the rules behind it. Type to filter the keyword list, then click a keyword to read its transformation rules: the <em>decomposition</em> patterns that take your sentence apart, and the <em>reassembly</em> templates that build a reply.</p>
-      <div id="dict-app"></div>
 
       <div class="rule">THE FULL SCRIPT</div>
       <p>The whole DOCTOR script as published in the appendix to Weizenbaum&rsquo;s 1966 <cite>Communications of the ACM</cite> paper, transcribed by Anthony C. Hay (<code>DOCTOR.txt</code> in the <a href="https://github.com/critical-code-studies/ELIZA">repository</a>). This is the exact text the engine on this site reads, listed here as a line-printer printout.</p>

@@ -613,7 +613,7 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 @media (max-width: 560px) { .dict-reasm { grid-template-columns: 1fr; } }
 
 /* ---------- markdown-rendered blog post content ---------- */
-#post pre, .content pre:not(.listing) {
+#post pre, .content pre:not(.listing):not(.fanfold-listing) {
   font-family: var(--mono); font-size: 0.8rem; line-height: 1.55;
   background: rgba(0,0,0,0.5); border: 1px solid var(--line-soft); border-left: 2px solid var(--lamp-blue);
   padding: 1.2rem 1.3rem; border-radius: 3px; overflow-x: auto; color: var(--ink); margin: 1.5rem 0;
