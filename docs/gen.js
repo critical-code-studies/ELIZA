@@ -605,7 +605,7 @@ write('talks.html', page({
       <h2 class="yeargroup">2023</h2>
       <ul class="talklist">
         <li><span class="who">Berry, D. M.</span><span class="ttl">&ldquo;Reading ELIZA: Understanding Weizenbaum through his code&rdquo;</span><span class="meta">Weizenbaum&rsquo;s Worlds: Technological Change and Computer Criticism in the U.S. and Germany, ca. 1960&ndash;1990, Humboldt / Weizenbaum Institute, Berlin &middot; 3 November 2023</span></li>
-        <li><span class="ttl">&ldquo;Getting to know ELIZA: ChatGPT&rsquo;s Great Grandmother&rdquo;</span><span class="meta">MIT &middot; 11 October 2023</span></li>
+        <li><span class="who">Ciston, S., Berry, D. M., Hay, A. C., Marino, M. C., Millican, P., Schwarz, A. I., Shrager, J. &amp; Weil, P.</span><span class="ttl">&ldquo;Getting to know ELIZA: ChatGPT&rsquo;s Great Grandmother&rdquo;</span><span class="meta">MIT &middot; 11 October 2023</span></li>
       </ul>
 
       <h2 class="yeargroup">2022</h2>
