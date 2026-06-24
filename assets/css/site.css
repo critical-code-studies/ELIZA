@@ -366,6 +366,7 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .team-info .name { font-family: var(--mono); font-weight: 700; font-size: 1.02rem; color: #221a12; margin: 0 0 0.2rem; }
 .team-info .role { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 1px; text-transform: uppercase; color: #5a4a36; margin: 0 0 0.6rem; }
 .team-info .bio { font-size: 0.9rem; line-height: 1.5; color: #2c2318; margin: 0; max-width: 62ch; }
+.plate-body { font-size: 0.92rem; line-height: 1.55; color: #2c2318; margin: 0; max-width: 72ch; }
 @media (max-width: 560px) { .team-row { gap: 1rem; } .team-photo { width: 76px; height: 96px; } }
 .logo-cmd { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.5px; color: #3a2f24; margin-bottom: 1.6rem; }
 .logo-cmd .cur { display: inline-block; width: 0.55em; height: 1em; background: #3a2f24; margin-left: 2px; vertical-align: -0.12em; animation: elblink 1s step-end infinite; }

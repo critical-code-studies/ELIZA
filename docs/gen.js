@@ -143,14 +143,14 @@ function slipChain(values, opts) {
 }
 
 const TEAM = [
-  ['David M. Berry', 'Professor of Digital Humanities, University of Sussex', 'Writes widely on philosophy and technology, particularly computation, software and algorithms; recent work addresses explainability, human understanding, and the history of the university. Co-discovered the original ELIZA source in the MIT archive.'],
-  ['Sarah Ciston', 'Professor of Computational Thinking and Aesthetic Doing, Academy of Media Arts Cologne', 'Builds critical-creative tools to bring intersectional approaches to machine learning. Winner of the 2025 Ars Electronica STARTS Grand Prize. Author of <em>A Critical Field Guide to Working with Machine Learning Datasets</em> and founder of Code Collective.'],
-  ['Anthony C. Hay', 'Programmer (formerly Digital Research, Novell); BSc, Imperial College London', 'Wrote a near-perfect clone of the original MAD-SLIP ELIZA in C++, first from Weizenbaum&rsquo;s 1966 paper, later corrected against the recovered MIT source. Untangled the &ldquo;certain counting mechanism&rdquo; behind ELIZA&rsquo;s memory.'],
-  ['Mark C. Marino', 'Professor of Writing, USC; Director, Humanities and Critical Code Studies (HaCCS) Lab', 'Scholar of electronic literature; author of <em>Critical Code Studies</em> (MIT Press) and co-author of <em>10 PRINT CHR$(205.5+RND(1))</em>. Director of Communication for the Electronic Literature Organization.'],
-  ['Peter Millican', 'Professor of Philosophy, Hertford College, Oxford', 'Founder of Oxford&rsquo;s Computer Science and Philosophy degree (2012). Author of the Elizabeth chatbot (2000), built to engage humanities students with the mechanics of conversation.'],
-  ['Arthur I. Schwarz', 'Software developer and technical lead (aerospace, automotive); BS Physics, MS Computer Science', 'Developed gSlip, a public-domain implementation of SLIP, the list-processing library underpinning ELIZA. Interests include hashing algorithms and anomaly detection.'],
+  ['David M. Berry', 'Professor of Digital Humanities, University of Sussex', 'Writes widely on philosophy and technology, particularly computation, software and algorithms; recent work addresses explainability, human understanding, and the history of the university. Co-discovered the original ELIZA source in the MIT archive.', 'berry.png'],
+  ['Sarah Ciston', 'Professor of Computational Thinking and Aesthetic Doing, Academy of Media Arts Cologne', 'Builds critical-creative tools to bring intersectional approaches to machine learning. Winner of the 2025 Ars Electronica STARTS Grand Prize. Author of <em>A Critical Field Guide to Working with Machine Learning Datasets</em> and founder of Code Collective.', 'ciston.png'],
+  ['Anthony C. Hay', 'Programmer (formerly Digital Research, Novell); BSc, Imperial College London', 'Wrote a near-perfect clone of the original MAD-SLIP ELIZA in C++, first from Weizenbaum&rsquo;s 1966 paper, later corrected against the recovered MIT source. Untangled the &ldquo;certain counting mechanism&rdquo; behind ELIZA&rsquo;s memory.', 'hay.png'],
+  ['Mark C. Marino', 'Professor of Writing, USC; Director, Humanities and Critical Code Studies (HaCCS) Lab', 'Scholar of electronic literature; author of <em>Critical Code Studies</em> (MIT Press) and co-author of <em>10 PRINT CHR$(205.5+RND(1))</em>. Director of Communication for the Electronic Literature Organization.', 'marino.png'],
+  ['Peter Millican', 'Professor of Philosophy, Hertford College, Oxford', 'Founder of Oxford&rsquo;s Computer Science and Philosophy degree (2012). Author of the Elizabeth chatbot (2000), built to engage humanities students with the mechanics of conversation.', 'millican.png'],
+  ['Arthur I. Schwarz', 'Software developer and technical lead (aerospace, automotive); BS Physics, MS Computer Science', 'Developed gSlip, a public-domain implementation of SLIP, the list-processing library underpinning ELIZA. Interests include hashing algorithms and anomaly detection.', 'schwarz.png'],
   ['Jeff Shrager', 'Adjunct Professor, Symbolic Systems, Stanford; Chief Scientist, Blue Dot Change', 'Self-described &ldquo;aging Lisp hacker&rdquo; who rediscovered Weizenbaum&rsquo;s original MAD-SLIP ELIZA in the MIT archive in 2021. Curator of ELIZAgen.org; co-author of 100+ AI publications and co-founder of three biomedical AI startups.'],
-  ['Peggy Weil', 'Adjunct Assistant Professor, USC School of Cinematic Arts', 'Multidisciplinary artist; did graduate work at the MIT Media Lab&rsquo;s Architecture Machine Group in the early 1980s. Created MrMind, the first net-art chatbot. Her work addresses physical, digital and sociopolitical questions.']
+  ['Peggy Weil', 'Adjunct Assistant Professor, USC School of Cinematic Arts', 'Multidisciplinary artist; did graduate work at the MIT Media Lab&rsquo;s Architecture Machine Group in the early 1980s. Created MrMind, the first net-art chatbot. Her work addresses physical, digital and sociopolitical questions.', 'weil.png']
 ];
 
 // ---------------------------------------------------------------------------
@@ -572,7 +572,10 @@ write('people.html', page({
         </div>
       </div>
       <div class="rule">WITH THANKS</div>
-      <p class="micro">With thanks to guest contributor Walt Bilofsky, to critical friends Claire Carroll and Rebecca Roach, to the MIT Libraries and Distinctive Collections, to the Charles Babbage Institute, and to Rupert Lane, Tom Van Vleck and Jerry Saltzer for help understanding CTSS.</p>
+      <div class="team-plate">
+        <div class="logo-cmd">PRINT THANKS<span class="cur" aria-hidden="true"></span></div>
+        <p class="plate-body">With thanks to guest contributor Walt Bilofsky, to critical friends Claire Carroll and Rebecca Roach, to the MIT Libraries and Distinctive Collections, to the Charles Babbage Institute, and to Rupert Lane, Tom Van Vleck and Jerry Saltzer for help understanding CTSS.</p>
+      </div>
 `}));
 
 // ---------------------------------------------------------------------------
