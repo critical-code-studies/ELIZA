@@ -342,6 +342,10 @@ const listing = `<span class="seq">        </span><span class="lbl">ELIZA</span>
 <span class="lbl">NOMATCH(3)</span>  <span class="kw">PRINT COMMENT</span> <span class="str">$GO ON , PLEASE $</span>
 <span class="lbl">NOMATCH(4)</span>  <span class="kw">PRINT COMMENT</span> <span class="str">$I SEE $</span>`;
 
+// full recovered MAD-SLIP source, read at build time and listed on a fanfold plate
+const madFull = fs.readFileSync(path.join(OUT, 'sources', 'ELIZA-1965b.mad'), 'utf8')
+  .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\s+$/, '');
+
 write('code.html', page({
   title: 'The program', desc: 'A close reading of the recovered ELIZA MAD-SLIP source code.',
   body: `
@@ -368,6 +372,10 @@ write('code.html', page({
 
       <div class="rule">METHOD</div>
       <p>We read the source the way Critical Code Studies reads any code: as a text, within its historical and material context, where naming, structure and even bugs carry meaning. The command vocabulary of the editor (<code>TYPE</code>, <code>SUBST</code>, <code>APPEND</code>, <code>ADD</code>, <code>START</code>, <code>RANK</code>, <code>DISPLA</code>) is a small grammar of power; the iteration over a fixed table is a trace of the machine&rsquo;s limits. <a href="https://electronicbookreview.com/essay/reading-eliza-critical-code-studies-in-action/">Reading ELIZA: CCS in Action &rsaquo;</a></p>
+
+      <div class="rule">THE FULL SOURCE</div>
+      <p>The complete recovered listing, <code>ELIZA-1965b.mad</code>, in MAD-SLIP, as a line-printer printout. This is the 1965b version from the printout in Weizenbaum&rsquo;s archive (it adds &ldquo;but&rdquo; as a delimiter and lacks the NEWKEY function), and the basis for the close reading above. Also in the <a href="https://github.com/critical-code-studies/ELIZA">repository</a> and the <a href="https://hdl.handle.net/1721.3/201699">MIT archive</a>.</p>
+      ${fanfold('PRINT ELIZA MAD', `<pre class="fanfold-listing">${madFull}</pre>`)}
 `}));
 
 // ---------------------------------------------------------------------------
