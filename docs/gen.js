@@ -561,7 +561,7 @@ write('people.html', page({
       <span class="kicker">TEAM-ELIZA</span>
       <h1 class="page">TEAM-ELIZA</h1>
       <div class="lede"><p>The ELIZA Archaeology Project is a collaboration of scholars, programmers, philosophers and artists, with diverse interests and many different voices.</p></div>
-      ${fanfold(['R ELIZA', 'ELIZA NOT FOUND.', 'LISTF TEAM *'], `<div class="team-list">
+      ${fanfold(['R ELIZA', 'W 1631.2', 'ELIZA NOT FOUND.', 'R 1631.2+.04', 'LISTF TEAM *'], `<div class="team-list">
         ${TEAM.map(([n, r, b, photo]) => `<div class="team-row">
           <div class="team-photo${photo ? '' : ' empty'}">${photo ? `<img src="assets/images/${photo}" alt="${n}" loading="lazy">` : '<span>[ PHOTO ]</span>'}</div>
           <div class="team-info"><p class="name">${n}</p><p class="role">${r}</p><p class="bio">${b}</p></div>
