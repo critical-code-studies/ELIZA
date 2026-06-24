@@ -554,7 +554,7 @@ write('people.html', page({
         ${TEAM.map(([n, r, b]) => `<div class="person-card"><p class="name">${n}</p><p class="role">${r}</p><p>${b}</p></div>`).join('\n        ')}
       </div>
       <div class="rule">WITH THANKS</div>
-      <p class="micro">With thanks to guest contributors Rebecca Roach and Walt Bilofsky, to the MIT Libraries and Distinctive Collections, to the Charles Babbage Institute, and to Rupert Lane, Tom Van Vleck and Jerry Saltzer for help understanding CTSS.</p>
+      <p class="micro">With thanks to guest contributor Walt Bilofsky, to critical friends Claire Carroll and Rebecca Roach, to the MIT Libraries and Distinctive Collections, to the Charles Babbage Institute, and to Rupert Lane, Tom Van Vleck and Jerry Saltzer for help understanding CTSS.</p>
 `}));
 
 // ---------------------------------------------------------------------------
