@@ -9,9 +9,8 @@ const BLOGDIR = path.join(OUT, 'blog');
 fs.mkdirSync(BLOGDIR, { recursive: true });
 
 // asset cache-buster: an automatic build stamp (NOT a release version). This
-// changes each build so browsers refetch changed CSS/JS/favicon. Do NOT treat
-// this as a version to bump, and do NOT bump the VERSION file or tag releases
-// for this repo (David's instruction, 2026-06-22).
+// changes each build so browsers refetch changed CSS/JS/favicon. It is separate
+// from the VERSION file, which is bumped only on David's explicit instruction.
 const V = new Date().toISOString().replace(/[^0-9]/g, '').slice(0, 12);
 const SITE = 'https://critical-code-studies.github.io/ELIZA';
 
