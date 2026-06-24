@@ -132,8 +132,7 @@
     // ---- full script listing ---------------------------------------------
     var listingHost = document.getElementById('dict-script');
     if (listingHost && window.ElizaHay.scriptText) {
-      var pre = el('pre', 'listing'); pre.textContent = window.ElizaHay.scriptText.trim();
-      listingHost.appendChild(pre);
+      listingHost.textContent = window.ElizaHay.scriptText.trim();
     }
   }
   if (document.readyState !== 'loading') init();

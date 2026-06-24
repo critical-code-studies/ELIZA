@@ -33,12 +33,12 @@ function nav(depth) {
         <div class="nav-group">
           <button class="nav-top" aria-expanded="false">ELIZA <span class="caret" aria-hidden="true">&#9662;</span></button>
           <div class="nav-menu">
-            <a href="${p}overview.html">Overview</a><a href="${p}doctor.html">The DOCTOR script</a><a href="${p}dictionary.html">The DOCTOR dictionary</a><a href="${p}versions.html">The versions</a><a href="${p}book.html">The book</a>
+            <a href="${p}overview.html">Overview</a><a href="${p}doctor.html">The DOCTOR script</a><a href="${p}versions.html">The versions</a><a href="${p}book.html">The book</a>
           </div>
         </div>
         <div class="nav-group">
           <button class="nav-top" aria-expanded="false">The code <span class="caret" aria-hidden="true">&#9662;</span></button>
-          <div class="nav-menu"><a href="${p}code.html">The program</a><a href="${p}slip.html">SLIP</a><a href="${p}doctor.html">The DOCTOR script</a><a href="${p}dictionary.html">The DOCTOR dictionary</a><a href="${p}how.html">How it works (demo)</a></div>
+          <div class="nav-menu"><a href="${p}code.html">The program</a><a href="${p}slip.html">SLIP</a><a href="${p}doctor.html">The DOCTOR script</a><a href="${p}how.html">How it works (demo)</a></div>
         </div>
         <a class="nav-top nav-direct" href="${p}blog.html">Blog</a>
         <a class="nav-top nav-direct" href="${p}people.html">TEAM-ELIZA</a>
@@ -204,7 +204,7 @@ const homeBody = `
         <div class="card r"><p class="obj">Read</p><h3><a href="overview.html">Overview</a></h3><p>What ELIZA actually was, and why DOCTOR is not the same thing as ELIZA.</p></div>
         <div class="card b"><p class="obj">The code</p><h3><a href="code.html">The program</a></h3><p>A close reading of the recovered MAD-SLIP source, line by line.</p></div>
         <div class="card y"><p class="obj">The script</p><h3><a href="doctor.html">DOCTOR</a></h3><p>Weizenbaum&rsquo;s Rogerian therapist script, and how its patterns work.</p></div>
-        <div class="card b"><p class="obj">The dictionary</p><h3><a href="dictionary.html">DOCTOR dictionary</a></h3><p>Every keyword DOCTOR knows: filter the list, then read the rules behind each one.</p></div>
+        <div class="card b"><p class="obj">The dictionary</p><h3><a href="doctor.html#dictionary">DOCTOR dictionary</a></h3><p>Every keyword DOCTOR knows: filter the list, then read the rules behind each one.</p></div>
         <div class="card r"><p class="obj">Watch</p><h3><a href="how.html">How it works</a></h3><p>Type a phrase and step through ELIZA&rsquo;s rules, from keywords to reply.</p></div>
         <div class="card g"><p class="obj">Talk</p><h3><a href="try.html">Try ELIZA</a></h3><p>A faithful re-creation that runs the genuine 1966 script in your browser.</p></div>
       </div>
@@ -422,7 +422,8 @@ write('slip.html', page({
 // DOCTOR SCRIPT
 // ---------------------------------------------------------------------------
 write('doctor.html', page({
-  title: 'The DOCTOR script', desc: 'Weizenbaum’s Rogerian therapist script for ELIZA, and how its keyword patterns work.',
+  title: 'The DOCTOR script', desc: 'Weizenbaum’s Rogerian therapist script for ELIZA: how its keyword rules work, a searchable dictionary of every keyword, and the full 1966 script.',
+  scripts: ['eliza-hay.js', 'dict.js'],
   body: `
       <span class="kicker">The code</span>
       <h1 class="page">The DOCTOR script</h1>
@@ -469,26 +470,31 @@ write('doctor.html', page({
 
       <div class="callout"><span class="kicker">Memory</span><p>One special rule, <code>MEMORY</code>, watches for when you mention something that is &ldquo;yours&rdquo;, stores a transformed version of it, and brings it back later (&ldquo;EARLIER YOU SAID YOUR&hellip;&rdquo;). It is the closest DOCTOR comes to keeping track of a conversation.</p></div>
 
-      <p class="post-meta" style="margin-top:2rem">The full DOCTOR script is transcribed in the <a href="https://github.com/critical-code-studies/ELIZA">repository</a> (<code>DOCTOR.txt</code>), from the CACM appendix, transcribed by Anthony Hay. You can also browse it keyword by keyword in the <a href="dictionary.html">DOCTOR dictionary</a>.</p>
-`}));
-
-// ---------------------------------------------------------------------------
-// DICTIONARY
-// ---------------------------------------------------------------------------
-write('dictionary.html', page({
-  title: 'The DOCTOR dictionary', desc: 'A searchable index of every keyword in ELIZA’s 1966 DOCTOR script: filter the keywords, then read the decomposition and reassembly rules behind each one.',
-  scripts: ['eliza-hay.js', 'dict.js'],
-  body: `
-      <span class="kicker">The code</span>
-      <h1 class="page">The DOCTOR dictionary</h1>
-      <div class="lede"><p>Every word DOCTOR knows, and the rules behind it. Type to filter the keyword list, then click a keyword to read its transformation rules: the <em>decomposition</em> patterns that take your sentence apart, and the <em>reassembly</em> templates that build a reply. The complete script is listed at the foot of the page.</p></div>
-
+      <div class="rule" id="dictionary">THE DICTIONARY</div>
+      <p>Every word DOCTOR knows, and the rules behind it. Type to filter the keyword list, then click a keyword to read its transformation rules: the <em>decomposition</em> patterns that take your sentence apart, and the <em>reassembly</em> templates that build a reply.</p>
       <div id="dict-app"></div>
 
       <div class="rule">THE FULL SCRIPT</div>
-      <p>The whole DOCTOR script as published in the appendix to Weizenbaum&rsquo;s 1966 <cite>Communications of the ACM</cite> paper, transcribed by Anthony C. Hay. This is the exact text the engine on this site reads. Read it alongside the close reading on <a href="doctor.html">the DOCTOR script</a> page.</p>
-      <div id="dict-script"></div>
+      <p>The whole DOCTOR script as published in the appendix to Weizenbaum&rsquo;s 1966 <cite>Communications of the ACM</cite> paper, transcribed by Anthony C. Hay (<code>DOCTOR.txt</code> in the <a href="https://github.com/critical-code-studies/ELIZA">repository</a>). This is the exact text the engine on this site reads, listed here as a line-printer printout.</p>
+      ${fanfold('PRINT DOCTOR', '<pre id="dict-script" class="fanfold-listing"></pre>')}
 `}));
+
+// ---------------------------------------------------------------------------
+// DICTIONARY (merged into doctor.html; kept as a redirect so old links resolve)
+// ---------------------------------------------------------------------------
+write('dictionary.html', `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content="0; url=doctor.html#dictionary">
+  <link rel="canonical" href="${SITE}/doctor.html">
+  <title>The DOCTOR dictionary &middot; ELIZA (1966)</title>
+</head>
+<body>
+  <p>The DOCTOR dictionary is now part of <a href="doctor.html#dictionary">the DOCTOR script page</a>. Redirecting&hellip;</p>
+</body>
+</html>
+`);
 
 // ---------------------------------------------------------------------------
 // VERSIONS
