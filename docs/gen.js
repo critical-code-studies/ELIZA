@@ -142,6 +142,17 @@ function slipChain(values, opts) {
   return s;
 }
 
+// reusable fanfold (continuous-form) plate: a CTSS command header plus body,
+// printed on archival paper with tractor-feed holes (see .fanfold in site.css).
+// cmd may be a single command string or an array of session lines.
+function fanfold(cmd, inner) {
+  const lines = (Array.isArray(cmd) ? cmd : [cmd]).map(l => `<div class="cmd-line">${l}</div>`).join('');
+  return `<div class="fanfold">
+        <div class="fanfold-cmd">${lines}</div>
+${inner}
+      </div>`;
+}
+
 const TEAM = [
   ['David M. Berry', 'Professor of Digital Humanities, University of Sussex', 'Writes widely on philosophy and technology, particularly computation, software and algorithms; recent work addresses explainability, human understanding, and the history of the university. Co-discovered the original ELIZA source in the MIT archive.', 'berry.png'],
   ['Sarah Ciston', 'Professor of Computational Thinking and Aesthetic Doing, Academy of Media Arts Cologne', 'Builds critical-creative tools to bring intersectional approaches to machine learning. Winner of the 2025 Ars Electronica STARTS Grand Prize. Author of <em>A Critical Field Guide to Working with Machine Learning Datasets</em> and founder of Code Collective.', 'ciston.png'],
@@ -149,7 +160,7 @@ const TEAM = [
   ['Mark C. Marino', 'Professor of Writing, USC; Director, Humanities and Critical Code Studies (HaCCS) Lab', 'Scholar of electronic literature; author of <em>Critical Code Studies</em> (MIT Press) and co-author of <em>10 PRINT CHR$(205.5+RND(1))</em>. Director of Communication for the Electronic Literature Organization.', 'marino.png'],
   ['Peter Millican', 'Professor of Philosophy, Hertford College, Oxford', 'Founder of Oxford&rsquo;s Computer Science and Philosophy degree (2012). Author of the Elizabeth chatbot (2000), built to engage humanities students with the mechanics of conversation.', 'millican.png'],
   ['Arthur I. Schwarz', 'Software developer and technical lead (aerospace, automotive); BS Physics, MS Computer Science', 'Developed gSlip, a public-domain implementation of SLIP, the list-processing library underpinning ELIZA. Interests include hashing algorithms and anomaly detection.', 'schwarz.png'],
-  ['Jeff Shrager', 'Adjunct Professor, Symbolic Systems, Stanford; Chief Scientist, Blue Dot Change', 'Self-described &ldquo;aging Lisp hacker&rdquo; who rediscovered Weizenbaum&rsquo;s original MAD-SLIP ELIZA in the MIT archive in 2021. Curator of ELIZAgen.org; co-author of 100+ AI publications and co-founder of three biomedical AI startups.'],
+  ['Jeff Shrager', 'Adjunct Professor, Symbolic Systems, Stanford; Chief Scientist, Blue Dot Change', 'Self-described &ldquo;aging Lisp hacker&rdquo; who rediscovered Weizenbaum&rsquo;s original MAD-SLIP ELIZA in the MIT archive in 2021. Curator of ELIZAgen.org; co-author of 100+ AI publications and co-founder of three biomedical AI startups.', 'shrager.png'],
   ['Peggy Weil', 'Adjunct Assistant Professor, USC School of Cinematic Arts', 'Multidisciplinary artist; did graduate work at the MIT Media Lab&rsquo;s Architecture Machine Group in the early 1980s. Created MrMind, the first net-art chatbot. Her work addresses physical, digital and sociopolitical questions.', 'weil.png']
 ];
 
@@ -550,32 +561,23 @@ write('people.html', page({
       <span class="kicker">TEAM-ELIZA</span>
       <h1 class="page">TEAM-ELIZA</h1>
       <div class="lede"><p>The ELIZA Archaeology Project is a collaboration of scholars, programmers, philosophers and artists, with diverse interests and many different voices.</p></div>
-      <div class="team-plate">
-        <div class="logo-cmd">LISTF TEAM *<span class="cur" aria-hidden="true"></span></div>
-        <div class="team-list">
+      ${fanfold(['R ELIZA', 'ELIZA NOT FOUND.', 'LISTF TEAM *'], `<div class="team-list">
         ${TEAM.map(([n, r, b, photo]) => `<div class="team-row">
           <div class="team-photo${photo ? '' : ' empty'}">${photo ? `<img src="assets/images/${photo}" alt="${n}" loading="lazy">` : '<span>[ PHOTO ]</span>'}</div>
           <div class="team-info"><p class="name">${n}</p><p class="role">${r}</p><p class="bio">${b}</p></div>
         </div>`).join('\n        ')}
-        </div>
-      </div>
+        </div>`)}
       <div class="rule">AFFILIATIONS</div>
-      <div class="logo-plate">
-        <div class="logo-cmd">LISTF AFFIL *<span class="cur" aria-hidden="true"></span></div>
-        <div class="logos">
+      ${fanfold('LISTF AFFIL *', `<div class="logos">
           <a class="logo" href="https://www.sussex.ac.uk" target="_blank" rel="noopener"><img src="assets/images/sussex.jpg" alt="University of Sussex" loading="lazy"></a>
           <a class="logo" href="https://www.ox.ac.uk" target="_blank" rel="noopener"><img src="assets/images/oxford.png" alt="University of Oxford" loading="lazy"></a>
           <a class="logo" href="https://www.stanford.edu" target="_blank" rel="noopener"><img src="assets/images/stanford.png" alt="Stanford University" loading="lazy"></a>
           <a class="logo" href="https://www.usc.edu" target="_blank" rel="noopener"><img src="assets/images/usc.jpg" alt="University of Southern California" loading="lazy"></a>
           <a class="logo" href="https://www.khm.de" target="_blank" rel="noopener"><img src="assets/images/khm-logo.png" alt="Academy of Media Arts Cologne (KHM)" loading="lazy"></a>
           <a class="logo" href="https://haccslab.com" target="_blank" rel="noopener"><img src="assets/images/haccslab.png" alt="HaCCS Lab" loading="lazy"></a>
-        </div>
-      </div>
+        </div>`)}
       <div class="rule">WITH THANKS</div>
-      <div class="team-plate">
-        <div class="logo-cmd">PRINT THANKS<span class="cur" aria-hidden="true"></span></div>
-        <p class="plate-body">With thanks to guest contributor Walt Bilofsky, to critical friends Claire Carroll and Rebecca Roach, to the MIT Libraries and Distinctive Collections, to the Charles Babbage Institute, and to Rupert Lane, Tom Van Vleck and Jerry Saltzer for help understanding CTSS.</p>
-      </div>
+      ${fanfold('PRINT THANKS', `<p class="plate-body">With thanks to guest contributor Walt Bilofsky, to critical friends Claire Carroll and Rebecca Roach, to the MIT Libraries and Distinctive Collections, to the Charles Babbage Institute, and to Rupert Lane, Tom Van Vleck and Jerry Saltzer for help understanding CTSS.</p>`)}
 `}));
 
 // ---------------------------------------------------------------------------
