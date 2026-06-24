@@ -167,7 +167,7 @@ const homeHero = `  <section class="hero">
         <p class="tagline">In 1966 Joseph Weizenbaum gave people their first conversation with a machine. In 2021 we found its lost source code. This is a close reading of ELIZA: its program, its DOCTOR script, its many versions, and what it still tells us about artificial intelligence.</p>
         <div class="tt" id="tt-feed" aria-hidden="true"></div>
         <div class="hero-actions">
-          <a class="btn" href="how.html">Watch it think</a>
+          <a class="btn" href="how.html">Watch how it works</a>
           <a class="btn ghost" href="try.html">Talk to ELIZA</a>
           <a class="btn ghost" href="overview.html">Start reading</a>
         </div>
