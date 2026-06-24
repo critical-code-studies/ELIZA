@@ -550,8 +550,14 @@ write('people.html', page({
       <span class="kicker">TEAM-ELIZA</span>
       <h1 class="page">TEAM-ELIZA</h1>
       <div class="lede"><p>The ELIZA Archaeology Project is a collaboration of scholars, programmers, philosophers and artists, with diverse interests and many different voices.</p></div>
-      <div class="people">
-        ${TEAM.map(([n, r, b]) => `<div class="person-card"><p class="name">${n}</p><p class="role">${r}</p><p>${b}</p></div>`).join('\n        ')}
+      <div class="team-plate">
+        <div class="logo-cmd">LISTF TEAM *<span class="cur" aria-hidden="true"></span></div>
+        <div class="team-list">
+        ${TEAM.map(([n, r, b, photo]) => `<div class="team-row">
+          <div class="team-photo${photo ? '' : ' empty'}">${photo ? `<img src="assets/images/${photo}" alt="${n}" loading="lazy">` : '<span>[ PHOTO ]</span>'}</div>
+          <div class="team-info"><p class="name">${n}</p><p class="role">${r}</p><p class="bio">${b}</p></div>
+        </div>`).join('\n        ')}
+        </div>
       </div>
       <div class="rule">AFFILIATIONS</div>
       <div class="logo-plate">
