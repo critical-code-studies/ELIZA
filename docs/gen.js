@@ -553,6 +553,15 @@ write('people.html', page({
       <div class="people">
         ${TEAM.map(([n, r, b]) => `<div class="person-card"><p class="name">${n}</p><p class="role">${r}</p><p>${b}</p></div>`).join('\n        ')}
       </div>
+      <div class="rule">AFFILIATIONS</div>
+      <div class="logos">
+        <span class="logo"><img src="assets/images/sussex.jpg" alt="University of Sussex" loading="lazy"></span>
+        <span class="logo"><img src="assets/images/oxford.png" alt="University of Oxford" loading="lazy"></span>
+        <span class="logo"><img src="assets/images/stanford.png" alt="Stanford University" loading="lazy"></span>
+        <span class="logo"><img src="assets/images/usc.jpg" alt="University of Southern California" loading="lazy"></span>
+        <span class="logo"><img src="assets/images/khm-logo.png" alt="Academy of Media Arts Cologne (KHM)" loading="lazy"></span>
+        <span class="logo"><img src="assets/images/haccslab.png" alt="HaCCS Lab" loading="lazy"></span>
+      </div>
       <div class="rule">WITH THANKS</div>
       <p class="micro">With thanks to guest contributor Walt Bilofsky, to critical friends Claire Carroll and Rebecca Roach, to the MIT Libraries and Distinctive Collections, to the Charles Babbage Institute, and to Rupert Lane, Tom Van Vleck and Jerry Saltzer for help understanding CTSS.</p>
 `}));
