@@ -344,7 +344,11 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
    warm parchment plate (echoing the teletype-paper motif) headed by a LISTF
    command line, with the logos set in mix-blend-mode: multiply so their white
    backgrounds melt into the paper and only the marks remain. */
-.logo-plate { background: var(--paper); border-radius: 4px; padding: 1.1rem 1.7rem 2.1rem; margin-top: 1.6rem; box-shadow: 0 14px 38px rgba(0,0,0,0.5); }
+.logo-plate { position: relative; background: var(--paper); border-radius: 3px; padding: 1.1rem 2.9rem 2.1rem; margin-top: 1.6rem; box-shadow: 0 14px 38px rgba(0,0,0,0.5); }
+/* continuous-form (fanfold) tractor-feed holes down each margin */
+.logo-plate::before, .logo-plate::after { content: ""; position: absolute; top: 0; bottom: 0; width: 22px; background-image: radial-gradient(circle at center, var(--bg) 0 3.4px, rgba(20,13,9,0.18) 3.4px 4.3px, transparent 4.6px); background-size: 22px 26px; background-repeat: repeat-y; background-position: center 11px; }
+.logo-plate::before { left: 0; border-right: 1px dashed rgba(20,13,9,0.22); }
+.logo-plate::after { right: 0; border-left: 1px dashed rgba(20,13,9,0.22); }
 .logo-cmd { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.5px; color: #3a2f24; border-bottom: 1px solid rgba(20,13,9,0.14); padding-bottom: 0.7rem; margin-bottom: 1.5rem; }
 .logo-cmd .cur { display: inline-block; width: 0.55em; height: 1em; background: #3a2f24; margin-left: 2px; vertical-align: -0.12em; animation: elblink 1s step-end infinite; }
 .logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-around; gap: 1.9rem 2.6rem; }
