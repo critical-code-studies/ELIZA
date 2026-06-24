@@ -340,10 +340,10 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .person-card:nth-child(4n+3) { border-top-color: var(--lamp-green); }
 .person-card:nth-child(4n+4) { border-top-color: var(--lamp-blue); }
 
-/* affiliation logos: white tiles so mixed (transparent / solid) logos read uniformly on the dark page */
-.logos { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-top: 1.6rem; }
-.logo { background: #fff; border-radius: 8px; padding: 0.7rem 1rem; height: 72px; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(0,0,0,0.3); }
-.logo img { max-height: 100%; max-width: 150px; width: auto; height: auto; display: block; object-fit: contain; }
+/* affiliation logos: one white panel holding all the logos, evenly balanced */
+.logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-around; gap: 1.8rem 2.6rem; margin-top: 1.6rem; background: #fff; border-radius: 10px; padding: 2rem 2.6rem; box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+.logo { display: inline-flex; align-items: center; justify-content: center; height: 56px; }
+.logo img { max-height: 100%; max-width: 170px; width: auto; height: auto; display: block; object-fit: contain; }
 
 /* ---------- blog index + posts ---------- */
 .posts { list-style: none; padding: 0; margin: 1.8rem 0 0; display: grid; gap: 0; }
