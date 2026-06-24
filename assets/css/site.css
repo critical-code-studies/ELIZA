@@ -352,7 +352,7 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .fanfold-cmd { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.5px; color: #3a2f24; margin-bottom: 1.4rem; }
 .fanfold-cmd .cmd-line { white-space: pre-wrap; }
 /* a code listing printed on the fanfold paper (dark ink) */
-.fanfold-listing { font-family: var(--mono); font-size: 0.7rem; line-height: 1.5; color: #2c2318; white-space: pre; overflow-x: auto; margin: 0; }
+.fanfold-listing { font-family: var(--mono); font-size: 0.62rem; line-height: 1.5; color: #2c2318; white-space: pre; overflow-x: auto; margin: 0; }
 
 /* TEAM-ELIZA as a vertical line-printer listing on the fanfold paper */
 .team-row { display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem 0; border-top: 1px dashed rgba(20,13,9,0.2); }

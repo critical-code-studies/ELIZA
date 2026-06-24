@@ -25,12 +25,6 @@ function nav(depth) {
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span class="bars" aria-hidden="true">&#9776;</span>&nbsp;Menu</button>
       <nav class="site-nav" id="site-nav">
         <div class="nav-group">
-          <button class="nav-top" aria-expanded="false">Main <span class="caret" aria-hidden="true">&#9662;</span></button>
-          <div class="nav-menu">
-            <a href="${p}index.html">Home</a><a href="${p}about.html">About</a><a href="${p}try.html">Try ELIZA</a><a href="${p}bibliography.html">Bibliography</a><a href="${p}links.html">Links</a>
-          </div>
-        </div>
-        <div class="nav-group">
           <button class="nav-top" aria-expanded="false">ELIZA <span class="caret" aria-hidden="true">&#9662;</span></button>
           <div class="nav-menu">
             <a href="${p}overview.html">Overview</a><a href="${p}doctor.html">The DOCTOR script</a><a href="${p}versions.html">The versions</a><a href="${p}book.html">The book</a>
@@ -38,11 +32,22 @@ function nav(depth) {
         </div>
         <div class="nav-group">
           <button class="nav-top" aria-expanded="false">The code <span class="caret" aria-hidden="true">&#9662;</span></button>
-          <div class="nav-menu"><a href="${p}code.html">The program</a><a href="${p}slip.html">SLIP</a><a href="${p}doctor.html">The DOCTOR script</a><a href="${p}how.html">How it works (demo)</a></div>
+          <div class="nav-menu">
+            <a href="${p}code.html">The program</a><a href="${p}slip.html">SLIP</a><a href="${p}how.html">How it works</a><a href="${p}try.html">Try ELIZA</a>
+          </div>
         </div>
-        <a class="nav-top nav-direct" href="${p}blog.html">Blog</a>
-        <a class="nav-top nav-direct" href="${p}people.html">TEAM-ELIZA</a>
-        <a class="nav-top nav-direct" href="${p}talks.html">Talks</a>
+        <div class="nav-group">
+          <button class="nav-top" aria-expanded="false">Project <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu">
+            <a href="${p}people.html">TEAM-ELIZA</a><a href="${p}talks.html">Talks</a><a href="${p}blog.html">Blog</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button class="nav-top" aria-expanded="false">About <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="nav-menu">
+            <a href="${p}about.html">About</a><a href="${p}bibliography.html">Bibliography</a><a href="${p}links.html">Links</a>
+          </div>
+        </div>
       </nav>`;
 }
 
