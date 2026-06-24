@@ -590,31 +590,32 @@ write('talks.html', page({
 
       <h2 class="yeargroup">2026</h2>
       <ul class="talklist">
-        <li><span class="ttl">&ldquo;From Script to Vector: ELIZA and the Age of AI&rdquo;</span><span class="meta">Roskilde University, Denmark &middot; 29 April 2026</span></li>
-        <li><span class="ttl">&ldquo;From Script to Vector: ELIZA and the Age of AI&rdquo;</span><span class="meta">Aarhus University, Denmark &middot; 20 March 2026</span></li>
-        <li><span class="ttl">&ldquo;Generative AI and Computational Capitalism: Towards a Critical Theory of Artificial Intelligence&rdquo;</span><span class="meta">University of Birmingham &middot; 22 January 2026</span></li>
+        <li><span class="who">Berry, D. M.</span><span class="ttl">&ldquo;From Script to Vector: ELIZA and the Age of AI&rdquo;</span><span class="meta">Roskilde University, Denmark &middot; 29 April 2026</span></li>
+        <li><span class="who">Ciston, S.</span><span class="ttl"><a href="https://zkm.de/de/media/videos/sarah-ciston-dont-be-evil-reckoning-with-the-risks-of-technofascism-from-eliza-to" target="_blank" rel="noopener">&ldquo;Don&rsquo;t (?) Be Evil: Reckoning with the Risks of Technofascism from ELIZA to Anthropic (or: How I learned to worry just enough to keep loving what I code)&rdquo;</a></span><span class="meta">Envisioning AI: Legacy and Impact of the Connection Machine, ZKM, Karlsruhe, Germany &middot; 27 March 2026</span></li>
+        <li><span class="who">Berry, D. M.</span><span class="ttl">&ldquo;From Script to Vector: ELIZA and the Age of AI&rdquo;</span><span class="meta">Aarhus University, Denmark &middot; 20 March 2026</span></li>
+        <li><span class="who">Berry, D. M.</span><span class="ttl">&ldquo;Generative AI and Computational Capitalism: Towards a Critical Theory of Artificial Intelligence&rdquo;</span><span class="meta">University of Birmingham &middot; 22 January 2026</span></li>
       </ul>
 
       <h2 class="yeargroup">2025</h2>
       <ul class="talklist">
-        <li><span class="ttl">&ldquo;Generative AI and Computational Capitalism: Towards a Critical Theory of Artificial Intelligence&rdquo;</span><span class="meta">Workshop on Critical Theory of the Computational, Weizenbaum Institute, Berlin &middot; 16 October 2025</span></li>
-        <li><span class="ttl">&ldquo;Digital Kintsugi: The Art and Ethics of Reconstructing ELIZA&rsquo;s Digital Ruins&rdquo;</span><span class="meta">ELO25 @ 25: Love Letters to the Past and Future, Electronic Literature Organization, York University, Toronto, Canada &middot; 10&ndash;13 July 2025</span></li>
+        <li><span class="who">Berry, D. M.</span><span class="ttl">&ldquo;Generative AI and Computational Capitalism: Towards a Critical Theory of Artificial Intelligence&rdquo;</span><span class="meta">Workshop on Critical Theory of the Computational, Weizenbaum Institute, Berlin &middot; 16 October 2025</span></li>
+        <li><span class="who">Berry, D. M.</span><span class="ttl">&ldquo;Digital Kintsugi: The Art and Ethics of Reconstructing ELIZA&rsquo;s Digital Ruins&rdquo;</span><span class="meta">ELO25 @ 25: Love Letters to the Past and Future, Electronic Literature Organization, York University, Toronto, Canada &middot; 10&ndash;13 July 2025</span></li>
       </ul>
 
       <h2 class="yeargroup">2023</h2>
       <ul class="talklist">
-        <li><span class="ttl">&ldquo;Reading ELIZA: Understanding Weizenbaum through his code&rdquo;</span><span class="meta">Weizenbaum&rsquo;s Worlds: Technological Change and Computer Criticism in the U.S. and Germany, ca. 1960&ndash;1990, Humboldt / Weizenbaum Institute, Berlin &middot; 3 November 2023</span></li>
+        <li><span class="who">Berry, D. M.</span><span class="ttl">&ldquo;Reading ELIZA: Understanding Weizenbaum through his code&rdquo;</span><span class="meta">Weizenbaum&rsquo;s Worlds: Technological Change and Computer Criticism in the U.S. and Germany, ca. 1960&ndash;1990, Humboldt / Weizenbaum Institute, Berlin &middot; 3 November 2023</span></li>
         <li><span class="ttl">&ldquo;Getting to know ELIZA: ChatGPT&rsquo;s Great Grandmother&rdquo;</span><span class="meta">MIT &middot; 11 October 2023</span></li>
       </ul>
 
       <h2 class="yeargroup">2022</h2>
       <ul class="talklist">
-        <li><span class="ttl">&ldquo;The Original ELIZA in MAD-SLIP&rdquo;</span><span class="meta">Critical Code Studies Working Group, code critique &middot; thread leaders Jeff Shrager, David M. Berry, Mark C. Marino, Jeremy Douglass</span></li>
+        <li><span class="who">Shrager, J., Berry, D. M., Marino, M. C. &amp; Douglass, J.</span><span class="ttl">&ldquo;The Original ELIZA in MAD-SLIP&rdquo;</span><span class="meta">Critical Code Studies Working Group, code critique</span></li>
       </ul>
 
       <h2 class="yeargroup">2016</h2>
       <ul class="talklist">
-        <li><span class="ttl">&ldquo;Archaeologies of Code: Reading ELIZA&rdquo;</span><span class="meta">Critical Code Studies Working Group, code critique &middot; thread leader David M. Berry</span></li>
+        <li><span class="who">Berry, D. M.</span><span class="ttl">&ldquo;Archaeologies of Code: Reading ELIZA&rdquo;</span><span class="meta">Critical Code Studies Working Group, code critique</span></li>
       </ul>
 `}));
 
