@@ -325,11 +325,6 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .pull cite { display: block; font-family: var(--mono); font-style: normal; font-size: 0.72rem; letter-spacing: 1px; color: var(--ink-dim); margin-top: 0.7rem; text-transform: uppercase; }
 
 /* stat strip */
-.stat-strip { display: flex; flex-wrap: wrap; gap: 0; margin-top: 1.6rem; border: 1px solid var(--line-soft); border-radius: 3px; overflow: hidden; }
-.stat { flex: 1 1 140px; padding: 1.1rem 1.2rem; border-right: 1px solid var(--line-soft); background: rgba(232,228,218,0.02); }
-.stat:last-child { border-right: 0; }
-.stat .n { font-family: var(--mono); font-size: 1.5rem; color: var(--bright); line-height: 1.1; }
-.stat .l { font-family: var(--mono); font-size: 0.64rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-dim); margin-top: 0.4rem; }
 
 /* ---------- people grid ---------- */
 .people { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.2rem; margin-top: 1.8rem; }
@@ -352,6 +347,7 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .fanfold::after, .listing::after { right: 0; border-left: 1px dashed rgba(20,13,9,0.22); }
 .fanfold-cmd { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.5px; color: #3a2f24; margin-bottom: 1.4rem; }
 .fanfold-cmd .cmd-line { white-space: pre-wrap; }
+.fanfold-foot { margin-top: 1.3rem; margin-bottom: 0; }
 /* a code listing printed on the fanfold paper (dark ink) */
 .fanfold-listing { font-family: var(--mono); font-size: 0.72rem; line-height: 1.5; color: #2c2318; white-space: pre; overflow-x: auto; margin: 0; }
 /* a directory-style index of sections on the fanfold paper (replaces the card grid) */

@@ -146,14 +146,46 @@ function slipChain(values, opts) {
   return s;
 }
 
-// reusable fanfold (continuous-form) plate: a CTSS command header plus body,
-// printed on archival paper with tractor-feed holes (see .fanfold in site.css).
-// cmd may be a single command string or an array of session lines.
-function fanfold(cmd, inner) {
-  const lines = (Array.isArray(cmd) ? cmd : [cmd]).map(l => `<div class="cmd-line">${l}</div>`).join('');
+// deterministic, period-plausible time-of-day + CPU figure, stable per command
+function fanStamp(seed) {
+  let h = 0; for (let i = 0; i < seed.length; i++) h = (h * 31 + seed.charCodeAt(i)) >>> 0;
+  const hh = 8 + (h % 11), mm = (h >>> 4) % 60, t = (h >>> 10) % 10;
+  const tod = String(hh).padStart(2, '0') + String(mm).padStart(2, '0') + '.' + t; // hhmm.t
+  const cpu = '.' + String(((h >>> 16) % 90) + 10);                                 // .NN cpu seconds
+  return { tod, cpu };
+}
+
+// shape a typed command into a period-correct session for a given machine.
+// CTSS: supervisor prints W (working) then, after output, R (ready) with times.
+// ITS: DDT ':' command, '*' prompt returns. UNIX: '$' prompt. PDP1: bare. NONE: verbatim.
+function fanSession(cmds, system) {
+  const up = s => s.toUpperCase(), low = s => s.toLowerCase();
+  switch (system) {
+    case 'CTSS': {
+      const head = cmds.map(up), { tod, cpu } = fanStamp(cmds.join(' '));
+      head.push('W ' + tod);
+      return { head, foot: ['R ' + tod + '+' + cpu] };
+    }
+    case 'ITS':  return { head: cmds.map(c => ':' + up(c)), foot: ['*'] };
+    case 'UNIX': return { head: cmds.map(c => '$ ' + low(c)), foot: ['$'] };
+    case 'PDP1': return { head: cmds.map(up), foot: [] };
+    default:     return { head: cmds.slice(), foot: [] }; // NONE
+  }
+}
+
+// reusable fanfold (continuous-form) plate, printed on archival paper with
+// tractor-feed holes (see .fanfold in site.css). `cmd` is a command string the
+// chosen `system` shapes into a session (CTSS W/R, ITS, UNIX, PDP1, NONE), or an
+// array of lines used verbatim (you author the whole transcript). Default CTSS.
+function fanfold(cmd, inner, system) {
+  system = (system || 'CTSS').toUpperCase();
+  const verbatim = Array.isArray(cmd);
+  const { head, foot } = verbatim ? { head: cmd, foot: [] } : fanSession([cmd], system);
+  const lines = arr => arr.map(l => `<div class="cmd-line">${l}</div>`).join('');
+  const footHtml = foot.length ? `\n        <div class="fanfold-cmd fanfold-foot">${lines(foot)}</div>` : '';
   return `<div class="fanfold">
-        <div class="fanfold-cmd">${lines}</div>
-${inner}
+        <div class="fanfold-cmd">${lines(head)}</div>
+${inner}${footHtml}
       </div>`;
 }
 
@@ -220,13 +252,7 @@ const homeBody = `
 
     <section class="block">
       <h2>ELIZA is a multiplicity</h2>
-      <p>For sixty years a proliferation of BASIC and Lisp copies treated the DOCTOR therapy script as if it were ELIZA itself, rather than one demonstration of a general-purpose system. The archive tells a richer story: at least five major versions between 1965 and 1968, and scripts far beyond DOCTOR, from arithmetic tutoring to a Nixon parody.</p>
-      <div class="stat-strip">
-        <div class="stat"><div class="n">1966</div><div class="l">CACM paper</div></div>
-        <div class="stat"><div class="n">~420</div><div class="l">lines of MAD-SLIP</div></div>
-        <div class="stat"><div class="n">5+</div><div class="l">known versions</div></div>
-        <div class="stat"><div class="n">2021</div><div class="l">source recovered</div></div>
-      </div>
+      <p>For sixty years a proliferation of BASIC and Lisp copies treated the DOCTOR therapy script as if it were ELIZA itself, rather than one demonstration of a general-purpose system. The archive tells a richer story: at least five major versions between 1965 and 1968, and scripts far beyond DOCTOR, from arithmetic tutoring to a Nixon parody. The program reached print in the January 1966 <cite>Communications of the ACM</cite>; the roughly 420 lines of MAD-SLIP behind it stayed lost until we recovered the source from the MIT archive in 2021.</p>
     </section>
 
     <div class="rule">A KEYWORD THAT IS NOT A WORD</div>
