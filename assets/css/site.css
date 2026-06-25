@@ -142,10 +142,16 @@ a:hover { color: var(--bright); text-shadow: var(--glow); }
 .hero { position: relative; min-height: 84vh; display: flex; align-items: center; overflow: hidden; border-bottom: 1px solid var(--line-soft); }
 /* the hero as a 1960s desk: the recovered source on a sheet of fanfold paper, behind the console panel */
 .hero-paper { position: absolute; inset: 0; z-index: 0; background: var(--paper); overflow: hidden; }
-.hero-paper::before, .hero-paper::after { content: ""; position: absolute; top: 0; bottom: 0; width: 22px; background-image: radial-gradient(circle at center, var(--bg) 0 3.4px, rgba(20,13,9,0.18) 3.4px 4.3px, transparent 4.6px); background-size: 22px 26px; background-repeat: repeat-y; background-position: center 11px; }
-.hero-paper::before { left: 0; border-right: 1px dashed rgba(20,13,9,0.22); }
-.hero-paper::after { right: 0; border-left: 1px dashed rgba(20,13,9,0.22); }
-.hero-source { font-family: var(--mono); font-size: 0.7rem; line-height: 1.5; color: rgba(20,13,9,0.16); white-space: pre; margin: 0; padding: 1.6rem 2.9rem; }
+/* the sprocket holes live on the scrolling layer, so the whole sheet feeds up with the code */
+.hero-source {
+  font-family: var(--mono); font-size: 0.7rem; line-height: 1.5; color: rgba(20,13,9,0.035);
+  white-space: pre; margin: 0; padding: 1.6rem 2.9rem;
+  background-image: radial-gradient(circle at center, var(--bg) 0 3.4px, rgba(20,13,9,0.08) 3.4px 4.3px, transparent 4.6px), radial-gradient(circle at center, var(--bg) 0 3.4px, rgba(20,13,9,0.08) 3.4px 4.3px, transparent 4.6px);
+  background-size: 22px 26px, 22px 26px; background-repeat: repeat-y, repeat-y; background-position: 0 0, 100% 0;
+  animation: heroScroll 300s linear infinite;
+}
+@keyframes heroScroll { from { transform: translateY(0); } to { transform: translateY(-50%); } }
+@media (prefers-reduced-motion: reduce) { .hero-source { animation: none; } }
 .hero-inner { position: relative; z-index: 2; padding: 4vh 0; width: 100%; }
 /* the hero content sits in a darkened panel so it reads cleanly over the drifting
    source code; on wider screens it is anchored to the right, leaving the recovered
@@ -171,6 +177,9 @@ a:hover { color: var(--bright); text-shadow: var(--glow); }
   margin: 0; letter-spacing: 1px; color: var(--bright);
   text-shadow: 0 2px 0 rgba(0,0,0,0.35);
 }
+.hero h1.wm { line-height: 1; text-shadow: none; }
+.hero-wordmark { display: block; height: clamp(2.6rem, 9vw, 4.8rem); width: auto; color: var(--bright); filter: drop-shadow(0 2px 0 rgba(0,0,0,0.35)); }
+.vh { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 .hero .sub { font-family: var(--mono); font-size: clamp(0.85rem, 2.2vw, 1.05rem); letter-spacing: 2px; color: var(--ink); margin-top: 0.6rem; text-transform: uppercase; }
 .hero .tagline { max-width: 50ch; margin-top: 1.6rem; font-size: 1.15rem; color: var(--ink); }
 .hero-actions { margin-top: 2.2rem; display: flex; gap: 0.7rem; flex-wrap: wrap; }
@@ -198,9 +207,9 @@ a:hover { color: var(--bright); text-shadow: var(--glow); }
           mask-image: linear-gradient(to bottom, transparent 0, #000 2.4em, #000 100%);
 }
 .tt-line { margin: 0.1rem 0; white-space: pre-wrap; }
-.tt-line.you { color: var(--you); }
-.tt-line.sh  { color: var(--eliza); text-transform: uppercase; text-shadow: 0 0 5px rgba(239,111,68,0.3); }
-.tt-cursor { display: inline-block; width: 0.5em; height: 1em; vertical-align: -0.12em; background: var(--eliza); box-shadow: 0 0 7px var(--eliza); margin-left: 1px; animation: blink 1.06s steps(1) infinite; }
+.tt-line.you { color: #4fbf7a; }
+.tt-line.sh  { color: #7bf59b; text-transform: uppercase; text-shadow: 0 0 5px rgba(95,240,138,0.4); }
+.tt-cursor { display: inline-block; width: 0.5em; height: 1em; vertical-align: -0.12em; background: #7bf59b; box-shadow: 0 0 7px rgba(95,240,138,0.7); margin-left: 1px; animation: blink 1.06s steps(1) infinite; }
 
 /* ---------- buttons ---------- */
 .btn {

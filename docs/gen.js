@@ -110,16 +110,17 @@ function write(file, html) { fs.writeFileSync(path.join(OUT, file), clean(html))
 // a doubly-linked (SLIP) list drawn as cells with forward (next) and backward
 // (prev) links. values = middle texts; opts.labels annotates the first cell's
 // fields and shows a legend.
+// a doubly-linked SLIP list: clean datum cells joined by next (forward) and prev
+// (backward) link arrows. The cell holds the datum; the links do the organising.
 function slipChain(values, opts) {
   opts = opts || {};
-  // dark-ink palette when drawn on fanfold paper; light palette on the dark page
   var ink = opts.paper
-    ? { cellFill: 'rgba(20,13,9,0.05)', cellStroke: 'rgba(20,13,9,0.45)', div: 'rgba(20,13,9,0.28)', text: '#2c2318', fwd: '#b5462a', bwd: '#8a5a1f', label: '#6b5942' }
-    : { cellFill: 'rgba(232,228,218,0.04)', cellStroke: 'rgba(232,228,218,0.3)', div: 'rgba(232,228,218,0.18)', text: '#e8e3d7', fwd: '#ef6f44', bwd: '#f0a83a', label: '#9a9c95' };
+    ? { box: 'rgba(20,13,9,0.05)', stroke: 'rgba(20,13,9,0.5)', text: '#2c2318', fwd: '#b5462a', bwd: '#8a5a1f' }
+    : { box: 'rgba(232,228,218,0.05)', stroke: 'rgba(232,228,218,0.4)', text: '#e8e3d7', fwd: '#ef6f44', bwd: '#f0a83a' };
   var uid = (opts.id || (opts.paper ? 'p' : 'd') + values.join('').replace(/[^A-Za-z0-9]/g, '') || 'x').toLowerCase();
-  var cellW = 112, cellH = 46, pitch = 150, x0 = 24;
-  var yTop = opts.labels ? 42 : 28;
-  var H = opts.labels ? 124 : 92;
+  var cellW = 100, cellH = 48, pitch = 150, x0 = 24;
+  var yTop = opts.labels ? 42 : 24;
+  var H = yTop + cellH + 14;
   var n = values.length;
   var s = '<svg viewBox="0 0 660 ' + H + '" role="img" aria-label="' + (opts.alt || 'doubly linked list') + '" style="width:100%;height:auto;display:block">';
   s += '<defs>'
@@ -132,21 +133,34 @@ function slipChain(values, opts) {
   }
   for (var i = 0; i < n; i++) {
     var x = x0 + i * pitch;
-    s += '<rect x="' + x + '" y="' + yTop + '" width="' + cellW + '" height="' + cellH + '" rx="4" fill="' + ink.cellFill + '" stroke="' + ink.cellStroke + '"/>';
-    s += '<line x1="' + (x + 24) + '" y1="' + yTop + '" x2="' + (x + 24) + '" y2="' + (yTop + cellH) + '" stroke="' + ink.div + '"/>';
-    s += '<line x1="' + (x + cellW - 24) + '" y1="' + yTop + '" x2="' + (x + cellW - 24) + '" y2="' + (yTop + cellH) + '" stroke="' + ink.div + '"/>';
-    s += '<text x="' + (x + cellW / 2) + '" y="' + (yTop + cellH / 2 + 4) + '" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="13" fill="' + ink.text + '">' + (values[i] || '') + '</text>';
-    if (i < n - 1) s += '<line x1="' + (x + cellW + 2) + '" y1="' + (yTop + 15) + '" x2="' + (x0 + (i + 1) * pitch - 3) + '" y2="' + (yTop + 15) + '" stroke="' + ink.fwd + '" stroke-width="1.4" marker-end="url(#fwd-' + uid + ')"/>';
-    if (i > 0) s += '<line x1="' + (x - 2) + '" y1="' + (yTop + 31) + '" x2="' + (x0 + (i - 1) * pitch + cellW + 3) + '" y2="' + (yTop + 31) + '" stroke="' + ink.bwd + '" stroke-width="1.4" marker-end="url(#bwd-' + uid + ')"/>';
+    s += '<rect x="' + x + '" y="' + yTop + '" width="' + cellW + '" height="' + cellH + '" rx="6" fill="' + ink.box + '" stroke="' + ink.stroke + '"/>';
+    s += '<text x="' + (x + cellW / 2) + '" y="' + (yTop + cellH / 2 + 5) + '" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="14" fill="' + ink.text + '">' + (values[i] || '') + '</text>';
+    if (i < n - 1) s += '<line x1="' + (x + cellW + 3) + '" y1="' + (yTop + 16) + '" x2="' + (x0 + (i + 1) * pitch - 4) + '" y2="' + (yTop + 16) + '" stroke="' + ink.fwd + '" stroke-width="1.5" marker-end="url(#fwd-' + uid + ')"/>';
+    if (i > 0) s += '<line x1="' + (x - 3) + '" y1="' + (yTop + 32) + '" x2="' + (x0 + (i - 1) * pitch + cellW + 4) + '" y2="' + (yTop + 32) + '" stroke="' + ink.bwd + '" stroke-width="1.5" marker-end="url(#bwd-' + uid + ')"/>';
   }
-  if (opts.labels) {
-    for (var j = 0; j < n; j++) {
-      var xj = x0 + j * pitch, yl = yTop + cellH + 16;
-      s += '<text x="' + (xj + 12) + '" y="' + yl + '" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="' + ink.label + '">prev</text>';
-      s += '<text x="' + (xj + cellW / 2) + '" y="' + yl + '" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="' + ink.label + '">datum</text>';
-      s += '<text x="' + (xj + cellW - 12) + '" y="' + yl + '" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="' + ink.label + '">next</text>';
-    }
-  }
+  s += '</svg>';
+  return s;
+}
+
+// a single SLIP cell, drawn as an information carrier: a datum held between a
+// previous and a next pointer (the arrows reach out to its neighbours).
+function slipCell(opts) {
+  opts = opts || {};
+  var ink = opts.paper
+    ? { box: 'rgba(20,13,9,0.05)', stroke: 'rgba(20,13,9,0.5)', text: '#2c2318', fwd: '#b5462a', bwd: '#8a5a1f' }
+    : { box: 'rgba(232,228,218,0.05)', stroke: 'rgba(232,228,218,0.45)', text: '#e8e3d7', fwd: '#ef6f44', bwd: '#f0a83a' };
+  var u = 'cell' + (opts.paper ? 'p' : 'd');
+  var s = '<svg viewBox="0 0 480 116" role="img" aria-label="a SLIP cell: a datum held between a previous and a next pointer" style="width:100%;height:auto;display:block;max-width:480px;margin:0 auto">';
+  s += '<defs>'
+    + '<marker id="f-' + u + '" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L8 5 L1 9" fill="none" stroke="' + ink.fwd + '" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>'
+    + '<marker id="b-' + u + '" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L8 5 L1 9" fill="none" stroke="' + ink.bwd + '" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>'
+    + '</defs>';
+  s += '<text x="118" y="44" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="12" fill="' + ink.bwd + '">prev</text>';
+  s += '<text x="362" y="44" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="12" fill="' + ink.fwd + '">next</text>';
+  s += '<line x1="182" y1="66" x2="58" y2="66" stroke="' + ink.bwd + '" stroke-width="1.6" marker-end="url(#b-' + u + ')"/>';
+  s += '<line x1="298" y1="66" x2="422" y2="66" stroke="' + ink.fwd + '" stroke-width="1.6" marker-end="url(#f-' + u + ')"/>';
+  s += '<rect x="185" y="46" width="110" height="40" rx="6" fill="' + ink.box + '" stroke="' + ink.stroke + '"/>';
+  s += '<text x="240" y="71" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="15" fill="' + ink.text + '">datum</text>';
   s += '</svg>';
   return s;
 }
@@ -247,13 +261,18 @@ const TEAM = [
 // ---------------------------------------------------------------------------
 // the recovered source, listed faint behind the hero as a sheet of fanfold desk paper
 const HERO_SRC = fanEsc(fs.readFileSync(path.join(OUT, 'sources', 'ELIZA-1965b.mad'), 'utf8')).replace(/\s+$/, '');
+
+// the ELIZA wordmark, drawn from the Iosevka 800 outlines (closest type to the
+// 7094 line printer). Self-contained vector, so no webfont download.
+const ELIZA_WORDMARK = '<svg class="hero-wordmark" viewBox="0 -735 2500 735" aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1,-1)"><path transform="translate(0 0)" d="M66 0V735H442V630H190V435H385V330H190V105H442V0Z"/><path transform="translate(500 0)" d="M86 0V735H210V105H448V0Z"/><path transform="translate(1000 0)" d="M75 0V105H188V630H75V735H425V630H312V105H425V0Z"/><path transform="translate(1500 0)" d="M58 0V105L300 630H58V735H442V630L200 105H442V0Z"/><path transform="translate(2000 0)" d="M35 0 179 735H321L465 0H339L314 155H186L161 0ZM297 260 260 490Q257 505 254.5 519.5Q252 534 250 549Q248 534 245.5 519.5Q243 505 240 490L203 260Z"/></g></svg>';
 const homeHero = `  <section class="hero hero-desk">
-    <div class="hero-paper" aria-hidden="true"><pre class="hero-source">${HERO_SRC}</pre></div>
+    <div class="hero-paper" aria-hidden="true"><pre class="hero-source">${HERO_SRC}
+${HERO_SRC}</pre></div>
     <div class="hero-inner">
       <div class="wrap">
        <div class="hero-panel">
         <p class="boot">JOSEPH WEIZENBAUM // 1966<span class="cursor" aria-hidden="true"></span></p>
-        <h1>ELIZA</h1>
+        <h1 class="wm">${ELIZA_WORDMARK}<span class="vh">ELIZA</span></h1>
         <p class="sub">The first chatbot</p>
         <p class="tagline">In 1966 Joseph Weizenbaum gave people their first conversation with a machine. In 2021 we found its lost source code. This is a close reading of ELIZA: its program, its DOCTOR script, its many versions, and what it still tells us about artificial intelligence.</p>
         <div class="tt" id="tt-feed" aria-hidden="true"></div>
@@ -471,8 +490,8 @@ write('slip.html', page({
       <p>SLIP&rsquo;s lists are <strong>doubly linked</strong>: every cell holds a pointer to the next cell and to the previous one. That two-way, symmetric linkage is where the name comes from. It lets a program walk a list forwards or backwards, splice cells in and out from either end, and treat any cell as a place to read from or write to. Free cells are kept on an <strong>Available Space List</strong> (AVSL); creating a list draws cells from it, deleting a list returns them.</p>
 
       <figure class="figure" style="max-width:none">
-        ${fanfold('', slipChain(['', '', ''], { paper: true, labels: true, alt: 'an abstract doubly linked list: each cell holds a datum with a forward and backward link' }))}
-        <figcaption>Each cell carries a datum between two links: a <span style="color:var(--eliza)">next</span> pointer forward and a <span style="color:var(--lamp-amber)">prev</span> pointer back. Real SLIP lists also close into a ring through a header cell.</figcaption>
+        ${fanfold('', slipCell({ paper: true }))}
+        <figcaption>Each cell is an information carrier: a datum held between two links, a <span style="color:var(--eliza)">next</span> pointer forward and a <span style="color:var(--lamp-amber)">prev</span> pointer back, with the organisation provided entirely by those pointers. Real SLIP lists also close into a ring through a header cell.</figcaption>
       </figure>
 
       <h2>A line of dialogue as a list</h2>
@@ -481,6 +500,9 @@ write('slip.html', page({
         ${fanfold('', slipChain(['MEN', 'ARE', 'ALL', 'ALIKE'], { paper: true, labels: true, alt: 'the words MEN, ARE, ALL, ALIKE held as a doubly linked SLIP list' }))}
         <figcaption>ELIZA walks this list with a sequence reader (<code>SEQRDR</code> / <code>SEQLR</code>), matches it against a keyword&rsquo;s decomposition pattern, and builds the reply by splicing cells into a new list.</figcaption>
       </figure>
+
+      <h2>What ELIZA added to SLIP</h2>
+      <p>The original SLIP has two distinct modes. One handles organisation: the previous and next pointers and the sublists they string together. The other handles data, and in the original it was given short shrift, supporting only integers and real numbers. Weizenbaum extended the data half so a cell could also carry <em>text</em>, the words of a sentence, the keywords of a script, the templates of a reply. Most of the original SLIP is pointer maintenance; most of the SLIP that ELIZA needs is datum handling.</p>
 
       <h2>How ELIZA uses it</h2>
       <p>Almost every structure in ELIZA is a SLIP list. The user&rsquo;s input is read into a list of words. The script&rsquo;s keywords live in a hash table (<code>KEY</code>) of lists. Each keyword&rsquo;s decomposition and reassembly rules are lists of lists. The memory of what you said is a list of transformed sentences. To produce a reply, ELIZA walks these lists with SLIP&rsquo;s readers, matching and rebuilding as it goes.</p>
