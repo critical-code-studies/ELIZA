@@ -284,7 +284,7 @@ const homeBody = `
         <div class="book-promo-text">
           <span class="kicker">MIT Press &middot; Software Studies</span>
           <h2>Inventing ELIZA</h2>
-          <p>How the First Chatbot Shaped the Future of AI. The recovery, the close reading, and the politics of the program, by the full project team.</p>
+          <p>How the First Chatbot Shaped the Future of AI. The story of how the lost source was recovered, and what a close reading reveals about the program and the politics it still carries. Written by the full project team.</p>
           <p><a href="https://mitpress.mit.edu/9780262052481/inventing-eliza/">Order from MIT Press &rsaquo;</a> &nbsp; <a href="book.html">About the book &rsaquo;</a></p>
         </div>
       </div>
@@ -403,7 +403,7 @@ write('code.html', page({
       <p>Several functions were missing from the recovered listing and had to be carefully rebuilt: <code>BCDIT</code> (binary to BCD), <code>INLST</code> (used by matching and assembly), <code>LETTER</code> (character classification), and various initialisation routines. The reconstructed ELIZA now runs on an emulated CTSS. As the team behind the emulation put it, &ldquo;running the original code feels good and authentic. Finding bugs in it only adds to the authenticity.&rdquo; <a href="blog/post.html?p=10-reconstructing-eliza">On reconstruction &rsaquo;</a></p>
 
       <div class="rule">METHOD</div>
-      <p>We read the source the way Critical Code Studies reads any code: as a text, within its historical and material context, where naming, structure and even bugs carry meaning. The command vocabulary of the editor (<code>TYPE</code>, <code>SUBST</code>, <code>APPEND</code>, <code>ADD</code>, <code>START</code>, <code>RANK</code>, <code>DISPLA</code>) is a small grammar of power; the iteration over a fixed table is a trace of the machine&rsquo;s limits. <a href="https://electronicbookreview.com/essay/reading-eliza-critical-code-studies-in-action/">Reading ELIZA: CCS in Action &rsaquo;</a></p>
+      <p>We read the source the way Critical Code Studies reads any code: as a text, within its historical and material context, where naming and structure carry meaning, and so, often, do the bugs. The command vocabulary of the editor (<code>TYPE</code>, <code>SUBST</code>, <code>APPEND</code>, <code>ADD</code>, <code>START</code>, <code>RANK</code>, <code>DISPLA</code>) is a small grammar of power; the iteration over a fixed table is a trace of the machine&rsquo;s limits. <a href="https://electronicbookreview.com/essay/reading-eliza-critical-code-studies-in-action/">Reading ELIZA: CCS in Action &rsaquo;</a></p>
 
       <div class="rule">THE FULL SOURCE</div>
       <p>The complete recovered listing, <code>ELIZA-1965b.mad</code>, in MAD-SLIP, as a line-printer printout. This is the 1965b version from the printout in Weizenbaum&rsquo;s archive (it adds &ldquo;but&rdquo; as a delimiter and lacks the NEWKEY function), and the basis for the close reading above. Also in the <a href="https://github.com/critical-code-studies/ELIZA">repository</a> and the <a href="https://hdl.handle.net/1721.3/201699">MIT archive</a>.</p>
