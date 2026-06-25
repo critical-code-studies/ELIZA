@@ -1,20 +1,27 @@
 /* console.js - the home hero 7094 console.
    - the indicator register lamps drift/blink like a live machine.
-   - the red POWER button runs a shutdown sequence: the lamps go crazy, then the
-     site powers down to low opacity while a Web Audio synth sings "Daisy Bell"
-     slowing and dropping in pitch, the way HAL 9000 dies in 2001. (Daisy Bell was
-     first computer-synthesised on an IBM 7094 at Bell Labs in 1961, which is what
-     inspired the HAL scene.) Press POWER again to power back up. */
+   - the rocker action buttons physically rock when clicked, then navigate.
+   - the red POWER button runs a shutdown: lamps go crazy, then all flash and cut
+     off together, then a dark veil falls (the POWER button staying lit above it)
+     while a Web Audio synth plays "Daisy Bell" - low, slow, raspy and droney, the
+     way the original IBM 7094 sang it at Bell Labs in 1961 (and HAL 9000 after).
+     Press POWER again to power back up. */
 (function () {
   var btn = document.getElementById('power-btn');
   var lamps = [].slice.call(document.querySelectorAll('.register .rl'));
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var root = document.documentElement;
-  var driftA, driftB, craze, downTimer, audio, oscs = [], powered = true;
+  var driftA, driftB, craze, t1, blinkIv, audio, nodes = [], powered = true, veil;
 
   function rand(a) { return a[Math.floor(Math.random() * a.length)]; }
+  function getVeil() {
+    if (!veil) { veil = document.createElement('div'); veil.className = 'power-veil'; document.body.appendChild(veil); }
+    return veil;
+  }
+  function allOn() { lamps.forEach(function (l) { l.classList.add('on'); }); }
+  function allOff() { lamps.forEach(function (l) { l.classList.remove('on', 'blink'); }); }
 
-  // --- ambient drift: flip a few lamps now and then, blink a lit one ---
+  // --- ambient drift ---
   function startDrift() {
     if (reduce || !lamps.length) return;
     driftA = setInterval(function () {
@@ -31,77 +38,118 @@
     }, 1300);
   }
   function stopDrift() { clearInterval(driftA); clearInterval(driftB); }
-  function allOn() { lamps.forEach(function (l) { l.classList.add('on'); }); }
-  function allOff() { lamps.forEach(function (l) { l.classList.remove('on', 'blink'); }); }
 
-  // --- Daisy Bell, degrading like HAL ---
-  var NOTE = { D4: 293.66, E4: 329.63, 'F#4': 369.99, G4: 392.0, A4: 440.0, B4: 493.88, C5: 523.25, D5: 587.33 };
-  var DAISY = [
-    ['D5', 2], ['B4', 1], ['G4', 2], ['D4', 1],                          // Dai-sy, Dai-sy,
-    ['E4', 1], ['F#4', 1], ['G4', 1], ['A4', 1], ['B4', 1], ['A4', 3],   // give me your an-swer do,
-    ['D5', 2], ['B4', 1], ['G4', 2], ['D4', 1],                          // I'm half cra-zy,
-    ['E4', 1], ['F#4', 1], ['G4', 1], ['A4', 1], ['B4', 1], ['G4', 4]    // all for the love of you.
+  // --- Daisy Bell melody (note letters as transcribed), grouped by phrase ---
+  var PARTS = [
+    ['G','E','C','G','A','B','C', 'A','C','G','D', 'G','E','C','A','B','C','D','E','D'],
+    ['E','F','E','D','G', 'E','D','C','D','E','C', 'A','C','A','G'],
+    ['G','C','E','D', 'E','F','G','E','C','D'],
+    ['G','C','E','D', 'E','F','G','E','C', 'D','C']
   ];
+  var PC = { C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 };
+  // flatten to {letter,last-of-phrase}; assign octaves nearest the previous note (low register)
+  function buildNotes() {
+    var seq = [];
+    PARTS.forEach(function (p) { p.forEach(function (L, i) { seq.push({ L: L, end: i === p.length - 1 }); }); });
+    var prev = 55, out = []; // start near G3 -> low, droney
+    seq.forEach(function (n, idx) {
+      var best = null, bd = 1e9;
+      for (var o = 2; o <= 5; o++) { var m = 12 * (o + 1) + PC[n.L]; var d = Math.abs(m - prev); if (d < bd) { bd = d; best = m; } }
+      prev = best;
+      var midi = best;
+      if (idx === seq.length - 1) midi -= 12; // final "Low C"
+      out.push({ midi: midi, dur: n.end ? 2 : 1, last: idx === seq.length - 1 });
+    });
+    return out;
+  }
+  function mtof(m) { return 440 * Math.pow(2, (m - 69) / 12); }
+
   function sing() {
     var Ctx = window.AudioContext || window.webkitAudioContext;
     if (!Ctx) return;
     try { audio = new Ctx(); } catch (e) { return; }
     if (audio.resume) audio.resume();
-    var t = audio.currentTime + 0.2;
-    var beat = 0.5, slow = 1.0, detune = 0;
-    DAISY.forEach(function (nb, i) {
-      var dur = nb[1] * beat * slow;
-      var f = NOTE[nb[0]] * Math.pow(2, detune / 1200);
-      var osc = audio.createOscillator(), g = audio.createGain(), lp = audio.createBiquadFilter();
-      osc.type = 'triangle'; lp.type = 'lowpass'; lp.frequency.value = 1500;
-      osc.frequency.setValueAtTime(f, t);
-      osc.frequency.linearRampToValueAtTime(f * Math.pow(2, -(slow - 1) * 0.05), t + dur); // sag
-      g.gain.setValueAtTime(0, t);
-      g.gain.linearRampToValueAtTime(0.16, t + 0.05);
-      g.gain.setValueAtTime(0.16, t + dur * 0.72);
-      g.gain.linearRampToValueAtTime(0, t + dur);
-      osc.connect(lp); lp.connect(g); g.connect(audio.destination);
-      osc.start(t); osc.stop(t + dur + 0.05);
-      oscs.push(osc);
-      t += dur;
-      slow += 0.045;        // each note a little slower
-      detune -= 14 + i * 2; // and a little lower
+    var notes = buildNotes();
+    var t = audio.currentTime + 0.25, beat = 0.8, slow = 1.0;
+    var master = audio.createGain(); master.gain.value = 0.55; master.connect(audio.destination);
+    var lp = audio.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 1050; lp.Q.value = 7; lp.connect(master);
+    var lfo = audio.createOscillator(); lfo.type = 'sine'; lfo.frequency.value = 5.2;
+    var lfoG = audio.createGain(); lfoG.gain.value = 8; lfo.connect(lfoG); lfo.start(t); nodes.push(lfo);
+    notes.forEach(function (n) {
+      var dur = n.dur * beat * slow * (n.last ? 2.3 : 1);
+      var f = mtof(n.midi);
+      [-7, 6].forEach(function (det) {                 // two detuned saws -> raspy beating
+        var o = audio.createOscillator(), g = audio.createGain();
+        o.type = 'sawtooth'; o.detune.setValueAtTime(det, t);
+        o.frequency.setValueAtTime(f, t);
+        if (n.last) o.frequency.linearRampToValueAtTime(f / 2, t + dur); // dying fall
+        lfoG.connect(o.detune);
+        g.gain.setValueAtTime(0, t);
+        g.gain.linearRampToValueAtTime(0.12, t + 0.07);
+        g.gain.setValueAtTime(0.12, t + dur * (n.last ? 0.5 : 0.85));
+        g.gain.linearRampToValueAtTime(0, t + dur);
+        o.connect(g); g.connect(lp);
+        o.start(t); o.stop(t + dur + 0.07);
+        nodes.push(o);
+      });
+      t += dur * (n.last ? 1 : 1.02);  // gentle ritardando, pitches stay true
+      slow += 0.018;
     });
   }
   function stopSong() {
-    oscs.forEach(function (o) { try { o.stop(); } catch (e) {} });
-    oscs = [];
+    nodes.forEach(function (o) { try { o.stop(); } catch (e) {} });
+    nodes = [];
     if (audio) { try { audio.close(); } catch (e) {} audio = null; }
   }
-  // turn the lamps off in a random wave as the machine dies
-  function fadeLamps() {
-    lamps.slice().sort(function () { return Math.random() - 0.5; })
-      .forEach(function (l, i) { setTimeout(function () { if (!powered) l.classList.remove('on'); }, 700 + i * 220); });
+
+  // all lamps flash together a few times, then cut off together
+  function flashThenOff(done) {
+    var i = 0, flashes = 3;
+    blinkIv = setInterval(function () {
+      if (powered) { clearInterval(blinkIv); return; }
+      (i % 2 === 0 ? allOn : allOff)();
+      if (++i >= flashes * 2) { clearInterval(blinkIv); allOff(); done(); }
+    }, 150);
   }
 
   function powerDown() {
     powered = false;
     btn.setAttribute('aria-pressed', 'true');
     stopDrift();
-    if (reduce) { root.classList.add('powered-off'); return; }
-    craze = setInterval(function () {
-      for (var i = 0; i < 8; i++) rand(lamps).classList.toggle('on');
-    }, 70);
-    downTimer = setTimeout(function () {
-      if (powered) return;            // cancelled
+    if (reduce) { allOff(); root.classList.add('powered-off'); getVeil().classList.add('on'); return; }
+    craze = setInterval(function () { for (var i = 0; i < 8; i++) rand(lamps).classList.toggle('on'); }, 70);
+    t1 = setTimeout(function () {
+      if (powered) return;
       clearInterval(craze);
-      root.classList.add('powered-off');
-      allOn(); sing(); fadeLamps();
-    }, 1700);
+      flashThenOff(function () {
+        if (powered) return;
+        root.classList.add('powered-off');
+        getVeil().classList.add('on');
+        sing();
+      });
+    }, 1300);
   }
   function powerUp() {
     powered = true;
     btn.setAttribute('aria-pressed', 'false');
-    clearInterval(craze); clearTimeout(downTimer); stopSong();
+    clearInterval(craze); clearTimeout(t1); clearInterval(blinkIv); stopSong();
     root.classList.remove('powered-off');
+    if (veil) veil.classList.remove('on');
     allOff(); startDrift();
   }
-
   if (btn) btn.addEventListener('click', function () { powered ? powerDown() : powerUp(); });
   startDrift();
+
+  // --- rocker action buttons: rock on click, then navigate ---
+  [].forEach.call(document.querySelectorAll('.console .hero-actions .btn'), function (b) {
+    b.addEventListener('click', function (e) {
+      if (reduce || e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+      if (b.dataset.go) return;
+      e.preventDefault();
+      b.classList.add('rocked');
+      b.dataset.go = '1';
+      var href = b.getAttribute('href');
+      setTimeout(function () { window.location.href = href; }, 260);
+    });
+  });
 })();
