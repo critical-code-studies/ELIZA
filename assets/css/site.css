@@ -360,7 +360,9 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .fanfold.no-sprockets::before, .fanfold.no-sprockets::after, .fanfold.torn::before, .fanfold.torn::after { display: none; }
 .fanfold.torn { clip-path: polygon(0% 0%, 100% 0%, 99% 7%, 100% 14%, 98.5% 21%, 100% 28%, 99% 35%, 100% 42%, 98.5% 49%, 100% 56%, 99% 63%, 100% 70%, 98.5% 77%, 100% 84%, 99% 91%, 100% 98%, 100% 100%, 0% 100%, 1% 91%, 0% 84%, 1.5% 77%, 0% 70%, 1% 63%, 0% 56%, 1.5% 49%, 0% 42%, 1% 35%, 0% 28%, 1.5% 21%, 0% 14%, 1% 7%); }
 .fanfold.ripped { clip-path: polygon(0 0, 100% 0, 100% 95%, 96% 99%, 92% 95%, 88% 99%, 84% 95%, 80% 99%, 76% 95%, 72% 99%, 68% 95%, 64% 99%, 60% 95%, 56% 99%, 52% 95%, 48% 99%, 44% 95%, 40% 99%, 36% 95%, 32% 99%, 28% 95%, 24% 99%, 20% 95%, 16% 99%, 12% 95%, 8% 99%, 4% 95%, 0 99%); }
-.fanfold.coffee { background-image: url(../images/coffee-ring.png); background-repeat: no-repeat; background-position: 86% 14%; background-size: 170px auto; background-blend-mode: multiply; }
+.fanfold.coffee { background-image: url(../images/coffee-ring.png); background-repeat: no-repeat; background-position: 86% 14%; background-size: 120px auto; background-blend-mode: multiply; }
+.fanfold.coffee-small { background-size: 85px auto; }
+.fanfold.coffee-large { background-size: 170px auto; }
 .fanfold.burned { box-shadow: inset 0 0 26px rgba(38,16,4,0.55), inset 0 0 72px rgba(38,16,4,0.22), 0 14px 38px rgba(0,0,0,0.5); }
 /* a code listing printed on the fanfold paper (dark ink) */
 .fanfold-listing { font-family: var(--mono); font-size: 0.72rem; line-height: 1.5; color: #2c2318; white-space: pre; overflow-x: auto; margin: 0; }

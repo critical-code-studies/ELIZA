@@ -37,7 +37,7 @@ const html = fanfold('LISTF AFFIL *', '<div class="logos">…</div>');
 | `system` | `CTSS` `ITS` `UNIX` `PDP1` `NONE` | `CTSS` | shapes the command header (prompt, casing, timing) |
 | `age` | `clean` `aged` `damaged` | `clean` | paper condition: foxing, yellowing, blotches |
 | `sprockets` | `true` `false` `'torn'` | `true` | feed holes on; off (straight edge); or `'torn'` (holes ripped off, ragged edge) |
-| `stain` | `false` `'coffee'` | `false` | a coffee-ring stain |
+| `stain` | `false` `'coffee'` `'coffee-small'` `'coffee-large'` | `false` | a coffee-ring stain (`coffee` = medium) |
 | `edge` | `plain` `burned` `ripped` | `plain` | scorched edges, or a torn-off bottom |
 | `banner` | a word, or pre-rendered ASCII | (none) | ASCII title at the top of the plate |
 | `overlay` | HTML/SVG string | (none) | a free layer over the plate for doodles, arrows, flowcharts |

@@ -211,7 +211,7 @@ function fanfold(cmd, inner, opts) {
   if (opts.age && opts.age !== 'clean') cls.push(opts.age);                 // aged | damaged
   if (opts.sprockets === false) cls.push('no-sprockets');
   else if (opts.sprockets === 'torn') cls.push('torn');
-  if (opts.stain) cls.push(opts.stain === true ? 'coffee' : opts.stain);    // coffee
+  if (opts.stain) { cls.push('coffee'); if (typeof opts.stain === 'string' && /^coffee-/.test(opts.stain)) cls.push(opts.stain); } // coffee | coffee-small | coffee-large
   if (opts.edge && opts.edge !== 'plain') cls.push(opts.edge);             // burned | ripped
   const lines = arr => arr.map(l => `<div class="cmd-line">${l}</div>`).join('');
   // an empty/absent cmd makes a plain paper plate (for a figure, image or diagram)
