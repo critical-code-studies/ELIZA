@@ -300,7 +300,6 @@ ${HERO_SRC}</pre></div>
       <div class="wrap">
        <div class="hero-panel console">
         <div class="console-head">
-          <div class="lamp-row" aria-hidden="true"><i class="lamp on"></i><i class="lamp"></i><i class="lamp on amber"></i><i class="lamp on"></i><i class="lamp"></i><i class="lamp red"></i><i class="lamp on"></i><i class="lamp"></i><i class="lamp on amber"></i><i class="lamp"></i><i class="lamp on"></i><i class="lamp on red"></i></div>
           <span class="nameplate"><b class="np-num">7094</b><span class="np-sys">Data Processing System</span></span>
         </div>
         <div class="console-face">
@@ -311,15 +310,15 @@ ${HERO_SRC}</pre></div>
            <p class="sub">The first chatbot</p>
            <p class="tagline">In 1966 Joseph Weizenbaum gave people their first conversation with a machine. In 2021 we found its lost source code. This is a close reading of ELIZA: its program, its DOCTOR script, its many versions, and what it still tells us about artificial intelligence.</p>
           </div>
-          <div class="control-column" aria-hidden="true">
-           <span class="ctl power">POWER</span>
-           <span class="ctl chk">CEN CPU<br>PWR CHK</span>
-           <span class="ctl chk">I/O<br>PWR CHK</span>
-           <span class="ctl chk">+6<br>MOD CHK</span>
-           <span class="ctl chk">-12<br>MOD CHK</span>
-           <span class="ctl power on">CONSOLE<br>POWER ON</span>
-           <span class="ctl off">NORMAL<br>OFF</span>
-           <span class="ctl off">POWER<br>ON</span>
+          <div class="control-column">
+           <button class="ctl power" id="power-btn" type="button" aria-label="Power" aria-pressed="false">POWER</button>
+           <span class="ctl chk" aria-hidden="true">CEN CPU<br>PWR CHK</span>
+           <span class="ctl chk" aria-hidden="true">I/O<br>PWR CHK</span>
+           <span class="ctl chk" aria-hidden="true">+6<br>MOD CHK</span>
+           <span class="ctl chk" aria-hidden="true">-12<br>MOD CHK</span>
+           <span class="ctl power on" aria-hidden="true">CONSOLE<br>POWER ON</span>
+           <span class="ctl off" aria-hidden="true">NORMAL<br>OFF</span>
+           <span class="ctl off" aria-hidden="true">POWER<br>ON</span>
           </div>
          </div>
 ${REGISTER}
@@ -411,7 +410,7 @@ write('index.html', page({
   title: 'The first chatbot',
   desc: 'A Critical Code Studies reading of ELIZA, Joseph Weizenbaum’s 1966 chatbot, built on the original source recovered from the MIT archive.',
   hero: homeHero, body: homeBody,
-  scripts: []
+  scripts: ['console.js']
 }));
 
 // ---------------------------------------------------------------------------
