@@ -3,3 +3,7 @@
 
 # private working notes (not for publication)
 docs/*research-brief*.md
+
+# scratch / drop folder for big originals (never committed or deployed)
+assets/_tmp/*
+!assets/_tmp/README.md

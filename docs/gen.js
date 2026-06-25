@@ -652,7 +652,7 @@ write('people.html', page({
           <div class="team-photo${photo ? '' : ' empty'}">${photo ? `<img src="assets/images/${photo}" alt="${n}" loading="lazy">` : '<span>[ PHOTO ]</span>'}</div>
           <div class="team-info"><p class="name">${n}</p><p class="role">${r}</p><p class="bio">${b}</p></div>
         </div>`).join('\n        ')}
-        </div>`, { stain: 'coffee', stainPos: 'br', overlay: '<img src="assets/images/doodle-notes.png" alt="" style="position:absolute;top:1rem;right:2.6rem;width:118px;mix-blend-mode:multiply">' })}
+        </div>`, { stain: 'coffee', stainPos: 'tl', overlay: '<img src="assets/images/doodle-notes.png" alt="" style="position:absolute;top:1.2rem;right:2.4rem;width:300px;mix-blend-mode:multiply;filter:contrast(1.45) brightness(1.18)">' })}
       <div class="rule">AFFILIATIONS</div>
       ${fanfold('LISTF AFFIL *', `<div class="logos">
           <a class="logo" href="https://www.sussex.ac.uk" target="_blank" rel="noopener"><img src="assets/images/sussex.jpg" alt="University of Sussex" loading="lazy"></a>
