@@ -531,9 +531,11 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
    backgrounds melt into the paper and only the marks remain. */
 /* reusable fanfold (continuous-form) plate: archival paper with tractor-feed holes */
 .fanfold { position: relative; isolation: isolate; background: var(--paper); border-radius: 3px; padding: 1.3rem 2.9rem 1.7rem; margin-top: 1.6rem; box-shadow: 0 14px 38px rgba(0,0,0,0.5); }
-.fanfold::before, .fanfold::after, .listing::before, .listing::after { content: ""; position: absolute; top: 0; bottom: 0; width: 22px; z-index: 1; background-color: var(--paper); background-image: radial-gradient(circle at center, var(--bg) 0 3.4px, rgba(20,13,9,0.18) 3.4px 4.3px, transparent 4.6px); background-size: 22px 26px; background-repeat: repeat-y; background-position: center 11px; }
-.fanfold::before, .listing::before { left: 0; border-right: 1px dashed rgba(20,13,9,0.22); }
-.fanfold::after, .listing::after { right: 0; border-left: 1px dashed rgba(20,13,9,0.22); }
+.fanfold::before, .fanfold::after, .listing::before, .listing::after, .paper::before, .paper::after, .mem-convo::before, .mem-convo::after { content: ""; position: absolute; top: 0; bottom: 0; width: 18px; z-index: 1; background-color: var(--paper); background-image: radial-gradient(circle at center, var(--bg) 0 3px, rgba(20,13,9,0.18) 3px 3.8px, transparent 4.1px); background-size: 18px 24px; background-repeat: repeat-y; background-position: center 9px; }
+.fanfold::before, .listing::before, .paper::before, .mem-convo::before { left: 0; border-right: 1px dashed rgba(20,13,9,0.22); }
+.fanfold::after, .listing::after, .paper::after, .mem-convo::after { right: 0; border-left: 1px dashed rgba(20,13,9,0.22); }
+/* the larger plates keep the 22px sprocket strip; only the small convo window uses 18px */
+.fanfold::before, .fanfold::after, .listing::before, .listing::after, .paper::before, .paper::after { width: 22px; background-image: radial-gradient(circle at center, var(--bg) 0 3.4px, rgba(20,13,9,0.18) 3.4px 4.3px, transparent 4.6px); background-size: 22px 26px; background-position: center 11px; }
 .fanfold-cmd { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.5px; color: #3a2f24; margin-bottom: 1.4rem; }
 .fanfold-cmd .cmd-line { white-space: pre-wrap; }
 .fanfold-foot { margin-top: 1.3rem; margin-bottom: 0; }
@@ -728,11 +730,13 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
   50% { background: rgba(240,168,58,0.38); box-shadow: 0 0 10px rgba(240,168,58,0.45); }
 }
 .demo-mem li.flash .mn, .demo-mem li.flash > span:last-child { color: var(--bright); }
-.mem-convo { margin-top: 0.3rem; max-height: 5em; overflow-y: auto; }
-.mem-convo .cline { font-family: var(--mono); font-size: 0.58rem; line-height: 1.35; white-space: pre-wrap; word-break: break-word; }
-.mem-convo .you { color: rgba(239,180,78,0.9); }
-.mem-convo .eliza { color: rgba(232,228,218,0.85); text-transform: uppercase; }
-.mem-convo .cline.typing::after { content: "\258B"; margin-left: 1px; color: rgba(232,228,218,0.85); animation: elblink 1s step-end infinite; }
+/* the running conversation window, printed on fanfold paper */
+.mem-convo { position: relative; isolation: isolate; margin-top: 0.4rem; max-height: 7em; overflow-y: auto;
+  background: var(--paper); color: #2c2318; border-radius: 3px; padding: 0.5rem 1.6rem; box-shadow: 0 6px 18px rgba(0,0,0,0.4); }
+.mem-convo .cline { font-family: var(--mono); font-size: 0.58rem; line-height: 1.4; white-space: pre-wrap; word-break: break-word; }
+.mem-convo .you { color: #8a5a1f; }
+.mem-convo .eliza { color: #2c2318; text-transform: uppercase; }
+.mem-convo .cline.typing::after { content: "\258B"; margin-left: 1px; color: #2c2318; animation: elblink 1s step-end infinite; }
 @keyframes elblink { 50% { opacity: 0; } }
 /* fixed-height screen: it does not resize as you step, and it is sized to sit
    inside a normal browser window. Each step is auto-scaled to fit (see fitCard
@@ -780,12 +784,12 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .tslot { font-family: var(--mono); font-size: 0.7rem; border: 1px solid var(--line); border-radius: 4px; padding: 0.22rem 0.44rem; }
 .tword { font-family: var(--mono); font-size: 0.74rem; color: var(--bright); padding: 0.22rem 0.18rem; }
 
-.paper { font-family: var(--mono); font-size: 0.92rem; background: rgba(217,207,188,0.06); border: 1px solid var(--line-soft); border-left: 3px solid var(--you); border-radius: 3px; padding: 0.9rem 1.1rem; color: var(--ink); margin-top: 0.5rem; }
-.paper .who { display: inline-block; font-size: 0.6rem; letter-spacing: 1.5px; margin-right: 0.8rem; color: var(--ink-dim); }
-.paper .who.you { color: var(--you); }
-.paper.out { border-left-color: var(--eliza); }
-.paper.out .who.eliza { color: var(--eliza); }
-.paper.out { color: var(--eliza); text-transform: uppercase; }
+/* the demo's conversation output, printed on fanfold paper */
+.paper { position: relative; isolation: isolate; font-family: var(--mono); font-size: 0.92rem; background: var(--paper); border-radius: 3px; padding: 0.85rem 2.6rem; color: #2c2318; margin-top: 0.6rem; box-shadow: 0 10px 28px rgba(0,0,0,0.4); }
+.paper .who { display: inline-block; font-size: 0.6rem; letter-spacing: 1.5px; margin-right: 0.8rem; color: #6b5942; }
+.paper .who.you { color: #8a5a1f; }
+.paper.out .who.eliza { color: #b5462a; }
+.paper.out { color: #3a2f24; text-transform: uppercase; }
 .defer { font-size: 0.98rem; color: var(--ink); }
 .defer .arrow { color: var(--lamp-red); }
 .defer-rule { font-family: var(--mono); font-size: 0.82rem; color: rgba(232,228,218,0.42); margin: 0.1rem 0 0.7rem; letter-spacing: 0.3px; }

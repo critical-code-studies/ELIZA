@@ -205,7 +205,7 @@
       S.push({ title: 'The reply', last: true, node: function () {
         var box = el('div');
         box.appendChild(el('div', 'paper out', '<span class="who eliza">ELIZA</span>' + esc(T.output)));
-        box.appendChild(el('p', 'debunk', 'ELIZA understood nothing. It picked the highest-ranked keyword, split your sentence on a fixed pattern, and poured your own words into a canned template.'));
+        box.appendChild(el('p', 'debunk', 'ELIZA didn’t need to understand anything. It picked the highest-ranked keyword, split your sentence on a fixed pattern, and used a preprogrammed template to create the reply.'));
         return box;
       }});
       return S;

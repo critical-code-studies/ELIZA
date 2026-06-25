@@ -9,18 +9,18 @@
   <meta property="og:site_name" content="ELIZA Archaeology Project">
   <meta property="og:title" content="The DOCTOR script · ELIZA (1966)">
   <meta property="og:description" content="Weizenbaum’s Rogerian therapist script for ELIZA: how its keyword rules work, a searchable dictionary of every keyword, and the full 1966 script.">
-  <meta property="og:image" content="https://critical-code-studies.github.io/ELIZA/assets/images/share-card.png?v=202606251735">
+  <meta property="og:image" content="https://critical-code-studies.github.io/ELIZA/assets/images/share-card.png?v=202606251749">
   <meta property="og:url" content="https://critical-code-studies.github.io/ELIZA/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="The DOCTOR script · ELIZA (1966)">
   <meta name="twitter:description" content="Weizenbaum’s Rogerian therapist script for ELIZA: how its keyword rules work, a searchable dictionary of every keyword, and the full 1966 script.">
-  <meta name="twitter:image" content="https://critical-code-studies.github.io/ELIZA/assets/images/share-card.png?v=202606251735">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=202606251735">
-  <link rel="stylesheet" href="assets/css/site.css?v=202606251735">
-  <script src="assets/nav.js?v=202606251735" defer></script>
-  <script src="assets/term.js?v=202606251735" defer></script>
-  <script src="assets/eliza-hay.js?v=202606251735" defer></script>
-  <script src="assets/dict.js?v=202606251735" defer></script>
+  <meta name="twitter:image" content="https://critical-code-studies.github.io/ELIZA/assets/images/share-card.png?v=202606251749">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=202606251749">
+  <link rel="stylesheet" href="assets/css/site.css?v=202606251749">
+  <script src="assets/nav.js?v=202606251749" defer></script>
+  <script src="assets/term.js?v=202606251749" defer></script>
+  <script src="assets/eliza-hay.js?v=202606251749" defer></script>
+  <script src="assets/dict.js?v=202606251749" defer></script>
 </head>
 <body>
 
@@ -84,25 +84,27 @@
 
       <h2>The canonical conversation</h2>
       <p>This is the exchange Weizenbaum printed in the 1966 CACM paper. Every ELIZA line is produced by the rules in the DOCTOR script. <a href="try.html">Try it yourself &rsaquo;</a></p>
-      <div class="dialogue">
-        <div class="turn person"><span class="who">You</span><span class="msg">Men are all alike.</span></div>
-        <div class="turn eliza"><span class="who">ELIZA</span><span class="msg">IN WHAT WAY</span></div>
-        <div class="turn person"><span class="who">You</span><span class="msg">They're always bugging us about something or other.</span></div>
-        <div class="turn eliza"><span class="who">ELIZA</span><span class="msg">CAN YOU THINK OF A SPECIFIC EXAMPLE</span></div>
-        <div class="turn person"><span class="who">You</span><span class="msg">Well, my boyfriend made me come here.</span></div>
-        <div class="turn eliza"><span class="who">ELIZA</span><span class="msg">YOUR BOYFRIEND MADE YOU COME HERE</span></div>
-        <div class="turn person"><span class="who">You</span><span class="msg">He says I'm depressed much of the time.</span></div>
-        <div class="turn eliza"><span class="who">ELIZA</span><span class="msg">I AM SORRY TO HEAR YOU ARE DEPRESSED</span></div>
-        <div class="turn person"><span class="who">You</span><span class="msg">It's true. I am unhappy.</span></div>
-        <div class="turn eliza"><span class="who">ELIZA</span><span class="msg">DO YOU THINK COMING HERE WILL HELP YOU NOT TO BE UNHAPPY</span></div>
-        <div class="turn person"><span class="who">You</span><span class="msg">I need some help, that much seems certain.</span></div>
-        <div class="turn eliza"><span class="who">ELIZA</span><span class="msg">WHAT WOULD IT MEAN TO YOU IF YOU GOT SOME HELP</span></div>
-        <div class="turn person"><span class="who">You</span><span class="msg">Perhaps I could learn to get along with my mother.</span></div>
-        <div class="turn eliza"><span class="who">ELIZA</span><span class="msg">TELL ME MORE ABOUT YOUR FAMILY</span></div>
-        <div class="turn person"><span class="who">You</span><span class="msg">My mother takes care of me.</span></div>
-        <div class="turn eliza"><span class="who">ELIZA</span><span class="msg">WHO ELSE IN YOUR FAMILY TAKES CARE OF YOU</span></div>
-        <div class="turn person"><span class="who">You</span><span class="msg">You are like my father in some ways.</span></div>
-        <div class="turn eliza"><span class="who">ELIZA</span><span class="msg">WHAT RESEMBLANCE DO YOU SEE</span></div>
+      <div class="fanfold">
+        <div class="fanfold-cmd"><div class="cmd-line">DOCTOR</div><div class="cmd-line">W 0809.3</div></div>
+<pre class="fanfold-listing">Men are all alike.
+          IN WHAT WAY
+They're always bugging us about something or other.
+          CAN YOU THINK OF A SPECIFIC EXAMPLE
+Well, my boyfriend made me come here.
+          YOUR BOYFRIEND MADE YOU COME HERE
+He says I'm depressed much of the time.
+          I AM SORRY TO HEAR YOU ARE DEPRESSED
+It's true. I am unhappy.
+          DO YOU THINK COMING HERE WILL HELP YOU NOT TO BE UNHAPPY
+I need some help, that much seems certain.
+          WHAT WOULD IT MEAN TO YOU IF YOU GOT SOME HELP
+Perhaps I could learn to get along with my mother.
+          TELL ME MORE ABOUT YOUR FAMILY
+My mother takes care of me.
+          WHO ELSE IN YOUR FAMILY TAKES CARE OF YOU
+You are like my father in some ways.
+          WHAT RESEMBLANCE DO YOU SEE</pre>
+        <div class="fanfold-cmd fanfold-foot"><div class="cmd-line">R 0809.3+.80</div></div>
       </div>
 
       <h2>Three scripts, one in progress</h2>

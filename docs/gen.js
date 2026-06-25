@@ -604,8 +604,7 @@ write('doctor.html', page({
 
       <h2>The canonical conversation</h2>
       <p>This is the exchange Weizenbaum printed in the 1966 CACM paper. Every ELIZA line is produced by the rules in the DOCTOR script. <a href="try.html">Try it yourself &rsaquo;</a></p>
-      <div class="dialogue">
-        ${dlg([
+      ${dlgFan([
           ['p',"Men are all alike."],
           ['e',"IN WHAT WAY"],
           ['p',"They're always bugging us about something or other."],
@@ -625,7 +624,6 @@ write('doctor.html', page({
           ['p',"You are like my father in some ways."],
           ['e',"WHAT RESEMBLANCE DO YOU SEE"]
         ])}
-      </div>
 
       <h2>Three scripts, one in progress</h2>
       <p>There are three known contemporaneous DOCTOR scripts: the one published as an appendix to the 1966 paper, and two more (<code>.TAPE. 102</code> and <code>.TAPE. 100</code>) on a printout in Weizenbaum&rsquo;s archive. They are clearly successive drafts: keywords gained extra replies, a misplaced line was fixed, redirects were simplified. The script was built incrementally, almost without a plan, each change improving ELIZA&rsquo;s ability to conceal its lack of understanding. <a href="blog/post.html?p=8-the-doctor-script-a-work-in-progress">The DOCTOR script, a work in progress &rsaquo;</a></p>
@@ -888,6 +886,13 @@ function dlg(turns) {
     const label = who === 'e' ? 'ELIZA' : 'You';
     return `<div class="turn ${cls}"><span class="who">${label}</span><span class="msg">${msg.replace(/&/g,'&amp;').replace(/</g,'&lt;')}</span></div>`;
   }).join('\n        ');
+}
+
+// the same dialogue printed as a DOCTOR session on fanfold paper: the person's
+// lines flush left, ELIZA's replies indented, the way the 1966 printout reads.
+function dlgFan(turns) {
+  const body = turns.map(([who, msg]) => (who === 'e' ? '          ' : '') + fanEsc(msg)).join('\n');
+  return fanfold('DOCTOR', `<pre class="fanfold-listing">${body}</pre>`, { system: 'CTSS' });
 }
 
 // ---------------------------------------------------------------------------
