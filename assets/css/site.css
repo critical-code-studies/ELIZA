@@ -164,6 +164,62 @@ a:hover { color: var(--bright); text-shadow: var(--glow); }
   backdrop-filter: blur(3px); max-width: 660px; margin: 0 auto;
 }
 .hero-panel .boot { margin-top: 0; margin-bottom: 0.9rem; }
+
+/* --- the hero panel as an IBM 7094 console face (vector, no photos) --- */
+.hero-panel.console {
+  background: linear-gradient(157deg, #4d5862 0%, #3c454e 50%, #333b43 100%);
+  border: 3px solid #c6bca3; border-radius: 7px; padding: 0; max-width: 690px;
+  backdrop-filter: none; overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.10),
+              inset 0 0 26px rgba(0,0,0,0.45), 0 20px 55px rgba(0,0,0,0.5);
+}
+.console-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 0.5rem 0.85rem; background: linear-gradient(#23282e, #1a1f24);
+  border-bottom: 1px solid rgba(0,0,0,0.6); box-shadow: inset 0 -1px 0 rgba(255,255,255,0.05);
+}
+.lamp-row { display: flex; gap: 7px; }
+.lamp { width: 9px; height: 9px; border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, #2a2f35, #14171b 70%);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.8), inset 0 0 0 1px rgba(255,255,255,0.04); }
+.lamp.on { background: radial-gradient(circle at 40% 35%, #ffd27a, #e8862f 65%, #b5571a 100%);
+  box-shadow: 0 0 6px rgba(239,140,60,0.8), inset 0 0 1px #fff; }
+.lamp.on.amber { background: radial-gradient(circle at 40% 35%, #ffe6a0, #f0b53a 65%, #b5851a 100%);
+  box-shadow: 0 0 6px rgba(240,181,58,0.8); }
+.lamp.on.red { background: radial-gradient(circle at 40% 35%, #ff9a7a, #ef4a2a 65%, #b51a1a 100%);
+  box-shadow: 0 0 6px rgba(239,74,42,0.85); }
+.lamp.on:nth-child(1)  { animation: lampFlick 3.7s steps(1) infinite; }
+.lamp.on:nth-child(7)  { animation: lampFlick 2.9s steps(1) infinite 0.6s; }
+.lamp.on:nth-child(11) { animation: lampFlick 4.3s steps(1) infinite 1.1s; }
+@keyframes lampFlick { 0%,92%,100% { opacity: 1; } 94% { opacity: 0.25; } 96% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .lamp { animation: none !important; } }
+.nameplate {
+  font-family: var(--mono); font-size: 0.6rem; letter-spacing: 2.5px; color: #cfc7b4;
+  text-transform: uppercase; white-space: nowrap; padding: 2px 8px;
+  border: 1px solid rgba(207,199,180,0.32); border-radius: 2px;
+  background: linear-gradient(#2c3137, #20242a); box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+}
+.console-face { padding: clamp(1.3rem,2.4vw,1.8rem) clamp(1.3rem,3.5vw,2.6rem) clamp(1.4rem,3.5vw,2.2rem); }
+.console-face .boot { margin-top: 0; margin-bottom: 0.9rem; }
+/* the teletype feed becomes a recessed green CRT readout set into the console */
+.tt.readout {
+  background: #0b0e0b; border: 1px solid rgba(0,0,0,0.7); border-radius: 4px;
+  padding: 0.7rem 0.9rem; margin-top: 1.4rem; height: 7.2em;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.85), inset 0 0 0 1px rgba(95,168,120,0.10);
+  -webkit-mask-image: none; mask-image: none;
+}
+/* console buttons: grey keycaps, primary action lit red */
+.console .hero-actions { margin-top: 1.6rem; }
+.console .hero-actions .btn {
+  border-radius: 3px; border: 1px solid rgba(0,0,0,0.5); color: #e8e3d7;
+  background: linear-gradient(#5a646e, #444c54);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), 0 2px 4px rgba(0,0,0,0.4);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.4);
+}
+.console .hero-actions .btn:not(.ghost) {
+  background: linear-gradient(#e8703a, #c5471d); border-color: #8a300f; color: #fff;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 0 10px rgba(239,111,68,0.5), 0 2px 4px rgba(0,0,0,0.4);
+}
 @media (min-width: 900px) {
   .hero .wrap { display: flex; justify-content: center; }
 }

@@ -273,16 +273,22 @@ const homeHero = `  <section class="hero hero-desk">
 ${HERO_SRC}</pre></div>
     <div class="hero-inner">
       <div class="wrap">
-       <div class="hero-panel">
+       <div class="hero-panel console">
+        <div class="console-head">
+          <div class="lamp-row" aria-hidden="true"><i class="lamp on"></i><i class="lamp"></i><i class="lamp on amber"></i><i class="lamp on"></i><i class="lamp"></i><i class="lamp red"></i><i class="lamp on"></i><i class="lamp"></i><i class="lamp on amber"></i><i class="lamp"></i><i class="lamp on"></i><i class="lamp on red"></i></div>
+          <span class="nameplate">IBM 7094 · DATA PROCESSING SYSTEM</span>
+        </div>
+        <div class="console-face">
         <p class="boot">JOSEPH WEIZENBAUM // 1966</p>
         <h1 class="wm">${elizaWordmark('hero-wordmark')}<span class="vh">ELIZA</span></h1>
         <p class="sub">The first chatbot</p>
         <p class="tagline">In 1966 Joseph Weizenbaum gave people their first conversation with a machine. In 2021 we found its lost source code. This is a close reading of ELIZA: its program, its DOCTOR script, its many versions, and what it still tells us about artificial intelligence.</p>
-        <div class="tt" id="tt-feed" aria-hidden="true"></div>
+        <div class="tt readout" id="tt-feed" aria-hidden="true"></div>
         <div class="hero-actions">
           <a class="btn" href="how.html">Watch how it works</a>
           <a class="btn ghost" href="try.html">Talk to ELIZA</a>
           <a class="btn ghost" href="overview.html">Start reading</a>
+        </div>
         </div>
        </div>
       </div>
