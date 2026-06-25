@@ -268,6 +268,31 @@ const HERO_SRC = fanEsc(fs.readFileSync(path.join(OUT, 'sources', 'ELIZA-1965b.m
 function elizaWordmark(cls) {
   return '<svg class="' + cls + '" viewBox="0 -735 2500 735" aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1,-1)"><path transform="translate(0 0)" d="M66 0V735H442V630H190V435H385V330H190V105H442V0Z"/><path transform="translate(500 0)" d="M86 0V735H210V105H448V0Z"/><path transform="translate(1000 0)" d="M75 0V105H188V630H75V735H425V630H312V105H425V0Z"/><path transform="translate(1500 0)" d="M58 0V105L300 630H58V735H442V630L200 105H442V0Z"/><path transform="translate(2000 0)" d="M35 0 179 735H321L465 0H339L314 155H186L161 0ZM297 260 260 490Q257 505 254.5 519.5Q252 534 250 549Q248 534 245.5 519.5Q243 505 240 490L203 260Z"/></g></svg>';
 }
+
+// the IBM 7094 indicator register display: status lamps + the instruction and
+// instruction-counter bit rows. Vector recreation; a deterministic scatter of
+// lit lamps so the build stays reproducible.
+function regLamp(on) { return '<i class="rl' + (on ? ' on' : '') + '"></i>'; }
+function regBits(n, start) {
+  var s = '';
+  for (var i = 0; i < n; i++) {
+    var num = start + i;
+    var on = ((num * 5 + 2) % 7 === 0) || ((num * 3) % 11 === 0);
+    s += '<span class="reg-bit"><b>' + num + '</b>' + regLamp(on) + '</span>';
+    if ((i + 1) % 6 === 0 && i < n - 1) s += '<span class="reg-div"></span>';
+  }
+  return s;
+}
+function regStat(label, on) { return '<span class="reg-stat"><b>' + label + '</b>' + regLamp(on) + '</span>'; }
+const REGISTER = `
+         <div class="register" aria-hidden="true">
+          <div class="reg-row reg-status">
+           ${regStat('Trap', false)}<span class="reg-div"></span>${regStat('Simulate', true)}<span class="reg-div"></span>${regStat('Accumulator<br>Overflow', false)}<span class="reg-div"></span>${regStat('Quotient<br>Overflow', false)}<span class="reg-div"></span>${regStat('Read/Write<br>Select', true)}<span class="reg-div"></span>${regStat('Divide<br>Check', false)}<span class="reg-gap"></span>
+           <span class="reg-stat sense"><b>Sense</b><span class="sense-lamps"><span class="reg-bit"><b>1</b>${regLamp(false)}</span><span class="reg-bit"><b>2</b>${regLamp(true)}</span><span class="reg-bit"><b>3</b>${regLamp(false)}</span><span class="reg-bit"><b>4</b>${regLamp(false)}</span></span></span>
+          </div>
+          <div class="reg-row reg-bits"><span class="reg-caption">Instruction</span><div class="bit-row">${regBits(18, 1)}</div></div>
+          <div class="reg-row reg-bits"><span class="reg-caption">Instruction Counter</span><div class="bit-row">${regBits(18, 19)}</div></div>
+         </div>`;
 const homeHero = `  <section class="hero hero-desk">
     <div class="hero-paper" aria-hidden="true"><pre class="hero-source">${HERO_SRC}
 ${HERO_SRC}</pre></div>
@@ -287,13 +312,17 @@ ${HERO_SRC}</pre></div>
            <p class="tagline">In 1966 Joseph Weizenbaum gave people their first conversation with a machine. In 2021 we found its lost source code. This is a close reading of ELIZA: its program, its DOCTOR script, its many versions, and what it still tells us about artificial intelligence.</p>
           </div>
           <div class="control-column" aria-hidden="true">
-           <span class="ctl red"></span>
-           <span class="ctl label"></span>
-           <span class="ctl lit"></span>
-           <span class="ctl dark"></span>
-           <span class="ctl dark"></span>
+           <span class="ctl power">POWER</span>
+           <span class="ctl chk">CEN CPU<br>PWR CHK</span>
+           <span class="ctl chk">I/O<br>PWR CHK</span>
+           <span class="ctl chk">+6<br>MOD CHK</span>
+           <span class="ctl chk">-12<br>MOD CHK</span>
+           <span class="ctl power on">CONSOLE<br>POWER ON</span>
+           <span class="ctl off">NORMAL<br>OFF</span>
+           <span class="ctl off">POWER<br>ON</span>
           </div>
          </div>
+${REGISTER}
          <div class="hero-actions">
            <a class="btn" href="how.html">Watch how it works</a>
            <a class="btn ghost" href="try.html">Talk to ELIZA</a>
