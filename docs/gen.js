@@ -316,7 +316,7 @@ ${HERO_SRC}</pre></div>
            <span class="ctl chk" aria-hidden="true">I/O<br>PWR CHK</span>
            <span class="ctl chk" aria-hidden="true">+6<br>MOD CHK</span>
            <span class="ctl chk" aria-hidden="true">-12<br>MOD CHK</span>
-           <button class="ctl power on" id="info-btn" type="button" aria-haspopup="dialog">WHAT IS<br>THIS?</button>
+           <button class="ctl power on" id="info-btn" type="button" aria-haspopup="dialog">DAISY<br>DAISY</button>
            <span class="ctl off" aria-hidden="true">NORMAL<br>OFF</span>
            <span class="ctl off" aria-hidden="true">POWER<br>ON</span>
           </div>

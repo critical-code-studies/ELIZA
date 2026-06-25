@@ -65,7 +65,7 @@
       var last = i === n - 1;
       var slow = i >= n - 6 ? 1 + (i - (n - 6)) * 0.16 : 1;   // wind down over the last 6 notes
       var dur = nb[1] * spb * slow * (last ? 1.5 : 1);
-      var f = mtof(nb[0]);
+      var f = mtof(nb[0] - 12);  // an octave down
       var o = audio.createOscillator(), g = audio.createGain();
       o.setPeriodicWave(wave);
       o.frequency.setValueAtTime(f, t);
