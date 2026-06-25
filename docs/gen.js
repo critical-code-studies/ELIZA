@@ -112,34 +112,39 @@ function write(file, html) { fs.writeFileSync(path.join(OUT, file), clean(html))
 // fields and shows a legend.
 function slipChain(values, opts) {
   opts = opts || {};
+  // dark-ink palette when drawn on fanfold paper; light palette on the dark page
+  var ink = opts.paper
+    ? { cellFill: 'rgba(20,13,9,0.05)', cellStroke: 'rgba(20,13,9,0.45)', div: 'rgba(20,13,9,0.28)', text: '#2c2318', fwd: '#b5462a', bwd: '#8a5a1f', label: '#6b5942' }
+    : { cellFill: 'rgba(232,228,218,0.04)', cellStroke: 'rgba(232,228,218,0.3)', div: 'rgba(232,228,218,0.18)', text: '#e8e3d7', fwd: '#ef6f44', bwd: '#f0a83a', label: '#9a9c95' };
+  var uid = (opts.id || (opts.paper ? 'p' : 'd') + values.join('').replace(/[^A-Za-z0-9]/g, '') || 'x').toLowerCase();
   var cellW = 112, cellH = 46, pitch = 150, x0 = 24;
   var yTop = opts.labels ? 42 : 28;
   var H = opts.labels ? 124 : 92;
   var n = values.length;
   var s = '<svg viewBox="0 0 660 ' + H + '" role="img" aria-label="' + (opts.alt || 'doubly linked list') + '" style="width:100%;height:auto;display:block">';
   s += '<defs>'
-    + '<marker id="fwd" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L8 5 L1 9" fill="none" stroke="#ef6f44" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>'
-    + '<marker id="bwd" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L8 5 L1 9" fill="none" stroke="#f0a83a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>'
+    + '<marker id="fwd-' + uid + '" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L8 5 L1 9" fill="none" stroke="' + ink.fwd + '" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>'
+    + '<marker id="bwd-' + uid + '" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L8 5 L1 9" fill="none" stroke="' + ink.bwd + '" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>'
     + '</defs>';
   if (opts.labels) {
-    s += '<text x="' + x0 + '" y="22" font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#ef6f44">&#8594; next link</text>';
-    s += '<text x="' + (x0 + 150) + '" y="22" font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#f0a83a">&#8592; prev link</text>';
+    s += '<text x="' + x0 + '" y="22" font-family="ui-monospace,Menlo,monospace" font-size="11" fill="' + ink.fwd + '">&#8594; next link</text>';
+    s += '<text x="' + (x0 + 150) + '" y="22" font-family="ui-monospace,Menlo,monospace" font-size="11" fill="' + ink.bwd + '">&#8592; prev link</text>';
   }
   for (var i = 0; i < n; i++) {
     var x = x0 + i * pitch;
-    s += '<rect x="' + x + '" y="' + yTop + '" width="' + cellW + '" height="' + cellH + '" rx="4" fill="rgba(232,228,218,0.04)" stroke="rgba(232,228,218,0.3)"/>';
-    s += '<line x1="' + (x + 24) + '" y1="' + yTop + '" x2="' + (x + 24) + '" y2="' + (yTop + cellH) + '" stroke="rgba(232,228,218,0.18)"/>';
-    s += '<line x1="' + (x + cellW - 24) + '" y1="' + yTop + '" x2="' + (x + cellW - 24) + '" y2="' + (yTop + cellH) + '" stroke="rgba(232,228,218,0.18)"/>';
-    s += '<text x="' + (x + cellW / 2) + '" y="' + (yTop + cellH / 2 + 4) + '" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="13" fill="#e8e3d7">' + (values[i] || '') + '</text>';
-    if (i < n - 1) s += '<line x1="' + (x + cellW + 2) + '" y1="' + (yTop + 15) + '" x2="' + (x0 + (i + 1) * pitch - 3) + '" y2="' + (yTop + 15) + '" stroke="#ef6f44" stroke-width="1.4" marker-end="url(#fwd)"/>';
-    if (i > 0) s += '<line x1="' + (x - 2) + '" y1="' + (yTop + 31) + '" x2="' + (x0 + (i - 1) * pitch + cellW + 3) + '" y2="' + (yTop + 31) + '" stroke="#f0a83a" stroke-width="1.4" marker-end="url(#bwd)"/>';
+    s += '<rect x="' + x + '" y="' + yTop + '" width="' + cellW + '" height="' + cellH + '" rx="4" fill="' + ink.cellFill + '" stroke="' + ink.cellStroke + '"/>';
+    s += '<line x1="' + (x + 24) + '" y1="' + yTop + '" x2="' + (x + 24) + '" y2="' + (yTop + cellH) + '" stroke="' + ink.div + '"/>';
+    s += '<line x1="' + (x + cellW - 24) + '" y1="' + yTop + '" x2="' + (x + cellW - 24) + '" y2="' + (yTop + cellH) + '" stroke="' + ink.div + '"/>';
+    s += '<text x="' + (x + cellW / 2) + '" y="' + (yTop + cellH / 2 + 4) + '" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="13" fill="' + ink.text + '">' + (values[i] || '') + '</text>';
+    if (i < n - 1) s += '<line x1="' + (x + cellW + 2) + '" y1="' + (yTop + 15) + '" x2="' + (x0 + (i + 1) * pitch - 3) + '" y2="' + (yTop + 15) + '" stroke="' + ink.fwd + '" stroke-width="1.4" marker-end="url(#fwd-' + uid + ')"/>';
+    if (i > 0) s += '<line x1="' + (x - 2) + '" y1="' + (yTop + 31) + '" x2="' + (x0 + (i - 1) * pitch + cellW + 3) + '" y2="' + (yTop + 31) + '" stroke="' + ink.bwd + '" stroke-width="1.4" marker-end="url(#bwd-' + uid + ')"/>';
   }
   if (opts.labels) {
     for (var j = 0; j < n; j++) {
       var xj = x0 + j * pitch, yl = yTop + cellH + 16;
-      s += '<text x="' + (xj + 12) + '" y="' + yl + '" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#9a9c95">prev</text>';
-      s += '<text x="' + (xj + cellW / 2) + '" y="' + yl + '" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#9a9c95">datum</text>';
-      s += '<text x="' + (xj + cellW - 12) + '" y="' + yl + '" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#9a9c95">next</text>';
+      s += '<text x="' + (xj + 12) + '" y="' + yl + '" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="' + ink.label + '">prev</text>';
+      s += '<text x="' + (xj + cellW / 2) + '" y="' + yl + '" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="' + ink.label + '">datum</text>';
+      s += '<text x="' + (xj + cellW - 12) + '" y="' + yl + '" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="' + ink.label + '">next</text>';
     }
   }
   s += '</svg>';
@@ -208,14 +213,19 @@ function fanfold(cmd, inner, opts) {
   else if (opts.sprockets === 'torn') cls.push('torn');
   if (opts.stain) cls.push(opts.stain === true ? 'coffee' : opts.stain);    // coffee
   if (opts.edge && opts.edge !== 'plain') cls.push(opts.edge);             // burned | ripped
-  const verbatim = Array.isArray(cmd);
-  const { head, foot } = verbatim ? { head: cmd, foot: [] } : fanSession([cmd], system);
   const lines = arr => arr.map(l => `<div class="cmd-line">${l}</div>`).join('');
+  // an empty/absent cmd makes a plain paper plate (for a figure, image or diagram)
+  const hasCmd = Array.isArray(cmd) ? cmd.length > 0 : (cmd != null && cmd !== '');
+  let headHtml = '', footHtml = '';
+  if (hasCmd) {
+    const { head, foot } = Array.isArray(cmd) ? { head: cmd, foot: [] } : fanSession([cmd], system);
+    headHtml = `<div class="fanfold-cmd">${lines(head)}</div>`;
+    if (foot.length) footHtml = `\n        <div class="fanfold-cmd fanfold-foot">${lines(foot)}</div>`;
+  }
   const banner = fanBanner(opts.banner);
-  const footHtml = foot.length ? `\n        <div class="fanfold-cmd fanfold-foot">${lines(foot)}</div>` : '';
   const overlay = opts.overlay ? `\n        <div class="ff-overlay" aria-hidden="true">${opts.overlay}</div>` : '';
   return `<div class="${cls.join(' ')}">${overlay}
-        ${banner}<div class="fanfold-cmd">${lines(head)}</div>
+        ${banner}${headHtml}
 ${inner}${footHtml}
       </div>`;
 }
@@ -268,7 +278,7 @@ const homeBody = `
       </figure>
       <p>This is an interdisciplinary investigation of ELIZA as a cultural and technical artifact, built around the original source code we recovered from Weizenbaum&rsquo;s papers in the MIT archive in 2021. We read the code, the DOCTOR script, the hardware it ran on, and the long shadow it cast over how we talk about thinking machines.</p>
       <p>It is a companion to the Critical Code Studies group&rsquo;s collectively authored book <a href="book.html"><em>Inventing ELIZA</em></a> (MIT Press).</p>
-      <p>As we reach the sixtieth anniversary of ELIZA&rsquo;s public debut, the book sets the rediscovered source code beside scripts that had been missing for decades, drawing on archival research at MIT, Stanford and UCLA. Together they reveal a far more sophisticated system than the famous DOCTOR demonstration ever suggested: a conversational programming environment, assembled incrementally between 1965 and 1968, with capabilities well ahead of its time. The chapters that follow read that program closely, and follow its long afterlife into the language we still use for machines that seem to speak.</p>
+      <p>As we reach the sixtieth anniversary of ELIZA&rsquo;s public debut, the book sets the rediscovered source code beside scripts that had been missing for decades, drawing on archival research at MIT, Stanford and UCLA. Together they reveal a far more sophisticated system than the famous DOCTOR demonstration ever suggested: a conversational programming environment, assembled incrementally between 1965 and 1968, with capabilities well ahead of its time.</p>
       ${fanfold('LISTF', `<div class="index-list">
         <a class="index-row" href="overview.html"><span class="ix-obj">Read</span><span class="ix-ttl">Overview</span><span class="ix-desc">What ELIZA actually was, and why DOCTOR is not the same thing as ELIZA.</span></a>
         <a class="index-row" href="code.html"><span class="ix-obj">The code</span><span class="ix-ttl">The program</span><span class="ix-desc">A close reading of the recovered MAD-SLIP source, line by line.</span></a>
@@ -458,14 +468,14 @@ write('slip.html', page({
       <p>SLIP&rsquo;s lists are <strong>doubly linked</strong>: every cell holds a pointer to the next cell and to the previous one. That two-way, symmetric linkage is where the name comes from. It lets a program walk a list forwards or backwards, splice cells in and out from either end, and treat any cell as a place to read from or write to. Free cells are kept on an <strong>Available Space List</strong> (AVSL); creating a list draws cells from it, deleting a list returns them.</p>
 
       <figure class="figure" style="max-width:none">
-        ${slipChain(['', '', ''], { labels: true, alt: 'an abstract doubly linked list: each cell holds a datum with a forward and backward link' })}
+        ${fanfold('', slipChain(['', '', ''], { paper: true, labels: true, alt: 'an abstract doubly linked list: each cell holds a datum with a forward and backward link' }))}
         <figcaption>Each cell carries a datum between two links: a <span style="color:var(--eliza)">next</span> pointer forward and a <span style="color:var(--lamp-amber)">prev</span> pointer back. Real SLIP lists also close into a ring through a header cell.</figcaption>
       </figure>
 
       <h2>A line of dialogue as a list</h2>
       <p>When you type to ELIZA, your words become a SLIP list, one word per cell. Here is the opening line of the 1966 conversation, <em>Men are all alike</em>, held the way ELIZA holds it:</p>
       <figure class="figure" style="max-width:none">
-        ${slipChain(['MEN', 'ARE', 'ALL', 'ALIKE'], { alt: 'the words MEN, ARE, ALL, ALIKE held as a doubly linked SLIP list' })}
+        ${fanfold('', slipChain(['MEN', 'ARE', 'ALL', 'ALIKE'], { paper: true, labels: true, alt: 'the words MEN, ARE, ALL, ALIKE held as a doubly linked SLIP list' }))}
         <figcaption>ELIZA walks this list with a sequence reader (<code>SEQRDR</code> / <code>SEQLR</code>), matches it against a keyword&rsquo;s decomposition pattern, and builds the reply by splicing cells into a new list.</figcaption>
       </figure>
 

@@ -102,6 +102,20 @@ Use it for a margin scribble, a circled word, a connecting arrow, or a small
 flowchart drawn in SVG. There are no presets: bring your own marks (that is the
 point, it keeps them human).
 
+### Figures and images (no separate function needed)
+
+Pass an empty/absent `cmd` and the plate renders with no command header, just the
+paper. Put any HTML inside, an `<img>`, an inline `<svg>` diagram, a chart:
+
+```js
+fanfold('', '<img src="diagram.png" style="width:100%">')
+fanfold('', svgDiagram, { sprockets: 'torn' })
+```
+
+So images and diagrams use the same `fanfold()`, there is no image-specific
+variant. (For an SVG drawn on the paper, give it dark ink so it reads on the
+parchment.)
+
 ---
 
 ## The JS (copy verbatim)
