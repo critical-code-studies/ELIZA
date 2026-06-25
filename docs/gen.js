@@ -20,7 +20,7 @@ function nav(depth) {
   return `
       <a class="brand" href="${p}index.html" aria-label="ELIZA home">
         <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 6 H22 L28 12 V26 H4 Z" fill="#d9cfbc"/><g fill="#14161b"><rect x="8" y="13" width="3" height="5" rx="0.8"/><rect x="14" y="13" width="3" height="5" rx="0.8"/></g><rect x="20" y="13" width="3" height="5" rx="0.8" fill="#ef6f44"/><text x="16" y="24" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="4.4" letter-spacing="0.3" fill="#14161b" opacity="0.5">000010</text></svg>
-        <span class="brand-block"><span class="brand-text">${elizaWordmark('brand-wordmark')}</span><span class="brand-tagline">Critical Code Studies · MIT · 1966</span></span>
+        <span class="brand-block"><span class="brand-text">${elizaWordmark('brand-wordmark')}</span></span>
       </a>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span class="bars" aria-hidden="true">&#9776;</span>&nbsp;Menu</button>
       <nav class="site-nav" id="site-nav">
@@ -274,7 +274,7 @@ ${HERO_SRC}</pre></div>
     <div class="hero-inner">
       <div class="wrap">
        <div class="hero-panel">
-        <p class="boot">JOSEPH WEIZENBAUM // 1966<span class="cursor" aria-hidden="true"></span></p>
+        <p class="boot">JOSEPH WEIZENBAUM // 1966</p>
         <h1 class="wm">${elizaWordmark('hero-wordmark')}<span class="vh">ELIZA</span></h1>
         <p class="sub">The first chatbot</p>
         <p class="tagline">In 1966 Joseph Weizenbaum gave people their first conversation with a machine. In 2021 we found its lost source code. This is a close reading of ELIZA: its program, its DOCTOR script, its many versions, and what it still tells us about artificial intelligence.</p>
