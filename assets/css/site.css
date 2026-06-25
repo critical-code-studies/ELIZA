@@ -347,9 +347,9 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
    backgrounds melt into the paper and only the marks remain. */
 /* reusable fanfold (continuous-form) plate: archival paper with tractor-feed holes */
 .fanfold { position: relative; background: var(--paper); border-radius: 3px; padding: 1.3rem 2.9rem 1.7rem; margin-top: 1.6rem; box-shadow: 0 14px 38px rgba(0,0,0,0.5); }
-.fanfold::before, .fanfold::after { content: ""; position: absolute; top: 0; bottom: 0; width: 22px; background-image: radial-gradient(circle at center, var(--bg) 0 3.4px, rgba(20,13,9,0.18) 3.4px 4.3px, transparent 4.6px); background-size: 22px 26px; background-repeat: repeat-y; background-position: center 11px; }
-.fanfold::before { left: 0; border-right: 1px dashed rgba(20,13,9,0.22); }
-.fanfold::after { right: 0; border-left: 1px dashed rgba(20,13,9,0.22); }
+.fanfold::before, .fanfold::after, .listing::before, .listing::after { content: ""; position: absolute; top: 0; bottom: 0; width: 22px; background-image: radial-gradient(circle at center, var(--bg) 0 3.4px, rgba(20,13,9,0.18) 3.4px 4.3px, transparent 4.6px); background-size: 22px 26px; background-repeat: repeat-y; background-position: center 11px; }
+.fanfold::before, .listing::before { left: 0; border-right: 1px dashed rgba(20,13,9,0.22); }
+.fanfold::after, .listing::after { right: 0; border-left: 1px dashed rgba(20,13,9,0.22); }
 .fanfold-cmd { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.5px; color: #3a2f24; margin-bottom: 1.4rem; }
 .fanfold-cmd .cmd-line { white-space: pre-wrap; }
 /* a code listing printed on the fanfold paper (dark ink) */
@@ -437,17 +437,19 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .fanfold .bib .ref a:hover { border-bottom-color: #221a12; }
 
 /* ---------- code listing ---------- */
+/* small code snippets: a torn strip of fanfold paper (sprocket holes, dark ink) */
 .listing {
-  font-family: var(--mono); font-size: 0.8rem; line-height: 1.55;
-  background: rgba(0,0,0,0.5); border: 1px solid var(--line-soft); border-left: 2px solid var(--lamp-blue);
-  padding: 1.2rem 1.3rem; border-radius: 3px; overflow-x: auto; color: var(--ink); margin-top: 1.5rem;
-  white-space: pre;
+  position: relative;
+  font-family: var(--mono); font-size: 0.78rem; line-height: 1.55;
+  background: var(--paper); color: #2c2318;
+  padding: 1.1rem 2.6rem; border-radius: 3px; overflow-x: auto; margin: 1.6rem 0;
+  white-space: pre; box-shadow: 0 10px 30px rgba(0,0,0,0.45);
 }
-.listing .com { color: var(--ink-dim); }
-.listing .kw { color: var(--lamp-blue); }
-.listing .str { color: var(--lamp-amber); }
-.listing .lbl { color: var(--lamp-green); }
-.listing .seq { color: rgba(154,156,149,0.5); }
+.listing .com { color: #6b5942; }
+.listing .kw { color: #2f4f7a; }
+.listing .str { color: #8a5a1f; }
+.listing .lbl { color: #2f6b45; }
+.listing .seq { color: rgba(20,13,9,0.4); }
 
 /* ---------- figures (archive images) ---------- */
 .figure { margin: 2rem 0 0; }
