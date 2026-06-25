@@ -42,10 +42,12 @@
   // --- Daisy Bell: [midi, beats] straight from "Daisy, Daisy (G Major).mid" ---
   // skyline melody; the three bass B3 "fills" at phrase-ends are merged into the
   // preceding held note so no bass note sounds (D. Berry: remove the bass notes).
-  var DAISY = [[74,1.5],[71,1.5],[67,1.5],[62,1.5],[64,0.5],[66,0.5],[67,0.5],[64,1],[67,0.5],[62,3],
+  // midi 0 = a rest. The three bass B3 fills at refrain-ends are dropped to a rest
+  // (a breath) rather than held, so no strange low note sounds there.
+  var DAISY = [[74,1.5],[71,1.5],[67,1.5],[62,1.5],[64,0.5],[66,0.5],[67,0.5],[64,1],[67,0.5],[62,2],[0,1],
     [69,1.5],[74,1.5],[71,1.5],[67,1.5],[64,0.5],[66,0.5],[67,0.5],[69,1],[71,0.5],[69,2],
-    [62,0.5],[71,0.5],[72,0.5],[71,0.5],[69,0.5],[74,1],[71,0.5],[69,0.5],[67,2],
-    [69,0.5],[71,1],[67,0.5],[64,1],[67,0.5],[64,0.5],[62,2],
+    [62,0.5],[71,0.5],[72,0.5],[71,0.5],[69,0.5],[74,1],[71,0.5],[69,0.5],[67,1],[0,1],
+    [69,0.5],[71,1],[67,0.5],[64,1],[67,0.5],[64,0.5],[62,1],[0,1],
     [62,0.5],[67,1],[71,0.5],[69,1],[62,0.5],[67,1],[71,0.5],[69,0.5],[71,0.5],[72,0.5],[74,0.5],[71,0.5],[67,0.5],[69,1],[62,0.5],[67,3]];
   function mtof(m) { return 440 * Math.pow(2, (m - 69) / 12); }
   function oboeWave(ac) {
@@ -67,6 +69,7 @@
       var last = i === n - 1;
       var slow = i >= n - 6 ? 1 + (i - (n - 6)) * 0.16 : 1;   // wind down over the last 6 notes
       var dur = nb[1] * spb * slow * (last ? 1.5 : 1);
+      if (nb[0] <= 0) { t += dur; return; }   // rest: advance time, no note
       var f = mtof(nb[0] - 12);  // an octave down
       var o = audio.createOscillator(), g = audio.createGain();
       o.setPeriodicWave(wave);
