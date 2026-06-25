@@ -244,6 +244,22 @@ html.powered-off #power-btn {
   box-shadow: 0 0 0 1px rgba(255,180,150,0.9), 0 0 24px 6px rgba(255,90,40,0.85);
   animation: litPulse 1.4s ease-in-out infinite;
 }
+
+/* "WHAT IS THIS?" modal */
+.modal { position: fixed; inset: 0; z-index: 9500; display: flex; align-items: center; justify-content: center; padding: 5vw; background: rgba(5,6,8,0.82); }
+.modal[hidden] { display: none; }
+.modal-box {
+  position: relative; max-width: 620px; max-height: 86vh; overflow: auto;
+  background: var(--paper); color: #20180f; border: 3px solid #c6bca3; border-radius: 6px;
+  padding: 2rem 2.2rem 1.5rem; box-shadow: 0 24px 70px rgba(0,0,0,0.6);
+}
+.modal-box h2 { margin: 0 0 0.9rem; font-family: var(--mono); font-size: 1.3rem; }
+.modal-box p { margin: 0 0 0.9rem; line-height: 1.55; }
+.modal-cue { font-family: var(--mono); font-size: 0.85rem; color: #8a5a1f; }
+.modal-src { margin-bottom: 0; }
+.modal-src a { font-family: var(--mono); font-size: 0.8rem; color: #8a5a1f; }
+.modal-close { position: absolute; top: 0.4rem; right: 0.7rem; background: none; border: 0; font-size: 1.7rem; line-height: 1; color: #6c6757; cursor: pointer; }
+.modal-close:hover { color: #20180f; }
 @keyframes litPulse { 0%,100% { filter: brightness(1); } 50% { filter: brightness(1.28); } }
 @media (prefers-reduced-motion: reduce) { .ctl.power.on { animation: none; } }
 

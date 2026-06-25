@@ -316,7 +316,7 @@ ${HERO_SRC}</pre></div>
            <span class="ctl chk" aria-hidden="true">I/O<br>PWR CHK</span>
            <span class="ctl chk" aria-hidden="true">+6<br>MOD CHK</span>
            <span class="ctl chk" aria-hidden="true">-12<br>MOD CHK</span>
-           <span class="ctl power on" aria-hidden="true">CONSOLE<br>POWER ON</span>
+           <button class="ctl power on" id="info-btn" type="button" aria-haspopup="dialog">WHAT IS<br>THIS?</button>
            <span class="ctl off" aria-hidden="true">NORMAL<br>OFF</span>
            <span class="ctl off" aria-hidden="true">POWER<br>ON</span>
           </div>
@@ -331,7 +331,17 @@ ${REGISTER}
        </div>
       </div>
     </div>
-  </section>`;
+  </section>
+  <div class="modal" id="info-modal" role="dialog" aria-modal="true" aria-labelledby="info-title" hidden>
+    <div class="modal-box">
+      <button class="modal-close" type="button" aria-label="Close">&times;</button>
+      <h2 id="info-title">Daisy Bell, and HAL</h2>
+      <p>A recording made at Bell Labs in Murray Hill, New Jersey, on an IBM 7094 mainframe in 1961 is the earliest known recording of a computer-synthesised voice singing a song: <em>Daisy Bell</em>, also known as &ldquo;Bicycle Built for Two.&rdquo; It was programmed by the physicist John L. Kelly Jr. and Carol Lockbaum, with musical accompaniment by the computer-music pioneer Max Mathews.</p>
+      <p>The novelist Arthur C. Clarke witnessed a demonstration while visiting his friend John R. Pierce, an electrical engineer and science-fiction writer then at Bell Labs. Clarke was so struck by it that he wrote the 7094&rsquo;s performance into both the 1968 novel and the screenplay for <em>2001: A Space Odyssey</em>. One of the first things Clarke&rsquo;s HAL 9000 had learned was &ldquo;Daisy Bell&rdquo;, and near the end, as the astronaut Dave Bowman deactivates it, the machine loses its mind and degenerates into singing it.</p>
+      <p class="modal-cue">Press <strong>POWER</strong> to hear it.</p>
+      <p class="modal-src"><a href="https://www.historyofinformation.com/index.php?str=7094#entry_3986" target="_blank" rel="noopener">historyofinformation.com</a></p>
+    </div>
+  </div>`;
 
 const homeBody = `
     <section class="block lede">
