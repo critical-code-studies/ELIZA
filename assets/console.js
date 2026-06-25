@@ -1,11 +1,10 @@
 /* console.js - the home hero 7094 console.
    - the indicator register lamps drift/blink like a live machine.
-   - the rocker action buttons physically rock when clicked, then navigate.
+   - the rocker action buttons rock left->right when clicked, then navigate.
    - the red POWER button runs a shutdown: lamps go crazy, then all flash and cut
      off together, then a dark veil falls (the POWER button staying lit above it)
-     while a Web Audio synth plays "Daisy Bell" - low, slow, raspy and droney, the
-     way the original IBM 7094 sang it at Bell Labs in 1961 (and HAL 9000 after).
-     Press POWER again to power back up. */
+     while a Web Audio oboe plays "Daisy Bell" slowly, sagging at the end like
+     HAL 9000. Press POWER again to power back up. */
 (function () {
   var btn = document.getElementById('power-btn');
   var lamps = [].slice.call(document.querySelectorAll('.register .rl'));
@@ -47,53 +46,55 @@
     ['G','C','E','D', 'E','F','G','E','C', 'D','C']
   ];
   var PC = { C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 };
-  // flatten to {letter,last-of-phrase}; assign octaves nearest the previous note (low register)
   function buildNotes() {
     var seq = [];
-    PARTS.forEach(function (p) { p.forEach(function (L, i) { seq.push({ L: L, end: i === p.length - 1 }); }); });
-    var prev = 55, out = []; // start near G3 -> low, droney
-    seq.forEach(function (n, idx) {
+    PARTS.forEach(function (p) { p.forEach(function (L) { seq.push(L); }); });
+    var prev = 67, out = []; // start at G4 (oboe range)
+    seq.forEach(function (L, idx) {
       var best = null, bd = 1e9;
-      for (var o = 2; o <= 5; o++) { var m = 12 * (o + 1) + PC[n.L]; var d = Math.abs(m - prev); if (d < bd) { bd = d; best = m; } }
+      for (var o = 3; o <= 6; o++) { var m = 12 * (o + 1) + PC[L]; var d = Math.abs(m - prev); if (d < bd) { bd = d; best = m; } }
       prev = best;
       var midi = best;
       if (idx === seq.length - 1) midi -= 12; // final "Low C"
-      out.push({ midi: midi, dur: n.end ? 2 : 1, last: idx === seq.length - 1 });
+      out.push({ midi: midi, last: idx === seq.length - 1 });
     });
     return out;
   }
   function mtof(m) { return 440 * Math.pow(2, (m - 69) / 12); }
+  // an oboe-ish timbre: reedy/nasal harmonic spectrum (peak around the 3rd partial)
+  function oboeWave(ac) {
+    var amps = [0, 0.18, 0.36, 1.0, 0.72, 0.5, 0.33, 0.26, 0.17, 0.11, 0.07, 0.05];
+    var real = new Float32Array(amps.length), imag = new Float32Array(amps);
+    return ac.createPeriodicWave(real, imag, { disableNormalization: false });
+  }
 
   function sing() {
     var Ctx = window.AudioContext || window.webkitAudioContext;
     if (!Ctx) return;
     try { audio = new Ctx(); } catch (e) { return; }
     if (audio.resume) audio.resume();
-    var notes = buildNotes();
-    var t = audio.currentTime + 0.25, beat = 0.8, slow = 1.0;
-    var master = audio.createGain(); master.gain.value = 0.55; master.connect(audio.destination);
-    var lp = audio.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 1050; lp.Q.value = 7; lp.connect(master);
-    var lfo = audio.createOscillator(); lfo.type = 'sine'; lfo.frequency.value = 5.2;
-    var lfoG = audio.createGain(); lfoG.gain.value = 8; lfo.connect(lfoG); lfo.start(t); nodes.push(lfo);
+    var notes = buildNotes(), wave = oboeWave(audio);
+    var beat = 0.46, t = audio.currentTime + 0.25;     // steady, slowish
+    var master = audio.createGain(); master.gain.value = 0.5; master.connect(audio.destination);
+    var lp = audio.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 3600; lp.Q.value = 0.7; lp.connect(master);
+    var lfo = audio.createOscillator(); lfo.type = 'sine'; lfo.frequency.value = 5.4;
+    var lfoG = audio.createGain(); lfoG.gain.value = 6; lfo.connect(lfoG); lfo.start(t); nodes.push(lfo);
     notes.forEach(function (n) {
-      var dur = n.dur * beat * slow * (n.last ? 2.3 : 1);
+      var dur = n.last ? beat * 2.8 : beat;
       var f = mtof(n.midi);
-      [-7, 6].forEach(function (det) {                 // two detuned saws -> raspy beating
-        var o = audio.createOscillator(), g = audio.createGain();
-        o.type = 'sawtooth'; o.detune.setValueAtTime(det, t);
-        o.frequency.setValueAtTime(f, t);
-        if (n.last) o.frequency.linearRampToValueAtTime(f / 2, t + dur); // dying fall
-        lfoG.connect(o.detune);
-        g.gain.setValueAtTime(0, t);
-        g.gain.linearRampToValueAtTime(0.12, t + 0.07);
-        g.gain.setValueAtTime(0.12, t + dur * (n.last ? 0.5 : 0.85));
-        g.gain.linearRampToValueAtTime(0, t + dur);
-        o.connect(g); g.connect(lp);
-        o.start(t); o.stop(t + dur + 0.07);
-        nodes.push(o);
-      });
-      t += dur * (n.last ? 1 : 1.02);  // gentle ritardando, pitches stay true
-      slow += 0.018;
+      var o = audio.createOscillator(), g = audio.createGain();
+      o.setPeriodicWave(wave);
+      o.frequency.setValueAtTime(f, t);
+      if (n.last) o.frequency.linearRampToValueAtTime(f * 0.6, t + dur); // dying fall
+      lfoG.connect(o.detune);
+      g.gain.setValueAtTime(0, t);
+      g.gain.linearRampToValueAtTime(0.22, t + 0.05);                   // soft reed attack
+      g.gain.setValueAtTime(0.22, t + dur * (n.last ? 0.55 : 0.8));
+      g.gain.linearRampToValueAtTime(0, t + dur);
+      o.connect(g); g.connect(lp);
+      o.start(t); o.stop(t + dur + 0.05);
+      nodes.push(o);
+      t += dur;                                          // steady tempo, no compounding drift
     });
   }
   function stopSong() {
@@ -140,16 +141,16 @@
   if (btn) btn.addEventListener('click', function () { powered ? powerDown() : powerUp(); });
   startDrift();
 
-  // --- rocker action buttons: rock on click, then navigate ---
-  [].forEach.call(document.querySelectorAll('.console .hero-actions .btn'), function (b) {
+  // --- rocker action buttons: rock left->right (ON) when clicked, then navigate ---
+  [].forEach.call(document.querySelectorAll('.console .hero-actions .rocker-btn'), function (b) {
     b.addEventListener('click', function (e) {
       if (reduce || e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
       if (b.dataset.go) return;
       e.preventDefault();
-      b.classList.add('rocked');
+      var rk = b.querySelector('.rocker'); if (rk) rk.classList.add('on');
       b.dataset.go = '1';
       var href = b.getAttribute('href');
-      setTimeout(function () { window.location.href = href; }, 260);
+      setTimeout(function () { window.location.href = href; }, 300);
     });
   });
 })();

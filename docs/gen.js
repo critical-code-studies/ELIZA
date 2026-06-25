@@ -323,9 +323,9 @@ ${HERO_SRC}</pre></div>
          </div>
 ${REGISTER}
          <div class="hero-actions">
-           <a class="btn" href="how.html">Watch how it works</a>
-           <a class="btn ghost" href="try.html">Talk to ELIZA</a>
-           <a class="btn ghost" href="overview.html">Start reading</a>
+           <a class="rocker-btn" href="how.html"><span class="rk-label">Watch how it works</span><span class="rocker"><span class="switch-left">On</span><span class="switch-right">Off</span></span></a>
+           <a class="rocker-btn" href="try.html"><span class="rk-label">Talk to ELIZA</span><span class="rocker"><span class="switch-left">On</span><span class="switch-right">Off</span></span></a>
+           <a class="rocker-btn" href="overview.html"><span class="rk-label">Start reading</span><span class="rocker"><span class="switch-left">On</span><span class="switch-right">Off</span></span></a>
          </div>
         </div>
        </div>

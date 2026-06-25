@@ -282,39 +282,42 @@ html.powered-off #power-btn {
 }
 /* console buttons: chunky cream rocker switches in a dark housing rail */
 .console .hero-actions {
-  margin-top: 1.9rem; gap: 14px; padding: 14px 14px 16px;
-  display: inline-flex; flex-wrap: wrap; width: fit-content; max-width: 100%;
+  margin-top: 1.9rem; gap: 26px; padding: 14px 20px 16px;
+  display: inline-flex; flex-wrap: wrap; align-items: flex-start; width: fit-content; max-width: 100%;
   background: linear-gradient(#23272d, #14171b);
   border: 1px solid rgba(0,0,0,0.55); border-radius: 5px;
   box-shadow: inset 0 2px 8px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.04);
-  perspective: 900px;
 }
-/* grey/white rocker switch: two 3D halves with a centre pivot, rocks when clicked */
-.console .hero-actions .btn {
-  position: relative; color: #2a2a28; font-weight: 700; text-shadow: 0 1px 0 rgba(255,255,255,0.65);
-  border: 1px solid #8c8c86; border-radius: 5px; padding: 0.8rem 1.2rem;
-  /* upper half light, hard centre crease, lower half shaded */
-  background: linear-gradient(180deg, #fbfbf9 0%, #ededea 46%, #aeaea7 48%, #cfcfc9 50%, #e2e2dd 100%);
-  box-shadow: inset 0 2px 0 rgba(255,255,255,0.9), inset 0 -5px 6px rgba(0,0,0,0.22),
-              0 6px 0 #7a7a74, 0 10px 12px rgba(0,0,0,0.5);
-  transform-origin: center; transform: rotateX(-9deg);
-  transition: transform 0.13s ease, box-shadow 0.13s ease;
+/* a labelled 7094 rocker switch: label above, a left/right rocker below
+   (mechanics adapted from DannyFeliz/vue-rocker-switch, restyled grey/cream) */
+.rocker-btn { display: inline-flex; flex-direction: column; align-items: center; gap: 9px; text-decoration: none; border: 0; }
+.rk-label { font: 700 0.66rem/1.15 var(--mono); letter-spacing: 1.2px; color: #cfc8b6; text-transform: uppercase; text-align: center; }
+.rocker {
+  display: inline-block; position: relative; font-size: 9px; font-weight: bold; text-align: center;
+  text-transform: uppercase; color: #4a4636; width: 7em; height: 4em; overflow: hidden;
+  border-bottom: 0.5em solid #c9c2ad; box-sizing: border-box;
+  font-family: var(--mono); cursor: pointer; -webkit-user-select: none; user-select: none;
 }
-.console .hero-actions .btn::after {  /* centre pivot line */
-  content: ""; position: absolute; left: 6px; right: 6px; top: 50%; height: 1px;
-  background: rgba(0,0,0,0.28); box-shadow: 0 1px 0 rgba(255,255,255,0.5);
+.rocker::before {
+  content: ""; position: absolute; top: 0.5em; left: 0; right: 0; bottom: 0;
+  background: #6c6757; border: 0.5em solid #c9c2ad; border-bottom: 0;
 }
-.console .hero-actions .btn:hover { transform: rotateX(0deg); }
-.console .hero-actions .btn:active, .console .hero-actions .btn.rocked {
-  transform: rotateX(12deg);
-  box-shadow: inset 0 2px 0 rgba(255,255,255,0.8), inset 0 -3px 5px rgba(0,0,0,0.28),
-              0 2px 0 #7a7a74, 0 4px 6px rgba(0,0,0,0.5);
+.rocker .switch-left, .rocker .switch-right {
+  position: absolute; display: flex; align-items: center; justify-content: center;
+  height: 2.5em; width: 3em; transition: 0.18s;
 }
-/* primary: the whiter switch */
-.console .hero-actions .btn:not(.ghost) {
-  border-color: #9a9a93;
-  background: linear-gradient(180deg, #ffffff 0%, #f4f4f1 46%, #bcbcb5 48%, #dedeD8 50%, #efefe9 100%);
+.rocker .switch-left { height: 2.4em; width: 2.75em; left: 0.85em; bottom: 0.4em; background: #c8c2b0; color: #4a4636; transform: rotate(15deg) skewX(15deg); }
+.rocker .switch-right { right: 0.5em; bottom: 0; background: #8d8876; color: #f3efe2; }
+.rocker .switch-left::before, .rocker .switch-right::before {
+  content: ""; position: absolute; width: 0.4em; height: 2.45em; bottom: -0.45em; background: #b3ad9a; transform: skewY(-65deg);
 }
+.rocker .switch-left::before { left: -0.4em; }
+.rocker .switch-right::before { right: -0.375em; background: transparent; transform: skewY(65deg); }
+/* toggled ON: left half rocks down/forward */
+.rocker.on .switch-left { background: #efe9d8; color: #2a2620; bottom: 0; left: 0.5em; height: 2.5em; width: 3em; transform: rotate(0) skewX(0); }
+.rocker.on .switch-left::before { background: transparent; width: 3.0833em; }
+.rocker.on .switch-left + .switch-right { background: #c8c2b0; color: #4a4636; bottom: 0.4em; right: 0.8em; height: 2.4em; width: 2.75em; transform: rotate(-15deg) skewX(-15deg); }
+.rocker.on .switch-left + .switch-right::before { background: #b3ad9a; }
 @media (min-width: 900px) {
   .hero .wrap { display: flex; justify-content: center; }
 }
