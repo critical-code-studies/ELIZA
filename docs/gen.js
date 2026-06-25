@@ -205,14 +205,14 @@ const homeBody = `
       </figure>
       <p>This is an interdisciplinary investigation of ELIZA as a cultural and technical artifact, built around the original source code we recovered from Weizenbaum&rsquo;s papers in the MIT archive in 2021. We read the code, the DOCTOR script, the hardware it ran on, and the long shadow it cast over how we talk about thinking machines.</p>
       <p>It is a companion to the Critical Code Studies group&rsquo;s collectively authored book <a href="book.html"><em>Inventing ELIZA</em></a> (MIT Press).</p>
-      <div class="grid">
-        <div class="card r"><p class="obj">Read</p><h3><a href="overview.html">Overview</a></h3><p>What ELIZA actually was, and why DOCTOR is not the same thing as ELIZA.</p></div>
-        <div class="card b"><p class="obj">The code</p><h3><a href="code.html">The program</a></h3><p>A close reading of the recovered MAD-SLIP source, line by line.</p></div>
-        <div class="card y"><p class="obj">The script</p><h3><a href="doctor.html">DOCTOR</a></h3><p>Weizenbaum&rsquo;s Rogerian therapist script, and how its patterns work.</p></div>
-        <div class="card b"><p class="obj">The dictionary</p><h3><a href="doctor.html#dictionary">DOCTOR dictionary</a></h3><p>Every keyword DOCTOR knows: filter the list, then read the rules behind each one.</p></div>
-        <div class="card r"><p class="obj">Watch</p><h3><a href="how.html">How it works</a></h3><p>Type a phrase and step through ELIZA&rsquo;s rules, from keywords to reply.</p></div>
-        <div class="card g"><p class="obj">Talk</p><h3><a href="try.html">Try ELIZA</a></h3><p>A faithful re-creation that runs the genuine 1966 script in your browser.</p></div>
-      </div>
+      ${fanfold('LISTF', `<div class="index-list">
+        <a class="index-row" href="overview.html"><span class="ix-obj">Read</span><span class="ix-ttl">Overview</span><span class="ix-desc">What ELIZA actually was, and why DOCTOR is not the same thing as ELIZA.</span></a>
+        <a class="index-row" href="code.html"><span class="ix-obj">The code</span><span class="ix-ttl">The program</span><span class="ix-desc">A close reading of the recovered MAD-SLIP source, line by line.</span></a>
+        <a class="index-row" href="doctor.html"><span class="ix-obj">The script</span><span class="ix-ttl">DOCTOR</span><span class="ix-desc">Weizenbaum&rsquo;s Rogerian therapist script, and how its patterns work.</span></a>
+        <a class="index-row" href="doctor.html#dictionary"><span class="ix-obj">The dictionary</span><span class="ix-ttl">DOCTOR dictionary</span><span class="ix-desc">Every keyword DOCTOR knows: filter the list, then read the rules behind each one.</span></a>
+        <a class="index-row" href="how.html"><span class="ix-obj">Watch</span><span class="ix-ttl">How it works</span><span class="ix-desc">Type a phrase and step through ELIZA&rsquo;s rules, from keywords to reply.</span></a>
+        <a class="index-row" href="try.html"><span class="ix-obj">Talk</span><span class="ix-ttl">Try ELIZA</span><span class="ix-desc">A faithful re-creation that runs the genuine 1966 script in your browser.</span></a>
+      </div>`)}
     </section>
 
     <div class="rule">FROM ITS CODE TO ITS IMPACT ON TECHNOCULTURE</div>

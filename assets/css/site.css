@@ -353,6 +353,15 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .fanfold-cmd .cmd-line { white-space: pre-wrap; }
 /* a code listing printed on the fanfold paper (dark ink) */
 .fanfold-listing { font-family: var(--mono); font-size: 0.72rem; line-height: 1.5; color: #2c2318; white-space: pre; overflow-x: auto; margin: 0; }
+/* a directory-style index of sections on the fanfold paper (replaces the card grid) */
+.index-list { margin-top: 0.2rem; }
+.content a.index-row { border-bottom: 0; }
+.index-row { display: block; padding: 1rem 0; border-top: 1px dashed rgba(20,13,9,0.2); text-decoration: none; }
+.index-row:first-child { border-top: 0; padding-top: 0.3rem; }
+.index-row .ix-obj { display: block; font-family: var(--mono); font-size: 0.6rem; letter-spacing: 1.2px; text-transform: uppercase; color: #6b5942; margin-bottom: 0.2rem; }
+.index-row .ix-ttl { font-family: var(--mono); font-weight: 700; font-size: 1.02rem; color: #221a12; }
+.index-row .ix-desc { display: block; font-family: var(--serif); font-size: 0.95rem; line-height: 1.5; color: #2c2318; margin-top: 0.25rem; max-width: 72ch; }
+.index-row:hover .ix-ttl { text-decoration: underline; text-underline-offset: 2px; }
 
 /* TEAM-ELIZA as a vertical line-printer listing on the fanfold paper */
 .team-row { display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem 0; border-top: 1px dashed rgba(20,13,9,0.2); }
