@@ -211,7 +211,7 @@ function fanfold(cmd, inner, opts) {
   if (opts.age && opts.age !== 'clean') cls.push(opts.age);                 // aged | damaged
   if (opts.sprockets === false) cls.push('no-sprockets');
   else if (opts.sprockets === 'torn') cls.push('torn');
-  if (opts.stain) { cls.push('coffee'); if (typeof opts.stain === 'string' && /^coffee-/.test(opts.stain)) cls.push(opts.stain); } // coffee | coffee-small | coffee-large
+  if (opts.stain) { cls.push('coffee'); if (typeof opts.stain === 'string' && /^coffee-/.test(opts.stain)) cls.push(opts.stain); if (opts.stainPos) cls.push('coffee-' + opts.stainPos); } // size: coffee-small|large; pos: stainPos 'tl'|'tr'|'bl'|'br'
   if (opts.edge && opts.edge !== 'plain') cls.push(opts.edge);             // burned | ripped
   const lines = arr => arr.map(l => `<div class="cmd-line">${l}</div>`).join('');
   // an empty/absent cmd makes a plain paper plate (for a figure, image or diagram)
@@ -652,7 +652,7 @@ write('people.html', page({
           <div class="team-photo${photo ? '' : ' empty'}">${photo ? `<img src="assets/images/${photo}" alt="${n}" loading="lazy">` : '<span>[ PHOTO ]</span>'}</div>
           <div class="team-info"><p class="name">${n}</p><p class="role">${r}</p><p class="bio">${b}</p></div>
         </div>`).join('\n        ')}
-        </div>`)}
+        </div>`, { stain: 'coffee', stainPos: 'br', overlay: '<img src="assets/images/doodle-notes.png" alt="" style="position:absolute;top:1rem;right:2.6rem;width:118px;mix-blend-mode:multiply">' })}
       <div class="rule">AFFILIATIONS</div>
       ${fanfold('LISTF AFFIL *', `<div class="logos">
           <a class="logo" href="https://www.sussex.ac.uk" target="_blank" rel="noopener"><img src="assets/images/sussex.jpg" alt="University of Sussex" loading="lazy"></a>

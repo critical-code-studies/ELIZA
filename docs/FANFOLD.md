@@ -38,6 +38,7 @@ const html = fanfold('LISTF AFFIL *', '<div class="logos">…</div>');
 | `age` | `clean` `aged` `damaged` | `clean` | paper condition: foxing, yellowing, blotches |
 | `sprockets` | `true` `false` `'torn'` | `true` | feed holes on; off (straight edge); or `'torn'` (holes ripped off, ragged edge) |
 | `stain` | `false` `'coffee'` `'coffee-small'` `'coffee-large'` | `false` | a coffee-ring stain (`coffee` = medium) |
+| `stainPos` | `'tl'` `'tr'` `'bl'` `'br'` | `'tr'` | where the stain sits (corner) |
 | `edge` | `plain` `burned` `ripped` | `plain` | scorched edges, or a torn-off bottom |
 | `banner` | a word, or pre-rendered ASCII | (none) | ASCII title at the top of the plate |
 | `overlay` | HTML/SVG string | (none) | a free layer over the plate for doodles, arrows, flowcharts |
