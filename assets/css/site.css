@@ -348,6 +348,20 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .fanfold-cmd { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.5px; color: #3a2f24; margin-bottom: 1.4rem; }
 .fanfold-cmd .cmd-line { white-space: pre-wrap; }
 .fanfold-foot { margin-top: 1.3rem; margin-bottom: 0; }
+/* optional ASCII banner at the top of a plate */
+.ff-banner { font-family: var(--mono); font-size: 0.62rem; line-height: 1.15; color: #2c2318; margin: 0 0 1rem; white-space: pre; overflow-x: auto; }
+/* slot for hand-drawn overlays: doodles, arrows, flowcharts (supply your own SVG) */
+.ff-overlay { position: absolute; inset: 0; pointer-events: none; z-index: 3; }
+.ff-overlay svg, .ff-overlay img { position: absolute; }
+/* --- aesthetic variants (opts.age / sprockets / stain / edge) --- */
+.fanfold.aged { background-color: #d3c6a8; background-image: radial-gradient(rgba(120,90,40,0.05) 1px, transparent 1.4px); background-size: 7px 7px; }
+.fanfold.damaged { background-color: #cabd99; background-image: radial-gradient(circle at 18% 84%, rgba(90,55,20,0.18), transparent 22%), radial-gradient(circle at 92% 12%, rgba(90,55,20,0.13), transparent 18%), radial-gradient(rgba(110,80,35,0.06) 1px, transparent 1.4px); background-size: auto, auto, 6px 6px; color: #3a3020; }
+.fanfold.no-sprockets, .fanfold.torn { padding-left: 1.7rem; padding-right: 1.7rem; }
+.fanfold.no-sprockets::before, .fanfold.no-sprockets::after, .fanfold.torn::before, .fanfold.torn::after { display: none; }
+.fanfold.torn { clip-path: polygon(0% 0%, 100% 0%, 99% 7%, 100% 14%, 98.5% 21%, 100% 28%, 99% 35%, 100% 42%, 98.5% 49%, 100% 56%, 99% 63%, 100% 70%, 98.5% 77%, 100% 84%, 99% 91%, 100% 98%, 100% 100%, 0% 100%, 1% 91%, 0% 84%, 1.5% 77%, 0% 70%, 1% 63%, 0% 56%, 1.5% 49%, 0% 42%, 1% 35%, 0% 28%, 1.5% 21%, 0% 14%, 1% 7%); }
+.fanfold.ripped { clip-path: polygon(0 0, 100% 0, 100% 95%, 96% 99%, 92% 95%, 88% 99%, 84% 95%, 80% 99%, 76% 95%, 72% 99%, 68% 95%, 64% 99%, 60% 95%, 56% 99%, 52% 95%, 48% 99%, 44% 95%, 40% 99%, 36% 95%, 32% 99%, 28% 95%, 24% 99%, 20% 95%, 16% 99%, 12% 95%, 8% 99%, 4% 95%, 0 99%); }
+.fanfold.coffee { background-image: radial-gradient(circle at 84% 24%, transparent 24px, rgba(86,48,18,0.16) 25px 29px, transparent 30px), radial-gradient(circle at 84% 24%, rgba(120,72,30,0.06) 0 29px, transparent 30px); background-repeat: no-repeat; }
+.fanfold.burned { box-shadow: inset 0 0 26px rgba(38,16,4,0.55), inset 0 0 72px rgba(38,16,4,0.22), 0 14px 38px rgba(0,0,0,0.5); }
 /* a code listing printed on the fanfold paper (dark ink) */
 .fanfold-listing { font-family: var(--mono); font-size: 0.72rem; line-height: 1.5; color: #2c2318; white-space: pre; overflow-x: auto; margin: 0; }
 /* a directory-style index of sections on the fanfold paper (replaces the card grid) */

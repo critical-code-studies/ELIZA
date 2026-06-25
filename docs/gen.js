@@ -173,18 +173,49 @@ function fanSession(cmds, system) {
   }
 }
 
+function fanEsc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
+
+// banner: a short word becomes a boxed ASCII title; a multi-line string is used
+// verbatim, so you can paste figlet output or image-to-ASCII from an external
+// tool (jp2a, image-to-ascii, etc.) and it lands at the top of the plate.
+function fanBanner(text) {
+  if (!text) return '';
+  const raw = String(text);
+  let art;
+  if (raw.indexOf('\n') !== -1) {
+    art = fanEsc(raw.replace(/\s+$/, ''));
+  } else {
+    const t = raw.toUpperCase().split('').join(' ');
+    const bar = '+' + '-'.repeat(t.length + 4) + '+';
+    art = fanEsc(bar + '\n|  ' + t + '  |\n' + bar);
+  }
+  return `<pre class="ff-banner" aria-hidden="true">${art}</pre>`;
+}
+
 // reusable fanfold (continuous-form) plate, printed on archival paper with
-// tractor-feed holes (see .fanfold in site.css). `cmd` is a command string the
-// chosen `system` shapes into a session (CTSS W/R, ITS, UNIX, PDP1, NONE), or an
-// array of lines used verbatim (you author the whole transcript). Default CTSS.
-function fanfold(cmd, inner, system) {
-  system = (system || 'CTSS').toUpperCase();
+// tractor-feed holes (see .fanfold in site.css). See docs/FANFOLD.md for the guide.
+//   cmd   command string the `opts.system` shapes into a session (CTSS W/R, ITS,
+//         UNIX, PDP1, NONE), OR an array of lines used verbatim.
+//   opts  string (shorthand for {system}) or object:
+//         { system, age:'clean|aged|damaged', sprockets:true|false|'torn',
+//           stain:'coffee', edge:'burned|ripped', banner:'WORD'|ascii, overlay:html }
+function fanfold(cmd, inner, opts) {
+  opts = (typeof opts === 'string') ? { system: opts } : (opts || {});
+  const system = (opts.system || 'CTSS').toUpperCase();
+  const cls = ['fanfold'];
+  if (opts.age && opts.age !== 'clean') cls.push(opts.age);                 // aged | damaged
+  if (opts.sprockets === false) cls.push('no-sprockets');
+  else if (opts.sprockets === 'torn') cls.push('torn');
+  if (opts.stain) cls.push(opts.stain === true ? 'coffee' : opts.stain);    // coffee
+  if (opts.edge && opts.edge !== 'plain') cls.push(opts.edge);             // burned | ripped
   const verbatim = Array.isArray(cmd);
   const { head, foot } = verbatim ? { head: cmd, foot: [] } : fanSession([cmd], system);
   const lines = arr => arr.map(l => `<div class="cmd-line">${l}</div>`).join('');
+  const banner = fanBanner(opts.banner);
   const footHtml = foot.length ? `\n        <div class="fanfold-cmd fanfold-foot">${lines(foot)}</div>` : '';
-  return `<div class="fanfold">
-        <div class="fanfold-cmd">${lines(head)}</div>
+  const overlay = opts.overlay ? `\n        <div class="ff-overlay" aria-hidden="true">${opts.overlay}</div>` : '';
+  return `<div class="${cls.join(' ')}">${overlay}
+        ${banner}<div class="fanfold-cmd">${lines(head)}</div>
 ${inner}${footHtml}
       </div>`;
 }
