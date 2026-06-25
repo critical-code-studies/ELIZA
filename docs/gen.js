@@ -404,15 +404,10 @@ const homeBody = `
         <div class="book-promo-text">
           <span class="kicker">MIT Press &middot; Software Studies</span>
           <h2>Inventing ELIZA</h2>
-          <p>How the First Chatbot Shaped the Future of AI. The story of how the lost source was recovered, and what a close reading reveals about the program and the politics it still carries. Written by the full project team.</p>
+          <p>How the First Chatbot Shaped the Future of AI. The story of how the lost source was recovered, and what a close reading reveals about the program and the politics it still carries.</p>
           <p><a href="https://mitpress.mit.edu/9780262052481/inventing-eliza/">Order from MIT Press &rsaquo;</a> &nbsp; <a href="book.html">About the book &rsaquo;</a></p>
         </div>
       </div>
-    </section>
-
-    <section class="block callout">
-      <span class="kicker">Hidden in the machine</span>
-      <p>Somewhere on this site the DOCTOR is still listening. If you find her, she will answer in the words of the genuine 1966 script. Nothing you say leaves your browser.</p>
     </section>
 `;
 
