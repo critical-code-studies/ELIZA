@@ -21,9 +21,12 @@
 
     var egs = el('div', 'trace-egs');
     egs.appendChild(el('span', 'trace-egs-lab', 'try:'));
-    ['Men are all alike.', 'You are not very aggressive but I think you don\'t want me to notice that.', 'I am unhappy.', 'My mother hates me.', 'Computers worry me.'].forEach(function (x) {
-      var b = el('button', 'eg', esc(x)); b.addEventListener('click', function () { input.value = x; run(); }); egs.appendChild(b);
-    });
+    var sel = el('select', 'eg-select');
+    sel.innerHTML = '<option value="">an example&hellip;</option>' +
+      ['Men are all alike.', 'You are not very aggressive but I think you don\'t want me to notice that.', 'I am unhappy.', 'My mother hates me.', 'Computers worry me.']
+        .map(function (x) { return '<option value="' + escAttr(x) + '">' + esc(x) + '</option>'; }).join('');
+    sel.addEventListener('change', function () { if (sel.value) { input.value = sel.value; run(); } });
+    egs.appendChild(sel);
     app.appendChild(egs);
 
     var playBtn = el('button', 'btn play', 'Play the 1966 conversation');
