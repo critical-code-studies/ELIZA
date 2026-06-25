@@ -19,15 +19,11 @@
     var runBtn = el('button', 'btn', 'Trace it');
     var resetBtn = el('button', 'btn ghost', '↻ Reset');
 
-    var egs = el('div', 'trace-egs');
-    egs.appendChild(el('span', 'trace-egs-lab', 'try:'));
     var sel = el('select', 'eg-select');
-    sel.innerHTML = '<option value="">an example&hellip;</option>' +
+    sel.innerHTML = '<option value="">try an example&hellip;</option>' +
       ['Men are all alike.', 'You are not very aggressive but I think you don\'t want me to notice that.', 'I am unhappy.', 'My mother hates me.', 'Computers worry me.']
         .map(function (x) { return '<option value="' + escAttr(x) + '">' + esc(x) + '</option>'; }).join('');
     sel.addEventListener('change', function () { if (sel.value) { input.value = sel.value; run(); } });
-    egs.appendChild(sel);
-    app.appendChild(egs);
 
     var playBtn = el('button', 'btn play', 'Play the 1966 conversation');
 
@@ -36,6 +32,7 @@
     // the typing input lives inside the demo: type here and Trace it
     var kwEl = el('span', 'ctx-kw');
     ctx.appendChild(input);
+    ctx.appendChild(sel);
     ctx.appendChild(runBtn);
     ctx.appendChild(resetBtn);
     ctx.appendChild(kwEl);
