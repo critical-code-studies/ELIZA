@@ -45,7 +45,7 @@ function nav(depth) {
         <div class="nav-group">
           <button class="nav-top" aria-expanded="false">About <span class="caret" aria-hidden="true">&#9662;</span></button>
           <div class="nav-menu">
-            <a href="${p}about.html">About</a><a href="${p}bibliography.html">Bibliography</a><a href="${p}links.html">Links</a>
+            <a href="${p}about.html">About</a><a href="${p}bibliography.html">Bibliography</a><a href="${p}links.html">Resources</a>
           </div>
         </div>
       </nav>`;
@@ -666,10 +666,10 @@ write('book.html', page({
 // LINKS
 // ---------------------------------------------------------------------------
 write('links.html', page({
-  title: 'Links', desc: 'Related projects and resources on ELIZA and Joseph Weizenbaum.',
+  title: 'Resources', desc: 'Related projects and resources on ELIZA and Joseph Weizenbaum.',
   body: `
-      <span class="kicker">Links</span>
-      <h1 class="page">Links</h1>
+      <span class="kicker">Resources</span>
+      <h1 class="page">Resources</h1>
       <ul class="links">
         <li><a href="https://sites.google.com/view/elizagen-org/About">ELIZAGEN</a><span class="meta"> &mdash; tracing the legacy of Weizenbaum&rsquo;s ELIZA (DOCTOR) program, edited by Jeff Shrager.</span></li>
         <li><a href="https://github.com/anthay/ELIZA">anthay/ELIZA</a><span class="meta"> &mdash; Anthony Hay&rsquo;s historically exact C++ recreation, with scripts.</span></li>
