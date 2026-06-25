@@ -6,9 +6,11 @@
 (function () {
   function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
 
+  var GREETING = 'HOW DO YOU DO.  PLEASE TELL ME YOUR PROBLEM';
+
   function buildTerm(container, opts) {
     opts = opts || {};
-    var engine = window.ELIZA.make();
+    var session = window.ElizaHay.make();
     var term = el('div', 'eliza-term');
 
     var bar = el('div', 'bar');
@@ -40,7 +42,7 @@
     function usr(text) { add('usr', text); }
     function sys(text) { add('sys', text); }
 
-    bot(engine.greeting());
+    bot(GREETING);
 
     function handle(raw) {
       var text = raw.trim();
@@ -48,14 +50,16 @@
       usr(text);
       var low = text.toLowerCase();
       if (low === '*help') { sys('commands: *help  *clear  *key  (everything else is spoken to the DOCTOR)'); return; }
-      if (low === '*clear') { log.innerHTML = ''; bot(engine.greeting()); return; }
-      if (low === '*key') { sys('keywords: ' + engine.keywords().join(' ')); return; }
-      bot(engine.reply(text));
+      if (low === '*clear') { log.innerHTML = ''; bot(GREETING); return; }
+      if (low === '*key') { sys('keywords: ' + window.ElizaHay.dictionary().map(function (k) { return k.keyword; }).join(' ')); return; }
+      session.trace(text).then(function (r) { bot(r.output); });
     }
 
     input.addEventListener('keydown', function (e) {
       if (e.key === 'Enter') { var v = input.value; input.value = ''; handle(v); }
     });
+    // mobile: a tap anywhere in the terminal focuses the input and opens the keyboard
+    term.addEventListener('click', function () { try { input.focus(); } catch (e) {} });
     setTimeout(function () { try { input.focus(); } catch (e) {} }, 50);
     return { focus: function () { input.focus(); } };
   }
@@ -63,7 +67,9 @@
   // ---- mount the Try ELIZA terminal, if present ----
   function initTryPage() {
     var mount = document.getElementById('try-eliza-mount');
-    if (mount && window.ELIZA) buildTerm(mount, {});
+    if (!mount) return;
+    if (window.ElizaHay) buildTerm(mount, {});
+    else setTimeout(initTryPage, 40);   // wait for the deferred eliza-hay.js to load
   }
 
   // ---- the easter egg: type "eliza" anywhere to summon ELIZA (Anthony Hay's) ----

@@ -41,7 +41,8 @@ const html = fanfold('LISTF AFFIL *', '<div class="logos">…</div>');
 | `stainPos` | `'tl'` `'tr'` `'bl'` `'br'` | `'tr'` | where the stain sits (corner) |
 | `edge` | `plain` `burned` `ripped` | `plain` | scorched edges, or a torn-off bottom |
 | `banner` | a word, or pre-rendered ASCII | (none) | ASCII title at the top of the plate |
-| `overlay` | HTML/SVG string | (none) | a free layer over the plate for doodles, arrows, flowcharts |
+| `overlay` | HTML/SVG string | (none) | a free layer *above* the text (doodles, arrows, a stain over a photo) |
+| `underlay` | HTML/SVG string | (none) | a free layer *behind* the text (a faint sketch the text reads on top of) |
 
 `opts` may also be just a system string: `fanfold('PRINT DOCTOR', body, 'CTSS')`.
 

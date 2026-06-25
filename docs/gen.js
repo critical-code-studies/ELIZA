@@ -223,8 +223,9 @@ function fanfold(cmd, inner, opts) {
     if (foot.length) footHtml = `\n        <div class="fanfold-cmd fanfold-foot">${lines(foot)}</div>`;
   }
   const banner = fanBanner(opts.banner);
-  const overlay = opts.overlay ? `\n        <div class="ff-overlay" aria-hidden="true">${opts.overlay}</div>` : '';
-  return `<div class="${cls.join(' ')}">${overlay}
+  const overlay = opts.overlay ? `\n        <div class="ff-overlay" aria-hidden="true">${opts.overlay}</div>` : '';   // above the text
+  const underlay = opts.underlay ? `\n        <div class="ff-underlay" aria-hidden="true">${opts.underlay}</div>` : ''; // behind the text
+  return `<div class="${cls.join(' ')}">${underlay}${overlay}
         ${banner}${headHtml}
 ${inner}${footHtml}
       </div>`;
@@ -606,13 +607,14 @@ write('versions.html', page({
 // ---------------------------------------------------------------------------
 write('try.html', page({
   title: 'Try ELIZA', desc: 'Talk to a faithful re-creation of the 1966 ELIZA, running the genuine DOCTOR script in your browser.',
+  scripts: ['eliza-hay.js'],
   body: `
       <span class="kicker">Try ELIZA</span>
       <h1 class="page">Talk to ELIZA</h1>
-      <div class="lede"><p>This is Anthony Hay&rsquo;s faithful recreation of the original 1966 MAD-SLIP ELIZA. Type a sentence and press enter; it runs entirely in your browser and nothing you type is sent anywhere.</p></div>
-      <p>It reproduces the original program&rsquo;s behaviour exactly, down to the bugs, with the original asterisk commands (type <code>*help</code>), the CACM replay, and the ability to load custom scripts.</p>
-      <div class="eliza-embed"><iframe src="https://anthay.github.io/eliza.html" title="Anthony Hay&rsquo;s ELIZA" loading="lazy"></iframe></div>
-      <p class="post-meta" style="margin-top:0.8rem">Source: <a href="https://github.com/anthay/ELIZA">github.com/anthay/ELIZA</a>. Or open it <a href="https://anthay.github.io/eliza.html">full screen</a>.</p>
+      <div class="lede"><p>A faithful re-creation of the 1966 ELIZA, running the genuine DOCTOR script in your browser. Type a sentence and press enter; nothing you type leaves your browser.</p></div>
+      <p>The replies come from Anthony Hay&rsquo;s exact re-creation of the engine. A few of the original asterisk commands work, type <code>*help</code>. For the full version, with the CACM replay and custom scripts, open Hay&rsquo;s ELIZA <a href="https://anthay.github.io/eliza.html">full screen</a>.</p>
+      <div id="try-eliza-mount"></div>
+      <p class="post-meta" style="margin-top:0.8rem">Engine: Anthony Hay&rsquo;s CC0 re-creation (<a href="https://github.com/anthay/ELIZA">github.com/anthay/ELIZA</a>), the same one behind the <a href="how.html">step-by-step demo</a>.</p>
 `}));
 
 // ---------------------------------------------------------------------------
@@ -652,7 +654,7 @@ write('people.html', page({
           <div class="team-photo${photo ? '' : ' empty'}">${photo ? `<img src="assets/images/${photo}" alt="${n}" loading="lazy">` : '<span>[ PHOTO ]</span>'}</div>
           <div class="team-info"><p class="name">${n}</p><p class="role">${r}</p><p class="bio">${b}</p></div>
         </div>`).join('\n        ')}
-        </div>`, { stain: 'coffee', stainPos: 'tl', overlay: '<img src="assets/images/doodle-notes.png" alt="" style="position:absolute;top:1.2rem;right:2.4rem;width:300px;mix-blend-mode:multiply;filter:contrast(1.45) brightness(1.18)">' })}
+        </div>`, { stain: 'coffee', stainPos: 'tr' })}
       <div class="rule">AFFILIATIONS</div>
       ${fanfold('LISTF AFFIL *', `<div class="logos">
           <a class="logo" href="https://www.sussex.ac.uk" target="_blank" rel="noopener"><img src="assets/images/sussex.jpg" alt="University of Sussex" loading="lazy"></a>

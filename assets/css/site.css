@@ -341,7 +341,7 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
    command line, with the logos set in mix-blend-mode: multiply so their white
    backgrounds melt into the paper and only the marks remain. */
 /* reusable fanfold (continuous-form) plate: archival paper with tractor-feed holes */
-.fanfold { position: relative; background: var(--paper); border-radius: 3px; padding: 1.3rem 2.9rem 1.7rem; margin-top: 1.6rem; box-shadow: 0 14px 38px rgba(0,0,0,0.5); }
+.fanfold { position: relative; isolation: isolate; background: var(--paper); border-radius: 3px; padding: 1.3rem 2.9rem 1.7rem; margin-top: 1.6rem; box-shadow: 0 14px 38px rgba(0,0,0,0.5); }
 .fanfold::before, .fanfold::after, .listing::before, .listing::after { content: ""; position: absolute; top: 0; bottom: 0; width: 22px; background-image: radial-gradient(circle at center, var(--bg) 0 3.4px, rgba(20,13,9,0.18) 3.4px 4.3px, transparent 4.6px); background-size: 22px 26px; background-repeat: repeat-y; background-position: center 11px; }
 .fanfold::before, .listing::before { left: 0; border-right: 1px dashed rgba(20,13,9,0.22); }
 .fanfold::after, .listing::after { right: 0; border-left: 1px dashed rgba(20,13,9,0.22); }
@@ -352,6 +352,8 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .ff-banner { font-family: var(--mono); font-size: 0.62rem; line-height: 1.15; color: #2c2318; margin: 0 0 1rem; white-space: pre; overflow-x: auto; }
 /* slot for hand-drawn overlays: doodles, arrows, flowcharts (supply your own SVG) */
 .ff-overlay { position: absolute; inset: 0; pointer-events: none; z-index: 3; }
+.ff-underlay { position: absolute; inset: 0; pointer-events: none; z-index: -1; }
+.ff-underlay img, .ff-underlay svg { position: absolute; }
 .ff-overlay svg, .ff-overlay img { position: absolute; }
 /* --- aesthetic variants (opts.age / sprockets / stain / edge) --- */
 .fanfold.aged { background-color: #d3c6a8; background-image: radial-gradient(rgba(120,90,40,0.05) 1px, transparent 1.4px); background-size: 7px 7px; }
