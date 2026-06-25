@@ -1,4 +1,4 @@
-# fanfold — a reusable line-printer plate
+# fanfold, a reusable line-printer plate
 
 `fanfold()` renders a block of content as a sheet of continuous-form (fanfold)
 line-printer paper: warm parchment, tractor-feed sprocket holes, and a typed
@@ -22,11 +22,11 @@ const html = fanfold('LISTF AFFIL *', '<div class="logos">…</div>');
 
 `fanfold(cmd, inner, opts)`:
 
-- **`cmd`** — a command *string* that `opts.system` shapes into a session
+- **`cmd`**: a command *string* that `opts.system` shapes into a session
   (e.g. CTSS adds the `W`/`R` supervisor lines), **or** an *array of lines* used
   verbatim when you want to author the whole transcript yourself.
-- **`inner`** — the HTML that goes on the paper (a listing, a `<pre>`, prose…).
-- **`opts`** — a system string (shorthand) or an options object (see below).
+- **`inner`**: the HTML that goes on the paper (a listing, a `<pre>`, prose…).
+- **`opts`**: a system string (shorthand) or an options object (see below).
 
 ---
 
@@ -39,8 +39,8 @@ const html = fanfold('LISTF AFFIL *', '<div class="logos">…</div>');
 | `sprockets` | `true` `false` `'torn'` | `true` | feed holes on; off (straight edge); or `'torn'` (holes ripped off, ragged edge) |
 | `stain` | `false` `'coffee'` | `false` | a coffee-ring stain |
 | `edge` | `plain` `burned` `ripped` | `plain` | scorched edges, or a torn-off bottom |
-| `banner` | a word, or pre-rendered ASCII | — | ASCII title at the top of the plate |
-| `overlay` | HTML/SVG string | — | a free layer over the plate for doodles, arrows, flowcharts |
+| `banner` | a word, or pre-rendered ASCII | (none) | ASCII title at the top of the plate |
+| `overlay` | HTML/SVG string | (none) | a free layer over the plate for doodles, arrows, flowcharts |
 
 `opts` may also be just a system string: `fanfold('PRINT DOCTOR', body, 'CTSS')`.
 
@@ -56,7 +56,7 @@ fanfold('TEAM', body, 'NONE')           // TEAM   (verbatim, no decoration)
 
 CTSS times are derived deterministically from the command text, so a build is
 reproducible (no `Math.random`). To hand-author a multi-step session (e.g. a
-command that fails, then a fallback), pass an **array** — it is used verbatim:
+command that fails, then a fallback), pass an **array**: it is used verbatim:
 
 ```js
 fanfold(['R ELIZA', 'W 1631.2', 'ELIZA NOT FOUND.', 'R 1631.2+.04', 'LISTF TEAM *'], body)
