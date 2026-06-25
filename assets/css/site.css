@@ -314,9 +314,10 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .links .meta { color: var(--ink-dim); font-size: 0.9rem; }
 
 /* callout */
-.callout { border: 1px solid var(--line-soft); border-left: 3px solid var(--lamp-amber); background: linear-gradient(110deg, rgba(240,168,58,0.07), rgba(240,168,58,0.01)); padding: 1.8rem 2rem; border-radius: 3px; }
+/* ruled aside (no box): a left rule + small label, instead of a card */
+.callout { border-left: 2px solid var(--lamp-amber); background: none; padding: 0.1rem 0 0.1rem 1.4rem; border-radius: 0; margin: 1.8rem 0; }
 .callout .kicker { color: var(--lamp-amber); }
-.callout p { margin: 0; }
+.callout p { margin: 0; max-width: 70ch; }
 .callout p + p { margin-top: 0.8rem; }
 
 /* pull quote */
