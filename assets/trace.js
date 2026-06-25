@@ -12,14 +12,12 @@
     function escAttr(s) { return esc(s).replace(/"/g, '&quot;'); }
     function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
 
-    var bar = el('div', 'trace-bar');
     var input = el('input', 'trace-input');
     input.type = 'text'; input.value = 'You are like my father in some ways.';
     input.setAttribute('aria-label', 'Phrase to trace');
     input.setAttribute('autocomplete', 'off'); input.setAttribute('spellcheck', 'false');
     var runBtn = el('button', 'btn', 'Trace it');
     var resetBtn = el('button', 'btn ghost', '↻ Reset');
-    bar.appendChild(input); bar.appendChild(runBtn); bar.appendChild(resetBtn); app.appendChild(bar);
 
     var egs = el('div', 'trace-egs');
     egs.appendChild(el('span', 'trace-egs-lab', 'try:'));
@@ -32,6 +30,12 @@
 
     var demo = el('div', 'demo');
     var ctx = el('div', 'demo-ctx'); demo.appendChild(ctx);
+    // the typing input lives inside the demo: type here and Trace it
+    var kwEl = el('span', 'ctx-kw');
+    ctx.appendChild(input);
+    ctx.appendChild(runBtn);
+    ctx.appendChild(resetBtn);
+    ctx.appendChild(kwEl);
     var memEl = el('div', 'demo-mem'); demo.appendChild(memEl);
     var stageEl = el('div', 'demo-stage'); demo.appendChild(stageEl);
     var prog = el('div', 'demo-prog'); demo.appendChild(prog);
@@ -212,13 +216,9 @@
     }
 
     function setCtx() {
-      ctx.innerHTML = '';
-      ctx.appendChild(el('span', 'lab', 'Input'));
-      ctx.appendChild(el('span', 'val', esc(T.input)));
-      if (T.keystack && T.keystack.length) {
-        ctx.appendChild(el('span', 'lab', 'Keyword'));
-        ctx.appendChild(el('span', 'val key', esc(T.keystack[0].word)));
-      }
+      if (document.activeElement !== input) input.value = T.input;
+      kwEl.innerHTML = (T.keystack && T.keystack.length)
+        ? '<span class="lab">Keyword</span> <span class="val key">' + esc(T.keystack[0].word) + '</span>' : '';
       // full-width memory queue bar under the input line, numbered as ELIZA stores them
       memEl.innerHTML = '';
       // left: the memory queue (four slots by default; grows if the queue does)
@@ -242,7 +242,6 @@
       left.appendChild(ol);
       // right: the conversation so far, in green, scrolling up
       var right = el('div', 'mem-right');
-      right.appendChild(el('span', 'mlab', 'Conversation'));
       var convo = el('div', 'mem-convo');
       transcript.forEach(function (t) { convo.appendChild(el('div', 'cline ' + t.who, esc(t.text))); });
       right.appendChild(convo);
