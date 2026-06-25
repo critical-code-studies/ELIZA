@@ -81,9 +81,10 @@ a:hover { color: var(--bright); text-shadow: var(--glow); }
   padding: 12px 0; gap: 1rem; position: relative;
 }
 .brand { display: flex; align-items: center; gap: 0.7rem; border: 0 !important; }
-.brand svg { width: 30px; height: 30px; }
+.brand > svg { width: 30px; height: 30px; }
 .brand-block { display: flex; flex-direction: column; align-items: flex-start; gap: 0.32rem; line-height: 1.1; }
-.brand-text { font-family: var(--mono); font-weight: 800; letter-spacing: 3px; color: var(--bright); font-size: 1.05rem; }
+.brand-text { font-family: var(--mono); font-weight: 800; letter-spacing: 3px; color: var(--bright); font-size: 1.05rem; display: flex; }
+.brand-wordmark { display: block; height: 0.92rem; width: auto; color: var(--bright); }
 .brand-tagline { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 1px; color: var(--ink-dim); text-transform: uppercase; }
 .nav-toggle {
   display: inline-flex; align-items: center; gap: 0.5rem;
@@ -144,11 +145,11 @@ a:hover { color: var(--bright); text-shadow: var(--glow); }
 .hero-paper { position: absolute; inset: 0; z-index: 0; background: var(--paper); overflow: hidden; }
 /* the sprocket holes live on the scrolling layer, so the whole sheet feeds up with the code */
 .hero-source {
-  font-family: var(--mono); font-size: 0.7rem; line-height: 1.5; color: rgba(20,13,9,0.035);
+  font-family: var(--mono); font-size: 0.7rem; line-height: 1.5; color: rgba(20,13,9,0.022);
   white-space: pre; margin: 0; padding: 1.6rem 2.9rem;
-  background-image: radial-gradient(circle at center, var(--bg) 0 3.4px, rgba(20,13,9,0.08) 3.4px 4.3px, transparent 4.6px), radial-gradient(circle at center, var(--bg) 0 3.4px, rgba(20,13,9,0.08) 3.4px 4.3px, transparent 4.6px);
+  background-image: radial-gradient(circle at center, var(--bg) 0 3.4px, rgba(20,13,9,0.045) 3.4px 4.3px, transparent 4.6px), radial-gradient(circle at center, var(--bg) 0 3.4px, rgba(20,13,9,0.045) 3.4px 4.3px, transparent 4.6px);
   background-size: 22px 26px, 22px 26px; background-repeat: repeat-y, repeat-y; background-position: 0 0, 100% 0;
-  animation: heroScroll 300s linear infinite;
+  animation: heroScroll 900s linear infinite;
 }
 @keyframes heroScroll { from { transform: translateY(0); } to { transform: translateY(-50%); } }
 @media (prefers-reduced-motion: reduce) { .hero-source { animation: none; } }
@@ -207,9 +208,9 @@ a:hover { color: var(--bright); text-shadow: var(--glow); }
           mask-image: linear-gradient(to bottom, transparent 0, #000 2.4em, #000 100%);
 }
 .tt-line { margin: 0.1rem 0; white-space: pre-wrap; }
-.tt-line.you { color: #4fbf7a; }
-.tt-line.sh  { color: #7bf59b; text-transform: uppercase; text-shadow: 0 0 5px rgba(95,240,138,0.4); }
-.tt-cursor { display: inline-block; width: 0.5em; height: 1em; vertical-align: -0.12em; background: #7bf59b; box-shadow: 0 0 7px rgba(95,240,138,0.7); margin-left: 1px; animation: blink 1.06s steps(1) infinite; }
+.tt-line.you { color: #3f7d59; }
+.tt-line.sh  { color: #57a878; text-transform: uppercase; text-shadow: 0 0 4px rgba(87,168,120,0.25); }
+.tt-cursor { display: inline-block; width: 0.5em; height: 1em; vertical-align: -0.12em; background: #57a878; box-shadow: 0 0 6px rgba(87,168,120,0.5); margin-left: 1px; animation: blink 1.06s steps(1) infinite; }
 
 /* ---------- buttons ---------- */
 .btn {

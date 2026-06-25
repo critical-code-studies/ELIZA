@@ -20,7 +20,7 @@ function nav(depth) {
   return `
       <a class="brand" href="${p}index.html" aria-label="ELIZA home">
         <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 6 H22 L28 12 V26 H4 Z" fill="#d9cfbc"/><g fill="#14161b"><rect x="8" y="13" width="3" height="5" rx="0.8"/><rect x="14" y="13" width="3" height="5" rx="0.8"/></g><rect x="20" y="13" width="3" height="5" rx="0.8" fill="#ef6f44"/><text x="16" y="24" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="4.4" letter-spacing="0.3" fill="#14161b" opacity="0.5">000010</text></svg>
-        <span class="brand-block"><span class="brand-text">ELIZA</span><span class="brand-tagline">Critical Code Studies · MIT · 1966</span></span>
+        <span class="brand-block"><span class="brand-text">${elizaWordmark('brand-wordmark')}</span><span class="brand-tagline">Critical Code Studies · MIT · 1966</span></span>
       </a>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span class="bars" aria-hidden="true">&#9776;</span>&nbsp;Menu</button>
       <nav class="site-nav" id="site-nav">
@@ -263,8 +263,11 @@ const TEAM = [
 const HERO_SRC = fanEsc(fs.readFileSync(path.join(OUT, 'sources', 'ELIZA-1965b.mad'), 'utf8')).replace(/\s+$/, '');
 
 // the ELIZA wordmark, drawn from the Iosevka 800 outlines (closest type to the
-// 7094 line printer). Self-contained vector, so no webfont download.
-const ELIZA_WORDMARK = '<svg class="hero-wordmark" viewBox="0 -735 2500 735" aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1,-1)"><path transform="translate(0 0)" d="M66 0V735H442V630H190V435H385V330H190V105H442V0Z"/><path transform="translate(500 0)" d="M86 0V735H210V105H448V0Z"/><path transform="translate(1000 0)" d="M75 0V105H188V630H75V735H425V630H312V105H425V0Z"/><path transform="translate(1500 0)" d="M58 0V105L300 630H58V735H442V630L200 105H442V0Z"/><path transform="translate(2000 0)" d="M35 0 179 735H321L465 0H339L314 155H186L161 0ZM297 260 260 490Q257 505 254.5 519.5Q252 534 250 549Q248 534 245.5 519.5Q243 505 240 490L203 260Z"/></g></svg>';
+// 7094 line printer). Self-contained vector, so no webfont download. Used both
+// for the hero title and the masthead brand.
+function elizaWordmark(cls) {
+  return '<svg class="' + cls + '" viewBox="0 -735 2500 735" aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1,-1)"><path transform="translate(0 0)" d="M66 0V735H442V630H190V435H385V330H190V105H442V0Z"/><path transform="translate(500 0)" d="M86 0V735H210V105H448V0Z"/><path transform="translate(1000 0)" d="M75 0V105H188V630H75V735H425V630H312V105H425V0Z"/><path transform="translate(1500 0)" d="M58 0V105L300 630H58V735H442V630L200 105H442V0Z"/><path transform="translate(2000 0)" d="M35 0 179 735H321L465 0H339L314 155H186L161 0ZM297 260 260 490Q257 505 254.5 519.5Q252 534 250 549Q248 534 245.5 519.5Q243 505 240 490L203 260Z"/></g></svg>';
+}
 const homeHero = `  <section class="hero hero-desk">
     <div class="hero-paper" aria-hidden="true"><pre class="hero-source">${HERO_SRC}
 ${HERO_SRC}</pre></div>
@@ -272,7 +275,7 @@ ${HERO_SRC}</pre></div>
       <div class="wrap">
        <div class="hero-panel">
         <p class="boot">JOSEPH WEIZENBAUM // 1966<span class="cursor" aria-hidden="true"></span></p>
-        <h1 class="wm">${ELIZA_WORDMARK}<span class="vh">ELIZA</span></h1>
+        <h1 class="wm">${elizaWordmark('hero-wordmark')}<span class="vh">ELIZA</span></h1>
         <p class="sub">The first chatbot</p>
         <p class="tagline">In 1966 Joseph Weizenbaum gave people their first conversation with a machine. In 2021 we found its lost source code. This is a close reading of ELIZA: its program, its DOCTOR script, its many versions, and what it still tells us about artificial intelligence.</p>
         <div class="tt" id="tt-feed" aria-hidden="true"></div>
