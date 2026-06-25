@@ -257,7 +257,7 @@ a:hover { color: var(--bright); text-shadow: var(--glow); }
 
 /* the foreground teletype feed in the hero */
 .tt {
-  margin-top: 1.6rem; font-family: var(--mono); font-size: clamp(0.8rem, 2vw, 0.95rem); line-height: 1.5;
+  margin-top: 1.6rem; font-family: var(--mono); font-size: clamp(0.64rem, 1.5vw, 0.76rem); line-height: 1.5;
   max-width: 60ch; height: 9em; overflow: hidden;
   /* a reading window: older lines fade out as they scroll up past the top edge */
   -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 2.4em, #000 100%);
