@@ -245,8 +245,10 @@ const TEAM = [
 // ---------------------------------------------------------------------------
 // HOME
 // ---------------------------------------------------------------------------
-const homeHero = `  <section class="hero">
-    <canvas id="sourcewall" aria-hidden="true"></canvas>
+// the recovered source, listed faint behind the hero as a sheet of fanfold desk paper
+const HERO_SRC = fanEsc(fs.readFileSync(path.join(OUT, 'sources', 'ELIZA-1965b.mad'), 'utf8')).replace(/\s+$/, '');
+const homeHero = `  <section class="hero hero-desk">
+    <div class="hero-paper" aria-hidden="true"><pre class="hero-source">${HERO_SRC}</pre></div>
     <div class="hero-inner">
       <div class="wrap">
        <div class="hero-panel">
@@ -342,7 +344,7 @@ write('index.html', page({
   title: 'The first chatbot',
   desc: 'A Critical Code Studies reading of ELIZA, Joseph Weizenbaum’s 1966 chatbot, built on the original source recovered from the MIT archive.',
   hero: homeHero, body: homeBody,
-  scripts: ['source-wall.js', 'teletype.js']
+  scripts: ['teletype.js']
 }));
 
 // ---------------------------------------------------------------------------

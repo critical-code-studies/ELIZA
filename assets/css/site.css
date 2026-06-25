@@ -140,7 +140,12 @@ a:hover { color: var(--bright); text-shadow: var(--glow); }
 
 /* ---------- hero: the teletype + lamp console ---------- */
 .hero { position: relative; min-height: 84vh; display: flex; align-items: center; overflow: hidden; border-bottom: 1px solid var(--line-soft); }
-#sourcewall { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.6; }
+/* the hero as a 1960s desk: the recovered source on a sheet of fanfold paper, behind the console panel */
+.hero-paper { position: absolute; inset: 0; z-index: 0; background: var(--paper); overflow: hidden; }
+.hero-paper::before, .hero-paper::after { content: ""; position: absolute; top: 0; bottom: 0; width: 22px; background-image: radial-gradient(circle at center, var(--bg) 0 3.4px, rgba(20,13,9,0.18) 3.4px 4.3px, transparent 4.6px); background-size: 22px 26px; background-repeat: repeat-y; background-position: center 11px; }
+.hero-paper::before { left: 0; border-right: 1px dashed rgba(20,13,9,0.22); }
+.hero-paper::after { right: 0; border-left: 1px dashed rgba(20,13,9,0.22); }
+.hero-source { font-family: var(--mono); font-size: 0.7rem; line-height: 1.5; color: rgba(20,13,9,0.16); white-space: pre; margin: 0; padding: 1.6rem 2.9rem; }
 .hero-inner { position: relative; z-index: 2; padding: 4vh 0; width: 100%; }
 /* the hero content sits in a darkened panel so it reads cleanly over the drifting
    source code; on wider screens it is anchored to the right, leaving the recovered
@@ -671,11 +676,14 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .eliza-term {
   position: relative;
   font-family: var(--mono); font-size: 0.9rem; line-height: 1.5;
-  background: #03140b; border: 1px solid #16321f; border-radius: 5px;
+  background: #03140b; border: 1px solid #16321f; border-radius: 16px;
   margin-top: 1.6rem; display: flex; flex-direction: column; overflow: hidden;
-  color: #5cf08a; box-shadow: inset 0 0 70px rgba(0,0,0,0.7), 0 0 26px rgba(60,210,120,0.08);
+  color: #5cf08a; box-shadow: 0 0 30px rgba(60,210,120,0.10), 0 12px 44px rgba(0,0,0,0.55);
 }
-.eliza-term::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: repeating-linear-gradient(rgba(0,0,0,0) 0 2px, rgba(0,0,0,0.11) 2px 3px); }
+/* CRT scanlines, behind the text */
+.eliza-term::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: repeating-linear-gradient(rgba(0,0,0,0) 0 2px, rgba(0,0,0,0.11) 2px 3px); }
+/* VDU haze: a soft phosphor bloom and curved-screen vignette over the glass */
+.eliza-term::after { content: ""; position: absolute; inset: 0; z-index: 3; pointer-events: none; border-radius: 16px; background: radial-gradient(130% 115% at 50% 42%, rgba(120,245,160,0.05) 0%, transparent 44%, rgba(0,10,4,0.5) 100%); box-shadow: inset 0 0 38px rgba(0,0,0,0.45); }
 .eliza-term .bar { position: relative; z-index: 2; display: flex; align-items: center; gap: 0.5rem; padding: 0.55rem 0.9rem; border-bottom: 1px solid #16321f; background: rgba(60,210,120,0.04); }
 .eliza-term .bar .dot { width: 9px; height: 9px; border-radius: 50%; background: #1f5a38; box-shadow: 0 0 6px rgba(60,210,120,0.4); }
 .eliza-term .bar .dot.a { background: #2f7a4d; box-shadow: 0 0 6px rgba(60,210,120,0.5); }
