@@ -16,14 +16,19 @@ faithful ELIZA in the browser.
 
 ## Aesthetic
 
-The IBM 7094 / CTSS console: console-charcoal background, warm line-printer text,
-a bank of indicator lamps in the 7094 palette (the lamp red is the coral of the
-*Inventing ELIZA* book cover). The person types lower case; ELIZA answers in CAPITALS.
+The IBM 7094 / CTSS console: a steel grey-blue page and header, warm line-printer
+text, and a bank of indicator lamps in the 7094 palette (the lamp red is the coral
+of the *Inventing ELIZA* book cover). The person types lower case; ELIZA answers in
+CAPITALS.
 
-- **Hero wallpaper** (`source-wall.js`) — the recovered ELIZA-1965b.mad source
-  drifting upward like a line-printer listing, load-bearing tokens igniting.
-- **Hero animation** (`teletype.js`) — a simulated teletype types the canonical
-  1966 DOCTOR exchange while a bank of 7094 lamps pulses on each reply.
+- **Hero console** (`console.js`) — the hero panel is a working IBM 7094 console:
+  a beige chassis with a steel face, nameplate, live blinking indicator-register
+  lamps, rocker toggle switches, and a recessed CRT readout. The recovered
+  ELIZA-1965b.mad source lists faintly on a fanfold sheet behind it.
+- **Power down** (`console.js`) — the lit red POWER button runs a 7094 shutdown:
+  the lamps flurry and cut out as a Web Audio synth sings *Daisy Bell*, slowing and
+  deepening like HAL 9000. A WHAT IS THIS? control opens a modal on the 1961 Bell
+  Labs 7094 recording the scene alludes to.
 - **Easter egg** (`term.js`) — type the letters `e‑l‑i‑z‑a` anywhere and the
   DOCTOR wakes in an overlay, running the genuine 1966 script. Esc closes it.
 
@@ -33,10 +38,11 @@ Static HTML/CSS/JS, no framework, no build step. Served by GitHub Pages.
 
 | Page | What it is |
 |------|------------|
-| `index.html` | Home: the argument, the machine, the lamps, the teletype |
+| `index.html` | Home: the argument, the 7094 console, the lamps, the power-down |
 | `overview.html` | What ELIZA was; the system vs. the DOCTOR script |
 | `doctor.html` | The DOCTOR script: how a rule works, the canonical dialogue |
 | `code.html` | The program: MAD-SLIP, the counting mechanism, CHANGE, reconstruction |
+| `how.html` | How it works: type a sentence (or pick an example) and step through ELIZA's processing |
 | `versions.html` | At least five ELIZAs, 1965–1968, and the scripts beyond DOCTOR |
 | `try.html` | A faithful ELIZA running the genuine DOCTOR script in the browser |
 | `people.html` | The eight-person project team |
@@ -44,7 +50,7 @@ Static HTML/CSS/JS, no framework, no build step. Served by GitHub Pages.
 | `book.html` | *Inventing ELIZA* (MIT Press) |
 | `blog.html` + `blog/` | The 11 project blog posts, ported from the Google Site |
 | `bibliography.html` | Selected writings |
-| `about.html`, `links.html` | About and related resources |
+| `about.html`, `links.html` | About, and Resources (related links; nav label is "Resources", file stays `links.html`) |
 
 ## The ELIZA engine
 
