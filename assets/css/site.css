@@ -699,8 +699,6 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .play-row { display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.6rem; padding-top: 1.4rem; border-top: 1px solid var(--line-soft); }
 .play-lab { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-dim); }
 .trace-egs-lab { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-dim); }
-.demo-ctx .eg-select { flex: 0 1 13rem; min-width: 0; background: rgba(0,0,0,0.42); border: 1px solid rgba(89,192,138,0.35); border-radius: 3px; color: var(--ink-dim); font-family: var(--mono); font-size: 0.74rem; padding: 0.42rem 0.5rem; cursor: pointer; }
-.demo-ctx .eg-select:focus { border-color: var(--lamp-green); outline: none; }
 
 /* the machine display: one step at a time in a stable framed "screen", advanced
    with Back / Step controls. No scrolling, no jumpy reveal. */
@@ -708,7 +706,7 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .demo { margin-top: 1.8rem; border: 1px solid rgba(89,192,138,0.42); border-radius: 6px; background: #06210f; overflow: hidden; box-shadow: inset 0 0 70px rgba(0,0,0,0.4), inset 0 0 40px rgba(89,192,138,0.2); }
 .demo-stage { background: linear-gradient(180deg, rgba(89,192,138,0.08), rgba(89,192,138,0)); }
 .demo-ctx { display: flex; flex-wrap: wrap; gap: 0.5rem 0.7rem; align-items: center; padding: 0.7rem 1.2rem; border-bottom: 1px solid var(--line-soft); background: rgba(255,255,255,0.02); }
-.demo-ctx .trace-input { flex: 1 1 12rem; min-width: 0; background: rgba(0,0,0,0.42); border: 1px solid rgba(89,192,138,0.35); border-radius: 3px; color: var(--you); font-family: var(--mono); font-size: 0.9rem; padding: 0.45rem 0.7rem; outline: none; }
+.demo-ctx .trace-input { flex: 1 1 20rem; min-width: 0; background: rgba(0,0,0,0.42); border: 1px solid rgba(89,192,138,0.35); border-radius: 3px; color: var(--you); font-family: var(--mono); font-size: 0.9rem; padding: 0.45rem 0.7rem; outline: none; }
 .demo-ctx .trace-input:focus { border-color: var(--lamp-green); }
 .demo-ctx .btn { padding: 0.42rem 0.85rem; font-size: 0.64rem; }
 .demo-ctx .ctx-kw { display: inline-flex; align-items: baseline; gap: 0.5rem; }

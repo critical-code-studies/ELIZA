@@ -19,11 +19,13 @@
     var runBtn = el('button', 'btn', 'Trace it');
     var resetBtn = el('button', 'btn ghost', '↻ Reset');
 
-    var sel = el('select', 'eg-select');
-    sel.innerHTML = '<option value="">try an example&hellip;</option>' +
-      ['Men are all alike.', 'You are not very aggressive but I think you don\'t want me to notice that.', 'I am unhappy.', 'My mother hates me.', 'Computers worry me.']
-        .map(function (x) { return '<option value="' + escAttr(x) + '">' + esc(x) + '</option>'; }).join('');
-    sel.addEventListener('change', function () { if (sel.value) { input.value = sel.value; run(); } });
+    // one editable combobox: type a sentence, or pick a suggestion from the list
+    var EXAMPLES = ['Men are all alike.', 'You are not very aggressive but I think you don\'t want me to notice that.', 'I am unhappy.', 'My mother hates me.', 'Computers worry me.'];
+    var dl = el('datalist'); dl.id = 'eg-list';
+    dl.innerHTML = EXAMPLES.map(function (x) { return '<option value="' + escAttr(x) + '"></option>'; }).join('');
+    input.setAttribute('list', 'eg-list');
+    input.placeholder = 'type a sentence, or pick an example…';
+    input.addEventListener('input', function () { if (EXAMPLES.indexOf(input.value) !== -1) run(); });
 
     var playBtn = el('button', 'btn play', 'Play the 1966 conversation');
 
@@ -32,7 +34,7 @@
     // the typing input lives inside the demo: type here and Trace it
     var kwEl = el('span', 'ctx-kw');
     ctx.appendChild(input);
-    ctx.appendChild(sel);
+    ctx.appendChild(dl);
     ctx.appendChild(runBtn);
     ctx.appendChild(resetBtn);
     ctx.appendChild(kwEl);

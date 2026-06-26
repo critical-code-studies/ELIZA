@@ -7,3 +7,6 @@ docs/*research-brief*.md
 # scratch / drop folder for big originals (never committed or deployed)
 assets/_tmp/*
 !assets/_tmp/README.md
+
+# local Claude Code dev config (preview server etc.)
+.claude/
