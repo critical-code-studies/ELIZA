@@ -7,7 +7,7 @@ Chatbot Shaped the Future of AI* (MIT Press, Software Studies). A companion to t
 Critical Code Studies group's readings of [SHRDLU](https://critical-code-studies.github.io/SHRDLU/)
 (1968–70) and Spacewar! (1962).
 
-**Status:** v1.0.0. Companion to the book *Inventing ELIZA*, out 14 July 2026.
+**Status:** v0.5.0. Companion to the book *Inventing ELIZA*, out 14 July 2026.
 
 The site is built around the original MAD-SLIP source recovered from Weizenbaum's
 papers in the MIT archive in 2021. It reads the code, the DOCTOR script, the
