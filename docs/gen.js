@@ -39,13 +39,13 @@ function nav(depth) {
         <div class="nav-group">
           <button class="nav-top" aria-expanded="false">Project <span class="caret" aria-hidden="true">&#9662;</span></button>
           <div class="nav-menu">
-            <a href="${p}people.html">TEAM-ELIZA</a><a href="${p}talks.html">Talks</a><a href="${p}blog.html">Blog</a>
+            <a href="${p}talks.html">Talks</a><a href="${p}blog.html">Blog</a>
           </div>
         </div>
         <div class="nav-group">
           <button class="nav-top" aria-expanded="false">About <span class="caret" aria-hidden="true">&#9662;</span></button>
           <div class="nav-menu">
-            <a href="${p}about.html">About</a><a href="${p}bibliography.html">Bibliography</a><a href="${p}links.html">Resources</a>
+            <a href="${p}about.html">About</a><a href="${p}people.html">TEAM-ELIZA</a><a href="${p}bibliography.html">Bibliography</a><a href="${p}links.html">Resources</a>
           </div>
         </div>
       </nav>`;
@@ -248,12 +248,12 @@ ${inner}${footHtml}
 const TEAM = [
   ['David M. Berry', 'Professor of Digital Humanities, University of Sussex', 'Writes widely on philosophy and technology, particularly computation, software and algorithms; recent work addresses explainability, human understanding, and the history of the university. Co-discovered the original ELIZA source in the MIT archive.', 'berry.png'],
   ['Sarah Ciston', 'Professor of Computational Thinking and Aesthetic Doing, Academy of Media Arts Cologne', 'Builds critical-creative tools to bring intersectional approaches to machine learning. Winner of the 2025 Ars Electronica STARTS Grand Prize. Author of <em>A Critical Field Guide to Working with Machine Learning Datasets</em> and founder of Code Collective.', 'ciston.png'],
-  ['Anthony C. Hay', 'Programmer (formerly Digital Research, Novell); BSc, Imperial College London', 'Wrote a near-perfect clone of the original MAD-SLIP ELIZA in C++, first from Weizenbaum&rsquo;s 1966 paper, later corrected against the recovered MIT source. Untangled the &ldquo;certain counting mechanism&rdquo; behind ELIZA&rsquo;s memory.', 'hay.png'],
+  ['Anthony C. Hay', 'Programmer (formerly Digital Research, Novell); BSc, Imperial College London', 'Wrote a near-perfect clone of the original MAD-SLIP ELIZA in C++, first from Weizenbaum&rsquo;s 1966 paper, later corrected against the recovered MIT source. Untangled the &ldquo;certain counting mechanism&rdquo; behind ELIZA&rsquo;s memory.', 'AntHay.png'],
   ['Mark C. Marino', 'Professor of Writing, USC; Director, Humanities and Critical Code Studies (HaCCS) Lab', 'Scholar of electronic literature; author of <em>Critical Code Studies</em> (MIT Press) and co-author of <em>10 PRINT CHR$(205.5+RND(1))</em>. Director of Communication for the Electronic Literature Organization.', 'marino.png'],
   ['Peter Millican', 'Professor of Philosophy, Hertford College, Oxford', 'Founder of Oxford&rsquo;s Computer Science and Philosophy degree (2012). Author of the Elizabeth chatbot (2000), built to engage humanities students with the mechanics of conversation.', 'millican.png'],
   ['Arthur I. Schwarz', 'Software developer and technical lead (aerospace, automotive); BS Physics, MS Computer Science', 'Developed gSlip, a public-domain implementation of SLIP, the list-processing library underpinning ELIZA. Interests include hashing algorithms and anomaly detection.', 'schwarz.png'],
   ['Jeff Shrager', 'Adjunct Professor, Symbolic Systems, Stanford; Chief Scientist, Blue Dot Change', 'Self-described &ldquo;aging Lisp hacker&rdquo; who rediscovered Weizenbaum&rsquo;s original MAD-SLIP ELIZA in the MIT archive in 2021. Curator of ELIZAgen.org; co-author of 100+ AI publications and co-founder of three biomedical AI startups.', 'shrager.png'],
-  ['Peggy Weil', 'Adjunct Assistant Professor, USC School of Cinematic Arts', 'Multidisciplinary artist; did graduate work at the MIT Media Lab&rsquo;s Architecture Machine Group in the early 1980s. Created MrMind, the first net-art chatbot. Her work addresses physical, digital and sociopolitical questions.', 'weil.png']
+  ['Peggy Weil', 'Adjunct Assistant Professor, USC School of Cinematic Arts', 'Multidisciplinary artist and a member of the Architecture Machine Group (precursor to the MIT Media Lab) in the early 1980s. She created MrMind / The Blurring Test in 1998, one of the first net-art chatbots. Her work has been exhibited internationally and addresses our digital, sociopolitical and perceptual landscapes.', 'weil-bw.png']
 ];
 
 // ---------------------------------------------------------------------------
@@ -859,9 +859,10 @@ write('bibliography.html', page({
       ${fanfold('PRINT BIBLIO', `<div class="bib">
         <h3>By the project</h3>
         <p class="ref">Ciston, S., Berry, D. M., Hay, A. C., Marino, M. C., Millican, P., Schwarz, A. I., Shrager, J. and Weil, P. (2026) <em>Inventing ELIZA: How the First Chatbot Shaped the Future of AI</em>. Cambridge, MA: MIT Press (Software Studies). Available at: <a href="https://mitpress.mit.edu/9780262052481/inventing-eliza/">https://mitpress.mit.edu/9780262052481/inventing-eliza/</a></p>
+        <p class="ref">Marino, M. C., Weil, P., Shrager, J., Schwarz, A., Hay, A., Ciston, S., Berry, D. M. and Millican, P. (2026) &lsquo;Conversations about Conversational Code: On the Collaborative Critical Code Studies Reading of ELIZA&rsquo;, <em>AI &amp; Society</em>. Available at: <a href="https://doi.org/10.1007/s00146-026-03086-7">https://doi.org/10.1007/s00146-026-03086-7</a></p>
         <p class="ref">Berry, D. M. and Marino, M. C. (2024) &lsquo;Reading ELIZA: Critical Code Studies in Action&rsquo;, <em>Electronic Book Review</em>. Available at: <a href="https://electronicbookreview.com/essay/reading-eliza-critical-code-studies-in-action/">https://electronicbookreview.com/essay/reading-eliza-critical-code-studies-in-action/</a></p>
         <p class="ref">Berry, D. M., Hay, A., Millican, P. and Shrager, J. (2023) &lsquo;Finding ELIZA: Rediscovering Weizenbaum&rsquo;s Source Code, Comments and Faksimiles&rsquo;, in Baranovska, M. and H&ouml;ltgen, S. (eds.) <em>Hello, I&rsquo;m Eliza. 50 Jahre Gespr&auml;che mit Computern</em> (Computerarch&auml;ologie, Bd. 5), 2nd edn. Bochum: Projektverlag, pp. 247&ndash;248.</p>
-        <p class="ref">Lane, R. et al. (2025) &lsquo;ELIZA Reanimated: Restoring the Mother of All Chatbots to One of the World&rsquo;s First Time-Sharing Systems&rsquo;. Preprint.</p>
+        <p class="ref">Lane, R., Hay, A., Schwarz, A., Berry, D. M. and Shrager, J. (2025) &lsquo;ELIZA Reanimated: The world&rsquo;s first chatbot restored on the world&rsquo;s first time sharing system&rsquo;, <em>arXiv</em>. Preprint, posted 12 January 2025, arXiv:2501.06707. Available at: <a href="https://arxiv.org/abs/2501.06707">https://arxiv.org/abs/2501.06707</a></p>
 
         <h3>Weizenbaum on ELIZA</h3>
         <p class="ref">Weizenbaum, J. (1966) &lsquo;ELIZA: A Computer Program For the Study of Natural Language Communication Between Man And Machine&rsquo;, <em>Communications of the ACM</em>, 9(1), pp. 36&ndash;45.</p>
