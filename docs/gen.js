@@ -1,10 +1,11 @@
 /* One-shot static-site generator for the ELIZA Archaeology / CCS website.
-   Emits HTML pages with identical header/nav/footer chrome into ~/Projects/eliza.
+   Emits HTML pages with identical header/nav/footer chrome into the repo root
+   (resolved relative to this script, so it works from any clone location).
    Not committed as a build step (the site is plain static HTML); this just keeps
-   the chrome consistent across ~26 pages. Run: node gen.js  */
+   the chrome consistent across ~26 pages. Run: node docs/gen.js  */
 const fs = require('fs');
 const path = require('path');
-const OUT = path.join(process.env.HOME, 'Projects', 'eliza');
+const OUT = path.resolve(__dirname, '..');   // repo root (this script lives in docs/)
 const BLOGDIR = path.join(OUT, 'blog');
 fs.mkdirSync(BLOGDIR, { recursive: true });
 
@@ -12,7 +13,7 @@ fs.mkdirSync(BLOGDIR, { recursive: true });
 // changes each build so browsers refetch changed CSS/JS/favicon. It is separate
 // from the VERSION file, which is bumped only on David's explicit instruction.
 const V = new Date().toISOString().replace(/[^0-9]/g, '').slice(0, 12);
-const SITE = 'https://critical-code-studies.github.io/ELIZA';
+const SITE = 'https://findingeliza.org';
 
 // ---- shared chrome ----------------------------------------------------------
 function nav(depth) {
@@ -814,17 +815,37 @@ write('links.html', page({
   body: `
       <span class="kicker">Resources</span>
       <h1 class="page">Resources</h1>
-      <ul class="links">
-        <li><a href="https://sites.google.com/view/elizagen-org/About">ELIZAGEN</a><span class="meta"> &mdash; tracing the legacy of Weizenbaum&rsquo;s ELIZA (DOCTOR) program, edited by Jeff Shrager.</span></li>
-        <li><a href="https://github.com/anthay/ELIZA">anthay/ELIZA</a><span class="meta"> &mdash; Anthony Hay&rsquo;s historically exact C++ recreation, with scripts.</span></li>
-        <li><a href="https://github.com/critical-code-studies/ELIZA">critical-code-studies/ELIZA</a><span class="meta"> &mdash; the source for this site, the recovered MAD-SLIP listing and the DOCTOR script.</span></li>
-        <li><a href="https://hdl.handle.net/1721.3/201699">MIT Distinctive Collections</a><span class="meta"> &mdash; the 1965 ELIZA printout in Weizenbaum&rsquo;s archive.</span></li>
-        <li><a href="https://mitpress.mit.edu/9780262052481/inventing-eliza/">Inventing ELIZA</a><span class="meta"> &mdash; the book, MIT Press.</span></li>
-        <li><a href="https://direct.mit.edu/books/oa-monograph/6171/Inventing-ELIZAHow-the-First-Chatbot-Shaped-the">Inventing ELIZA (open access)</a><span class="meta"> &mdash; the full book, free to read, MIT Press Direct.</span></li>
-        <li><a href="https://electronicbookreview.com/essay/reading-eliza-critical-code-studies-in-action/">Reading ELIZA: CCS in Action</a><span class="meta"> &mdash; Berry and Marino, Electronic Book Review.</span></li>
-        <li><a href="https://99percentinvisible.org/episode/the-eliza-effect/">The ELIZA Effect</a><span class="meta"> &mdash; 99% Invisible podcast episode.</span></li>
-        <li><a href="https://critical-code-studies.github.io/SHRDLU/">SHRDLU</a><span class="meta"> &mdash; the companion CCS reading of Winograd&rsquo;s SHRDLU (1968&ndash;70).</span></li>
-      </ul>
+      <div class="lede"><p>Editions, source code, archives and related work on ELIZA, Joseph Weizenbaum, and the reading of code as a cultural text.</p></div>
+      <div class="reading">
+        <h3>The book</h3>
+        <ul class="links">
+          <li><a href="https://mitpress.mit.edu/9780262052481/inventing-eliza/">Inventing ELIZA</a><span class="meta"> &mdash; the book, MIT Press.</span></li>
+          <li><a href="https://direct.mit.edu/books/oa-monograph/6171/Inventing-ELIZAHow-the-First-Chatbot-Shaped-the">Inventing ELIZA (open access)</a><span class="meta"> &mdash; the full book, free to read, MIT Press Direct.</span></li>
+        </ul>
+
+        <h3>Code and recreations</h3>
+        <ul class="links">
+          <li><a href="https://github.com/critical-code-studies/ELIZA">critical-code-studies/ELIZA</a><span class="meta"> &mdash; the source for this site, the recovered MAD-SLIP listing and the DOCTOR script.</span></li>
+          <li><a href="https://github.com/anthay/ELIZA">anthay/ELIZA</a><span class="meta"> &mdash; Anthony Hay&rsquo;s historically exact C++ recreation, with scripts.</span></li>
+        </ul>
+
+        <h3>Archives and genealogy</h3>
+        <ul class="links">
+          <li><a href="https://sites.google.com/view/elizagen-org/About">ELIZAGEN</a><span class="meta"> &mdash; tracing the legacy of Weizenbaum&rsquo;s ELIZA (DOCTOR) program, edited by Jeff Shrager.</span></li>
+          <li><a href="https://hdl.handle.net/1721.3/201699">MIT Distinctive Collections</a><span class="meta"> &mdash; the 1965 ELIZA printout in Weizenbaum&rsquo;s archive.</span></li>
+        </ul>
+
+        <h3>Writing and scholarship</h3>
+        <ul class="links">
+          <li><a href="https://electronicbookreview.com/essay/reading-eliza-critical-code-studies-in-action/">Reading ELIZA: CCS in Action</a><span class="meta"> &mdash; Berry and Marino, Electronic Book Review.</span></li>
+        </ul>
+
+        <h3>Related projects and media</h3>
+        <ul class="links">
+          <li><a href="https://critical-code-studies.github.io/SHRDLU/">SHRDLU</a><span class="meta"> &mdash; the companion CCS reading of Winograd&rsquo;s SHRDLU (1968&ndash;70).</span></li>
+          <li><a href="https://99percentinvisible.org/episode/the-eliza-effect/">The ELIZA Effect</a><span class="meta"> &mdash; 99% Invisible podcast episode.</span></li>
+        </ul>
+      </div>
 `}));
 
 // ---------------------------------------------------------------------------
