@@ -820,6 +820,7 @@ write('links.html', page({
         <li><a href="https://github.com/critical-code-studies/ELIZA">critical-code-studies/ELIZA</a><span class="meta"> &mdash; the source for this site, the recovered MAD-SLIP listing and the DOCTOR script.</span></li>
         <li><a href="https://hdl.handle.net/1721.3/201699">MIT Distinctive Collections</a><span class="meta"> &mdash; the 1965 ELIZA printout in Weizenbaum&rsquo;s archive.</span></li>
         <li><a href="https://mitpress.mit.edu/9780262052481/inventing-eliza/">Inventing ELIZA</a><span class="meta"> &mdash; the book, MIT Press.</span></li>
+        <li><a href="https://direct.mit.edu/books/oa-monograph/6171/Inventing-ELIZAHow-the-First-Chatbot-Shaped-the">Inventing ELIZA (open access)</a><span class="meta"> &mdash; the full book, free to read, MIT Press Direct.</span></li>
         <li><a href="https://electronicbookreview.com/essay/reading-eliza-critical-code-studies-in-action/">Reading ELIZA: CCS in Action</a><span class="meta"> &mdash; Berry and Marino, Electronic Book Review.</span></li>
         <li><a href="https://99percentinvisible.org/episode/the-eliza-effect/">The ELIZA Effect</a><span class="meta"> &mdash; 99% Invisible podcast episode.</span></li>
         <li><a href="https://critical-code-studies.github.io/SHRDLU/">SHRDLU</a><span class="meta"> &mdash; the companion CCS reading of Winograd&rsquo;s SHRDLU (1968&ndash;70).</span></li>
