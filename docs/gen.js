@@ -95,17 +95,19 @@ ${main}
 
   <footer class="site-footer">
     <div class="wrap">
-      <p class="micro">The ELIZA Archaeology Project &mdash; a Critical Code Studies reading of ELIZA (Joseph Weizenbaum, MIT, 1966). Source: <a href="https://github.com/critical-code-studies/ELIZA">github.com/critical-code-studies/ELIZA</a>. All project documents &copy; 2024&ndash;2026 the authors, except where indicated.</p>
+      <p class="micro">The ELIZA Archaeology Project, a Critical Code Studies reading of ELIZA (Joseph Weizenbaum, MIT, 1966). Source: <a href="https://github.com/critical-code-studies/ELIZA">github.com/critical-code-studies/ELIZA</a>. All project documents &copy; 2024&ndash;2026 the authors, except where indicated.</p>
     </div>
   </footer>
 
 </body>
 </html>
-`.replace(/&mdash;/g, ', ');
+`.replace(/\s*&mdash;\s*/g, ', ');
 }
 
-// every page is run through this to guarantee the house style (no em dashes)
-function clean(s) { return s.replace(/—/g, ' - '); }
+// safety net: any stray em dash (entity or literal) becomes a comma, house
+// style (no em dashes). Surrounding whitespace is collapsed so we never emit
+// a double-spaced comma. Sources should already be clean; this is a backstop.
+function clean(s) { return s.replace(/\s*—\s*/g, ', '); }
 function write(file, html) { fs.writeFileSync(path.join(OUT, file), clean(html)); }
 
 // a doubly-linked (SLIP) list drawn as cells with forward (next) and backward
@@ -430,7 +432,7 @@ write('overview.html', page({
       <div class="lede"><p>ELIZA was the world&rsquo;s first chatbot: the first program that let a person hold a conversation with a computer in ordinary language. Joseph Weizenbaum wrote it at MIT between roughly 1964 and 1966, on an IBM 7094 running the Compatible Time-Sharing System (CTSS), as part of Project MAC.</p></div>
 
       <h2>A system, not a single program</h2>
-      <p>ELIZA itself is an engine. It reads a <em>script</em> &mdash; a list of keywords and transformation rules &mdash; and uses it to turn what you type into a reply. DOCTOR, the script that made ELIZA famous, made it answer like a Rogerian psychotherapist: offering little of its own, mostly reflecting your words back as questions. DOCTOR is the most renowned script, but it is only one of many possibilities for the ELIZA system. <a href="doctor.html">Read the DOCTOR script &rsaquo;</a></p>
+      <p>ELIZA itself is an engine. It reads a <em>script</em>, a list of keywords and transformation rules, and uses it to turn what you type into a reply. DOCTOR, the script that made ELIZA famous, made it answer like a Rogerian psychotherapist: offering little of its own, mostly reflecting your words back as questions. DOCTOR is the most renowned script, but it is only one of many possibilities for the ELIZA system. <a href="doctor.html">Read the DOCTOR script &rsaquo;</a></p>
 
       <figure class="figure">
         <img src="assets/images/ai-pioneers-1968.jpg" alt="Claude Shannon, John McCarthy, Ed Fredkin and Joseph Weizenbaum at MIT, April 1968" loading="lazy">
@@ -440,12 +442,12 @@ write('overview.html', page({
       <h2>How a reply is made</h2>
       <p>Weizenbaum&rsquo;s 1966 paper describes the whole mechanism in a few pages. The recovered source shows it working in detail:</p>
       <ul class="method">
-        <li data-n="1"><b>Read the script</b> &mdash; load a file of keywords, each with decomposition and reassembly rules.</li>
-        <li data-n="2"><b>Greet</b> &mdash; print the opening line (&ldquo;HOW DO YOU DO. PLEASE TELL ME YOUR PROBLEM&rdquo;).</li>
-        <li data-n="3"><b>Scan</b> &mdash; take the user&rsquo;s sentence, apply word substitutions, and find the highest-ranked keyword.</li>
-        <li data-n="4"><b>Decompose</b> &mdash; match the sentence against that keyword&rsquo;s patterns, splitting it into numbered parts.</li>
-        <li data-n="5"><b>Reassemble</b> &mdash; slot those parts into a reply template, and print it.</li>
-        <li data-n="6"><b>Loop</b> &mdash; wait for the next line, and occasionally recall something you said earlier.</li>
+        <li data-n="1"><b>Read the script</b>, load a file of keywords, each with decomposition and reassembly rules.</li>
+        <li data-n="2"><b>Greet</b>, print the opening line (&ldquo;HOW DO YOU DO. PLEASE TELL ME YOUR PROBLEM&rdquo;).</li>
+        <li data-n="3"><b>Scan</b>, take the user&rsquo;s sentence, apply word substitutions, and find the highest-ranked keyword.</li>
+        <li data-n="4"><b>Decompose</b>, match the sentence against that keyword&rsquo;s patterns, splitting it into numbered parts.</li>
+        <li data-n="5"><b>Reassemble</b>, slot those parts into a reply template, and print it.</li>
+        <li data-n="6"><b>Loop</b>, wait for the next line, and occasionally recall something you said earlier.</li>
       </ul>
       <p style="margin-top:1.4rem"><a href="how.html">Watch these steps run on a phrase of your own &rsaquo;</a></p>
 
@@ -461,9 +463,9 @@ write('overview.html', page({
       <div class="rule">FURTHER</div>
       <div class="reading">
         <ul>
-          <li><a href="code.html">The program</a> &mdash; the recovered MAD-SLIP source, read closely.</li>
-          <li><a href="versions.html">The versions</a> &mdash; at least five ELIZAs between 1965 and 1968.</li>
-          <li><a href="try.html">Try ELIZA</a> &mdash; the genuine 1966 script, running in your browser.</li>
+          <li><a href="code.html">The program</a>, the recovered MAD-SLIP source, read closely.</li>
+          <li><a href="versions.html">The versions</a>, at least five ELIZAs between 1965 and 1968.</li>
+          <li><a href="try.html">Try ELIZA</a>, the genuine 1966 script, running in your browser.</li>
         </ul>
       </div>
 `}));
@@ -819,31 +821,31 @@ write('links.html', page({
       <div class="reading">
         <h3>The book</h3>
         <ul class="links">
-          <li><a href="https://mitpress.mit.edu/9780262052481/inventing-eliza/">Inventing ELIZA</a><span class="meta"> &mdash; the book, MIT Press.</span></li>
-          <li><a href="https://direct.mit.edu/books/oa-monograph/6171/Inventing-ELIZAHow-the-First-Chatbot-Shaped-the">Inventing ELIZA (open access)</a><span class="meta"> &mdash; the full book, free to read, MIT Press Direct.</span></li>
+          <li><a href="https://mitpress.mit.edu/9780262052481/inventing-eliza/">Inventing ELIZA</a><span class="meta">, the book, MIT Press.</span></li>
+          <li><a href="https://direct.mit.edu/books/oa-monograph/6171/Inventing-ELIZAHow-the-First-Chatbot-Shaped-the">Inventing ELIZA (open access)</a><span class="meta">, the full book, free to read, MIT Press Direct.</span></li>
         </ul>
 
         <h3>Code and recreations</h3>
         <ul class="links">
-          <li><a href="https://github.com/critical-code-studies/ELIZA">critical-code-studies/ELIZA</a><span class="meta"> &mdash; the source for this site, the recovered MAD-SLIP listing and the DOCTOR script.</span></li>
-          <li><a href="https://github.com/anthay/ELIZA">anthay/ELIZA</a><span class="meta"> &mdash; Anthony Hay&rsquo;s historically exact C++ recreation, with scripts.</span></li>
+          <li><a href="https://github.com/critical-code-studies/ELIZA">critical-code-studies/ELIZA</a><span class="meta">, the source for this site, the recovered MAD-SLIP listing and the DOCTOR script.</span></li>
+          <li><a href="https://github.com/anthay/ELIZA">anthay/ELIZA</a><span class="meta">, Anthony Hay&rsquo;s historically exact C++ recreation, with scripts.</span></li>
         </ul>
 
         <h3>Archives and genealogy</h3>
         <ul class="links">
-          <li><a href="https://sites.google.com/view/elizagen-org/About">ELIZAGEN</a><span class="meta"> &mdash; tracing the legacy of Weizenbaum&rsquo;s ELIZA (DOCTOR) program, edited by Jeff Shrager.</span></li>
-          <li><a href="https://hdl.handle.net/1721.3/201699">MIT Distinctive Collections</a><span class="meta"> &mdash; the 1965 ELIZA printout in Weizenbaum&rsquo;s archive.</span></li>
+          <li><a href="https://sites.google.com/view/elizagen-org/About">ELIZAGEN</a><span class="meta">, tracing the legacy of Weizenbaum&rsquo;s ELIZA (DOCTOR) program, edited by Jeff Shrager.</span></li>
+          <li><a href="https://hdl.handle.net/1721.3/201699">MIT Distinctive Collections</a><span class="meta">, the 1965 ELIZA printout in Weizenbaum&rsquo;s archive.</span></li>
         </ul>
 
         <h3>Writing and scholarship</h3>
         <ul class="links">
-          <li><a href="https://electronicbookreview.com/essay/reading-eliza-critical-code-studies-in-action/">Reading ELIZA: CCS in Action</a><span class="meta"> &mdash; Berry and Marino, Electronic Book Review.</span></li>
+          <li><a href="https://electronicbookreview.com/essay/reading-eliza-critical-code-studies-in-action/">Reading ELIZA: CCS in Action</a><span class="meta">, Berry and Marino, Electronic Book Review.</span></li>
         </ul>
 
         <h3>Related projects and media</h3>
         <ul class="links">
-          <li><a href="https://critical-code-studies.github.io/SHRDLU/">SHRDLU</a><span class="meta"> &mdash; the companion CCS reading of Winograd&rsquo;s SHRDLU (1968&ndash;70).</span></li>
-          <li><a href="https://99percentinvisible.org/episode/the-eliza-effect/">The ELIZA Effect</a><span class="meta"> &mdash; 99% Invisible podcast episode.</span></li>
+          <li><a href="https://critical-code-studies.github.io/SHRDLU/">SHRDLU</a><span class="meta">, the companion CCS reading of Winograd&rsquo;s SHRDLU (1968&ndash;70).</span></li>
+          <li><a href="https://99percentinvisible.org/episode/the-eliza-effect/">The ELIZA Effect</a><span class="meta">, 99% Invisible podcast episode.</span></li>
         </ul>
       </div>
 `}));
