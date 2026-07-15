@@ -142,6 +142,16 @@
     });
   });
 
+  // Reset the rocker switches whenever the page is shown, including bfcache
+  // restores (browser Back), so a switch flipped on the way out doesn't come
+  // back stuck in the ON position.
+  window.addEventListener('pageshow', function () {
+    [].forEach.call(document.querySelectorAll('.console .hero-actions .rocker-btn'), function (b) {
+      delete b.dataset.go;
+      var rk = b.querySelector('.rocker'); if (rk) rk.classList.remove('on');
+    });
+  });
+
   // --- "WHAT IS THIS?" button -> modal about the 1961 Bell Labs Daisy Bell ---
   var info = document.getElementById('info-btn'), modal = document.getElementById('info-modal');
   if (info && modal) {
