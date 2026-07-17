@@ -756,6 +756,7 @@ write('talks.html', page({
 
       <h2 class="yeargroup">2026</h2>
       <ul class="talklist">
+        <li><span class="who">Marino, M. C., Berry, D. M., Shrager, J., Schwarz, A. I., Weil, P., Ciston, S., Hay, A. C. &amp; Millican, P.</span><span class="ttl">&ldquo;Inventing ELIZA: an exploration of the first chatbot&rdquo;</span><span class="meta">Electronic Literature Organization (ELO) 2026</span></li>
         <li><span class="who">Berry, D. M.</span><span class="ttl">&ldquo;From Script to Vector: ELIZA and the Age of AI&rdquo;</span><span class="meta">Roskilde University, Denmark &middot; 29 April 2026</span></li>
         <li><span class="who">Ciston, S.</span><span class="ttl"><a href="https://zkm.de/de/media/videos/sarah-ciston-dont-be-evil-reckoning-with-the-risks-of-technofascism-from-eliza-to" target="_blank" rel="noopener">&ldquo;Don&rsquo;t (?) Be Evil: Reckoning with the Risks of Technofascism from ELIZA to Anthropic (or: How I learned to worry just enough to keep loving what I code)&rdquo;</a></span><span class="meta">Envisioning AI: Legacy and Impact of the Connection Machine, ZKM, Karlsruhe, Germany &middot; 27 March 2026</span></li>
         <li><span class="who">Berry, D. M.</span><span class="ttl">&ldquo;From Script to Vector: ELIZA and the Age of AI&rdquo;</span><span class="meta">Aarhus University, Denmark &middot; 20 March 2026</span></li>
