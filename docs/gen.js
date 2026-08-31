@@ -38,15 +38,12 @@ function nav(depth) {
           </div>
         </div>
         <div class="nav-group">
-          <button class="nav-top" aria-expanded="false">Project <span class="caret" aria-hidden="true">&#9662;</span></button>
-          <div class="nav-menu">
-            <a href="${p}talks.html">Talks</a><a href="${p}blog.html">Blog</a>
-          </div>
+          <a class="nav-top" href="${p}blog.html">Blog</a>
         </div>
         <div class="nav-group">
           <button class="nav-top" aria-expanded="false">About <span class="caret" aria-hidden="true">&#9662;</span></button>
           <div class="nav-menu">
-            <a href="${p}about.html">About</a><a href="${p}people.html">TEAM-ELIZA</a><a href="${p}bibliography.html">Bibliography</a><a href="${p}links.html">Resources</a>
+            <a href="${p}about.html">About</a><a href="${p}people.html">TEAM-ELIZA</a><a href="${p}talks.html">Talks</a><a href="${p}bibliography.html">Bibliography</a><a href="${p}links.html">Resources</a>
           </div>
         </div>
       </nav>`;
