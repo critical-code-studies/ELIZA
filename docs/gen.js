@@ -673,7 +673,7 @@ write('slip.html', page({
       <p>Now here are some of the present day issues in looking back at the past. Anyone could do anything. All functions were available to the application, allowing the application to change the data types of a cell, to store an integer and retrieve it as a floating point number (or vice-versa), and SLIP had no way of ensuring proper functioning. Further, as part of FORTRAN, a pointer was an integer. So anytime the user wanted to put a pointer in a SLIP cell, why, just pass it as an integer. There were few, if any, validity checks. The application was encouraged to be an adult about this, but if you weren&rsquo;t, well, things would happen, most often undetected. For example, running out of SLIP memory was a &ldquo;so what&rdquo;.</p>
 
       <h2>6.0 So, Why Isn&rsquo;t It Famous</h2>
-      <p>Well, I have a couple of theories on this. In order to acquire fame there has to be an audience and a promoter. Weizenbaum did not promote SLIP. He left it to others, whose interest was less in using and more in changing the DAG to a DG. And there was no non-academic need. Few, if any, programs at that time dealt with lists (a terminology which was just beginning to be created). And almost no one then or now dealt with DAGs, or anything remotely like a DAG. This is not to say the need was non-existent but that it was vanishingly small, and without an advocate to tell of the existence of this API, even if there was a need there wasn&rsquo;t any knowledge. So, as useful as SLIP was, it was unknown and unused.</p>
+      <p>Well, we have a couple of theories on this. In order to acquire fame there has to be an audience and a promoter. Weizenbaum did not promote SLIP. He left it to others, whose interest was less in using and more in changing the DAG to a DG. And there was no non-academic need. Few, if any, programs at that time dealt with lists (a terminology which was just beginning to be created). And almost no one then or now dealt with DAGs, or anything remotely like a DAG. This is not to say the need was non-existent but that it was vanishingly small, and without an advocate to tell of the existence of this API, even if there was a need there wasn&rsquo;t any knowledge. So, as useful as SLIP was, it was unknown and unused.</p>
 
       <h2>7.0 Summation</h2>
       <p>SLIP was an API, something unique at this time. SLIP supported the creation and deletion of lists, DAGs and data, not only something unique but for which the technical vocabulary was non-existent. SLIP code is poor on documentation and poor on checking for error conditions, not much computer power or memory to include this. SLIP had dynamic memory, something we take for granted now but was truly unique in a procedural language at the time. Was it worth it? Damn&rsquo;d straight it was.</p>
@@ -1038,7 +1038,15 @@ write('blog.html', page({
       <span class="kicker">Blog</span>
       <h1 class="page">Blog</h1>
       <div class="lede"><p>Discoveries, close readings, hardware experiments and guest posts from the ELIZA Archaeology Project.</p></div>
-      <ul class="posts" id="blog-list"><li><div><p class="meta">Loading posts&hellip;</p></div></li></ul>
+      <div class="blog-layout">
+        <ul class="posts" id="blog-list"><li><div><p class="meta">Loading posts&hellip;</p></div></li></ul>
+        <aside class="blog-index" aria-label="All posts">
+          <div class="blog-index-box">
+            <p class="blog-index-head">All posts</p>
+            <ol id="blog-index-list"><li class="meta">Loading&hellip;</li></ol>
+          </div>
+        </aside>
+      </div>
 `}));
 
 write('blog/post.html', page({

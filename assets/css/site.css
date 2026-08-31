@@ -271,8 +271,26 @@ html.powered-off #power-btn {
 .slipfig { display: block; width: 100%; max-width: 34rem; height: auto; margin: 0 auto; }
 
 /* blog post images: constrained inline, click to enlarge in a lightbox */
-#post img { display: block; max-width: 100%; height: auto; margin: 1.6rem auto 0.5rem; border-radius: 4px; cursor: zoom-in; }
-#post p > em:only-child { display: block; text-align: center; font-size: 0.85rem; color: var(--ink-dim); margin: 0 auto 1.6rem; max-width: 46ch; }
+#post img { display: block; max-width: 100%; height: auto; border-radius: 4px; cursor: zoom-in; }
+/* images sit as floated figures so the text flows around them; click to enlarge */
+/* clear:both so a figure never sits alongside the previous one, which would
+   squeeze the prose between two floats into a narrow column */
+.post-fig, .post-fig.fig-left { float: left; clear: both; width: 38%; margin: 0.4rem 1.8rem 1.1rem 0; }
+.post-fig.fig-right { float: right; clear: both; margin: 0.4rem 0 1.1rem 1.8rem; }
+.post-fig img { width: 100%; }
+.post-fig figcaption { margin-top: 0.5rem; font-size: 0.78rem; line-height: 1.45; color: var(--ink-dim); }
+/* full-width explanatory diagrams inside a post (not floated like photographs) */
+.post-diagram { clear: both; width: 100%; margin: 1.9rem 0; }
+.post-diagram svg { display: block; width: 100%; height: auto; }
+.post-diagram figcaption { margin-top: 0.6rem; font-size: 0.78rem; line-height: 1.45; color: var(--ink-dim); }
+
+/* a run of consecutive images is a gallery: grid it rather than float it */
+.post-gallery { clear: both; display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1.4rem 1.6rem; margin: 1.7rem 0 1.9rem; }
+.post-gallery .post-fig { float: none; width: 100%; margin: 0; }
+#post h2, #post h3, #post h4, #post pre, #post .post-nav { clear: both; }
+@media (max-width: 620px) {
+  .post-fig, .post-fig.fig-left, .post-fig.fig-right { float: none; width: 100%; margin: 1.5rem 0 1.2rem; }
+}
 .lightbox { position: fixed; inset: 0; z-index: 9600; display: flex; align-items: center; justify-content: center; padding: 3vw; background: rgba(5,6,8,0.9); cursor: zoom-out; }
 .lightbox[hidden] { display: none; }
 .lightbox img { max-width: 96vw; max-height: 94vh; width: auto; height: auto; border-radius: 4px; box-shadow: 0 10px 44px rgba(0,0,0,0.55); }
@@ -614,6 +632,21 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .posts h3 { margin: 0 0 0.2rem; }
 .posts h3 a { border: 0; }
 .posts .meta { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.5px; text-transform: uppercase; color: var(--ink-dim); }
+.posts .latest-tag { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 1px; text-transform: uppercase; color: var(--beam); margin: 0 0 0.25rem; }
+.posts li.latest h3 { font-size: 1.35rem; }
+
+/* blog index: posts on the left, a standing list of everything on the right */
+.blog-layout { display: grid; grid-template-columns: 1fr 15rem; gap: 2.6rem; align-items: start; margin-top: 1.8rem; }
+.blog-layout .posts { margin-top: 0; }
+.blog-index { position: sticky; top: 5rem; }
+.blog-index-box { border: 1px solid var(--line-soft); border-radius: 5px; padding: 1rem 1.1rem 1.15rem; }
+.blog-index-head { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 1px; text-transform: uppercase; color: var(--beam); margin: 0 0 0.7rem; }
+.blog-index-box ol { list-style: none; margin: 0; padding: 0; counter-reset: bi; }
+.blog-index-box li { padding: 0.42rem 0; border-top: 1px solid var(--line-soft); font-size: 0.86rem; line-height: 1.35; }
+.blog-index-box li:first-child { border-top: 0; padding-top: 0; }
+.blog-index-box li a { border: 0; }
+.blog-index-box .meta { display: block; font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.5px; text-transform: uppercase; color: var(--ink-dim); margin-top: 0.15rem; }
+@media (max-width: 860px) { .blog-layout { grid-template-columns: 1fr; gap: 2rem; } .blog-index { position: static; } }
 .post-meta { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-dim); margin: -0.6rem 0 2rem; }
 .post-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; border-top: 1px solid var(--line-soft); padding-top: 1.4rem; font-family: var(--mono); font-size: 0.8rem; }
 .note { border: 1px solid var(--line-soft); border-left: 3px solid var(--lamp-blue); background: rgba(77,146,224,0.06); padding: 1rem 1.3rem; border-radius: 3px; margin: 1.5rem 0; font-size: 0.9rem; }

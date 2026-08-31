@@ -6,13 +6,13 @@ author: Anthony Hay
 
 ![Joseph Weizenbaum (1923-2008)](images/8-doctor-1.jpg)
 *Joseph Weizenbaum (1923-2008)*
-![Screenshot of ELIZA being used in 1967 from The Twenty-First Century, "The Communications Revolution", first broadcast, 1/29/67.](images/8-doctor-2.jpg)
-*Screenshot of ELIZA being used in 1967 from The Twenty-First Century, "The Communications Revolution", first broadcast, 1/29/67, [https://youtu.be/j8fDkSqnghg](https://youtu.be/j8fDkSqnghg)*
+
 There are three known contemporaneous scripts compatible with the version of ELIZA described in Joseph Weizenbaum’s 1966 Communications of the ACM paper: one was published as an appendix to that paper, and the other two appear in a computer printout in Weizenbaum’s archive at MIT. Here we take a quick look at these three scripts to see how they compare: they are similar and the ones from the archive appear to show the published DOCTOR script at an earlier stage of development.
 
 The printout of the ELIZA source code is in a folder dated 1965 ([https://hdl.handle.net/1721.3/201699](https://hdl.handle.net/1721.3/201699)). Sandwiching the code are two ELIZA scripts. Here is the beginning of the first:
 
 ![The beginning of the first script](images/8-doctor-3.jpg)
+
 
 Weizenbaum developed ELIZA on an IBM 7094 under an operating system called Compatible Time-Sharing System, or CTSS. The first line of the above printout shows the PRINT heading:
 
@@ -169,6 +169,9 @@ Although the March 1965 ELIZA code in this printout supports (=keyword) at the t
 There is other functionality that Weizenbaum had not yet added to ELIZA in March 1965. By the time his paper was submitted to the CACM in September 1965 (it was published in January 1966) he had added the NEWKEY and PRE functions. Five keyword rules in CACM DOCTOR use NEWKEY (DREAM, DREAMT, LIKE, REMEMBER and WAS) and two use PRE (I’M and YOU’RE).
 
 Of the other keywords in .TAPE. 100, most appear unchanged in CACM DOCTOR, and appear there in the same order relative to each other. Some of the keyword rules are significantly altered, such as WAS and I.
+
+![Screenshot of ELIZA being used in 1967 from The Twenty-First Century, "The Communications Revolution", first broadcast, 1/29/67.](images/8-doctor-2.jpg)
+*Screenshot of ELIZA being used in 1967 from The Twenty-First Century, "The Communications Revolution", first broadcast, 1/29/67, [https://youtu.be/j8fDkSqnghg](https://youtu.be/j8fDkSqnghg)*
 
 This printout gives us a glimpse into the development of the ELIZA code and DOCTOR script. It suggests a process of incremental improvement of ELIZA/DOCTOR’s ability to conceal its lack of understanding; almost as if it was built without a plan.
 

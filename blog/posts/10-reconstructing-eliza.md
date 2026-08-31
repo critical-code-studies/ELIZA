@@ -6,6 +6,7 @@ author: David M. Berry and Sarah Ciston
 
 ![Overview of the reconstructed code.](images/10-reconstructing-1.jpg)
 *Overview of the reconstructed code.*
+
 The reconstruction of historical software presents fascinating challenges at the intersection of computer science, digital preservation, and software archaeology. In recent work reconstructing Joseph Weizenbaum's original ELIZA from 1965, the team encountered unique difficulties that highlight important questions about software preservation and historical authenticity.
 
 ELIZA, created by Joseph Weizenbaum at MIT in the early 1960s, is usually considered the world's first chatbot. It was developed in MAD-SLIP on MIT's Compatible Time-Sharing System (CTSS), running on an IBM 7094. Our recent discovery of original ELIZA printouts in Weizenbaum's archives at MIT, including an early version of the famous DOCTOR script and MAD-SLIP code, provided an unprecedented opportunity to resurrect this foundational piece of computing history.

@@ -75,5 +75,12 @@
     "title": "The Plurality of ELIZA: Code, History, and Computing’s Amnesia",
     "date": "8 December 2025",
     "author": "David M. Berry, Sarah Ciston, Anthony Hay, Mark C. Marino, Arthur Schwarz, Jeff Shrager, Peggy Weil and Peter Millican"
+  },
+  {
+    "n": 12,
+    "slug": "12-the-slip-api-and-eliza",
+    "title": "The SLIP API and ELIZA",
+    "date": "31 August 2026",
+    "author": "Arthur Schwarz"
   }
 ]

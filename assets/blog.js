@@ -28,13 +28,71 @@
   // ---- index ----
   var list = document.getElementById('blog-list');
   if (list) {
-    fetch('blog/posts.json').then(function (r) { return r.json(); }).then(function (posts) {
-      list.innerHTML = posts.map(function (p) {
-        return '<li><span class="no">' + p.n + '</span><div>' +
+    fetch('blog/posts.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (posts) {
+      // newest first, the way a blog reads; posts.json stays in publication order
+      var recent = posts.slice().reverse();
+      list.innerHTML = recent.map(function (p, i) {
+        return '<li' + (i === 0 ? ' class="latest"' : '') + '><span class="no">' + p.n + '</span><div>' +
+          (i === 0 ? '<p class="latest-tag">Latest</p>' : '') +
           '<h3><a href="blog/post.html?p=' + encodeURIComponent(p.slug) + '">' + esc(p.title) + '</a></h3>' +
           '<p class="meta">' + esc(p.date) + ' &middot; ' + esc(p.author) + '</p></div></li>';
       }).join('');
+      var idx = document.getElementById('blog-index-list');
+      if (idx) {
+        idx.innerHTML = recent.map(function (p) {
+          return '<li><a href="blog/post.html?p=' + encodeURIComponent(p.slug) + '">' + esc(p.title) + '</a>' +
+            '<span class="meta">' + esc(p.date) + '</span></li>';
+        }).join('');
+      }
     }).catch(function () { list.innerHTML = '<li><div><p class="meta">Could not load posts.</p></div></li>'; });
+  }
+
+  // Markdown renders "image line + italic caption line" as one paragraph. Turn
+  // each into a figure so it can be floated and the text can flow around it.
+  function figurise(root) {
+    [].forEach.call(root.querySelectorAll('p > img'), function (im) {
+      var p = im.parentNode;
+      if (p.tagName !== 'P') return;
+      var fig = document.createElement('figure');
+      fig.className = 'post-fig';
+      fig.appendChild(im);
+      var cap = p.querySelector('em');
+      if (cap) {
+        var fc = document.createElement('figcaption');
+        fc.innerHTML = cap.innerHTML;
+        fig.appendChild(fc);
+      }
+      p.parentNode.replaceChild(fig, p);
+    });
+    // A run of two or more images with no text between them was a gallery on
+    // the original site: lay those out as a grid instead of floating them,
+    // which would otherwise squeeze the prose into a narrow column.
+    var figs = [].slice.call(root.querySelectorAll('figure.post-fig'));
+    var i = 0;
+    while (i < figs.length) {
+      var run = [figs[i]], next = figs[i].nextElementSibling;
+      while (next && next.classList.contains('post-fig')) {
+        run.push(next);
+        next = next.nextElementSibling;
+      }
+      if (run.length > 1) {
+        var gal = document.createElement('div');
+        gal.className = 'post-gallery';
+        run[0].parentNode.insertBefore(gal, run[0]);
+        run.forEach(function (f) { gal.appendChild(f); });
+      }
+      i += run.length;
+    }
+    // alternate the side standalone figures sit on, so the page does not list
+    // all its pictures down one edge
+    var side = 0;
+    [].forEach.call(root.querySelectorAll('figure.post-fig'), function (f) {
+      if (f.parentNode.classList.contains('post-gallery')) return;
+      // a figure written with its own side (where the prose says "on the left")
+      // keeps it; the rest alternate
+      if (f.classList.contains('fig-left') || f.classList.contains('fig-right')) return;
+      f.classList.add(side++ % 2 ? 'fig-right' : 'fig-left');
+    });
   }
 
   // click any post image to view it larger in a lightbox (Esc or click to close)
@@ -61,12 +119,12 @@
   if (art) {
     var slug = param('p');
     if (!slug) { art.innerHTML = '<p>No post specified. <a href="../blog.html">All posts &rarr;</a></p>'; return; }
-    fetch('posts.json').then(function (r) { return r.json(); }).then(function (posts) {
+    fetch('posts.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (posts) {
       var i = posts.findIndex(function (x) { return x.slug === slug; });
       if (i < 0) { art.innerHTML = '<p>Post not found. <a href="../blog.html">All posts &rarr;</a></p>'; return; }
       var p = posts[i], prev = posts[i - 1], next = posts[i + 1];
       document.title = p.title + ' · ELIZA (1966)';
-      fetch('posts/' + slug + '.md').then(function (r) { return r.text(); }).then(function (text) {
+      fetch('posts/' + slug + '.md', { cache: 'no-cache' }).then(function (r) { return r.text(); }).then(function (text) {
         var fm = parseFrontMatter(text);
         var nav = '<div class="post-nav"><span>' +
           (prev ? '<a href="post.html?p=' + encodeURIComponent(prev.slug) + '">&larr; ' + esc(prev.title) + '</a>' : '<a href="../blog.html">&larr; All posts</a>') +
@@ -77,6 +135,7 @@
           '<h1 class="page">' + esc(p.title) + '</h1>' +
           '<p class="post-meta">' + esc(p.date) + ' &middot; ' + esc(p.author) + '</p>' +
           render(fm.body) + nav;
+        figurise(art);
         initLightbox(art);
       }).catch(function () { art.innerHTML = '<p>Could not load this post.</p>'; });
     }).catch(function () { art.innerHTML = '<p>Could not load the blog index.</p>'; });
