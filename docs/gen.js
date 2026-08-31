@@ -408,7 +408,7 @@ const homeBody = `
           <span class="kicker">MIT Press &middot; Software Studies</span>
           <h2>Inventing ELIZA</h2>
           <p>How the First Chatbot Shaped the Future of AI. The story of how the lost source was recovered, and what a close reading reveals about the program and the politics it still carries.</p>
-          <p><a href="https://mitpress.mit.edu/9780262052481/inventing-eliza/">Order from MIT Press &rsaquo;</a> &nbsp; <a href="book.html">About the book &rsaquo;</a></p>
+          <p><a href="https://direct.mit.edu/books/oa-monograph/6171/Inventing-ELIZAHow-the-First-Chatbot-Shaped-the">Read free (open access) &rsaquo;</a> &nbsp; <a href="https://mitpress.mit.edu/9780262052481/inventing-eliza/">Order from MIT Press &rsaquo;</a> &nbsp; <a href="book.html">About the book &rsaquo;</a></p>
         </div>
       </div>
     </section>
@@ -908,11 +908,18 @@ write('book.html', page({
       <p>As we reach the 60th anniversary of ELIZA&rsquo;s public debut, <em>Inventing ELIZA</em> offers the first comprehensive critical analysis of Joseph Weizenbaum&rsquo;s groundbreaking chatbot system through the lens of Critical Code Studies. Drawing on extensive archival research at MIT, Stanford, and UCLA, the book presents the rediscovered original source code of ELIZA alongside previously unseen scripts that had been missing for decades, revealing a far more sophisticated system than previously documented. The authors trace ELIZA&rsquo;s development (1965&ndash;1968), showing that Weizenbaum created a chatbot within a conversational programming environment, with previously unknown innovations well ahead of its time. Through close reading of both code and paratexts, the book reconstructs ELIZA&rsquo;s conceptual evolution and situates it within the historical context of early AI development.</p>
       <p>Although DOCTOR is routinely identified with ELIZA itself, it was only one of many possibilities for the ELIZA conversational system. The book also follows the program&rsquo;s namesake, Eliza Doolittle of <em>Pygmalion</em> and <em>My Fair Lady</em>, into the present, asking how the problematic assumptions of gender and class carried in that name resurface in later systems, from Microsoft&rsquo;s Tay to Alexa.</p>
       <p>The book&rsquo;s companion website, <a href="https://findingeliza.org">findingeliza.org</a>, includes a faithful recreation of the first chatbot and news about continued research.</p>
+
+      <div class="callout"><span class="kicker">Read it free</span>
+        <p><em>Inventing ELIZA</em> is available in full as an <strong>open access</strong> edition: <a href="https://direct.mit.edu/books/oa-monograph/6171/Inventing-ELIZAHow-the-First-Chatbot-Shaped-the">read the whole book at MIT Press Direct &rsaquo;</a></p>
+        <p class="micro">The open access edition was made possible by funding from MIT Libraries and Distinctive Collections.</p>
+      </div>
+
       <div class="cover-note muted">
         <span class="kicker">MIT Press &middot; Software Studies</span>
         <h2>Inventing ELIZA</h2>
         <p>Inventing ELIZA: How the First Chatbot Shaped the Future of AI. By Sarah Ciston, David M. Berry, Anthony C. Hay, Mark C. Marino, Peter Millican, Arthur I. Schwarz, Jeff Shrager and Peggy Weil.</p>
-        <p><a href="https://mitpress.mit.edu/9780262052481/inventing-eliza/">mitpress.mit.edu/9780262052481 &rsaquo;</a></p>
+        <p><a href="https://mitpress.mit.edu/9780262052481/inventing-eliza/">mitpress.mit.edu/9780262052481 &rsaquo;</a><br>
+        <a href="https://direct.mit.edu/books/oa-monograph/6171/Inventing-ELIZAHow-the-First-Chatbot-Shaped-the">open access edition &rsaquo;</a></p>
       </div>
 `}));
 
@@ -929,7 +936,7 @@ write('links.html', page({
         <h3>The book</h3>
         <ul class="links">
           <li><a href="https://mitpress.mit.edu/9780262052481/inventing-eliza/">Inventing ELIZA</a><span class="meta">, the book, MIT Press.</span></li>
-          <li><a href="https://direct.mit.edu/books/oa-monograph/6171/Inventing-ELIZAHow-the-First-Chatbot-Shaped-the">Inventing ELIZA (open access)</a><span class="meta">, the full book, free to read, MIT Press Direct.</span></li>
+          <li><a href="https://direct.mit.edu/books/oa-monograph/6171/Inventing-ELIZAHow-the-First-Chatbot-Shaped-the">Inventing ELIZA (open access)</a><span class="meta">, the full book, free to read at MIT Press Direct, made possible by funding from MIT Libraries and Distinctive Collections.</span></li>
         </ul>
 
         <h3>Code and recreations</h3>
@@ -989,7 +996,7 @@ write('bibliography.html', page({
       <div class="lede"><p>Selected writings by the project and its members on ELIZA, Joseph Weizenbaum, and the reading of code as a cultural text.</p></div>
       ${fanfold('PRINT BIBLIO', `<div class="bib">
         <h3>By the project</h3>
-        <p class="ref">Ciston, S., Berry, D. M., Hay, A. C., Marino, M. C., Millican, P., Schwarz, A. I., Shrager, J. and Weil, P. (2026) <em>Inventing ELIZA: How the First Chatbot Shaped the Future of AI</em>. Cambridge, MA: MIT Press (Software Studies). Available at: <a href="https://mitpress.mit.edu/9780262052481/inventing-eliza/">https://mitpress.mit.edu/9780262052481/inventing-eliza/</a></p>
+        <p class="ref">Ciston, S., Berry, D. M., Hay, A. C., Marino, M. C., Millican, P., Schwarz, A. I., Shrager, J. and Weil, P. (2026) <em>Inventing ELIZA: How the First Chatbot Shaped the Future of AI</em>. Cambridge, MA: MIT Press (Software Studies). Available at: <a href="https://mitpress.mit.edu/9780262052481/inventing-eliza/">https://mitpress.mit.edu/9780262052481/inventing-eliza/</a>. Open access edition: <a href="https://direct.mit.edu/books/oa-monograph/6171/Inventing-ELIZAHow-the-First-Chatbot-Shaped-the">https://direct.mit.edu/books/oa-monograph/6171/</a></p>
         <p class="ref">Marino, M. C., Weil, P., Shrager, J., Schwarz, A., Hay, A., Ciston, S., Berry, D. M. and Millican, P. (2026) &lsquo;Conversations about Conversational Code: On the Collaborative Critical Code Studies Reading of ELIZA&rsquo;, <em>AI &amp; Society</em>. Available at: <a href="https://doi.org/10.1007/s00146-026-03086-7">https://doi.org/10.1007/s00146-026-03086-7</a></p>
         <p class="ref">Berry, D. M. and Marino, M. C. (2024) &lsquo;Reading ELIZA: Critical Code Studies in Action&rsquo;, <em>Electronic Book Review</em>. Available at: <a href="https://electronicbookreview.com/essay/reading-eliza-critical-code-studies-in-action/">https://electronicbookreview.com/essay/reading-eliza-critical-code-studies-in-action/</a></p>
         <p class="ref">Berry, D. M., Hay, A., Millican, P. and Shrager, J. (2023) &lsquo;Finding ELIZA: Rediscovering Weizenbaum&rsquo;s Source Code, Comments and Faksimiles&rsquo;, in Baranovska, M. and H&ouml;ltgen, S. (eds.) <em>Hello, I&rsquo;m Eliza. 50 Jahre Gespr&auml;che mit Computern</em> (Computerarch&auml;ologie, Bd. 5), 2nd edn. Bochum: Projektverlag, pp. 247&ndash;248.</p>
