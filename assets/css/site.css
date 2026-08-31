@@ -263,6 +263,13 @@ html.powered-off #power-btn {
 .modal-close { position: absolute; top: 0.4rem; right: 0.7rem; background: none; border: 0; font-size: 1.7rem; line-height: 1; color: #6c6757; cursor: pointer; }
 .modal-close:hover { color: #20180f; }
 
+/* SLIP glossary: term / definition pairs */
+.glossary { display: grid; grid-template-columns: minmax(9rem, 14rem) 1fr; gap: 0.35rem 1.2rem; margin: 1.2rem 0 1.8rem; }
+.glossary dt { font-family: var(--mono); font-size: 0.88rem; color: var(--beam); }
+.glossary dd { margin: 0; font-size: 0.95rem; }
+@media (max-width: 620px) { .glossary { grid-template-columns: 1fr; gap: 0.1rem 0; } .glossary dd { margin: 0 0 0.7rem; } }
+.slipfig { display: block; width: 100%; max-width: 34rem; height: auto; margin: 0 auto; }
+
 /* blog post images: constrained inline, click to enlarge in a lightbox */
 #post img { display: block; max-width: 100%; height: auto; margin: 1.6rem auto 0.5rem; border-radius: 4px; cursor: zoom-in; }
 #post p > em:only-child { display: block; text-align: center; font-size: 0.85rem; color: var(--ink-dim); margin: 0 auto 1.6rem; max-width: 46ch; }
