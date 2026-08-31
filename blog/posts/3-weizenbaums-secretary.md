@@ -8,9 +8,6 @@ Since 2021, part of the work of the Eliza Archaeology project has been trying to
 
 > I was startled to see how quickly and how very deeply people conversing with DOCTOR became emotionally involved with the computer and how unequivocally they anthropomorphized it. Once my secretary, who had watched me work on the program for many months and therefore surely knew it to be merely a computer program, started conversing with it. After only a few interchanges with it, she asked me to leave the room... And I knew from long experience that the strong emotional ties many programmers have to their computers are often formed after only short exposures to their machines (Weizenbaum 1976: 6-7).
 
-![Reconstruction of CACM 1966 conversation (2024).](images/3-weizenbaums-secretary-1.jpg)
-*Reconstruction of CACM 1966 conversation (2024).*
-
 As Weizenbaum goes on to explain,
 
 > The following conversation between a young lady and Eliza playing doctor illustrates both the Rogerian technique of encouraging a patient to keep talking and the operation of the computer program ELIZA. The first to "speak" is the young lady. The computer's responses are printed entirely in capitals.
@@ -19,6 +16,9 @@ As Weizenbaum goes on to explain,
 > IN WHAT WAY  
 > They're always bugging us about something or other.  
 > CAN YOU THINK OF A SPECIFIC EXAMPLE
+
+![Reconstruction of CACM 1966 conversation (2024).](images/3-weizenbaums-secretary-1.jpg)
+*Reconstruction of CACM 1966 conversation (2024).*
 
 Often it seems that the "secretary" referred to in Weizenbaum (1976: 6) has been inadvertently conflated with the "young lady" in the conversation (Weizenbaum 1976: 3), particularly by later writers. But the question is are they actually different people? Additionally, who are these unnamed people ("secretary" and "young lady") whose conversations are recorded with ELIZA in Weizenbaum's work?
 
