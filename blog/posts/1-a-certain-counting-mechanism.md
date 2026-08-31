@@ -4,6 +4,8 @@ date: 11 January 2024
 author: Anthony Hay
 ---
 
+![A certain counting mechanism](images/1-a-certain-counting-mechanism.jpg)
+
 Joseph Weizenbaum’s ELIZA is quite a simple program. Its algorithm is almost completely described in eight pages of his 1966 CACM paper (Weizenbaum 1966). And yet Weizenbaum says that people became deeply emotionally involved with ELIZA after just a short time talking to it, and they were convinced that ELIZA understood them. That such a simple program could have such a powerful effect is what interests me most about it. In order to better understand how people could feel this way I wanted to experience conversing with ELIZA for myself.
 
 Over the last 60 years there have been many versions of ELIZA made by many different people. But these seemed to be inspired by ELIZA rather than accurate recreations and I wanted to be sure I was seeing what the people in 1966 would have seen. Although the 1966 CACM paper is a good description of how ELIZA works, I was disappointed that his description of the mechanism that decides when to recall a memory is vague.

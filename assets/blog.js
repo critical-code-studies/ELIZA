@@ -37,6 +37,25 @@
     }).catch(function () { list.innerHTML = '<li><div><p class="meta">Could not load posts.</p></div></li>'; });
   }
 
+  // click any post image to view it larger in a lightbox (Esc or click to close)
+  function initLightbox(root) {
+    root.addEventListener('click', function (e) {
+      var im = e.target && e.target.tagName === 'IMG' ? e.target : null;
+      if (!im) return;
+      var box = document.createElement('div');
+      box.className = 'lightbox';
+      var big = document.createElement('img');
+      big.src = im.currentSrc || im.src; big.alt = im.alt || '';
+      box.appendChild(big);
+      document.body.appendChild(box);
+      document.body.style.overflow = 'hidden';
+      function close() { box.remove(); document.body.style.overflow = ''; document.removeEventListener('keydown', esc); }
+      function esc(ev) { if (ev.key === 'Escape') close(); }
+      box.addEventListener('click', close);
+      document.addEventListener('keydown', esc);
+    });
+  }
+
   // ---- single post ----
   var art = document.getElementById('post');
   if (art) {
@@ -58,6 +77,7 @@
           '<h1 class="page">' + esc(p.title) + '</h1>' +
           '<p class="post-meta">' + esc(p.date) + ' &middot; ' + esc(p.author) + '</p>' +
           render(fm.body) + nav;
+        initLightbox(art);
       }).catch(function () { art.innerHTML = '<p>Could not load this post.</p>'; });
     }).catch(function () { art.innerHTML = '<p>Could not load the blog index.</p>'; });
   }

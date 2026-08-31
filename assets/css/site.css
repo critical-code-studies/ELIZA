@@ -262,6 +262,13 @@ html.powered-off #power-btn {
 .modal-src a { font-family: var(--mono); font-size: 0.8rem; color: #8a5a1f; }
 .modal-close { position: absolute; top: 0.4rem; right: 0.7rem; background: none; border: 0; font-size: 1.7rem; line-height: 1; color: #6c6757; cursor: pointer; }
 .modal-close:hover { color: #20180f; }
+
+/* blog post images: constrained inline, click to enlarge in a lightbox */
+#post img { display: block; max-width: 100%; height: auto; margin: 1.6rem auto 0.5rem; border-radius: 4px; cursor: zoom-in; }
+#post p > em:only-child { display: block; text-align: center; font-size: 0.85rem; color: var(--ink-dim); margin: 0 auto 1.6rem; max-width: 46ch; }
+.lightbox { position: fixed; inset: 0; z-index: 9600; display: flex; align-items: center; justify-content: center; padding: 3vw; background: rgba(5,6,8,0.9); cursor: zoom-out; }
+.lightbox[hidden] { display: none; }
+.lightbox img { max-width: 96vw; max-height: 94vh; width: auto; height: auto; border-radius: 4px; box-shadow: 0 10px 44px rgba(0,0,0,0.55); }
 @keyframes litPulse { 0%,100% { filter: brightness(1); } 50% { filter: brightness(1.28); } }
 @media (prefers-reduced-motion: reduce) { .ctl.power.on { animation: none; } }
 
