@@ -35,29 +35,28 @@ In our research team we have discussed whether this person(s) might be fictional
 
 Indeed, we have found different versions of the conversation with the "young lady" in the archive and hand-edited records that indicate that the published version was tidied up before publication (see image on left, Alternative Conversation 22 March 1965, but see also Weizenbaum 1965). For example:
 
+<div class="version-compare">
+
 **Weizenbaum (March 22, 1965, MIT archive)**
 
 > I AM SORRY TO HEAR YOU ARE DEPRESSED  
-> He's right. I am unhappy.  
+> <mark>He's right. I am unhappy.</mark>  
 > DO YOU THINK COMING HERE WILL HELP YOU NOT TO BE UNHAPPY  
-> Perhaps I could learn to get along with father.
-
-![from Project Mac (1966) Project Mac Progress IV 1966-67, p. 126.](images/3-weizenbaums-secretary-3.jpg)
-*from Project Mac (1966) Project Mac Progress IV 1966-67, p. 126.*
+> <mark>Perhaps I could learn to get along with father.</mark>
 
 **Weizenbaum (1965)/Project Mac (1966)**
 
 > I AM SORRY TO HEAR YOU ARE DEPRESSED  
-> he's right. i am unhappy  
+> <mark>he's right. i am unhappy</mark>  
 > DO YOU THINK COMING HERE WILL HELP YOU NOT TO BE UNHAPPY  
-> i need some help, that much is clear
+> <mark>i need some help, that much is clear</mark>
 
 **Weizenbaum (1966: 36-37)**
 
 > I AM SORRY TO HEAR YOU ARE DEPRESSED  
-> It's true. I am unhappy.  
+> <mark>It's true. I am unhappy.</mark>  
 > DO YOU THINK COMING HERE WILL HELP YOU NOT TO BE UNHAPPY  
-> I need some help, that much seems certain.
+> <mark>I need some help, that much seems certain.</mark>
 
 **Weizenbaum (1967: 475)**
 
@@ -76,7 +75,12 @@ Indeed, we have found different versions of the conversation with the "young lad
 ![From Weil, A. (1965) “Conversations with a Mechanical Psychiatrist.” The Harvard Review, Vol. 3, No. 2, pp. 68–73, 1965.](images/3-weizenbaums-secretary-4.jpg)
 *From Weil, A. (1965) “Conversations with a Mechanical Psychiatrist.” The Harvard Review, Vol. 3, No. 2, pp. 68–73, 1965.*
 
+</div>
+
 This version variation in published and unpublished versions of the ELIZA output is not commented upon in the literature, which is curious in itself, but it remains likely that Weizenbaum drew on multiple conversations to create them. There are other variation differences in the texts, e.g. "mother" is not mentioned in the archive 1965 version and there are different responses to the line "DOES IT PLEASE YOU TO BELIEVE I AM AFRAID OF YOU". By 1966 the text appears to stabilise and remained the same in subsequent versions. However, in all cases, the name of the person (or another user or users) remains unknown. Indeed, Weizenbaum variously refers to the person as "young lady" (Project Mac 1966: 126) or "distraught young lady" (Weil 1965), "user" (Weizenbaum 1966, 1967), "patient" and "young lady" (1976).
+
+![from Project Mac (1966) Project Mac Progress IV 1966-67, p. 126.](images/3-weizenbaums-secretary-3.jpg)
+*from Project Mac (1966) Project Mac Progress IV 1966-67, p. 126.*
 
 It is notable that a similar conversation is given in McGuire, Lorch, and Quarton (1967: 180). Weizenbaum notes in an interview with McCorduck (1972) that he met Gardner C. Quarton, who was professor of psychiatry at the Harvard Medical School and particularly at Mass General Hospital (MGH) whilst he was developing ELIZA. Interestingly Weizenbaum also mentions that the MGH people were very much cautious about the use of ELIZA in psychiatric settings and they helped "guard against the other guys" who were "psychiatrists and most of them were – what word should I use – converts, instant converts." He explains that not just Ken Colby but "there were so many psychiatrists in the Cambridge area, for example who continued to bombard me with wow, this is great stuff and urged me to develop it for psychiatric purposes and so on and so forth" McCorduck (1972: 24). Nonetheless, Quarton "took an interest in all that and so I started working with Mass General" and it may have been through this link that some of the conversations that Weizenbaum uses, or assembles, in his publications are generated from this connection, as shown below.
 
@@ -118,25 +122,105 @@ Update (1 Aug 2024): We now believe we know the name of Weizenbaum's secretary w
 
 #### Appendix I
 
-**Project MAC Administrative and Supporting Staff (1963/64)**
-
-T. L. Bergeron, E. Gannon, M. Grourke, J. Kinasewich, C. King, F. Lee, J. Pinella \*, C. Sarandrea, D. Scanlon \*, L. Silvestro, C. Solomon
-
-**Project MAC Administrative and Supporting Staff (1964/65)**
-
-F. S. Axelrod, M. E. Baker, A. W. Bowen, J. M. Constantine, F. H. Dilworth, E. T. Gannon (still in post), M. Grourke (still in post), C. L. King, L. Martin, S. A. O'Leary, J. E. Pinella (still in post) \*, C. L. Robinson \*\*, C. Sarandrea, D. C. Scanlon (still in post) \*, E. L. Schneider, L. M. Silvestro (still in post), J. Wallen, R. M. Yunetz
-
-**Project MAC Administrative and Supporting Staff (1965/66)**
-
-C. S. Alles, N. H. Arold, M. E. Baker, T. Bergeron, A. W. Bowen, S. Buell, J. M. Constantine, B. L. Cullen, K. Day, F. H. Dilworth, D. J. Dolan, G. Gulledge, A. Handelman, D. L. Jones, D. Kontrimus, T. Liotta, L. Martin (still in post), E. G. Moore, W. Needre, S. A. O'Leary, J. E. Pinella (still in post) \*, D. Rain, C. L. Robinson (still in post) \*\*, J. Robinson, D. C. Scanlon (still in post) \*, E. L. Schneider, R. Slosberg, J. Wallen, P. Wester, R. M. Yunetz (still in post)
-
-**Project MAC Administrative and Supporting Staff (1966/67)**
-
-C. S. Alles, J. C. Anderson, M. E. Baker, T. Bergeron (still in post), A. W. Bowen, J. M. Constantine, B. L. Cullen, K. F. Diamond, L. S. Ely, C. D. Graceffa, D. L. Jones, D. Kontrimus, R. Long, T. Liotta, E. T. Moore, M. A. Nelson, J. E. Piñella (still in post) \*, C. L. Robinson (still in post) \*\*, J. A. Robinson (still in post), E. M. Roderick, D. C. Scanlon (still in post) \*, M. Stallings, S. L. Stone, K. M. Tomaselle, C. M. White
-
-\* in post throughout the period of Project Mac 1963-1966
-
-\*\* in post throughout the period of Project Mac 1964-1966
+<div class="staff-appendix">
+  <p class="staff-head">Project MAC administrative and supporting staff, 1963/64</p>
+  <ul class="staff-list">
+    <li>T. L. Bergeron </li>
+    <li>E. Gannon </li>
+    <li>M. Grourke </li>
+    <li>J. Kinasewich </li>
+    <li>C. King </li>
+    <li>F. Lee </li>
+    <li class="staff-starred">J. Pinella <span class="staff-mark">*</span></li>
+    <li>C. Sarandrea </li>
+    <li class="staff-starred">D. Scanlon <span class="staff-mark">*</span></li>
+    <li>L. Silvestro </li>
+    <li>C. Solomon </li>
+  </ul>
+  <p class="staff-head">Project MAC administrative and supporting staff, 1964/65</p>
+  <ul class="staff-list">
+    <li>F. S. Axelrod </li>
+    <li>M. E. Baker </li>
+    <li>A. W. Bowen </li>
+    <li>J. M. Constantine </li>
+    <li>F. H. Dilworth </li>
+    <li>E. T. Gannon <span class="staff-still">still in post</span></li>
+    <li>M. Grourke <span class="staff-still">still in post</span></li>
+    <li>C. L. King </li>
+    <li>L. Martin </li>
+    <li>S. A. O'Leary </li>
+    <li class="staff-starred">J. E. Pinella <span class="staff-mark">*</span><span class="staff-still">still in post</span></li>
+    <li class="staff-starred">C. L. Robinson <span class="staff-mark">**</span></li>
+    <li>C. Sarandrea </li>
+    <li class="staff-starred">D. C. Scanlon <span class="staff-mark">*</span><span class="staff-still">still in post</span></li>
+    <li>E. L. Schneider </li>
+    <li>L. M. Silvestro <span class="staff-still">still in post</span></li>
+    <li>J. Wallen </li>
+    <li>R. M. Yunetz </li>
+  </ul>
+  <p class="staff-head">Project MAC administrative and supporting staff, 1965/66</p>
+  <ul class="staff-list">
+    <li>C. S. Alles </li>
+    <li>N. H. Arold </li>
+    <li>M. E. Baker </li>
+    <li>T. Bergeron </li>
+    <li>A. W. Bowen </li>
+    <li>S. Buell </li>
+    <li>J. M. Constantine </li>
+    <li>B. L. Cullen </li>
+    <li>K. Day </li>
+    <li>F. H. Dilworth </li>
+    <li>D. J. Dolan </li>
+    <li>G. Gulledge </li>
+    <li>A. Handelman </li>
+    <li>D. L. Jones </li>
+    <li>D. Kontrimus </li>
+    <li>T. Liotta </li>
+    <li>L. Martin <span class="staff-still">still in post</span></li>
+    <li>E. G. Moore </li>
+    <li>W. Needre </li>
+    <li>S. A. O'Leary </li>
+    <li class="staff-starred">J. E. Pinella <span class="staff-mark">*</span><span class="staff-still">still in post</span></li>
+    <li>D. Rain </li>
+    <li class="staff-starred">C. L. Robinson <span class="staff-mark">**</span><span class="staff-still">still in post</span></li>
+    <li>J. Robinson </li>
+    <li class="staff-starred">D. C. Scanlon <span class="staff-mark">*</span><span class="staff-still">still in post</span></li>
+    <li>E. L. Schneider </li>
+    <li>R. Slosberg </li>
+    <li>J. Wallen </li>
+    <li>P. Wester </li>
+    <li>R. M. Yunetz <span class="staff-still">still in post</span></li>
+  </ul>
+  <p class="staff-head">Project MAC administrative and supporting staff, 1966/67</p>
+  <ul class="staff-list">
+    <li>C. S. Alles </li>
+    <li>J. C. Anderson </li>
+    <li>M. E. Baker </li>
+    <li>T. Bergeron <span class="staff-still">still in post</span></li>
+    <li>A. W. Bowen </li>
+    <li>J. M. Constantine </li>
+    <li>B. L. Cullen </li>
+    <li>K. F. Diamond </li>
+    <li>L. S. Ely </li>
+    <li>C. D. Graceffa </li>
+    <li>D. L. Jones </li>
+    <li>D. Kontrimus </li>
+    <li>R. Long </li>
+    <li>T. Liotta </li>
+    <li>E. T. Moore </li>
+    <li>M. A. Nelson </li>
+    <li class="staff-starred">J. E. Piñella <span class="staff-mark">*</span><span class="staff-still">still in post</span></li>
+    <li class="staff-starred">C. L. Robinson <span class="staff-mark">**</span><span class="staff-still">still in post</span></li>
+    <li>J. A. Robinson <span class="staff-still">still in post</span></li>
+    <li>E. M. Roderick </li>
+    <li class="staff-starred">D. C. Scanlon <span class="staff-mark">*</span><span class="staff-still">still in post</span></li>
+    <li>M. Stallings </li>
+    <li>S. L. Stone </li>
+    <li>K. M. Tomaselle </li>
+    <li>C. M. White </li>
+  </ul>
+  <p class="staff-key"><span class="staff-mark">*</span> in post throughout Project MAC, 1963&ndash;1966 &nbsp;&nbsp; <span class="staff-mark">**</span> in post throughout 1964&ndash;1966</p>
+</div>
 
 #### Appendix II
 

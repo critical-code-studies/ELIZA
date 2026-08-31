@@ -131,7 +131,7 @@
           '</span><span>' +
           (next ? '<a href="post.html?p=' + encodeURIComponent(next.slug) + '">' + esc(next.title) + ' &rarr;</a>' : '<a href="../blog.html">All posts &rarr;</a>') +
           '</span></div>';
-        art.innerHTML = '<span class="kicker">Blog &middot; no. ' + p.n + '</span>' +
+        art.innerHTML = '<span class="kicker"><a href="../blog.html">Blog</a> &middot; no. ' + p.n + '</span>' +
           '<h1 class="page">' + esc(p.title) + '</h1>' +
           '<p class="post-meta">' + esc(p.date) + ' &middot; ' + esc(p.author) + '</p>' +
           render(fm.body) + nav;
