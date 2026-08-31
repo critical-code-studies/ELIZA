@@ -308,6 +308,12 @@ html.powered-off #power-btn {
 .post-gallery { clear: both; display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1.4rem 1.6rem; margin: 1.7rem 0 1.9rem; }
 .post-gallery .post-fig { float: none; width: 100%; margin: 0; }
 #post h2, #post h3, #post h4, #post pre, #post .post-nav { clear: both; }
+/* transcripts and script listings: keep the indentation, wrap the long lines,
+   and never let one push the page sideways */
+#post pre { white-space: pre-wrap; overflow-x: auto; font-family: var(--mono); font-size: 0.76rem;
+  line-height: 1.6; color: var(--ink-dim); background: rgba(0,0,0,0.16);
+  border-left: 2px solid var(--line-soft); border-radius: 3px; padding: 0.95rem 1.15rem; margin: 1.4rem 0; }
+#post pre code { font: inherit; color: inherit; background: none; padding: 0; }
 @media (max-width: 620px) {
   .post-fig, .post-fig.fig-left, .post-fig.fig-right { float: none; width: 100%; margin: 1.5rem 0 1.2rem; }
 }
