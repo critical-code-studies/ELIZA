@@ -4,16 +4,16 @@ date: 16 January 2025
 author: Walt Bilofsky (guest post)
 ---
 
-<!-- IMG-PENDING ![Walt Bilofsky](images/9-toolworks-1.jpg) -->
-<!-- IMG-PENDING *Walt Bilofsky* -->
-<!-- IMG-PENDING ![Toolworks ELIZA in a Ziploc bag](images/9-toolworks-2.jpg) -->
-<!-- IMG-PENDING *In the early 1980s, Toolworks software was sold in 6 by 9 inch Ziploc bags. This cover was wrapped around the ELIZA manual with the floppy disk visible through the back of the bag.* -->
-<!-- IMG-PENDING ![Software Golden Oldies](images/9-toolworks-3.jpg) -->
-<!-- IMG-PENDING *ELIZA was responsible for Les Crane's introduction to the Toolworks. He licensed ELIZA to include in Software Golden Oldies, then later merged his company into Toolworks and became Chairman.* -->
-<!-- IMG-PENDING ![Walt Bilofsky with original Toolworks Heathkit H89 computer, June 1982](images/9-toolworks-4.jpg) -->
-<!-- IMG-PENDING *Walt Bilofsky with original Toolworks Heathkit H89 computer, June 1982* -->
-<!-- IMG-PENDING ![Full ELIZA for your Micro advert](images/9-toolworks-5.jpg) -->
-<!-- IMG-PENDING *"Full ELIZA for your Micro" Advert for Steve Grumette's ELIZA version.* -->
+![Walt Bilofsky](images/9-toolworks-1.jpg)
+*Walt Bilofsky*
+![Toolworks ELIZA in a Ziploc bag](images/9-toolworks-2.jpg)
+*In the early 1980s, Toolworks software was sold in 6 by 9 inch Ziploc bags. This cover was wrapped around the ELIZA manual with the floppy disk visible through the back of the bag.*
+![Software Golden Oldies](images/9-toolworks-3.jpg)
+*ELIZA was responsible for Les Crane's introduction to the Toolworks. He licensed ELIZA to include in Software Golden Oldies, then later merged his company into Toolworks and became Chairman.*
+![Walt Bilofsky with original Toolworks Heathkit H89 computer, June 1982](images/9-toolworks-4.jpg)
+*Walt Bilofsky with original Toolworks Heathkit H89 computer, June 1982*
+![Full ELIZA for your Micro advert](images/9-toolworks-5.jpg)
+*"Full ELIZA for your Micro" Advert for Steve Grumette's ELIZA version.*
 ELIZA played a key role in the journey of the pioneering software publishing company The Software Toolworks from a one-man shop in a converted garage to a publicly traded company with over 600 employees. Here’s how it went.
 
 I started the Toolworks in February 1980, selling software on 5 ¼” floppy disks for the Heathkit H89 computer. By the end of the year there were 13 titles by myself and five other authors, and an employee.
@@ -24,7 +24,7 @@ I phoned Joe Weizenbaum, whom I knew from my graduate student years at MIT, to f
 
 All I had wanted from ACM was the right to reproduce ELIZA's DOCTOR script, but why waste anything? So the entire article was included as an appendix to the program’s manual, to lend it gravitas and maybe teach someone something. The manual also contained instructions for the user to change and extend the script if they wished.
 
-<!-- IMG-PENDING ![Page from the Toolworks ELIZA manual](images/9-toolworks-6.jpg) -->
+![Page from the Toolworks ELIZA manual](images/9-toolworks-6.jpg)
 
 The Toolworks never wound up using Grumette’s program, but having agreed to license it I thought it only fair to pay him a royalty, which we did for some years. Since my C version of ELIZA could be sold for other computers, we went into competition with him, but the royalty cushioned the blow.
 
@@ -48,4 +48,4 @@ Blogpost by Walt Bilofsky, Founder of The Software Toolworks, [https://www.toolw
 
 Digital Images courtesy of Walt Bilofsky.
 
-<!-- IMG-PENDING ![The Software Toolworks ELIZA](images/9-toolworks-7.jpg) -->
+![The Software Toolworks ELIZA](images/9-toolworks-7.jpg)

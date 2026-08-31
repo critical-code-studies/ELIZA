@@ -4,19 +4,19 @@ date: 9 December 2024
 author: Anthony Hay
 ---
 
-<!-- IMG-PENDING ![Joseph Weizenbaum (1923-2008)](images/8-doctor-1.jpg) -->
-<!-- IMG-PENDING *Joseph Weizenbaum (1923-2008)* -->
-<!-- IMG-PENDING ![Screenshot of ELIZA being used in 1967 from The Twenty-First Century, "The Communications Revolution", first broadcast, 1/29/67.](images/8-doctor-2.jpg) -->
-<!-- IMG-PENDING *Screenshot of ELIZA being used in 1967 from The Twenty-First Century, "The Communications Revolution", first broadcast, 1/29/67, [https://youtu.be/j8fDkSqnghg](https://youtu.be/j8fDkSqnghg)* -->
+![Joseph Weizenbaum (1923-2008)](images/8-doctor-1.jpg)
+*Joseph Weizenbaum (1923-2008)*
+![Screenshot of ELIZA being used in 1967 from The Twenty-First Century, "The Communications Revolution", first broadcast, 1/29/67.](images/8-doctor-2.jpg)
+*Screenshot of ELIZA being used in 1967 from The Twenty-First Century, "The Communications Revolution", first broadcast, 1/29/67, [https://youtu.be/j8fDkSqnghg](https://youtu.be/j8fDkSqnghg)*
 There are three known contemporaneous scripts compatible with the version of ELIZA described in Joseph Weizenbaum’s 1966 Communications of the ACM paper: one was published as an appendix to that paper, and the other two appear in a computer printout in Weizenbaum’s archive at MIT. Here we take a quick look at these three scripts to see how they compare: they are similar and the ones from the archive appear to show the published DOCTOR script at an earlier stage of development.
 
 The printout of the ELIZA source code is in a folder dated 1965 ([https://hdl.handle.net/1721.3/201699](https://hdl.handle.net/1721.3/201699)). Sandwiching the code are two ELIZA scripts. Here is the beginning of the first:
 
-<!-- IMG-PENDING ![The beginning of the first script](images/8-doctor-3.jpg) -->
+![The beginning of the first script](images/8-doctor-3.jpg)
 
 Weizenbaum developed ELIZA on an IBM 7094 under an operating system called Compatible Time-Sharing System, or CTSS. The first line of the above printout shows the PRINT heading:
 
-<!-- IMG-PENDING ![PRINT heading](images/8-doctor-4.jpg) -->
+![PRINT heading](images/8-doctor-4.jpg)
 
 The first script is named .TAPE. 102. The PRINT headings that appear later in the printout show that the file containing the ELIZA code is named SPEAK MAD, and the last script is named .TAPE. 100.
 
@@ -30,7 +30,7 @@ The user must respond to this by entering a number. ELIZA will then read the scr
 
 Turning to the contents of the scripts: .TAPE. 102 and .TAPE. 100 are very similar. There is a minor error in .TAPE. 102, which is described below. Here are lists of all the keywords specified in the three scripts, ordered by the precedence they are assigned in the script and then alphabetically:
 
-<!-- IMG-PENDING ![Keyword lists for the three scripts](images/8-doctor-5.jpg) -->
+![Keyword lists for the three scripts](images/8-doctor-5.jpg)
 
 All the keywords in .TAPE. 102 are present in the .TAPE. 100 and CACM scripts. Except for the MY and WAS keywords, they are given the same precedence in all three scripts. The special keywords MEMORY and NONE are the same in all three scripts.
 

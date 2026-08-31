@@ -4,8 +4,8 @@ date: 25 January 2025
 author: David M. Berry and Sarah Ciston
 ---
 
-<!-- IMG-PENDING ![Overview of the reconstructed code.](images/10-reconstructing-1.jpg) -->
-<!-- IMG-PENDING *Overview of the reconstructed code.* -->
+![Overview of the reconstructed code.](images/10-reconstructing-1.jpg)
+*Overview of the reconstructed code.*
 The reconstruction of historical software presents fascinating challenges at the intersection of computer science, digital preservation, and software archaeology. In recent work reconstructing Joseph Weizenbaum's original ELIZA from 1965, the team encountered unique difficulties that highlight important questions about software preservation and historical authenticity.
 
 ELIZA, created by Joseph Weizenbaum at MIT in the early 1960s, is usually considered the world's first chatbot. It was developed in MAD-SLIP on MIT's Compatible Time-Sharing System (CTSS), running on an IBM 7094. Our recent discovery of original ELIZA printouts in Weizenbaum's archives at MIT, including an early version of the famous DOCTOR script and MAD-SLIP code, provided an unprecedented opportunity to resurrect this foundational piece of computing history.
@@ -21,7 +21,7 @@ Several critical functions were missing from the recovered code and had to be ca
 
 The reconstruction required not just technical expertise but detective work to understand the original system's behaviour. As Lane et al. (2025) note, "running the original code feels good and authentic. Finding bugs in it only adds to the authenticity."
 
-<!-- IMG-PENDING ![Reconstructed ELIZA running](images/10-reconstructing-2.jpg) -->
+![Reconstructed ELIZA running](images/10-reconstructing-2.jpg)
 
 This archaeological approach to code reconstruction raises important questions about authenticity and preservation. Should we fix historical bugs when we find them? How do we balance historical accuracy with the desire for a working system? These questions parallel similar debates in architectural preservation about restoration versus reconstruction. It emphasizes the importance of documenting our processes and being selective and mindful of our methodologies for software reconstruction. How are we to “preserve” the material traces of something that exists in many versions, iterations, and offshoots - in particular before the era of Git (which itself presents new problems for contemporary software archiving projects)?
 

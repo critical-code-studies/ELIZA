@@ -4,8 +4,8 @@ date: 8 December 2025
 author: David M. Berry, Sarah Ciston, Anthony Hay, Mark C. Marino, Arthur Schwarz, Jeff Shrager, Peggy Weil and Peter Millican
 ---
 
-<!-- IMG-PENDING ![Book cover for Inventing ELIZA: How the First Chatbot Shaped the Future of AI (MIT Press, 2026)](images/11-plurality-1.jpg) -->
-<!-- IMG-PENDING *Book cover for Inventing ELIZA: How the First Chatbot Shaped the Future of AI (MIT Press, 2026)* -->
+![Book cover for Inventing ELIZA: How the First Chatbot Shaped the Future of AI (MIT Press, 2026)](images/11-plurality-1.jpg)
+*Book cover for Inventing ELIZA: How the First Chatbot Shaped the Future of AI (MIT Press, 2026)*
 The recovery of lost source code is an important scholarly practice of "critical code studies" (Berry and Marino 2024). The co-authored book Inventing ELIZA: How the First Chatbot Shaped the Future of AI (MIT Press, 2026) argues that ELIZA was never merely the simple pattern-matching therapist of popular imagination, but rather a sophisticated platform with an impressive architectural design that inspired Weizenbaum's later critical stance on AI. These are details that are either omitted, overlooked, or forgotten by most accounts. Inventing ELIZA builds on research which began when we discovered Joseph Weizenbaum's original ELIZA code in the MIT Archives in 2021. There we uncovered not just missing code in the form of the MAD-SLIP printout but a forgotten complexity in ELIZA's history (Weizenbaum 1966, 1967).
 
 ELIZA and DOCTOR are not synonymous. This distinction, obvious once stated, has been obscured for sixty years by the proliferation of BASIC and Lisp implementations that treated DOCTOR's Rogerian therapy script as if it were ELIZA, rather than one demonstration of a general-purpose system. We document at least five major versions of ELIZA (1965a, 1965b, 1966, 1967, 1968+), each with distinct capabilities that complicate any simple narrative about it.
@@ -16,7 +16,7 @@ We also discovered evidence of other scripts in the archive beyond DOCTOR, inclu
 
 We use an approach drawn from critical code studies, treating source code as a text requiring close reading within its historical and material context (Berry and Marino 2024; Marino 2020). This method allows us to connect together insights that would not be possible from a description of the algorithm alone. For example, the recovered code contains a "certain counting mechanism" for memory recall that Weizenbaum described but never fully explained in his published work but we can now read in the source code. Additionally ELIZA uses "but" as a delimiter alongside "." and "," despite the CACM paper only mentioning the latter two.
 
-<!-- IMG-PENDING ![Recovered ELIZA source](images/11-plurality-2.jpg) -->
+![Recovered ELIZA source](images/11-plurality-2.jpg)
 
 What is surprising is what remains lost from a time not that far from our own (Berry 2025). Despite extensive archival work, we have not been able to find source code for ELIZA's sophisticated later versions. For example, the OPL-based multi-script platform deployed in educational settings has simply disappeared, leaving only fragmentary evidence in Project MAC progress reports and user documentation. We suspect that CTSS backup tapes might contain later versions, but none have so far been located.
 
