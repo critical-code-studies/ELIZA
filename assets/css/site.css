@@ -658,7 +658,8 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .posts li { border-bottom: 1px solid var(--line-soft); padding: 1.1rem 0; display: grid; grid-template-columns: 2.4rem 1fr; gap: 1rem; }
 .posts .no { font-family: var(--mono); color: var(--ink-dim); font-size: 0.85rem; padding-top: 0.15rem; }
 .posts h3 { margin: 0 0 0.2rem; }
-.posts h3 a { border: 0; }
+.posts h3 a { border: 0; color: var(--bright); }
+.posts h3 a:hover { color: var(--beam); }
 .posts .meta { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.5px; text-transform: uppercase; color: var(--ink-dim); }
 .posts .latest-tag { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 1px; text-transform: uppercase; color: var(--beam); margin: 0 0 0.25rem; }
 .posts li.latest h3 { font-size: 1.35rem; }
@@ -672,7 +673,8 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .blog-index-box ol { list-style: none; margin: 0; padding: 0; counter-reset: bi; }
 .blog-index-box li { padding: 0.42rem 0; border-top: 1px solid var(--line-soft); font-size: 0.86rem; line-height: 1.35; }
 .blog-index-box li:first-child { border-top: 0; padding-top: 0; }
-.blog-index-box li a { border: 0; }
+.blog-index-box li a { border: 0; color: var(--bright); }
+.blog-index-box li a:hover { color: var(--beam); }
 .blog-index-box .meta { display: block; font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.5px; text-transform: uppercase; color: var(--ink-dim); margin-top: 0.15rem; }
 @media (max-width: 860px) { .blog-layout { grid-template-columns: 1fr; gap: 2rem; } .blog-index { position: static; } }
 .post-meta { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-dim); margin: -0.6rem 0 2rem; }
@@ -695,7 +697,8 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .talklist li:last-child { border-bottom: 0; }
 .talklist .who { display: block; font-family: var(--mono); font-size: 0.66rem; letter-spacing: 1px; text-transform: uppercase; color: var(--lamp-amber); margin-bottom: 0.25rem; }
 .talklist .ttl { display: block; color: var(--bright); font-size: 0.94rem; line-height: 1.45; max-width: 70ch; }
-.talklist .ttl a { border-bottom: 1px solid rgba(236,106,66,0.4); }
+.talklist .ttl a { color: var(--bright); border-bottom: 1px solid rgba(232,228,218,0.28); }
+.talklist .ttl a:hover { color: var(--beam); border-bottom-color: var(--beam); }
 .talklist .meta { display: block; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.5px; color: var(--ink-dim); margin-top: 0.3rem; }
 .talklist .meta a { color: inherit; border-bottom: 1px solid rgba(236,106,66,0.35); }
 .talklist .meta a:hover { color: var(--beam); }
