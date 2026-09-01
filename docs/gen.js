@@ -43,7 +43,7 @@ function nav(depth) {
         <div class="nav-group">
           <button class="nav-top" aria-expanded="false">About <span class="caret" aria-hidden="true">&#9662;</span></button>
           <div class="nav-menu">
-            <a href="${p}about.html">About</a><a href="${p}people.html">TEAM-ELIZA</a><a href="${p}talks.html">Talks</a><a href="${p}bibliography.html">Bibliography</a><a href="${p}links.html">Resources</a>
+            <a href="${p}about.html">About</a><a href="${p}people.html">TEAM-ELIZA</a><a href="${p}talks.html">Talks</a><a href="${p}reviews.html">Reviews</a><a href="${p}bibliography.html">Bibliography</a><a href="${p}links.html">Resources</a>
           </div>
         </div>
       </nav>`;
@@ -922,6 +922,9 @@ write('book.html', page({
         <p class="micro">The open access edition was made possible by funding from MIT Libraries and Distinctive Collections.</p>
       </div>
 
+      <blockquote class="pull">[A] unique blend of technical detail and cultural commentary.<cite>Matthew Hutson, The Wall Street Journal</cite></blockquote>
+      <p>More reviews and praise are collected on the <a href="reviews.html">reviews</a> page.</p>
+
       <div class="cover-note muted">
         <span class="kicker">MIT Press &middot; Software Studies</span>
         <h2>Inventing ELIZA</h2>
@@ -991,6 +994,47 @@ write('about.html', page({
         <img src="assets/images/weizenbaum-mit-80s.jpg" alt="Joseph Weizenbaum at MIT in the 1980s" loading="lazy">
         <figcaption>Joseph Weizenbaum at MIT in the 1980s.</figcaption>
       </figure>
+`}));
+
+// ---------------------------------------------------------------------------
+// REVIEWS
+// ---------------------------------------------------------------------------
+write('reviews.html', page({
+  title: 'Reviews', desc: 'Reviews and praise for Inventing ELIZA (MIT Press, 2026).',
+  body: `
+      <span class="kicker">Reviews</span>
+      <h1 class="page">Reviews of the book</h1>
+      <div class="lede"><p>What readers have made of <a href="book.html"><em>Inventing ELIZA: How the First Chatbot Shaped the Future of AI</em></a> (MIT Press, Software Studies, 2026), with a foreword by Janet H. Murray.</p></div>
+
+      <h2 class="yeargroup">Published reviews</h2>
+      <div class="reviews">
+        <article class="review">
+          <blockquote class="pull">The authors of &ldquo;Inventing Eliza&rdquo; excavated large portions of Eliza&rsquo;s code from MIT&rsquo;s archives and used it to re-create Eliza running Doctor, talmudically annotating the code throughout the book&hellip; One of the book&rsquo;s most powerful points is that technology is not neutral but, like any text, manifests its creators&rsquo; decisions. These choices often carry social and political weight.<cite>Matthew Hutson, The Wall Street Journal</cite></blockquote>
+          <p class="ref">Hutson, M. (2026) Review of <em>Inventing ELIZA</em>, <em>The Wall Street Journal</em>, 19 August.</p>
+        </article>
+
+        <article class="review">
+          <blockquote class="pull">I find this book the best example of &lsquo;critical code studies&rsquo; methodology so far and a work that can engage future research into chatbot systems.<cite>Jeffrey Starr, &#8484;&rarr;&#8484;</cite></blockquote>
+          <p class="ref">Starr, J. (2026) &lsquo;Inventing ELIZA (Review)&rsquo;, <em>&#8484;&rarr;&#8484;</em>, 10 August. Available at: <a href="https://ztoz.blog/posts/inventing-eliza-review/">https://ztoz.blog/posts/inventing-eliza-review/</a></p>
+        </article>
+
+        <article class="review">
+          <blockquote class="pull">In <em>Inventing ELIZA</em>, a group of eight scholars (&ldquo;Team ELIZA&rdquo;) lovingly and painstakingly reconstruct, explain, reanimate, and place into historical context the program itself, the many surviving transcripts of the program&rsquo;s use in the 1960s, and the development of subsequent chatbots&hellip; The book is a masterful contribution to the emerging discipline of software studies.<cite>Simson L. Garfinkel, Science</cite></blockquote>
+          <p class="ref">Garfinkel, S. L. (2026) &lsquo;Reanimating ELIZA, the world&rsquo;s first chatbot&rsquo;, <em>Science</em>, 392(6804), p. 1249, 18 June. Available at: <a href="https://doi.org/10.1126/science.aeh9238">https://doi.org/10.1126/science.aeh9238</a></p>
+        </article>
+
+      </div>
+
+      <h2 class="yeargroup">Praise</h2>
+      <div class="praise">
+        <blockquote>The innovative collaboration <em>Inventing ELIZA</em> doesn&rsquo;t just shed light on the famous first chatbot from the 1960s. It aims an array of thoughtful approaches at a software system of ever-increasing importance, incandescently illuminating ELIZA and connecting it to current developments. This book proves the importance of critical code studies and is an essential resource for understanding the past, present, and future of AI.<cite>Nick Montfort, author of <em>Output</em></cite></blockquote>
+        <blockquote>An extraordinary accomplishment in the history of computing. <em>Inventing ELIZA</em> couples important archival discoveries with careful materialist rigor. A crucial history of the present and essential reading for students and critics of AI.<cite>Scott Richmond, author of <em>Cinema&rsquo;s Bodily Illusions</em></cite></blockquote>
+        <blockquote>Part software archaeology, part improv, <em>Inventing ELIZA</em> opens a backstage chat in which the recovered MAD-SLIP source code acts as a lively conversational partner, transforming a technological artifact fundamental to the history of AI into a compelling dialogue about conversations themselves.<cite>Rita Raley, Professor of English, UC Santa Barbara</cite></blockquote>
+      </div>
+
+      <div class="callout"><span class="kicker">Read it</span>
+        <p><em>Inventing ELIZA</em> is available from <a href="https://mitpress.mit.edu/9780262052481/inventing-eliza/">MIT Press</a>, and in full as an <a href="https://direct.mit.edu/books/oa-monograph/6171/Inventing-ELIZAHow-the-First-Chatbot-Shaped-the">open access edition</a>. More about the book is on <a href="book.html">The book</a>.</p>
+      </div>
 `}));
 
 // ---------------------------------------------------------------------------
