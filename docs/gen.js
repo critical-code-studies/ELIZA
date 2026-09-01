@@ -1003,7 +1003,7 @@ write('reviews.html', page({
   title: 'Reviews', desc: 'Reviews and praise for Inventing ELIZA (MIT Press, 2026).',
   body: `
       <span class="kicker">Reviews</span>
-      <h1 class="page">Reviews of the book</h1>
+      <h1 class="page">Reviews of Inventing ELIZA</h1>
       <div class="lede"><p>What readers have made of <a href="book.html"><em>Inventing ELIZA: How the First Chatbot Shaped the Future of AI</em></a> (MIT Press, Software Studies, 2026), with a foreword by Janet H. Murray.</p></div>
 
       <h2 class="yeargroup">Published reviews</h2>
@@ -1035,13 +1035,30 @@ write('reviews.html', page({
 
       <h2 class="yeargroup">Praise</h2>
       <div class="praise">
-        <blockquote>The innovative collaboration <em>Inventing ELIZA</em> doesn&rsquo;t just shed light on the famous first chatbot from the 1960s. It aims an array of thoughtful approaches at a software system of ever-increasing importance, incandescently illuminating ELIZA and connecting it to current developments. This book proves the importance of critical code studies and is an essential resource for understanding the past, present, and future of AI.<cite>Nick Montfort, author of <em>Output</em></cite></blockquote>
-        <blockquote>An extraordinary accomplishment in the history of computing. <em>Inventing ELIZA</em> couples important archival discoveries with careful materialist rigor. A crucial history of the present and essential reading for students and critics of AI.<cite>Scott Richmond, author of <em>Cinema&rsquo;s Bodily Illusions</em></cite></blockquote>
-        <blockquote>Part software archaeology, part improv, <em>Inventing ELIZA</em> opens a backstage chat in which the recovered MAD-SLIP source code acts as a lively conversational partner, transforming a technological artifact fundamental to the history of AI into a compelling dialogue about conversations themselves.<cite>Rita Raley, Professor of English, UC Santa Barbara</cite></blockquote>
+        <figure class="bubble">
+          <blockquote>The innovative collaboration <em>Inventing ELIZA</em> doesn&rsquo;t just shed light on the famous first chatbot from the 1960s. It aims an array of thoughtful approaches at a software system of ever-increasing importance, incandescently illuminating ELIZA and connecting it to current developments. This book proves the importance of critical code studies and is an essential resource for understanding the past, present, and future of AI.</blockquote>
+          <figcaption>Nick Montfort, author of <em>Output</em></figcaption>
+        </figure>
+        <figure class="bubble">
+          <blockquote>An extraordinary accomplishment in the history of computing. <em>Inventing ELIZA</em> couples important archival discoveries with careful materialist rigor. A crucial history of the present and essential reading for students and critics of AI.</blockquote>
+          <figcaption>Scott Richmond, author of <em>Cinema&rsquo;s Bodily Illusions</em></figcaption>
+        </figure>
+        <figure class="bubble">
+          <blockquote>Part software archaeology, part improv, <em>Inventing ELIZA</em> opens a backstage chat in which the recovered MAD-SLIP source code acts as a lively conversational partner, transforming a technological artifact fundamental to the history of AI into a compelling dialogue about conversations themselves.</blockquote>
+          <figcaption>Rita Raley, Professor of English, UC Santa Barbara</figcaption>
+        </figure>
       </div>
 
-      <div class="callout"><span class="kicker">Read it</span>
-        <p><em>Inventing ELIZA</em> is available from <a href="https://mitpress.mit.edu/9780262052481/inventing-eliza/">MIT Press</a>, and in full as an <a href="https://direct.mit.edu/books/oa-monograph/6171/Inventing-ELIZAHow-the-First-Chatbot-Shaped-the">open access edition</a>. More about the book is on <a href="book.html">The book</a>.</p>
+      <h2 class="yeargroup">Read it</h2>
+      <div class="read-it">
+        <figure class="read-it-cover">
+          <a href="https://mitpress.mit.edu/9780262052481/inventing-eliza/"><img src="assets/images/inventing-eliza.jpg" alt="Inventing ELIZA book cover" loading="lazy"></a>
+        </figure>
+        <ul class="links">
+        <li><a href="https://mitpress.mit.edu/9780262052481/inventing-eliza/">Inventing ELIZA</a><span class="meta">, the book, MIT Press.</span></li>
+        <li><a href="https://direct.mit.edu/books/oa-monograph/6171/Inventing-ELIZAHow-the-First-Chatbot-Shaped-the">Inventing ELIZA (open access)</a><span class="meta">, the full book, free to read at MIT Press Direct.</span></li>
+        <li><a href="book.html">The book</a><span class="meta">, what it argues and how it came about.</span></li>
+        </ul>
       </div>
 `}));
 

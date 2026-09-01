@@ -33,6 +33,7 @@
   --eliza:     #ef6f44;          /* the machine's voice (coral phosphor) */
   --you:       #efb44e;          /* the person's voice (amber) */
   --paper:     #d9cfbc;          /* teletype paper */
+  --bubble:    #333b45;          /* speech-bubble fill, steel knocked back */
   --glow:      0 0 6px rgba(236, 106, 66, 0.5), 0 0 14px rgba(236, 106, 66, 0.22);
   --glow-soft: 0 0 5px rgba(250, 247, 239, 0.25);
   --mono: ui-monospace, "SF Mono", "JetBrains Mono", "Cascadia Code", Menlo, Consolas, monospace;
@@ -556,7 +557,7 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .reading ul { list-style: none; padding: 0; margin: 1rem 0 2rem; }
 .reading li { padding: 0.55rem 0; border-bottom: 1px solid var(--line-soft); }
 .reading li::before { content: "› "; color: var(--beam); font-family: var(--mono); }
-.reading h3 { margin-top: 2rem; color: var(--beam); }
+.reading h3 { margin-top: 2rem; color: var(--beam); text-transform: uppercase; letter-spacing: 2px; font-size: 0.98rem; }
 .reading p, .reading li { font-size: 0.95rem; }
 
 /* inline link rows */
@@ -592,11 +593,33 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .review-shot figcaption { font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.3px; line-height: 1.5; color: var(--ink-dim); margin-top: 0.45rem; }
 @media (max-width: 700px) { .review-shot { float: none; width: 100%; max-width: none; margin: 0 0 1.2rem; } }
 
-/* endorsements, set two-up */
-.praise { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.7rem 2.2rem; margin-top: 1.2rem; }
-.praise blockquote { margin: 0; font-family: var(--serif); font-size: 0.98rem; line-height: 1.62; color: var(--ink); border-left: 2px solid var(--line-soft); padding-left: 1.2rem; }
-.praise cite { display: block; font-family: var(--mono); font-style: normal; font-size: 0.68rem; letter-spacing: 1px; text-transform: uppercase; color: var(--lamp-amber); margin-top: 0.7rem; }
-.praise cite em { font-style: normal; }
+/* endorsements, said aloud: chat bubbles alternating down the page, so the
+   praise reads as talk and the reviews above it stay the sober column */
+.praise { display: flex; flex-direction: column; gap: 2rem; margin-top: 1.5rem; }
+.praise .bubble { margin: 0; max-width: 76%; }
+.praise .bubble:nth-child(even) { align-self: flex-end; }
+.praise blockquote {
+  position: relative; margin: 0; background: var(--bubble);
+  border: 1px solid var(--line-soft); border-radius: 16px; padding: 1.05rem 1.35rem;
+  font-family: var(--serif); font-size: 0.97rem; line-height: 1.6; color: var(--ink);
+}
+.praise blockquote::after {
+  content: ""; position: absolute; bottom: -8px; left: 30px; width: 15px; height: 15px;
+  background: var(--bubble); border-right: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft);
+  transform: rotate(45deg); border-bottom-right-radius: 4px;
+}
+.praise .bubble:nth-child(even) blockquote::after { left: auto; right: 30px; }
+.praise figcaption { font-family: var(--mono); font-size: 0.67rem; letter-spacing: 1px; text-transform: uppercase; color: var(--lamp-amber); margin-top: 1.05rem; padding-left: 0.5rem; }
+.praise .bubble:nth-child(even) figcaption { text-align: right; padding: 0 0.5rem 0 0; }
+.praise figcaption em { font-style: normal; }
+@media (max-width: 640px) { .praise .bubble { max-width: 92%; } .praise { gap: 1.6rem; } }
+
+/* where to read it: the cover set beside the links */
+.read-it { display: flow-root; }
+.read-it-cover { float: right; width: 150px; margin: 0.4rem 0 1rem 1.8rem; }
+.read-it-cover img { width: 100%; height: auto; display: block; border: 1px solid var(--line-soft); border-radius: 3px; opacity: 0.94; transition: opacity 0.2s ease; }
+.read-it-cover a:hover img { opacity: 1; }
+@media (max-width: 560px) { .read-it-cover { width: 110px; margin-left: 1.2rem; } }
 
 /* stat strip */
 
@@ -716,7 +739,7 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .timeline p { margin: 0.3rem 0 0; font-size: 0.95rem; max-width: 62ch; }
 
 /* ---------- talks, grouped by year ---------- */
-.yeargroup { font-family: var(--mono); color: var(--lamp-amber); font-size: 1.25rem; letter-spacing: 3px; margin: 2.4rem 0 0; padding-bottom: 0.45rem; border-bottom: 1px solid var(--line-soft); }
+.yeargroup { font-family: var(--mono); color: var(--lamp-amber); font-size: 1.15rem; letter-spacing: 3px; text-transform: uppercase; margin: 2.4rem 0 0; padding-bottom: 0.45rem; border-bottom: 1px solid var(--line-soft); }
 .talklist { list-style: none; padding: 0; margin: 0.6rem 0 0; }
 .talklist li { padding: 0.85rem 0; border-bottom: 1px solid var(--line-soft); }
 .talklist li:last-child { border-bottom: 0; }
@@ -747,7 +770,7 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 
 /* ---------- bibliography ---------- */
 .bib .ref { font-family: var(--serif); font-size: 0.95rem; line-height: 1.5; padding-left: 1.7rem; text-indent: -1.7rem; margin: 0 0 0.75rem; max-width: 74ch; color: var(--ink); }
-.bib h3 { margin-top: 2.2rem; color: var(--beam); }
+.bib h3 { margin-top: 2.2rem; color: var(--beam); text-transform: uppercase; letter-spacing: 2px; font-size: 0.98rem; }
 .bib .ref a { border-bottom: 1px solid var(--line-soft); word-break: break-word; }
 .bib .ref a:hover { border-bottom-color: var(--beam); }
 /* bibliography printed on the fanfold paper: dark ink instead of the dark-bg palette */
