@@ -579,20 +579,15 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 
 /* book reviews page: a cited pull quote over its full reference */
 .reviews { display: grid; gap: 1.7rem; margin-top: 1.4rem; }
-/* each review is its own panel, lit by a different lamp from the 7094 palette
-   and headed by its venue, so three quotes do not read as one grey block */
+/* each review is its own panel, headed by its venue and lit by the blue lamp
+   from the 7094 palette: the press speaking, kept apart from the coral and amber
+   the site uses for its own voice */
 .reviews .review { display: flow-root; background: var(--panel); border: 1px solid var(--line-soft); border-top-width: 2px; border-radius: 3px; padding: 1.2rem 1.5rem 1.5rem; }
 .review .venue { max-width: none; display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 1.1rem; padding-bottom: 0.65rem; border-bottom: 1px solid var(--line-soft); }
 .review .venue .when { color: var(--ink-dim); letter-spacing: 1px; white-space: nowrap; font-size: 0.68rem; }
-.review.rv-blue  { border-top-color: var(--lamp-blue); }
-.review.rv-green { border-top-color: var(--lamp-green); }
-.review.rv-amber { border-top-color: var(--lamp-amber); }
-.review.rv-blue  .venue, .review.rv-blue  .pull cite { color: var(--lamp-blue); }
-.review.rv-green .venue, .review.rv-green .pull cite { color: var(--lamp-green); }
-.review.rv-amber .venue, .review.rv-amber .pull cite { color: var(--lamp-amber); }
-.review.rv-blue  .pull { border-left-color: var(--lamp-blue); }
-.review.rv-green .pull { border-left-color: var(--lamp-green); }
-.review.rv-amber .pull { border-left-color: var(--lamp-amber); }
+.review { border-top-color: var(--lamp-blue); }
+.review .venue, .review .pull cite { color: var(--lamp-blue); }
+.review .pull { border-left-color: var(--lamp-blue); }
 .reviews .pull { margin: 0 0 1rem; font-size: 1.08rem; }
 .reviews .ref { font-family: var(--serif); font-size: 0.9rem; line-height: 1.55; color: var(--ink-dim); max-width: 74ch; margin: 0; padding-left: 1.7rem; text-indent: -1.7rem; }
 .reviews .ref a { border-bottom: 1px solid var(--line-soft); word-break: break-word; }

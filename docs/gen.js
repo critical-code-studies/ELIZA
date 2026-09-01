@@ -1008,7 +1008,7 @@ write('reviews.html', page({
 
       <h2 class="yeargroup">Published reviews</h2>
       <div class="reviews">
-        <article class="review rv-blue">
+        <article class="review">
           <p class="venue">The Wall Street Journal<span class="when">19 August 2026</span></p>
           <figure class="review-shot">
             <a target="_blank" rel="noopener" href="https://www.wsj.com/arts-culture/books/inventing-eliza-review-the-mother-of-all-chatbots-a4a1a26c"><img src="assets/images/wsj-review.jpg" alt="The Wall Street Journal review, headlined &lsquo;Inventing Eliza&rsquo; Review: The Mother of All Chatbots" loading="lazy"></a>
@@ -1018,13 +1018,13 @@ write('reviews.html', page({
           <p class="ref">Hutson, M. (2026) &lsquo;&ldquo;Inventing Eliza&rdquo; Review: The Mother of All Chatbots&rsquo;, <em>The Wall Street Journal</em>, 19 August. Available at: <a href="https://www.wsj.com/arts-culture/books/inventing-eliza-review-the-mother-of-all-chatbots-a4a1a26c">https://www.wsj.com/arts-culture/books/inventing-eliza-review-the-mother-of-all-chatbots</a></p>
         </article>
 
-        <article class="review rv-green">
+        <article class="review">
           <p class="venue">&#8484;&rarr;&#8484;<span class="when">10 August 2026</span></p>
           <blockquote class="pull">I find this book the best example of &lsquo;critical code studies&rsquo; methodology so far and a work that can engage future research into chatbot systems.<cite>Jeffrey Starr</cite></blockquote>
           <p class="ref">Starr, J. (2026) &lsquo;Inventing ELIZA (Review)&rsquo;, <em>&#8484;&rarr;&#8484;</em>, 10 August. Available at: <a href="https://ztoz.blog/posts/inventing-eliza-review/">https://ztoz.blog/posts/inventing-eliza-review/</a></p>
         </article>
 
-        <article class="review rv-amber">
+        <article class="review">
           <p class="venue">Science<span class="when">18 June 2026</span></p>
           <figure class="review-shot fig-left">
             <a target="_blank" rel="noopener" href="https://doi.org/10.1126/science.aeh9238"><img src="assets/images/science-review.jpg" alt="The review in Science, headlined Reanimating ELIZA, the world&rsquo;s first chatbot" loading="lazy"></a>
