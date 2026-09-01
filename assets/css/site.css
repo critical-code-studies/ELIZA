@@ -26,7 +26,10 @@
   --lamp-green: #59c08a;
   --lamp-blue:  #4d92e0;
   --lamp-white: #f4efe3;
-  --beam:      #ec6a42;          /* default link / accent (coral) */
+  --beam:      #ec6a42;          /* accent: kickers, rules, hover (coral) */
+  --link:      #e2a488;          /* body links: the coral pulled back so it
+                                    reads as a link without pulling the eye
+                                    off the sentence. Coral returns on hover. */
   --eliza:     #ef6f44;          /* the machine's voice (coral phosphor) */
   --you:       #efb44e;          /* the person's voice (amber) */
   --paper:     #d9cfbc;          /* teletype paper */
@@ -66,7 +69,7 @@ body::after {
 section[id], [id]:target { scroll-margin-top: 92px; }
 
 /* ---------- links ---------- */
-a { color: var(--beam); text-decoration: none; }
+a { color: var(--link); text-decoration: none; }
 a:hover { color: var(--bright); text-shadow: var(--glow); }
 .content a { border-bottom: 1px solid var(--line); }
 .content a:hover { border-bottom-color: var(--beam); }
@@ -532,7 +535,7 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .book-promo-text .kicker { color: var(--beam); margin-bottom: 0.7rem; }
 .book-promo-text h2 { color: var(--bright); margin-bottom: 0.6rem; }
 .book-promo-text p { color: var(--ink); max-width: 56ch; }
-.book-promo-text a { color: var(--beam); border-bottom: 1px solid rgba(236,106,66,0.4); font-family: var(--mono); font-size: 0.85rem; }
+.book-promo-text a { color: var(--link); border-bottom: 1px solid rgba(226,164,136,0.4); font-family: var(--mono); font-size: 0.85rem; }
 .book-promo-text a:hover { color: var(--bright); }
 @media (max-width: 600px) { .book-promo-img { width: 170px; margin: 0 auto; } }
 .cover-note .kicker { color: #140d09; opacity: 0.75; }
@@ -546,7 +549,7 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .cover-note.muted .kicker { color: var(--beam); opacity: 1; }
 .cover-note.muted h2 { color: var(--bright); }
 .cover-note.muted p { color: var(--ink); }
-.cover-note.muted a { color: var(--beam); border-bottom-color: rgba(236,106,66,0.4); }
+.cover-note.muted a { color: var(--link); border-bottom-color: rgba(226,164,136,0.4); }
 .cover-note.muted a:hover { color: var(--bright); }
 
 /* further reading */
