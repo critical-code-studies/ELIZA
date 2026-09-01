@@ -1026,7 +1026,7 @@ write('reviews.html', page({
 
         <article class="review">
           <p class="venue">Science<span class="when">18 June 2026</span></p>
-          <figure class="review-shot fig-left">
+          <figure class="review-shot">
             <a target="_blank" rel="noopener" href="https://doi.org/10.1126/science.aeh9238"><img src="assets/images/science-review.jpg" alt="The review in Science, headlined Reanimating ELIZA, the world&rsquo;s first chatbot" loading="lazy"></a>
             <figcaption>Science, 18 June 2026, p. 1249.</figcaption>
           </figure>
