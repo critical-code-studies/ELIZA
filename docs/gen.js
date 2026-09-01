@@ -1006,7 +1006,7 @@ write('reviews.html', page({
       <h1 class="page">Reviews of Inventing ELIZA</h1>
       <div class="lede"><p>What readers have made of <a href="book.html"><em>Inventing ELIZA: How the First Chatbot Shaped the Future of AI</em></a> (MIT Press, Software Studies, 2026), with a foreword by Janet H. Murray.</p></div>
 
-      <h2 class="yeargroup">Published reviews</h2>
+      <h2 class="yeargroup">Recent reviews</h2>
       <div class="reviews">
         <article class="review">
           <p class="venue">The Wall Street Journal<span class="when">19 August 2026</span></p>
