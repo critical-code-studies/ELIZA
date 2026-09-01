@@ -1009,8 +1009,12 @@ write('reviews.html', page({
       <h2 class="yeargroup">Published reviews</h2>
       <div class="reviews">
         <article class="review">
+          <figure class="review-shot">
+            <a target="_blank" rel="noopener" href="https://www.wsj.com/arts-culture/books/inventing-eliza-review-the-mother-of-all-chatbots-a4a1a26c"><img src="assets/images/wsj-review.jpg" alt="The Wall Street Journal review, headlined &lsquo;Inventing Eliza&rsquo; Review: The Mother of All Chatbots" loading="lazy"></a>
+            <figcaption>The review as it ran, 19 August 2026.</figcaption>
+          </figure>
           <blockquote class="pull">The authors of &ldquo;Inventing Eliza&rdquo; excavated large portions of Eliza&rsquo;s code from MIT&rsquo;s archives and used it to re-create Eliza running Doctor, talmudically annotating the code throughout the book&hellip; One of the book&rsquo;s most powerful points is that technology is not neutral but, like any text, manifests its creators&rsquo; decisions. These choices often carry social and political weight.<cite>Matthew Hutson, The Wall Street Journal</cite></blockquote>
-          <p class="ref">Hutson, M. (2026) &lsquo;&ldquo;Inventing ELIZA&rdquo; Review: The Mother of All Chatbots&rsquo;, <em>The Wall Street Journal</em>, 19 August. Available at: <a href="https://www.wsj.com/arts-culture/books/inventing-eliza-review-the-mother-of-all-chatbots-a4a1a26c">https://www.wsj.com/arts-culture/books/inventing-eliza-review-the-mother-of-all-chatbots</a></p>
+          <p class="ref">Hutson, M. (2026) &lsquo;&ldquo;Inventing Eliza&rdquo; Review: The Mother of All Chatbots&rsquo;, <em>The Wall Street Journal</em>, 19 August. Available at: <a href="https://www.wsj.com/arts-culture/books/inventing-eliza-review-the-mother-of-all-chatbots-a4a1a26c">https://www.wsj.com/arts-culture/books/inventing-eliza-review-the-mother-of-all-chatbots</a></p>
         </article>
 
         <article class="review">
