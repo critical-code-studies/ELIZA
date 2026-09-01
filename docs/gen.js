@@ -1023,6 +1023,10 @@ write('reviews.html', page({
         </article>
 
         <article class="review">
+          <figure class="review-shot">
+            <a target="_blank" rel="noopener" href="https://doi.org/10.1126/science.aeh9238"><img src="assets/images/science-review.jpg" alt="The review in Science, headlined Reanimating ELIZA, the world&rsquo;s first chatbot" loading="lazy"></a>
+            <figcaption>Science, 18 June 2026, p. 1249.</figcaption>
+          </figure>
           <blockquote class="pull">In <em>Inventing ELIZA</em>, a group of eight scholars (&ldquo;Team ELIZA&rdquo;) lovingly and painstakingly reconstruct, explain, reanimate, and place into historical context the program itself, the many surviving transcripts of the program&rsquo;s use in the 1960s, and the development of subsequent chatbots&hellip; The book is a masterful contribution to the emerging discipline of software studies.<cite>Simson L. Garfinkel, Science</cite></blockquote>
           <p class="ref">Garfinkel, S. L. (2026) &lsquo;Reanimating ELIZA, the world&rsquo;s first chatbot&rsquo;, <em>Science</em>, 392(6804), p. 1249, 18 June. Available at: <a href="https://doi.org/10.1126/science.aeh9238">https://doi.org/10.1126/science.aeh9238</a></p>
         </article>
