@@ -1010,7 +1010,7 @@ write('reviews.html', page({
       <div class="reviews">
         <article class="review">
           <blockquote class="pull">The authors of &ldquo;Inventing Eliza&rdquo; excavated large portions of Eliza&rsquo;s code from MIT&rsquo;s archives and used it to re-create Eliza running Doctor, talmudically annotating the code throughout the book&hellip; One of the book&rsquo;s most powerful points is that technology is not neutral but, like any text, manifests its creators&rsquo; decisions. These choices often carry social and political weight.<cite>Matthew Hutson, The Wall Street Journal</cite></blockquote>
-          <p class="ref">Hutson, M. (2026) Review of <em>Inventing ELIZA</em>, <em>The Wall Street Journal</em>, 19 August.</p>
+          <p class="ref">Hutson, M. (2026) &lsquo;&ldquo;Inventing ELIZA&rdquo; Review: The Mother of All Chatbots&rsquo;, <em>The Wall Street Journal</em>, 19 August. Available at: <a href="https://www.wsj.com/arts-culture/books/inventing-eliza-review-the-mother-of-all-chatbots-a4a1a26c">https://www.wsj.com/arts-culture/books/inventing-eliza-review-the-mother-of-all-chatbots</a></p>
         </article>
 
         <article class="review">
