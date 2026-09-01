@@ -1008,26 +1008,29 @@ write('reviews.html', page({
 
       <h2 class="yeargroup">Published reviews</h2>
       <div class="reviews">
-        <article class="review">
+        <article class="review rv-blue">
+          <p class="venue">The Wall Street Journal<span class="when">19 August 2026</span></p>
           <figure class="review-shot">
             <a target="_blank" rel="noopener" href="https://www.wsj.com/arts-culture/books/inventing-eliza-review-the-mother-of-all-chatbots-a4a1a26c"><img src="assets/images/wsj-review.jpg" alt="The Wall Street Journal review, headlined &lsquo;Inventing Eliza&rsquo; Review: The Mother of All Chatbots" loading="lazy"></a>
             <figcaption>The review as it ran, 19 August 2026.</figcaption>
           </figure>
-          <blockquote class="pull">The authors of &ldquo;Inventing Eliza&rdquo; excavated large portions of Eliza&rsquo;s code from MIT&rsquo;s archives and used it to re-create Eliza running Doctor, talmudically annotating the code throughout the book&hellip; One of the book&rsquo;s most powerful points is that technology is not neutral but, like any text, manifests its creators&rsquo; decisions. These choices often carry social and political weight.<cite>Matthew Hutson, The Wall Street Journal</cite></blockquote>
+          <blockquote class="pull">The authors of &ldquo;Inventing Eliza&rdquo; excavated large portions of Eliza&rsquo;s code from MIT&rsquo;s archives and used it to re-create Eliza running Doctor, talmudically annotating the code throughout the book&hellip; One of the book&rsquo;s most powerful points is that technology is not neutral but, like any text, manifests its creators&rsquo; decisions. These choices often carry social and political weight.<cite>Matthew Hutson</cite></blockquote>
           <p class="ref">Hutson, M. (2026) &lsquo;&ldquo;Inventing Eliza&rdquo; Review: The Mother of All Chatbots&rsquo;, <em>The Wall Street Journal</em>, 19 August. Available at: <a href="https://www.wsj.com/arts-culture/books/inventing-eliza-review-the-mother-of-all-chatbots-a4a1a26c">https://www.wsj.com/arts-culture/books/inventing-eliza-review-the-mother-of-all-chatbots</a></p>
         </article>
 
-        <article class="review">
-          <blockquote class="pull">I find this book the best example of &lsquo;critical code studies&rsquo; methodology so far and a work that can engage future research into chatbot systems.<cite>Jeffrey Starr, &#8484;&rarr;&#8484;</cite></blockquote>
+        <article class="review rv-green">
+          <p class="venue">&#8484;&rarr;&#8484;<span class="when">10 August 2026</span></p>
+          <blockquote class="pull">I find this book the best example of &lsquo;critical code studies&rsquo; methodology so far and a work that can engage future research into chatbot systems.<cite>Jeffrey Starr</cite></blockquote>
           <p class="ref">Starr, J. (2026) &lsquo;Inventing ELIZA (Review)&rsquo;, <em>&#8484;&rarr;&#8484;</em>, 10 August. Available at: <a href="https://ztoz.blog/posts/inventing-eliza-review/">https://ztoz.blog/posts/inventing-eliza-review/</a></p>
         </article>
 
-        <article class="review">
-          <figure class="review-shot">
+        <article class="review rv-amber">
+          <p class="venue">Science<span class="when">18 June 2026</span></p>
+          <figure class="review-shot fig-left">
             <a target="_blank" rel="noopener" href="https://doi.org/10.1126/science.aeh9238"><img src="assets/images/science-review.jpg" alt="The review in Science, headlined Reanimating ELIZA, the world&rsquo;s first chatbot" loading="lazy"></a>
             <figcaption>Science, 18 June 2026, p. 1249.</figcaption>
           </figure>
-          <blockquote class="pull">In <em>Inventing ELIZA</em>, a group of eight scholars (&ldquo;Team ELIZA&rdquo;) lovingly and painstakingly reconstruct, explain, reanimate, and place into historical context the program itself, the many surviving transcripts of the program&rsquo;s use in the 1960s, and the development of subsequent chatbots&hellip; The book is a masterful contribution to the emerging discipline of software studies.<cite>Simson L. Garfinkel, Science</cite></blockquote>
+          <blockquote class="pull">In <em>Inventing ELIZA</em>, a group of eight scholars (&ldquo;Team ELIZA&rdquo;) lovingly and painstakingly reconstruct, explain, reanimate, and place into historical context the program itself, the many surviving transcripts of the program&rsquo;s use in the 1960s, and the development of subsequent chatbots&hellip; The book is a masterful contribution to the emerging discipline of software studies.<cite>Simson L. Garfinkel</cite></blockquote>
           <p class="ref">Garfinkel, S. L. (2026) &lsquo;Reanimating ELIZA, the world&rsquo;s first chatbot&rsquo;, <em>Science</em>, 392(6804), p. 1249, 18 June. Available at: <a href="https://doi.org/10.1126/science.aeh9238">https://doi.org/10.1126/science.aeh9238</a></p>
         </article>
 
