@@ -859,6 +859,7 @@ write('talks.html', page({
 
       <h2 class="yeargroup">2026</h2>
       <ul class="talklist">
+        <li><span class="who">Berry, D. M.</span><span class="ttl">&ldquo;Inventing ELIZA: How the First Chatbot Shaped the Future of AI&rdquo;</span><span class="meta">Book talk, with respondents Michael Jonik and Moinul Zaber, chaired by Tanya Kant, Sussex Digital Humanities Lab, University of Sussex &middot; 15 October 2026</span></li>
         <li><span class="who">Marino, M. C. &amp; Berry, D. M.</span><span class="ttl">&ldquo;Inventing ELIZA&rdquo;</span><span class="meta">Book talk, Marino in person with Berry joining online, Digital Humanities Center, San Diego State University &middot; 8 October 2026</span></li>
         <li><span class="who">Ciston, S. &amp; Berry, D. M.</span><span class="ttl">&ldquo;Inventing ELIZA: How the First Chatbot Shaped the Future of AI&rdquo;</span><span class="meta">Book presentation and panel discussion, Weizenbaum Institute, Berlin &middot; 3 September 2026</span></li>
         <li><span class="who">Berry, D. M.</span><span class="ttl">&ldquo;Retro-duction AI: (re)reading, (re)constructing and (re)running AI&rdquo;</span><span class="meta">Keynote, <a href="https://calendar.usc.edu/event/retro-ai-symposium">Retro AI: Archaeologies of A.I. symposium</a>, USC, USA &middot; 31 July 2026</span></li>
