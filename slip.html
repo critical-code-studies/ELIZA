@@ -9,16 +9,16 @@
   <meta property="og:site_name" content="ELIZA Archaeology Project">
   <meta property="og:title" content="SLIP · ELIZA (1966)">
   <meta property="og:description" content="SLIP, Weizenbaum’s Symmetric List Processor: the list-processing library that the MAD half of MAD-SLIP relied on to run ELIZA.">
-  <meta property="og:image" content="https://findingeliza.org/assets/images/share-card.png?v=202609141609">
+  <meta property="og:image" content="https://findingeliza.org/assets/images/share-card.png?v=202610081941">
   <meta property="og:url" content="https://findingeliza.org/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="SLIP · ELIZA (1966)">
   <meta name="twitter:description" content="SLIP, Weizenbaum’s Symmetric List Processor: the list-processing library that the MAD half of MAD-SLIP relied on to run ELIZA.">
-  <meta name="twitter:image" content="https://findingeliza.org/assets/images/share-card.png?v=202609141609">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=202609141609">
-  <link rel="stylesheet" href="assets/css/site.css?v=202609141609">
-  <script src="assets/nav.js?v=202609141609" defer></script>
-  <script src="assets/term.js?v=202609141609" defer></script>
+  <meta name="twitter:image" content="https://findingeliza.org/assets/images/share-card.png?v=202610081941">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=202610081941">
+  <link rel="stylesheet" href="assets/css/site.css?v=202610081941">
+  <script src="assets/nav.js?v=202610081941" defer></script>
+  <script src="assets/term.js?v=202610081941" defer></script>
 
 </head>
 <body>
@@ -103,6 +103,8 @@
         <li><code>LSSCPY</code>, <code>SUBST</code>, <code>IRALST</code>: copy a list, substitute a cell, and return a list&rsquo;s cells to free space.</li>
       </ul>
       <p>These are the verbs of ELIZA. The <a href="code.html">close reading of the program</a> follows them through the main loop, and the <a href="how.html">step-by-step demo</a> shows the result.</p>
+
+      <div class="callout"><span class="kicker">SLIP beyond ELIZA</span><p>ELIZA was not the only thing Weizenbaum built on SLIP. In January 1964, before ELIZA, he described <a href="https://dspace.mit.edu/handle/1721.1/149332">OPL-I</a>, an open ended programming system within CTSS: an incremental interpreted language, written in FORTRAN-SLIP, that let a user add to both program and data across separate sessions at the terminal. ELIZA 1967 and 1968+ used OPL for script handling, which is how the program came to run several scripts at once and to be tried as a physics tutor at MIT.</p><p>Weizenbaum had a second teaching system that was not ELIZA. TEACH, built with Robert R. Fenichel and Jerome C. Yochelson and described in the <a href="https://doi.org/10.1145/362052.362053">Communications of the ACM</a> in 1970, taught elementary programming with almost no instructor present, using an interactive language of its own called UNCL. ELIZA&rsquo;s own teach(er) mode is a third thing: the <code>CHANGE</code> function, which lets a user revise and extend a script while the program is running, and which Weizenbaum had in mind when he called ELIZA &ldquo;teachable&rdquo;.</p></div>
 
       <div class="callout"><span class="kicker">A living implementation</span><p>SLIP did not stay locked in 1963. Arthur Schwarz, a member of this project, has written <strong><a href="https://slipbits.com/gslip/">gSlip</a></strong>, a public-domain implementation in C++, which makes it possible to run and study SLIP code today rather than only read it.</p><p>It also carries SLIP into a modern idiom. It hides the mechanics of insertion and deletion, adds data types, and lets SLIP data be used directly as language primitives, so that <code>A = B + C</code> holds whether A, B and C are SLIP cells or ordinary integers, reals and strings.</p></div>
 
