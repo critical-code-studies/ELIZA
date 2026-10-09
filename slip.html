@@ -9,16 +9,16 @@
   <meta property="og:site_name" content="ELIZA Archaeology Project">
   <meta property="og:title" content="SLIP · ELIZA (1966)">
   <meta property="og:description" content="SLIP, Weizenbaum’s Symmetric List Processor: the list-processing library that the MAD half of MAD-SLIP relied on to run ELIZA.">
-  <meta property="og:image" content="https://findingeliza.org/assets/images/share-card.png?v=202610091518">
+  <meta property="og:image" content="https://findingeliza.org/assets/images/share-card.png?v=202610091519">
   <meta property="og:url" content="https://findingeliza.org/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="SLIP · ELIZA (1966)">
   <meta name="twitter:description" content="SLIP, Weizenbaum’s Symmetric List Processor: the list-processing library that the MAD half of MAD-SLIP relied on to run ELIZA.">
-  <meta name="twitter:image" content="https://findingeliza.org/assets/images/share-card.png?v=202610091518">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=202610091518">
-  <link rel="stylesheet" href="assets/css/site.css?v=202610091518">
-  <script src="assets/nav.js?v=202610091518" defer></script>
-  <script src="assets/term.js?v=202610091518" defer></script>
+  <meta name="twitter:image" content="https://findingeliza.org/assets/images/share-card.png?v=202610091519">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=202610091519">
+  <link rel="stylesheet" href="assets/css/site.css?v=202610091519">
+  <script src="assets/nav.js?v=202610091519" defer></script>
+  <script src="assets/term.js?v=202610091519" defer></script>
 
 </head>
 <body>
@@ -104,12 +104,12 @@
       </ul>
       <p>These are the verbs of ELIZA. The <a href="code.html">close reading of the program</a> follows them through the main loop, and the <a href="how.html">step-by-step demo</a> shows the result.</p>
 
-      <div class="callout"><span class="kicker">SLIP beyond ELIZA</span><p>ELIZA was not the only thing Weizenbaum built on SLIP. In January 1964, before ELIZA, he described <a href="https://dspace.mit.edu/handle/1721.1/149332">OPL-I</a>, an open ended programming system within CTSS: an incremental interpreted language, written in FORTRAN-SLIP, that let a user add to both program and data across separate sessions at the terminal. ELIZA 1967 and 1968+ used OPL for script handling, which is how the program came to run several scripts at once and to be tried as a physics tutor at MIT.</p><p>Weizenbaum had a second teaching system that was not ELIZA. TEACH, built with Robert R. Fenichel and Jerome C. Yochelson and described in the <a href="https://doi.org/10.1145/362052.362053">Communications of the ACM</a> in 1970, taught elementary programming with almost no instructor present, using an interactive language of its own called UNCL. ELIZA&rsquo;s own teach(er) mode is a third thing: the <code>CHANGE</code> function, which lets a user revise and extend a script while the program is running, and which Weizenbaum had in mind when he called ELIZA &ldquo;teachable&rdquo;.</p></div>
+      <div class="callout"><span class="kicker">SLIP beyond ELIZA</span><p>ELIZA was not the only thing Weizenbaum built on SLIP. In January 1964, before ELIZA, he described <a target="_blank" rel="noopener" href="https://dspace.mit.edu/handle/1721.1/149332">OPL-I</a>, an open ended programming system within CTSS: an incremental interpreted language, written in FORTRAN-SLIP, that let a user add to both program and data across separate sessions at the terminal. ELIZA 1967 and 1968+ used OPL for script handling, which is how the program came to run several scripts at once and to be tried as a physics tutor at MIT.</p><p>Weizenbaum had a second teaching system that was not ELIZA. TEACH, built with Robert R. Fenichel and Jerome C. Yochelson and described in the <a target="_blank" rel="noopener" href="https://doi.org/10.1145/362052.362053">Communications of the ACM</a> in 1970, taught elementary programming with almost no instructor present, using an interactive language of its own called UNCL. ELIZA&rsquo;s own teach(er) mode is a third thing: the <code>CHANGE</code> function, which lets a user revise and extend a script while the program is running, and which Weizenbaum had in mind when he called ELIZA &ldquo;teachable&rdquo;.</p></div>
 
-      <div class="callout"><span class="kicker">A living implementation</span><p>SLIP did not stay locked in 1963. Arthur Schwarz, a member of this project, has written <strong><a href="https://slipbits.com/gslip/">gSlip</a></strong>, a public-domain implementation in C++, which makes it possible to run and study SLIP code today rather than only read it.</p><p>It also carries SLIP into a modern idiom. It hides the mechanics of insertion and deletion, adds data types, and lets SLIP data be used directly as language primitives, so that <code>A = B + C</code> holds whether A, B and C are SLIP cells or ordinary integers, reals and strings.</p></div>
+      <div class="callout"><span class="kicker">A living implementation</span><p>SLIP did not stay locked in 1963. Arthur Schwarz, a member of this project, has written <strong><a target="_blank" rel="noopener" href="https://slipbits.com/gslip/">gSlip</a></strong>, a public-domain implementation in C++, which makes it possible to run and study SLIP code today rather than only read it.</p><p>It also carries SLIP into a modern idiom. It hides the mechanics of insertion and deletion, adds data types, and lets SLIP data be used directly as language primitives, so that <code>A = B + C</code> holds whether A, B and C are SLIP cells or ordinary integers, reals and strings.</p></div>
 
       <div class="rule">SLIP IN DETAIL</div>
-      <div class="lede"><p>What follows is a longer, more technical account of SLIP, written for this site by Arthur Schwarz, who has built <a href="https://slipbits.com/gslip/">gSlip</a>, a modern implementation of it. It goes further than the introduction above: the list of lists restated as a graph, the physical cell, SLIP as an early API, portability, and what SLIP leaves to the programmer.</p></div>
+      <div class="lede"><p>What follows is a longer, more technical account of SLIP, written for this site by Arthur Schwarz, who has built <a target="_blank" rel="noopener" href="https://slipbits.com/gslip/">gSlip</a>, a modern implementation of it. It goes further than the introduction above: the list of lists restated as a graph, the physical cell, SLIP as an early API, portability, and what SLIP leaves to the programmer.</p></div>
 
       <h2>Introduction</h2>
       <p>Weizenbaum developed SLIP (CACM v6n9) in 1963 as a successor to his Knotted List Structures (KLS) of the previous year (CACM v5n3). In KLS the framework of what was to become SLIP was developed, significantly with a single list pointer rather than a doubly linked list. In SLIP we see the basic ideas extended and a fuller representation of the ideas developed than in KLS.</p>
@@ -212,7 +212,7 @@
       <p>SLIP was an API, something unique at this time. SLIP supported the creation and deletion of lists, DAGs and data, not only something unique but for which the technical vocabulary was non-existent. SLIP code is poor on documentation and poor on checking for error conditions, not much computer power or memory to include this. SLIP had dynamic memory, something we take for granted now but was truly unique in a procedural language at the time. Was it worth it? Damn&rsquo;d straight it was.</p>
 
       <h2>8.0 Note</h2>
-      <p>For those interested in pursuing a modern version of SLIP, there is a pre-production version at <a href="https://slipbits.com/gslip/">https://slipbits.com/gslip/</a>. This is a modern version written in C++. It removes the mechanics of insertion/deletion, allows for several data types and the direct use of SLIPData cells in computations plus some other things. A user manual, source code, and a Win1x (x86-64) executable is provided.</p>
+      <p>For those interested in pursuing a modern version of SLIP, there is a pre-production version at <a target="_blank" rel="noopener" href="https://slipbits.com/gslip/">https://slipbits.com/gslip/</a>. This is a modern version written in C++. It removes the mechanics of insertion/deletion, allows for several data types and the direct use of SLIPData cells in computations plus some other things. A user manual, source code, and a Win1x (x86-64) executable is provided.</p>
 
       <div class="rule">REFERENCE</div>
       <div class="bib"><p class="ref">Weizenbaum, J. (1963) &lsquo;Symmetric List Processor&rsquo;, <em>Communications of the ACM</em>, 6(9), pp. 524&ndash;536.</p></div>

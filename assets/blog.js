@@ -95,6 +95,16 @@
     });
   }
 
+  // links that leave the site open in a new tab, as on the generated pages
+  function externalise(root) {
+    [].forEach.call(root.querySelectorAll('a[href^="http"]'), function (a) {
+      if (a.target) return;
+      if (a.hostname === location.hostname) return;
+      a.target = '_blank';
+      a.rel = 'noopener';
+    });
+  }
+
   // click any post image to view it larger in a lightbox (Esc or click to close)
   function initLightbox(root) {
     root.addEventListener('click', function (e) {
@@ -136,6 +146,7 @@
           '<p class="post-meta">' + esc(p.date) + ' &middot; ' + esc(p.author) + '</p>' +
           render(fm.body) + nav;
         figurise(art);
+        externalise(art);
         initLightbox(art);
       }).catch(function () { art.innerHTML = '<p>Could not load this post.</p>'; });
     }).catch(function () { art.innerHTML = '<p>Could not load the blog index.</p>'; });

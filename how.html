@@ -9,18 +9,18 @@
   <meta property="og:site_name" content="ELIZA Archaeology Project">
   <meta property="og:title" content="How it works · ELIZA (1966)">
   <meta property="og:description" content="Type a phrase and watch ELIZA process it step by step through the genuine DOCTOR script: keywords, ranking, decomposition and reassembly.">
-  <meta property="og:image" content="https://findingeliza.org/assets/images/share-card.png?v=202610091518">
+  <meta property="og:image" content="https://findingeliza.org/assets/images/share-card.png?v=202610091519">
   <meta property="og:url" content="https://findingeliza.org/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="How it works · ELIZA (1966)">
   <meta name="twitter:description" content="Type a phrase and watch ELIZA process it step by step through the genuine DOCTOR script: keywords, ranking, decomposition and reassembly.">
-  <meta name="twitter:image" content="https://findingeliza.org/assets/images/share-card.png?v=202610091518">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=202610091518">
-  <link rel="stylesheet" href="assets/css/site.css?v=202610091518">
-  <script src="assets/nav.js?v=202610091518" defer></script>
-  <script src="assets/term.js?v=202610091518" defer></script>
-  <script src="assets/eliza-hay.js?v=202610091518" defer></script>
-  <script src="assets/trace.js?v=202610091518" defer></script>
+  <meta name="twitter:image" content="https://findingeliza.org/assets/images/share-card.png?v=202610091519">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=202610091519">
+  <link rel="stylesheet" href="assets/css/site.css?v=202610091519">
+  <script src="assets/nav.js?v=202610091519" defer></script>
+  <script src="assets/term.js?v=202610091519" defer></script>
+  <script src="assets/eliza-hay.js?v=202610091519" defer></script>
+  <script src="assets/trace.js?v=202610091519" defer></script>
 </head>
 <body>
 
@@ -73,7 +73,7 @@
       <p>A counter runs quietly alongside, cycling 1, 2, 3, 4. When it reaches <strong>4</strong> and your latest line contains no keyword, ELIZA reaches into the queue and replays the oldest stored phrase instead of a bland &ldquo;please go on&rdquo;. This is the &ldquo;certain counting mechanism&rdquo; Weizenbaum mentioned but never explained; the recovered source shows it exactly, four memory templates (<code>MYTRAN(4)</code>) and a one-to-four counter, with the stored phrases held in an open-ended list. Watch the memory bar in the demo above fill and get pulled out at the end as you play the 1966 conversation.</p>
 
       <p class="micro" style="margin-top:2.4rem;font-size:0.72rem;letter-spacing:0.5px">This visualisation repurposes Anthony Hay&rsquo;s faithful reconstruction of ELIZA (released CC0 public domain): his engine generates the responses exactly as Weizenbaum&rsquo;s 1966 program would, and we use it to demo each step.</p>
-      <p class="micro" style="margin-top:0.8rem;font-size:0.72rem;letter-spacing:0.5px">His code runs essentially unchanged. We lifted the engine out of his <code>eliza.html</code> (removing only its on-screen terminal) and left the algorithm untouched, then wrapped it in a small harness that loads the 1966 DOCTOR script and runs a single response. It talks to the demo through Hay&rsquo;s own tracer interface: ELIZA already supports a step-by-step trace mode, so we add a tracer that records each step the engine takes (keyword ranking, decomposition, reassembly, memory), and the display turns those records into the panels above. Both the harness and tracer (<a href="https://github.com/critical-code-studies/ELIZA/blob/main/assets/eliza-hay.js">eliza-hay.js</a>) and the display (<a href="https://github.com/critical-code-studies/ELIZA/blob/main/assets/trace.js">trace.js</a>) are available to view.</p>
+      <p class="micro" style="margin-top:0.8rem;font-size:0.72rem;letter-spacing:0.5px">His code runs essentially unchanged. We lifted the engine out of his <code>eliza.html</code> (removing only its on-screen terminal) and left the algorithm untouched, then wrapped it in a small harness that loads the 1966 DOCTOR script and runs a single response. It talks to the demo through Hay&rsquo;s own tracer interface: ELIZA already supports a step-by-step trace mode, so we add a tracer that records each step the engine takes (keyword ranking, decomposition, reassembly, memory), and the display turns those records into the panels above. Both the harness and tracer (<a target="_blank" rel="noopener" href="https://github.com/critical-code-studies/ELIZA/blob/main/assets/eliza-hay.js">eliza-hay.js</a>) and the display (<a target="_blank" rel="noopener" href="https://github.com/critical-code-studies/ELIZA/blob/main/assets/trace.js">trace.js</a>) are available to view.</p>
 
     </article>
   </main>

@@ -49,15 +49,23 @@ function nav(depth) {
       </nav>`;
 }
 
+// links that leave the site open in a new tab; anything already carrying its own
+// target is left alone, as are links back to findingeliza.org
+function extLinks(html) {
+  return html.replace(
+    /<a (?![^>]*\btarget=)([^>]*\bhref="https?:\/\/(?!findingeliza\.org)[^"]*")/g,
+    '<a target="_blank" rel="noopener" $1');
+}
+
 function page(opts) {
   const depth = opts.depth || 0;
   const p = depth ? '../' : '';
   const hero = opts.hero || '';
   const cls = opts.bodyClass ? ` class="${opts.bodyClass}"` : '';
   const scripts = (opts.scripts || []).map(s => `  <script src="${p}assets/${s}?v=${V}" defer></script>`).join('\n');
-  const main = hero
+  const main = extLinks(hero
     ? hero + `\n  <main class="wrap content">\n${opts.body}\n  </main>`
-    : `  <main class="wrap content" style="padding-top:3rem;">\n    <article class="block">\n${opts.body}\n    </article>\n  </main>`;
+    : `  <main class="wrap content" style="padding-top:3rem;">\n    <article class="block">\n${opts.body}\n    </article>\n  </main>`);
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
