@@ -79,7 +79,7 @@
     compare: { comment: 'R', normalised: false, reading: 'Reading',
                supplied: ['support files', 'Include the support files, not only the program files'] },
     comparePrefix: 'ELIZA: ',
-    genealogy: { set: ['1965b'], line: 'eliza', lineNames: { eliza: 'ELIZA, 1965–68' } },
+    genealogy: { set: ['1965b'], line: 'doctor', lineNames: { doctor: 'DOCTOR, 1965–66', eliza: 'ELIZA, 1965–68' } },
     figureNum: { print: '#b0401d', paper: '#b0401d', phosphor: '#f0a83a' },
     paratexts: { org: 'critical-code-studies', repo: 'eliza_paratexts', cache: 'eliza-paratexts', tokenName: 'ELIZA research bench' },   // the private repository of scans and documents
     examples: { date: 'e.g. 1966-01, or 1965', archive: 'e.g. MIT Libraries, Weizenbaum papers', versions: 'e.g. 1965b, doctor',

@@ -93,13 +93,17 @@
   });
 
   // ---------- descent ----------
-  // The program's versions, one after another. The scripts and the library are not in this descent.
+  // The program's versions, one after another; the scripts and the library are not in this descent.
+  // DOCTOR's copies make a line of their own, for the genealogy's flow.
   var PARENT = { '1965b': '1965a', '1966': '1965b', '1967': '1966', '1968': '1967' };
   var WITNESS = {};
   var ALSO = {};
   var INFLUENCE = {};
   var LINES = [
-    { id: 'eliza', label: 'ELIZA, 1965–68 (1965a → 1968+)', tip: '1968' }
+    { id: 'eliza', label: 'ELIZA, 1965–68 (1965a → 1968+)', tip: '1968' },
+    // the copies of DOCTOR in date order: the two tapes of 6 March 1965 are not ordered, so the
+    // line lists them rather than descending from a parent
+    { id: 'doctor', label: 'DOCTOR, 1965–66 (TAPE 100, TAPE 102, CACM)', ids: ['doctor65t100', 'doctor65t102', 'doctor'] }
   ];
 
   var api = L({ versions: VERSIONS, src: SRC, dialects: DIALECTS, lines: LINES,
