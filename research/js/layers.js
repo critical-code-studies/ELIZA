@@ -107,6 +107,12 @@
     choose(t.v);
     if (t.p == null) { SW.select(t.v); SW.setTab('read'); return; }
     SW.openAt(t.v, { p: t.p, n0: t.n, n1: t.n });
+    // once the version is drawn, bring the line into view: a version newly opened is drawn where
+    // the listing was scrolled, and the browser may restore that position after it is drawn
+    SW.build(t.v).then(function () {
+      function there() { if (SW.state.v === t.v) SW.emit('goto', { p: t.p, n: t.n, tab: 'read' }); }
+      setTimeout(there, 80); setTimeout(there, 500);
+    }, function () {});
   }
   SW.nav = {
     go: function (t) { past.push(here()); future = []; open(t); paint(); },
