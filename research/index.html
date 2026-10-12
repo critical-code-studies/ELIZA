@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>ELIZA Research Bench</title>
+  <meta name="description" content="A working bench for the critical reading of ELIZA (Joseph Weizenbaum, MIT, 1964–66): the recovered MAD-SLIP source and the DOCTOR script, read, compared, annotated and exported.">
+  <!-- Bench version: the ?v= on every script and stylesheet below. Raise it by
+       0.0.1 on every push that changes research/, all tags alike, so browsers
+       fetch fresh copies. kit/base.js reads it from its own tag. Set bench-date to
+       the day of the release; the About box (kit/about.js) shows both. -->
+  <meta name="bench-date" content="2026-10-12">
+  <link rel="icon" type="image/svg+xml" href="img/icon.svg">
+  <link rel="stylesheet" href="kit/bench.css?v=0.1.0">
+  <link rel="stylesheet" href="kit/themes.css?v=0.1.0">
+  <link rel="stylesheet" href="css/research.css?v=0.1.0">
+  <link rel="stylesheet" href="kit/paratexts.css?v=0.1.0">
+  <link rel="stylesheet" href="kit/kit.css?v=0.1.0">
+</head>
+<body>
+  <header class="bar">
+    <a class="brand" href="./" title="About the bench">
+      <img src="img/icon.svg" alt="" width="26" height="26">
+      <span class="brand-name"><b>ELIZA</b> <b>research bench</b></span>
+      <span class="bench-ver" id="bench-ver"></span>
+    </a>
+    <label class="pick">
+      <span>Version</span>
+      <select id="pick-a" aria-label="Version"></select>
+      <span class="swref" id="vref" title="The bench’s reference to this source"></span>
+      <a class="vlang" id="vlang" href="../code.html" title=""></a>
+    </label>
+    <div class="bar-right">
+      <span class="status" id="status" role="status" aria-live="polite"></span>
+      <span class="size-btns"><button class="icon-btn" id="btn-smaller" title="Smaller code text">A−</button><button class="icon-btn" id="btn-larger" title="Larger code text">A+</button></span>
+      <button class="icon-btn" id="btn-theme" title="Switch between your last light and dark colour themes (choose themes in ⚙ Settings)">◐</button>
+      <button class="icon-btn" id="btn-code" title="Go to a code: an annotation (A-, R-), a finding (C-, F), a note (initials-N)">#</button>
+      <button class="icon-btn news-btn" id="btn-news" title="What’s new in the group’s annotations">✉<span class="news-n" id="news-n"></span></button>
+      <!-- About is in the Help menu; this hidden button carries its handler -->
+      <button class="icon-btn" id="btn-about" hidden>ⓘ</button>
+      <button class="icon-btn" id="btn-settings" title="Your initials and the Hypothesis group, colour theme, code font and size">⚙</button>
+    </div>
+  </header>
+
+  <nav class="tabs" id="tabs" aria-label="Views">
+    <button data-tab="read" class="on">Read</button>
+    <button data-menu="text" data-tabs="analyse" aria-expanded="false" title="The texts: remarks and comments, the names the program defines and uses, the SLIP calls, the script’s keywords">Text <span class="caret" aria-hidden="true">▾</span></button>
+    <button data-menu="versions" data-tabs="about compare genealogy" aria-expanded="false" title="The version open, comparison, genealogy">Versions <span class="caret" aria-hidden="true">▾</span></button>
+    <button data-tab="findings" title="What the bench and the group have established, with evidence; shared">Findings</button>
+    <button data-tab="notes" title="What you have gathered for writing: figures, excerpts, findings, paragraphs; private, in this browser">My notes</button>
+    <button data-tab="paratexts" title="The scans, clippings, photographs and documents around the program, shared with the group">Paratexts</button>
+    <button data-menu="help" aria-expanded="false" title="About the bench, settings, the code">Help <span class="caret" aria-hidden="true">▾</span></button>
+    <a class="tabs-map" href="sitemap.html" title="Every view and version as a plain link, for when a menu will not open">Site map</a>
+  </nav>
+  <noscript><div class="noscript">The research bench runs in JavaScript, which is turned off in this browser. The <a href="sitemap.html">site map</a> lists every version with its source files, which open on GitHub without it.</div></noscript>
+
+  <main id="main">
+    <section class="view on" id="view-read"></section>
+    <section class="view" id="view-analyse"></section>
+    <section class="view" id="view-compare"></section>
+    <section class="view" id="view-genealogy"></section>
+    <section class="view" id="view-about"></section>
+    <section class="view" id="view-findings"></section>
+    <section class="view" id="view-notes"></section>
+    <section class="view" id="view-paratexts"></section>
+  </main>
+
+  <!-- the bench's versions, the kit's foundation and this bench's settings, then the rest -->
+  <script src="kit/versionlist.js?v=0.1.0"></script>
+  <script src="js/versions.js?v=0.1.0"></script>
+  <script src="kit/export.js?v=0.1.0"></script>
+  <script src="kit/lang-mad.js?v=0.1.0"></script>
+  <script src="kit/genealogy.js?v=0.1.0"></script>
+  <script src="kit/base.js?v=0.1.0"></script>
+  <script src="js/config.js?v=0.1.0"></script>
+  <script src="kit/md.js?v=0.1.0"></script>
+  <script src="kit/themes.js?v=0.1.0"></script>
+  <script src="kit/refs.js?v=0.1.0"></script>
+  <script src="kit/builds.js?v=0.1.0"></script>
+  <script src="js/core.js?v=0.1.0"></script>
+  <script src="kit/initials.js?v=0.1.0"></script>
+  <script src="kit/settings.js?v=0.1.0"></script>
+  <script src="js/swhid.js?v=0.1.0"></script>
+  <script src="kit/notes.js?v=0.1.0"></script>
+  <script src="kit/tray.js?v=0.1.0"></script>
+  <script src="kit/figures.js?v=0.1.0"></script>
+  <script src="kit/readnotes.js?v=0.1.0"></script>
+  <script src="kit/read.js?v=0.1.0"></script>
+  <script src="js/read.js?v=0.1.0"></script>
+  <script src="kit/menus.js?v=0.1.0"></script>
+  <script src="kit/lenses.js?v=0.1.0"></script>
+  <script src="js/analyse.js?v=0.1.0"></script>
+  <script src="js/compare-defs.js?v=0.1.0"></script>
+  <script src="kit/compare.js?v=0.1.0"></script>
+  <script src="kit/stemma.js?v=0.1.0"></script>
+  <script src="kit/version.js?v=0.1.0"></script>
+  <script src="kit/edition.js?v=0.1.0"></script>
+  <script src="js/findings-data.js?v=0.1.0"></script>
+  <script src="kit/findings.js?v=0.1.0"></script>
+  <script src="js/findings-checks.js?v=0.1.0"></script>
+  <script src="js/tour.js?v=0.1.0"></script>
+  <script src="kit/tours.js?v=0.1.0"></script>
+  <script src="kit/paratexts.js?v=0.1.0"></script>
+  <script src="kit/guides.js?v=0.1.0"></script>
+  <script src="kit/helppages.js?v=0.1.0"></script>
+  <script src="kit/about.js?v=0.1.0"></script>
+  <script src="js/main.js?v=0.1.0"></script>
+  <script src="kit/shell.js?v=0.1.0"></script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+[submodule "research/kit"]
+	path = research/kit
+	url = https://github.com/critical-code-studies/bench-kit

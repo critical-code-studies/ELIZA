@@ -1,0 +1,84 @@
+/* ============================================================
+   ELIZA research bench
+   The IBM 7094 at MIT, as the ELIZA site draws it: console
+   charcoal and steel, line-printer white, the coral of its lamps
+   for the accent, amber, blue and green lamps for labels, SLIP
+   and relations. The colour themes chosen in ⚙ Settings are
+   bench-kit's kit/themes.css, and the styles every bench shares
+   its kit/bench.css, both loaded before this file.
+   ============================================================ */
+
+:root {
+  --code-bg: #101216;   /* the ground of code: listings, diffs */
+  --noted-bg: rgba(236, 106, 66, 0.07);
+  --bg: #14161b;
+  --bg-2: #1b1e24;
+  --surface: #1f232a;
+  --surface-2: #272c34;
+  --line: #3a414b;
+  --line-soft: #2b3038;
+  --text: #e8e3d7;
+  --text-dim: #a8aaa3;
+  --text-faint: #7d8079;
+  --beam: #f0a83a;      /* labels: the amber lamp */
+  /* the bench's accent (annotations, titles, numbers, the current line): the 7094's coral */
+  --amber: #ec6a42;
+  --green: #59c08a;
+  --red: #e1542e;
+  --violet: #6fa6e8;    /* SLIP and other external calls: the blue lamp */
+  --hl: rgba(236, 106, 66, 0.14);
+  --sel: rgba(240, 168, 58, 0.14);
+  --add-bg: rgba(89, 192, 138, 0.13);
+  --del-bg: rgba(225, 84, 46, 0.13);
+  --dec-blue: #464f59;
+  --dec-blue-dark: #353c44;
+  --dec-cream: #e8e3d7;
+  --g-retained: #59c08a;
+  --g-moved: #6fa6e8;
+  --g-edited: #f0a83a;
+  --g-rewritten: #ec6a42;
+  --g-added: #a8e6b8;
+  --g-removed: #e1542e;
+  --g-text: #e8e3d7; --g-muted: #8f918a; --g-stroke: #464f59; --g-box: #1f232a; --g-heat: #f0a83a; --g-line: #a8aaa3; --g-cell-dark: #101216;
+  /* the frame: top bar (the 7094's steel), version picker, figure plates */
+  --bar-1: #464f59; --bar-2: #353c44; --bar-fg: #faf7ef; --bar-line: #2a3037;
+  --pick-bg: rgba(0, 0, 0, 0.28); --pick-fg: #faf7ef; --pick-line: rgba(250, 247, 239, 0.25);
+  --plate: #101216; --plate-line: #2b3038; --pick-stroke: #faf7ef; --hl-filter: brightness(1.45);
+  --on-amber: #1a0a04; --tape-paper: #d9cfbc; --tape-hole: #14161b;
+  color-scheme: dark;
+}
+
+/* the accent in the light themes: a deeper coral (the rest of each theme is kit/themes.css) */
+:root[data-theme="paper"] { --amber: #b0401d; --hl: rgba(176, 64, 29, 0.10); --noted-bg: rgba(176, 64, 29, 0.06); }
+:root[data-theme="white"] { --amber: #a83c1b; --hl: rgba(168, 60, 27, 0.09); --noted-bg: rgba(168, 60, 27, 0.05); }
+:root[data-theme="sepia"] { --amber: #a3401f; --hl: rgba(163, 64, 31, 0.11); --noted-bg: rgba(163, 64, 31, 0.06); }
+:root[data-theme="contrast"] { --amber: #ff7a4d; --hl: rgba(255, 122, 77, 0.20); --noted-bg: rgba(255, 122, 77, 0.10); }
+
+/* names that open a pop-up keep their colour: labels and this program's functions amber,
+   SLIP and other calls blue (kit/bench.css draws a clickable name in the text colour) */
+.t .lab.sym { color: var(--beam); }
+.t .mac.sym { color: var(--violet); font-weight: 600; }
+
+h2 .swref { font-size: 11.5px; vertical-align: middle; }
+
+/* ---------- the welcome tour ---------- */
+
+@media (max-width: 640px) { .tab-menu[data-w="graphics"] { grid-template-columns: 1fr; } }
+
+/* assembly errors, explained */
+button.badge.err { cursor: pointer; font: inherit; }
+
+.mc-where button:focus-visible, .frag-q button:focus-visible, .card-fold:focus-visible, .lncols .ann-cyc:focus-visible { outline: 2px solid var(--beam); outline-offset: 1px; border-radius: 2px; }
+
+.legend span[title] { cursor: help; }
+
+/* ---------- top bar ---------- */
+.brand-name { display: inline-flex; flex-direction: column; gap: 3px; }
+
+.brand-name b { margin-left: 0; }
+.bar-right { margin-left: auto; }
+
+/* ---------- the language, beside the picker ---------- */
+.vlang { font: 10px var(--mono); letter-spacing: 0.5px; color: var(--text-faint); margin-left: 8px; white-space: nowrap; }
+@media (max-width: 900px) { .vlang { display: none; } }
+
