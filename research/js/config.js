@@ -19,11 +19,25 @@
     layers: {
       list: [
         { id: 'script', label: 'Scripts', below: 'eliza', relation: 'runs on', start: 'doctor', note: 'What ELIZA reads and runs: keywords and their rules',
-          more: [['scripts', 'The scripts catalogue', '35 scripts and conversations, after Inventing ELIZA, Table 1.2']] },
+          // the catalogue, and its named subsets (js/scripts.js): a subset narrows the list above
+          more: function () {
+            var S = root.SW.subsets, cur = S ? S.current().id : '';
+            return [['scripts', 'The scripts catalogue', '35 scripts and conversations, after Inventing ELIZA, Table 1.2']].concat(
+              S ? S.list.map(function (x) { return ['subset:' + x.id, 'Subset: ' + x.short, x.id ? x.label : 'every script held', x.id === cur]; }) : []);
+          } },
         { id: 'eliza', label: 'ELIZA', below: 'slip', relation: 'calls', start: '1965b', note: 'The program, in MAD-SLIP' },
         { id: 'slip', label: 'SLIP', start: 'slip1965', note: 'The list-processing library, in MAD and FAP' }
       ],
-      pick: function (p) { if (p === 'scripts') { root.SW.setTab('scripts'); return true; } },
+      pick: function (p) {
+        if (p === 'scripts') { root.SW.setTab('scripts'); return true; }
+        if (/^subset:/.test(p) && root.SW.subsets) { root.SW.subsets.set(p.slice(7)); return true; }
+      },
+      // under Scripts, Read ▾ lists the subset chosen (its copies and its outputs), or every script
+      shown: function (id, vs) {
+        var S = root.SW.subsets, sub = S && S.current();
+        if (id !== 'script' || !sub || !sub.id) return vs;
+        return sub.versions.map(function (vid) { return root.SWVersions.byId(vid); }).filter(Boolean);
+      },
       forms: {
         script: {
           MEMORY: { re: /TOP\.\(INPUT\) \.E\. \$MEMORY\$/, what: 'Where ELIZA, reading a script, takes in its MEMORY entry.' },

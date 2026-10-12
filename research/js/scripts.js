@@ -67,13 +67,50 @@
     return /^\d{4}$/.test(y) ? +y * 10000 : 99999999;
   }
 
+  // ---------- named subsets of the library ----------
+  // rows: the catalogue's entries; versions: the copies and outputs held here, in date order;
+  // line: the genealogy's line of descent for the flow, where there is one
+  var SUBSETS = [
+    { id: '', label: 'All 35', short: 'All' },
+    { id: 'doctor', label: 'DOCTOR (copies and outputs)', short: 'DOCTOR', rows: [1, 2, 3, 9, 10], line: 'doctor',
+      versions: ['doctor65t100', 'doctor65t102', 'doctor', 'doctor65c-news', 'doctor65c-0305', 'doctor65c-0322'],
+      note: 'The DOCTOR script: its copies of 1965 and 1966, and conversations run on it. The Harvard Review conversations (1–3) are counted here as DOCTOR’s, and DOC (9) as a copy of DOCTOR, by inference from their manner and name.' },
+    { id: 'maths', label: 'Mathematics: F29, FIGURE, ARITHM', short: 'Mathematics', rows: [5, 12, 13], line: 'figure',
+      versions: ['f29-67', 'figure68'],
+      note: 'The scripts that define and compute: F29 and FIGURE, its later version, and ARITHM, which evaluates calculations within the conversation. Inventing ELIZA, Table 1.1, cites all three as evidence for ELIZA 1967.' },
+    { id: 'taylor', label: 'Taylor’s tutorials, 1967–68', short: 'Taylor', taylor: true,
+      versions: ['spacks68c'],
+      note: 'The scripts and conversations Edwin F. Taylor’s papers on ELIZA as a tutor describe or print (“The ELIZA Program” and “Automated Tutoring and Its Discontents”), among them the WATSNU listing of scripts.' },
+    { id: 'help', label: 'Before ELIZA: HELP, 1964', short: 'HELP, 1964', rows: [19],
+      versions: ['help64c-s', 'help64c-p', 'c641001'],
+      note: 'Program HELP, in typed outputs headed 11 June 1964, and the CTSS session of 1 October 1964, whose script has a list named HELP (that it is HELP is an inference). Both are dated before ELIZA’s usual dating of 1965.' }
+  ];
+  function subsetById(id) { return SUBSETS.filter(function (x) { return x.id === id; })[0] || SUBSETS[0]; }
+  function inSubset(sub, s) { return !sub.id || (sub.taylor ? /Taylor/.test(s.ref) : (sub.rows || []).indexOf(s.n) >= 0); }
+  var subId = '';
+  try { subId = SW.store.get('scripts.subset') || ''; } catch (e) { /* storage closed */ }
+  SW.subsets = {
+    list: SUBSETS,
+    current: function () { return subsetById(subId); },
+    // choosing a subset filters the catalogue and Read ▾'s scripts, and turns the flow to its line
+    set: function (id) {
+      subId = subsetById(id).id;
+      try { SW.store.set('scripts.subset', subId); } catch (e) { /* storage closed */ }
+      var sub = subsetById(subId);
+      if (sub.line && SW.genealogyLine) SW.genealogyLine(sub.line);
+      var view = SW.$('#view-scripts'); if (view && SW.state.tab === 'scripts') render(view);
+    }
+  };
+
   var f = { q: '', type: '', src: '', held: false, sort: 'n', dir: 1 };
   try { var kept = JSON.parse(SW.store.get('scripts.filter') || 'null'); if (kept) f = Object.assign(f, kept); } catch (e) { /* storage closed */ }
   function keep() { try { SW.store.set('scripts.filter', JSON.stringify(f)); } catch (e) { /* storage closed */ } }
 
   function shown() {
     var q = f.q.trim().toLowerCase();
+    var sub = subsetById(subId);
     return SCRIPTS.filter(function (s) {
+      if (!inSubset(sub, s)) return false;
       if (f.type && s.type.indexOf(f.type) < 0) return false;
       if (f.src && sourceOf(s) !== f.src) return false;
       if (f.held && !s.held) return false;
@@ -101,17 +138,19 @@
 
   function render(view) {
     var rows = shown(), arrow = function (k) { return f.sort === k ? (f.dir > 0 ? ' ↑' : ' ↓') : ''; };
-    var held = SCRIPTS.filter(function (s) { return s.held; }).length;
+    var held = SCRIPTS.filter(function (s) { return s.held; }).length, sub = subsetById(subId);
     view.innerHTML = '<div class="pad scripts">' +
       '<h2>The scripts</h2>' +
       '<p class="hint flow">The scripts ELIZA ran and the conversations run on them, as <i>Inventing ELIZA</i> (Ciston et al. 2026, Table 1.2) documents them: those extant in Weizenbaum’s papers at MIT, mentioned in articles, or referenced elsewhere. The book’s authors are sure there are many others. ' +
       'Type: SCRIPT, a copy of the script survives; OUTPUT, a copy of a conversation it generated survives; NONE, neither survives, and the name is known only from a file or directory listing. Archive: whether it is in the archive. ' + held + ' of ' + SCRIPTS.length + ' have copies held here, to read in the last column. Copies are named by script, year and the identifier the document gives them, outputs by script and date.</p>' +
+      '<div class="sc-subset"><label>Subset <select id="sc-sub">' + SUBSETS.map(function (x) { return '<option value="' + x.id + '"' + (x.id === subId ? ' selected' : '') + '>' + esc(x.label) + '</option>'; }).join('') + '</select></label>' +
+        (sub.note ? '<span class="hint flow">' + esc(sub.note) + (sub.line ? ' Versions › Genealogy › Flow follows it.' : '') + '</span>' : '') + '</div>' +
       '<div class="sc-filters">' +
         '<input type="search" id="sc-q" placeholder="Find a script, a word, a year" value="' + esc(f.q) + '" aria-label="Find a script">' +
         '<span class="seg-btns" role="group" aria-label="Type">' + TYPES.map(function (t) { return '<button class="btn' + (f.type === t[0] ? ' on' : '') + '" data-sc-type="' + t[0] + '">' + t[1] + '</button>'; }).join('') + '</span>' +
         '<label>Referenced in <select id="sc-src">' + SOURCES.map(function (o) { return '<option value="' + o[0] + '"' + (f.src === o[0] ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select></label>' +
         '<label><input type="checkbox" id="sc-held"' + (f.held ? ' checked' : '') + '> Held here</label>' +
-        '<span class="faint sc-count">' + rows.length + ' of ' + SCRIPTS.length + '</span>' +
+        '<span class="faint sc-count">' + rows.length + ' of ' + (sub.id ? SCRIPTS.filter(function (x) { return inSubset(sub, x); }).length + ' in ' + esc(sub.short) : SCRIPTS.length) + '</span>' +
       '</div>' +
       '<div class="sc-wrap"><table class="data sc-table"><thead><tr>' +
         '<th data-sc-sort="n">#' + arrow('n') + '</th><th data-sc-sort="file">Filename' + arrow('file') + '</th><th>Description</th><th>Type</th><th>Referenced</th><th>Archive</th><th data-sc-sort="year">Year' + arrow('year') + '</th><th></th>' +
@@ -124,6 +163,7 @@
   function wire(view) {
     var q = SW.$('#sc-q', view);
     q.oninput = function () { f.q = q.value; keep(); var at = q.selectionStart; render(view); var q2 = SW.$('#sc-q', view); q2.focus(); q2.setSelectionRange(at, at); };
+    SW.$('#sc-sub', view).onchange = function (e) { SW.subsets.set(e.target.value); };
     SW.$('#sc-src', view).onchange = function (e) { f.src = e.target.value; keep(); render(view); };
     SW.$('#sc-held', view).onchange = function (e) { f.held = e.target.checked; keep(); render(view); };
     view.onclick = function (e) {

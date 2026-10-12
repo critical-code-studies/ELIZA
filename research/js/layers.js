@@ -8,8 +8,11 @@
  *
  * SW.BENCH.layers:
  *   list   [{ id, label, below (the layer's id under it), relation ('runs on', 'calls'), start
- *          (the version first chosen), more ([[pick, label, text]]: Read ▾ items of the layer's
- *          own, as a catalogue), note }], top first. A version's layer is v.layer (else the first).
+ *          (the version first chosen), more ([[pick, label, text, on]], or a function giving
+ *          them: Read ▾ items of the layer's own, as a catalogue), note }], top first. A version's
+ *          layer is v.layer; one with none (an output) is in no layer.
+ *   shown(id, versions)  the versions Read ▾ lists under a layer (all of its own, by default):
+ *          a bench's subset of them, which may bring in versions of no layer
  *   forms  { layer: { FORM: { re (a pattern for the line of the layer below that handles it),
  *          what (what that line does), missing (said where no line matches) } } }: the words of
  *          a layer that the layer below acts on (a script's MEMORY, NONE, NEWKEY)
@@ -188,13 +191,14 @@
   var M0 = B.menus || {};
   function readMenu() {
     return list().map(function (l, i) {
-      var ws = versionsOf(l.id), cur = SW.state.v;
+      var ws = C().shown ? C().shown(l.id, versionsOf(l.id)) : versionsOf(l.id), cur = SW.state.v;
+      var more = typeof l.more === 'function' ? l.more() : l.more || [];
       return (i ? '<hr class="menu-rule">' : '') + '<div class="menu-group">' + esc(l.label) + (l.below ? ' · ' + esc(l.relation || 'on') + ' ' + esc((byId(l.below) || {}).label || '') : '') + '</div>' +
         ws.map(function (v) {
           return '<button data-pick="v:' + esc(v.id) + '"' + (v.id === cur ? ' class="on"' : '') + '><b>' + esc(v.label) + (stack[l.id] === v.id && v.id !== cur ? ' ·' : '') + '</b><span>' +
             esc(v.build ? (v.medium || 'held') : 'lost: known from the record') + '</span></button>';
         }).join('') +
-        (l.more || []).map(function (m) { return '<button data-pick="' + esc(m[0]) + '"><b>' + esc(m[1]) + '</b><span>' + esc(m[2] || '') + '</span></button>'; }).join('');
+        more.map(function (m) { return '<button data-pick="' + esc(m[0]) + '"' + (m[3] ? ' class="on"' : '') + '><b>' + esc(m[1]) + '</b><span>' + esc(m[2] || '') + '</span></button>'; }).join('');
     }).join('');
   }
   B.menus = Object.assign({}, M0, {

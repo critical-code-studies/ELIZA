@@ -113,6 +113,8 @@ button.badge.err { cursor: pointer; font: inherit; }
 
 /* the scripts catalogue (js/scripts.js) */
 .scripts h2 { margin: 0 0 6px; }
+.scripts .sc-subset { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-top: 12px; }
+.scripts .sc-subset .hint { flex: 1 1 360px; }
 .scripts .sc-filters { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin: 12px 0 10px; }
 .scripts #sc-q { min-width: 220px; flex: 0 1 300px; }
 .scripts .sc-count { margin-left: auto; }

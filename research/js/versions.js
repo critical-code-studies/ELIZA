@@ -136,8 +136,16 @@
     { id: 'figure', label: 'F29 and FIGURE, 1967–68', ids: ['f29-67', 'figure68'] }
   ];
 
+  // where a file's text begins: a script's or an output's transcriber set a note at its head, in
+  // lines starting ;, which the comparisons leave out; a MAD listing begins at its first line
+  function findTitle(lines, b) {
+    if (/\.mad$/i.test(b.src)) return 1;
+    for (var i = 0; i < lines.length; i++) if (lines[i].trim() && !/^\s*;/.test(lines[i])) return i + 1;
+    return 1;
+  }
+
   var api = L({ versions: VERSIONS, src: SRC, dialects: DIALECTS, lines: LINES,
-                parent: PARENT, witness: WITNESS, also: ALSO, influence: INFLUENCE });
+                parent: PARENT, witness: WITNESS, also: ALSO, influence: INFLUENCE, findTitle: findTitle });
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.SWVersions = api;
 })(this);

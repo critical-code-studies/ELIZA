@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.17 (2026-10-12)
+
+- Named subsets of the script library: All, DOCTOR (copies and outputs), Mathematics (F29, FIGURE, ARITHM), Taylor's tutorials 1967-68, Before ELIZA: HELP 1964. A subset filters the catalogue, narrows Read ▾'s Scripts to its copies and outputs, and turns the genealogy's flow to its line. The comparisons and the genealogy leave out the transcribers' notes at the head of a script or output.
+
 ## 0.1.16 (2026-10-12)
 
 - F29 1967 [F29-67] and FIGURE 1968 [FIG-68], with the CTSS session of 16 January 1968 that printed them, and a flow line for the pair; five more outputs: HELP conversations of 11 June 1964 (student [HELP-C640611-S], patient [HELP-C640611-P]), the conversation of 1 October 1964 [C641001], and DOCTOR conversations of 5 March 1965 [DOC-C650305] and 22 March 1965 (men) [DOC-C650322], transcribed from the scans and unchecked.
