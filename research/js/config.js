@@ -32,13 +32,13 @@
     accent: { dark: '#ec6a42', light: '#b0401d' },
     // the people whose initials or names are written into the text (Compare marks them)
     hands: [],
-    group: '',                                             // the project's Hypothesis group's ID, once there is one
+    group: 'vZePbqDz',                                     // the project's Hypothesis group (hypothes.is/groups/vZePbqDz/eliza)
     relation: 'ELIZA, ',
     topShare: false,
     settings: {
       tour: 'A few stops through reading, comparing and annotating; about a minute.',
-      groupHint: 'Annotations are shared through a Hypothesis group: paste its link or ID, and a personal API token (hypothes.is/account/developer). Without them, annotations are kept as drafts in this browser and can be exported or published later.',
-      groupPlaceholder: 'https://hypothes.is/groups/…',
+      groupHint: 'Annotations are shared through the project’s private Hypothesis group, <b>vZePbqDz</b> (set for you). Paste another group’s link or ID only to use a different one, and a personal API token (hypothes.is/account/developer). Without them, annotations are kept as drafts in this browser and can be exported or published later.',
+      groupPlaceholder: 'https://hypothes.is/groups/vZePbqDz/eliza',
       themeHint: 'The colours of the whole bench: listings, annotations and figures. The ◐ button in the top bar switches between your last light and dark themes.'
     },
     tag: 'bk:',   // the prefix of this bench's tags in Hypothesis (a bench made before bench-kit 0.5.0 names its old prefix here)
@@ -59,7 +59,7 @@
     comparePrefix: 'ELIZA: ',
     genealogy: { set: ['1965b', '1966'], line: 'mit', lineNames: { mit: 'MIT, 1965–68' } },
     figureNum: { print: '#b0401d', paper: '#b0401d', phosphor: '#f0a83a' },
-    paratexts: { org: 'critical-code-studies', repo: 'eliza_paratexts', cache: 'eliza-paratexts' },   // a private repository for scans and documents (to be made)
+    paratexts: { org: 'critical-code-studies', repo: 'eliza_paratexts', cache: 'eliza-paratexts', tokenName: 'ELIZA research bench' },   // the private repository of scans and documents
     examples: { date: 'e.g. 1966-01, or 1965', archive: 'e.g. MIT Libraries, Weizenbaum papers', versions: 'e.g. 1965b, 1966',
                 refs: 'e.g. [REF: EL65B, ELIZA-1965b.mad:248]', publisher: 'e.g. Communications of the ACM', finding: 'F1' },
     // the first version is lost, and the tree grows from it

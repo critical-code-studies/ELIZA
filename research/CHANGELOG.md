@@ -8,3 +8,4 @@ Changes to the ELIZA research bench (`research/`). The bench keeps its own versi
 - Read as MAD-SLIP and as an ELIZA script, by `kit/lang-mad.js`: card labels, remark cards, continuation cards and sequence numbers, MAD's keywords whole and short, `$text$`, dotted relations, SLIP and other calls; the script's keywords, `=` references, `/` classes and rule numbers. A name's pop-up gives where it is defined and used, and what the project's SLIP page says of the calls it names.
 - Lenses: remarks and comments; the names the program defines (decks, functions, labels); SLIP and other calls; the script's keywords.
 - Findings: the `but` delimiter of 1965b, and NEWKEY in the 1966 script and not in the 1965 source.
+- Annotations through the project's Hypothesis group (vZePbqDz); paratexts in the private repository critical-code-studies/eliza_paratexts.
