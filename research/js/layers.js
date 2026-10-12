@@ -109,10 +109,13 @@
     SW.openAt(t.v, { p: t.p, n0: t.n, n1: t.n });
     // once the version is drawn, bring the line into view: a version newly opened is drawn where
     // the listing was scrolled, and the browser may restore that position after it is drawn
-    SW.build(t.v).then(function () {
-      function there() { if (SW.state.v === t.v) SW.emit('goto', { p: t.p, n: t.n, tab: 'read' }); }
-      setTimeout(there, 80); setTimeout(there, 500);
-    }, function () {});
+    var tries = 0;
+    (function there() {
+      if (SW.state.v !== t.v) return;
+      var ctx = SW.readCtx, shown = ctx && ctx.build && ctx.build(), el = document.getElementById('L' + t.p + '-' + t.n);
+      if (shown && shown.v.id === t.v && el) { SW.emit('goto', { p: t.p, n: t.n, tab: 'read' }); setTimeout(function () { if (SW.state.v === t.v) SW.emit('goto', { p: t.p, n: t.n, tab: 'read' }); }, 300); return; }
+      if (++tries < 80) setTimeout(there, 50);
+    })();
   }
   SW.nav = {
     go: function (t) { past.push(here()); future = []; open(t); paint(); },
