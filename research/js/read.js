@@ -106,8 +106,16 @@
   }
 
   // a definition in a layer below: where it is, its first lines, and a jump to it
-  function below(name, b) {
+  // a pop-up opened before the layers below have been read: fill it in when they have
+  function refill(key, b) {
+    SW.layers.preload(SW.layers.of(b.v.id)).then(function () {
+      var pop = document.querySelector('.pop'), mark = pop && pop.querySelector('[data-pending-sym]');
+      if (mark && mark.getAttribute('data-pending-sym') === key) pop.innerHTML = symbol(key, b);
+    });
+  }
+  function below(name, b, key) {
     var L = SW.layers, lay = L && L.of(b.v.id), r = L && L.resolve(name, lay);
+    if (!r && L && L.pending(lay)) { refill(key || name, b); return '<div class="layer-def unres-note" data-pending-sym="' + esc(key || name) + '">Looking for it in ' + esc(L.pending(lay)) + '…</div>'; }
     if (r) return '<div class="layer-def"><div>Defined in <b>' + L.where(r) + '</b></div>' + L.peek(r.b, r.s.p, r.s.n, 7) +
       '<a href="#" data-xgo="' + esc(r.v.id + '|' + r.s.p + '|' + r.s.n) + '">Jump to ' + esc(name) + ' in ' + esc(r.layer.label) + ' ▸</a></div>';
     var ch = L ? L.chain(lay) : [];
@@ -118,6 +126,7 @@
   function formPop(name, b) {
     var L = SW.layers, r = L && L.form(name, L.of(b.v.id)), h = '<h4>' + esc(name) + '</h4><div class="faint">A form of the script, which ELIZA acts on.</div>';
     if (!r) return h;
+    if (r.loading) { refill('form:' + name, b); return h + '<div class="layer-def unres-note" data-pending-sym="form:' + esc(name) + '">Looking for it in ' + esc(r.layer.label) + '…</div>'; }
     if (r.missing) return h + '<div class="layer-def unres-note">' + esc(r.missing) + ' <span class="faint">(' + esc(r.layer.label) + ': ' + esc(r.v ? r.v.label : '') + ')</span></div>';
     return h + '<div class="layer-def"><div>' + esc(r.what || '') + ' <b>' + L.where(r) + '</b></div>' + L.peek(r.b, r.p, r.n, 6) +
       '<a href="#" data-xgo="' + esc(r.v.id + '|' + r.p + '|' + r.n) + '">Jump to it in ' + esc(r.layer.label) + ' ▸</a></div>';
@@ -128,12 +137,12 @@
     if (/^form:/.test(key)) return formPop(key.slice(5), b);
     var s = b.sym[key], name = s ? s.name : key;
     var h = '<h4>' + esc(name) + '</h4>';
-    if (!s) return h + below(name, b);
+    if (!s) return h + below(name, b, key);
     var ks = Object.keys(s.kinds || {}), what = ks.length > 1 ? ks.map(function (k) { return (KIND[k] || k).replace(/^A /, 'a ').replace(/ \(.*$/, ''); }).join(', ') : (KIND[s.kind] || 'A name');
     h += '<div>' + esc(what.charAt(0).toUpperCase() + what.slice(1)) + ' <span class="faint">· ' + (s.defs.length ? 'defined ' + s.defs.length + '×, ' : '') + 'used ' + s.refs.length + '×</span></div>';
     if (GLOSS[name]) h += '<div style="margin-top:4px;font-family:var(--serif);font-size:14px">' + esc(GLOSS[name]) + ' <span class="faint">(the project’s SLIP page)</span></div>';
     if (s.kind === 'deck') { var d = (b.decks || []).filter(function (x) { return x.name === name; })[0]; if (d && d.entries.length && (d.entries.length > 1 || d.entries[0] !== name)) h += '<div class="faint">Its ' + (d.entries.length > 1 ? 'entries' : 'entry') + ': ' + esc(d.entries.join(', ')) + '.</div>'; }
-    if (!s.defs.length) h += below(name, b);
+    if (!s.defs.length) h += below(name, b, key);
     return h + SW.symbolRefs(b, s, { file: b.parts.length > 1, width: 44 });
   }
 
@@ -155,7 +164,7 @@
         '<div><i class="kx knoted"></i>covered by an annotation (initials at the right; click them)</div>' +
         '<div class="faint flow" style="margin-top:6px">MAD: <span class="lab">labels and functions defined here</span>, <span class="op">keywords</span> (W’R is WHENEVER, T’O TRANSFER TO, T’H THROUGH, E’L END OF CONDITIONAL, O’E OTHERWISE, F’N FUNCTION RETURN, V’S VECTOR VALUES, E’N END OF FUNCTION, E’M END OF PROGRAM), <span class="mac">functions defined elsewhere (in the layer below)</span>, <span class="ps">relations</span> (.E. equal, .G. greater, .L. less), <span class="var">$text$</span>, <span class="num">numbers</span>, <span class="cm">remarks and the cards’ sequence numbers</span>. A digit before a statement marks a continuation card. FAP: <span class="lab">label</span>, <span class="op">operation</span>, address, <span class="cm">comment</span>.</div>' +
         '<div class="faint flow" style="margin-top:6px">Script: <span class="lab">keywords</span>, <span class="op">DLIST, NEWKEY, PRE, MEMORY, NONE, =</span> (click one for the ELIZA code that acts on it), <span class="mac">/classes</span>, <span class="num">decomposition numbers</span>.</div>' +
-        '<div class="faint flow" style="margin-top:6px">Layers: a name used here and defined in a layer below jumps there from its pop-up; ◀ ▶ (Alt+← and Alt+→) go back and forward.</div></div>';
+        '<div class="faint flow" style="margin-top:6px">Layers: click a name for its pop-up, where a name defined in a layer below has Jump to…; Ctrl- or Cmd-click goes straight to its definition. ◀ ▶ (Alt+← and Alt+→) go back and forward.</div></div>';
     },
     symbol: symbol,
     lost: 'No source survives for this version. Annotations on it can still be kept under “Versions”.',
@@ -168,4 +177,22 @@
     }
   });
   SW.readCtx = ctx;
+
+  // Ctrl- or Cmd-click on a name: straight to its definition, here or in a layer below (an IDE's
+  // Go to Definition); a plain click opens the pop-up
+  document.addEventListener('click', function (e) {
+    if (!(e.ctrlKey || e.metaKey)) return;
+    var el = e.target.closest && e.target.closest('#view-read .sym[data-s]'); if (!el || !build) return;
+    var key = el.dataset.s, s = build.sym[key], L = SW.layers;
+    e.preventDefault(); e.stopPropagation();
+    if (/^form:/.test(key)) {
+      var f = L && L.form(key.slice(5), L.of(build.v.id));
+      if (f && !f.missing && !f.loading) SW.nav.go({ v: f.v.id, p: f.p, n: f.n }); else SW.toast(f && f.missing ? f.missing : 'Still reading the layer below; try again in a moment.');
+      return;
+    }
+    if (s && s.defs.length) { var d = s.defs[0]; SW.nav.go({ v: build.v.id, p: d.file, n: d.line }); return; }
+    var r = L && L.resolve(s ? s.name : key, L.of(build.v.id));
+    if (r) SW.nav.go({ v: r.v.id, p: r.s.p, n: r.s.n });
+    else SW.toast(L && L.pending(L.of(build.v.id)) ? 'Still reading ' + L.pending(L.of(build.v.id)) + '; try again in a moment.' : (s ? s.name : key) + ' is not defined here or in the layers below.');
+  }, true);
 })(this);

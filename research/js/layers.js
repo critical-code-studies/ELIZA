@@ -15,6 +15,7 @@
  *          a layer that the layer below acts on (a script's MEMORY, NONE, NEWKEY)
  *   pick(p)  a Read ▾ item of the bench's own (from more); true when handled
  * SW.layers: list(), byId(id), of(vid), stack(), choose(vid), below(id), chain(id), built(vid),
+ *   pending(id) (the first layer below still being read, or null),
  *   resolve(name, layer) -> { layer, v, b, s } of the first layer under it that defines the name,
  *   form(name, layer) -> { layer, v, b, p, n, what } or { missing }, peek(b, p, n, k) (HTML).
  * SW.nav: go({ v, p, n }), back(), forward(), the history of where Read has been.
@@ -48,6 +49,12 @@
     return SW.build(vid).then(function (b) { builds[vid] = b; return b; }, function () { return null; });
   }
   function preload(id) { return Promise.all(chain(id).map(function (l) { return load(stack[l.id]); })); }
+  // the label of the first layer below still being read, or null
+  function pending(id) {
+    var ls = chain(id);
+    for (var i = 0; i < ls.length; i++) { var v = V.byId(stack[ls[i].id]); if (v && v.build && !builds[v.id]) return ls[i].label + ' (' + v.label + ')'; }
+    return null;
+  }
 
   // ---------- resolving down the stack ----------
   function resolve(name, id) {
@@ -63,7 +70,7 @@
     if (!f || !l) return null;
     var vid = stack[l.id], v = V.byId(vid), b = built(vid);
     if (!v || !v.build) return { missing: (v ? v.label : l.label) + ' does not survive, so what it does with ' + name + ' cannot be read.', layer: l, v: v };
-    if (!b) return { missing: 'Still reading ' + v.label + '…', layer: l, v: v };
+    if (!b) return { loading: true, layer: l, v: v };
     if (f.re) for (var p = 0; p < b.lines.length; p++) for (var n = 0; n < b.lines[p].length; n++)
       if (f.re.test(b.lines[p][n].raw)) return { layer: l, v: v, b: b, p: p, n: n + 1, what: f.what };
     return { missing: f.missing || name + ' does not appear in ' + v.label + '’s code.', layer: l, v: v };
@@ -76,7 +83,7 @@
   function where(r) { return esc(r.layer.label) + ' · ' + esc(r.v.label) + ' · ' + esc(r.b.parts[r.p != null ? r.p : r.s.p].src.split('/').pop()) + ':' + (r.n != null ? r.n : r.s.n); }
 
   SW.layers = { list: list, byId: byId, of: of, versionsOf: versionsOf, stack: function () { return stack; }, choose: choose, below: below, chain: chain,
-                built: built, load: load, preload: preload, resolve: resolve, form: form, peek: peek, where: where };
+                built: built, load: load, preload: preload, pending: pending, resolve: resolve, form: form, peek: peek, where: where };
 
   // ---------- where Read has been: back and forward ----------
   var past = [], future = [];
@@ -161,6 +168,8 @@
   });
 
   // ---------- the stack follows the version chosen; the layers below are read at once ----------
+  // every layer of the stack is read as the page opens, so names resolve without waiting
+  setTimeout(function () { list().forEach(function (l) { load(stack[l.id]); }); }, 0);
   var S = B.shell || (B.shell = {}), onSel = S.onSelect, q0 = S.query;
   S.onSelect = function (b) { choose(b.v.id); builds[b.v.id] = b; preload(of(b.v.id)).then(function () { crumb(); }); if (onSel) onSel(b); };
   // a link carries the stack: stack=version,version,… in the order of the layers
