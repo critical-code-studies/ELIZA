@@ -85,7 +85,7 @@
     if (!cs.length) return none(el, 'This text calls no function it does not define' + (dn ? '' : ', or it is the lowest layer') + '.');
     var rows = cs.map(function (s) {
       var r = L ? L.resolve(s.name, lay) : null;
-      return [s.name, s.calls, r ? { html: '<a href="#" data-xgo="' + SW.esc(r.v.id + '|' + r.s.p + '|' + r.s.n) + '">' + SW.esc(r.layer.label + ', ' + r.b.parts[r.s.p].src.split('/').pop() + ':' + r.s.n) + '</a>', text: r.layer.label + ', ' + r.b.parts[r.s.p].src.split('/').pop() + ':' + r.s.n, sort: 0 } : { html: '<span class="faint">not found below</span>', text: 'not found below', sort: 1 },
+      return [s.name, s.calls, r ? { html: '<a href="#" data-xgo="' + SW.esc(r.v.id + '|' + r.p + '|' + r.n) + '">' + SW.esc(r.layer.label + ', ' + r.b.parts[r.p].src.split('/').pop() + ':' + r.n) + '</a>', text: r.layer.label + ', ' + r.b.parts[r.p].src.split('/').pop() + ':' + r.n, sort: 0 } : { html: '<span class="faint">not found below</span>', text: 'not found below', sort: 1 },
               where(b, s.refs[0].file, s.refs[0].line)];
     });
     var found = rows.filter(function (r) { return r[2].sort === 0; }).length;

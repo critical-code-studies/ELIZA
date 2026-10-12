@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.4 (2026-10-12)
+
+- ↘ after every call that the layer below defines: one click jumps to where it begins to run (MAD's ENTRY TO, a FAP routine's labelled first line), so YMATCH lands on line 1684 and HASH on 772. Pop-ups and the calls lens go there too. The SLIP page's attribution is gone from the pop-up.
+
 ## 0.1.3 (2026-10-12)
 
 - A name's pop-up reads as a hover card: what it is and where it lives (Function in SLIP, its own routine), what the project says of it, then Defined, Used here and Called from the layer above, each a row of line, routine and code that opens it. Deck is now called routine wherever a reader sees it (the Key explains the decks of cards).

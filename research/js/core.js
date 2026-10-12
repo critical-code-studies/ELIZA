@@ -6,7 +6,8 @@
  * A build: b.v (the version), b.parts (its files), b.lines[file][line - 1] ({ p, n, raw, norm,
  * script }), b.kind (marks by "file:line": def where a deck, an entry or a script's keyword
  * begins, com for a remark or a script's comment), b.sym (every name, by key: { key, name,
- * kind, kinds, home, p, n, defs, refs, calls }, defs and refs as [{ file, line }]; a statement
+ * kind, kinds, home, p, n, defs, refs, calls }, defs as [{ file, line, kind, start }] (start: where
+ * a function begins to run), refs as [{ file, line }]; a statement
  * label's key is NAME·DECK, as labels belong to their deck), b.decks ([{ name, lang, p, n,
  * entry, entries }]), b.asm (null: nothing is assembled).
  * Names: a deck, a function (ENTRY TO, INTERNAL FUNCTION), a statement label, an external
@@ -56,7 +57,8 @@
     // a name may be several things at once (CHANGE: a deck, the function it enters, a label);
     // a statement label belongs to its deck, keyed NAME·DECK
     function sym(key, name, kind) { return b.sym[key] || (b.sym[key] = { key: key, name: name, kind: kind, kinds: {}, defs: [], refs: [], calls: 0 }); }
-    function def(key, name, kind, pi, n) { var s = sym(key, name, kind); if (!s.defs.length || kind === 'deck' || kind === 'function') s.kind = kind; s.kinds[kind] = 1; s.defs.push({ file: pi, line: n }); if (s.p == null) { s.p = pi; s.n = n; s.home = homeOf(b.parts[pi].src); } }
+    // start: where a function begins to run (MAD's ENTRY TO, a FAP entry's labelled line)
+    function def(key, name, kind, pi, n, start) { var s = sym(key, name, kind); if (!s.defs.length || kind === 'deck' || kind === 'function') s.kind = kind; s.kinds[kind] = 1; s.defs.push({ file: pi, line: n, kind: kind, start: !!start }); if (s.p == null) { s.p = pi; s.n = n; s.home = homeOf(b.parts[pi].src); } }
     var pending = [];   // names used, placed once every label is known: the deck's label, or the name
     b.lines.forEach(function (ls, pi) {
       if (b.parts[pi].role === 'doc') return;
@@ -82,7 +84,7 @@
         var dn = deck ? deck.name : '';
         if (L.lang === 'fap') {
           if (p.op === 'ENTRY') { var en = (p.args || '').replace(/[^A-Z0-9].*$/, ''); if (en) { def(en, en, 'function', pi, L.n); if (deck) { deck.entries.push(en); if (!deck.entry) deck.entry = en; } b.kind[k] = 'def'; } return; }
-          p.labels.forEach(function (lab) { if (deck && deck.entries.indexOf(lab) >= 0) def(lab, lab, 'function', pi, L.n); else def(lab + '·' + dn, lab, 'label', pi, L.n); });
+          p.labels.forEach(function (lab) { if (deck && deck.entries.indexOf(lab) >= 0) def(lab, lab, 'function', pi, L.n, true); else def(lab + '·' + dn, lab, 'label', pi, L.n); });
           var prev = '';
           M.fapTokens(p.args || '').forEach(function (t) {
             if (t[0] === 'name') pending.push({ name: t[1], deck: dn, pi: pi, n: L.n, called: prev === '$' });
@@ -92,8 +94,8 @@
         }
         p.labels.forEach(function (lab) { var nm = lab.replace(/\(.*$/, ''); def(nm + '·' + dn, nm, 'label', pi, L.n); });
         var entry = /^ENTRY TO\s+([A-Z][A-Z0-9]*)\./.exec(p.code), internal = /^INTERNAL FUNCTION\b.*?\b([A-Z][A-Z0-9]*)\.\(/.exec(p.code);
-        if (entry) { def(entry[1], entry[1], 'function', pi, L.n); if (deck) { deck.entries.push(entry[1]); if (!deck.entry) deck.entry = entry[1]; } b.kind[k] = 'def'; }
-        if (internal) { def(internal[1], internal[1], 'function', pi, L.n); b.kind[k] = 'def'; }
+        if (entry) { def(entry[1], entry[1], 'function', pi, L.n, true); if (deck) { deck.entries.push(entry[1]); if (!deck.entry) deck.entry = entry[1]; } b.kind[k] = 'def'; }
+        if (internal) { def(internal[1], internal[1], 'function', pi, L.n, true); b.kind[k] = 'def'; }
         M.tokens(p.code).forEach(function (t) {
           if (t[0] === 'call') { if (!(entry && t[1] === entry[1]) && !(internal && t[1] === internal[1])) pending.push({ name: t[1], deck: null, pi: pi, n: L.n, called: true }); }
           else if (t[0] === 'name' && !/'/.test(t[1]) && !(entry && t[1] === entry[1])) pending.push({ name: t[1], deck: dn, pi: pi, n: L.n });

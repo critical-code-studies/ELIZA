@@ -32,10 +32,13 @@
     return s && (s.defs.length || s.calls || s.kind === 'keyword' || s.kind === 'class') ?
       '<span class="' + (cls ? cls + ' ' : '') + 'sym" data-s="' + esc(key) + '">' + esc(text) + '</span>' : (cls ? '<span class="' + cls + '">' + esc(text) + '</span>' : esc(text));
   }
+  // a name; one called here and defined in a layer below has ↘ after it, a jump straight there
   function nameHTML(x, raw, call) {
     var key = SW.symKey(build, x, raw), s = build && build.sym[key];
     var own = s && (s.kind === 'label' || s.kind === 'deck' || s.kind === 'function');
-    return symSpan(own ? 'lab' : call || (s && s.kind === 'external') ? 'mac' : '', key, x);
+    var below = s && !s.defs.length && s.calls && SW.layers && SW.layers.chain(SW.layers.of(build.v.id)).length;
+    return symSpan(own ? 'lab' : call || (s && s.kind === 'external') ? 'mac' : '', key, x) +
+      (below ? '<a href="#" class="xjump" data-xjump="' + esc(x) + '" title="Jump to ' + esc(x) + ' in the layer below" aria-label="Jump to ' + esc(x) + ' in the layer below"></a>' : '');
   }
   function madHTML(code, raw) {
     return M.tokens(code).map(function (t) {
@@ -116,8 +119,8 @@
   function below(name, b, key) {
     var L = SW.layers, lay = L && L.of(b.v.id), r = L && L.resolve(name, lay);
     if (!r && L && L.pending(lay)) { refill(key || name, b); return '<div class="layer-def unres-note" data-pending-sym="' + esc(key || name) + '">Looking for it in ' + esc(L.pending(lay)) + '…</div>'; }
-    if (r) return '<div class="pop-sec">Defined in ' + esc(r.layer.label) + ' · ' + esc(r.v.label) + '</div>' + L.peek(r.b, r.s.p, r.s.n, 7) +
-      '<a href="#" class="pop-jump" data-xgo="' + esc(r.v.id + '|' + r.s.p + '|' + r.s.n) + '">Jump to ' + esc(name) + ' in ' + esc(r.layer.label) + ' ▸</a>';
+    if (r) return '<div class="pop-sec">Defined in ' + esc(r.layer.label) + ' · ' + esc(r.v.label) + '</div>' + L.peek(r.b, r.p, r.n, 7) +
+      '<a href="#" class="pop-jump" data-xgo="' + esc(r.v.id + '|' + r.p + '|' + r.n) + '">Jump to ' + esc(name) + ' in ' + esc(r.layer.label) + ' ▸</a>';
     var ch = L ? L.chain(lay) : [];
     if (!ch.length) return '';
     var st = L.stack(), w = ch.map(function (x) { var v = root.SWVersions.byId(st[x.id]); return x.label + (v ? ' (' + v.label + ')' : ''); }).join(', ');
@@ -158,7 +161,7 @@
     var home = defs[0] ? deckAt(b, defs[0].file, defs[0].line) : null;
     var what = (WHAT[isFn ? 'function' : s.kind] || 'Name') + (layer ? ' in ' + layer.label : '') + (home ? (s.kind === 'deck' || (isFn && home === name) ? ', its own routine' : ', in routine ' + home) : '');
     h += '<div class="pop-what">' + esc(what) + (s.defs.length ? '' : ' (used here, not defined)') + '</div>';
-    if (GLOSS[name]) h += '<div class="pop-gloss">' + esc(GLOSS[name]) + '<span class="pop-src"> The project’s SLIP page.</span></div>';
+    if (GLOSS[name]) h += '<div class="pop-gloss">' + esc(GLOSS[name]) + '</div>';
     if (s.defs.length) h += section('Defined', defs.slice(0, 3).map(function (d) { return row(b, d, home); }));
     else h += below(name, b, key);
     var uses = s.refs.filter(function (r) { return !s.defs.some(function (d) { return d.file === r.file && d.line === r.line; }); });
@@ -189,7 +192,7 @@
         '<div><i class="kx knoted"></i>covered by an annotation (initials at the right; click them)</div>' +
         '<div class="faint flow" style="margin-top:6px">MAD: <span class="lab">labels and functions defined here</span>, <span class="op">keywords</span> (W’R is WHENEVER, T’O TRANSFER TO, T’H THROUGH, E’L END OF CONDITIONAL, O’E OTHERWISE, F’N FUNCTION RETURN, V’S VECTOR VALUES, E’N END OF FUNCTION, E’M END OF PROGRAM), <span class="mac">functions defined elsewhere (in the layer below)</span>, <span class="ps">relations</span> (.E. equal, .G. greater, .L. less), <span class="var">$text$</span>, <span class="num">numbers</span>, <span class="cm">remarks and the cards’ sequence numbers</span>. A digit before a statement marks a continuation card. FAP: <span class="lab">label</span>, <span class="op">operation</span>, address, <span class="cm">comment</span>.</div>' +
         '<div class="faint flow" style="margin-top:6px">Script: <span class="lab">keywords</span>, <span class="op">DLIST, NEWKEY, PRE, MEMORY, NONE, =</span> (click one for the ELIZA code that acts on it), <span class="mac">/classes</span>, <span class="num">decomposition numbers</span>.</div>' +
-        '<div class="faint flow" style="margin-top:6px">Layers: click a name for its pop-up, where a name defined in a layer below has Jump to…; Ctrl- or Cmd-click goes straight to its definition. ◀ ▶ (Alt+← and Alt+→) go back and forward.</div></div>';
+        '<div class="faint flow" style="margin-top:6px">Layers: <a class="xjump" style="pointer-events:none"></a> after a call jumps straight to where the layer below defines it (where it begins to run); click a name for its pop-up; Ctrl- or Cmd-click goes straight to its definition. ◀ ▶ (Alt+← and Alt+→) go back and forward.</div></div>';
     },
     symbol: symbol,
     lost: 'No source survives for this version. Annotations on it can still be kept under “Versions”.',

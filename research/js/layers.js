@@ -17,7 +17,8 @@
  * SW.layers: list(), byId(id), of(vid), stack(), choose(vid), below(id), chain(id), built(vid),
  *   pending(id) (the first layer below still being read, or null), above(id), callers(name, id)
  *   (where the layers above use a name this one defines),
- *   resolve(name, layer) -> { layer, v, b, s } of the first layer under it that defines the name,
+ *   resolve(name, layer) -> { layer, v, b, s, p, n } of the first layer under it that defines the name
+ *   (p, n: where it begins to run, where a definition is marked start, else its first),
  *   form(name, layer) -> { layer, v, b, p, n, what } or { missing }, peek(b, p, n, k) (HTML).
  * SW.nav: go({ v, p, n }), back(), forward(), the history of where Read has been.
  */
@@ -62,7 +63,11 @@
     var ls = chain(id);
     for (var i = 0; i < ls.length; i++) {
       var vid = stack[ls[i].id], b = built(vid), s = b && b.sym[name];
-      if (s && s.defs.length) return { layer: ls[i], v: V.byId(vid), b: b, s: s };
+      if (s && s.defs.length) {
+        // the place to go: where it begins to run, if the bench marks it, else its first definition
+        var d = s.defs.filter(function (x) { return x.start; })[0] || s.defs[0];
+        return { layer: ls[i], v: V.byId(vid), b: b, s: s, p: d.file, n: d.line };
+      }
     }
     return null;
   }
@@ -143,6 +148,28 @@
   function crumb() { var c = SW.$('#lay-crumb'); if (c) c.innerHTML = crumbHTML(); }
   SW.on('goto', function () { setTimeout(crumb, 0); });
   document.addEventListener('click', function (e) { if (e.target.closest && e.target.closest('#view-read')) setTimeout(crumb, 0); });
+
+  // ---------- a jump straight down: the ↘ after a name the layer below defines ----------
+  function jumpTo(name, from) {
+    var r = resolve(name, from);
+    if (r) { SW.nav.go({ v: r.v.id, p: r.p, n: r.n }); return; }
+    var w = pending(from);
+    if (w) { SW.toast('Reading ' + w + '…', 1500); preload(from).then(function () { var r2 = resolve(name, from); if (r2) SW.nav.go({ v: r2.v.id, p: r2.p, n: r2.n }); else SW.toast(name + ' is not defined in the layers below.'); }); return; }
+    SW.toast(name + ' is not defined in the layers below.');
+  }
+  SW.layers.jumpTo = jumpTo;
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('[data-xjump]'); if (!a) return;
+    e.preventDefault(); e.stopPropagation();
+    jumpTo(a.dataset.xjump, of(SW.state.v));
+  }, true);
+  // its hover names where it goes, once the layer below is read
+  document.addEventListener('mouseover', function (e) {
+    var a = e.target.closest && e.target.closest('[data-xjump]'); if (!a || a.dataset.told) return;
+    var from = of(SW.state.v), r = resolve(a.dataset.xjump, from);
+    if (r) { a.title = 'Jump to ' + a.dataset.xjump + ' in ' + r.layer.label + ': ' + r.b.parts[r.p].src.split('/').pop() + ', line ' + r.n; a.dataset.told = '1'; }
+    else if (!pending(from)) { a.title = a.dataset.xjump + ' is not defined in the layers below'; a.classList.add('xjump-none'); a.dataset.told = '1'; }
+  });
 
   // ---------- in Read: the toolbar's ◀ ▶ and the breadcrumb under it ----------
   SW.layers.toolbar = {
