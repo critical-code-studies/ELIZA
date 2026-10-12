@@ -36,9 +36,9 @@
       features: { delimit: '“.” and “,”', newkey: false, edit: null, stack: false, hardcoded: false, scripts: 'Script', evidence: 'MIT Archive flowcharts' },
       summary: 'Delimits sentences with only “.” and “,”, as the flowcharts in the MIT archive show. No source is known.' + T11 },
     { id: '1965b', label: 'ELIZA 1965b', date: '1965', sort: 19650600, authors: JW,
-      fork: 'eliza', layer: 'eliza', status: 'recovered', medium: 'Printout (MAD-SLIP, six decks)',
+      fork: 'eliza', layer: 'eliza', status: 'recovered', medium: 'Printout (MAD-SLIP, six routines)',
       features: { delimit: '“.”, “,” and “but”', newkey: false, edit: 'CHANGE function', stack: false, hardcoded: true, scripts: 'Script', evidence: 'MIT Archive source code' },
-      summary: 'The version recovered from the MIT archives: the printout of its source, in Weizenbaum’s papers, released CC0 (hdl.handle.net/1721.3/201699). Delimits sentences with “.”, “,” and “but”. Lacks the NEWKEY function. Includes the undocumented CHANGE function, which edits the script, and hard-coded messages. Six decks of MAD-SLIP: CHANGE, TPRINT, LPRINT, TESTS, DOCBCD and ELIZA, the main program. The basis of the project’s close reading.' + T11,
+      summary: 'The version recovered from the MIT archives: the printout of its source, in Weizenbaum’s papers, released CC0 (hdl.handle.net/1721.3/201699). Delimits sentences with “.”, “,” and “but”. Lacks the NEWKEY function. Includes the undocumented CHANGE function, which edits the script, and hard-coded messages. Six routines of MAD-SLIP, each compiled on its own: CHANGE, TPRINT, LPRINT, TESTS, DOCBCD and ELIZA, the main program. The basis of the project’s close reading.' + T11,
       build: files('', ['ELIZA-1965b.mad']) },
     { id: '1966', label: 'ELIZA 1966', date: 'January 1966', sort: 19660100, authors: JW,
       fork: 'eliza', layer: 'eliza', status: 'lost', medium: null,
@@ -59,8 +59,8 @@
       build: files('', ['DOCTOR.txt']) },
     // the library
     { id: 'slip1965', label: 'SLIP, as ELIZA used it', date: 'c. 1965', sort: 19650601, authors: JW,
-      fork: 'slip', layer: 'slip', status: 'recovered', medium: 'Listing (MAD and FAP, 67 decks), with 3 routines reconstructed',
-      summary: 'The SLIP library on CTSS as its listing among Weizenbaum’s papers at MIT has it (dome.mit.edu, handle 1721.3/201707): 67 decks, 51 in MAD and 16 in FAP, the 7094’s assembler, transcribed by Arthur Schwarz. It holds SLIP as published and the routines added for ELIZA (YMATCH, ASSMBL, HASH among them, which sit in the listing but do ELIZA’s work). Three routines ELIZA calls are missing from the listing; BCDIT, INLSTL and LETTER were reconstructed in 2024 by Anthony Hay, Arthur Schwarz and Rupert Lane for the restoration of ELIZA on CTSS, and are held beside it, marked as reconstructions.',
+      fork: 'slip', layer: 'slip', status: 'recovered', medium: 'Listing (MAD and FAP, 67 routines), with 3 reconstructed',
+      summary: 'The SLIP library on CTSS as its listing among Weizenbaum’s papers at MIT has it (dome.mit.edu, handle 1721.3/201707): 67 routines, each compiled on its own (51 in MAD, 16 in FAP, the 7094’s assembler), transcribed by Arthur Schwarz. It holds SLIP as published and the routines added for ELIZA (YMATCH, ASSMBL, HASH among them, which sit in the listing but do ELIZA’s work). Three routines ELIZA calls are missing from the listing; BCDIT, INLSTL and LETTER were reconstructed in 2024 by Anthony Hay, Arthur Schwarz and Rupert Lane for the restoration of ELIZA on CTSS, and are held beside it, marked as reconstructions.',
       build: files('SLIP/', ['SLIP-1965.mad', { src: 'bcdit.mad', role: 'support' }, { src: 'inlstl.mad', role: 'support' }, { src: 'letter.mad', role: 'support' }]) }
   ];
 

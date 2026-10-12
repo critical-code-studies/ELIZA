@@ -15,7 +15,8 @@
  *          a layer that the layer below acts on (a script's MEMORY, NONE, NEWKEY)
  *   pick(p)  a Read ▾ item of the bench's own (from more); true when handled
  * SW.layers: list(), byId(id), of(vid), stack(), choose(vid), below(id), chain(id), built(vid),
- *   pending(id) (the first layer below still being read, or null),
+ *   pending(id) (the first layer below still being read, or null), above(id), callers(name, id)
+ *   (where the layers above use a name this one defines),
  *   resolve(name, layer) -> { layer, v, b, s } of the first layer under it that defines the name,
  *   form(name, layer) -> { layer, v, b, p, n, what } or { missing }, peek(b, p, n, k) (HTML).
  * SW.nav: go({ v, p, n }), back(), forward(), the history of where Read has been.
@@ -65,6 +66,15 @@
     }
     return null;
   }
+  // the layers that run on or call this one, nearest first
+  function above(id) { var out = []; list().forEach(function (l) { if (chain(l.id).some(function (x) { return x.id === id; })) out.push(l); }); return out.reverse(); }
+  // where the layers above use a name this layer defines: [{ layer, v, b, refs }]
+  function callers(name, id) {
+    return above(id).map(function (l) {
+      var v = V.byId(stack[l.id]), b = v && built(v.id), s = b && b.sym[name];
+      return s && !s.defs.length && s.refs.length ? { layer: l, v: v, b: b, refs: s.refs } : null;
+    }).filter(Boolean);
+  }
   function form(name, id) {
     var F = (C().forms || {})[id] || {}, f = F[name], l = below(id);
     if (!f || !l) return null;
@@ -83,7 +93,7 @@
   function where(r) { return esc(r.layer.label) + ' · ' + esc(r.v.label) + ' · ' + esc(r.b.parts[r.p != null ? r.p : r.s.p].src.split('/').pop()) + ':' + (r.n != null ? r.n : r.s.n); }
 
   SW.layers = { list: list, byId: byId, of: of, versionsOf: versionsOf, stack: function () { return stack; }, choose: choose, below: below, chain: chain,
-                built: built, load: load, preload: preload, pending: pending, resolve: resolve, form: form, peek: peek, where: where };
+                above: above, callers: callers, built: built, load: load, preload: preload, pending: pending, resolve: resolve, form: form, peek: peek, where: where };
 
   // ---------- where Read has been: back and forward ----------
   var past = [], future = [];
@@ -124,7 +134,7 @@
     if (b && s && b.parts[s.p]) {
       var L = (b.lines[s.p] || [])[s.n0 - 1];
       bits.push(esc(b.parts[s.p].src.split('/').pop()));
-      if (L && L.deck) bits.push('deck ' + esc(L.deck));
+      if (L && L.deck) bits.push('routine ' + esc(L.deck));
       bits.push('line ' + s.n0 + (s.n1 && s.n1 !== s.n0 ? '–' + s.n1 : ''));
     }
     var dn = l && below(l.id) ? ' <span class="faint">· ' + esc(l.relation || 'on') + ' ' + chain(l.id).map(function (x) { var w = V.byId(stack[x.id]); return esc(x.label) + (w ? ' (' + esc(w.label) + ')' : ''); }).join(' · ') + '</span>' : '';

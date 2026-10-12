@@ -22,7 +22,7 @@
     ASSMBL: 'Assembles a reply from a template. In the SLIP listing but not part of SLIP as published: it does ELIZA’s work.',
     CHANGE: 'ELIZA’s teach mode: lets a user revise and extend a script while the program is running.'
   };
-  var KIND = { deck: 'A deck (a separately compiled program)', 'function': 'A function', label: 'A statement label', slip: 'A SLIP function',
+  var KIND = { deck: 'A routine (compiled on its own)', 'function': 'A function', label: 'A statement label', slip: 'A SLIP function',
                external: 'A function not defined in this text', variable: 'A name', keyword: 'A keyword of the script', 'class': 'A class of words (DLIST)' };
   var FORMS = ((SW.BENCH.layers || {}).forms || {}).script || {};
 
@@ -116,8 +116,8 @@
   function below(name, b, key) {
     var L = SW.layers, lay = L && L.of(b.v.id), r = L && L.resolve(name, lay);
     if (!r && L && L.pending(lay)) { refill(key || name, b); return '<div class="layer-def unres-note" data-pending-sym="' + esc(key || name) + '">Looking for it in ' + esc(L.pending(lay)) + '…</div>'; }
-    if (r) return '<div class="layer-def"><div>Defined in <b>' + L.where(r) + '</b></div>' + L.peek(r.b, r.s.p, r.s.n, 7) +
-      '<a href="#" data-xgo="' + esc(r.v.id + '|' + r.s.p + '|' + r.s.n) + '">Jump to ' + esc(name) + ' in ' + esc(r.layer.label) + ' ▸</a></div>';
+    if (r) return '<div class="pop-sec">Defined in ' + esc(r.layer.label) + ' · ' + esc(r.v.label) + '</div>' + L.peek(r.b, r.s.p, r.s.n, 7) +
+      '<a href="#" class="pop-jump" data-xgo="' + esc(r.v.id + '|' + r.s.p + '|' + r.s.n) + '">Jump to ' + esc(name) + ' in ' + esc(r.layer.label) + ' ▸</a>';
     var ch = L ? L.chain(lay) : [];
     if (!ch.length) return '';
     var st = L.stack(), w = ch.map(function (x) { var v = root.SWVersions.byId(st[x.id]); return x.label + (v ? ' (' + v.label + ')' : ''); }).join(', ');
@@ -132,18 +132,42 @@
       '<a href="#" data-xgo="' + esc(r.v.id + '|' + r.p + '|' + r.n) + '">Jump to it in ' + esc(r.layer.label) + ' ▸</a></div>';
   }
 
-  // the pop-up on a name
+  // the pop-up on a name, as an IDE's hover card: what it is and where it lives; what the
+  // project says of it; where it is defined; where it is used here; where the layers above use it
+  var WHAT = { deck: 'Routine', 'function': 'Function', label: 'Statement label', external: 'Function defined elsewhere',
+               slip: 'Function defined elsewhere', variable: 'Name', keyword: 'Script keyword', 'class': 'Word class (DLIST)' };
+  function deckAt(b, p, n) { var L = (b.lines[p] || [])[n - 1]; return L && L.deck; }
+  function codeAt(b, p, n) { var L = (b.lines[p] || [])[n - 1]; if (!L) return ''; var q = SW.parseLine(L.raw); return ((q.labels || []).join(' ') + ' ' + q.code).trim(); }
+  // a row: the line, its deck when it differs, the code; a link within this text or (xgo) to another
+  function row(b, r, deckOf, xgo) {
+    var d = deckAt(b, r.file, r.line), file = b.parts.length > 1 ? b.parts[r.file].src.split('/').pop() + ' ' : '';
+    var link = xgo ? ' data-xgo="' + esc(xgo + '|' + r.file + '|' + r.line) + '"' : ' data-p="' + r.file + '" data-n="' + r.line + '"';
+    return '<a href="#" class="pop-row"' + link + '><span class="pop-at">' + esc(file) + 'line ' + r.line + (d && d !== deckOf ? ' · in ' + esc(d) : '') + '</span><code>' + esc(codeAt(b, r.file, r.line).slice(0, 56)) + '</code></a>';
+  }
+  function section(title, rows) { return rows.length ? '<div class="pop-sec">' + title + '</div>' + rows.join('') : ''; }
+
   function symbol(key, b) {
     if (/^form:/.test(key)) return formPop(key.slice(5), b);
-    var s = b.sym[key], name = s ? s.name : key;
+    var s = b.sym[key], name = s ? s.name : key, L = SW.layers, lay = L ? L.of(b.v.id) : null, layer = L && L.byId(lay);
     var h = '<h4>' + esc(name) + '</h4>';
     if (!s) return h + below(name, b, key);
-    var ks = Object.keys(s.kinds || {}), what = ks.length > 1 ? ks.map(function (k) { return (KIND[k] || k).replace(/^A /, 'a ').replace(/ \(.*$/, ''); }).join(', ') : (KIND[s.kind] || 'A name');
-    h += '<div>' + esc(what.charAt(0).toUpperCase() + what.slice(1)) + ' <span class="faint">· ' + (s.defs.length ? 'defined ' + s.defs.length + '×, ' : '') + 'used ' + s.refs.length + '×</span></div>';
-    if (GLOSS[name]) h += '<div style="margin-top:4px;font-family:var(--serif);font-size:14px">' + esc(GLOSS[name]) + ' <span class="faint">(the project’s SLIP page)</span></div>';
-    if (s.kind === 'deck') { var d = (b.decks || []).filter(function (x) { return x.name === name; })[0]; if (d && d.entries.length && (d.entries.length > 1 || d.entries[0] !== name)) h += '<div class="faint">Its ' + (d.entries.length > 1 ? 'entries' : 'entry') + ': ' + esc(d.entries.join(', ')) + '.</div>'; }
-    if (!s.defs.length) h += below(name, b, key);
-    return h + SW.symbolRefs(b, s, { file: b.parts.length > 1, width: 44 });
+    // the definition that matters: a function's ENTRY, not the head of its deck
+    var defs = s.defs.slice(), isFn = s.kinds && s.kinds['function'];
+    if (isFn) defs = defs.filter(function (d) { return !/ (MAD|FAP)$/.test(codeAt(b, d.file, d.line)) && !/^\S+\s+(MAD|FAP)\b/.test(codeAt(b, d.file, d.line)); });
+    if (!defs.length) defs = s.defs.slice(0, 1);
+    var home = defs[0] ? deckAt(b, defs[0].file, defs[0].line) : null;
+    var what = (WHAT[isFn ? 'function' : s.kind] || 'Name') + (layer ? ' in ' + layer.label : '') + (home ? (s.kind === 'deck' || (isFn && home === name) ? ', its own routine' : ', in routine ' + home) : '');
+    h += '<div class="pop-what">' + esc(what) + (s.defs.length ? '' : ' (used here, not defined)') + '</div>';
+    if (GLOSS[name]) h += '<div class="pop-gloss">' + esc(GLOSS[name]) + '<span class="pop-src"> The project’s SLIP page.</span></div>';
+    if (s.defs.length) h += section('Defined', defs.slice(0, 3).map(function (d) { return row(b, d, home); }));
+    else h += below(name, b, key);
+    var uses = s.refs.filter(function (r) { return !s.defs.some(function (d) { return d.file === r.file && d.line === r.line; }); });
+    h += section('Used here' + (uses.length ? ' (' + uses.length + ')' : ''), uses.slice(0, 12).map(function (r) { return row(b, r, home); }));
+    if (uses.length > 12) h += '<div class="pop-more">and ' + (uses.length - 12) + ' more</div>';
+    if (L && s.defs.length) L.callers(name, lay).forEach(function (c) {
+      h += section('Called from ' + esc(c.layer.label) + ' · ' + esc(c.v.label) + ' (' + c.refs.length + ')', c.refs.slice(0, 8).map(function (r) { return row(c.b, r, null, c.v.id); }));
+    });
+    return h;
   }
 
   var ctx = SW.readView({
@@ -154,12 +178,13 @@
         var part = b.parts[pi], home = SW.homeOf(part.src), decks = (b.decks || []).filter(function (d) { return d.p === pi; });
         var what = home === 'script' ? 'An ELIZA script' : home === 'reconstructed' ? 'MAD, reconstructed in 2024 (not in the listing)' : decks.some(function (d) { return d.lang === 'FAP'; }) ? 'MAD and FAP' : 'MAD-SLIP';
         return '<span class="ph-lang">' + esc(what) + '</span> · ' + SW.sourceLink(part.src, part.src.split('/').pop()) + ' · ' + b.lines[pi].length + ' lines' +
-          (decks.length ? ' · ' + decks.length + ' decks' + (decks.length <= 8 ? ': ' + esc(decks.map(function (d) { return d.name; }).join(', ')) : '') : '');
+          (decks.length ? ' · ' + decks.length + ' routines' + (decks.length <= 8 ? ': ' + esc(decks.map(function (d) { return d.name; }).join(', ')) : '') : '');
       }
     },
     key: function () {
       return '<h4>Key</h4><div class="keylist">' +
-        '<div><i class="kx kdef"></i>a deck, an entry or a function begins here; in a script, a keyword’s entry</div>' +
+        '<div><i class="kx kdef"></i>a routine, an entry or a function begins here; in a script, a keyword’s entry</div>' +
+        '<div class="faint flow">A routine was punched on cards as a deck and compiled on its own; the listing heads each with its name and language (YMATCH MAD, HASH FAP).</div>' +
         '<div><i class="kx kcom"></i>a remark card (R), a FAP comment card (*), or a script’s comment</div>' +
         '<div><i class="kx knoted"></i>covered by an annotation (initials at the right; click them)</div>' +
         '<div class="faint flow" style="margin-top:6px">MAD: <span class="lab">labels and functions defined here</span>, <span class="op">keywords</span> (W’R is WHENEVER, T’O TRANSFER TO, T’H THROUGH, E’L END OF CONDITIONAL, O’E OTHERWISE, F’N FUNCTION RETURN, V’S VECTOR VALUES, E’N END OF FUNCTION, E’M END OF PROGRAM), <span class="mac">functions defined elsewhere (in the layer below)</span>, <span class="ps">relations</span> (.E. equal, .G. greater, .L. less), <span class="var">$text$</span>, <span class="num">numbers</span>, <span class="cm">remarks and the cards’ sequence numbers</span>. A digit before a statement marks a continuation card. FAP: <span class="lab">label</span>, <span class="op">operation</span>, address, <span class="cm">comment</span>.</div>' +

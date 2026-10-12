@@ -42,7 +42,7 @@
       icon: '<img src="img/icon.svg" alt="" width="40" height="40">',
       author: 'David M. Berry', citeAuthor: 'Berry, D. M.',
       purpose: 'A bench for the critical reading of ELIZA, Joseph Weizenbaum’s program at MIT (1964–66, MAD-SLIP on CTSS), in its versions: the recovered 1965 source and the DOCTOR script published in 1966, with the lost versions on record. Part of the ELIZA Archaeology Project (findingeliza.org).',
-      inside: 'The texts as held, divided into lines and read as MAD-SLIP and as an ELIZA script: decks, labels, remarks, keywords and the SLIP list functions, the script’s keywords and rules. Nothing is run yet.',
+      inside: 'The texts as held, divided into lines and read as MAD-SLIP and as an ELIZA script: routines, labels, remarks, keywords and the SLIP list functions, the script’s keywords and rules. Nothing is run yet.',
       sources: 'The program’s five versions as Inventing ELIZA (2026, Table 1.1) compares them; of these, the recovered printout of the 1965b source, from Weizenbaum’s papers at MIT (released CC0, hdl.handle.net/1721.3/201699). The scripts it ran, apart: the DOCTOR script as printed in the appendix to Weizenbaum’s 1966 paper, transcribed by Anthony C. Hay. Details under Versions.',
       code: 'https://github.com/critical-code-studies/ELIZA',
       catalogue: { skip: [], held: 'held as source' }

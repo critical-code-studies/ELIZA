@@ -20,13 +20,13 @@
       text: 'When no rule matches, the 1965b source prints one of four replies set in the program itself, not drawn from the script: PLEASE CONTINUE, HMMM, GO ON, PLEASE and I SEE (NOMATCH(1) to NOMATCH(4)). Inventing ELIZA (Table 1.1) records hard-coded messages for 1965b and for no later version.',
       ev: [{ v: '1965b', re: /^NOMATCH\(1\)/, label: 'the four replies, in the 1965b source' }] },
     { no: 'F4', kind: 'Version', cat: 'program', level: 'key', title: 'ELIZA 1965b edits its script through CHANGE, a function the 1966 paper does not describe',
-      text: 'The first deck of the 1965b source is CHANGE, entered from the main loop when the input is “+”: PLEASE INSTRUCT ME, then the commands TYPE, SUBST, APPEND, ADD, START, RANK and DISPLA on the script it holds. Inventing ELIZA (Table 1.1) calls it undocumented; from 1966 the script is edited by an EDIT function.',
+      text: 'The first routine of the 1965b source is CHANGE, entered from the main loop when the input is “+”: PLEASE INSTRUCT ME, then the commands TYPE, SUBST, APPEND, ADD, START, RANK and DISPLA on the script it holds. Inventing ELIZA (Table 1.1) calls it undocumented; from 1966 the script is edited by an EDIT function.',
       ev: [{ v: '1965b', re: /^\s+ENTRY TO CHANGE\./, label: 'CHANGE’s entry' }, { v: '1965b', re: /CHANGE\.\(KEY,MYTRAN\)/, label: 'where the main loop calls it' }] }
   ];
   // A category is found from the words of a finding (the one with most matches), unless a cat: tag sets it
   B.findingCats = [
     ['text', 'The texts', /\b(remarks?|cards?|transcri\w*|printouts?|listings?)\b/gi],
-    ['program', 'The program', /\b(decks?|functions?|SLIP|loops?|lists?|reads?|keywords?)\b/gi],
+    ['program', 'The program', /\b(routines?|functions?|SLIP|loops?|lists?|reads?|keywords?)\b/gi],
     ['versions', 'Versions', /\b(versions?|1965a|1965b|1966|1967|1968|lost)\b/gi]
   ];
   B.findingsTitle = 'Findings';

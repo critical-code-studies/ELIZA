@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.3 (2026-10-12)
+
+- A name's pop-up reads as a hover card: what it is and where it lives (Function in SLIP, its own routine), what the project says of it, then Defined, Used here and Called from the layer above, each a row of line, routine and code that opens it. Deck is now called routine wherever a reader sees it (the Key explains the decks of cards).
+
 ## 0.1.2 (2026-10-12)
 
 - Jump to… works however soon a name is clicked: a pop-up opened while SLIP is still being read says so and fills in when it arrives, and every layer of the stack is read as the page opens. Ctrl- or Cmd-click on a name goes straight to its definition, here or in a layer below.

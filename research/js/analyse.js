@@ -59,19 +59,19 @@
   }
 
   // ---------- 2 names ----------
-  var KINDS = { deck: 'deck', 'function': 'function', label: 'label' };
+  var KINDS = { deck: 'routine', 'function': 'function', label: 'label' };
   function names(b, el) {
     var ns = Object.keys(b.sym).map(function (k) { return b.sym[k]; }).filter(function (s) { return KINDS[s.kind]; })
       .sort(function (x, y) { return x.p - y.p || x.n - y.n; });
-    if (!ns.length) return none(el, 'This version’s text defines no decks, functions or labels: it is a script (lens 4 reads its keywords).');
+    if (!ns.length) return none(el, 'This version’s text defines no routines, functions or labels: it is a script (lens 4 reads its keywords).');
     var rows = ns.map(function (s) { return [s.name, KINDS[s.kind], s.refs.length, where(b, s.p, s.n)]; });
-    var c = wide(card('Names the program defines', ns.length + ' names: the decks (separately compiled programs), the functions they enter, and the statement labels a transfer goes to. Sort by a column; click a place to read it.'));
+    var c = wide(card('Names the program defines', ns.length + ' names: the routines (each compiled on its own: on the 7094, a deck of punched cards), the functions they enter, and the statement labels a transfer goes to. Sort by a column; click a place to read it.'));
     c.appendChild(SW.table(['Name', 'Kind', 'Used', 'Defined at'], rows, { cls: ['mono', '', 'num', 'mono'] }));
     el.appendChild(c); linkRows(c);
     var decks = b.decks || [];
     if (decks.length) {
-      var dc = card('The decks', 'Each deck in the order of the listing, and the function it enters.');
-      dc.appendChild(SW.table(['Deck', 'Entry', 'Begins at'], decks.map(function (d) { return [d.name, d.entry || '–', where(b, d.p, d.n)]; }), { cls: ['mono', 'mono', 'mono'] }));
+      var dc = card('The routines', 'Each routine in the order of the listing (headed there by its name and language, as YMATCH MAD), and the function it enters.');
+      dc.appendChild(SW.table(['Routine', 'Entry', 'Begins at'], decks.map(function (d) { return [d.name, d.entry || '–', where(b, d.p, d.n)]; }), { cls: ['mono', 'mono', 'mono'] }));
       el.appendChild(dc); linkRows(dc);
     }
     return function () { return [SW.tableBlock('Names the program defines', ['Name', 'Kind', 'Used', 'Defined at'], plain(rows))]; };
@@ -138,7 +138,7 @@
   // ---------- for kit/lenses.js ----------
   SW.BENCH.lenses = {
     list: [[1, 'Remarks and comments', 'Every remark card and script comment, searchable'],
-           [2, 'Names', 'The decks, functions and labels the program defines, and their use'],
+           [2, 'Names', 'The routines, functions and labels the program defines, and their use'],
            [3, 'Calls into the layer below', 'The functions called and not defined here, and where SLIP defines them'],
            [4, 'The script’s keywords', 'Each keyword’s entry: its rules, and what sends to it']],
     menus: { text: [['The program', [1, 2, 3]], ['The script', [4]]] },
