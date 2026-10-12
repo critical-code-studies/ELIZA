@@ -18,8 +18,11 @@ reference in brackets):
   (resume oplsep), the printout edited by hand, and three typed copies (handle 1721.3/201701).
 - `DOCTOR-1965-03-05-conversation.txt` [DOC-C650305]: a printout edited by hand and two typed
   copies, dated in pencil March 5, 1965 (handle 1721.3/201702).
-- `DOCTOR-1965-03-22-conversation-men.txt` [DOC-C650322]: "Men are all alike", in four versions
-  (handle 1721.3/201703).
+- "Men are all alike" (handle 1721.3/201703), four versions, in page order:
+  `DOCTOR-1965-03-22-men-draft.txt` [DOC-C650322-DRAFT], a shorter typescript;
+  `DOCTOR-1965-03-22-men-ditto.txt` [DOC-C650322-DITTO], a ditto copy;
+  `DOCTOR-1965-03-22-men-printout.txt` [DOC-C650322-PRINT], a terminal printout;
+  `DOCTOR-1965-03-22-men-typed.txt` [DOC-C650322-TYPED], a typed copy with corrections.
 
 These five were transcribed from the scans on 12 October 2026 and are unchecked; uncertain
 readings are marked [?] or [word?]. Where the script is not named on the page, DOCTOR is inferred.

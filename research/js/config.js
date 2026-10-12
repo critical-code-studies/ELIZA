@@ -10,7 +10,7 @@
     base: 'https://findingeliza.org/research/',
     repo: 'https://github.com/critical-code-studies/ELIZA',
     // references to the sources (kit/refs.js): [REF: EL65B, ELIZA-1965b.mad:120], the files on GitHub under sources/
-    refs: { names: { '1965b': 'EL65B', doctor65t100: 'DOC65-T100', doctor65t102: 'DOC65-T102', doctor: 'DOC66', 'doctor65c-news': 'DOC-C65-NEWS', 'doctor65c-0305': 'DOC-C650305', 'doctor65c-0322': 'DOC-C650322', 'help64c-s': 'HELP-C640611-S', 'help64c-p': 'HELP-C640611-P', c641001: 'C641001', 'f29-67': 'F29-67', figure68: 'FIG-68', spacks68c: 'SPACKS-C68', slip1965: 'SLIP65' }, prefix: 'EL-', dir: 'sources' },
+    refs: { names: { '1965b': 'EL65B', doctor65t100: 'DOC65-T100', doctor65t102: 'DOC65-T102', doctor: 'DOC66', 'doctor65c-news': 'DOC-C65-NEWS', 'doctor65c-0305': 'DOC-C650305', 'doctor65c-0322-draft': 'DOC-C650322-DRAFT', 'doctor65c-0322-ditto': 'DOC-C650322-DITTO', 'doctor65c-0322-print': 'DOC-C650322-PRINT', 'doctor65c-0322-typed': 'DOC-C650322-TYPED', 'help64c-s': 'HELP-C640611-S', 'help64c-p': 'HELP-C640611-P', c641001: 'C641001', 'f29-67': 'F29-67', figure68: 'FIG-68', spacks68c: 'SPACKS-C68', slip1965: 'SLIP65' }, prefix: 'EL-', dir: 'sources' },
     forks: [['script', 'Scripts (run on ELIZA)'], ['eliza', 'ELIZA (calls SLIP)'], ['slip', 'SLIP'], ['output', 'Outputs (conversations)']],   // the version picker's groups: the layers (js/layers.js)
     start: '1965b',
     // the code in layers, top first (js/layers.js): a script runs on ELIZA, which calls SLIP. A
@@ -99,7 +99,7 @@
     examples: { date: 'e.g. 1966-01, or 1965', archive: 'e.g. MIT Libraries, Weizenbaum papers', versions: 'e.g. 1965b, doctor',
                 refs: 'e.g. [REF: EL65B, ELIZA-1965b.mad:248]', publisher: 'e.g. Communications of the ACM', finding: 'F1' },
     // the first version is lost, and the tree grows from it
-    stemma: { root: '1965a', lostBetween: {}, skip: ['doctor', 'doctor65t100', 'doctor65t102', 'spacks68c', 'doctor65c-news', 'doctor65c-0305', 'doctor65c-0322', 'help64c-s', 'help64c-p', 'c641001', 'f29-67', 'figure68', 'slip1965'], lostOnTrunk: true },   // the scripts and the library are not in the program's descent
+    stemma: { root: '1965a', lostBetween: {}, skip: ['doctor', 'doctor65t100', 'doctor65t102', 'spacks68c', 'doctor65c-news', 'doctor65c-0305', 'doctor65c-0322-draft', 'doctor65c-0322-ditto', 'doctor65c-0322-print', 'doctor65c-0322-typed', 'help64c-s', 'help64c-p', 'c641001', 'f29-67', 'figure68', 'slip1965'], lostOnTrunk: true },   // the scripts and the library are not in the program's descent
     edition: {
       built: function () { return ['Read as', 'MAD-SLIP cards and an ELIZA script, divided into lines']; },
       layout: function (raw) { return String(raw); },

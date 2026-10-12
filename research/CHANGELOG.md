@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.18 (2026-10-12)
+
+- The "Men are all alike" conversation of 22 March 1965 as its four versions, in page order: typescript draft [DOC-C650322-DRAFT], ditto [DOC-C650322-DITTO], printout [DOC-C650322-PRINT] and typed copy [DOC-C650322-TYPED], to compare in Versions › Compare.
+
 ## 0.1.17 (2026-10-12)
 
 - Named subsets of the script library: All, DOCTOR (copies and outputs), Mathematics (F29, FIGURE, ARITHM), Taylor's tutorials 1967-68, Before ELIZA: HELP 1964. A subset filters the catalogue, narrows Read ▾'s Scripts to its copies and outputs, and turns the genealogy's flow to its line. The comparisons and the genealogy leave out the transcribers' notes at the head of a script or output.
