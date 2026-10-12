@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.12 (2026-10-12)
+
+- The scripts held as copies named by script, year and the identifier the document gives them: DOCTOR 1965 (TAPE 100) [DOC65-T100] and (TAPE 102) [DOC65-T102], printed the same day and not ordered, beside DOCTOR 1966 (CACM) [DOC66]. Outputs, conversations ELIZA produced, are a group of their own, read as text: the SPACKS conversation, 1968 [SPACKS-C68]. A script without START opens with its first list. The catalogue opens each copy.
+
 ## 0.1.11 (2026-10-12)
 
 - The scripts catalogue says what its types mean: SCRIPT, a copy of the script survives; OUTPUT, a copy of a conversation it generated; NONE, only the name, from a file or directory listing.

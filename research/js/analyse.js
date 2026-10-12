@@ -103,11 +103,10 @@
     var out = [];
     b.lines.forEach(function (ls, p) {
       if (!ls.length || !ls[0].script) return;
-      var cur = null, started = false;   // before START: the opening message, not a keyword
+      var cur = null, from = SW.scriptStart(ls);   // before it, the opening message, not a keyword
       ls.forEach(function (L) {
         var s = M.parseScript(L.raw);
-        if (/^START$/.test(s.code)) { started = true; return; }
-        if (!started) return;
+        if (L.n < from) return;
         if (s.top) { var w = /^\(\s*([^\s()]+)/.exec(L.raw); cur = { name: w ? w[1] : '?', p: p, n: L.n, decomps: 0, dlist: false, newkey: false, pre: false, eq: '' }; out.push(cur); }
         if (!cur || !s.code) return;
         cur.decomps += (s.code.match(/\(\(/g) || []).length;

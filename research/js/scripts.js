@@ -3,8 +3,9 @@
  * conversations run on them, as Inventing ELIZA (Ciston et al. 2026, Table 1.2) documents them,
  * extant in Weizenbaum's papers at MIT, mentioned in articles, or referenced elsewhere. Each
  * entry is the table's row as printed: filename, description, type, where it is referenced,
- * whether it is in the archive, and its year. held: the version under which this bench holds
- * the script; evidence: the version of ELIZA Table 1.1 cites it as evidence for.
+ * whether it is in the archive, and its year. held: the versions under which this bench holds
+ * copies of the script or its outputs; evidence: the version of ELIZA Table 1.1 cites it as
+ * evidence for.
  */
 (function (root) {
   'use strict';
@@ -23,7 +24,7 @@
     { n: 7, file: 'COLOR', desc: 'Script to ask about colors of things.', type: ['SCRIPT', 'OUTPUT'], ref: 'Archive', archive: 'Yes', year: '1967' },
     { n: 8, file: 'COMMNT', desc: HINTS, type: ['NONE'], ref: TAYLOR + ' (WATSNU script)', archive: '', year: '1968' },
     { n: 9, file: 'DOC', desc: '', type: ['NONE'], ref: '', archive: 'No', year: 'December 18, 1967' },
-    { n: 10, file: 'DOCTOR', desc: 'The famous Rogerian DOCTOR script.', type: ['SCRIPT', 'OUTPUT'], ref: '“Eliza,” the CACM 1966 paper', archive: 'Yes', year: '1966', held: 'doctor' },
+    { n: 10, file: 'DOCTOR', desc: 'The famous Rogerian DOCTOR script.', type: ['SCRIPT', 'OUTPUT'], ref: '“Eliza,” the CACM 1966 paper', archive: 'Yes', year: '1966', held: ['doctor65t100', 'doctor65t102', 'doctor'] },
     { n: 11, file: 'ELEVTR', desc: 'Discusses the physics of an elevator.', type: ['OUTPUT'], ref: TAYLOR + ' (WATSNU)', archive: 'Yes?', year: '1968' },
     { n: 12, file: 'F29', desc: 'Appears to be an early version of the FIGURE mathematical definition script.', type: ['SCRIPT'], ref: 'Archive', archive: 'Yes', year: 'December 26, 1967', evidence: '1967' },
     { n: 13, file: 'FIGURE', desc: 'Appears to be a late version of F29 extended with many more definitions and responses.', type: ['SCRIPT'], ref: 'Archive', archive: 'Yes', year: 'January 9, 1968', evidence: '1967' },
@@ -44,7 +45,7 @@
     { n: 28, file: 'QMPROB', desc: '', type: ['NONE'], ref: 'Archive', archive: 'No', year: '1967' },
     { n: 29, file: 'RLPOLN', desc: '', type: ['NONE'], ref: 'Archive', archive: 'No', year: '1967' },
     { n: 30, file: 'SOS', desc: HINTS, type: ['NONE'], ref: TAYLOR + ' (WATSNU script)', archive: '', year: '1968' },
-    { n: 31, file: 'SPACKS', desc: 'Discusses a quoted line of poetry by Barry Spacks of the MIT humanities department.', type: ['OUTPUT'], ref: TAYLOR, archive: 'No', year: '1968', evidence: '1968' },
+    { n: 31, file: 'SPACKS', desc: 'Discusses a quoted line of poetry by Barry Spacks of the MIT humanities department.', type: ['OUTPUT'], ref: TAYLOR, archive: 'No', year: '1968', evidence: '1968', held: ['spacks68c'] },
     { n: 32, file: 'STATES', desc: '', type: ['NONE'], ref: 'Archive', archive: 'No', year: '1967' },
     { n: 33, file: 'SYNCTA', desc: 'Discusses time synchronization.', type: ['OUTPUT'], ref: TAYLOR + ' (WATSNU script)', archive: 'Yes?', year: '1968' },
     { n: 34, file: 'WATSNU, PREVIOUSLY LSTSCR', desc: 'Lists all other scripts. This may not be a script but instead actually a function in ELIZA.', type: ['OUTPUT'], ref: TAYLOR, archive: '', year: '1968' },
@@ -85,7 +86,10 @@
 
   function rowHTML(s) {
     var V = root.SWVersions, ev = s.evidence && V.byId(s.evidence);
-    var go = (s.held ? '<button class="btn sc-read" data-sc-read="' + esc(s.held) + '" title="Read ' + esc(s.file) + ' on this bench">Read ▸</button>' : '') +
+    var go = (s.held || []).map(function (vid) {
+      var v = V.byId(vid), short = v ? v.label.replace(new RegExp('^' + s.file + ' '), '') : vid;
+      return '<button class="btn sc-read" data-sc-read="' + esc(vid) + '" title="Read ' + esc(v ? v.label : vid) + ' [' + esc(SW.refOf(vid)) + ']">' + esc(short) + ' ▸</button>';
+    }).join('') +
       (ev ? '<a href="#" class="sc-ev" data-sc-ev="' + esc(ev.id) + '" title="Inventing ELIZA, Table 1.1, cites it as evidence for ' + esc(ev.label) + '">Evidence for ' + esc(ev.label) + '</a>' : '');
     return '<tr' + (s.held ? ' class="sc-held"' : '') + '><td class="num">' + s.n + '</td><td class="mono sc-file">' + esc(s.file) + '</td>' +
       '<td class="sc-desc">' + (s.desc ? esc(s.desc) : '<span class="faint">—</span>') + (s.author ? ' <span class="faint">Author: ' + esc(s.author) + '.</span>' : '') + '</td>' +
@@ -101,7 +105,7 @@
     view.innerHTML = '<div class="pad scripts">' +
       '<h2>The scripts</h2>' +
       '<p class="hint flow">The scripts ELIZA ran and the conversations run on them, as <i>Inventing ELIZA</i> (Ciston et al. 2026, Table 1.2) documents them: those extant in Weizenbaum’s papers at MIT, mentioned in articles, or referenced elsewhere. The book’s authors are sure there are many others. ' +
-      'Type: SCRIPT, a copy of the script survives; OUTPUT, a copy of a conversation it generated survives; NONE, neither survives, and the name is known only from a file or directory listing. Archive: whether it is in the archive. ' + held + ' of ' + SCRIPTS.length + ' can be read here, under Read ▾ › Scripts.</p>' +
+      'Type: SCRIPT, a copy of the script survives; OUTPUT, a copy of a conversation it generated survives; NONE, neither survives, and the name is known only from a file or directory listing. Archive: whether it is in the archive. ' + held + ' of ' + SCRIPTS.length + ' have copies held here, to read in the last column. Copies are named by script, year and the identifier the document gives them, outputs by script and date.</p>' +
       '<div class="sc-filters">' +
         '<input type="search" id="sc-q" placeholder="Find a script, a word, a year" value="' + esc(f.q) + '" aria-label="Find a script">' +
         '<span class="seg-btns" role="group" aria-label="Type">' + TYPES.map(function (t) { return '<button class="btn' + (f.type === t[0] ? ' on' : '') + '" data-sc-type="' + t[0] + '">' + t[1] + '</button>'; }).join('') + '</span>' +

@@ -25,7 +25,21 @@
   var lineInfo = new Map();
   SW.lineInfo = function (raw) { return lineInfo.get(String(raw)) || null; };
   SW.isScriptLine = function (raw) { var x = lineInfo.get(String(raw)); return !!(x && x.lang === 'script'); };
-  function parseAs(raw, lang) { return lang === 'script' ? M.parseScript(raw) : lang === 'fap' ? M.parseFap(raw) : M.parseMad(raw); }
+  function parseAs(raw, lang) { return lang === 'text' ? parseText(raw) : lang === 'script' ? M.parseScript(raw) : lang === 'fap' ? M.parseFap(raw) : M.parseMad(raw); }
+  // an output (a conversation) is read as text: a line starting ; is the transcriber's note
+  function parseText(raw) {
+    var t = String(raw), note = /^\s*;/.test(t);
+    return { labels: [], code: note ? '' : t.replace(/\s+$/, ''), comment: note ? t : '', kind: note ? 'comment' : t.trim() ? 'code' : 'blank' };
+  }
+  function isOutput(src) { return /^outputs\//.test(src); }
+  // where a script's keywords begin: after the line START, or, in a copy without one, after the
+  // first list, the opening message (the tapes of 1965)
+  SW.scriptStart = function (ls) {
+    var i, seen = false;
+    for (i = 0; i < ls.length; i++) if (/^\s*START\s*$/.test(ls[i].raw)) return ls[i].n + 1;
+    for (i = 0; i < ls.length; i++) { if (!/^\(/.test(ls[i].raw)) continue; if (seen) return ls[i].n; seen = true; }
+    return 1;
+  };
 
   SW.parseLine = function (raw) {
     var x = lineInfo.get(String(raw)), p = x ? parseAs(raw, x.lang) : M.parseLine(raw);
@@ -41,12 +55,12 @@
   SW.SLIP = { SEQRDR: 1, SEQLR: 1, POPTOP: 1, POPBOT: 1, NEWTOP: 1, NEWBOT: 1, LSSCPY: 1, SUBST: 1, IRALST: 1 };
 
   // where a file stands: ELIZA's own, the SLIP listing, or SLIP's routines reconstructed in 2024
-  function homeOf(src) { return /^SLIP\/SLIP-/.test(src) ? 'SLIP' : /^SLIP\//.test(src) ? 'reconstructed' : M.isScript(src) ? 'script' : 'ELIZA'; }
+  function homeOf(src) { return /^SLIP\/SLIP-/.test(src) ? 'SLIP' : /^SLIP\//.test(src) ? 'reconstructed' : isOutput(src) ? 'output' : M.isScript(src) ? 'script' : 'ELIZA'; }
   SW.homeOf = homeOf;
 
   function index(b) {
     b.lines = b.parts.map(function (part) { return splitLines(part.raw); }).map(function (rs, pi) {
-      var script = M.isScript(b.parts[pi].src), lang = script ? 'script' : 'mad', deck = null;
+      var out = isOutput(b.parts[pi].src), script = !out && M.isScript(b.parts[pi].src), lang = out ? 'text' : script ? 'script' : 'mad', deck = null;
       return rs.map(function (r, i) {
         if (!script) { var d = M.deckOf(r); if (d) { lang = d.lang === 'FAP' ? 'fap' : 'mad'; deck = d.name; } }
         lineInfo.set(r, { lang: lang, deck: deck });
@@ -62,14 +76,14 @@
     var pending = [];   // names used, placed once every label is known: the deck's label, or the name
     b.lines.forEach(function (ls, pi) {
       if (b.parts[pi].role === 'doc') return;
-      // in a script, what comes before the line START is the opening message, not a keyword
-      var deck = null, started = !(ls.length && ls[0].script);
+      // in a script, the opening message is not a keyword (SW.scriptStart)
+      var deck = null, from = ls.length && ls[0].script ? SW.scriptStart(ls) : 1;
       ls.forEach(function (L) {
         var k = pi + ':' + L.n, p = parseAs(L.raw, L.lang);
         if (p.kind === 'comment') { b.kind[k] = 'com'; return; }
+        if (L.lang === 'text') return;
         if (L.script) {
-          if (/^START$/.test(p.code)) { started = true; return; }
-          if (!started) return;
+          if (L.n < from) return;
           if (p.top) {
             var w = /^\(\s*([^\s()]+)/.exec(L.raw);
             if (w && !/^\d+$/.test(w[1])) { def(w[1], w[1], 'keyword', pi, L.n); b.kind[k] = 'def'; }

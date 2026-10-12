@@ -28,7 +28,7 @@
   function C() { return B.layers || { list: [] }; }
   function list() { return C().list || []; }
   function byId(id) { return list().filter(function (l) { return l.id === id; })[0] || null; }
-  function of(vid) { var v = V.byId(vid); return (v && v.layer) || (list()[0] || {}).id; }
+  function of(vid) { var v = V.byId(vid); return v ? v.layer || null : (list()[0] || {}).id; }   // an output is in no layer
   function versionsOf(id) { return V.VERSIONS.filter(function (v) { return of(v.id) === id; }).sort(function (a, b) { return a.sort - b.sort; }); }
   function below(id) { var l = byId(id); return l && l.below ? byId(l.below) : null; }
   function chain(id) { var out = [], l = below(id); while (l && out.indexOf(l) < 0) { out.push(l); l = below(l.id); } return out; }

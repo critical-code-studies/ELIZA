@@ -74,6 +74,7 @@
   function hl(raw, b) {
     build = b || build;
     var s = String(raw || ''), info = SW.lineInfo(s) || { lang: 'mad' };
+    if (info.lang === 'text') return /^\s*;/.test(s) ? '<span class="cm">' + esc(s) + '</span>' : esc(s);   // an output, as text
     if (info.lang === 'script') {
       var p = M.parseScript(s), ci = s.indexOf(';'), code = ci < 0 ? s : s.slice(0, ci);
       var lead = /^\s*/.exec(code)[0], w = /^\(\s*([^\s()]+)/.exec(s);
@@ -178,7 +179,7 @@
       word: 'File', remember: true, jump: 'one',
       sub: function (b, pi) {
         var part = b.parts[pi], home = SW.homeOf(part.src), decks = (b.decks || []).filter(function (d) { return d.p === pi; });
-        var what = home === 'script' ? 'An ELIZA script' : home === 'reconstructed' ? 'MAD, reconstructed in 2024 (not in the listing)' : decks.some(function (d) { return d.lang === 'FAP'; }) ? 'MAD and FAP' : 'MAD-SLIP';
+        var what = home === 'output' ? 'A conversation ELIZA produced' : home === 'script' ? 'An ELIZA script' : home === 'reconstructed' ? 'MAD, reconstructed in 2024 (not in the listing)' : decks.some(function (d) { return d.lang === 'FAP'; }) ? 'MAD and FAP' : 'MAD-SLIP';
         return '<span class="ph-lang">' + esc(what) + '</span> · ' + SW.sourceLink(part.src, part.src.split('/').pop()) + ' · ' + b.lines[pi].length + ' lines' +
           (decks.length ? ' · ' + decks.length + ' routines' + (decks.length <= 8 ? ': ' + esc(decks.map(function (d) { return d.name; }).join(', ')) : '') : '');
       }

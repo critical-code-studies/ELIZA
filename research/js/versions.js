@@ -8,8 +8,9 @@
  * edits the script, the keyword stack, hard-coded messages, how scripts are handled, and the
  * evidence for each. Only 1965b's source survives, the printout recovered from Weizenbaum's
  * papers at MIT; the others are records, with annotations kept on them.
- * The scripts: what the program reads and runs, not versions of it. DOCTOR as printed in the
- * appendix to the 1966 paper is held; others survive in the archive and are not yet here.
+ * The scripts: what the program reads and runs, not versions of it, each copy named by script,
+ * year and the identifier its document gives it (DOCTOR 1965 (TAPE 100), DOCTOR 1966 (CACM)).
+ * The outputs: conversations ELIZA produced, named by script and date, in no layer.
  * SLIP: the list-processing library in MAD and FAP, as its listing in Weizenbaum's papers has it
  * (dome.mit.edu, handle 1721.3/201707), transcribed by Arthur Schwarz, with the three routines
  * ELIZA needs that the listing lacks, reconstructed in 2024 by Anthony Hay, Arthur Schwarz and
@@ -53,10 +54,25 @@
       features: { delimit: '“.”, “,” and “but”', newkey: true, edit: 'EDIT function', stack: true, hardcoded: false, scripts: 'OPL', evidence: 'Taylor, “Automated Tutoring and Its Discontents”; the SPACKS, INTRVW and FVP1 scripts' },
       summary: 'Script handling by OPL. A description of the planning of this version appears in Taylor’s “Automated Tutoring and Its Discontents”; the scripts SPACKS, INTRVW and FVP1 give evidence of its use in work developed by Walter E. Daniels. No source has been found.' + T11 },
     // the scripts
-    { id: 'doctor', label: 'DOCTOR (1966, as printed)', date: 'January 1966', sort: 19660101, authors: JW,
+    // named by script, year and the identifier the document gives the copy; nothing shows which
+    // of the two tapes printed on 6 March 1965 is the earlier, and they are not ordered
+    { id: 'doctor65t100', label: 'DOCTOR 1965 (TAPE 100)', date: '6 March 1965', sort: 19650306, authors: JW,
+      fork: 'script', layer: 'script', status: 'recovered', medium: 'Script (printout, .TAPE. 100)',
+      summary: 'DOCTOR as printed after the ELIZA listing in Weizenbaum’s papers at MIT (handle 1721.3/201699), headed .TAPE. 100 and printed on 6 March 1965 in the same session as TAPE 102. It has HOW and WHEN rules that pass to WHAT, seven replies under WHAT, and sends WHY to WHAT. Transcribed by Anthony C. Hay.',
+      build: files('scripts/', ['DOCTOR-1965-TAPE-100.txt']) },
+    { id: 'doctor65t102', label: 'DOCTOR 1965 (TAPE 102)', date: '6 March 1965', sort: 19650306.1, authors: JW,
+      fork: 'script', layer: 'script', status: 'recovered', medium: 'Script (printout, .TAPE. 102)',
+      summary: 'DOCTOR as printed before the ELIZA listing in the same document, headed .TAPE. 102, printed in the same session as TAPE 100. It has no HOW or WHEN rules, one reply under WHAT, and its own WHY rule with four replies; one list, (DON’T YOU KNOW), stands outside the rule it belongs to. Transcribed by Anthony C. Hay.',
+      build: files('scripts/', ['DOCTOR-1965-TAPE-102.txt']) },
+    { id: 'doctor', label: 'DOCTOR 1966 (CACM)', date: 'January 1966', sort: 19660101, authors: JW,
       fork: 'script', layer: 'script', status: 'recovered', medium: 'Script (the paper’s appendix)',
       summary: 'The DOCTOR script as printed in the appendix to Weizenbaum’s 1966 paper in Communications of the ACM, transcribed by Anthony C. Hay: keywords with their decomposition and reassembly rules, the Rogerian therapist ELIZA was best known for. A script, not a version of the program: the 1966 version ran it. Two more DOCTOR scripts, successive drafts, are on a printout in Weizenbaum’s papers (.TAPE. 100 and .TAPE. 102); they are not yet held here.',
       build: files('', ['DOCTOR.txt']) },
+    // the outputs: conversations ELIZA produced, named by script and date; in no layer
+    { id: 'spacks68c', label: 'SPACKS conversation, 1968', date: '1968', sort: 19680102, authors: 'A student and ELIZA, printed by Edwin F. Taylor',
+      fork: 'output', status: 'recovered', medium: 'Output (conversation, as printed)',
+      summary: 'A student’s conversation with ELIZA running the SPACKS script, which discusses a line of Barry Spacks’s poem “Freshmen”, as Edwin F. Taylor printed it in “Automated Tutoring and Its Discontents” (American Journal of Physics, 1968). The script does not survive. Transcribed by Jeff Shrager for elizagen.org. Inventing ELIZA, Table 1.1, cites SPACKS as evidence for ELIZA 1968+.',
+      build: files('outputs/', ['SPACKS-1968-conversation.txt']) },
     // the library
     { id: 'slip1965', label: 'SLIP, as ELIZA used it', date: 'c. 1965', sort: 19650601, authors: JW,
       fork: 'slip', layer: 'slip', status: 'recovered', medium: 'Listing (MAD and FAP, 67 routines), with 3 reconstructed',

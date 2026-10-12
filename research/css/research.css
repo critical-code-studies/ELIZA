@@ -125,6 +125,7 @@ button.badge.err { cursor: pointer; font: inherit; }
 .scripts .sc-ref { max-width: 16em; }
 .scripts .sc-year, .scripts .sc-go { white-space: nowrap; }
 .scripts .sc-go a { display: block; font-size: 12px; margin-top: 2px; }
+.scripts .sc-go .sc-read { display: block; margin: 0 0 3px; font-size: 12px; }
 .scripts tr.sc-held td { background: color-mix(in srgb, var(--amber) 7%, transparent); }
 .scripts .badge.sc-script { color: var(--amber); border-color: currentColor; }
 .scripts .badge.sc-output { color: var(--violet); border-color: currentColor; }
