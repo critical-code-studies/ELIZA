@@ -110,3 +110,6 @@ button.badge.err { cursor: pointer; font: inherit; }
 .t a.xjump:hover { background: var(--violet); color: var(--bg); }
 .t a.xjump.xjump-none { color: var(--text-faint); background: transparent; text-decoration: line-through; cursor: default; }
 .keylist a.xjump { color: var(--violet); background: color-mix(in srgb, var(--violet) 14%, transparent); padding: 0 3px; border-radius: 3px; }
+
+/* a jump to another layer: the listing is out of sight until it is at the line (js/layers.js) */
+#view-read.lay-moving .listing, #view-read.lay-moving pre { visibility: hidden; }

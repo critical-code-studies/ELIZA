@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.7 (2026-10-12)
+
+- A jump to another layer keeps the listing out of sight until it is at the line, so the new layer is never shown at the old place.
+
 ## 0.1.6 (2026-10-12)
 
 - A jump to the layer below waits for the routine's listing to be drawn, then scrolls to its line, so it lands on the line at once instead of after the old listing has shown.

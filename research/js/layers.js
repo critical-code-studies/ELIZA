@@ -106,15 +106,23 @@
   function open(t) {
     choose(t.v);
     if (t.p == null) { SW.select(t.v); SW.setTab('read'); return; }
+    // a version newly opened is drawn where the listing was scrolled: it is kept out of sight until
+    // it has been brought to the line
+    var rv = document.getElementById('view-read'), moving = t.v !== SW.state.v;
+    if (rv && moving) rv.classList.add('lay-moving');
+    function shown() { if (rv) rv.classList.remove('lay-moving'); }
     SW.openAt(t.v, { p: t.p, n0: t.n, n1: t.n });
-    // once the version is drawn, bring the line into view: a version newly opened is drawn where
-    // the listing was scrolled, and the browser may restore that position after it is drawn
     var tries = 0;
     (function there() {
-      if (SW.state.v !== t.v) return;
-      var ctx = SW.readCtx, shown = ctx && ctx.build && ctx.build(), el = document.getElementById('L' + t.p + '-' + t.n);
-      if (shown && shown.v.id === t.v && el) { SW.emit('goto', { p: t.p, n: t.n, tab: 'read' }); setTimeout(function () { if (SW.state.v === t.v) SW.emit('goto', { p: t.p, n: t.n, tab: 'read' }); }, 300); return; }
-      if (++tries < 80) setTimeout(there, 50);
+      if (SW.state.v !== t.v) return shown();
+      var ctx = SW.readCtx, b = ctx && ctx.build && ctx.build(), el = document.getElementById('L' + t.p + '-' + t.n);
+      if (b && b.v.id === t.v && el) {
+        SW.readCtx.R.goto(t.p, t.n, true); SW.emit('goto', { p: t.p, n: t.n, tab: 'read' });
+        requestAnimationFrame(shown);
+        setTimeout(function () { if (SW.state.v === t.v) SW.emit('goto', { p: t.p, n: t.n, tab: 'read' }); }, 300);
+        return;
+      }
+      if (++tries < 80) setTimeout(there, 25); else shown();
     })();
   }
   SW.nav = {
