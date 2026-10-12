@@ -99,7 +99,7 @@ button.badge.err { cursor: pointer; font: inherit; }
 .pop .pop-sec { font: 600 10.5px var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--text-faint); margin: 10px 0 3px; }
 .pop a.pop-row { display: grid; grid-template-columns: minmax(7.5em, max-content) 1fr auto; align-items: center; gap: 10px; padding: 2px 4px; margin: 0 -4px; border-radius: 3px; text-decoration: none; color: var(--text); }
 .pop a.pop-row:hover { background: var(--surface-2); }
-.pop .pop-go { display: inline-block; padding: 0 4px; border-radius: 3px; font: 600 12px/1.35 var(--sans); color: var(--violet); background: color-mix(in srgb, var(--violet) 14%, transparent); }
+.pop .pop-go, .keylist .pop-go { display: inline-block; padding: 0 4px; border-radius: 3px; font: 600 12px/1.35 var(--sans); color: var(--violet); background: color-mix(in srgb, var(--violet) 14%, transparent); }
 .pop a:hover .pop-go { background: var(--violet); color: var(--bg); }
 .pop .pop-at { color: var(--amber); font: 11.5px var(--mono); white-space: nowrap; }
 .pop a.pop-row code { font: 11.5px var(--mono); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -107,11 +107,6 @@ button.badge.err { cursor: pointer; font: inherit; }
 .pop a.pop-jump { display: inline-block; margin-top: 6px; font-weight: 600; }
 
 /* ↘ after a call the layer below defines: a jump straight to its definition */
-.t a.xjump { display: inline-block; margin: 0 1px 0 1px; padding: 0 3px; border-radius: 3px; font: 600 0.82em/1.3 var(--sans); color: var(--violet); background: color-mix(in srgb, var(--violet) 14%, transparent); text-decoration: none; vertical-align: 0.08em; cursor: pointer; }
-.t a.xjump::after, .keylist a.xjump::after { content: "↘"; }   /* drawn, so copied code leaves it out */
-.t a.xjump:hover { background: var(--violet); color: var(--bg); }
-.t a.xjump.xjump-none { color: var(--text-faint); background: transparent; text-decoration: line-through; cursor: default; }
-.keylist a.xjump { color: var(--violet); background: color-mix(in srgb, var(--violet) 14%, transparent); padding: 0 3px; border-radius: 3px; }
 
 /* a jump to another layer: the listing is out of sight until it is at the line (js/layers.js) */
 #view-read.lay-moving .listing, #view-read.lay-moving pre { visibility: hidden; }

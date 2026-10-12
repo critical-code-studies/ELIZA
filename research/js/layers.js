@@ -166,7 +166,7 @@
   SW.on('goto', function () { setTimeout(crumb, 0); });
   document.addEventListener('click', function (e) { if (e.target.closest && e.target.closest('#view-read')) setTimeout(crumb, 0); });
 
-  // ---------- a jump straight down: the ↘ after a name the layer below defines ----------
+  // ---------- a jump straight down to where the layer below defines a name ----------
   function jumpTo(name, from) {
     var r = resolve(name, from);
     if (r) { SW.nav.go({ v: r.v.id, p: r.p, n: r.n }); return; }
@@ -175,18 +175,6 @@
     SW.toast(name + ' is not defined in the layers below.');
   }
   SW.layers.jumpTo = jumpTo;
-  document.addEventListener('click', function (e) {
-    var a = e.target.closest && e.target.closest('[data-xjump]'); if (!a) return;
-    e.preventDefault(); e.stopPropagation();
-    jumpTo(a.dataset.xjump, of(SW.state.v));
-  }, true);
-  // its hover names where it goes, once the layer below is read
-  document.addEventListener('mouseover', function (e) {
-    var a = e.target.closest && e.target.closest('[data-xjump]'); if (!a || a.dataset.told) return;
-    var from = of(SW.state.v), r = resolve(a.dataset.xjump, from);
-    if (r) { a.title = 'Jump to ' + a.dataset.xjump + ' in ' + r.layer.label + ': ' + r.b.parts[r.p].src.split('/').pop() + ', line ' + r.n; a.dataset.told = '1'; }
-    else if (!pending(from)) { a.title = a.dataset.xjump + ' is not defined in the layers below'; a.classList.add('xjump-none'); a.dataset.told = '1'; }
-  });
 
   // ---------- in Read: the toolbar's ◀ ▶ and the breadcrumb under it ----------
   SW.layers.toolbar = {

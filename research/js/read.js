@@ -32,13 +32,11 @@
     return s && (s.defs.length || s.calls || s.kind === 'keyword' || s.kind === 'class') ?
       '<span class="' + (cls ? cls + ' ' : '') + 'sym" data-s="' + esc(key) + '">' + esc(text) + '</span>' : (cls ? '<span class="' + cls + '">' + esc(text) + '</span>' : esc(text));
   }
-  // a name; one called here and defined in a layer below has ↘ after it, a jump straight there
+  // a name; one called here and defined in a layer below opens, in its pop-up, a jump there
   function nameHTML(x, raw, call) {
     var key = SW.symKey(build, x, raw), s = build && build.sym[key];
     var own = s && (s.kind === 'label' || s.kind === 'deck' || s.kind === 'function');
-    var below = s && !s.defs.length && s.calls && SW.layers && SW.layers.chain(SW.layers.of(build.v.id)).length;
-    return symSpan(own ? 'lab' : call || (s && s.kind === 'external') ? 'mac' : '', key, x) +
-      (below ? '<a href="#" class="xjump" data-xjump="' + esc(x) + '" title="Jump to ' + esc(x) + ' in the layer below" aria-label="Jump to ' + esc(x) + ' in the layer below"></a>' : '');
+    return symSpan(own ? 'lab' : call || (s && s.kind === 'external') ? 'mac' : '', key, x);
   }
   function madHTML(code, raw) {
     return M.tokens(code).map(function (t) {
@@ -193,7 +191,7 @@
         '<div><i class="kx knoted"></i>covered by an annotation (initials at the right; click them)</div>' +
         '<div class="faint flow" style="margin-top:6px">MAD: <span class="lab">labels and functions defined here</span>, <span class="op">keywords</span> (W’R is WHENEVER, T’O TRANSFER TO, T’H THROUGH, E’L END OF CONDITIONAL, O’E OTHERWISE, F’N FUNCTION RETURN, V’S VECTOR VALUES, E’N END OF FUNCTION, E’M END OF PROGRAM), <span class="mac">functions defined elsewhere (in the layer below)</span>, <span class="ps">relations</span> (.E. equal, .G. greater, .L. less), <span class="var">$text$</span>, <span class="num">numbers</span>, <span class="cm">remarks and the cards’ sequence numbers</span>. A digit before a statement marks a continuation card. FAP: <span class="lab">label</span>, <span class="op">operation</span>, address, <span class="cm">comment</span>.</div>' +
         '<div class="faint flow" style="margin-top:6px">Script: <span class="lab">keywords</span>, <span class="op">DLIST, NEWKEY, PRE, MEMORY, NONE, =</span> (click one for the ELIZA code that acts on it), <span class="mac">/classes</span>, <span class="num">decomposition numbers</span>.</div>' +
-        '<div class="faint flow" style="margin-top:6px">Layers: <a class="xjump" style="pointer-events:none"></a> after a call jumps straight to where the layer below defines it (where it begins to run); click a name for its pop-up; Ctrl- or Cmd-click goes straight to its definition. ◀ ▶ (Alt+← and Alt+→) go back and forward.</div></div>';
+        '<div class="faint flow" style="margin-top:6px">Layers: click a name for its pop-up, where <span class="pop-go">↘</span> jumps to where the layer below defines it (where it begins to run), <span class="pop-go">↗</span> to where the layer above calls it, and <span class="pop-go">→</span> to a line in this text. Ctrl- or Cmd-click on a name goes straight to its definition. ◀ ▶ (Alt+← and Alt+→) go back and forward.</div></div>';
     },
     symbol: symbol,
     lost: 'No source survives for this version. Annotations on it can still be kept under “Versions”.',
