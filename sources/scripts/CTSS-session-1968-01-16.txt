@@ -1,0 +1,81 @@
+; Source: MIT DOME, hdl 1721.3/201708, "Scripts, 1968", Weizenbaum papers MC-0383, file 02-000311066.pdf
+;   (local copy: _tmp/dome/201708-scripts-1968.pdf)
+; Content: everything on the printout except the text of the two scripts, which is in
+;   F29.txt and FIGURE.txt. Lines starting "; " are transcriber's notes, not on the page.
+; Typed user commands are lower case on the page; system output is upper case.
+; Transcribed from the scan, 2026-10-12, unchecked.
+
+; [page 1]
+; Folder cover (not part of the printout). Typed tab label: "SCRIPTS". Small pencil mark
+;   at the right of the tab, possibly "ok" [ok?].
+
+; [page 2]
+; Handwritten at the top in green marker: "SCRIPTS". The page is otherwise blank down to:
+USERS=    12, MAX=    30.
+; (a small mark like a raised tick or apostrophe sits just before "12"; blemish or faint strike)
+READY.
+
+login t109 enbaum
+W 2128.4
+Password
+; ("Password" is printed in red)
+ STANDBY LINE HAS BEEN ASSIGNED.
+ YOU HAVE     MAIL   BOX
+ T0109  2531 LOGGED IN  01/16/68    2128.7 FROM 20000W
+ LAST LOGOUT WAS  01/16/68    2128.6
+
+CTSS WILL BE OFF THE AIR FROM 20:00 SATURDAY, 1/20/68
+UNTIL ABOUT 08:00 SUNDAY, 1/21, FOR INSTALLATION OF THE NEW
+DATA SWITCH.
+
+SHIFT 1 NOW ENDS AT 18:00.
+
+OCCASIONAL TEST SESSIONS AT 1000 MONDAY AND THURSDAY.
+
+ CTSS BEING USED IS     MAC6B1
+R 8.750+.433
+
+r lstoff
+W 2129.4
+   201 FILES   589 RECORDS
+UFDFOR  2531 CREATED IN T0109   2531
+R 14.900+1.150
+
+rquest print ufdfor 2531
+W 2130.2
+R .550+.383
+
+; [page 3]
+listf * script (file)
+W 2131.5
+
+     4 FILES    24 RECORDS
+ NAME1  NAME2 MOD NOREC   USED
+FIGURE SCRIPT 100     2 01/09/68
+   F29 SCRIPT 000     2 12/26/67
+  MANY SCRIPT 000     9
+   DOC SCRIPT 120    11 12/18/67
+
+
+R 1.266+.350
+
+print f "29 script
+W 2132.5
+
+   F29 SCRIPT      01/16  2132.6
+
+; [F29 SCRIPT text, 18 lines: see F29.txt]
+R 1.066+.150
+
+print figure script
+
+; [page 4]
+W 2133.3
+
+FIGURE SCRIPT      01/16  2133.3
+
+; [FIGURE SCRIPT text begins: see FIGURE.txt; it runs to page 5]
+
+; [page 5]
+; [FIGURE SCRIPT text continues and ends: see FIGURE.txt]
+R 3.083+1.000

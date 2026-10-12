@@ -1,0 +1,532 @@
+; Source: MIT DOME, Joseph Weizenbaum papers, folder "Computer conversations, 1965"
+; Handle: hdl 1721.3/201701
+; File: 02-000311053.pdf
+; Title: "I am very depressed..."
+; Pages: 11 (p.1 folder; pp.2-3, 4-5, 6+11 three typed copies of one conversation;
+;   pp.7-10 the CTSS teletype printout of the session, 10/01/64)
+; Transcribed from the scan, 2026-10-12, unchecked.
+; Notes: pp.2-3 and 6/11 are purple spirit-duplicator (ditto) copies; periods and commas
+;   print as small hollow marks and are transcribed as "." and ",". p.4-5 is a sharper
+;   purple copy of the same typescript. In all typed copies the program's "Hmmm" is in a
+;   smaller, condensed typeface from the rest. Typed copies indent the program's replies
+;   by 5 spaces. pp.7-10 are on pre-printed continuous stationery (Royal Business Forms,
+;   Nashua, New Hampshire; printed line numbers 2-12 in the margins); the form's own
+;   printing is not transcribed. Red marginal numbers on the printout sheets are given
+;   as notes; they may be form serial numbers rather than handwriting.
+; Page 11 is the second sheet of the third typed copy (it follows p.6); scan order kept.
+
+; [page 1]
+; [folder tab, handwritten: Computer Conversations   3 of 7   OK]
+; [folder tab, handwritten: I am very depressed...]
+
+; [page 2]
+I am very depressed..
+     How long have you been very depressed
+Since my mommy took my teddy bear from me..
+     Why do you think your mother took your teddy bear from you
+She said my wife objected to my sleeping with it..
+     Your wife objected to your sleeping with it
+How can anyone explain such a thing..
+     How would you answer that
+Mom isn't very nice - especially about pets..
+     Hmmm
+I miss teddy..
+     You say you miss teddy
+Yes, I used to hold him while sucking my thunb..
+     You are quite sure
+Of course.  All that's left now is my blanket..
+     Your blanket
+You understand me..
+     Why do you think I understand you
+Perhaps its because your mom let you keep your teddy..
+     You dont seem very sure
+You do sleep with your teddy, don't you-..
+     You think I do sleep with my teddy, don't you-
+Are you married or something..
+     You think I married or something
+What does your wife think of thumb sucking..
+     What information are you really looking for
+Whether you have a wife..
+     You think I have a wife
+If not, at least a fine teddy bear..
+     Lets explore further why your mother took your teddy bear from you
+I cant understand it at all..
+     What prevents you do you think
+I am not very bright..
+     How long have you been not very bright
+Since my kids graduated from college..
+     Your kids graduated from college
+My boy is a professor at MIT..
+     Why do you think your boy is a professor at MIT
+I never took his teddy from him..
+     You say you never took his teddy from him
+That's right - he takes his teddy to his classes with him..
+     Hmmm
+His students somtimes laugh at him, I dont know why..
+     You say you dont know why
+Can you explain it..
+     You believe I can explain it - dont you
+No.  It doesn't make sense..
+     Why do you say that
+Because its a big mystery to me..
+     Do you think that explains anything
+
+; [page 3]
+No, I guess it doesn't..
+     Oh
+Why dont you let me use your teddy bear..
+     You wish me to let you
+That would be nice..
+     What does that suggest to you
+You could be nice to me..
+     Why do you think I could be nice to you
+Because you are a doctor..
+     Do any other reasons come to mind
+Because you understand about teddies and thumbs and things..
+     What does that suggest to you
+Why dont you stop asking me that..
+     You wish me to stop asking you
+Its not very nice..
+     Hmmm
+I feel dry..
+     Tell me more about such feelings
+I dont like you..
+     Do you want to like me
+Give me your teddy..
+     What do you suppose that means to you and in particular your situation
+More questions..
+     What does that suggest to you
+Teddies don't suck their thumbs..
+     Hmmm
+Ever..
+     You have not said anything about your father
+Daddy had the biggest thumb in the world.  I remember very well..
+     You say you remember very well
+Indeed I do.  He often boasted of it..
+     You say you do.  He often boasted of it
+Yes.  I wish you would show me your thumb..
+     I see
+I'm sure you won't..
+     You think I won't
+No.  You probably have the smallest thumb in the world..
+     That's very interesting
+What does that suggest to you, doctor..
+
+; [page 4]
+I am very depressed..
+     How long have you been very depressed
+Since my mommy took my teddy bear from me..
+     Why do you think your mother took your teddy bear from you
+She said my wife objected to my sleeping with it..
+     Your wife objected to your sleeping with it
+How can anyone explain such a thing..
+     How would you answer that
+Mom isn't very nice - especially about pets..
+     Hmmm
+I miss teddy..
+     You say you miss teddy
+Yes, I used to hold him while sucking my thunb..
+     You are quite sure
+Of course.  All that's left now is my blanket..
+     Your blanket
+You understand me..
+     Why do you think I understand you
+Perhaps its because your mom let you keep your teddy..
+     You dont seem very sure
+You do sleep with your teddy, don't you-..
+     You think I do sleep with my teddy, don't you-
+Are you married or something..
+     You think I married or something
+What does your wife think of thumb sucking..
+     What information are you really looking for
+Whether you have a wife..
+     You think I have a wife
+If not, at least a fine teddy bear..
+     Lets explore further why your mother took your teddy bear from you
+I cant understand it at all..
+     What prevents you do you think
+I am not very bright..
+     How long have you been not very bright
+Since my kids graduated from college..
+     Your kids graduated from college
+My boy is a professor at MIT..
+     Why do you think your boy is a professor at MIT
+I never took his teddy from him..
+     You say you never took his teddy from him
+That's right - he takes his teddy to his classes with him..
+     Hmmm
+His students somtimes laugh at him, I dont know why..
+     You say you dont know why
+Can you explain it..
+     You believe I can explain it - dont you
+No.  It doesn't make sense..
+     Why do you say that
+Because its a big mystery to me..
+     Do you think that explains anything
+
+; [page 5]
+No, I guess it doesn't..
+     Oh
+Why dont you let me use your teddy bear..
+     You wish me to let you
+That would be nice..
+     What does that suggest to you
+You could be nice to me..
+     Why do you think I could be nice to you
+Because you are a doctor..
+     Do any other reasons come to mind
+Because you understand about teddies and thumbs and things..
+     What does that suggest to you
+Why dont you stop asking me that..
+     You wish me to stop asking you
+Its not very nice..
+     Hmmm
+I feel dry..
+     Tell me more about such feelings
+I dont like you..
+     Do you want to like me
+Give me your teddy..
+     What do you suppose that means to you and in particular your situation
+More questions..
+     What does that suggest to you
+Teddies don't suck their thumbs..
+     Hmmm
+Ever..
+     You have not said anything about your father
+Daddy had the biggest thumb in the world.  I remember very well..
+     You say you remember very well
+Indeed I do.  He often boasted of it..
+     You say you do.  He often boasted of it
+Yes.  I wish you would show me your thumb..
+     I see
+I'm sure you won't..
+     You think I won't
+No.  You probably have the smallest thumb in the world..
+     That's very interesting
+What does that suggest to you, doctor..
+
+; [page 6]
+; [rust stain from a fastener at top left; no writing]
+I am very depressed..
+     How long have you been very depressed
+Since my mommy took my teddy bear from me..
+     Why do you think your mother took your teddy bear from you
+She said my wife objected to my sleeping with it..
+     Your wife objected to your sleeping with it
+How can anyone explain such a thing..
+     How would you answer that
+Mom isn't very nice - especially about pets..
+     Hmmm
+I miss teddy..
+     You say you miss teddy
+Yes, I used to hold him while sucking my thunb..
+     You are quite sure
+Of course.  All that's left now is my blanket..
+     Your blanket
+You understand me..
+     Why do you think I understand you
+Perhaps its because your mom let you keep your teddy..
+     You dont seem very sure
+You do sleep with your teddy, don't you-..
+     You think I do sleep with my teddy, don't you-
+Are you married or something..
+     You think I married or something
+What does your wife think of thumb sucking..
+     What information are you really looking for
+Whether you have a wife..
+     You think I have a wife
+If not, at least a fine teddy bear..
+     Lets explore further why your mother took your teddy bear from you
+I cant understand it at all..
+     What prevents you do you think
+I am not very bright..
+     How long have you been not very bright
+Since my kids graduated from college..
+     Your kids graduated from college
+My boy is a professor at MIT..
+     Why do you think your boy is a professor at MIT
+I never took his teddy from him..
+     You say you never took his teddy from him
+That's right - he takes his teddy to his classes with him..
+     Hmmm
+His students somtimes laugh at him, I dont know why..
+     You say you dont know why
+Can you explain it..
+     You believe I can explain it - dont you
+No.  It doesn't make sense..
+     Why do you say that
+Because its a big mystery to me..
+     Do you think that explains anything
+
+; [page 7]
+; [red marginal number, top right, rotated: [757?]; bottom right, cut by the edge: 62]
+; [upper two-thirds of the sheet blank]
+ QUIT,
+R .000+.000
+
+login t109 weizenbaum
+W 1830.0
+PASSWORD
+ T0109  2531 LOGGED IN  10/01 /64   1830.2
+
+***(9/28 17:00)  THE DISK CONTENTS HAVE BEEN SET BACK TO
+SAT 9/26 22:00
+***(9/24 1930.)  THE DISK CONTENTS HAVE BEEN SET BACK TO
+  MON., 9/21 AT 1600.  PLEASE SEE OPERATIONS STAFF IF
+IT IS NECESSARY FOR YOU TO RETRIEVE FILES.
+
+ CTSS BEING USED IS   BACK8C
+SHIFT     MINUTES
+      ALLOTTED    USED SINCE 10/01/64  952.3
+1        100        4.3
+2        100        0.0
+3        100        0.0
+4        100        0.0
+LAST LOGOUT WAS 10/01/64  1457.1
+
+; [page 8]
+; [red marginal number, top right, rotated: 758; bottom right, cut by the edge: 62]
+TRACK QUOTA=       P,       500 Q. 0327 TRACKS USED.
+R 4.666+.766
+
+[?] +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++ IS NOT A COMMAND.
+
++
+     + IS NOT A COMMAND.
+
+loadgo ask
+W 1832.9
+EXECUTION.
+SIR,  3 FREELOADERS WERE INTERFERING WITH YOUR UNRESTRICTED  USE OF THE CTSS SYSTEM
+AT 1833.0 O'CLOCK.
+R 6.216+.650
+
+nusers = 4
+NUSERS IS NOT A COMMAND.
+
+ QUIT,
+R .000+.300
+
+logout
+W 1834.4
+ T0109  2531 LOGGED OUT 10/01 /64   1834.4
+ TOTAL TIME USED=   00.5 MIN.
+- QUIT,
+R .000+.000
+
+login t109 weizenbaum
+W 2019.1
+PASSWORD
+ T0109  2531 LOGGED IN  10/01 /64   2019.2
+
+***(9/28 1 quit,
+R .016+.116
+
+resume oplsep
+W 2019.6
+- 0
+(readf 69$)
+  INCREASING MEMORY BOUND TO  26276
+  INCREASING MEMORY BOUND TO  27276
+  INCREASING MEMORY BOUND TO  28276
+  (   HELP    (   G     H      I       )     )
+  (   DL      (   A     B      P       )     )
+  INCREASING MEMORY BOUND TO  29276
+  (   FIRSTP  (   L     A      B     K     FATHERMOTHERPARENT  )     )
+HOW DO YOU DO - PLEASE SIT DOWN AT THE TYPEWRITER AND TELL ME WHATEVER COMES TO YOUR
+ MIND
+
+; [conversation 1 begins]
+I am very depressed..
+HOW LONG HAVE YOU BEEN VERY DEPRESSED
+
+Since my mommy took my teddy bear from me..
+WHY DO YOU THINK YOUR MOTHER TOOK YOUR TEDDY BEAR FROM YOU
+
+She said my wife objected to my sleeping with it..
+YOUR WIFE OBJECTED TO YOUR SLEEPING WITH IT
+
+How can anyone explain such a thing..
+
+; [page 9]
+; [red marginal number, top right, rotated: 759; bottom right, cut by the edge: 62]
+HOW WOULD YOU ANSWER THAT
+
+Mom isn't very nice - especially about pets..
+HMMM
+
+I miss teddy..
+YOU SAY YOU MISS TEDDY
+
+Yes, I used to hold him while sucking my thumb..
+YOU ARE QUITE SURE
+
+Of course.  All that's left now is my blanket..
+YOUR BLANKET
+
+You understand me..
+WHY DO YOU THINK I UNDERSTAND YOU
+
+Perhaps its because your mom let you keep your teddy..
+YOU DONT SEEM VERY SURE
+
+You do sleep with your teddy, don't you..
+; [handwritten: dark ink dash written over the first of the two printed periods]
+YOU THINK I DO SLEEP WITH MY TEDDY , DON'T [I?]
+; [handwritten: "You-" written over the last printed word (Y in black ink over it, "ou" in blue, dash in ink)]
+
+Are you marriedor"" or something..
+YOU THINK I MARRIED OR SOMETHING
+
+What does your wife think of thumb sucking..
+WHAT INFORMATION ARE YOU REALLY LOOKING FOR
+
+Whether you have a wife..
+YOU THINK I HAVE A WIFE
+
+If not, at least a fine teddy bear..
+LETS EXPLORE FURTHER WHY YOUR MOTHER TOOK YOUR TEDDY BEAR FROM YOU
+
+I cant understand it at all..
+WHAT PREVENTS YOU DO YOU THINK
+
+I am not very bright..
+HOW LONG HAVE YOU BEEN NOT VERY BRIGHT
+
+Since my kids started going to school..
+; [handwritten, blue ink: "started going to school" struck through; "graduated from college" written above]
+YOUR KIDS STARTED GOING TO SCHOOL
+; [handwritten, blue ink: "STARTED GOING TO SCHOOL" struck through]
+
+My boy is a professor at M.I.T..
+; [handwritten, blue ink: "M.I.T." circled]
+WHY DO YOU THINK YOUR BOY IS A PROFESSOR AT M . YOU
+; [handwritten, black ink: "M . YOU" struck through; "MIT" written above]
+
+I never took his teddy from him..
+YOU SAY YOU NEVER TOOK HIS TEDDY FROM HIM
+
+That's right - he takes mommy's teddy to his classes with him..
+; [handwritten, blue ink: "mommy" struck through; "his" written above]
+HMMM
+
+His students sometimes laugh at himm, I dont know why..
+YOU SAY YOU DONT KNOW WHY
+
+Can you explain it..
+YOU BELIEVE I CAN EXPLAIN IT - DONT YOU
+
+No.  It doesn't make sense..
+WHY DO YOU SAY THAT
+
+Because its a big mystery to me..
+DO YOU THINK THAT EXPLAINS ANYTHING
+
+No, I guess it doesn't..
+
+; [page 10]
+; [red marginal number, top right, rotated: 760; bottom right, cut by the edge: 62]
+OH
+
+Why dont you let me use your teddy bear..
+YOU WISH ME TO LET YOU
+
+That would be nice..
+WHAT DOES THAT SUGGEST TO YOU
+
+You could be nice to me..
+WHY DO YOU THINK I COULD BE NICE TO YOU
+
+Because you are a doctor..
+DO ANY OTHER REASONS COME TO MIND
+
+Because you understand about teddies and thumbs and things..
+WHAT DOES THAT SUGGEST TO YOU
+
+Why dont you stop asking me that..
+YOU WISH ME TO STOP ASKING YOU
+
+Its not very nice..
+HMMM
+
+I feel dry..
+TELL ME MORE ABOUT SUCH FEELINGS
+
+I dont like you..
+DO YOU WANT TO LIKE ME
+
+Give me your teddy..
+WHAT DO YOU SUPPOSE THAT MEANS TO YOU AND IN PARTICULAR YOUR SITUATION
+
+More questions..
+WHAT DOES THAT SUGGEST TO YOU
+
+Teddies don't suck their thumbs..
+HMMM
+
+Ever..
+YOU HAVE NOT SAID ANYTHING ABOUT YOUR FATHER
+
+Daddy had the biggest thumb in the world.  I remember very well..
+YOU SAY YOU REMEMBER VERY WELL
+
+Indeed I do. He often boasted of it..
+YOU SAY YOU DO . HE OFTEN BOASTED OF IT
+
+Yes.  I wish you would show me your thumb..
+I SEE
+
+I'm sure you won't..
+YOU THINK I WON'T
+
+No.  You probably have the smallest thumb in the world..
+THAT ' S VERY INTERESTING
+
+What does that suggest to you, doctor..
+ OPERATION 0000/1 NOT RECOGNIZED
+- 0
+INT. 1
+- 0
+
+; [page 11]
+; [rust stain from a fastener at top left; no writing]
+No, I guess it doesn't..
+     Oh
+Why dont you let me use your teddy bear..
+     You wish me to let you
+That would be nice..
+     What does that suggest to you
+You could be nice to me..
+     Why do you think I could be nice to you
+Because you are a doctor..
+     Do any other reasons come to mind
+Because you understand about teddies and thumbs and things..
+     What does that suggest to you
+Why dont you stop asking me that..
+     You wish me to stop asking you
+Its not very nice..
+     Hmmm
+I feel dry..
+     Tell me more about such feelings
+I dont like you..
+     Do you want to like me
+Give me your teddy..
+     What do you suppose that means to you and in particular your situation
+More questions..
+     What does that suggest to you
+Teddies don't suck their thumbs..
+     Hmmm
+Ever..
+     You have not said anything about your father
+Daddy had the biggest thumb in the world.  I remember very well..
+     You say you remember very well
+Indeed I do.  He often boasted of it..
+     You say you do.  He often boasted of it
+Yes.  I wish you would show me your thumb..
+     I see
+I'm sure you won't..
+     You think I won't
+No.  You probably have the smallest thumb in the world..
+     That's very interesting
+What does that suggest to you, doctor..

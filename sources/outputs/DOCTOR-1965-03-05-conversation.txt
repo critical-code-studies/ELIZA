@@ -1,0 +1,475 @@
+; Source: MIT DOME, Joseph Weizenbaum papers, folder "Computer conversations, 1965"
+; Handle: hdl 1721.3/201702
+; File: 02-000311054.pdf
+; Title: "Conversation, 1965 March 5"
+; Pages: 9 (p.1 folder; pp.2-3 teletype printout of the session, hand-edited;
+;   pp.4-6 typed copy incorporating the edits (sharper purple copy, with typed
+;   corrections); pp.7-9 a second purple spirit-duplicator (ditto) copy of the same
+;   typescript)
+; Transcribed from the scan, 2026-10-12, unchecked.
+; Notes: pp.2-3 are on pre-printed continuous stationery (Royal Business Forms,
+;   Nashua, New Hampshire, form no. [1411-3?]; printed line numbers in the margins);
+;   the form's own printing is not transcribed. The printout is double-spaced; the
+;   user's lines are in lower case, the program's in upper case. Pencil line numbers
+;   1-10 and arrows sit in the left margin of p.2. Struck-through printed text is
+;   kept in the line and its striking recorded in the note beneath. The printout has
+;   no session header, date, or log-in lines; it starts with the first user input.
+; One conversation. Pages 4-6 and 7-9 are copies of the edited text, not separate
+;   conversations.
+
+; [page 1]
+; [folder tab, handwritten: 4 of 7   OK]
+; [folder tab, handwritten: Conversation - March 5, 1965]
+
+; [page 2]
+; [conversation 1 begins]
+; [handwritten, pencil, right of the text near the top: Conversation March 5/65]
+; [handwritten, pencil, left margin: 1]
+Doctor, I am terribly depressed
+
+IS IT BECAUSE YOU ARE TERRIBLY DEPRESSED THAT YOU CAME TO ME
+
+; [handwritten, pencil, left margin: -> 2]
+Actually, my wife suggested I come to you
+; [handwritten: "to you" struck through; "here" written after it]
+
+TELL ME MORE ABOUT YOUR FAMILY
+
+; [handwritten, pencil, left margin: 3]
+I have no children
+
+YOU SAY YOU HAVE NO CHILDREN
+
+; [handwritten, pencil, left margin: 4]
+I can't resign myself to fatherhood
+
+HOW DO YOU KNOW YOU CAN'T RESIGN YOURSELF TO FATHERHOOD
+
+; [handwritten, pencil, left margin: -> 5]
+Well, my wife wants kids but I don't.  ThaT's all I can say about it.
+
+WHO ELSE IN YOUR FAMILY WANTS KIDS
+
+; [handwritten, pencil, left margin: 6]
+Everybody is always hinting and bugging me about it
+; [orange mark after "Everybody"]
+
+WHO , MAY I ASK
+
+; [handwritten, pencil, left margin: 7]
+My father talks about grandchildren all the time
+
+YOUR FATHER
+
+; [handwritten, pencil, left margin: 8]
+He pokes his nose into our affairs much too much
+
+I AM NOT SURE I UNDERSTAND YOU FULLY
+
+; [handwritten, pencil, left margin: 9]
+He's always tring to run the house
+
+CAN YOU THINK OF A SPECIFIC EXAMPLE
+
+; [handwritten, pencil, left margin: 10]
+Apart from the children thing, my father wants me to change jobs
+
+WHAT ELSE COMES TO MIND WHEN YOU THINK OF YOUR FATHER
+
+The Police
+; [handwritten: "The Police" struck through; "Nothing" written after it]
+
+EARLIER YOU SAID YOUR WIFE SUGGESTED YOU COME TO I HERE
+; [handwritten: arrow in left margin; "EARLI" of "EARLIER" struck through; "TO I" struck through.
+;   "HERE" is heavier than the printout's type and may be hand-lettered over or after the line]
+
+yes
+
+YOU SEEM QUITE POSITIVE
+
+She said that I shlould either get help or she would have my father
+arrested
+; [handwritten: "have my father arrested" struck through; "leave me" written above;
+;   to the right, faint erased pencil, perhaps "father out"]
+
+CAN YOU ELABORATE ON THAT
+
+My wife can't stand his [interfetence?] any longer
+; [handwritten: "his [interfetence?]" struck through; "dad" written above]
+
+TELL ME MORE ABOUT YOUR FAMILY
+
+Mother is dead
+
+EARLIER YOU SAID YOUR WIFE WANTS KIDS
+; [handwritten: arrow in left margin]
+
+That's right.  Can you understand how she bugs me
+; [handwritten: "she" struck through; "that" written above]
+
+YOU BELIEVE I CAN UNDERSTAND HOW SHE BUGS YOU DON'T YOU
+; [handwritten: "THAT" hand-lettered over "SHE"; brown stain over "I CAN"]
+
+; [page 3]
+; [red number, bottom left margin, rotated: 43784]
+I can't take it much longer
+
+HAVE YOU TRIED
+
+I'm always patient
+
+WHEN
+
+When she yells at me
+
+LETS DISCUSS FURTHER WHY YOUR FATHER TALKS ABOUT GRANDCHILDREN ALL THE
+TIME
+
+He's getting old.  I guess he wants to be immortal
+
+DO YOU SAY YOU GUESS HE WANTS TO BE IMMORTAL FOR SOME SPECIAL REASON
+
+He also talks about dying a lot.  Because he is sick, you know.
+
+IS THAT THE REAL REASON
+
+Maybe
+
+AND MAYBE NOT
+
+I think he needs help more than I do
+
+THAT'S QUITE INTERESTING
+
+I can't help him.  I don't like him, for one thing.
+; [handwritten: "I don't like him, for one thing" struck through, the period left standing;
+;   "I've tried [for ...] all my life." written after it, with a struck word or two
+;   after "tried" (perhaps "for"; the rest unreadable)]
+
+PERHAPS YOU COULD HELP HIM NOW
+
+What do you mean
+
+WHY DO YOU ASK
+
+I don't understand you.  Not really, I mean.
+; [handwritten: "Not really, I mean" struck through, the period left standing]
+
+DON'T YOU REALLY UNDERSTAND I
+
+no
+
+ARE YOU SAYING 'NO' JUST TO BE NEGATIVE
+
+Are you suggesting its all my fault
+
+WHY ARE YOU INTERESTED IN WHETHER I AM SUGGESTING ITS ALL YOUR FAULT OR
+NOT
+
+You are the psychiatrist, after all.  I have to listen to you.
+; [handwritten: "psychia" of "psychiatrist" struck through; "expert" written above]
+
+WHAT MAKES YOU THINK I AM THE PSYCHIATRIST
+; [handwritten: "PSYCHIATRIST" struck through; "expert" written after it]
+
+Or are you a computer
+
+WOULD YOU PREFER IF I WEREN'T A COMPUTER
+
+I don't trust computers.  Anyway, no computer could talk as you do.
+
+WHY DON'T YOU TRUST COMPUTERS
+
+Because they're hardly human, that's why.
+
+DON'T ANY OTHER REASONS COME TO MIND
+
+; [page 4]
+; [typed copy 1, purple; sheet 1 has no page number]
+                         Conversation March 5, 1965
+
+Doctor, I am terribly depressed.
+
+IS IT BECAUSE YOU ARE TERRIBLY DEPRESSED THAT YOU CAME TO ME
+
+Actually, my wife suggested I come here.
+
+TELL ME MORE ABOUT YOUR FAMILY
+
+I have no children.
+
+YOU SAY YOU HAVE NO CHILDREN
+
+I can't resign myself to fatherhood.
+
+HOW DO YOU KNOW YOU CAN'T RESIGN YOURSELF TO FATHERHOOD
+
+Well, my wife wants kids but I don't.  That's all I can say about it.
+
+WHO ELSE IN YOUR FAMILY WANTS KIDS
+
+Everybody is always hinting and bugging me about it.
+
+WHO, MAY I ASK
+
+My father talks about grandchildren all the time.
+
+YOUR FATHER
+
+He pokes his nose into our affairs much too much.
+; [the "s" of "nose" overtyped on another letter]
+
+I AM NOT SURE I UNDERSTAND YOU FULLY
+
+He's always trying to run the house.
+
+CAN YOU THINK OF A SPECIFIC EXAMPLE
+
+Apart from the children thing, my father wants me to change jobs.
+
+WHAT ELSE COMES TO MIND WHEN YOU THINK OF YOUR FATHER
+
+Nothing.
+
+YOU SAID YOUR WIFE SUGGESTED YOU COME HERE
+
+Yes.
+
+YOU SEEM QUITE POSITIVE
+
+; [page 5]
+                                  - 2 -
+
+She said that I should either get help or she would leave me.
+
+CAN YOU ELABORATE ON THAT
+
+My wife can't stand dad any longer.
+
+TELL ME MORE ABOUT YOUR FAMILY
+
+Mother is dead.
+
+EARLIER YOU SAID YOUR WIFE WANTS KIDS
+; [the "W" of "WANTS" overtyped]
+
+That's right.  Can you understand how that bugs me.
+
+YOU BELIEVE I CAN UNDERSTAND HOW THAT BUGS YOU DON'T YOU
+
+I can't take it much longer.
+
+HAVE YOU TRIED
+
+I'm always patient.
+
+WHEN
+
+When she yells at me.
+
+LETS DISCUSS FURTHER WHY YOUR FATHER TALKS ABOUT GRANDCHILDREN ALL
+THE TIME
+
+He's getting old.  I guess he wants to be immortal.
+
+DO YOU SAY YOU GUESS HE WANTS TO BE IMMORTAL FOR SOME SPECIAL REASON
+
+He also talks about dying a lot.  Because he is sick, you know.
+
+IS THAT THE REAL REASON
+
+Maybe
+
+AND MAYBE NOT
+
+I think he needs help more than I do.
+
+THAT'S QUITE INTERESTING
+
+I can't help him.  I've tried all my life.
+
+PERHAPS YOU COULD HELP HIM NOW
+
+What do you mean.
+
+WHY DO YOU ASK
+
+I don't understand you.
+; [this last line is in grey-black typewriter ink, not purple, with the "I" set high;
+;   it is absent from the matching sheet of copy 2 (p.8)]
+
+; [page 6]
+                                  - 3 -
+
+I don't understand you.
+
+P DON'T YOU REALLY UNDERSTAND I
+; [the "P" is typed in the left margin]
+
+No.
+
+ARE YOU SAYING 'NO' JUST TO BE NEGATIVE
+
+Are you suggesting its all my fault.
+
+WHY ARE YOU INTERESTED IN WHETHER I AM SUGGESTING ITS ALL YOURFAULT
+OR NOT
+; ["YOUR" typed heavier; "FAULT" overtyped on other letters, with no space after "YOUR"]
+
+You are the expert, after all.  I have to listen to you.
+
+WHAT MAKES YOU THINK I AM THE EXPERT
+
+Or are you a computer.
+
+WOULD YOU PREFER IF I WEREN'T A COMPUTER
+
+I don't trust computers.  Anyway, no computer could talk as you do.
+
+WHY DON'T YOU TRUST COMPUTERS
+; [the "T" of "DON'T" overtyped]
+
+Because they're hardly human, that's why.
+
+DON'T ANY OTHER REASONS COME TO MIND
+
+; [page 7]
+; [typed copy 2, purple spirit duplicator; periods print as small hollow marks,
+;   apostrophes as raised marks, transcribed as "." and "'"]
+                         Conversation March 5, 1965
+
+Doctor, I am terribly depressed.
+
+IS IT BECAUSE YOU ARE TERRIBLY DEPRESSED THAT YOU CAME TO ME
+
+Actually, my wife suggested I come here.
+
+TELL ME MORE ABOUT YOUR FAMILY
+
+I have no children.
+
+YOU SAY YOU HAVE NO CHILDREN
+
+I can't resign myself to fatherhood.
+
+HOW DO YOU KNOW YOU CAN'T RESIGN YOURSELF TO FATHERHOOD
+
+Well, my wife wants kids but I don't.  That's all I can say about it.
+
+WHO ELSE IN YOUR FAMILY WANTS KIDS
+
+Everybody is always hinting and bugging me about it.
+
+WHO, MAY I ASK
+
+My father talks about grandchildren all the time.
+
+YOUR FATHER
+
+He pokes his nose into our affairs much too much.
+
+I AM NOT SURE I UNDERSTAND YOU FULLY
+
+He's always trying to run the house.
+
+CAN YOU THINK OF A SPECIFIC EXAMPLE
+
+Apart from the children thing, my father wants me to change jobs.
+
+WHAT ELSE COMES TO MIND WHEN YOU THINK OF YOUR FATHER
+
+Nothing.
+
+YOU SAID YOUR WIFE SUGGESTED YOU COME HERE
+
+Yes.
+
+YOU SEEM QUITE POSITIVE
+
+; [page 8]
+                                  - 2 -
+
+She said that I should either get help or she would leave me.
+
+CAN YOU ELABORATE ON THAT
+
+My wife can't stand dad any longer.
+
+TELL ME MORE ABOUT YOUR FAMILY
+
+Mother is dead.
+
+EARLIER YOU SAID YOUR WIFE WANTS KIDS
+
+That's right.  Can you understand how that bugs me.
+
+YOU BELIEVE I CAN UNDERSTAND HOW THAT BUGS YOU DON'T YOU
+
+I can't take it much longer.
+
+HAVE YOU TRIED
+
+I'm always patient.
+
+WHEN
+
+When she yells at me.
+
+LETS DISCUSS FURTHER WHY YOUR FATHER TALKS ABOUT GRANDCHILDREN ALL
+THE TIME
+
+He's getting old.  I guess he wants to be immortal.
+
+DO YOU SAY YOU GUESS HE WANTS TO BE IMMORTAL FOR SOME SPECIAL REASON
+
+He also talks about dying a lot.  Because he is sick, you know.
+
+IS THAT THE REAL REASON
+
+Maybe
+
+AND MAYBE NOT
+
+I think he needs help more than I do.
+
+THAT'S QUITE INTERESTING
+
+I can't help him.  I've tried all my life.
+
+PERHAPS YOU COULD HELP HIM NOW
+
+What do you mean.
+
+WHY DO YOU ASK
+
+; [page 9]
+                                  - 3 -
+
+I don't understand you.
+
+DON'T YOU REALLY UNDERSTAND I
+
+No.
+
+ARE YOU SAYING 'NO' JUST TO BE NEGATIVE
+
+Are you suggesting its all my fault.
+
+WHY ARE YOU INTERESTED IN WHETHER I AM SUGGESTING ITS ALL YOUR FAULT
+OR NOT
+
+You are the expert, after all.  I have to listen to you.
+
+WHAT MAKES YOU THINK I AM THE EXPERT
+
+Or are you a computer.
+
+WOULD YOU PREFER IF I WEREN'T A COMPUTER
+
+I don't trust computers.  Anyway, no computer could talk as you do.
+
+WHY DON'T YOU TRUST COMPUTERS
+
+Because they're hardly human, that's why.
+
+DON'T ANY OTHER REASONS COME TO MIND

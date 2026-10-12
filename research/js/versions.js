@@ -64,6 +64,14 @@
       fork: 'script', layer: 'script', status: 'recovered', medium: 'Script (printout, .TAPE. 102)',
       summary: 'DOCTOR as printed before the ELIZA listing in the same document, headed .TAPE. 102, printed in the same session as TAPE 100. It has no HOW or WHEN rules, one reply under WHAT, and its own WHY rule with four replies; one list, (DON’T YOU KNOW), stands outside the rule it belongs to. Transcribed by Anthony C. Hay.',
       build: files('scripts/', ['DOCTOR-1965-TAPE-102.txt']) },
+    { id: 'f29-67', label: 'F29 1967', date: '26 December 1967', sort: 19671226, authors: JW,
+      fork: 'script', layer: 'script', status: 'recovered', medium: 'Script (printout, CTSS session of 16 January 1968)',
+      summary: 'A script of mathematical definitions (SQUARED, PI, TIMES THE…), printed with FIGURE in a CTSS session of 16 January 1968 (Weizenbaum’s papers at MIT, handle 1721.3/201708); its directory entry is dated 26 December 1967. Inventing ELIZA, Table 1.2, reads it as an early version of FIGURE; Table 1.1 cites it as evidence for ELIZA 1967. The printout ends in the middle of a rule. Transcribed from the scan, 12 October 2026, unchecked; the session, with its directory listing, is held beside it.',
+      build: files('scripts/', ['F29-1967.txt', { src: 'CTSS-session-1968-01-16.txt', role: 'doc' }]) },
+    { id: 'figure68', label: 'FIGURE 1968', date: '9 January 1968', sort: 19680109, authors: JW,
+      fork: 'script', layer: 'script', status: 'recovered', medium: 'Script (printout, CTSS session of 16 January 1968)',
+      summary: 'The mathematical definition script, F29 extended with many more definitions and responses (Inventing ELIZA, Table 1.2): comparisons, THANK, CALL, HOW MUCH, COMPUTE and a PROG section. Printed in the same CTSS session as F29; its directory entry is dated 9 January 1968. Table 1.1 cites it as evidence for ELIZA 1967. Transcribed from the scan, 12 October 2026, unchecked.',
+      build: files('scripts/', ['FIGURE-1968.txt', { src: 'CTSS-session-1968-01-16.txt', role: 'doc' }]) },
     { id: 'doctor', label: 'DOCTOR 1966 (CACM)', date: 'January 1966', sort: 19660101, authors: JW,
       fork: 'script', layer: 'script', status: 'recovered', medium: 'Script (the paper’s appendix)',
       summary: 'The DOCTOR script as printed in the appendix to Weizenbaum’s 1966 paper in Communications of the ACM, transcribed by Anthony C. Hay: keywords with their decomposition and reassembly rules, the Rogerian therapist ELIZA was best known for. A script, not a version of the program: the 1966 version ran it. Two more DOCTOR scripts, successive drafts, are on a printout in Weizenbaum’s papers (.TAPE. 100 and .TAPE. 102); they are not yet held here.',
@@ -73,6 +81,26 @@
       fork: 'output', status: 'recovered', medium: 'Output (typed conversation, 32 copies)',
       summary: 'A typed conversation in which the human, “Doctor, I have terrible news”, tells of a computer program at M.I.T. that will ruin them both, and argues that no computer could converse like a man; the program’s replies are indented. From the folder “Computer conversations, 1965” in Weizenbaum’s papers at MIT (handle 1721.3/201700), in 32 copies of one undated page. The script is not named; the replies are DOCTOR’s in manner. Read by machine across all copies, the majority reading taken for each line, and checked against the first copy.',
       build: files('outputs/', ['DOCTOR-1965-terrible-news.txt']) },
+    { id: 'help64c-s', label: 'HELP conversation, 11 June 1964 (student)', date: '11 June 1964', sort: 19640611, authors: JW,
+      fork: 'output', status: 'recovered', medium: 'Output (typed copy and ditto)',
+      summary: 'Typed “Computer Output - June 11, 1964 - Program HELP”: a STUDENT and a PROF, each turn in parentheses; the student speaks of “that lovely program at PROJECT MAC”. A typescript with corrections and a ditto copy of it (Weizenbaum’s papers at MIT, handle 1721.3/201704). The date is typed on the copies, not printed by the machine; it is earlier than ELIZA’s usual dating. Transcribed from the scan, 12 October 2026, unchecked.',
+      build: files('outputs/', ['HELP-1964-06-11-student.txt']) },
+    { id: 'help64c-p', label: 'HELP conversation, 11 June 1964 (patient)', date: '11 June 1964', sort: 19640611.1, authors: JW,
+      fork: 'output', status: 'recovered', medium: 'Output (typed copy and ditto)',
+      summary: 'Typed “Computer output - June 11, 1964 - Program HELP”: a PATIENT and a DOCTOR, each turn in parentheses, beginning “I AM VERY DEPRESSED”. A typescript with corrections and a ditto copy (handle 1721.3/201705). Transcribed from the scan, 12 October 2026, unchecked.',
+      build: files('outputs/', ['HELP-1964-06-11-patient.txt']) },
+    { id: 'c641001', label: 'Conversation, 1 October 1964 (very depressed)', date: '1 October 1964', sort: 19641001, authors: JW,
+      fork: 'output', status: 'recovered', medium: 'Output (CTSS printout, hand-edited, and three typed copies)',
+      summary: 'A CTSS session logged in on 1 October 1964: resume oplsep, (readf 69$), the script’s lists printed as it loads (among them one named HELP), the greeting HOW DO YOU DO - PLEASE SIT DOWN AT THE TYPEWRITER, and a conversation beginning “I am very depressed”. The printout is edited by hand and three typed copies follow the edits (handle 1721.3/201701). The script is not named; that it is HELP is an inference from the list. Transcribed from the scan, 12 October 2026, unchecked.',
+      build: files('outputs/', ['CONVERSATION-1964-10-01-very-depressed.txt']) },
+    { id: 'doctor65c-0305', label: 'DOCTOR conversation, 5 March 1965', date: '5 March 1965', sort: 19650305, authors: JW,
+      fork: 'output', status: 'recovered', medium: 'Output (printout, hand-edited, and two typed copies)',
+      summary: 'A conversation beginning “Doctor, I am terribly depressed”, dated in pencil “Conversation March 5/65”: a printout edited by hand (both sides of the conversation are rewritten) and two typed copies that give the edited text (handle 1721.3/201702). The script is not named; DOCTOR is inferred. Transcribed from the scan, 12 October 2026, unchecked.',
+      build: files('outputs/', ['DOCTOR-1965-03-05-conversation.txt']) },
+    { id: 'doctor65c-0322', label: 'DOCTOR conversation, 22 March 1965 (men)', date: '22 March 1965', sort: 19650322, authors: JW,
+      fork: 'output', status: 'recovered', medium: 'Output (four versions: typescript draft, ditto, printout, corrected copy)',
+      summary: 'The conversation beginning “Men are all alike”, in four versions (handle 1721.3/201703): a shorter typescript, an earlier draft; a ditto copy; a terminal printout; and a typed copy with corrections. The later three are close to the dialogue Weizenbaum published in 1966. The folder is dated 22 March 1965. Transcribed from the scan, 12 October 2026, unchecked.',
+      build: files('outputs/', ['DOCTOR-1965-03-22-conversation-men.txt']) },
     { id: 'spacks68c', label: 'SPACKS conversation, 1968', date: '1968', sort: 19680102, authors: 'A student and ELIZA, printed by Edwin F. Taylor',
       fork: 'output', status: 'recovered', medium: 'Output (conversation, as printed)',
       summary: 'A student’s conversation with ELIZA running the SPACKS script, which discusses a line of Barry Spacks’s poem “Freshmen”, as Edwin F. Taylor printed it in “Automated Tutoring and Its Discontents” (American Journal of Physics, 1968). The script does not survive. Transcribed by Jeff Shrager for elizagen.org. Inventing ELIZA, Table 1.1, cites SPACKS as evidence for ELIZA 1968+.',
@@ -103,7 +131,9 @@
     { id: 'eliza', label: 'ELIZA, 1965–68 (1965a → 1968+)', tip: '1968' },
     // the copies of DOCTOR in date order: the two tapes of 6 March 1965 are not ordered, so the
     // line lists them rather than descending from a parent
-    { id: 'doctor', label: 'DOCTOR, 1965–66 (TAPE 100, TAPE 102, CACM)', ids: ['doctor65t100', 'doctor65t102', 'doctor'] }
+    { id: 'doctor', label: 'DOCTOR, 1965–66 (TAPE 100, TAPE 102, CACM)', ids: ['doctor65t100', 'doctor65t102', 'doctor'] },
+    // F29 and FIGURE, which Inventing ELIZA (Table 1.2) reads as an early and a late version
+    { id: 'figure', label: 'F29 and FIGURE, 1967–68', ids: ['f29-67', 'figure68'] }
   ];
 
   var api = L({ versions: VERSIONS, src: SRC, dialects: DIALECTS, lines: LINES,

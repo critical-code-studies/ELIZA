@@ -1,0 +1,29 @@
+; Source: MIT DOME, hdl 1721.3/201708, "Scripts, 1968", Weizenbaum papers MC-0383, file 02-000311066.pdf
+;   (local copy: _tmp/dome/201708-scripts-1968.pdf)
+; Page: 3 of 5 (scan page numbering; page 1 is the folder cover)
+; Print header as printed: "   F29 SCRIPT      01/16  2132.6"
+; Printed by the CTSS command "print f "29 script" (as typed), session of 01/16/68.
+; Directory entry: F29 SCRIPT 000, 2 records, used 12/26/67.
+; Transcribed from the scan, 2026-10-12, unchecked.
+; Notes: line 3 has no opening "(" at the start of the line; the final N of RESCAN is
+;   overstruck by a "(" printed between the N and the ")" (same cell positions as "N)").
+;   The listing ends after "(HALF - QUIT," and is followed directly by the CTSS "R" line.
+;   Columns follow the 10-pitch character grid of the scan.
+(SQUARED = **2.)
+(PI = 3.1415927)
+. = ALSO RESCAN)
+(TIMES THE = * )
+(TIMES = *)
+(DEVIDED BY = /)
+(DIVIDED BY = /)
+(OVER = /)
+(PLUS = +)
+(MINUS = -)
+(SUM = +)
+(DIFFERENCE = - )
+(PRODUCT = * )
+(QUOTIENT = / )
+(CUBED = **3.)
+(HALF OF THE = .5*)
+(HALF OF = .5*)
+(HALF - QUIT,
