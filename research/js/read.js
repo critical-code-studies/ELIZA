@@ -120,7 +120,7 @@
     var L = SW.layers, lay = L && L.of(b.v.id), r = L && L.resolve(name, lay);
     if (!r && L && L.pending(lay)) { refill(key || name, b); return '<div class="layer-def unres-note" data-pending-sym="' + esc(key || name) + '">Looking for it in ' + esc(L.pending(lay)) + '…</div>'; }
     if (r) return '<div class="pop-sec">Defined in ' + esc(r.layer.label) + ' · ' + esc(r.v.label) + '</div>' + L.peek(r.b, r.p, r.n, 7) +
-      '<a href="#" class="pop-jump" data-xgo="' + esc(r.v.id + '|' + r.p + '|' + r.n) + '">Jump to ' + esc(name) + ' in ' + esc(r.layer.label) + ' ▸</a>';
+      '<a href="#" class="pop-jump" data-xgo="' + esc(r.v.id + '|' + r.p + '|' + r.n) + '">Jump to ' + esc(name) + ' in ' + esc(r.layer.label) + ' <span class="pop-go">↘</span></a>';
     var ch = L ? L.chain(lay) : [];
     if (!ch.length) return '';
     var st = L.stack(), w = ch.map(function (x) { var v = root.SWVersions.byId(st[x.id]); return x.label + (v ? ' (' + v.label + ')' : ''); }).join(', ');
@@ -132,7 +132,7 @@
     if (r.loading) { refill('form:' + name, b); return h + '<div class="layer-def unres-note" data-pending-sym="form:' + esc(name) + '">Looking for it in ' + esc(r.layer.label) + '…</div>'; }
     if (r.missing) return h + '<div class="layer-def unres-note">' + esc(r.missing) + ' <span class="faint">(' + esc(r.layer.label) + ': ' + esc(r.v ? r.v.label : '') + ')</span></div>';
     return h + '<div class="layer-def"><div>' + esc(r.what || '') + ' <b>' + L.where(r) + '</b></div>' + L.peek(r.b, r.p, r.n, 6) +
-      '<a href="#" data-xgo="' + esc(r.v.id + '|' + r.p + '|' + r.n) + '">Jump to it in ' + esc(r.layer.label) + ' ▸</a></div>';
+      '<a href="#" data-xgo="' + esc(r.v.id + '|' + r.p + '|' + r.n) + '">Jump to it in ' + esc(r.layer.label) + ' <span class="pop-go">↘</span></a></div>';
   }
 
   // the pop-up on a name, as an IDE's hover card: what it is and where it lives; what the
@@ -141,11 +141,12 @@
                slip: 'Function defined elsewhere', variable: 'Name', keyword: 'Script keyword', 'class': 'Word class (DLIST)' };
   function deckAt(b, p, n) { var L = (b.lines[p] || [])[n - 1]; return L && L.deck; }
   function codeAt(b, p, n) { var L = (b.lines[p] || [])[n - 1]; if (!L) return ''; var q = SW.parseLine(L.raw); return ((q.labels || []).join(' ') + ' ' + q.code).trim(); }
-  // a row: the line, its deck when it differs, the code; a link within this text or (xgo) to another
-  function row(b, r, deckOf, xgo) {
+  // a row: the line, its deck when it differs, the code, and a jump there (→ in this text, ↗ to
+  // the layer above), which selects the line and can be gone back from (◀)
+  function row(b, r, deckOf, up) {
     var d = deckAt(b, r.file, r.line), file = b.parts.length > 1 ? b.parts[r.file].src.split('/').pop() + ' ' : '';
-    var link = xgo ? ' data-xgo="' + esc(xgo + '|' + r.file + '|' + r.line) + '"' : ' data-p="' + r.file + '" data-n="' + r.line + '"';
-    return '<a href="#" class="pop-row"' + link + '><span class="pop-at">' + esc(file) + 'line ' + r.line + (d && d !== deckOf ? ' · in ' + esc(d) : '') + '</span><code>' + esc(codeAt(b, r.file, r.line).slice(0, 56)) + '</code></a>';
+    var go = up ? 'Jump to line ' + r.line + ' in the layer above' : 'Jump to line ' + r.line;
+    return '<a href="#" class="pop-row" title="' + go + '" data-xgo="' + esc(b.v.id + '|' + r.file + '|' + r.line) + '"><span class="pop-at">' + esc(file) + 'line ' + r.line + (d && d !== deckOf ? ' · in ' + esc(d) : '') + '</span><code>' + esc(codeAt(b, r.file, r.line).slice(0, 56)) + '</code><span class="pop-go" aria-label="' + go + '">' + (up ? '↗' : '→') + '</span></a>';
   }
   function section(title, rows) { return rows.length ? '<div class="pop-sec">' + title + '</div>' + rows.join('') : ''; }
 
@@ -168,7 +169,7 @@
     h += section('Used here' + (uses.length ? ' (' + uses.length + ')' : ''), uses.slice(0, 12).map(function (r) { return row(b, r, home); }));
     if (uses.length > 12) h += '<div class="pop-more">and ' + (uses.length - 12) + ' more</div>';
     if (L && s.defs.length) L.callers(name, lay).forEach(function (c) {
-      h += section('Called from ' + esc(c.layer.label) + ' · ' + esc(c.v.label) + ' (' + c.refs.length + ')', c.refs.slice(0, 8).map(function (r) { return row(c.b, r, null, c.v.id); }));
+      h += section('Called from ' + esc(c.layer.label) + ' · ' + esc(c.v.label) + ' (' + c.refs.length + ')', c.refs.slice(0, 8).map(function (r) { return row(c.b, r, null, true); }));
     });
     return h;
   }
@@ -220,7 +221,7 @@
     }
     if (s && s.defs.length) { var d = s.defs[0]; SW.nav.go({ v: build.v.id, p: d.file, n: d.line }); return; }
     var r = L && L.resolve(s ? s.name : key, L.of(build.v.id));
-    if (r) SW.nav.go({ v: r.v.id, p: r.s.p, n: r.s.n });
+    if (r) SW.nav.go({ v: r.v.id, p: r.p, n: r.n });
     else SW.toast(L && L.pending(L.of(build.v.id)) ? 'Still reading ' + L.pending(L.of(build.v.id)) + '; try again in a moment.' : (s ? s.name : key) + ' is not defined here or in the layers below.');
   }, true);
 })(this);
