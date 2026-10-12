@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.14 (2026-10-12)
+
+- The catalogue's types in colour: SCRIPT and OUTPUT, a copy survives, in blue; NONE, only the name, in red.
+
 ## 0.1.13 (2026-10-12)
 
 - A second output: DOCTOR conversation, 1965 (terrible news) [DOC-C65-NEWS], the typed conversation from Weizenbaum's papers (handle 1721.3/201700), read by machine across its 32 copies and checked against the first.
