@@ -18,10 +18,12 @@
     // below; a script's forms, in the ELIZA code that acts on them.
     layers: {
       list: [
-        { id: 'script', label: 'Scripts', below: 'eliza', relation: 'runs on', start: 'doctor', note: 'What ELIZA reads and runs: keywords and their rules' },
+        { id: 'script', label: 'Scripts', below: 'eliza', relation: 'runs on', start: 'doctor', note: 'What ELIZA reads and runs: keywords and their rules',
+          more: [['scripts', 'The scripts catalogue', '35 scripts and conversations, after Inventing ELIZA, Table 1.2']] },
         { id: 'eliza', label: 'ELIZA', below: 'slip', relation: 'calls', start: '1965b', note: 'The program, in MAD-SLIP' },
         { id: 'slip', label: 'SLIP', start: 'slip1965', note: 'The list-processing library, in MAD and FAP' }
       ],
+      pick: function (p) { if (p === 'scripts') { root.SW.setTab('scripts'); return true; } },
       forms: {
         script: {
           MEMORY: { re: /TOP\.\(INPUT\) \.E\. \$MEMORY\$/, what: 'Where ELIZA, reading a script, takes in its MEMORY entry.' },

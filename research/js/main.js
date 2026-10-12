@@ -6,7 +6,7 @@
 (function (root) {
   'use strict';
   root.SW.BENCH.shell = {
-    views: ['read', 'analyse', 'compare', 'genealogy', 'about', 'findings', 'notes', 'paratexts'],
+    views: ['read', 'scripts', 'analyse', 'compare', 'genealogy', 'about', 'findings', 'notes', 'paratexts'],
     lang: function (vv) {
       var script = (vv.build || []).every(function (f) { return !/\.mad$/i.test(f.src); }), slip = vv.layer === 'slip';
       if (slip) return { text: 'SLIP · MAD and FAP · IBM 7094 · CTSS', title: 'SLIP, Weizenbaum’s Symmetric List Processor, as a library of MAD and FAP (the 7094’s assembler) routines for CTSS at MIT. Click for the project’s page on the code.' };

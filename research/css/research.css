@@ -110,3 +110,22 @@ button.badge.err { cursor: pointer; font: inherit; }
 
 /* a jump to another layer: the listing is out of sight until it is at the line (js/layers.js) */
 #view-read.lay-moving .listing, #view-read.lay-moving pre { visibility: hidden; }
+
+/* the scripts catalogue (js/scripts.js) */
+.scripts h2 { margin: 0 0 6px; }
+.scripts .sc-filters { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin: 12px 0 10px; }
+.scripts #sc-q { min-width: 220px; flex: 0 1 300px; }
+.scripts .sc-count { margin-left: auto; }
+.scripts .sc-wrap { overflow-x: auto; }
+.scripts .sc-table { min-width: 820px; }
+.scripts .sc-table th:not([data-sc-sort]) { cursor: default; }
+.scripts .sc-file { min-width: 8em; max-width: 13em; font-weight: 600; }
+.scripts .sc-table th { white-space: nowrap; }
+.scripts .sc-desc { max-width: 42em; }
+.scripts .sc-ref { max-width: 16em; }
+.scripts .sc-year, .scripts .sc-go { white-space: nowrap; }
+.scripts .sc-go a { display: block; font-size: 12px; margin-top: 2px; }
+.scripts tr.sc-held td { background: color-mix(in srgb, var(--amber) 7%, transparent); }
+.scripts .badge.sc-script { color: var(--amber); border-color: currentColor; }
+.scripts .badge.sc-output { color: var(--violet); border-color: currentColor; }
+.scripts .sc-src-note { margin-top: 14px; }
