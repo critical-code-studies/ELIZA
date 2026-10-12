@@ -10,12 +10,18 @@
   // Evidence is a line, found by pattern in a version's text (so it survives renumbering),
   // or a view (tab, b: Compare's other version).
   B.findings = [
-    { no: 'F1', kind: 'Version', cat: 'versions', level: 'key', title: 'The 1965 source breaks its input at “but” as well as at “.” and “,”',
-      text: 'In the recovered source, a word ends the part of the input being read when it is a full stop, a comma or BUT. The project counts “but” among the delimiters as what distinguishes 1965b from the earliest version, 1965a, which broke input at “.” and “,” only.',
-      ev: [{ v: '1965b', re: /\$BUT\$/, label: 'the test, in the 1965 source' }] },
-    { no: 'F2', kind: 'Version', cat: 'versions', level: 'key', title: 'NEWKEY is in the 1966 script and nowhere in the 1965 source',
-      text: 'The DOCTOR script printed in 1966 ends several rules with (NEWKEY), which sends ELIZA on to the next keyword. The word appears nowhere in the 1965 source: the script as printed calls on a function that the recovered program does not have. The project places NEWKEY, with a keyword stack, in the 1966 version, whose program is lost.',
-      ev: [{ v: '1966', re: /\(NEWKEY\)/, label: 'NEWKEY, in the 1966 script' }, { v: '1965b', tab: 'compare', b: '1966', label: 'Compare' }] }
+    { no: 'F1', kind: 'Version', cat: 'versions', level: 'key', title: 'ELIZA 1965b breaks its input at “but” as well as at “.” and “,”',
+      text: 'In the recovered source, a word ends the part of the input being read when it is a full stop, a comma or BUT. Inventing ELIZA (Table 1.1) dates the “but” delimiter to 1965b: the flowcharts of 1965a show “.” and “,” only.',
+      ev: [{ v: '1965b', re: /\$BUT\$/, label: 'the test, in the 1965b source' }] },
+    { no: 'F2', kind: 'Version', cat: 'versions', level: 'key', title: 'NEWKEY is in the DOCTOR script of 1966 and nowhere in the 1965b source',
+      text: 'DOCTOR as printed in 1966 ends several rules with (NEWKEY), which sends ELIZA on to the next keyword. The word appears nowhere in the 1965b source: the script as printed calls on a function the recovered program does not have. Inventing ELIZA (Table 1.1) places NEWKEY, with the keyword stack, in ELIZA 1966, whose program is lost.',
+      ev: [{ v: 'doctor', re: /\(NEWKEY\)/, label: 'NEWKEY, in DOCTOR (1966)' }] },
+    { no: 'F3', kind: 'Version', cat: 'program', level: 'key', title: 'ELIZA 1965b writes four of its replies into the program',
+      text: 'When no rule matches, the 1965b source prints one of four replies set in the program itself, not drawn from the script: PLEASE CONTINUE, HMMM, GO ON, PLEASE and I SEE (NOMATCH(1) to NOMATCH(4)). Inventing ELIZA (Table 1.1) records hard-coded messages for 1965b and for no later version.',
+      ev: [{ v: '1965b', re: /^NOMATCH\(1\)/, label: 'the four replies, in the 1965b source' }] },
+    { no: 'F4', kind: 'Version', cat: 'program', level: 'key', title: 'ELIZA 1965b edits its script through CHANGE, a function the 1966 paper does not describe',
+      text: 'The first deck of the 1965b source is CHANGE, entered from the main loop when the input is “+”: PLEASE INSTRUCT ME, then the commands TYPE, SUBST, APPEND, ADD, START, RANK and DISPLA on the script it holds. Inventing ELIZA (Table 1.1) calls it undocumented; from 1966 the script is edited by an EDIT function.',
+      ev: [{ v: '1965b', re: /^\s+ENTRY TO CHANGE\./, label: 'CHANGE’s entry' }, { v: '1965b', re: /CHANGE\.\(KEY,MYTRAN\)/, label: 'where the main loop calls it' }] }
   ];
   // A category is found from the words of a finding (the one with most matches), unless a cat: tag sets it
   B.findingCats = [

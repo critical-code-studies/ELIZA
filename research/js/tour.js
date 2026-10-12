@@ -11,13 +11,13 @@
   B.tours = {
     welcome: { title: 'Welcome to the ELIZA bench', stops: [
       { title: 'Welcome to the bench', v: '1965b', tab: 'read', focus: '#pick-a',
-        text: 'The bench holds ELIZA’s versions: the 1965 source as recovered, the 1966 DOCTOR script, and the versions known only from the record. Choose one here.' },
+        text: 'The bench holds ELIZA’s five versions, of which only 1965b’s source survives, and, apart, the scripts ELIZA ran, DOCTOR among them. Choose one here.' },
       { title: 'Reading the cards', v: '1965b', tab: 'read', find: /BEGIN MAJOR LOOP/, focus: '.ln.sel',
         text: 'The source as printed, card by card: labels at the left, a remark card (R) here marking the start of the major loop, the cards’ sequence numbers at the right. Click a name for where it is defined and used; the Key explains the marks.' },
       { title: 'Annotating together', v: '1965b', tab: 'read', find: /\$BUT\$/, focus: '#rd-selbar',
         text: 'Select a line (shift-click for a range) to annotate it, cite it or copy it. This one breaks the input at “.”, “,” and “but”. Annotations are signed with your initials and shared with the group through Hypothesis (⚙ Settings).' },
-      { title: 'The script', v: '1966', tab: 'read', find: /^\(SORRY/, focus: '.ln.sel',
-        text: 'The DOCTOR script as printed with the 1966 paper: each keyword with its decomposition and reassembly rules. Text ▸ The script’s keywords lists them all.' },
+      { title: 'A script', v: 'doctor', tab: 'read', find: /^\(SORRY/, focus: '.ln.sel',
+        text: 'DOCTOR as printed with the 1966 paper: each keyword with its decomposition and reassembly rules. A script is what ELIZA reads and runs, not a version of the program. Text ▸ The script’s keywords lists them all.' },
       { title: 'Versions and findings', v: '1965b', tab: 'genealogy', focus: '#tabs [data-tab="findings"]',
         text: 'Genealogy shows how the versions descend, the lost ones among them. Findings gathers what has been established, each with its evidence; My notes is your own tray for writing.' }
     ] }

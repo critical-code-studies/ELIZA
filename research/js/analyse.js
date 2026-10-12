@@ -5,7 +5,8 @@
  * can be named in discussion ("lens 3").
  *   1 Remarks and comments   the remark cards and the script's comments, searchable
  *   2 Names                  the decks, functions and statement labels, and where each is used
- *   3 SLIP and other calls   the functions called and not defined here, by how often
+ *   3 Calls into the layer below   the functions called and not defined here, and where the layer
+ *                                below defines them
  *   4 The script's keywords  each keyword's entry: its decompositions, and what refers to it
  */
 (function (root) {
@@ -76,19 +77,25 @@
     return function () { return [SW.tableBlock('Names the program defines', ['Name', 'Kind', 'Used', 'Defined at'], plain(rows))]; };
   }
 
-  // ---------- 3 SLIP and other calls ----------
+  // ---------- 3 calls into the layer below ----------
   function calls(b, el) {
-    var cs = Object.keys(b.sym).map(function (k) { return b.sym[k]; }).filter(function (s) { return s.kind === 'slip' || s.kind === 'external'; })
+    var L = SW.layers, lay = L ? L.of(b.v.id) : null, dn = L && lay ? L.below(lay) : null;
+    var cs = Object.keys(b.sym).map(function (k) { return b.sym[k]; }).filter(function (s) { return !s.defs.length && s.calls; })
       .sort(function (x, y) { return y.calls - x.calls || (x.name < y.name ? -1 : 1); });
-    if (!cs.length) return none(el, 'This version’s text calls no functions: it is a script.');
-    var rows = cs.map(function (s) { return [s.name, s.kind === 'slip' ? 'SLIP' : 'not defined here', s.calls, where(b, s.refs[0].file, s.refs[0].line)]; });
-    var c = wide(card('SLIP and other calls', cs.length + ' functions the program calls (NAME.(…)) and does not define. Those the project’s SLIP page names as SLIP’s are marked; the rest are SLIP’s or another library’s (HASH, YMATCH and ASSMBL sit in the SLIP listing but do ELIZA’s work). Click a name in Read for what it does.'));
-    c.appendChild(SW.table(['Function', 'Whose', 'Calls', 'First called at'], rows, { cls: ['mono', '', 'num', 'mono'] }));
+    if (!cs.length) return none(el, 'This text calls no function it does not define' + (dn ? '' : ', or it is the lowest layer') + '.');
+    var rows = cs.map(function (s) {
+      var r = L ? L.resolve(s.name, lay) : null;
+      return [s.name, s.calls, r ? { html: '<a href="#" data-xgo="' + SW.esc(r.v.id + '|' + r.s.p + '|' + r.s.n) + '">' + SW.esc(r.layer.label + ', ' + r.b.parts[r.s.p].src.split('/').pop() + ':' + r.s.n) + '</a>', text: r.layer.label + ', ' + r.b.parts[r.s.p].src.split('/').pop() + ':' + r.s.n, sort: 0 } : { html: '<span class="faint">not found below</span>', text: 'not found below', sort: 1 },
+              where(b, s.refs[0].file, s.refs[0].line)];
+    });
+    var found = rows.filter(function (r) { return r[2].sort === 0; }).length;
+    var c = wide(card('Calls into the layer below', cs.length + ' functions this text calls and does not define' + (dn ? ', looked up in ' + dn.label + ' (the version chosen in it, under Read ▾): ' + found + ' found there' : '') + '. Click a definition to jump to it; ◀ comes back.'));
+    c.appendChild(SW.table(['Function', 'Calls', 'Defined in', 'First called at'], rows, { cls: ['mono', 'num', 'mono', 'mono'] }));
     el.appendChild(c); linkRows(c);
     var tc = card('Most called', 'The functions called most often.');
     tc.insertAdjacentHTML('beforeend', bars(cs.slice(0, 15).map(function (s) { return [s.name, s.calls]; })));
     el.appendChild(tc);
-    return function () { return [SW.tableBlock('SLIP and other calls', ['Function', 'Whose', 'Calls', 'First called at'], plain(rows))]; };
+    return function () { return [SW.tableBlock('Calls into the layer below', ['Function', 'Calls', 'Defined in', 'First called at'], plain(rows))]; };
   }
 
   // ---------- 4 the script's keywords ----------
@@ -132,7 +139,7 @@
   SW.BENCH.lenses = {
     list: [[1, 'Remarks and comments', 'Every remark card and script comment, searchable'],
            [2, 'Names', 'The decks, functions and labels the program defines, and their use'],
-           [3, 'SLIP and other calls', 'The functions called and not defined here, by how often'],
+           [3, 'Calls into the layer below', 'The functions called and not defined here, and where SLIP defines them'],
            [4, 'The script’s keywords', 'Each keyword’s entry: its rules, and what sends to it']],
     menus: { text: [['The program', [1, 2, 3]], ['The script', [4]]] },
     one: { 1: remarks, 2: names, 3: calls, 4: keywords },

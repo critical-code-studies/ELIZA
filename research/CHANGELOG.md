@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.1 (2026-10-12)
+
+- Layers, after an IDE: Scripts run on ELIZA, which calls SLIP. Read ▾ lists each layer and its versions; the version picker is grouped by layer. A name used in a layer and defined in the one below opens in its pop-up with the definition's first lines and Jump to…; ◀ ▶ (Alt+← and Alt+→) go back and forward; a breadcrumb shows layer › version › file › deck › line; links carry the stack. A script's MEMORY, NONE and = open the ELIZA code that acts on them; NEWKEY, PRE and DLIST say they are not in ELIZA 1965b. The versions as Inventing ELIZA compares them (Table 1.1), with DOCTOR apart as a script. SLIP added (the listing, MAD and FAP, transcribed by Arthur Schwarz, with three routines reconstructed in 2024), with its licence; the calls lens finds 35 of ELIZA's 37 calls in it. Findings F3 (hard-coded replies) and F4 (CHANGE).
+
 ## 0.1.0 (2026-10-12)
 
 - The bench, from bench-kit's template (bench-kit 0.35.1), for ELIZA's texts: the 1965 source as recovered (`sources/ELIZA-1965b.mad`) and the DOCTOR script printed in 1966 (`sources/DOCTOR.txt`), with 1965a, 1967 and 1968+ as records of lost versions.

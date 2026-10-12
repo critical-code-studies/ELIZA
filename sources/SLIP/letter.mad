@@ -1,0 +1,46 @@
+            R --------------------------------------------------------------
+            R Function NUMBER
+            R
+            R Return categories of given six BCD characters.
+            R Categories are -
+            R   1 =    equals
+            R   2 -    minus
+            R   3 +    plus
+            R   4 A-Z  letter
+            R   5 .    period
+            R   6 )    right parenthesis
+            R   7 $    dollar
+            R   8 *    asterisk
+            R   9      space
+            R  10 (    left parenthesis
+            R  11 /    slash
+            R  12 0-9  digit
+            R  13 ,    comma
+            R  14 '    apostrophe
+            R is emptied.
+            R
+            R param CHARS - the word containing 6 BCD characters
+            R Return a word containing the equivalent categories for each
+            R
+            R Authors: Anthony Hay & Arthur Schwarz
+            R Date:    Nov. 27, 2024
+            R --------------------------------------------------------------
+             EXTERNAL FUNCTION (CHARS)
+             NORMAL MODE IS INTEGER
+             DIMENSION MAP(64)
+             ENTRY TO LETTER.
+             VECTOR VALUES MAP=
+            1    12,  12,  12,  12,  12,  12,  12,  12,
+            2    12,  12,   4,   1,  14,   4,   4,   4,
+            3     3,   4,   4,   4,   4,   4,   4,   4,
+            4     4,   4,   4,   5,   6,   4,   4,   4,
+            5     2,   4,   4,   4,   4,   4,   4,   4,
+            6     4,   4,   4,   7,   8,   4,   4,   4,
+            7     9,  11,   4,   4,   4,   4,   4,   4,
+            8     4,   4,   4,  13,  10,   4,   4,   4
+             RESULT = 0
+             THROUGH END, FOR INDEX = 1, 1, INDEX .G. 6
+                RESULT = RESULT*64 + MAP(KGETBL.(INDEX, CHARS) .A. 77K)
+END          CONTINUE
+             FUNCTION RETURN RESULT
+             END OF FUNCTION
