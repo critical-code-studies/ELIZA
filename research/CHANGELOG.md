@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.11 (2026-10-12)
+
+- The scripts catalogue says what its types mean: SCRIPT, a copy of the script survives; OUTPUT, a copy of a conversation it generated; NONE, only the name, from a file or directory listing.
+
 ## 0.1.10 (2026-10-12)
 
 - The scripts catalogue (Read ▾ › Scripts): the 35 scripts and conversations of Inventing ELIZA's Table 1.2, as printed, with search, filters by type, source and holding, sorting by number, name and year; DOCTOR opens in Read, and the scripts Table 1.1 cites as evidence link to ELIZA 1967 and 1968+.

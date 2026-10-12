@@ -58,7 +58,7 @@
   }
   var SOURCES = [['', 'Any'], ['archive', 'The archive'], ['taylor68', 'Taylor, “Automated Tutoring and Its Discontents”'], ['taylor-eliza', 'Taylor, “The ELIZA Program”'],
                  ['harvard', 'Harvard Review (1965)'], ['cacm', 'Weizenbaum, CACM (1966)'], ['none', 'Not given']];
-  var TYPES = [['', 'All'], ['SCRIPT', 'Script'], ['OUTPUT', 'Output'], ['NONE', 'None']];
+  var TYPES = [['', 'All'], ['SCRIPT', 'Script survives'], ['OUTPUT', 'Output survives'], ['NONE', 'Name only']];
   var MONTHS = { January: 1, February: 2, March: 3, April: 4, May: 5, June: 6, July: 7, August: 8, September: 9, October: 10, November: 11, December: 12 };
   function yearKey(y) {
     var m = /^(\w+) (\d+), (\d{4})$/.exec(y);
@@ -101,7 +101,7 @@
     view.innerHTML = '<div class="pad scripts">' +
       '<h2>The scripts</h2>' +
       '<p class="hint flow">The scripts ELIZA ran and the conversations run on them, as <i>Inventing ELIZA</i> (Ciston et al. 2026, Table 1.2) documents them: those extant in Weizenbaum’s papers at MIT, mentioned in articles, or referenced elsewhere. The book’s authors are sure there are many others. ' +
-      'Type, as the table gives it: SCRIPT, the script; OUTPUT, a conversation run on it; NONE, known by name. Archive: whether it is in the archive. ' + held + ' of ' + SCRIPTS.length + ' can be read here, under Read ▾ › Scripts.</p>' +
+      'Type: SCRIPT, a copy of the script survives; OUTPUT, a copy of a conversation it generated survives; NONE, neither survives, and the name is known only from a file or directory listing. Archive: whether it is in the archive. ' + held + ' of ' + SCRIPTS.length + ' can be read here, under Read ▾ › Scripts.</p>' +
       '<div class="sc-filters">' +
         '<input type="search" id="sc-q" placeholder="Find a script, a word, a year" value="' + esc(f.q) + '" aria-label="Find a script">' +
         '<span class="seg-btns" role="group" aria-label="Type">' + TYPES.map(function (t) { return '<button class="btn' + (f.type === t[0] ? ' on' : '') + '" data-sc-type="' + t[0] + '">' + t[1] + '</button>'; }).join('') + '</span>' +
