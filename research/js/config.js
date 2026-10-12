@@ -10,7 +10,7 @@
     base: 'https://findingeliza.org/research/',
     repo: 'https://github.com/critical-code-studies/ELIZA',
     // references to the sources (kit/refs.js): [REF: EL65B, ELIZA-1965b.mad:120], the files on GitHub under sources/
-    refs: { names: { '1965b': 'EL65B', doctor65t100: 'DOC65-T100', doctor65t102: 'DOC65-T102', doctor: 'DOC66', spacks68c: 'SPACKS-C68', slip1965: 'SLIP65' }, prefix: 'EL-', dir: 'sources' },
+    refs: { names: { '1965b': 'EL65B', doctor65t100: 'DOC65-T100', doctor65t102: 'DOC65-T102', doctor: 'DOC66', 'doctor65c-news': 'DOC-C65-NEWS', spacks68c: 'SPACKS-C68', slip1965: 'SLIP65' }, prefix: 'EL-', dir: 'sources' },
     forks: [['script', 'Scripts (run on ELIZA)'], ['eliza', 'ELIZA (calls SLIP)'], ['slip', 'SLIP'], ['output', 'Outputs (conversations)']],   // the version picker's groups: the layers (js/layers.js)
     start: '1965b',
     // the code in layers, top first (js/layers.js): a script runs on ELIZA, which calls SLIP. A
@@ -85,7 +85,7 @@
     examples: { date: 'e.g. 1966-01, or 1965', archive: 'e.g. MIT Libraries, Weizenbaum papers', versions: 'e.g. 1965b, doctor',
                 refs: 'e.g. [REF: EL65B, ELIZA-1965b.mad:248]', publisher: 'e.g. Communications of the ACM', finding: 'F1' },
     // the first version is lost, and the tree grows from it
-    stemma: { root: '1965a', lostBetween: {}, skip: ['doctor', 'doctor65t100', 'doctor65t102', 'spacks68c', 'slip1965'], lostOnTrunk: true },   // the scripts and the library are not in the program's descent
+    stemma: { root: '1965a', lostBetween: {}, skip: ['doctor', 'doctor65t100', 'doctor65t102', 'spacks68c', 'doctor65c-news', 'slip1965'], lostOnTrunk: true },   // the scripts and the library are not in the program's descent
     edition: {
       built: function () { return ['Read as', 'MAD-SLIP cards and an ELIZA script, divided into lines']; },
       layout: function (raw) { return String(raw); },

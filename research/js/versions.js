@@ -69,6 +69,10 @@
       summary: 'The DOCTOR script as printed in the appendix to Weizenbaum’s 1966 paper in Communications of the ACM, transcribed by Anthony C. Hay: keywords with their decomposition and reassembly rules, the Rogerian therapist ELIZA was best known for. A script, not a version of the program: the 1966 version ran it. Two more DOCTOR scripts, successive drafts, are on a printout in Weizenbaum’s papers (.TAPE. 100 and .TAPE. 102); they are not yet held here.',
       build: files('', ['DOCTOR.txt']) },
     // the outputs: conversations ELIZA produced, named by script and date; in no layer
+    { id: 'doctor65c-news', label: 'DOCTOR conversation, 1965 (terrible news)', date: '1965', sort: 19650100, authors: JW,
+      fork: 'output', status: 'recovered', medium: 'Output (typed conversation, 32 copies)',
+      summary: 'A typed conversation in which the human, “Doctor, I have terrible news”, tells of a computer program at M.I.T. that will ruin them both, and argues that no computer could converse like a man; the program’s replies are indented. From the folder “Computer conversations, 1965” in Weizenbaum’s papers at MIT (handle 1721.3/201700), in 32 copies of one undated page. The script is not named; the replies are DOCTOR’s in manner. Read by machine across all copies, the majority reading taken for each line, and checked against the first copy.',
+      build: files('outputs/', ['DOCTOR-1965-terrible-news.txt']) },
     { id: 'spacks68c', label: 'SPACKS conversation, 1968', date: '1968', sort: 19680102, authors: 'A student and ELIZA, printed by Edwin F. Taylor',
       fork: 'output', status: 'recovered', medium: 'Output (conversation, as printed)',
       summary: 'A student’s conversation with ELIZA running the SPACKS script, which discusses a line of Barry Spacks’s poem “Freshmen”, as Edwin F. Taylor printed it in “Automated Tutoring and Its Discontents” (American Journal of Physics, 1968). The script does not survive. Transcribed by Jeff Shrager for elizagen.org. Inventing ELIZA, Table 1.1, cites SPACKS as evidence for ELIZA 1968+.',

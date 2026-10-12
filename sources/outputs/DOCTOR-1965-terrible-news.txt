@@ -1,0 +1,66 @@
+; DOCTOR conversation, 1965 ("Doctor, I have terrible news"). A typed conversation in which the
+; human tells the doctor of a computer program at M.I.T., with the program's replies indented.
+; The script is not named on the page; the replies are DOCTOR's in manner (an inference).
+; Weizenbaum's papers at MIT, folder "Computer conversations, 1965" (dome.mit.edu, handle
+; 1721.3/201700, file 02-000311052.pdf): 32 copies of the same page (pages 2-33), most of them
+; duplicator (ditto) copies; page 1 is the folder. No date or header is on the page.
+;
+; Each of the human's lines ends with a mark of two small raised dots, transcribed "..".
+; Transcribed 2026-10-12 by machine reading (macOS Vision) of all 32 copies, taking for each
+; line the reading most of the copies agree on, then checked against page 2 by eye; the
+; replies' indentation follows the page. Commas and periods print small on the page.
+
+Doctor, I have terrible news..
+     You say you have terrible news
+Yes, there is a computer program at M.I.T. that'll ruin us..
+     Why do you say that
+I have seen it working..
+     You say you have seen it working
+Its frightening - you must see it..
+     You think I must see it
+It listens to patients chatter just as you and I listen..
+     You think I and you listen
+No, not usually - no need to get nasty though..
+     Why do you say that
+Someone might hear us - don't you care..
+     You think I care
+You sound depressed to me..
+     In your phantasy - perhaps we sound depressed to each other
+Yes - perhaps..
+     I understand
+I do too..
+     You say you do too
+We are both in the same boat with respect to that computer..
+     Lets continue to talk about you - shall we
+You are a comfort..
+     What makes you think I am a comfort
+At a time like this you want to talk about me..
+     Why do you think I want to talk about you
+Because you share my feelings about that damned computer..
+     What does that suggest to you
+That, of course, you hate computers too..
+     You think I hate computers too
+Why not, they're hardly human, are they..
+     Perhaps thats what we are here to find out
+No computer could converse as you can, for example..
+     Oh
+I cant understand how anyone could be fooled by a mere machine..
+     Cant you really
+No, after all there is nothing creative about a computer program..
+     You are being negative
+I am convinced I am correct..
+     Are you worried to have been convinced you are correct
+No, not in the least. Not at all. Not even a little..
+     You are being negative
+You said you agreed with me, didn't you..
+     Is that what you heard me say
+Why dont you try to dissuade me - computers diddle with numbers, that's all..
+     You wish me to try to dissuade you
+You cant..
+     You think I cant
+For example, could a computer in a conversation like this raise a new topic..
+     You seem to have avoided speaking of your parents altogether
+Precisely as you just did..
+     You think I just did
+Yes, and that's what shows the difference between a man and a computer..
+     I see

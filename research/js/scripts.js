@@ -24,7 +24,7 @@
     { n: 7, file: 'COLOR', desc: 'Script to ask about colors of things.', type: ['SCRIPT', 'OUTPUT'], ref: 'Archive', archive: 'Yes', year: '1967' },
     { n: 8, file: 'COMMNT', desc: HINTS, type: ['NONE'], ref: TAYLOR + ' (WATSNU script)', archive: '', year: '1968' },
     { n: 9, file: 'DOC', desc: '', type: ['NONE'], ref: '', archive: 'No', year: 'December 18, 1967' },
-    { n: 10, file: 'DOCTOR', desc: 'The famous Rogerian DOCTOR script.', type: ['SCRIPT', 'OUTPUT'], ref: '“Eliza,” the CACM 1966 paper', archive: 'Yes', year: '1966', held: ['doctor65t100', 'doctor65t102', 'doctor'] },
+    { n: 10, file: 'DOCTOR', desc: 'The famous Rogerian DOCTOR script.', type: ['SCRIPT', 'OUTPUT'], ref: '“Eliza,” the CACM 1966 paper', archive: 'Yes', year: '1966', held: ['doctor65t100', 'doctor65t102', 'doctor', 'doctor65c-news'] },
     { n: 11, file: 'ELEVTR', desc: 'Discusses the physics of an elevator.', type: ['OUTPUT'], ref: TAYLOR + ' (WATSNU)', archive: 'Yes?', year: '1968' },
     { n: 12, file: 'F29', desc: 'Appears to be an early version of the FIGURE mathematical definition script.', type: ['SCRIPT'], ref: 'Archive', archive: 'Yes', year: 'December 26, 1967', evidence: '1967' },
     { n: 13, file: 'FIGURE', desc: 'Appears to be a late version of F29 extended with many more definitions and responses.', type: ['SCRIPT'], ref: 'Archive', archive: 'Yes', year: 'January 9, 1968', evidence: '1967' },

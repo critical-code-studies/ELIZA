@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.13 (2026-10-12)
+
+- A second output: DOCTOR conversation, 1965 (terrible news) [DOC-C65-NEWS], the typed conversation from Weizenbaum's papers (handle 1721.3/201700), read by machine across its 32 copies and checked against the first.
+
 ## 0.1.12 (2026-10-12)
 
 - The scripts held as copies named by script, year and the identifier the document gives them: DOCTOR 1965 (TAPE 100) [DOC65-T100] and (TAPE 102) [DOC65-T102], printed the same day and not ordered, beside DOCTOR 1966 (CACM) [DOC66]. Outputs, conversations ELIZA produced, are a group of their own, read as text: the SPACKS conversation, 1968 [SPACKS-C68]. A script without START opens with its first list. The catalogue opens each copy.
