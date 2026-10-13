@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.52 (2026-10-14)
+
+- The kit at 0.53.7: hovering a star shows the rating a click would give.
+
 ## 0.1.51 (2026-10-14)
 
 - The kit at 0.53.6: unrated stars fainter.
