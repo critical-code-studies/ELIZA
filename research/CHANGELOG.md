@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.27 (2026-10-13)
+
+- bench-kit 0.43.1: the MAD contractions written out mark what the manual warns each is not; written short contracts whole statements, and only where a statement begins (NORMAL MODE IS INTEGER to N'R, never NORMAL MODE IS I'R), leaving PRINT COMMENT and EXTERNAL FUNCTION, which have no contraction, as they are.
+
 ## 0.1.26 (2026-10-13)
 
 - The MAD statement table: contractions expand from Appendix A of the 1966 MAD manual, cited.
