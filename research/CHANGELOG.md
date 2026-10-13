@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.49 (2026-10-14)
+
+- The kit at 0.53.4: unrated stars drawn as outlines, rated stars filled in gold.
+
 ## 0.1.48 (2026-10-14)
 
 - The kit at 0.53.3: in Paratexts, an embedded player or a video fills the width of the view.
