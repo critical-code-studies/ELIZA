@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.21 (2026-10-13)
+
+- bench-kit 0.40.1: the stars on a paratext's card rate it (a click on one was read as a click on a collection); a rating shows at once on the card and in the open panel, averages too, and is not undone by an earlier save returning. From 0.40.0: the paratext panel tightened, its record folded to six fields, reactions folded away; a double-click in a find field selects all of it.
+
 ## 0.1.20 (2026-10-13)
 
 - On bench-kit 0.39.1: outputs are files read as text by their role, not their folder, and the comparisons read them so; a bar offers to reload when a newer release is live.
