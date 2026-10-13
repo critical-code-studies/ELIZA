@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.48 (2026-10-14)
+
+- The kit at 0.53.3: in Paratexts, an embedded player or a video fills the width of the view.
+
 ## 0.1.47 (2026-10-13)
 
 - The kit at 0.53.2: in Paratexts, Download follows the reading showing (a transcript, not its recording).
