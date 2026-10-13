@@ -65,7 +65,41 @@
     columns: (function () {
       var L = { label: [1, 11], flag: { at: 12, cont: /[1-9]/, remark: /R/ }, text: [13, 80], seq: [81, 86] };
       return { layout: L, files: [[/\.mad$/i, L], [/\.txt$/i, null]],
-               note: 'Columns are those of this edition of the listings, which sits one column right of the printout in the statement field, with the sequence numbers at 81 to 86 where the printout has them at 75; counted against the scan they will not agree.' };
+               note: 'Columns are those of this edition of the listings, which sits one column right of the printout in the statement field, with the sequence numbers at 81 to 86 where the printout has them at 75; counted against the scan they will not agree.',
+               // MAD abbreviates a statement by its first and last letter with a prime between. The
+               // table is Appendix A of the manual, which also says what each one is not, so none of
+               // them is open: P'T is PRINT FORMAT and never PRINT COMMENT.
+               expandSource: 'The Michigan Algorithm Decoder (The MAD Manual), Revised Edition 1966, Appendix A, “Allowable Abbreviations in MAD”, pp. 103–104 (paratext P-MJPTL)',
+               expand: {
+                 "B'E": ['BACKSPACE FILE OF TAPE'], "B'N": ['BOOLEAN'], "C'E": ['CONTINUE'],
+                 "D'R": ['DEFINE BINARY OPERATOR'], "D'N": ['DIMENSION'], "E'L": ['END OF CONDITIONAL'],
+                 "E'N": ['END OF FUNCTION'], "E'M": ['END OF PROGRAM'], "E'O": ['ENTRY TO'],
+                 "E'E": ['ERASABLE'], "F'F": ['FOR VALUES OF'], "F'T": ['FLOATING POINT'],
+                 "F'E": ['FORMAT VARIABLE'], "F'R": ['FULL SYMBOL TABLE VECTOR'], "F'N": ['FUNCTION RETURN'],
+                 "I'O": ['IF LOAD POINT TRANSFER TO'], "I'R": ['INTEGER'], "I'N": ['INTERNAL FUNCTION'],
+                 "L'F": ['LISTING OFF'], "L'N": ['LISTING ON'], "L'T": ['LOOK AT FORMAT'],
+                 "M'R": ['MODE NUMBER'], "M'E": ['MODE STRUCTURE'], "N'S": ['NORMAL MODE IS'],
+                 "N'N": ['NORMAL MODE IS BOOLEAN'], "N'T": ['NORMAL MODE IS FLOATING POINT'],
+                 "N'E": ['NORMAL MODE IS FUNCTION NAME'], "N'R": ['NORMAL MODE IS INTEGER'],
+                 "N'L": ['NORMAL MODE IS STATEMENT LABEL'], "O'R": ['OR WHENEVER'], "O'E": ['OTHERWISE'],
+                 "P'R": ['PARAMETER'], "P'T": ['PRINT FORMAT'], "P'S": ['PRINT RESULTS'],
+                 "P'N": ['PROGRAM COMMON'], "R'A": ['READ AND PRINT DATA'], "R'E": ['READ BINARY TAPE'],
+                 "R'T": ['READ FORMAT'], "R'F": ['REFERENCES OFF'], "R'N": ['REFERENCES ON'],
+                 "S'S": ['SAME SEQUENCE AS'], "S'A": ['SAVE DATA'], "S'N": ['SAVE RETURN'],
+                 "S'O": ['SET LIST TO'], "S'E": ['SET LOW DENSITY TAPE'], "S'L": ['STATEMENT LABEL'],
+                 "S'R": ['SYMBOL TABLE VECTOR'], "T'H": ['THROUGH'], "T'O": ['TRANSFER TO'],
+                 "U'E": ['UNLOAD TAPE'], "V'S": ['VECTOR VALUES'], "W'R": ['WHENEVER'],
+                 "W'E": ['WRITE BINARY TAPE']
+               },
+               // what the manual warns each abbreviation is NOT, shown on the mark
+               expandNot: {
+                 "B'E": ['BACKSPACE RECORD OF TAPE'], "D'R": ['DEFINE UNARY OPERATOR'],
+                 "E'N": ['EXTERNAL FUNCTION', 'ERROR RETURN'], "E'E": ['EXECUTE', 'EQUIVALENCE'],
+                 "F'E": ['FUNCTION NAME'], "P'T": ['PRINT COMMENT', 'PUNCH FORMAT', 'PRINT ON LINE FORMAT'],
+                 "P'S": ['PRINT BCD RESULTS', 'PRINT OCTAL RESULTS'], "R'A": ['READ DATA', 'RESTORE DATA'],
+                 "R'E": ['READ BCD TAPE', 'REWIND TAPE'], "R'N": ['RESTORE RETURN'],
+                 "S'E": ['SET HIGH DENSITY TAPE'], "W'E": ['WRITE BCD TAPE']
+               } };
     })(),                                         // a transcriber's note in an output, read as text (kit/genealogy.js)
     caseFold: true,
     entry: 'ELIZA',                                        // the deck where the program starts (Functional overview)
