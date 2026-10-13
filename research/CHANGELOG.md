@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.23 (2026-10-13)
+
+- bench-kit 0.41.1: switching to a translation shows the translation, not the original.
+
 ## 0.1.22 (2026-10-13)
 
 - bench-kit 0.41.0: a paratext can carry a translation beside the original, switchable in the item view.
