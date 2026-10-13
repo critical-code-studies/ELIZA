@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.28 (2026-10-13)
+
+- bench-kit 0.44.0: paratexts take a type (what the item is: 51 kinds, from memo, thesis, working paper and electronic mail to program listing, punched cards and oral history), with a Type column, filter and chip, and exports that carry it; the list's rows in alternate shades; a link shows as video, audio, an image, a PDF or a page; two-state switches on the toolbars, Normal / Expand for contractions and Kintsugi / Leiden for a paratext's gaps.
+
 ## 0.1.27 (2026-10-13)
 
 - bench-kit 0.43.1: the MAD contractions written out mark what the manual warns each is not; written short contracts whole statements, and only where a statement begins (NORMAL MODE IS INTEGER to N'R, never NORMAL MODE IS I'R), leaving PRINT COMMENT and EXTERNAL FUNCTION, which have no contraction, as they are.
