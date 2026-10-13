@@ -31,7 +31,7 @@
     var t = String(raw), note = /^\s*;/.test(t);
     return { labels: [], code: note ? '' : t.replace(/\s+$/, ''), comment: note ? t : '', kind: note ? 'comment' : t.trim() ? 'code' : 'blank' };
   }
-  function isOutput(src) { return /^outputs\//.test(src); }
+  function isOutput(part) { return part.role === 'text'; }   // an output, read as text (kit/versionlist.js)
   // where a script's keywords begin: after the line START, or, in a copy without one, after the
   // first list, the opening message (the tapes of 1965)
   SW.scriptStart = function (ls) {
@@ -55,12 +55,13 @@
   SW.SLIP = { SEQRDR: 1, SEQLR: 1, POPTOP: 1, POPBOT: 1, NEWTOP: 1, NEWBOT: 1, LSSCPY: 1, SUBST: 1, IRALST: 1 };
 
   // where a file stands: ELIZA's own, the SLIP listing, or SLIP's routines reconstructed in 2024
-  function homeOf(src) { return /^SLIP\/SLIP-/.test(src) ? 'SLIP' : /^SLIP\//.test(src) ? 'reconstructed' : isOutput(src) ? 'output' : M.isScript(src) ? 'script' : 'ELIZA'; }
+  function isOutputSrc(src) { return /^outputs\//.test(src); }
+  function homeOf(src) { return /^SLIP\/SLIP-/.test(src) ? 'SLIP' : /^SLIP\//.test(src) ? 'reconstructed' : isOutputSrc(src) ? 'output' : M.isScript(src) ? 'script' : 'ELIZA'; }
   SW.homeOf = homeOf;
 
   function index(b) {
     b.lines = b.parts.map(function (part) { return splitLines(part.raw); }).map(function (rs, pi) {
-      var out = isOutput(b.parts[pi].src), script = !out && M.isScript(b.parts[pi].src), lang = out ? 'text' : script ? 'script' : 'mad', deck = null;
+      var out = isOutput(b.parts[pi]), script = !out && M.isScript(b.parts[pi].src), lang = out ? 'text' : script ? 'script' : 'mad', deck = null;
       return rs.map(function (r, i) {
         if (!script) { var d = M.deckOf(r); if (d) { lang = d.lang === 'FAP' ? 'fap' : 'mad'; deck = d.name; } }
         lineInfo.set(r, { lang: lang, deck: deck });

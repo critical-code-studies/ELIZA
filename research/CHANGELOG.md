@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.20 (2026-10-13)
+
+- On bench-kit 0.39.1: outputs are files read as text by their role, not their folder, and the comparisons read them so; a bar offers to reload when a newer release is live.
+
 ## 0.1.19 (2026-10-13)
 
 - On bench-kit 0.38.0: the layers (kit/layers.js) and the scripts catalogue (kit/catalogue.js) are the kit's now, and a jump lands at its line because Read draws a version there. The catalogue marks each entry as in Inventing ELIZA (IE, Table 1.2) or not, with a filter, and lists two scripts found since, MANY and the unnamed script of 1 October 1964. A subset chosen in Read ▾ opens the catalogue on it.

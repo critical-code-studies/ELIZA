@@ -80,43 +80,43 @@
     { id: 'doctor65c-news', label: 'DOCTOR conversation, 1965 (terrible news)', date: '1965', sort: 19650100, authors: JW,
       fork: 'output', status: 'recovered', medium: 'Output (typed conversation, 32 copies)',
       summary: 'A typed conversation in which the human, “Doctor, I have terrible news”, tells of a computer program at M.I.T. that will ruin them both, and argues that no computer could converse like a man; the program’s replies are indented. From the folder “Computer conversations, 1965” in Weizenbaum’s papers at MIT (handle 1721.3/201700), in 32 copies of one undated page. The script is not named; the replies are DOCTOR’s in manner. Read by machine across all copies, the majority reading taken for each line, and checked against the first copy.',
-      build: files('outputs/', ['DOCTOR-1965-terrible-news.txt']) },
+      build: files('outputs/', [{ src: 'DOCTOR-1965-terrible-news.txt', role: 'text' }]) },
     { id: 'help64c-s', label: 'HELP conversation, 11 June 1964 (student)', date: '11 June 1964', sort: 19640611, authors: JW,
       fork: 'output', status: 'recovered', medium: 'Output (typed copy and ditto)',
       summary: 'Typed “Computer Output - June 11, 1964 - Program HELP”: a STUDENT and a PROF, each turn in parentheses; the student speaks of “that lovely program at PROJECT MAC”. A typescript with corrections and a ditto copy of it (Weizenbaum’s papers at MIT, handle 1721.3/201704). The date is typed on the copies, not printed by the machine; it is earlier than ELIZA’s usual dating. Transcribed from the scan, 12 October 2026, unchecked.',
-      build: files('outputs/', ['HELP-1964-06-11-student.txt']) },
+      build: files('outputs/', [{ src: 'HELP-1964-06-11-student.txt', role: 'text' }]) },
     { id: 'help64c-p', label: 'HELP conversation, 11 June 1964 (patient)', date: '11 June 1964', sort: 19640611.1, authors: JW,
       fork: 'output', status: 'recovered', medium: 'Output (typed copy and ditto)',
       summary: 'Typed “Computer output - June 11, 1964 - Program HELP”: a PATIENT and a DOCTOR, each turn in parentheses, beginning “I AM VERY DEPRESSED”. A typescript with corrections and a ditto copy (handle 1721.3/201705). Transcribed from the scan, 12 October 2026, unchecked.',
-      build: files('outputs/', ['HELP-1964-06-11-patient.txt']) },
+      build: files('outputs/', [{ src: 'HELP-1964-06-11-patient.txt', role: 'text' }]) },
     { id: 'c641001', label: 'Conversation, 1 October 1964 (very depressed)', date: '1 October 1964', sort: 19641001, authors: JW,
       fork: 'output', status: 'recovered', medium: 'Output (CTSS printout, hand-edited, and three typed copies)',
       summary: 'A CTSS session logged in on 1 October 1964: resume oplsep, (readf 69$), the script’s lists printed as it loads (among them one named HELP), the greeting HOW DO YOU DO - PLEASE SIT DOWN AT THE TYPEWRITER, and a conversation beginning “I am very depressed”. The printout is edited by hand and three typed copies follow the edits (handle 1721.3/201701). The script is not named; that it is HELP is an inference from the list. Transcribed from the scan, 12 October 2026, unchecked.',
-      build: files('outputs/', ['CONVERSATION-1964-10-01-very-depressed.txt']) },
+      build: files('outputs/', [{ src: 'CONVERSATION-1964-10-01-very-depressed.txt', role: 'text' }]) },
     { id: 'doctor65c-0305', label: 'DOCTOR conversation, 5 March 1965', date: '5 March 1965', sort: 19650305, authors: JW,
       fork: 'output', status: 'recovered', medium: 'Output (printout, hand-edited, and two typed copies)',
       summary: 'A conversation beginning “Doctor, I am terribly depressed”, dated in pencil “Conversation March 5/65”: a printout edited by hand (both sides of the conversation are rewritten) and two typed copies that give the edited text (handle 1721.3/201702). The script is not named; DOCTOR is inferred. Transcribed from the scan, 12 October 2026, unchecked.',
-      build: files('outputs/', ['DOCTOR-1965-03-05-conversation.txt']) },
+      build: files('outputs/', [{ src: 'DOCTOR-1965-03-05-conversation.txt', role: 'text' }]) },
     { id: 'doctor65c-0322-draft', label: 'DOCTOR conversation, 22 March 1965 (men, typescript draft)', date: '22 March 1965', sort: 19650322, authors: JW,
       fork: 'output', status: 'recovered', medium: 'Output (typescript draft)',
       summary: 'The first of four versions of the conversation beginning “Men are all alike” (handle 1721.3/201703, page 2): a typescript on watermarked paper, shorter than the others and worded differently (“WHY THE UNCERTAIN TONE”, “You are very agressive”). The four are listed in page order, which does not say which came first. The folder is dated 22 March 1965; the script is not named, DOCTOR is inferred. Transcribed from the scan, 12 October 2026, unchecked.',
-      build: files('outputs/', ['DOCTOR-1965-03-22-men-draft.txt']) },
+      build: files('outputs/', [{ src: 'DOCTOR-1965-03-22-men-draft.txt', role: 'text' }]) },
     { id: 'doctor65c-0322-ditto', label: 'DOCTOR conversation, 22 March 1965 (men, ditto)', date: '22 March 1965', sort: 19650322.1, authors: JW,
       fork: 'output', status: 'recovered', medium: 'Output (ditto)',
       summary: 'The second version (pages 3–4): a ditto copy, close to the dialogue Weizenbaum published in 1966. The four are listed in page order, which does not say which came first. The folder is dated 22 March 1965; the script is not named, DOCTOR is inferred. Transcribed from the scan, 12 October 2026, unchecked.',
-      build: files('outputs/', ['DOCTOR-1965-03-22-men-ditto.txt']) },
+      build: files('outputs/', [{ src: 'DOCTOR-1965-03-22-men-ditto.txt', role: 'text' }]) },
     { id: 'doctor65c-0322-print', label: 'DOCTOR conversation, 22 March 1965 (men, printout)', date: '22 March 1965', sort: 19650322.2, authors: JW,
       fork: 'output', status: 'recovered', medium: 'Output (printout)',
       summary: 'The third version (page 5): a terminal printout, the program’s own output; “Me are all alike” is corrected by hand to “Men”, and it keeps marks that look like CTSS’s erase character (toh""""other). The four are listed in page order, which does not say which came first. The folder is dated 22 March 1965; the script is not named, DOCTOR is inferred. Transcribed from the scan, 12 October 2026, unchecked.',
-      build: files('outputs/', ['DOCTOR-1965-03-22-men-printout.txt']) },
+      build: files('outputs/', [{ src: 'DOCTOR-1965-03-22-men-printout.txt', role: 'text' }]) },
     { id: 'doctor65c-0322-typed', label: 'DOCTOR conversation, 22 March 1965 (men, typed copy)', date: '22 March 1965', sort: 19650322.3, authors: JW,
       fork: 'output', status: 'recovered', medium: 'Output (typed copy)',
       summary: 'The fourth version (pages 6–7): a typed copy with corrections struck over in black. The four are listed in page order, which does not say which came first. The folder is dated 22 March 1965; the script is not named, DOCTOR is inferred. Transcribed from the scan, 12 October 2026, unchecked.',
-      build: files('outputs/', ['DOCTOR-1965-03-22-men-typed.txt']) },
+      build: files('outputs/', [{ src: 'DOCTOR-1965-03-22-men-typed.txt', role: 'text' }]) },
     { id: 'spacks68c', label: 'SPACKS conversation, 1968', date: '1968', sort: 19680102, authors: 'A student and ELIZA, printed by Edwin F. Taylor',
       fork: 'output', status: 'recovered', medium: 'Output (conversation, as printed)',
       summary: 'A student’s conversation with ELIZA running the SPACKS script, which discusses a line of Barry Spacks’s poem “Freshmen”, as Edwin F. Taylor printed it in “Automated Tutoring and Its Discontents” (American Journal of Physics, 1968). The script does not survive. Transcribed by Jeff Shrager for elizagen.org. Inventing ELIZA, Table 1.1, cites SPACKS as evidence for ELIZA 1968+.',
-      build: files('outputs/', ['SPACKS-1968-conversation.txt']) },
+      build: files('outputs/', [{ src: 'SPACKS-1968-conversation.txt', role: 'text' }]) },
     // the library
     { id: 'slip1965', label: 'SLIP, as ELIZA used it', date: 'c. 1965', sort: 19650601, authors: JW,
       fork: 'slip', layer: 'slip', status: 'recovered', medium: 'Listing (MAD and FAP, 67 routines), with 3 reconstructed',
@@ -150,11 +150,7 @@
 
   // where a file's text begins: a script's or an output's transcriber set a note at its head, in
   // lines starting ;, which the comparisons leave out; a MAD listing begins at its first line
-  function findTitle(lines, b) {
-    if (/\.mad$/i.test(b.src)) return 1;
-    for (var i = 0; i < lines.length; i++) if (lines[i].trim() && !/^\s*;/.test(lines[i])) return i + 1;
-    return 1;
-  }
+  var findTitle = L.skipHead(';', function (b) { return !/\.mad$/i.test(b.src); });
 
   var api = L({ versions: VERSIONS, src: SRC, dialects: DIALECTS, lines: LINES,
                 parent: PARENT, witness: WITNESS, also: ALSO, influence: INFLUENCE, findTitle: findTitle });

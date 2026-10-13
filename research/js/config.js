@@ -58,6 +58,7 @@
     },
     // MAD-SLIP and the ELIZA scripts (kit/lang-mad.js): cards, remarks, decks; a script's lists
     lang: 'mad',
+    textNote: ';',                                         // a transcriber's note in an output, read as text (kit/genealogy.js)
     caseFold: true,
     entry: 'ELIZA',                                        // the deck where the program starts (Functional overview)
     // the About box (kit/about.js); purpose, inside and sources are HTML
