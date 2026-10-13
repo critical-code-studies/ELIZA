@@ -1,7 +1,7 @@
 /*
  * versions.js - ELIZA as the bench sees it, in three layers: the scripts (layer 'script'), which
  * run on ELIZA (layer 'eliza'), which calls SLIP (layer 'slip'). Each record's layer is its fork,
- * the group the version picker and Read ▾ list it under; js/layers.js joins the layers.
+ * the group the version picker and Read ▾ list it under; kit/layers.js joins the layers.
  *
  * The program: five versions, 1965 to 1968 and after, as Inventing ELIZA (Ciston et al. 2026,
  * Table 1.1) compares them: the delimiters each breaks input at, NEWKEY, the function that

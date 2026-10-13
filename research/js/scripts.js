@@ -1,11 +1,12 @@
 /*
- * scripts.js - the scripts catalogue (Read ▾ › Scripts): the scripts ELIZA ran and the
- * conversations run on them, as Inventing ELIZA (Ciston et al. 2026, Table 1.2) documents them,
- * extant in Weizenbaum's papers at MIT, mentioned in articles, or referenced elsewhere. Each
- * entry is the table's row as printed: filename, description, type, where it is referenced,
+ * scripts.js - the scripts catalogue (Read ▾ › Scripts), drawn by bench-kit's kit/catalogue.js:
+ * the scripts ELIZA ran and the conversations run on them, as Inventing ELIZA (Ciston et al. 2026,
+ * Table 1.2) documents them, extant in Weizenbaum's papers at MIT, mentioned in articles, or
+ * referenced elsewhere, and those found since, which the book does not list (ie: false). Each
+ * entry of the table is its row as printed: filename, description, type, where it is referenced,
  * whether it is in the archive, and its year. held: the versions under which this bench holds
  * copies of the script or its outputs; evidence: the version of ELIZA Table 1.1 cites it as
- * evidence for.
+ * evidence for. Loaded before kit/catalogue.js.
  */
 (function (root) {
   'use strict';
@@ -49,136 +50,73 @@
     { n: 32, file: 'STATES', desc: '', type: ['NONE'], ref: 'Archive', archive: 'No', year: '1967' },
     { n: 33, file: 'SYNCTA', desc: 'Discusses time synchronization.', type: ['OUTPUT'], ref: TAYLOR + ' (WATSNU script)', archive: 'Yes?', year: '1968' },
     { n: 34, file: 'WATSNU, PREVIOUSLY LSTSCR', desc: 'Lists all other scripts. This may not be a script but instead actually a function in ELIZA.', type: ['OUTPUT'], ref: TAYLOR, archive: '', year: '1968' },
-    { n: 35, file: 'XYPOLN', desc: '', type: ['NONE'], ref: '', archive: '', year: 'Unknown' }
+    { n: 35, file: 'XYPOLN', desc: '', type: ['NONE'], ref: '', archive: '', year: 'Unknown' },
+    // found since, not in Inventing ELIZA (ie: false)
+    { id: 'many', file: 'MANY', desc: 'A script named in the directory listing of the CTSS session of 16 January 1968 that printed F29 and FIGURE: MANY SCRIPT, 9 records, no date printed.', type: ['NONE'], ref: 'Archive (the CTSS session of 16 January 1968)', archive: 'No', year: 'Before January 16, 1968', ie: false },
+    { id: 'readf69', file: '(unnamed; readf 69$)', desc: 'The script read in a CTSS session of 1 October 1964 (resume oplsep, then (readf 69$)), whose lists, printed as it loads, include HELP, DL and FIRSTP; the conversation it ran survives. That it is HELP is an inference from the list’s name.', type: ['OUTPUT'], ref: 'Archive', archive: 'Yes', year: 'October 1, 1964', ie: false, held: ['c641001'] }
   ];
+
+  SCRIPTS.forEach(function (s) { s.key = s.n != null ? s.n : s.id; });
 
   // where an entry is referenced, as a group for the filter
   function sourceOf(s) {
     return /Discontents/.test(s.ref) ? 'taylor68' : /Taylor/.test(s.ref) ? 'taylor-eliza' : /Harvard/.test(s.ref) ? 'harvard' :
-      /CACM/.test(s.ref) ? 'cacm' : s.ref === 'Archive' ? 'archive' : 'none';
+      /CACM/.test(s.ref) ? 'cacm' : /^Archive/.test(s.ref) ? 'archive' : 'none';
   }
-  var SOURCES = [['', 'Any'], ['archive', 'The archive'], ['taylor68', 'Taylor, “Automated Tutoring and Its Discontents”'], ['taylor-eliza', 'Taylor, “The ELIZA Program”'],
-                 ['harvard', 'Harvard Review (1965)'], ['cacm', 'Weizenbaum, CACM (1966)'], ['none', 'Not given']];
-  var TYPES = [['', 'All'], ['SCRIPT', 'Script survives'], ['OUTPUT', 'Output survives'], ['NONE', 'Name only']];
   var MONTHS = { January: 1, February: 2, March: 3, April: 4, May: 5, June: 6, July: 7, August: 8, September: 9, October: 10, November: 11, December: 12 };
   function yearKey(y) {
-    var m = /^(\w+) (\d+), (\d{4})$/.exec(y);
+    var m = /(\w+) (\d+), (\d{4})$/.exec(y);
     if (m) return +m[3] * 10000 + (MONTHS[m[1]] || 0) * 100 + +m[2];
     return /^\d{4}$/.test(y) ? +y * 10000 : 99999999;
   }
+  function dash(x) { return x ? esc(x) : '<span class="faint">—</span>'; }
 
-  // ---------- named subsets of the library ----------
-  // rows: the catalogue's entries; versions: the copies and outputs held here, in date order;
-  // line: the genealogy's line of descent for the flow, where there is one
-  var SUBSETS = [
-    { id: '', label: 'All 35', short: 'All' },
-    { id: 'doctor', label: 'DOCTOR (copies and outputs)', short: 'DOCTOR', rows: [1, 2, 3, 9, 10], line: 'doctor',
-      versions: ['doctor65t100', 'doctor65t102', 'doctor', 'doctor65c-news', 'doctor65c-0305', 'doctor65c-0322-draft', 'doctor65c-0322-ditto', 'doctor65c-0322-print', 'doctor65c-0322-typed'],
-      note: 'The DOCTOR script: its copies of 1965 and 1966, and conversations run on it. The Harvard Review conversations (1–3) are counted here as DOCTOR’s, and DOC (9) as a copy of DOCTOR, by inference from their manner and name.' },
-    { id: 'maths', label: 'Mathematics: F29, FIGURE, ARITHM', short: 'Mathematics', rows: [5, 12, 13], line: 'figure',
-      versions: ['f29-67', 'figure68'],
-      note: 'The scripts that define and compute: F29 and FIGURE, its later version, and ARITHM, which evaluates calculations within the conversation. Inventing ELIZA, Table 1.1, cites all three as evidence for ELIZA 1967.' },
-    { id: 'taylor', label: 'Taylor’s tutorials, 1967–68', short: 'Taylor', taylor: true,
-      versions: ['spacks68c'],
-      note: 'The scripts and conversations Edwin F. Taylor’s papers on ELIZA as a tutor describe or print (“The ELIZA Program” and “Automated Tutoring and Its Discontents”), among them the WATSNU listing of scripts.' },
-    { id: 'help', label: 'Before ELIZA: HELP, 1964', short: 'HELP, 1964', rows: [19],
-      versions: ['help64c-s', 'help64c-p', 'c641001'],
-      note: 'Program HELP, in typed outputs headed 11 June 1964, and the CTSS session of 1 October 1964, whose script has a list named HELP (that it is HELP is an inference). Both are dated before ELIZA’s usual dating of 1965.' }
-  ];
-  function subsetById(id) { return SUBSETS.filter(function (x) { return x.id === id; })[0] || SUBSETS[0]; }
-  function inSubset(sub, s) { return !sub.id || (sub.taylor ? /Taylor/.test(s.ref) : (sub.rows || []).indexOf(s.n) >= 0); }
-  var subId = '';
-  try { subId = SW.store.get('scripts.subset') || ''; } catch (e) { /* storage closed */ }
-  SW.subsets = {
-    list: SUBSETS,
-    current: function () { return subsetById(subId); },
-    // choosing a subset filters the catalogue and Read ▾'s scripts, and turns the flow to its line
-    set: function (id) {
-      subId = subsetById(id).id;
-      try { SW.store.set('scripts.subset', subId); } catch (e) { /* storage closed */ }
-      var sub = subsetById(subId);
-      if (sub.line && SW.genealogyLine) SW.genealogyLine(sub.line);
-      var view = SW.$('#view-scripts'); if (view && SW.state.tab === 'scripts') render(view);
-    }
+  SW.BENCH.catalogue = {
+    view: 'scripts', store: 'scripts', noun: 'script', key: 'key', held: 'held',
+    title: 'The scripts',
+    rows: SCRIPTS,
+    intro: function (cat) {
+      return 'The scripts ELIZA ran and the conversations run on them, as <i>Inventing ELIZA</i> (Ciston et al. 2026, Table 1.2) documents them: those extant in Weizenbaum’s papers at MIT, mentioned in articles, or referenced elsewhere. The book’s authors are sure there are many others; those found since are marked “not in IE”. ' +
+        'Type: SCRIPT, a copy of the script survives; OUTPUT, a copy of a conversation it generated survives; NONE, neither survives, and the name is known only from a file or directory listing. Archive: whether it is in the archive. ' + cat.held() + ' of ' + SCRIPTS.length + ' have copies held here, to read in the last column. Copies are named by script, year and the identifier the document gives them, outputs by script and date.';
+    },
+    foot: 'From Ciston, Berry, Hay, Marino, Millican, Shrager, Schwarz and Weil, <i>Inventing ELIZA: How the First Chatbot Shaped the Future of AI</i> (MIT Press, 2026), Table 1.2, “Script Genealogy”, as printed; the entries marked “not in IE” are this bench’s. Evidence links follow Table 1.1.',
+    columns: [
+      { key: 'n', label: '#', cls: 'num', sort: function (a, b) { return (a.n || 999) - (b.n || 999); }, html: function (s) { return s.n != null ? String(s.n) : '<span class="faint">—</span>'; } },
+      { key: 'file', label: 'Filename', cls: 'mono cat-file', sort: true },
+      { key: 'desc', label: 'Description', cls: 'cat-desc', html: function (s) { return dash(s.desc) + (s.author ? ' <span class="faint">Author: ' + esc(s.author) + '.</span>' : ''); } },
+      { key: 'type', label: 'Type', html: function (s) { return s.type.map(function (t) { return '<span class="badge sc-' + t.toLowerCase() + '">' + t + '</span>'; }).join(' '); } },
+      { key: 'ref', label: 'Referenced', cls: 'cat-ref' },
+      { key: 'archive', label: 'Archive' },
+      { key: 'year', label: 'Year', cls: 'cat-year', sort: function (a, b) { return yearKey(a.year) - yearKey(b.year); } }
+    ],
+    search: function (s) { return [s.file, s.desc, s.author, s.ref, s.year].join(' '); },
+    facets: [
+      { id: 'type', label: 'Type', kind: 'seg', options: [['', 'All'], ['SCRIPT', 'Script survives'], ['OUTPUT', 'Output survives'], ['NONE', 'Name only']], test: function (s, v) { return s.type.indexOf(v) >= 0; } },
+      { id: 'src', label: 'Referenced in', kind: 'select', options: [['', 'Any'], ['archive', 'The archive'], ['taylor68', 'Taylor, “Automated Tutoring and Its Discontents”'], ['taylor-eliza', 'Taylor, “The ELIZA Program”'],
+          ['harvard', 'Harvard Review (1965)'], ['cacm', 'Weizenbaum, CACM (1966)'], ['none', 'Not given']], test: function (s, v) { return sourceOf(s) === v; } }
+    ],
+    source: { label: 'IE', yes: 'IE', no: 'not in IE', title: 'Listed in Inventing ELIZA (Ciston et al. 2026), Table 1.2', test: function (s) { return s.ie !== false; } },
+    heldLabel: function (s, v) { return v.label.replace(new RegExp('^' + s.file.replace(/[^A-Z0-9]/g, '') + ' '), ''); },
+    extra: function (s) {
+      var ev = s.evidence && root.SWVersions.byId(s.evidence);
+      return ev ? '<a href="#" class="cat-ev" data-cat-open="' + esc(ev.id) + '" title="Inventing ELIZA, Table 1.1, cites it as evidence for ' + esc(ev.label) + '">Evidence for ' + esc(ev.label) + '</a>' : '';
+    },
+    // named subsets: rows (keys), versions held (date order), the flow's line
+    subsets: [
+      { id: '', label: 'All ' + SCRIPTS.length, short: 'All' },
+      { id: 'doctor', label: 'DOCTOR (copies and outputs)', short: 'DOCTOR', rows: [1, 2, 3, 9, 10], line: 'doctor',
+        versions: ['doctor65t100', 'doctor65t102', 'doctor', 'doctor65c-news', 'doctor65c-0305', 'doctor65c-0322-draft', 'doctor65c-0322-ditto', 'doctor65c-0322-print', 'doctor65c-0322-typed'],
+        note: 'The DOCTOR script: its copies of 1965 and 1966, and conversations run on it. The Harvard Review conversations (1–3) are counted here as DOCTOR’s, and DOC (9) as a copy of DOCTOR, by inference from their manner and name.' },
+      { id: 'maths', label: 'Mathematics: F29, FIGURE, ARITHM', short: 'Mathematics', rows: [5, 12, 13], line: 'figure',
+        versions: ['f29-67', 'figure68'],
+        note: 'The scripts that define and compute: F29 and FIGURE, its later version, and ARITHM, which evaluates calculations within the conversation. Inventing ELIZA, Table 1.1, cites all three as evidence for ELIZA 1967.' },
+      { id: 'taylor', label: 'Taylor’s tutorials, 1967–68', short: 'Taylor', test: function (s) { return /Taylor/.test(s.ref); },
+        versions: ['spacks68c'],
+        note: 'The scripts and conversations Edwin F. Taylor’s papers on ELIZA as a tutor describe or print (“The ELIZA Program” and “Automated Tutoring and Its Discontents”), among them the WATSNU listing of scripts.' },
+      { id: 'help', label: 'Before ELIZA: HELP, 1964', short: 'HELP, 1964', rows: [19, 'readf69'],
+        versions: ['help64c-s', 'help64c-p', 'c641001'],
+        note: 'Program HELP, in typed outputs headed 11 June 1964, and the CTSS session of 1 October 1964, whose script has a list named HELP (that it is HELP is an inference). Both are dated before ELIZA’s usual dating of 1965.' }
+    ]
   };
-
-  var f = { q: '', type: '', src: '', held: false, sort: 'n', dir: 1 };
-  try { var kept = JSON.parse(SW.store.get('scripts.filter') || 'null'); if (kept) f = Object.assign(f, kept); } catch (e) { /* storage closed */ }
-  function keep() { try { SW.store.set('scripts.filter', JSON.stringify(f)); } catch (e) { /* storage closed */ } }
-
-  function shown() {
-    var q = f.q.trim().toLowerCase();
-    var sub = subsetById(subId);
-    return SCRIPTS.filter(function (s) {
-      if (!inSubset(sub, s)) return false;
-      if (f.type && s.type.indexOf(f.type) < 0) return false;
-      if (f.src && sourceOf(s) !== f.src) return false;
-      if (f.held && !s.held) return false;
-      return !q || [s.file, s.desc, s.author, s.ref, s.year].join(' ').toLowerCase().indexOf(q) >= 0;
-    }).sort(function (a, b) {
-      var x = f.sort === 'file' ? a.file.localeCompare(b.file) : f.sort === 'year' ? yearKey(a.year) - yearKey(b.year) || a.n - b.n : a.n - b.n;
-      return x * f.dir;
-    });
-  }
-
-  function rowHTML(s) {
-    var V = root.SWVersions, ev = s.evidence && V.byId(s.evidence);
-    var go = (s.held || []).map(function (vid) {
-      var v = V.byId(vid), short = v ? v.label.replace(new RegExp('^' + s.file + ' '), '') : vid;
-      return '<button class="btn sc-read" data-sc-read="' + esc(vid) + '" title="Read ' + esc(v ? v.label : vid) + ' [' + esc(SW.refOf(vid)) + ']">' + esc(short) + ' ▸</button>';
-    }).join('') +
-      (ev ? '<a href="#" class="sc-ev" data-sc-ev="' + esc(ev.id) + '" title="Inventing ELIZA, Table 1.1, cites it as evidence for ' + esc(ev.label) + '">Evidence for ' + esc(ev.label) + '</a>' : '');
-    return '<tr' + (s.held ? ' class="sc-held"' : '') + '><td class="num">' + s.n + '</td><td class="mono sc-file">' + esc(s.file) + '</td>' +
-      '<td class="sc-desc">' + (s.desc ? esc(s.desc) : '<span class="faint">—</span>') + (s.author ? ' <span class="faint">Author: ' + esc(s.author) + '.</span>' : '') + '</td>' +
-      '<td>' + s.type.map(function (t) { return '<span class="badge sc-' + t.toLowerCase() + '">' + t + '</span>'; }).join(' ') + '</td>' +
-      '<td class="sc-ref">' + (s.ref ? esc(s.ref) : '<span class="faint">—</span>') + '</td>' +
-      '<td>' + (s.archive ? esc(s.archive) : '<span class="faint">—</span>') + '</td>' +
-      '<td class="sc-year">' + esc(s.year) + '</td><td class="sc-go">' + go + '</td></tr>';
-  }
-
-  function render(view) {
-    var rows = shown(), arrow = function (k) { return f.sort === k ? (f.dir > 0 ? ' ↑' : ' ↓') : ''; };
-    var held = SCRIPTS.filter(function (s) { return s.held; }).length, sub = subsetById(subId);
-    view.innerHTML = '<div class="pad scripts">' +
-      '<h2>The scripts</h2>' +
-      '<p class="hint flow">The scripts ELIZA ran and the conversations run on them, as <i>Inventing ELIZA</i> (Ciston et al. 2026, Table 1.2) documents them: those extant in Weizenbaum’s papers at MIT, mentioned in articles, or referenced elsewhere. The book’s authors are sure there are many others. ' +
-      'Type: SCRIPT, a copy of the script survives; OUTPUT, a copy of a conversation it generated survives; NONE, neither survives, and the name is known only from a file or directory listing. Archive: whether it is in the archive. ' + held + ' of ' + SCRIPTS.length + ' have copies held here, to read in the last column. Copies are named by script, year and the identifier the document gives them, outputs by script and date.</p>' +
-      '<div class="sc-subset"><label>Subset <select id="sc-sub">' + SUBSETS.map(function (x) { return '<option value="' + x.id + '"' + (x.id === subId ? ' selected' : '') + '>' + esc(x.label) + '</option>'; }).join('') + '</select></label>' +
-        (sub.note ? '<span class="hint flow">' + esc(sub.note) + (sub.line ? ' Versions › Genealogy › Flow follows it.' : '') + '</span>' : '') + '</div>' +
-      '<div class="sc-filters">' +
-        '<input type="search" id="sc-q" placeholder="Find a script, a word, a year" value="' + esc(f.q) + '" aria-label="Find a script">' +
-        '<span class="seg-btns" role="group" aria-label="Type">' + TYPES.map(function (t) { return '<button class="btn' + (f.type === t[0] ? ' on' : '') + '" data-sc-type="' + t[0] + '">' + t[1] + '</button>'; }).join('') + '</span>' +
-        '<label>Referenced in <select id="sc-src">' + SOURCES.map(function (o) { return '<option value="' + o[0] + '"' + (f.src === o[0] ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select></label>' +
-        '<label><input type="checkbox" id="sc-held"' + (f.held ? ' checked' : '') + '> Held here</label>' +
-        '<span class="faint sc-count">' + rows.length + ' of ' + (sub.id ? SCRIPTS.filter(function (x) { return inSubset(sub, x); }).length + ' in ' + esc(sub.short) : SCRIPTS.length) + '</span>' +
-      '</div>' +
-      '<div class="sc-wrap"><table class="data sc-table"><thead><tr>' +
-        '<th data-sc-sort="n">#' + arrow('n') + '</th><th data-sc-sort="file">Filename' + arrow('file') + '</th><th>Description</th><th>Type</th><th>Referenced</th><th>Archive</th><th data-sc-sort="year">Year' + arrow('year') + '</th><th></th>' +
-      '</tr></thead><tbody>' + (rows.length ? rows.map(rowHTML).join('') : '<tr><td colspan="8" class="hint">No script matches.</td></tr>') + '</tbody></table></div>' +
-      '<p class="hint flow sc-src-note">From Ciston, Berry, Hay, Marino, Millican, Shrager, Schwarz and Weil, <i>Inventing ELIZA: How the First Chatbot Shaped the Future of AI</i> (MIT Press, 2026), Table 1.2, “Script Genealogy”, as printed. Evidence links follow Table 1.1.</p>' +
-      '</div>';
-    wire(view);
-  }
-
-  function wire(view) {
-    var q = SW.$('#sc-q', view);
-    q.oninput = function () { f.q = q.value; keep(); var at = q.selectionStart; render(view); var q2 = SW.$('#sc-q', view); q2.focus(); q2.setSelectionRange(at, at); };
-    SW.$('#sc-sub', view).onchange = function (e) { SW.subsets.set(e.target.value); };
-    SW.$('#sc-src', view).onchange = function (e) { f.src = e.target.value; keep(); render(view); };
-    SW.$('#sc-held', view).onchange = function (e) { f.held = e.target.checked; keep(); render(view); };
-    view.onclick = function (e) {
-      var t = e.target.closest('[data-sc-type]');
-      if (t) { f.type = t.dataset.scType; keep(); render(view); return; }
-      var h = e.target.closest('[data-sc-sort]');
-      if (h) { var k = h.dataset.scSort; f.dir = f.sort === k ? -f.dir : 1; f.sort = k; keep(); render(view); return; }
-      var r = e.target.closest('[data-sc-read]');
-      if (r) { SW.nav.go({ v: r.dataset.scRead, p: null, n: null }); return; }
-      var ev = e.target.closest('[data-sc-ev]');
-      if (ev) { e.preventDefault(); SW.openAt(ev.dataset.scEv); }
-    };
-  }
-
   SW.SCRIPTS = SCRIPTS;
-  var view = SW.$('#view-scripts');
-  if (view) SW.views.scripts = { show: function () { render(view); }, enter: function () { render(view); } };
 })(this);

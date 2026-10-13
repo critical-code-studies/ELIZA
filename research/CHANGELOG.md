@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.19 (2026-10-13)
+
+- On bench-kit 0.38.0: the layers (kit/layers.js) and the scripts catalogue (kit/catalogue.js) are the kit's now, and a jump lands at its line because Read draws a version there. The catalogue marks each entry as in Inventing ELIZA (IE, Table 1.2) or not, with a filter, and lists two scripts found since, MANY and the unnamed script of 1 October 1964. A subset chosen in Read ▾ opens the catalogue on it.
+
 ## 0.1.18 (2026-10-12)
 
 - The "Men are all alike" conversation of 22 March 1965 as its four versions, in page order: typescript draft [DOC-C650322-DRAFT], ditto [DOC-C650322-DITTO], printout [DOC-C650322-PRINT] and typed copy [DOC-C650322-TYPED], to compare in Versions › Compare.

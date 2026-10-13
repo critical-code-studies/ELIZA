@@ -3,7 +3,7 @@
  * MAD and FAP cards and of the scripts (kit/lang-mad.js divides them), the pop-up on a name
  * (where it is defined and used; a name defined in a layer below, peeked at, with a jump to it;
  * what the project's SLIP page says of the calls it names), the Key, the files' labels, and the
- * layers' ◀ ▶ and breadcrumb (js/layers.js).
+ * layers' ◀ ▶ and breadcrumb (kit/layers.js).
  */
 (function (root) {
   'use strict';
@@ -196,13 +196,7 @@
     },
     symbol: symbol,
     lost: 'No source survives for this version. Annotations on it can still be kept under “Versions”.',
-    onShow: function (b) { build = b; },
-    // the layers' ◀ ▶ and breadcrumb (js/layers.js, loaded after this)
-    toolbar: {
-      html: function (b) { return SW.layers ? SW.layers.toolbar.html(b) : ''; },
-      wire: function (tb) { if (SW.layers) SW.layers.toolbar.wire(tb); },
-      after: function (view, b) { if (SW.layers) SW.layers.toolbar.after(view, b); }
-    }
+    onShow: function (b) { build = b; }
   });
   SW.readCtx = ctx;
 

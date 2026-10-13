@@ -83,53 +83,14 @@ button.badge.err { cursor: pointer; font: inherit; }
 @media (max-width: 900px) { .vlang { display: none; } }
 
 /* ---------- layers (js/layers.js): ◀ ▶, the breadcrumb, a definition peeked at ---------- */
-.lay-nav { display: inline-flex; gap: 2px; margin-right: 4px; }
-.lay-crumb { flex: 1 0 100%; order: 99; margin: 0 -14px -8px; font: 12px var(--sans); color: var(--text-dim); padding: 4px 14px 5px; border-top: 1px solid var(--line-soft); background: var(--bg-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.lay-crumb b { color: var(--amber); font-weight: 600; }
-.layer-def { margin-top: 8px; padding-top: 6px; border-top: 1px solid var(--line-soft); }
-.layer-def a[data-xgo] { display: inline-block; margin-top: 4px; font-weight: 600; }
-.layer-peek { margin: 6px 0 2px; padding: 6px 8px; background: var(--code-bg); border: 1px solid var(--line-soft); border-radius: 4px; font-size: 11.5px; line-height: 1.45; max-width: 560px; overflow-x: auto; white-space: pre; }
 .unres-note { color: var(--text-dim); }
 .t .form.sym { text-decoration: underline dotted; text-underline-offset: 3px; }
 
 /* the pop-up on a name, as a hover card: what it is, then labelled sections of rows */
-.pop .pop-what { color: var(--text-dim); font-size: 12.5px; margin: -2px 0 6px; }
-.pop .pop-gloss { font-family: var(--serif); font-size: 14px; line-height: 1.4; margin: 4px 0 6px; }
-.pop .pop-src { color: var(--text-faint); font-family: var(--sans); font-size: 11.5px; }
-.pop .pop-sec { font: 600 10.5px var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--text-faint); margin: 10px 0 3px; }
-.pop a.pop-row { display: grid; grid-template-columns: minmax(7.5em, max-content) 1fr auto; align-items: center; gap: 10px; padding: 2px 4px; margin: 0 -4px; border-radius: 3px; text-decoration: none; color: var(--text); }
-.pop a.pop-row:hover { background: var(--surface-2); }
-.pop .pop-go, .keylist .pop-go { display: inline-block; padding: 0 4px; border-radius: 3px; font: 600 12px/1.35 var(--sans); color: var(--violet); background: color-mix(in srgb, var(--violet) 14%, transparent); }
-.pop a:hover .pop-go { background: var(--violet); color: var(--bg); }
-.pop .pop-at { color: var(--amber); font: 11.5px var(--mono); white-space: nowrap; }
-.pop a.pop-row code { font: 11.5px var(--mono); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.pop .pop-more { color: var(--text-faint); font-size: 11.5px; padding: 2px 0; }
-.pop a.pop-jump { display: inline-block; margin-top: 6px; font-weight: 600; }
 
 /* ↘ after a call the layer below defines: a jump straight to its definition */
 
-/* a jump to another layer: the listing is out of sight until it is at the line (js/layers.js) */
-#view-read.lay-moving .listing, #view-read.lay-moving pre { visibility: hidden; }
 
-/* the scripts catalogue (js/scripts.js) */
-.scripts h2 { margin: 0 0 6px; }
-.scripts .sc-subset { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-top: 12px; }
-.scripts .sc-subset .hint { flex: 1 1 360px; }
-.scripts .sc-filters { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin: 12px 0 10px; }
-.scripts #sc-q { min-width: 220px; flex: 0 1 300px; }
-.scripts .sc-count { margin-left: auto; }
-.scripts .sc-wrap { overflow-x: auto; }
-.scripts .sc-table { min-width: 820px; }
-.scripts .sc-table th:not([data-sc-sort]) { cursor: default; }
-.scripts .sc-file { min-width: 8em; max-width: 13em; font-weight: 600; }
-.scripts .sc-table th { white-space: nowrap; }
-.scripts .sc-desc { max-width: 42em; }
-.scripts .sc-ref { max-width: 16em; }
-.scripts .sc-year, .scripts .sc-go { white-space: nowrap; }
-.scripts .sc-go a { display: block; font-size: 12px; margin-top: 2px; }
-.scripts .sc-go .sc-read { display: block; margin: 0 0 3px; font-size: 12px; }
-.scripts tr.sc-held td { background: color-mix(in srgb, var(--amber) 7%, transparent); }
 /* a copy survives (SCRIPT, OUTPUT) in blue; only the name (NONE) in red, in every theme */
-.scripts .badge.sc-script, .scripts .badge.sc-output { color: #4a86e0; border-color: currentColor; }
-.scripts .badge.sc-none { color: #e0524a; border-color: currentColor; }
-.scripts .sc-src-note { margin-top: 14px; }
+.catalogue .badge.sc-script, .catalogue .badge.sc-output { color: #4a86e0; border-color: currentColor; }
+.catalogue .badge.sc-none { color: #e0524a; border-color: currentColor; }

@@ -11,9 +11,9 @@
     repo: 'https://github.com/critical-code-studies/ELIZA',
     // references to the sources (kit/refs.js): [REF: EL65B, ELIZA-1965b.mad:120], the files on GitHub under sources/
     refs: { names: { '1965b': 'EL65B', doctor65t100: 'DOC65-T100', doctor65t102: 'DOC65-T102', doctor: 'DOC66', 'doctor65c-news': 'DOC-C65-NEWS', 'doctor65c-0305': 'DOC-C650305', 'doctor65c-0322-draft': 'DOC-C650322-DRAFT', 'doctor65c-0322-ditto': 'DOC-C650322-DITTO', 'doctor65c-0322-print': 'DOC-C650322-PRINT', 'doctor65c-0322-typed': 'DOC-C650322-TYPED', 'help64c-s': 'HELP-C640611-S', 'help64c-p': 'HELP-C640611-P', c641001: 'C641001', 'f29-67': 'F29-67', figure68: 'FIG-68', spacks68c: 'SPACKS-C68', slip1965: 'SLIP65' }, prefix: 'EL-', dir: 'sources' },
-    forks: [['script', 'Scripts (run on ELIZA)'], ['eliza', 'ELIZA (calls SLIP)'], ['slip', 'SLIP'], ['output', 'Outputs (conversations)']],   // the version picker's groups: the layers (js/layers.js)
+    forks: [['script', 'Scripts (run on ELIZA)'], ['eliza', 'ELIZA (calls SLIP)'], ['slip', 'SLIP'], ['output', 'Outputs (conversations)']],   // the version picker's groups: the layers (kit/layers.js)
     start: '1965b',
-    // the code in layers, top first (js/layers.js): a script runs on ELIZA, which calls SLIP. A
+    // the code in layers, top first (kit/layers.js): a script runs on ELIZA, which calls SLIP. A
     // name a layer uses and does not define is looked up in the version chosen in the layer
     // below; a script's forms, in the ELIZA code that acts on them.
     layers: {
@@ -21,7 +21,7 @@
         { id: 'script', label: 'Scripts', below: 'eliza', relation: 'runs on', start: 'doctor', note: 'What ELIZA reads and runs: keywords and their rules',
           // the catalogue, and its named subsets (js/scripts.js): a subset narrows the list above
           more: function () {
-            var S = root.SW.subsets, cur = S ? S.current().id : '';
+            var S = (root.SW.catalogue || {}).subsets, cur = S ? S.current().id : '';
             return [['scripts', 'The scripts catalogue', '35 scripts and conversations, after Inventing ELIZA, Table 1.2']].concat(
               S ? S.list.map(function (x) { return ['subset:' + x.id, 'Subset: ' + x.short, x.id ? x.label : 'every script held', x.id === cur]; }) : []);
           } },
@@ -30,11 +30,18 @@
       ],
       pick: function (p) {
         if (p === 'scripts') { root.SW.setTab('scripts'); return true; }
-        if (/^subset:/.test(p) && root.SW.subsets) { root.SW.subsets.set(p.slice(7)); return true; }
+        // a subset chosen here: the catalogue opens on it, and Read ▾ lists its copies and outputs
+        var S = (root.SW.catalogue || {}).subsets;
+        if (/^subset:/.test(p) && S) {
+          S.set(p.slice(7)); root.SW.setTab('scripts');
+          var sub = S.current();
+          root.SW.toast(sub.id ? 'Subset: ' + sub.label + '. Read ▾ now lists its ' + sub.versions.length + ' copies and outputs.' : 'All scripts: Read ▾ lists every script held.', 4000);
+          return true;
+        }
       },
       // under Scripts, Read ▾ lists the subset chosen (its copies and its outputs), or every script
       shown: function (id, vs) {
-        var S = root.SW.subsets, sub = S && S.current();
+        var S = (root.SW.catalogue || {}).subsets, sub = S && S.current();
         if (id !== 'script' || !sub || !sub.id) return vs;
         return sub.versions.map(function (vid) { return root.SWVersions.byId(vid); }).filter(Boolean);
       },
