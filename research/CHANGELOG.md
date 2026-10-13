@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.25 (2026-10-13)
+
+- bench-kit 0.43.0, the card lens: the MAD and FAP listings read as cards, in this edition's columns (label 1–11, flag 12, statement 13–80, sequence 81–86): the sequence numbers in a gutter of their own, a column ruler, continuation cards joined to their statement, remark cards marked; statement text past column 72 is no longer drawn or read as the sequence field (line 351's T'O MATCH). The MAD contraction table is to come, from the Michigan manual.
+
 ## 0.1.24 (2026-10-13)
 
 - bench-kit 0.42.0: a paratext can carry its lacunae, drawn where they are as kintsugi seams, and Help gains Marks and conventions.

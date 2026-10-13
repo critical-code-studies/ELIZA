@@ -71,7 +71,7 @@
     }).join('');
   }
 
-  function hl(raw, b) {
+  function hl(raw, b, o) {
     build = b || build;
     var s = String(raw || ''), info = SW.lineInfo(s) || { lang: 'mad' };
     if (info.lang === 'text') return /^\s*;/.test(s) ? '<span class="cm">' + esc(s) + '</span>' : esc(s);   // an output, as text
@@ -80,13 +80,17 @@
       var lead = /^\s*/.exec(code)[0], w = /^\(\s*([^\s()]+)/.exec(s);
       return esc(lead) + scriptHTML(code.slice(lead.length), p.top && w ? w[1] : null) + (ci < 0 ? '' : '<span class="cm">' + esc(s.slice(ci)) + '</span>');
     }
+    // the card lens's cut (kit/read.js): the identification field goes to Read's gutter, and is
+    // not drawn here; held inline, it begins where the bench's layout puts it, not at 73
+    if (o && o.cut) s = s.slice(0, o.cut).replace(/\s+$/, '');
     var q = info.lang === 'fap' ? M.parseFap(s) : M.parseMad(s);
     if (q.kind === 'blank') return esc(s);
     if (q.kind === 'deck') {
       var dm = /^(\s*)(\S+)(\s+)(MAD|FAP)(\s*)(\S*)(\s*)$/.exec(s) || ['', '', q.deck, ' ', q.deckLang, '', '', ''];
       return esc(dm[1]) + symSpan('lab', q.deck, dm[2]) + esc(dm[3]) + '<span class="op">' + esc(dm[4]) + '</span>' + esc(dm[5]) + (dm[6] ? '<span class="cm">' + esc(dm[6]) + '</span>' : '') + esc(dm[7]);
     }
-    var body = s.length > 72 ? s.slice(0, 72) : s, seq = s.length > 72 ? s.slice(72) : '';
+    var LAY = (SW.BENCH.columns || {}).layout, at = LAY && LAY.seq ? LAY.seq[0] - 1 : 72;
+    var body = s.length > at ? s.slice(0, at) : s, seq = s.length > at ? s.slice(at) : '';
     var seqHTML = seq ? '<span class="cm">' + esc(seq) + '</span>' : '';
     function labHTML(lab) { var nm = lab.replace(/\(.*$/, ''), key = build && build.sym[nm + '·' + info.deck] ? nm + '·' + info.deck : nm; return symSpan('lab', key, lab); }
     if (info.lang === 'fap') {

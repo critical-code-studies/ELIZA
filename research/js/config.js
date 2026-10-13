@@ -58,7 +58,15 @@
     },
     // MAD-SLIP and the ELIZA scripts (kit/lang-mad.js): cards, remarks, decks; a script's lists
     lang: 'mad',
-    textNote: ';',                                         // a transcriber's note in an output, read as text (kit/genealogy.js)
+    textNote: ';',
+    // the card lens (kit/read.js): the columns of the MAD and FAP listings as this edition has them,
+    // one column right of the printout in the statement and the sequence beyond the card (measured
+    // against the 1965 scan, handle 1721.3/201699); the scripts and outputs are not cards
+    columns: (function () {
+      var L = { label: [1, 11], flag: { at: 12, cont: /[1-9]/, remark: /R/ }, text: [13, 80], seq: [81, 86] };
+      return { layout: L, files: [[/\.mad$/i, L], [/\.txt$/i, null]],
+               note: 'Columns are those of this edition of the listings, which sits one column right of the printout in the statement field, with the sequence numbers at 81 to 86 where the printout has them at 75; counted against the scan they will not agree.' };
+    })(),                                         // a transcriber's note in an output, read as text (kit/genealogy.js)
     caseFold: true,
     entry: 'ELIZA',                                        // the deck where the program starts (Functional overview)
     // the About box (kit/about.js); purpose, inside and sources are HTML
