@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.44 (2026-10-13)
+
+- The kit at 0.52.0: ⚙ Settings › You has Tell me when a newer release is live, on by default.
+
 ## 0.1.43 (2026-10-13)
 
 - The kit at 0.51.1: the newer-release bar looks every five minutes and on coming back to the tab.
