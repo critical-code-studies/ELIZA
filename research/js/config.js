@@ -11,7 +11,9 @@
     repo: 'https://github.com/critical-code-studies/ELIZA',
     // references to the sources (kit/refs.js): [REF: EL65B, ELIZA-1965b.mad:120], the files on GitHub under sources/
     refs: { names: { '1965b': 'EL65B', doctor65t100: 'DOC65-T100', doctor65t102: 'DOC65-T102', doctor: 'DOC66', 'doctor65c-news': 'DOC-C65-NEWS', 'doctor65c-0305': 'DOC-C650305', 'doctor65c-0322-draft': 'DOC-C650322-DRAFT', 'doctor65c-0322-ditto': 'DOC-C650322-DITTO', 'doctor65c-0322-print': 'DOC-C650322-PRINT', 'doctor65c-0322-typed': 'DOC-C650322-TYPED', 'help64c-s': 'HELP-C640611-S', 'help64c-p': 'HELP-C640611-P', c641001: 'C641001', 'f29-67': 'F29-67', figure68: 'FIG-68', spacks68c: 'SPACKS-C68', slip1965: 'SLIP65' }, prefix: 'EL-', dir: 'sources' },
-    forks: [['script', 'Scripts (run on ELIZA)'], ['eliza', 'ELIZA (calls SLIP)'], ['slip', 'SLIP'], ['output', 'Outputs (conversations)']],   // the version picker's groups: the layers (kit/layers.js)
+    // the version picker's groups (kit/shell.js), the program first: ELIZA, then the scripts it
+    // runs, then the library it calls, then what it printed
+    forks: [['eliza', 'ELIZA (calls SLIP)'], ['script', 'Scripts (run on ELIZA)'], ['slip', 'SLIP'], ['output', 'Outputs (conversations)']],
     start: '1965b',
     // the code in layers, top first (kit/layers.js): a script runs on ELIZA, which calls SLIP. A
     // name a layer uses and does not define is looked up in the version chosen in the layer
