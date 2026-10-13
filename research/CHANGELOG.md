@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.37 (2026-10-13)
+
+- bench-kit 0.47.0: the newer-release bar reads the bench's own version; menus mark the open submenu, the place you are and the item under the pointer apart.
+
 ## 0.1.36 (2026-10-13)
 
 - bench-kit 0.46.1: a release dates itself (the bench-date shown in Help and About); the site map names the groups of Help and Graphics again.
