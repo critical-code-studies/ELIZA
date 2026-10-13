@@ -19,8 +19,12 @@
     // name a layer uses and does not define is looked up in the version chosen in the layer
     // below; a script's forms, in the ELIZA code that acts on them.
     layers: {
+      // Read ▾ lists ELIZA first; the list keeps the stack's order, top first (a script runs on
+      // ELIZA), which ?stack= links follow
+      readOrder: ['eliza', 'script', 'slip'],
       list: [
         { id: 'script', label: 'Scripts', below: 'eliza', relation: 'runs on', start: 'doctor', note: 'What ELIZA reads and runs: keywords and their rules',
+          groups: [{ label: 'DOCTOR', note: 'Its copies, 1965–66', line: 'doctor' }],
           // the catalogue, and its named subsets (js/scripts.js): a subset narrows the list above
           more: function () {
             var S = (root.SW.catalogue || {}).subsets, cur = S ? S.current().id : '';

@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.34 (2026-10-13)
+
+- bench-kit 0.45.0: Read ▾ in submenus, one for each layer, ELIZA first (the stack keeps its order, and ?stack= links with it), each naming its chosen version; within Scripts, DOCTOR's three copies in a submenu of their own, then F29 and FIGURE, then the catalogue and its subsets.
+
 ## 0.1.33 (2026-10-13)
 
 - bench-kit 0.44.4: the top bar's small print (version, reference, language line) in the bar's own ink, readable in every theme; on the paper theme's blue bar it had all but vanished.
