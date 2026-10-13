@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.39 (2026-10-13)
+
+- The kit at 0.49.0: in Paratexts, an item's Download, GitHub, Open and Source under ☰; Catalogued by a field under More metadata, which can be corrected; closing an item with changes not saved asks first.
+
 ## 0.1.38 (2026-10-13)
 
 - bench-kit 0.48.0: the paratext list takes a Language filter, by name; Read ▾ can list a bench's files by part.
