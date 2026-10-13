@@ -118,7 +118,7 @@
       summary: 'A student’s conversation with ELIZA running the SPACKS script, which discusses a line of Barry Spacks’s poem “Freshmen”, as Edwin F. Taylor printed it in “Automated Tutoring and Its Discontents” (American Journal of Physics, 1968). The script does not survive. Transcribed by Jeff Shrager for elizagen.org. Inventing ELIZA, Table 1.1, cites SPACKS as evidence for ELIZA 1968+.',
       build: files('outputs/', [{ src: 'SPACKS-1968-conversation.txt', role: 'text' }]) },
     // the library
-    { id: 'slip1965', label: 'SLIP, as ELIZA used it', date: 'c. 1965', sort: 19650601, authors: JW,
+    { id: 'slip1965', label: 'SLIP (ELIZA)', date: 'c. 1965', sort: 19650601, authors: JW,
       fork: 'slip', layer: 'slip', status: 'recovered', medium: 'Listing (MAD and FAP, 67 routines), with 3 reconstructed',
       summary: 'The SLIP library on CTSS as its listing among Weizenbaum’s papers at MIT has it (dome.mit.edu, handle 1721.3/201707): 67 routines, each compiled on its own (51 in MAD, 16 in FAP, the 7094’s assembler), transcribed by Arthur Schwarz. It holds SLIP as published and the routines added for ELIZA (YMATCH, ASSMBL, HASH among them, which sit in the listing but do ELIZA’s work). Three routines ELIZA calls are missing from the listing; BCDIT, INLSTL and LETTER were reconstructed in 2024 by Anthony Hay, Arthur Schwarz and Rupert Lane for the restoration of ELIZA on CTSS, and are held beside it, marked as reconstructions.',
       build: files('SLIP/', ['SLIP-1965.mad', { src: 'bcdit.mad', role: 'support' }, { src: 'inlstl.mad', role: 'support' }, { src: 'letter.mad', role: 'support' }]) }
