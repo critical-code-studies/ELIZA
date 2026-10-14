@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.60 (2026-10-14)
+
+- The kit at 0.60.0: ⚙ Settings ▸ Paratexts sets how many items either side to fetch ahead (Off to 10, 1 by default).
+
 ## 0.1.59 (2026-10-14)
 
 - The kit at 0.59.0: in Paratexts, a sequence editor (make, order, rename and delete sequences); a stub's last part is Searched:; the items either side of an open one are fetched ahead.
