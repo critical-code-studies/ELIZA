@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.56 (2026-10-14)
+
+- The kit at 0.56.1: missing items read Provenance found but item not available or missing, in small capitals.
+
 ## 0.1.55 (2026-10-14)
 
 - The kit at 0.56.0: in Paratexts, the count names any filter that hides matches, with a button to clear it; a long description starts at the top of its box.
