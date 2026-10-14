@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.58 (2026-10-14)
+
+- The kit at 0.58.0: in Paratexts, related items, linked both ways.
+
 ## 0.1.57 (2026-10-14)
 
 - The kit at 0.57.0: in Paratexts, Back and Next through the list an item was opened from, and through sequences (fixed orders, such as a run of logbooks).
