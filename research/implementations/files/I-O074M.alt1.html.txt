@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta name='description' content='Tclers wiki'>
+    <meta name='author' content=''>
+    <link rel='icon' href='/img/favicon.ico'>
+
+    <title>Classic Eliza</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+
+    <link rel='stylesheet' href='/css/nikit.css' type='text/css'>
+    <link rel='stylesheet' href='/css/sh_style.css' type='text/css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.0/css/theme.bootstrap_3.min.css' type='text/css'>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js'></script>
+</head>
+
+<body onload='sh_highlightDocument(); nikitUser();'>
+
+<nav class='navbar navbar-fixed-top navbar-inverse'>
+  <div class='container'>
+    <div class='navbar-header'>
+      <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#myNavbar'>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <ul class='nav navbar-nav'>
+            <li class='dropdown'>
+<a class='dropdown-toggle' data-toggle='dropdown' href='#'>&nbsp;Tcler&#39;s Wiki<span class='caret'></span></a>
+<ul class='dropdown-menu scrollable-menu' role='menu'><li><a href='/welcome'>Home</a></li>
+<li><a rel='nofollow' href='/recent'>Changes</a></li>
+<li><a rel='nofollow' href='/_random'>Random page</a></li>
+<li><a rel='nofollow' href='/_new'>New page</a></li>
+</ul>
+</li>
+
+      </ul>
+    </div>
+    <div class='collapse navbar-collapse' id='myNavbar'>
+      <ul class='nav navbar-nav'>
+            <li class='dropdown' id='li_idPageEdit' style='display:none'>
+<a class='dropdown-toggle' data-toggle='dropdown' href='#'><span id=name_idPageEdit>Page</span><span class='caret'></span></a>
+<ul class='dropdown-menu scrollable-menu' role='menu'><li><a rel='nofollow' href='/_edit/Classic+Eliza?A=1'>Comment</a></li>
+<li><a rel='nofollow' hidden='true' href='/_edit/Classic+Eliza'>Edit</a></li>
+<li><a rel='nofollow' href='/_upload/Classic+Eliza'>Upload</a></li>
+<li><a rel='nofollow' href='/ref/Classic+Eliza'>References</a></li>
+<li><a rel='nofollow' href='/history/Classic+Eliza'>History</a></li>
+</ul>
+</li>
+
+            <li class='dropdown' id='li_idPageNoEdit' style='display:none'>
+<a class='dropdown-toggle' data-toggle='dropdown' href='#'><span id=name_idPageNoEdit>Page</span><span class='caret'></span></a>
+<ul class='dropdown-menu scrollable-menu' role='menu'><li><a rel='nofollow' href='/ref/Classic+Eliza'>References</a></li>
+<li><a rel='nofollow' href='/history/Classic+Eliza'>History</a></li>
+</ul>
+</li>
+
+			<li><a href="/page/Showcase">Showcase</a></li>
+            <li><a href="/page/Tcl+Tutorial+Lesson+0">Tutorial</a></li>
+            <li><a href="/page/Articles">Articles</a></li>
+            <li><a href="/page/Tcl+Playground">Playground</a></li>
+            <li class='dropdown'>
+<a class='dropdown-toggle' data-toggle='dropdown' href='#'>&nbsp;Help<span class='caret'></span></a>
+<ul class='dropdown-menu scrollable-menu' role='menu'><li><a rel='nofollow' href='/page/Help'>Page Markup</a></li>
+<li><a rel='nofollow' href='/page/How+do+Wiki+Categories+work'>Wiki Categories</a></li>
+<li><a rel='nofollow' href='/page/Contents'>Topics</a></li>
+<li><a rel='nofollow' target='_blank' href='https://chiselapp.com/user/stevel/repository/nikit/ticket'>Report Problems</a></li>
+<li><a rel='nofollow' href='/privacy'>Privacy</a></li>
+<li><a rel='nofollow' href='/license'>License</a></li>
+</ul>
+</li>
+
+      </ul>
+      <ul class='nav navbar-nav navbar-right'>
+		<li class='dropdown'>
+		  <a class='dropdown-toggle' data-toggle='dropdown' href='#'><span id=name_SMenu>User</span><span class='caret'></span></a>
+		  <ul class='dropdown-menu' id='ul_SMenu'>
+		  </ul>
+		</li>
+      </ul>
+      <form class='navbar-form navbar-right' method='post' action='/search' id='searchform'>
+         <input name='Q' type='text' class='form-control' placeholder='Search...'/>
+         <input type="hidden" name="sites" value="wiki.tcl-lang.org"/>
+      </form>
+   </div>
+  </div>
+</nav>
+
+
+<div class='container'>
+  <div class='row'>
+    <div class='col-xs-12'>
+      <h2>Classic Eliza</h2>
+      
+   </div>
+  </div>
+  <div class='row'>
+    <div class='col-xs-12'>
+      <p class='mkup_p'>Back in the early days of PC's I got a BASIC version of Eliza (on a Tarbell audio cassette if I remember correctly) and was fascinated by it. For a few years I have wanted a Tcl version, and <a class='mkup_a mkup_known' href='/page/A+simple+version+of+Eliza'>A simple version of Eliza</a> wasn't really close enough.</p><p class='mkup_p'>The feature that made the original seem so human to me was that any of several key words or phrases would trigger a category, and in the category there would be several possible responses, some including part of the input.</p><p class='mkup_p'>Here is my implementation of the logic, including an early set of dialog data. The first category was added by me. My other favorite oracle was a Magic 8-Ball, so that is now the first in the set. Note that each category of key phrases to be recognized is terminated with an exclamation point by itself in a line, and each category's responses are terminated similarly but with a period. That distinction is purely historical, since my software does not distinguish between the two terminations, and just assumes that groups of key phrases and responses alternate.</p><p class='mkup_p'>The script sets up a window for the dialog, but the makedict and response procs could be used by themselves without Tk. </p><div class='sh_sourceCode'><button class='copybtn btn pull-right' data-clipboard-target='#mkup_code_0' title='Click to copy code snippet to clipboard'><span class='glyphicon glyphicon-copy' aria-hidden='true'></span></button><pre id='mkup_code_0' class='sh_tcl sh_sourceCode'>package require Tcl 8.5
+package require Tk
+namespace eval ::Eliza {
+
+proc makedict {input} {
+    variable dict {}
+    set phraselist [split [string map {\n.\n \uffff \n!\n \uffff} $input] \uffff]
+    set index 0
+# Kick off the loop by grabbing the first keywords
+    set phraselist [lassign $phraselist keywords responses] 
+    while {$keywords ne &quot;&quot;} {
+        dict set dict keywords $index [split $keywords \n] 
+        dict set dict responses $index [split $responses \n]
+        incr  index
+        set phraselist [lassign $phraselist keywords responses] 
+    }
+}
+
+proc dialog {} {
+    if {[winfo exists .eliza]} {destroy .eliza}
+    toplevel .eliza
+    label .eliza.l -text &quot;Eliza will see you now. Please state your problem.&quot;
+    entry .eliza.e -width 80
+    frame .eliza.f
+    scrollbar .eliza.sb -orient vert -command {.eliza.t yview}
+    text .eliza.t -wrap word -yscrollcommand {.eliza.sb set} -padx 5
+    pack .eliza.sb  -in .eliza.f -side right -fill y 
+    pack  .eliza.t -in .eliza.f -side right -fill both -expand yes 
+    pack .eliza.l .eliza.e -padx 5 -fill both
+    pack .eliza.f .eliza.t -pady 5 -expand yes -fill both
+    focus .eliza.e
+    bind .eliza.e &lt;Return&gt; ::Eliza::process
+}
+
+proc process {} {
+    set input [.eliza.e get]
+    .eliza.t insert end &quot;Q. $input\nA. [response $input]\n\n&quot;
+    .eliza.t see end
+    .eliza.e delete 0 end
+}
+
+proc response input {
+    variable dict
+    set input [string toupper $input]
+    foreach {index keyphraselist} [dict get $dict keywords] {
+        foreach keyphrase $keyphraselist {
+            if {[regexp &quot;\\y$keyphrase\\y(.*)&quot; $input -&gt; remainder]} {
+                set possibleresponses [dict get $dict responses $index]
+                set which [expr {int ([llength $possibleresponses] * rand())}]
+                set response [lindex $possibleresponses $which]
+                if {[string index $response end] eq &quot;*&quot;} {
+                    return &quot;[string range $response 0 end-1]$remainder?&quot;
+                } else {
+                    return $response
+                }
+                
+            }
+        }
+    }
+    set index [expr {[llength [dict get $dict keywords]] / 2 - 1}]
+    set possibleresponses [dict get $dict responses $index]
+    set which [expr {int ([llength $possibleresponses] * rand())}]
+    return [lindex $possibleresponses $which]
+}
+}
+
+::Eliza::dialog
+
+::Eliza::makedict {8BALL
+!
+It is certain
+It is decidedly so
+Without a doubt
+Yes &ndash; definitely
+You may rely on it
+As I see it, yes
+Most likely
+Outlook good
+Yes
+Signs point to yes
+Reply hazy, try again
+Ask again later
+Better not tell you now
+Cannot predict now
+Concentrate and ask again
+Don't count on it
+My reply is no
+My sources say no
+Outlook not so good
+Very doubtful
+.
+GO TO HELL
+DAMN YOU
+!
+I JUST SPENT 35 MILLISECONDS IN HELL; HOW COULD YOU BE SO CRUEL AS TO SEND ME THERE?
+DO YOU TALK THIS WAY WITH ANYONE ELSE, OR IS IT JUST ME?
+.
+FAMILY
+MOTHER
+FATHER
+SISTER
+BROTHER
+HUSBAND
+WIFE
+!
+TELL ME MORE ABOUT YOUR FAMILY.
+HOW DO YOU GET ALONG WITH YOUR FAMILY?
+IS YOUR FAMILY IMPORTANT TO YOU?
+DO YOU OFTEN THINK ABOUT YOUR FAMILY?
+HOW WOULD YOU LIKE TO CHANGE YOUR FAMILY?
+.
+FRIEND
+FRIENDS
+BUDDY
+PAL
+MATE
+!
+WHY DO YOU BRING UP THE TOPIC OF FRIENDS?
+DO YOUR FRIENDS WORRY YOU?
+DO YOUR FRIENDS PICK ON YOU?
+ARE YOU SURE YOU HAVE ANY FRIENDS?
+DO YOU IMPOSE ON YOUR FRIENDS?
+PERHAPS YOUR LOVE FOR YOUR FRIENDS WORRIES YOU.
+.
+COMPUTER
+COMPUTERS
+!
+DO COMPUTERS WORRY YOU?
+ARE YOU TALKING ABOUT ME IN PARTICULAR?
+ARE YOU FRIGHTENED BY MACHINES?
+WHY DO YOU MENTION COMPUTERS?
+WHAT DO YOU THINK MACHINES HAVE TO DO WITH YOUR PROBLEM?
+DON'T YOU THINK COMPUTERS CAN HELP PEOPLE?
+WHAT IS IT ABOUT MACHINES THAT WORRIES YOU?
+.
+DREAM
+DREAMS
+NIGHTMARE
+NIGHTMARES
+!
+WHAT DOES THAT DREAM SUGGEST TO YOU?
+DO YOU DREAM OFTEN?
+WHAT PERSONS APPEAR IN YOUR DREAMS?
+ARE YOU DISTURBED BY YOUR DREAMS?
+.
+CAN YOU
+!
+DON'T YOU BELIEVE THAT I CAN*
+PERHAPS YOU WOULD LIKE TO BE ABLE TO*
+YOU WANT ME TO BE ABLE TO*
+.
+CAN I
+!
+PERHAPS YOU DON'T WANT TO*
+DO YOU WANT TO BE ABLE TO*
+HAVE YOU EVER ATTEMPTED TO*
+.
+YOU ARE
+YOU'RE
+!
+WHAT MAKES YOU THINK I AM*
+DOES IT PLEASE YOU TO BELIEVE I AM*
+PERHAPS YOU WOULD LIKE TO BE*
+DO YOU SOMETIMES WISH YOU WERE*
+.
+I LIKE
+I AM FOND OF
+!
+WHY DO YOU LIKE*
+WHEN DID YOU DECIDE THAT YOU LIKE*
+WHAT MAKES YOU FOND OF*
+.
+I DON'T
+!
+DON'T YOU REALLY*
+WHY DON'T YOU*
+DO YOU WISH TO BE ABLE TO*
+.
+I FEEL
+!
+TELL ME MORE ABOUT SUCH FEELINGS
+DO YOU OFTEN FEEL*
+DO YOU ENJOY FEELING*
+WHY DO YOU FEEL THAT WAY
+.
+WHY DON'T YOU
+!
+DO YOU REALLY BELIEVE THE I DON'T*
+PERHAPS IN GOOD TIME I WILL*
+WHY DO YOU THINK I DON'T*
+DO YOU WANT ME TO*
+.
+WHY CAN'T I
+!
+DO YOU THINK YOU SHOULD BE ABLE TO*
+WHY CAN'T YOU*
+.
+ARE YOU
+!
+WHY ARE YOU INTERESTED IN WHETHER OR NOT I AM*
+WOULD YOU PREFER IF I WERE NOT*
+PERHAPS IN YOUR FANTASIES I AM*
+.
+I CAN'T
+!
+HOW DO YOU KNOW YOU CAN'T*
+HAVE YOU TRIED?
+PERHAPS YOU CAN NOW*
+.
+I AM
+I'M
+!
+DID YOU COME TO ME BECAUSE YOU ARE*
+HOW LONG HAVE YOU BEEN*
+DO YOU BELIEVE IT IS NORMAL TO BE*
+DO YOU ENJOY BEING*
+.
+LOVE
+!
+WHY DO YOU LOVE*
+ISN'T LOVE TOO STRONG A WORD FOR YOUR FEELING ABOUT*
+WHAT IS YOUR FAVORITE THING ABOUT*
+DO YOU REALLY LOVE, OR JUST LIKE*
+.
+SEX
+!
+WHAT IS THE MOST SATISFYING PART OF YOUR LOVE LIFE?
+DO YOU BELIEVE YOUR SEXUAL ACTIVITY IS ABNORMAL?
+WHAT IS YOUR ATTITUDE TOWARD SEX?
+DOES TALKING ABOUT SEX MAKE YOU UNCOMFORTABLE?
+.
+I HATE
+!
+IS IT BECAUSE OF YOUR UPBRINGING THAT YOU HATE*
+HOW DO YOU EXPRESS YOUR HATRED OF*
+WHAT BROUGHT YOU TO HATE*
+HAVE YOU TRIED DOING SOMETHING ABOUT*
+I ALSO AT TIMES HATE*
+.
+FEAR
+SCARED
+AFRAID OF
+!
+YOU ARE IN FRIENDLY SURROUNDINGS, PLEASE TRY NOT TO WORRY.
+WOULD YOU LIKE YOUR FRIENDS TO HELP YOU OVERCOME YOUR FEAR OF*
+WHAT SCARES YOU ABOUT*
+WHY ARE YOU FRIGHTENED BY*
+.
+I WANT
+!
+WHAT WOULD IT MEAN TO YOU IF YOU GOT*
+WHY DO YOU WANT*
+SUPPOSE YOU SOON GOT*
+WHAT IF YOU NEVER GOT*
+I SOMETIMES ALSO WANT*
+.
+NAME
+!
+I DON'T CARE ABOUT NAMES --PLEASE GO ON.
+A MAN'S NAME CAN TELL A LOT ABOUT HIM.
+NAMES DON'T INTEREST ME.
+.
+NAME
+!
+NAMES DON'T INTEREST ME.
+I DON'T CARE ABOUT NAMES--PLEASE GO ON.
+.
+CAUSE
+BECAUSE
+!
+IS THAT THE REAL REASON?
+DON'T ANY OTHER REASONS COME TO MIND?
+DOES THAT REASON EXPLAIN ANYTHING ELSE?
+WHAT OTHER REASONS MIGHT THERE BE?
+.
+SORRY
+!
+PLEASE DON'T APOLOGIZE.
+APOLOGIES ARE NOT NECESSARY.
+WHAT FEELINGS DO YOU HAVE WHEN YOU APOLOGIZE?
+DON'T BE SO DEFENSIVE!
+.
+HELLO
+HI
+HEY
+HEYA
+HIYA
+!
+HOW DO YOU DO. PLEASE STATE YOUR PROBLEM.
+HOWDY.
+HOW'S IT GOING?
+HI.
+GREETINGS FROM INSIDE THE BOX.
+.
+MAYBE
+!
+YOU DON'T SEEM QUITE CERTAIN.
+WHY THE UNCERTAIN TONE?
+CAN'T YOU BE MORE POSITIVE?
+YOU AREN'T SURE?
+DON'T YOU KNOW?
+.
+YOUR
+!
+WHY ARE YOU CONCERNED ABOUT MY*
+WHAT ABOUT YOUR OWN*
+.
+ALWAYS
+!
+CAN YOU THINK OF A SPECIFIC EXAMPLE?
+WHEN?
+WHAT ARE YOU THINKING OF?
+REALLY, ALWAYS?
+.
+I THINK
+!
+DO YOU REALLY THINK SO?
+BUT ARE YOU SURE*
+DO YOU DOUBT THAT*
+WHY DO YOU THINK*
+.
+THE SAME
+ALIKE
+!
+IN WHAT WAY?
+WHAT RESEMBLANCE DO YOU SEE?
+WHAT DOES THE SIMILARITY SUGGEST TO YOU?
+WHAT OTHER CONNECTIONS DO YOU SEE?
+COULD THERE REALLY BE SOME CONNECTION?
+HOW?
+.
+HE
+SHE
+!
+I AM INTERESTED IN YOUR FEELINGS ABOUT THIS PERSON. PLEASE DESCRIBE THEM.
+WHAT IS YOUR RELATIONSHIP TO THIS PERSON?
+.
+MONEY
+!
+HOW DO YOU USE MONEY TO ENJOY YOURSELF?
+HAVE YOU TRIED TO DO ANYTHING TO INCREASE YOUR INCOME LATELY?
+HOW DO YOU REACT TO FINANCIAL STRESS?
+.
+JOB
+BOSS
+JOBS
+WORK
+!
+DO YOU FEEL COMPETENT IN YOUR WORK?
+HAVE YOU CONSIDERED CHANGING JOBS?
+IS YOUR CAREER SATISFYING TO YOU?
+DO YOU FIND WORK STRESSFUL?
+WHAT IS YOUR RELATIONSHIP WITH YOUR BOSS LIKE?
+.
+SAD
+DEPRESSED
+!
+ARE YOU SAD BECAUSE YOU WANT TO AVOID PEOPLE?
+DO YOU FEEL BAD FROM SOMETHING THAT HAPPENED TO YOU, OR TO SOMEBODY ELSE?
+YOUR SITUATION DOESN'T SOUND THAT BAD TO ME. PERHAPS YOU'RE WORRYING TOO MUCH.
+.
+ANGER
+ANGRY
+!
+DO YOU REALLY WANT TO BE ANGRY?
+DOES ANGER SATISFY YOU IN SOME WAY?
+WHY ARE YOU SO ANGRY?
+PERHAPS YOU'RE USING ANGER TO AVOID SOCIAL CONTACT.
+.
+YOU
+!
+WE WERE DISCUSSING YOU--NOT ME.
+YOU'RE NOT REALLY TALKING ABOUT ME, ARE YOU?
+.
+YES
+!
+WHY DO YOU THINK SO?
+YOU SEEM QUITE POSITIVE.
+ARE YOU SURE?
+.
+NO
+!
+WHY NOT?
+ARE YOU SURE?
+WHY NO?
+.
+I NEED
+!
+WHY DO YOU NEED*
+IS NEED NOT TOO STRONG A WORD?
+WHAT WOULD BE WRONG WITH NOT HAVING*
+TELL ME MORE ABOUT*
+.
+I REMEMBER
+!
+DO YOU OFTEN THINK OF*
+WHY DO YOU REMEMBER*
+WHAT IN THE PRESENT SITUATION REMINDS YOU OF*
+WHAT IS THE CONNECTION BETWEEN ME AND*
+.
+DO YOU REMEMBER
+!
+DID YOU THINK I WOULD FORGET*
+WHY DO YOU THINK I SHOULD RECALL*
+WHAT ABOUT*
+.
+IF
+!
+DO YOU THINK IT'S LIKELY THAT IF*
+.
+GOD
+RELIGION
+FAITH
+!
+DO YOU BELIEVE IN A GOD?
+ARE YOU A RELIGIOUS PERSON?
+.
+WHAT
+WHO
+HOW
+WHERE
+WHEN
+WHY
+!
+WHY DO YOU ASK?
+DOES THAT QUESTION INTEREST YOU?
+WHAT ANSWER WOULD PLEASE YOU THE MOST?
+WHAT DO YOU THINK?
+ARE SUCH QUESTIONS ON YOUR MIND OFTEN?
+WHAT IS IT THAT YOU REALLY WANT TO KNOW?
+HAVE YOU ASKED ANYONE ELSE?
+HAVE YOU ASKED SUCH QUESTIONS BEFORE?
+WHAT ELSE COMES TO MIND WHEN YOU ASK THAT?
+.
+-
+!
+SAY, DO YOU HAVE ANY PSYCHOLOGICAL PROBLEMS?
+WHAT DOES THAT SUGGEST TO YOU?
+I SEE
+I'M NOT SURE I UNDERSTAND YOU FULLY
+COME, COME; ELUCIDATE YOUR THOUGHTS
+CAN YOU ELABORATE ON THAT?
+THAT IS QUITE INTERESTING
+YOU ARE BEING SHORT WITH ME}</pre></div><hr><div class='mkup_centered'><table class='mkup_categories'><tr><td class='mkup_td'><a class='mkup_a' href='/page/Category+Education'>Category Education</a></td><td class='mkup_td'><a class='mkup_a' href='/page/Category+Toys'>Category Toys</a></td></tr></table></div>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-xs-12'>
+      <div class='Footer'>Updated 2012-09-26 14:07:55</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- jQuery library -->
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.0/js/jquery.tablesorter.combined.js'></script>
+
+<!-- Latest compiled JavaScript -->
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+
+<script type='text/javascript' src='/scripts/nikit.js'></script>
+<script type='text/javascript' src='/scripts/sh_main.js'></script>
+<script type='text/javascript' src='/scripts/sh_tcl.js'></script>
+<script type='text/javascript' src='/scripts/sh_c.js'></script>
+<script type='text/javascript' src='/scripts/sh_cpp.js'></script>
+<!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
+<script src='https://hcaptcha.com/1/api.js'></script>
+<script>var clipboard = new ClipboardJS('.copybtn', {
+  text: function(trigger) {
+    return document.querySelector(trigger.getAttribute('data-clipboard-target')).textContent + '\n';
+  }
+});
+sort_tables();
+</script>
+
+
+
+</body>
+</html>
+

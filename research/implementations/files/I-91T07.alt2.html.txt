@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html>
+<head id="Head">
+    <meta charset="utf-8">
+    <title>Entropy</title>
+    <script defer data-domain="danieltemkin.com" src="https://plausible.io/js/script.js"></script>
+</head>
+<body>
+    
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/Content/Entropy/Entropy_styles.css" />
+    <script type="text/javascript" src="/Content/Entropy/entropy.js"></script>
+    <script type="text/javascript" src="/Content/Entropy/DrunkEliza.js"></script>
+    <script type="text/javascript">
+        var SUPPORTS_ENTROPY = !!Object.defineProperty;
+
+        var _0, _99, _1, bottles1, bottles2, bottles3;
+
+        var inr = false;
+
+        window.onload = (function () {
+
+            if (!SUPPORTS_ENTROPY) return;
+
+            // decaying header
+            var header = document.getElementById('title');
+            var data = Entropy.watch({
+                text: header.innerHTML
+            }, 0.75);
+
+            var updateHeader = function () {
+                header.innerHTML = '';
+                header.appendChild(document.createTextNode(data.text));
+
+                setTimeout(updateHeader, 2000 * Math.random() + 1000);
+            };
+
+            setTimeout(updateHeader, 3000);
+
+
+            // decaying code
+            var varx = document.getElementById('varx');
+            var vary = document.getElementById('vary');
+            var varz = document.getElementById('varz');
+
+            _0 = document.getElementById('zero');
+            _99 = document.getElementById('99');
+            _1 = document.getElementById('1');
+            bottles1 = document.getElementById('bottles1');
+            bottles2 = document.getElementById('bottles2');
+            bottles3 = document.getElementById('bottles3');
+
+
+            var values = Entropy.watch({
+                varx: 10.0,
+                vary: 'y',
+                varz: "test"
+            }, 0.75);
+
+            var updateCode = function () {
+                varx.innerHTML = values.varx;
+                vary.innerHTML = values.vary;
+                varz.innerHTML = values.varz;
+            }
+
+            setInterval(updateCode, 500);
+
+            document.getElementById("elizaBack").onclick = function () {
+                document.getElementById("userInput").focus();
+            };
+        });
+
+        // listen for scroll event and call animate function
+        document.addEventListener('scroll', activate);
+
+        // check if element is in view
+        function inView(element) {
+
+            var elementHeight = element.clientHeight;
+
+            // get window height
+            var windowHeight = window.innerHeight;
+            // get number of pixels that the document is scrolled
+            var scrollY = window.scrollY || window.pageYOffset;
+
+            // get current scroll position (distance from the top of the page to the bottom of the current viewport)
+            var scrollPosition = scrollY + windowHeight;
+            // get element position (distance from the top of the page to the bottom of the element)
+            var elementPosition = element.getBoundingClientRect().top + scrollY + elementHeight;
+
+            // is scroll position greater than element position? (is element in view?)
+            if (scrollPosition > elementPosition) {
+                return true;
+            }
+
+            return false;
+        }
+
+        var bottlesValues = Entropy.watch({
+            varzero: 0.0001, // does not seem to work with 0.0
+            var99: 99.0,
+            var1: 1.0,
+            bottles1: " bottles of beer on the wall.\\n",
+            bottles2: " bottles of beer on the wall, ",
+            bottles3: " bottles of beer.\\nTake one down, pass it around, "
+        }, 0.75);
+
+        var update99BottlesCode = function () {
+            _0.innerHTML = bottlesValues.varzero;
+            _99.innerHTML = bottlesValues.var99;
+            _1.innerHTML = bottlesValues.var1;
+            bottles1.innerHTML = bottlesValues.bottles1;
+            bottles2.innerHTML = bottlesValues.bottles2;
+            bottles3.innerHTML = bottlesValues.bottles3;
+        }
+
+        // animate element when it is in view
+        function activate() {
+
+            // check for 99 bottles animation
+            if (inView(document.getElementById("99codeblock"))) {
+                if (!inr) {
+                    // 99 bottles is in view, start animating
+                    inr = setInterval(update99BottlesCode, 500);
+                }
+            }
+
+            var drunkEliza = document.getElementById("userInput")
+            if (inView(drunkEliza)) {
+                drunkEliza.focus();
+            }
+        }
+
+    </script>
+
+    <meta name="description" content="The Entropy Language" />
+    <link rel="canonical" href="https://entropy-lang.org" />
+    <meta name="copyright" content="Daniel Temkin">
+    <meta name="language" content="en-US">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Entropy" />
+    <meta property="og:description" content="Entropy: A Language Where Data Decays the More it is Used" />
+    <meta property="og:url" content="http://entropy-lang.org" />
+    <meta property="og:site_name" content="esoteric.codes" />
+    <meta property="og:image" content="http://entropy-lang.org/Content/Entropy/Entropy_screenshot.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="627" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="Entropy: A Language Where Data Decays the More it is Used" />
+    <meta name="twitter:title" content="Entropy" />
+    <meta name="twitter:site" content="@rottyooth" />
+    <meta name="twitter:image" content="http://entropy-lang.org/Content/Entropy/Entropy_screenshot.png" />
+
+</head>
+<body>
+    <header>
+        <div class="row3">
+            <div class="column1">
+                <h1 id="title">Entropy</h1>
+            </div>
+            <div id="menu">
+                <ul>
+                    <li>Created 2010</li>
+                    <li><a href="https://github.com/rottytooth/Entropy">C# Compiler on Github</a></li>
+                    <li><a href="http://danieltemkin.com/Esolangs/">More by Daniel Temkin</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section class="orange">
+        <div class="row">
+            <div class="column1">
+                <h3>Entropy is a language where data decays the more it's used</h3>
+                <p>Each time a variable is accessed, its value may go slightly off:</p>
+                <div class="codeblock">
+                    <code>
+                        <span class="keyword">&gt;  real</span> x = 10; <br />
+                        <span class="keyword">&gt;</span> print x <br />
+                        <span id="varx" class="string">10.0</span><br /><br />
+
+                        <span class="keyword">&gt; char</span> y = <span class="string">'y'</span>; <br />
+                        <span class="keyword">&gt;</span> print y; <br />
+                        <span id="vary" class="string">y</span><br /><br />
+
+                        <span class="keyword">&gt; string</span> test = <span class="string">"test"</span>;<br />
+                        <span class="keyword">&gt;</span>  print test; <br />
+                        <span id="varz" class="string">test</span>
+                    </code>
+                </div>
+                <p>Constants are affected too. The hard-coded values in your code will change each time we loop past them:</p>
+                <div class="codeblock" id="99codeblock">
+                    <code>
+                        <!-- <pre> -->
+                        <span class="keyword">while</span> count > <span id="zero">0</span> <span class="comment"># should be 0</span><br />
+                        <span class="keyword">[</span><br />
+                        <div class="indent">
+                            <span class="keyword">if</span> count &lt; <span id="99">99</span><span class="comment"> # should be 99</span><br />
+                            <span class="keyword">[</span><br />
+                            <div class="indent">
+                                print count;<br />
+                                print <span class="string">"<span id="bottles1"> bottles of beer on the wall.\n</span>"</span>;<br />
+                            </div>
+                            <span class="keyword">]</span><br />
+                            print count;<br />
+                            print <span class="string">"<span id="bottles2"> bottles of beer on the wall, </span>"</span>;<br />
+                            print count;<br />
+                            print <span class="string">"<span id="bottles3"> bottles of beer.\nTake one down, pass it around, </span>"</span>;<br />
+
+                            <span class="keyword">let</span> count = count - <span id="1">1</span>; <span class="comment"># should be 1</span><br />
+
+                            <span class="comment"># Meanwhile, the count variable is constantly shifting a bit too!</span><br />
+                        </div>
+                        <span class="keyword">]</span>
+                        <!-- </pre> -->
+                    </code>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="purple">
+        <div class="center">
+            <div class="row3">
+                <div class="column1">
+                    <h3>Entropy won't indulge the programmer's illusion of control</h3>
+                    <div class="highlight"></div>
+                </div>
+                <div class="column3">
+                    <h2>Chaos</h2>
+                    <p>Any output from an Entropy program is approximate, and the more the data is accessed, the less precise and more random it becomes. </p>
+                </div>
+                <div class="column3">
+                    <h2>Compulsiveness</h2>
+                    <p> An Entropy programmer needs to abandon the pursuit of precision—often working against years of habit—and accept inevitable flaws in their program.</p>
+                </div>
+                <div class="column3">
+                    <h2>Anti-Style</h2>
+                    <p>The programmer has, at best, a short window to get their idea across to the user before the program corrodes; the program must be designed around this constraint.</p>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <section class="">
+        <div class="row">
+            <div class="column1">
+                <h3 style="margin-left: 30px">Entropy in action</h3>
+            </div>
+            <div class="column2">
+                <iframe src="https://player.vimeo.com/video/566310324" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                <p class="video_label">The <b><i>99 Bottles of Beer program</i></b> in Entropy. Note the places (starting around 22) where the interpreter suddenly decides the text is in German</p>
+            </div>
+            <div class="column2">
+                <iframe src="https://player.vimeo.com/video/566355601" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                <p class="video_label">The <b><i>Alvin Lucier program</i></b> in Entropy. With a higher mutation rate, decay progresses much faster. Run in a Windows command terminal to get this weird geometric character set</p>
+            </div>
+        </div>
+    </section>
+    <section class="purple">
+        <div class="center">
+            <h3>Entropy as an esolang</h3>
+            <p>Most esolangs have arcane rules and strange-looking code but can be controlled by the patient-enough programmer. Theoretically any C++ algorithm can be written in brainfuck as a carefully curated mass of punctuation.</p>
+            <p>Entropy is the opposite. Its behavior always escapes full control and mastering the language means adapting to its demands rather than conquering them. It also is written in very ordinary-looking code.</p>
+            <p>In fact, the text of code is not relevant to the concept of the language and it is perfectly valid to re-write it using other syntax. The code running on this page uses <a href="https://andrew.wang-hoyer.com/experiments/entropy/">Entropy.JS</a>, a JavaScript implementation by Andrew Hoyer with none of the original Entropy's lexicon.</p>
+        </div>
+    </section>
+    <section>
+        <div class="center">
+            <h3>Drunk Eliza</h3>
+            <p>Entropy was inspired in part by Joseph Weizenbum's <i>Computing Power and Human Reason</i> (1976), including the essay "Science and the Compulsive Programmer" about the unhealthy cycles of thought coders become trapped in. Programmers are in complete control of the machine, and yet it is constantly reprimanding the coder by refusing to do what they had intended.</p>
+
+            <p>Weizenbaum is perhaps best known for his chatbot Eliza. He was surprised and a bit disturbed by how easily users of this simple program attributed human characteristics to it. I was curious what personality Eliza would have written in Entropy. I ended up with Drunk Eliza:</p>
+
+            <div id="elizaBack">
+                <div ID="elizaMain">
+                    <form onsubmit="processInput(document.getElementById('youLit').innerText, document.getElementById('userInput').value); return false;">
+                        <div ID="elizaText"></div>
+                        <div style="white-space: nowrap">
+                            <span ID="youLit"></span><input type="text" ID="userInput" class="textEntry" maxlength="64" autocomplete="off" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="orange">
+        <div class="center">
+            <h3>Resources</h3>
+            <ul>
+                <li><a href="https://github.com/rottytooth/Entropy">Entropy C# reference compiler</a> (2010)</li>
+                <li><a href="https://andrew.wang-hoyer.com/experiments/entropy/">Entropy.JS</a> by Andrew Hoyer (2012)</li>
+                <li><a href="https://direct.mit.edu/leon/article/51/4/405/46407/Entropy-and-FatFinger-Challenging-the"><i>Entropy and FatFinger: Challenging the Compulsiveness of Code with Programmatic Anti-Styles</i></a>, Leonardo Journal (2018) </li>
+                <li><a href="http://fatfingerjs.com">FatFinger: a JavaScript dialect that allows for misspelled code</a> (2017)</li>
+                <li><a href="http://danieltemkin.com/Esolangs/">More esolang works by Daniel Temkin</a></li>
+                <li><a href="https://esoteric.codes">esoteric.codes</a> (esolangs blog)</li>
+            </ul>
+        </div>
+    </section>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4cf09a1be663052',t:'MTc5MjQwNTA5NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
+
+
+
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!doctype html>
+<html>
+<head>
+ <title>Elizabeth</title>
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="keywords" content="philosophy, computing, turtle graphics, elizabeth, signature">
+ <meta name="description" content="The aim of this website is to highlight the many strong links between Philosophy and Computing, for the benefit of students of both disciplines.">
+ <link rel="stylesheet" href="../css/screen.css">
+ <link rel="shortcut icon" href="../images/favicon.ico">
+ <script src="https://kit.fontawesome.com/03273b8e38.js" crossorigin="anonymous"></script>
+ <script>var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-43955496-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ var s = document.getElementsByTagName('script')[0];
+ s.parentNode.insertBefore(ga, s);
+})();
+</script>
+</head>
+<body>
+ <header class="header"> <div class="container">
+  <h1><a href="../home.htm">PhiloComp<em>.</em>net</a></h1>
+  <img src="../images/philosophy-logo.jpg">
+  <img src="../images/oxford-logo.jpg">
+ </div>
+</header>
+ <nav class="nav"> <div class="container">
+  <a class="site-menu-button" data-toggle="nav"><i class="fas fa-bars"></i></a>
+  <ul class="site-menu">
+   <li><a data-section="home" href="../home.htm">Home <i class="fas fa-caret-down"></i></a>
+    <ul class="site-sub-menu">
+     <li><a href="../home.htm">Welcome to PhiloComp.net</a></li>
+     <li><a href="../home/overview.htm">Website Overview</a></li>
+     <li><a href="../home/philcomp.htm">Philosophy and Computing</a></li>
+     <li><a href="../home/oxford.htm">Studying Computer Science &amp; Philosophy at Oxford</a></li>
+     <li><a href="../home/issues.htm">Computational &amp; Philosophical Issues</a></li>
+     <li><a href="../home/robots.htm">Philosophical Issues in Robot Design</a></li>
+     <li><a href="../home/compforphil.htm">Computing for Philosophers</a></li>
+     <li><a href="../home/paradigm.htm">A New Paradigm of Explanation?</a></li>
+     <li><a href="../home/meta.htm">Meta-Studies of Computing and Information Science</a></li>
+     <li><a href="../home/links.htm">Societies, Journals, and Research Centres</a></li>
+     <li><a href="../home/contact.htm">Contact PhiloComp.net</a></li>
+     <li><a href="../home/map.htm">Site Map</a></li>
+    </ul>
+   </li>
+   <li><a data-section="videos" href="../videos.htm">Videos <i class="fas fa-caret-down"></i></a>
+    <ul class="site-sub-menu">
+     <li><a href="../videos.htm">Videos and Other Learning Resources</a></li>
+     <li><a href="../videos/oxford.htm">Talks on Computer Science &amp; Philosophy at Oxford</a></li>
+     <li><a href="../videos/python_1.htm">Introducing Turtle Python &ndash; <b>NEW IN 2022!</b></a></li>
+     <li><a href="../videos/recursion.htm">Talks on Recursion and Iteration</a></li>
+     <li><a href="../videos/cellular.htm">Talks on Cellular Models</a></li>
+     <li><a href="../videos/games.htm">Talks on AI Games Programming</a></li>
+     <li><a href="../videos/turing.htm">Talks on Alan Turing</a></li>
+     <li><a href="../videos/general_lectures.htm">Lectures on General Philosophy</a></li>
+     <li><a href="../videos/turing_lectures.htm">Lectures on Alan Turing</a></li>
+    </ul>
+   </li>
+   <li><a data-section="computing" href="../computing.htm">Computing <i class="fas fa-caret-down"></i></a>
+    <ul class="site-sub-menu">
+     <li><a href="../computing.htm">From Turing Machines to Programming</a></li>
+     <li><a href="../computing/hilbert.htm">Hilbert, G&ouml;del, and Turing</a></li>
+     <li><a href="../computing/turing1936.htm">Turing's Landmark Paper of 1936</a></li>
+     <li><a href="../computing/programming.htm">Programming for Philosophers</a></li>
+     <li><a href="../computing/turtle.htm">Programming in Turtle Graphics</a></li>
+     <li><a href="../computing/funcgeom.htm"><i>GeomLab</i></a></li>
+     <li><a href="../computing/compilers.htm">How Computers Work</a></li>
+    </ul>
+   </li>
+   <li><a data-section="ai" href="../ai.htm">AI <i class="fas fa-caret-down"></i></a>
+    <ul class="site-sub-menu">
+     <li><a href="../ai.htm">Artificial Intelligence</a></li>
+     <li><a href="autoreason.htm">Automated Reasoning</a></li>
+     <li><a href="natlang.htm">Natural Language Processing</a></li>
+     <li><a href="compthink.htm">Can Computers Think?</a></li>
+     <li><a href="thinkingmatter.htm">Hobbes and Thinking Matter</a></li>
+     <li><a href="elizabeth.htm"><i>Elizabeth</i>: An Educational Chatbot</a></li>
+     <li><a href="elizlearn.htm"><i>Elizabeth</i> Learning Resources</a></li>
+    </ul>
+   </li>
+   <li><a data-section="ethics" href="../ethics.htm">Ethics <i class="fas fa-caret-down"></i></a>
+    <ul class="site-sub-menu">
+     <li><a href="../ethics.htm">Computers and Ethics</a></li>
+     <li><a href="../ethics/professional.htm">Professional Ethics of AI</a></li>
+     <li><a href="../ethics/robots.htm">Robot Ethics</a></li>
+     <li><a href="../ethics/aidecisions.htm">AI Decision-Making</a></li>
+     <li><a href="../ethics/personal.htm">Personal Impact of Computer Systems</a></li>
+     <li><a href="../ethics/societal.htm">Societal Impact of Computer Systems</a></li>
+     <li><a href="../ethics/medicine.htm">Ethics of AI in Medicine</a></li>
+     <li><a href="../ethics/regulation.htm">AI Regulation and Law</a></li>
+     <li><a href="../ethics/philmind.htm">AI and Philosophy of Mind</a></li>
+     <li><a href="../ethics/metaethics.htm">Computers and Meta-Ethics</a></li>
+    </ul>
+   </li>
+   <li><a data-section="models" href="../models.htm">Models <i class="fas fa-caret-down"></i></a>
+    <ul class="site-sub-menu">
+     <li><a href="../models.htm">Computer Models and Philosophy</a></li>
+     <li><a href="../models/complexity.htm">The Emerging Science of Complex Systems</a></li>
+     <li><a href="../models/thoughtexpt.htm">Computer Models as Thought Experiments</a></li>
+     <li><a href="../models/intuition.htm">Computer Models as "Intuition Pumps"</a></li>
+     <li><a href="../models/existence.htm">Computer Models as Existence Proofs</a></li>
+     <li><a href="../models/alife.htm">Artificial Life</a></li>
+     <li><a href="../models/physical.htm">Computer Models in the Physical Sciences</a></li>
+     <li><a href="../models/agents.htm">Agent-Based Models</a></li>
+     <li><a href="../models/biological.htm">Computer Models in the Biological Sciences</a></li>
+     <li><a href="../models/evolution.htm">Evolutionary Computer Models</a></li>
+     <li><a href="../models/social.htm">Computer Models in the Social Sciences</a></li>
+     <li><a href="../models/economics.htm">Computer Models in Economics</a></li>
+     <li><a href="../models/genscience.htm">Generative Social Science</a></li>
+     <li><a href="../models/evolcoop.htm">Evolution of Cooperation</a></li>
+    </ul>
+   </li>
+   <li><a data-section="texts" href="../texts.htm">Texts <i class="fas fa-caret-down"></i></a>
+    <ul class="site-sub-menu">
+     <li><a href="../texts.htm">Computers and Texts</a></li>
+     <li><a href="../texts/databases.htm">Textual and Bibliographic Databases</a></li>
+     <li><a href="../texts/signature.htm">The <i>Signature</i> Stylometric System</a></li>
+     <li><a href="../texts/dreams.htm">Barack Obama's <i>Dreams from my Father</i></a></li>
+     <li><a href="../texts/cuckoo.htm">J.K. Rowling and <i>The Cuckoo's Calling</i></a></li>
+    </ul>
+   </li>
+  </ul>
+ </div>
+</nav>
+ <main class="main">
+  <div class="container">
+<article>
+ <h1><i>Elizabeth</i></h1>
+ <h2>An Educational Chatbot for Windows</h2>
+ <p>Welcome to the home page of <i>Elizabeth</i>, an automated conversation and natural language processing program designed to provide an enjoyable and easy way in to natural language processing, but with sufficient power to enable it to handle complex grammatical transformations and even resolution theorem-proving, as well as straightforward pattern-match/substitution responses. <i>Elizabeth</i> can be thought of as an adaptation of Joseph Weizenbaum's ELIZA program, in which the various selection, substitution, and phrase storage mechanisms have been enhanced and generalised to increase both its flexibility and its potential adaptability. The system also incorporates analysis tables to show exactly what processing has taken place, thus providing a learning tool that can give insights into some of the fundamental methods and issues of artificial intelligence within an entertaining context.</p>
+ <h2>Learning Resources</h2>
+ <p>For a full description of the comprehensive learning resources included in the package and advice on getting started, see <a href="elizlearn.htm">Elizabeth</li> Learning Resources</a>.
+ <h2>Download Elizabeth 2.04, 2.07, or 2.20</h2>
+ <p>This program is freeware for educational use, but please respect the copyright, and ensure that if you pass it on you do so without charge, make clear its authorship, and leave all documentation intact. <i>Elizabeth 2.20</i> is the very latest version, incorporating a number of significant improvements, and including a comprehensive PDF manual of over 80 pages. It is provided as a structured ZIP archive (with the appropriate directory structure stored internally):</p>
+ <ul>
+  <li><a href="../downloads/elizip2020.zip">Elizabeth for Windows 2.20 (structured ZIP archive)</a></li>
+ </ul>
+ <p>Previous versions of the software provided documentation through the traditional Windows Help system, which is not standardly supported by <i>Windows</i> 10 and therefore considered obsolete. However these can still be downloaded from the following links: <a href="../downloads/elizip204.zip">Version 2.04</a>; <a href="../downloads/elizip207.zip">Version 2.07</a>. <i>Elizabeth</i> 2.07 incorporated various improvements over 2.04, but without updates to the Help file. Scripts produced with either system will mostly work in the same way with version 2.20, to which users are strongly advised to switch, as this will be maintained into the future.</p>
+ <h2>Using the System</h2>
+ <p>Having downloaded the ZIP archive, extract it into an appropriate root directory (e.g. "C:\Elizabeth") &ndash; this should contain the files <i>Elizabeth.exe</i> (the executable program file), <i>Elizabeth.pdf</i> (the PDF manual), and <i>Elizabeth.ppt</i> (a PowerPoint which can be used to introduce the system to students). The root directory should also contain two subdirectories, called <i>Illustrative Scripts</i> (a library of standard scripts that can be loaded from the Help menu) and <i>My Scripts</i> (for the individual user's own scripts). Initially, the only file with <i>My Scripts</i> will be the inital illustrative script <i>Elizabeth.txt</i> (which is editable, and automatically executed on startup), but other scripts will be copied there (and thus also become editable by the user) if they are chosen from the Help menu. If the user deletes <i>Elizabeth.txt</i> entirely at any point, it will automatically be replaced by the original illustrative script, so there is never any risk of losing access to this (or the other standard scripts) by incautious editing.</p>
+ <p><i>Note for school administrators: see Section 6.4 of the manual if you wish to set the system up so that each user has a "My Scripts" directory in their own area of a network.</i></p>
+ <p>To run the program, simply execute <i>Elizabeth.exe</i> (e.g. by double-clicking on the file within Windows explorer). The program will immediately start a conversation &ndash; try responding in the ways shown in the screenshot below, and see what happens!</p>
+ <p class="screenshot"><img src="../images/elizabeth220.png" alt="Elizabeth screenshot"></p>
+ <p>Now go to the Help menu and choose "Open Help file" (the very first option). When the file opens in your PDF viewer, scroll to Section 1.4, "Illustrative Script and Conversation". This will explain what you have seen.</p>
+ <p>Alternatively, you might prefer to read through the PDF manual more systematically, starting from Section 1.1, "Overview of the System".</p>
+ <h2>Documentation</h2>
+ <p>A <i>PowerPoint</i> presentation is provided in the package, developed from one that was used at the University of Leeds in 2002-03. This presentation is intended to give a straightforward introduction to the system in a manner suitable for private study, or an introductory taught course on Artificial Intelligence or Natural Language Processing. Use <i>PowerPoint</i> to print out handouts (six slides per page) for a useful quick-reference guide.</p>
+ <p>Full documentation is provided in the comprehensive PDF manual, which can of course be printed out for reference. The main sections are as follows:</p>
+ <ul>
+  <li>1. Introduction to the <i>Elizabeth</i> System
+   <ul>
+    <li>1.1 Overview of the System</li>
+    <li>1.2 Configuration, Starting Up, and the System Menus</li>
+    <li>1.3 The Script Editor</li>
+    <li>1.4 Illustrative Script and Conversation</li>
+    <li>1.5 Weizenbaum's Original DOCTOR Script</li>
+    <li>1.6 Self-Teach Exercises</li>
+   </ul>
+  </li>
+  <li>2. Basic Script Commands
+   <ul>
+    <li>2.1 Introduction to Script Commands</li>
+    <li>2.2 Simple Message Selection Commands</li>
+    <li>2.3 The Input/Keyword/Output/Final Transformation Process</li>
+    <li>2.4 Phrase Memorisation and Recall</li>
+    <li>2.5 Saving Text Files Dynamically</li>
+   </ul>
+  </li>
+  <li>3. Pattern Matching and Recursion
+   <ul>
+    <li>3.1 Pattern Matching</li>
+    <li>3.2 Recursion and Text Splitting</li>
+    <li>3.3 The Power of Recursion</li>
+   </ul>
+  </li>
+  <li>4. Advanced Script Processing
+   <ul>
+    <li>4.1 Implementing Grammatical Rules</li>
+    <li>4.2 Dynamic Script Processing</li>
+    <li>4.3 Control of Scripts using Command Index Codes</li>
+    <li>4.4 Giving Direction to a Conversation</li>
+    <li>4.5 Defining and Using Conditional Commands</li>
+    <li>4.6 Implementing Propositional Logic</li>
+    <li>4.7 Implementing a Turing Machine</li>
+   </ul>
+  </li>
+  <li>5. Technical Details
+   <ul>
+    <li>5.1 Capitalisation and Transformations</li>
+    <li>5.2 Iteration and Cycling of Input/Output/Final Transformations</li>
+    <li>5.3 Technical Note on Pattern Matching</li>
+    <li>5.4 Sequencing and Timing of Dynamic Commands</li>
+   </ul>
+  </li>
+  <li>6. Reference Section
+   <ul>
+    <li>6.1 Command Syntax Reference Guide</li>
+    <li>6.2 Built-In String Functions</li>
+    <li>6.3 Alphabets and Special Symbols</li>
+    <li>6.4 Directory Usage, System Files, and Predefined Scripts</li>
+    <li>6.5 Script Directives</li>
+    <li>6.6 Copyright, and Versions of the Software</li>
+   </ul>
+  </li>
+ </ul>
+</article>
+<aside>
+  <figure class="bordered"><img src="../images/weizenbaum.jpg" alt="Joseph Weizenbaum"><figcaption><b>Joseph Weizenbaum</b><br><i>Inventor of ELIZA, the first chatbot</i></figcaption></figure>
+  <a href="../videos/turing.htm"><figure><img src="../images/turing.jpg" alt="Alan Turing">
+ <figcaption>Recorded talks on Alan Turing</figcaption></figure></a>
+  <a href="natlang.htm"><figure><img src="../images/winograd.jpg" alt="Terry Winograd"><figcaption>Natural Language Processing</figcaption></figure></a>
+  <a href="elizlearn.htm"><figure><img src="../images/elizabethsmall.gif" alt="Elizabeth software"><figcaption>Learning Resources for <i>Elizabeth</i></figcaption></figure></a>
+</aside>
+  </div>
+ </main>
+ <footer class="footer"> <div class="container">
+  <p>Technical contributions gratefully acknowledged from Henry Merivale, Ethics content from Carissa V&eacute;liz, and design suggestions from Anna Whitmore</p>
+ </div>
+</footer>
+ <script>let section = 'home'
+if (window.location.href.match(/\bvideos\b/)) section = 'videos'
+if (window.location.href.match(/\bcomputing\b/)) section = 'computing'
+if (window.location.href.match(/\bai\b/)) section = 'ai'
+if (window.location.href.match(/\bethics\b/)) section = 'ethics'
+if (window.location.href.match(/\bmodels\b/)) section = 'models'
+if (window.location.href.match(/\btexts\b/)) section = 'texts'
+document.querySelector(`[data-section="${section}"]`).classList.add('active')
+document.querySelector('[data-toggle="nav"]').addEventListener('click', () => {
+ document.querySelector('.site-menu').classList.toggle('open')
+})
+const sectionLinks = Array.from(document.querySelectorAll('[data-section]'))
+for (const sectionLink of sectionLinks) {
+ sectionLink.addEventListener('click', (event) => {
+  event.preventDefault()
+  const subMenu = sectionLink.parentElement.querySelector('.site-sub-menu')
+  if (subMenu.classList.contains('open')) {
+   subMenu.classList.remove('open')
+  } else {
+   for (const sl of sectionLinks) sl.parentElement.querySelector('.site-sub-menu').classList.remove('open')
+   subMenu.classList.add('open')
+  }
+ })
+}
+document.querySelector('main').addEventListener('click', () => {
+ document.querySelector('.site-menu').classList.remove('open')
+ for (const subMenu of document.querySelectorAll('.site-sub-menu')) subMenu.classList.remove('open')
+})
+</script>
+</body>
+</html>
