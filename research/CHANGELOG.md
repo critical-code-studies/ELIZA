@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.64 (2026-10-19)
+
+- The kit at 0.63.0: a new Type list (what the thing is, 58 types in ten groups, with a find box), a new optional Medium (the carrier of a program or object), and both lists extensible from the bench with New type and New medium.
+
 ## 0.1.63 (2026-10-19)
 
 - The kit at 0.62.1: the Add box fixed after testing. Each mode shows only its own part; Versions shown and empty unless chosen; Type required; a link's Shows as must be chosen; stubs tagged missing and to-locate; program source kept as readable text; duplicates named; no file left without a record when a save fails. The corpus rule reworded.
