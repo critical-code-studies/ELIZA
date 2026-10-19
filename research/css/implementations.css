@@ -1,0 +1,102 @@
+/* implementations.css - the Implementations view (js/implementations.js): the test viewer's styles, on the bench's variables and themes, scoped to the view. */
+#view-implementations .iv-head { position:sticky; top:0; z-index:5; background:var(--bg-2); border-bottom:1px solid var(--line); padding:10px 16px; display:flex; gap:12px; align-items:center; flex-wrap:wrap }
+#view-implementations .note { color:var(--text-faint); font-size:12px }
+#view-implementations .iv-nav button { border:1px solid var(--line); background:var(--surface-2); color:var(--text); padding:5px 12px; cursor:pointer; font:inherit }
+#view-implementations .iv-nav button:first-child { border-radius:6px 0 0 6px }
+#view-implementations .iv-nav button:last-child { border-radius:0 6px 6px 0 }
+#view-implementations .iv-nav button.on { background:var(--beam); color:var(--bg-2); border-color:var(--beam) }
+#view-implementations .iv-main { padding:12px 20px 16px; max-width:1600px }
+#view-implementations .filters { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; align-items:center }
+#view-implementations .filters select, #view-implementations .filters input { font:inherit; padding:4px 6px; background:var(--surface); color:var(--text); border:1px solid var(--line); border-radius:5px }
+#view-implementations .btn { font:inherit; font-size:13px; border:1px solid var(--line); background:var(--surface); color:var(--text); border-radius:5px; padding:3px 10px; cursor:pointer }
+#view-implementations .btn.on { border-color:var(--beam); color:var(--beam); font-weight:600 }
+#view-implementations table { border-collapse:collapse; width:100% }
+#view-implementations th, #view-implementations td { text-align:left; padding:5px 8px; border-bottom:1px solid var(--line); vertical-align:top }
+#view-implementations th { color:var(--text-dim); font-weight:600; position:sticky; top:var(--iv-headh, 44px); background:var(--bg-2) }
+#view-implementations th[data-sort] { cursor:pointer }
+#view-implementations th[data-sort]:hover { color:var(--beam) }
+#view-implementations tr.row { cursor:pointer }
+#view-implementations tr.row:hover { background:var(--surface-2) }
+#view-implementations .mono { font-family:var(--code-font); font-size:12.5px }
+#view-implementations .chip { display:inline-block; padding:0 7px; border-radius:9px; font-size:11.5px; border:1px solid currentColor; white-space:nowrap }
+#view-implementations .st-held {color:var(--green)}
+#view-implementations .st-printed {color:var(--beam)}
+#view-implementations .st-attested {color:var(--g-edited)}
+#view-implementations .st-lost {color:var(--red)}
+#view-implementations .st-linked {color:var(--violet)}
+#view-implementations .fam { display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:5px; vertical-align:middle }
+#view-implementations #tree { overflow:auto; border:1px solid var(--line); border-radius:8px; background:var(--surface) }
+#view-implementations #tree svg text { fill:var(--text); font-size:11px }
+#view-implementations .legend { display:flex; gap:14px; flex-wrap:wrap; margin:8px 0; font-size:12px; color:var(--text-dim) }
+#view-implementations .legend svg { vertical-align:middle }
+#view-implementations .yes { color:var(--green); font-weight:700 }
+#view-implementations .no { color:var(--red) }
+#view-implementations .unk { color:var(--text-faint) }
+#view-implementations td.c { text-align:center }
+#view-implementations .card { background:var(--surface); border:1px solid var(--line); border-radius:10px; margin-bottom:12px }
+#view-implementations .card summary { padding:10px 14px; cursor:pointer; display:grid; grid-template-columns:1fr auto; gap:4px 10px; align-items:center; list-style:none }
+#view-implementations .card summary::-webkit-details-marker { display:none }
+#view-implementations .card summary .mono { color:var(--text-faint) }
+#view-implementations .card summary .chip { grid-column:2; grid-row:1; justify-self:end }
+#view-implementations .card summary b { grid-column:1 / -1; font-size:15px; line-height:1.35 }
+#view-implementations .card .body { padding:0 14px 14px }
+#view-implementations .grid { display:grid; grid-template-columns:max-content 1fr; gap:3px 14px; margin:6px 0 10px }
+#view-implementations .grid div:nth-child(odd) { color:var(--text-faint) }
+#view-implementations .lineage { display:flex; gap:10px; align-items:stretch; flex-wrap:wrap; margin:10px 0; padding:10px; background:var(--surface-2); border-radius:8px }
+#view-implementations .lineage .col { display:flex; flex-direction:column; gap:6px; min-width:200px; flex:1 }
+#view-implementations .lineage .self { flex:0 0 auto; align-self:center; font-weight:700; padding:6px 10px; border:2px solid var(--beam); border-radius:8px; max-width:280px }
+#view-implementations .lineage .arrow { align-self:center; color:var(--text-faint); font-size:20px }
+#view-implementations .nb { padding:5px 8px; border-radius:6px; background:var(--surface); cursor:pointer; font-size:12.5px }
+#view-implementations .nb.established { border:1.5px solid var(--text-dim) }
+#view-implementations .nb.probable { border:1.5px dashed var(--text-dim) }
+#view-implementations .nb.possible { border:1.5px dotted var(--text-dim) }
+#view-implementations .nb small { display:block; color:var(--text-faint) }
+#view-implementations .feats { display:flex; gap:6px; flex-wrap:wrap; margin:8px 0 }
+#view-implementations .desc { white-space:pre-wrap; max-width:900px }
+#view-implementations .actions { display:flex; gap:8px; margin:6px 0 2px }
+#view-implementations .source { background:var(--surface); border:1px solid var(--line); border-radius:10px; overflow:hidden }
+#view-implementations .source .bar { padding:7px 12px; border-bottom:1px solid var(--line); display:flex; gap:8px; flex-wrap:wrap; align-items:center; background:var(--surface-2) }
+#view-implementations .source .bar button { font:inherit; font-size:12px; border:1px solid var(--line); background:var(--surface); color:var(--text); border-radius:5px; padding:2px 8px; cursor:pointer }
+#view-implementations .source .bar button.on { border-color:var(--beam); color:var(--beam) }
+#view-implementations .private { color:var(--g-edited); font-size:12px }
+#view-implementations pre.code { margin:0; padding:10px 0; overflow:auto; max-height:75vh; font-family:var(--code-font); font-size:var(--code-size); line-height:1.45; background:var(--code-bg); counter-reset:ln }
+#view-implementations pre.code span { display:block; padding:0 12px 0 0; white-space:pre }
+#view-implementations pre.code span::before { counter-increment:ln; content:counter(ln); display:inline-block; width:4.5em; padding-right:1em; text-align:right; color:var(--text-faint); user-select:none }
+#view-implementations .held-privately { padding:24px; color:var(--text-dim) }
+#view-implementations .empty { padding:30px; color:var(--text-faint) }
+#view-implementations a { color:var(--beam) }
+#view-implementations .cmp-pick { display:grid; grid-template-columns:1fr auto 1fr; gap:10px; align-items:start; margin-bottom:12px }
+#view-implementations .cmp-pick .side { background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:10px }
+#view-implementations .cmp-pick .side input { width:100%; font:inherit; padding:4px 6px; background:var(--surface-2); color:var(--text); border:1px solid var(--line); border-radius:5px }
+#view-implementations .cmp-pick .side .t { font-weight:600; margin:6px 0 4px }
+#view-implementations .cmp-pick .mid { align-self:center }
+#view-implementations .ftab td.d { background:var(--hl); font-weight:600 }
+#view-implementations .par { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:12px; align-items:stretch }
+#view-implementations .par > * { min-width:0; margin:0 }
+#view-implementations .par > .card { height:100% }
+#view-implementations .par .source pre.code { max-height:70vh }
+@media (max-width:800px) {
+#view-implementations .par { grid-template-columns:minmax(0,1fr) }
+#view-implementations .par .a1 { order:1 }
+#view-implementations .par .a2 { order:2 }
+#view-implementations .par .b1 { order:3 }
+#view-implementations .par .b2 { order:4 }
+}
+#view-implementations .par .pane pre.code { max-height:70vh }
+#view-implementations .diff { width:100%; border-collapse:collapse; font-family:var(--code-font); font-size:12px; line-height:1.4 }
+#view-implementations .diff td { border:0; padding:0 6px; white-space:pre; vertical-align:top; overflow:hidden; max-width:0; text-overflow:ellipsis }
+#view-implementations .diff { table-layout:fixed }
+#view-implementations .diff td.n { width:3.5em; max-width:none; overflow:visible; text-overflow:clip; text-align:right; color:var(--text-faint); user-select:none }
+#view-implementations .diff tr.a td.ta { background:var(--del-bg) }
+#view-implementations .diff tr.b td.tb { background:var(--add-bg) }
+#view-implementations .diffwrap { max-height:75vh; overflow:auto; border:1px solid var(--line); border-radius:10px; background:var(--surface) }
+#view-implementations .summary { margin:8px 0; color:var(--text-dim) }
+#view-implementations .key span { padding:0 6px; margin-right:8px }
+@media (max-width:800px) {
+#view-implementations .par, #view-implementations .cmp-pick { grid-template-columns:1fr }
+#view-implementations th:nth-child(5), #view-implementations td:nth-child(5), #view-implementations th:nth-child(6), #view-implementations td:nth-child(6) { display:none }
+}
+#view-implementations .iv-head { padding:8px 20px; display:flex; gap:12px; align-items:center; flex-wrap:wrap }
+#view-implementations .iv-head .iv-title { font-weight:600 }
+#view-implementations .iv-credit { padding:4px 20px 24px; max-width:1600px }
+

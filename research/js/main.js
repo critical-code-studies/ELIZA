@@ -6,7 +6,7 @@
 (function (root) {
   'use strict';
   root.SW.BENCH.shell = {
-    views: ['read', 'scripts', 'analyse', 'compare', 'genealogy', 'about', 'findings', 'notes', 'paratexts'],
+    views: ['read', 'scripts', 'analyse', 'compare', 'genealogy', 'about', 'findings', 'notes', 'paratexts', 'implementations'],
     lang: function (vv) {
       var script = (vv.build || []).every(function (f) { return !/\.mad$/i.test(f.src); }), slip = vv.layer === 'slip';
       if (vv.fork === 'output') return { text: 'Output · a conversation with ELIZA', title: 'A conversation ELIZA produced, as printed or transcribed; read as text. Click for the project’s page on the code.' };
