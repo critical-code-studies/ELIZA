@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.76 (2026-10-19)
+
+- The kit at 0.65.1: an implementation's code (I-XXXXX) written in any text is a link, and Go to a code opens it.
+
 ## 0.1.75 (2026-10-19)
 
 - Implementations: Jeff Shrager confirms (19 October 2026) that every version public on elizagen.org is shared with permission, or was collected from an open-access public version with provenance. Every elizagen entry's clearance now quotes him, and seven versions listed on elizagen.org are published: the Burroughs B5500 script, Drunk ELIZA (Temkin), Classic Eliza in Tcl, Eliza for the TI-83 Plus (Ryves), Doctor in Berkeley Logo (Harvey), Elizabeth (Millican), and the FREUD listing from the Dallas Assortment disk. The two Apple II disks stay private, as they carry other programs. 138 entries, 57 with files.
