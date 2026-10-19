@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.77 (2026-10-19)
+
+- Implementations: heldAt names only an entry's own code file held privately. A published entry's paratext record moves to its paratexts (I-2D9J7's manual); FREUD (I-SYV6R) keeps heldAt, as its disk image is still private.
+
 ## 0.1.76 (2026-10-19)
 
 - The kit at 0.65.1: an implementation's code (I-XXXXX) written in any text is a link, and Go to a code opens it.
