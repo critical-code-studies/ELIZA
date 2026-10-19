@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.62 (2026-10-19)
+
+- The kit at 0.62.0: corpora, for a bulk body of material from one source kept in the catalogue but out of the default paratext list (a Corpus menu and a Corpora block, each with counts; a search reports what it finds in other corpora; a corpus may also list paratexts of its set). A catalogue without corpora is unchanged.
+
 ## 0.1.61 (2026-10-18)
 
 - The kit at 0.61.0: Paratext rules, to locate and to request (the tags to-locate and to-request, and a Request: paragraph saying whom to ask and for what), in the README, Help and the Add ▸ Missing hint.
