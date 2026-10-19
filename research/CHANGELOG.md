@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.70 (2026-10-19)
+
+- Implementations: the Tree's labels in the bench's sans font, as in the test viewer (they had taken the monospace).
+
 ## 0.1.69 (2026-10-19)
 
 - Implementations is a tab of the bench, no longer a page of its own, so the header, the version picker, the menus and the themes stay in place (it had lost them all). The viewer is now js/implementations.js and css/implementations.css, on the bench's colours. Its state rides in the address as iv, ic, ia, ib, ifeat, ifam and ist beside v and tab, and links to the old page (implementations/?view=…&code=…) redirect into the tab. Go to a code (#, or ?code= in a link) opens an I-code at Read.
