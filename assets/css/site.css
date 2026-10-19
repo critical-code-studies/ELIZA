@@ -772,6 +772,7 @@ dialog.lightbox figure { margin: 0; }
 dialog.lightbox img { display: block; max-width: 100%; max-height: calc(92vh - 5rem); width: auto; height: auto; margin: 0 auto; }
 dialog.lightbox figcaption { font-family: var(--mono); font-size: 0.72rem; color: var(--ink-dim); margin-top: 0.6rem; text-align: center; }
 .lightbox-close { position: sticky; float: right; top: 0; background: none; border: 0; color: var(--ink); font-size: 1.6rem; line-height: 1; cursor: pointer; padding: 0 0.2rem; margin: -0.4rem -0.3rem 0 0.5rem; }
+.talk-shots.talk-side figure + figure { margin-top: 0.9rem; }
 .talk-shots figcaption { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.3px; line-height: 1.5; color: var(--ink-dim); margin-top: 0.45rem; }
 @media (max-width: 640px) { .talk-shots { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; } .talk-shots.talk-side { width: 40%; margin-left: 0.9rem; } }
 
