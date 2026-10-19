@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.81 (2026-10-19)
+
+- The kit at 0.65.3: a picture in an item with alternates no longer shows an empty pane; the bench says what to do when a GitHub token is lost or has expired.
+
 ## 0.1.80 (2026-10-19)
 
 - Implementations: every code file in Jeff Shrager's elizagen.org is now held and public. Added as alternates: the raw transcriptions of Cosell's 1969 and 1972 programs (I-1O7VW), elizagen's genealogy extract of the Samson PDP-6 program (I-2N9J5), and the annotated transcription of Weizenbaum's MAD-SLIP source of 16 February 2022 (I-S5CMF).
