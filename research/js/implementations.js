@@ -125,7 +125,10 @@
   }
   function source(r, id) {
     var files = filesOf(r);
-    var html = '<div class="source"><div class="bar">' + (files.length ? files.map(function (f, i) { return '<button data-f="' + i + '"' + (i ? '' : ' class="on"') + '>' + esc(f.label) + '</button>'; }).join('') + (files[0].priv ? ' <span class="private">private copy, shown locally for testing; not published</span>' : '') : '<span class="unk">No file to show</span>') + '</div><div id="' + id + '"></div></div>';
+    // alternates held privately (a carrier with other programs on it, say): named, with the paratext holding them
+    var held = (r.alts || []).filter(function (a) { return !a.file && a.heldAt; });
+    var heldHTML = held.map(function (a) { return '<span class="private" title="' + esc((a.mime || '') + (a.size ? ', ' + a.size + ' bytes' : '')) + '">' + esc(a.label || 'An alternate') + (/held privately/i.test(a.label || '') ? '' : ', held privately') + ': <a href="?code=' + esc(a.heldAt) + '">' + esc(a.heldAt) + '</a></span>'; }).join(' ');
+    var html = '<div class="source"><div class="bar">' + (files.length ? files.map(function (f, i) { return '<button data-f="' + i + '"' + (i ? '' : ' class="on"') + '>' + esc(f.label) + '</button>'; }).join('') + (files[0].priv ? ' <span class="private">private copy, shown locally for testing; not published</span>' : '') : '<span class="unk">No file to show</span>') + (heldHTML ? ' ' + heldHTML : '') + '</div><div id="' + id + '"></div></div>';
     return { html: html, wire: function () {
       var el = root.querySelector('#' + id); if (!files.length) { el.innerHTML = '<p class="held-privately">' + emptyNote(r) + '</p>'; return; }
       var bar = el.previousElementSibling;

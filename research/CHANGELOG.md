@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.82 (2026-10-19)
+
+- Implementations: an alternate held privately (a carrier with other programs on it, such as FREUD's Dallas Assortment disk) is named in the source bar, with a link to the paratext holding it.
+
 ## 0.1.81 (2026-10-19)
 
 - The kit at 0.65.3: a picture in an item with alternates no longer shows an empty pane; the bench says what to do when a GitHub token is lost or has expired.
