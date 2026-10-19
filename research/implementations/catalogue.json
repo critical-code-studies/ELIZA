@@ -2088,19 +2088,19 @@
    "alts": [
     {
      "lang": "en",
-     "label": "Disk catalogue",
-     "mime": "text/plain",
-     "size": 899,
-     "note": "read from the image",
-     "sha1": "7d11122827ef668ccdd22b6b9ff74183b2d5645a"
+     "label": "Dallas Assortment #2 disk image (Apple II DOS 3.3), held privately: other programs are on it",
+     "heldAt": "P-WYFAB",
+     "mime": "application/octet-stream",
+     "size": 143360,
+     "sha1": "986934aae267a64d8f059c4c5126b3b04756f90b"
     },
     {
      "lang": "en",
-     "label": "FREUD, listed",
+     "label": "Disk catalogue, read from the image",
+     "heldAt": "P-WYFAB",
      "mime": "text/plain",
-     "size": 9083,
-     "note": "the Applesoft program detokenised from the disk",
-     "sha1": "41985b6a8ba279e36b73a52b001e153d6b605434"
+     "size": 899,
+     "sha1": "7d11122827ef668ccdd22b6b9ff74183b2d5645a"
     }
    ],
    "title": "FREUD, the Creative Computing ELIZA with a face, in Applesoft (Dallas Assortment #2, Apple II disk)",
@@ -2161,10 +2161,12 @@
    },
    "status": "held",
    "publish": "files",
-   "paratexts": [],
+   "paratexts": [
+    "P-WYFAB"
+   ],
    "movedFrom": "P-WYFAB",
    "children": [],
-   "heldAt": "P-WYFAB",
+   "heldAt": null,
    "clearance": {
     "basis": "other",
     "by": "DMB",
