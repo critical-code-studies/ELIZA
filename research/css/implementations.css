@@ -25,8 +25,8 @@
 #view-implementations .st-lost {color:var(--red)}
 #view-implementations .st-linked {color:var(--violet)}
 #view-implementations .fam { display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:5px; vertical-align:middle }
-#view-implementations #tree { overflow:auto; border:1px solid var(--line); border-radius:8px; background:var(--surface) }
-#view-implementations #tree svg text { fill:var(--text); font-size:11px }
+#view-implementations #iv-tree { overflow:auto; border:1px solid var(--line); border-radius:8px; background:var(--surface) }
+#view-implementations #iv-tree svg text { fill:var(--text); font-size:11px }
 #view-implementations .legend { display:flex; gap:14px; flex-wrap:wrap; margin:8px 0; font-size:12px; color:var(--text-dim) }
 #view-implementations .legend svg { vertical-align:middle }
 #view-implementations .yes { color:var(--green); font-weight:700 }

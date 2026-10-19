@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.72 (2026-10-19)
+
+- Implementations: the Tree's frame and label colours, whose rules still named the test viewer's id (the labels were near-invisible on dark themes).
+
 ## 0.1.71 (2026-10-19)
 
 - Implementations: the Tree's labels in the sans font (the 0.1.70 rule did not reach the text elements).
