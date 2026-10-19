@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.73 (2026-10-19)
+
+- The kit at 0.65.0: Compare ▸ By function, for Lisp benches (kit/lispdefs.js); not used here.
+
 ## 0.1.72 (2026-10-19)
 
 - Implementations: the Tree's frame and label colours, whose rules still named the test viewer's id (the labels were near-invisible on dark themes).
