@@ -94,3 +94,7 @@ button.badge.err { cursor: pointer; font: inherit; }
 /* a copy survives (SCRIPT, OUTPUT) in blue; only the name (NONE) in red, in every theme */
 .catalogue .badge.sc-script, .catalogue .badge.sc-output { color: #4a86e0; border-color: currentColor; }
 .catalogue .badge.sc-none { color: #e0524a; border-color: currentColor; }
+
+/* Implementations, a page of its own, linked from the tab bar like a tab */
+.tabs a.tabs-link { padding: 9px 13px 8px; border-bottom: 2px solid transparent; color: var(--text-dim); font-size: 14px; white-space: nowrap; text-decoration: none; }
+.tabs a.tabs-link:hover { color: var(--text); }

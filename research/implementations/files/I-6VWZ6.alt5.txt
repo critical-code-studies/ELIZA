@@ -1,0 +1,28 @@
+format: DATA, 27 directory entries in use
+  user 0  ASM.BAS        384 bytes on disk (1K)  AMSDOS type 0 (BASIC), load &0170, length 165
+  user 0  ASMCLOCK.BAS  2048 bytes on disk (2K)  AMSDOS type 0 (BASIC), load &0170, length 1819
+  user 0  BANNER.TXT    1536 bytes on disk (2K)  no AMSDOS header
+  user 0  BDAY.TXT       512 bytes on disk (1K)  no AMSDOS header
+  user 0  DECSING.BAS   1664 bytes on disk (2K)  AMSDOS type 0 (BASIC), load &0170, length 1449
+  user 0  EEPROM2.BAS    512 bytes on disk (1K)  AMSDOS type 0 (BASIC), load &0170, length 289
+  user 0  EEPROM3.BAS    768 bytes on disk (1K)  AMSDOS type 0 (BASIC), load &0170, length 585
+  user 0  EEPROM4.BAS    768 bytes on disk (1K)  AMSDOS type 0 (BASIC), load &0170, length 599
+  user 0  ELISA-DK.BAS 12928 bytes on disk (13K)  AMSDOS type 0 (BASIC), load &0170, length 12775
+  user 0  ELISASPO.BAS 12928 bytes on disk (13K)  AMSDOS type 0 (BASIC), load &0170, length 12773
+  user 0  ELIZA.BAS    35584 bytes on disk (35K)  AMSDOS type 0 (BASIC), load &0170, length 35329
+  user 0  ENGLISH.BAS   1280 bytes on disk (2K)  AMSDOS type 0 (BASIC), load &0170, length 1039
+  user 0  JULIAN.BAS    1408 bytes on disk (2K)  AMSDOS type 0 (BASIC), load &0170, length 1259
+  user 0  MIDIOUT.BAS    640 bytes on disk (1K)  AMSDOS type 0 (BASIC), load &0170, length 458
+  user 0  MIDIOUT.TXT    640 bytes on disk (1K)  no AMSDOS header
+  user 0  MIDISYN.BAS   6528 bytes on disk (7K)  AMSDOS type 0 (BASIC), load &0170, length 6324
+  user 0  MIDISYNX.BAS  6528 bytes on disk (7K)  AMSDOS type 0 (BASIC), load &0170, length 6376
+  user 0  MP3.BAS       1152 bytes on disk (2K)  AMSDOS type 0 (BASIC), load &0170, length 1016
+  user 0  RTC.BAS       2048 bytes on disk (2K)  AMSDOS type 0 (BASIC), load &0170, length 1845
+  user 0  SAYECHO.BAS    512 bytes on disk (1K)  AMSDOS type 0 (BASIC), load &0170, length 317
+  user 0  SAYTEMP.BAS    256 bytes on disk (1K)  AMSDOS type 0 (BASIC), load &0170, length 51
+  user 0  SERIAL2.BAS   1536 bytes on disk (2K)  AMSDOS type 0 (BASIC), load &0170, length 1379
+  user 0  SERRES.BAS    3840 bytes on disk (4K)  AMSDOS type 0 (BASIC), load &0170, length 3621
+  user 0  SPANISH.BAS   1280 bytes on disk (2K)  AMSDOS type 0 (BASIC), load &0170, length 1115
+  user 0  SPO-GERM.BAS  5888 bytes on disk (6K)  AMSDOS type 0 (BASIC), load &0170, length 5642
+  user 0  SPORAND.BAS    384 bytes on disk (1K)  AMSDOS type 0 (BASIC), load &0170, length 171
+  user 0  WELCOME.BAS   1792 bytes on disk (2K)  AMSDOS type 0 (BASIC), load &0170, length 1629

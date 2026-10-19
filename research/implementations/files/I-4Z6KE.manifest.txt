@@ -1,0 +1,20 @@
+Contents of P-BAYPI.zip (bytes, path), from elizagen.org Other_Elizas/Charles_Hayden_Eliza-Veliza/ at commit 077a081
+
+      1777  Charles_Hayden_Eliza-Veliza/Decomp.java
+       611  Charles_Hayden_Eliza-Veliza/DecompList.java
+      7343  Charles_Hayden_Eliza-Veliza/EString.java
+     30637  Charles_Hayden_Eliza-Veliza/Eliza test..html
+      1869  Charles_Hayden_Eliza-Veliza/Eliza.java
+      1210  Charles_Hayden_Eliza-Veliza/ElizaApp.java
+     12396  Charles_Hayden_Eliza-Veliza/ElizaMain.java
+      1578  Charles_Hayden_Eliza-Veliza/Key.java
+      1430  Charles_Hayden_Eliza-Veliza/KeyList.java
+      1390  Charles_Hayden_Eliza-Veliza/KeyStack.java
+       618  Charles_Hayden_Eliza-Veliza/Mem.java
+       790  Charles_Hayden_Eliza-Veliza/PrePost.java
+      1586  Charles_Hayden_Eliza-Veliza/PrePostList.java
+       594  Charles_Hayden_Eliza-Veliza/ReasembList.java
+      2373  Charles_Hayden_Eliza-Veliza/SynList.java
+       833  Charles_Hayden_Eliza-Veliza/WordList.java
+     15342  Charles_Hayden_Eliza-Veliza/instructions.txt
+     14814  Charles_Hayden_Eliza-Veliza/script

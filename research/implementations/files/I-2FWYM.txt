@@ -1,0 +1,111 @@
+*   ELIZA IN SNOBOL      R T DUQUET    SUNYA    FALL 1969                       
+*
+         &ANCHOR = 1      |   INPUT('INPUT',5,72)                               
+         PRE.TRIM = SPAN(' ') | NULL                                            
+         P.0 = *KEY.                                                            
+         P.1 = PRE.TRIM BREAK(' ') . WORD. ' '                                  
+         P.2 = *LEN(NEWSIZE.) '/'                                               
+         P.3 = BREAK(':') . CONTENT. ':'                                        
+         P.4 = PRE.TRIM REM . CONTENT.                                          
+         P.5 = PRE.TRIM ANY('SLD') . WORD. ' '                                  
+         SHORTEN. = BREAK('.,') . PHRASE. ANY('.,') REM . TRAILER.              
+         X.REF    = PRE.TRIM 'CF'                                               
+         BUMP.    = PRE.TRIM 'NEWKEY'                                           
+         PAREN.   = PRE.TRIM '/' BREAK('/') . CONTENT. '/'                      
+         STASH.   = PRE.TRIM '/' BREAK('/') . *$STORE. '/'                      
+         CALL.TO.SNOBOL = PRE.TRIM 'SNOBOL'                                     
+         ATTENTION.     = PRE.TRIM '*'                                          
+*                                                                               
+         INTRODUCTION = 'HOW DO YOU DO.'                                        
+         CLUELESS = '.. VERY INTERESTING'                                       
+         RETAIN = 'MY'                                                          
+*                                                                               
+*   WE NOW READ THE SCRIPT AND FORM STRINGS AS FOLLOWS.                         
+*   FOR EACH KEY WORD 'XXXX' WE FORM THE FOLLOWING VARIABLES:                   
+*      SPL.XXXX      IS A REPLACEMENT WORD.    (OPTIONAL)                       
+*      LEV.XXXX      IS A LEVEL NUMBER (IF ABSENT KEY IS IGNORED)               
+*      N.XXXX        A COUNT OF THE NUMBER OF DECOMPOSITIONS                    
+*      DEC.I.XXXX    IS THE I'TH DECOMPOSITION PATTERN             .            
+*      RULE.I.XXXX   IS A STRING OF RECOMPOSITION RULES FOR THE I'TH            
+*                    DECOMPOSITION. RULES ARE SEPARATED BY ':'.                 
+*                                                                               
+         OUTPUT    = 'ENTER SCRIPT'                                             
+         KEYWORDS. = '.'                                                        
+HIGGINS  SCRIPT.   = TRIM(INPUT)                :F(END)                         
+         SCRIPT. ATTENTION. =                   :S(FLAG)                        
+         SCRIPT. P.1 =                          :F(HIGGINS)                     
+         KEY. = ',' WORD.                                                       
+         KEYWORDS. P.0                          :S(LESSON)                      
+         KEYWORDS.   = KEY. KEYWORDS.                                           
+LESSON   SCRIPT. P.5 =                          :F(HIGGINS)S($WORD.)            
+ERR      OUTPUT = 'SCRIPT ERROR: ' WORD. ' ' SCRIPT. :(HIGGINS)                 
+S        STORE. = 'RPL' KEY.                                                    
+         SCRIPT. STASH. =                       :F(ERR)S(LESSON)                
+L        SCRIPT. PAREN. =                       :F(ERR)                         
+         $('LEV' KEY.) = INTEGER(CONTENT.) CONTENT.  :(LESSON)                  
+D        N.N = $('N' KEY.) + 1                                                  
+         S('N' KEY.) = N.N                                                      
+         SCRIPT. PAREN. =                       :F(ERR)                         
+         CONTENT. CALL.TO.SNOBOL =              :S(SPECIAL)                     
+         S('DEC.' N.N KEY.) = ARB CONTENT. REM . POST                           
+RULES    STORE.   = 'RULE.' N.N KEY.                                            
+         $STORE.  = DIFFER(SCRIPT.) SCRIPT.     :F(NEW.CARD)                    
+LOOP     NEWSIZE. = SIZE($STORE.) - 1                                           
+         $STORE. P.2                            :S(HIGGINS)                     
+NEW.CARD $STORE. = $STORE. TRIM(INPUT)          :F(END)S(LOOP)                  
+*                                                                               
+*   THE FOLLOWING ARE SPECIAL SCRIPT-HANDLING STATEMENTS                        
+*                                                                               
+SPECIAL  $('DEC.' N.N KEY.) = EVAL(CONTENT.)    :(RULES)                        
+ENCODE   SCRIPT. = SCRIPT. ' :(HIGGINS) ;'      :[CODE(SCRIPT.)]                
+FLAG     SCRIPT. CALL.TO.SNOBOL =               :S(ENCODE)                      
+*                                                                               
+*   WE NOW HOLD A CONVERSATION. FIRST WE READ A SENTENCE AND                    
+*   SEARCH FOR KEY WORDS  REPLACING APPROPRIATE ONES                            
+*   AND STACKING THE KEYS IN A QUASI-ORDERED LIST (STRING).                     
+*                                                                               
+INTRO    OUTPUT  = INTRODUCTION                                                 
+HEAR     PHRASE. = TRIM(INPUT) '.'              :F(END)                         
+HEARLESS PHRASE. SHORTEN.  ;   PHRASE. = PHRASE. ' '                            
+         COPY.   =   ;   CUES. =   ;   CUE.LEVEL = 0                            
+SPLIT    &ANCHOR = 1 ;   PHRASE.  P.1 =         :F(REPLY)                       
+         &ANCHOR = 0                                                            
+         KEYWORDS. WORD.                        :F(KEEP)                        
+         NEW.WORD = DIFFER($('RPL.' WORD.))                                     
+                    $('RPL.' WORD.)             :S(REPLACE)                     
+         COPY. = COPY. WORD. ' '                :(STACK)                        
+REPLACE  COPY. = COPY. NEW.WORD ' '                                             
+STACK    NEW.LEVEL = DIFFER($('LEV.' WORD.))                                    
+.                    $('LEV.' WORD.)            :F(SPLIT)                       
+         CUE.LEVEL = GT(NEW.LEVEL,CUE.LEVEL)                                    
+.                    NEW.LEVEL                  :F(LOCUE)                       
+         CUES. = WORD. ':' CUES.                :(SPLIT)                        
+LOCUE    CUES. = CUES. WORD. ':'                :(SPLIT)                        
+KEEP     COPY. = COPY. WORD. ' '                :(SPLIT)                        
+*                                                                               
+*   THIS PART FORMS OUR REPLY TO THE INPUT SENTENCE                             
+*                                                                               
+REPLY    CUES. P.3 =                            :F(NOCUE)                       
+NEXTCUE  CUE. = '.' CONTENT.                                                    
+         N.N  = 0 ;  NMAX. = $('N' CUE.)                                        
+ANALYSE  N.N  = LT(N.N,NMAX.) N.N + 1           :F(NOCUE)                       
+         COPY. $('DEC.' N.N CUE.)               :F(ANALYSE)                     
+         $('RULE.' N.N CUE.) P.3 =                                              
+         CONTENT. '/' =                                                         
+         $('RULE.' N.N CUE.) = $('RULE.' N.N CUE.) CONTENT. ';'                 
+         CONTENT. X.REF =                       :S(NEWCUE)                      
+         CONTENT. BUMP.                         :S(REPLY)                       
+         OUTPUT  = '.. ' EVAL(CONTENT.)                                         
+         MEMORY. = IDENT(CUE.,'.' RETAIN)                                       
+*                  LT(SIZE(MEMORY.),200)                                        
+*                  MEMORY. COPY. ':'            :(HEAR)                         
+*                                                                               
+*   THIS IS WHAT WE DO IF THERE ARE NO  KEY WORDS IN THE INPUT                  
+*                                                                               
+NEWCUE   CONTENT. P.4                           :(NEXTCUE)                      
+NOCUE    PHRASE. = DIFFER(TRAILER.) TRAILER.    :S(HEARLESS)                    
+         MEMORY. P.3 =                          :F(ER.AH.UM)                    
+         OUTPUT = '.. EARLIER YOU SAID ' CONTENT.   :(HEAR)                     
+ER.AH.UM OUTPUT = CLUELESS                      :(HEAR)                         
+*                                                                               
+END                                                                             

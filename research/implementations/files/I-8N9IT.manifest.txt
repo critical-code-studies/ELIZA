@@ -1,0 +1,5 @@
+Contents of P-BOA0U.zip (bytes, path), from elizagen.org Other_Elizas/eliza8_linux/ at commit 077a081
+
+     83558  eliza8_linux/data.pod
+   1486240  eliza8_linux/eliza8
+      2147  eliza8_linux/eliza8.png

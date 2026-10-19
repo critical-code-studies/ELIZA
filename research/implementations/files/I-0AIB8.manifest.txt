@@ -1,0 +1,25 @@
+Contents of P-NVAD7.zip (bytes, path), from elizagen.org Other_Elizas/1997_Nolan_Chatbot-Eliza-1.08/ at commit 077a081
+
+      4526  1997_Nolan_Chatbot-Eliza-1.08/Changes
+     18343  1997_Nolan_Chatbot-Eliza-1.08/LICENSE
+       427  1997_Nolan_Chatbot-Eliza-1.08/MANIFEST
+      1199  1997_Nolan_Chatbot-Eliza-1.08/META.json
+       663  1997_Nolan_Chatbot-Eliza-1.08/META.yml
+      1111  1997_Nolan_Chatbot-Eliza-1.08/Makefile.PL
+       371  1997_Nolan_Chatbot-Eliza-1.08/README
+       250  1997_Nolan_Chatbot-Eliza-1.08/dist.ini
+        98  1997_Nolan_Chatbot-Eliza-1.08/t/01-require.t
+       608  1997_Nolan_Chatbot-Eliza-1.08/t/02-test-bot.t
+       188  1997_Nolan_Chatbot-Eliza-1.08/t/test-script.txt
+      1547  1997_Nolan_Chatbot-Eliza-1.08/examples/debug.cgi
+       305  1997_Nolan_Chatbot-Eliza-1.08/examples/deutsch
+      1700  1997_Nolan_Chatbot-Eliza-1.08/examples/deutsch.cgi
+     17451  1997_Nolan_Chatbot-Eliza-1.08/examples/deutsch.txt
+     15972  1997_Nolan_Chatbot-Eliza-1.08/examples/doctor.txt
+       306  1997_Nolan_Chatbot-Eliza-1.08/examples/norsk
+      1700  1997_Nolan_Chatbot-Eliza-1.08/examples/norsk.cgi
+     15207  1997_Nolan_Chatbot-Eliza-1.08/examples/norsk.txt
+       299  1997_Nolan_Chatbot-Eliza-1.08/examples/simple
+      1336  1997_Nolan_Chatbot-Eliza-1.08/examples/simple.cgi
+       777  1997_Nolan_Chatbot-Eliza-1.08/examples/twobots
+     50081  1997_Nolan_Chatbot-Eliza-1.08/lib/Chatbot/Eliza.pm

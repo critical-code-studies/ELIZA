@@ -1,0 +1,8 @@
+Contents of P-I1FPQ.zip (bytes, path), from elizagen.org elliza/ at commit 077a081
+
+     37934  elliza/af.lisp
+    269891  elliza/af.script
+      9512  elliza/af.sentences
+      4485  elliza/conversation_20240907.text
+      1245  elliza/memtest.script
+      4270  elliza/spacks.lisp

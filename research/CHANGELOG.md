@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.67 (2026-10-19)
+
+- Implementations, a new page linked from the tab bar: every known implementation of ELIZA (137 entries), with its lineage, features and source, as List, Read, Tree, Matrix and Compare. Source files are published for the 48 entries cleared by licence, public domain or Jeff Shrager’s permission for the files he collected at ELIZAGEN; the rest are described, with their files held privately until cleared. HTML files are served as plain text.
+
 ## 0.1.66 (2026-10-19)
 
 - The kit at 0.64.0: every paratext type and medium mapped to a standard term (Library of Congress Genre/Form Terms, the Getty AAT, RDA carrier types), shown in the item's box and carried in the Dublin Core export.

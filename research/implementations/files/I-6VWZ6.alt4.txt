@@ -1,0 +1,5 @@
+format: DATA, 4 directory entries in use
+  user 0  DEMO01.BAS    1280 bytes on disk (2K)  AMSDOS type 0 (BASIC), load &0170, length 1127
+  user 0  ELISA-DK.BAS 12928 bytes on disk (13K)  AMSDOS type 0 (BASIC), load &0170, length 12775
+  user 0  ELIZA.BAS    35584 bytes on disk (35K)  AMSDOS type 0 (BASIC), load &0170, length 35329
+  user 0  SPRACHE.BAS   5504 bytes on disk (6K)  AMSDOS type 0 (BASIC), load &0170, length 5340

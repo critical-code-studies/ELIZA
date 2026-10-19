@@ -1,0 +1,8 @@
+Contents of P-EW1CH.zip (bytes, path), from elizagen.org TuringCompleteness/ at commit 077a081
+
+      1366  TuringCompleteness/example1.ez
+      2905  TuringCompleteness/example2.ez
+     76539  TuringCompleteness/examples.ez_trace
+      3203  TuringCompleteness/palendrome.ez
+      6191  TuringCompleteness/palendrome_abbreviated.ez_trace
+      8715  TuringCompleteness/palindrome.ez_trace
