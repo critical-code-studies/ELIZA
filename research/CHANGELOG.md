@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.80 (2026-10-19)
+
+- Implementations: every code file in Jeff Shrager's elizagen.org is now held and public. Added as alternates: the raw transcriptions of Cosell's 1969 and 1972 programs (I-1O7VW), elizagen's genealogy extract of the Samson PDP-6 program (I-2N9J5), and the annotated transcription of Weizenbaum's MAD-SLIP source of 16 February 2022 (I-S5CMF).
+
 ## 0.1.79 (2026-10-19)
 
 - Implementations: an alternate held privately names the paratext record that holds it (heldAt) in place of a file. FREUD (I-SYV6R) publishes its listing, with the Dallas Assortment disk image and its catalogue held privately at P-WYFAB (other programs are on the disk); no entry-level heldAt on a published entry.
