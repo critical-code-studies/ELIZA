@@ -1,0 +1,65 @@
+/*-----------------------------------------------------------------------------------*/
+/*                                                                                   */
+/* ELIZA - (CC) These files are openly licensed via Creative Commons BY 4.0 for use  */
+/*              with attribution to Walt Bilofsky                                    */
+/*                                                                                   */
+/*              https://creativecommons.org/licenses/by/4.0/                         */
+/*                                                                                   */
+/*              Originally written in 1981 by Walt Bilofsky                          */
+/*                                                                                   */
+/*              Based on ELIZA by Joseph Weizenbaum, Comm. ACM V.9 no.1 January 1966 */
+/*                                                                                   */
+/*-----------------------------------------------------------------------------------*/
+
+---------------------------------------
+This zip contains the following files:
+---------------------------------------
+
+ELIZA.C
+
+ELIZA.Link
+ELIZAD1.C
+ELIZAD2.C
+ELIZAWID.C
+
+DOCTOR.Script.txt
+E.batch
+E1.batch
+E2.batch
+
+README.txt (this file)
+RECONSTRUCTION CARD.txt (guide to running ELIZA)
+
+------------------------------------------------------
+And the following folders (containing other versions):
+------------------------------------------------------
+
+202-I5 Toolworks C 		(1985 versions)
+Eliza source+exe 		(1985 Compilation version)
+Recreate Eliza 1.0 Here 	(Reconstructed ver 1.0 of Software Toolworks' ELIZA)
+
+/*-----------------------------------------------------------------------------------*/
+
+Files assembled by David M. Berry for the FindingEliza.org project in Jan 2025. 
+Many thanks to Walt Bilofsky for agreeing to make these files available to others 
+as Creative Commons licensed code. For more information see https://findingeliza.org/ 
+
+To find out more about: 
+
+Walt Bilofsky: https://sites.google.com/view/elizaarchaeology/blog/9-guest-post-the-software-toolworks-eliza
+
+The Software Toolworks: https://en.wikipedia.org/wiki/The_Software_Toolworks
+
+ELIZA: https://en.wikipedia.org/wiki/ELIZA 
+
+/*-----------------------------------------------------------------------------------*/
+
+Read more about ELIZA
+
+Berry, D.M., Ciston, S., Hay, A., Marino, M.C., Millican, P., Shrager, J., Schwarz, A., Weil, P., (2026) Please Go On: Inventing ELIZA, Software Studies series. MIT Press.
+
+Weizenbaum, J. (1966) ‘ELIZA - A Computer Program For the Study of Natural Language Communication Between Man And Machine’, Communications of the ACM, 9(1), pp. 36–45.
+
+Weizenbaum, J. (1967) ‘Contextual Understanding by Computers’, Communications of the ACM, 10(8), pp. 474–480. Available at: https://doi.org/10.1145/363534.363545 
+
+Weizenbaum, J. (1976) Computer Power and Human Reason: From Judgment to Calculation. San Francisco: Freeman.

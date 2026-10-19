@@ -1,0 +1,4 @@
+crt0+eliza+eliza1+fake
+eliza
+
+libstdio+liblong+libsys

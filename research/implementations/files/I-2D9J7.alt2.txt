@@ -1,0 +1,13 @@
+Manifest for toolworks-eliza-1.0-ibmpc-1982_scripts.zip
+
+Source: toolworks-eliza-1.0-ibmpc-1982_160K.ima (the archive.org disk image "Eliza (1982) (v1.0) (The Software Toolworks, Inc.) (160K) [!].ima", item 20240820_20240820_0628).
+Extracted 2026-10-19 with a read-only FAT12 reader (root directory at sector 3, 1-sector clusters; the boot sector has no BPB, so the standard 160K layout was assumed). Bytes are exactly as on the disk, truncated to the directory size; nothing was converted. Text is ASCII with CR LF line ends and a closing Ctrl-Z (0x1A).
+
+file           bytes  DOS date          sha1
+DOCTOR.SCR     10413  1982-10-11 19:56  6f8b62321a55623fc516ef9752daa2185ba12ade
+ODOCTOR.SCR     9168  1982-10-11 19:54  3933bc09243a869b28e1c54b652982cff6825cdb
+
+DOCTOR.SCR   The "current DOCTOR script" in the manual's words: Bilofsky's revision of the DOCTOR script.
+ODOCTOR.SCR  The "original DOCTOR script": the CACM 1966 DOCTOR script in Weizenbaum's list notation, with XFREMD.
+
+The disk also holds ELIZA.COM (15,808 bytes, 1982-10-11 20:14), the interpreter, which is not extracted here; it is in the held disk image.

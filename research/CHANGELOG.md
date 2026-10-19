@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.74 (2026-10-19)
+
+- Implementations: Walt Bilofsky's ELIZA, released by him under Creative Commons BY 4.0 (January 2025), published: a new entry for the C source (version 1.1 of 16 September 1985 and 1.0 of 7 February 1984, with its data modules, DOCTOR script, link and batch files, README and reconstruction card), and the 1982 IBM PC disk (ELIZA.COM and the two DOCTOR scripts). The Heath H8 disk stays private, as it carries Heath's HDOS. Entries whose files are held privately now name the paratext record that holds them (Awaiting clearance); 138 entries, 50 with files.
+
 ## 0.1.73 (2026-10-19)
 
 - The kit at 0.65.0: Compare ▸ By function, for Lisp benches (kit/lispdefs.js); not used here.

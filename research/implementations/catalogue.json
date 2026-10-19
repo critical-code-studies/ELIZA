@@ -521,9 +521,7 @@
    },
    "status": "held",
    "publish": "files",
-   "paratexts": [
-    "P-9GTR7"
-   ],
+   "paratexts": [],
    "movedFrom": "P-9GTR7",
    "children": [
     "I-Y7TBL"
@@ -817,7 +815,7 @@
    "status": "held",
    "publish": "files",
    "paratexts": [
-    "P-9N6IZ"
+    "P-R6A82"
    ],
    "movedFrom": "P-9N6IZ",
    "related": [],
@@ -894,9 +892,7 @@
    },
    "status": "held",
    "publish": "files",
-   "paratexts": [
-    "P-KP04B"
-   ],
+   "paratexts": [],
    "movedFrom": "P-KP04B",
    "children": [
     "I-ALKHZ"
@@ -971,9 +967,7 @@
    },
    "status": "held",
    "publish": "files",
-   "paratexts": [
-    "P-J2X0K"
-   ],
+   "paratexts": [],
    "movedFrom": "P-J2X0K",
    "children": [
     "I-CHOTQ"
@@ -1108,9 +1102,7 @@
    },
    "status": "held",
    "publish": "files",
-   "paratexts": [
-    "P-ZEMRW"
-   ],
+   "paratexts": [],
    "movedFrom": "P-ZEMRW",
    "related": [],
    "children": [],
@@ -1315,9 +1307,7 @@
    },
    "status": "held",
    "publish": "files",
-   "paratexts": [
-    "P-4BO02"
-   ],
+   "paratexts": [],
    "movedFrom": "P-4BO02",
    "children": [],
    "clearance": {
@@ -1593,9 +1583,7 @@
    },
    "status": "held",
    "publish": "files",
-   "paratexts": [
-    "P-UG477"
-   ],
+   "paratexts": [],
    "movedFrom": "P-UG477",
    "children": [
     "I-1NCM1",
@@ -1767,7 +1755,9 @@
    },
    "status": "held",
    "publish": "files",
-   "paratexts": [],
+   "paratexts": [
+    "P-SVSH6"
+   ],
    "movedFrom": "P-2VCI3",
    "related": [],
    "children": [],
@@ -2310,9 +2300,7 @@
    },
    "status": "held",
    "publish": "files",
-   "paratexts": [
-    "P-VDZKH"
-   ],
+   "paratexts": [],
    "movedFrom": "P-VDZKH",
    "related": [],
    "children": [],
@@ -2645,9 +2633,7 @@
    },
    "status": "held",
    "publish": "files",
-   "paratexts": [
-    "P-MLFTW"
-   ],
+   "paratexts": [],
    "movedFrom": "P-MLFTW",
    "children": [],
    "clearance": {
@@ -3553,9 +3539,7 @@
    },
    "status": "held",
    "publish": "files",
-   "paratexts": [
-    "P-8I2LJ"
-   ],
+   "paratexts": [],
    "movedFrom": "P-8I2LJ",
    "children": [],
    "clearance": {
@@ -3618,9 +3602,7 @@
    },
    "status": "held",
    "publish": "files",
-   "paratexts": [
-    "P-D2GKS"
-   ],
+   "paratexts": [],
    "movedFrom": "P-D2GKS",
    "runsOn": [
     "I-LCBI8"
@@ -3686,9 +3668,7 @@
    },
    "status": "held",
    "publish": "files",
-   "paratexts": [
-    "P-9Q8W2"
-   ],
+   "paratexts": [],
    "movedFrom": "P-9Q8W2",
    "runsOn": [
     "I-LCBI8"
@@ -4328,7 +4308,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-MKM4F",
    "children": [
     "I-4QO12",
     "I-BPTKV",
@@ -4383,7 +4363,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-Q1J05",
    "children": [
     "I-HISX6"
    ]
@@ -4435,7 +4415,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-C4OZ0",
    "children": []
   },
   {
@@ -4485,7 +4465,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-HQQH8",
    "children": []
   },
   {
@@ -4535,7 +4515,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-6HM3K",
    "children": [
     "I-28OCO",
     "I-E136U"
@@ -4588,7 +4568,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-7Z1IT",
    "children": []
   },
   {
@@ -4638,7 +4618,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-N0RQY",
    "children": []
   },
   {
@@ -4688,7 +4668,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-YPA75",
    "children": [
     "I-0LBW9"
    ]
@@ -4740,7 +4720,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-NCESN",
    "children": []
   },
   {
@@ -4779,7 +4759,9 @@
      "evidence": "An AlphaLisp 1.6 DOCTOR with the PDP-6 adaptation’s WORKER entry function and CACM replies."
     }
    ],
-   "paratexts": [],
+   "paratexts": [
+    "P-DQ53J"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -4839,7 +4821,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-DZ4QG",
    "children": []
   },
   {
@@ -4889,7 +4871,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-0GVJ4",
    "children": []
   },
   {
@@ -4939,7 +4921,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-BMR5F",
    "children": [
     "I-GI1C5"
    ]
@@ -4991,7 +4973,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-LPMNH",
    "children": []
   },
   {
@@ -5030,7 +5012,9 @@
      "evidence": "The same 36 keywords, conjugations and replies."
     }
    ],
-   "paratexts": [],
+   "paratexts": [
+    "P-HCHHP"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -5079,7 +5063,9 @@
      "evidence": "Its REMs credit \"BASIC VERSION BY JEFF SHRAGER AND STEVE NORTH\"."
     }
    ],
-   "paratexts": [],
+   "paratexts": [
+    "P-7WO7E"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -5128,7 +5114,10 @@
      "evidence": "REM 2: \"Modifizierte Version aus Creative Computing\"; adds ELIZA and MONEY."
     }
    ],
-   "paratexts": [],
+   "paratexts": [
+    "P-2LUEA",
+    "P-VXEEG"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -5181,7 +5170,9 @@
      "evidence": "Its text table and its references to Creative Computing, July/August 1977."
     }
    ],
-   "paratexts": [],
+   "paratexts": [
+    "P-AXYVW"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -5241,7 +5232,7 @@
    "updatedBy": "DMB",
    "kind": "text",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-5N4IZ",
    "children": []
   },
   {
@@ -5291,7 +5282,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-D5875",
    "children": []
   },
   {
@@ -5341,7 +5332,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-YPSWI",
    "children": []
   },
   {
@@ -5391,7 +5382,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-FZBEX",
    "children": []
   },
   {
@@ -5430,7 +5421,9 @@
      "evidence": "Klein’s 38-keyword variant, as printed in Sinclair ZX 81 Programme (1982)."
     }
    ],
-   "paratexts": [],
+   "paratexts": [
+    "P-FGGLW"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -5441,7 +5434,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-BBI2B",
    "children": []
   },
   {
@@ -5491,7 +5484,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-1SFRZ",
    "children": []
   },
   {
@@ -5530,7 +5523,9 @@
      "evidence": "Fixed replies taken largely from the Creative Computing stock."
     }
    ],
-   "paratexts": [],
+   "paratexts": [
+    "P-XT5WT"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -5579,7 +5574,9 @@
      "evidence": "A COMAL rewrite: 36 keywords, 14 conjugation strings."
     }
    ],
-   "paratexts": [],
+   "paratexts": [
+    "P-RK3MZ"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -5628,7 +5625,9 @@
      "evidence": "The Creative Computing program in its 1979 state."
     }
    ],
-   "paratexts": [],
+   "paratexts": [
+    "P-QU2O8"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -5677,7 +5676,9 @@
      "evidence": "The Creative Computing program in its 1979 state."
     }
    ],
-   "paratexts": [],
+   "paratexts": [
+    "P-1BL1J"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -5737,7 +5738,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-P7A9X",
    "children": []
   },
   {
@@ -5787,7 +5788,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-R8HGT",
    "children": []
   },
   {
@@ -5837,7 +5838,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-SLSWJ",
    "children": [
     "I-25WPD"
    ]
@@ -5878,7 +5879,9 @@
      "evidence": "N1=36, N2=12, N3=112 and the same reply DATA."
     }
    ],
-   "paratexts": [],
+   "paratexts": [
+    "P-9EPHY"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -5938,7 +5941,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-NR2EF",
    "children": []
   },
   {
@@ -5988,7 +5991,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-7BCU7",
    "children": []
   },
   {
@@ -6038,7 +6041,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-BLNYV",
    "children": []
   },
   {
@@ -6088,7 +6091,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-5IX5I",
    "children": []
   },
   {
@@ -6138,7 +6141,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-29KUN",
    "children": []
   },
   {
@@ -6188,7 +6191,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-MHDNG",
    "children": []
   },
   {
@@ -6345,7 +6348,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-6TTT3",
    "children": []
   },
   {
@@ -6384,7 +6387,9 @@
      "evidence": "LÍZA: Klein’s variant in Czech, printed beside the English listing."
     }
    ],
-   "paratexts": [],
+   "paratexts": [
+    "P-SS09H"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -6433,7 +6438,9 @@
      "evidence": "Reported running in SWTPC 8K BASIC within months of the printing."
     }
    ],
-   "paratexts": [],
+   "paratexts": [
+    "P-DYEH0"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -6482,7 +6489,9 @@
      "evidence": "Creative Computing’s own PET cassette."
     }
    ],
-   "paratexts": [],
+   "paratexts": [
+    "P-PRU4C"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -6531,7 +6540,9 @@
      "evidence": "Probably an Applesoft port, beside DR. Z on the same disk."
     }
    ],
-   "paratexts": [],
+   "paratexts": [
+    "P-ZKXTQ"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -6591,7 +6602,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-7LUU6",
    "children": []
   },
   {
@@ -6641,7 +6652,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-4ONII",
    "children": []
   },
   {
@@ -6762,7 +6773,7 @@
    "updatedBy": "DMB",
    "kind": "file",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-PPFLL",
    "children": []
   },
   {
@@ -6948,7 +6959,9 @@
      "evidence": "Duquet’s SNOBOL4 ELIZA moved to Cal SNOBOL, with a help-consultant script."
     }
    ],
-   "paratexts": [],
+   "paratexts": [
+    "P-EJBT5"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -6997,7 +7010,9 @@
      "evidence": "A BASIC reconstruction from the CACM DOCTOR script."
     }
    ],
-   "paratexts": [],
+   "paratexts": [
+    "P-5WDNN"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -7059,7 +7074,7 @@
    "updatedBy": "DMB",
    "kind": "file",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-BRKNA",
    "children": []
   },
   {
@@ -7069,7 +7084,7 @@
    "contributor": "",
    "date": "1982-01-23",
    "dateBasis": "Banner strings in the image: \"ELIZA 1.0 (1/23/82) - (c) 1981 The Software Toolworks\" (twice) and \"ELIZA 1.0 (9/24/81) - (c) 1981 The Software Toolworks\" (once). The record takes the later build date; the earlier string shows a build of 24 September 1981.",
-   "description": "Heath's catalogue disk 220-D5 of The Software Toolworks' ELIZA by Walt Bilofsky, a combined CP/M and HDOS 5.25-inch disk, imaged by Mark Garlanger. The boot area carries \"220-D5 ELIZA Conversation Program - (c) 1981 Walt Bilofsky\". The CP/M directory lists ELIZA.COM (89 records), ODOCTOR.SCR (72 records) and DOCTOR.SCR (82 records), with two deleted entries, PIRATES.SCR and BETA.VII; an HDOS directory lists ELIZA, ODOCTOR and DOCTOR. The scripts appear twice in the image, once for each system.\n\nTwo interpreter banners are present: \"ELIZA 1.0 (1/23/82)\" twice, once in each part of the disk, and \"ELIZA 1.0 (9/24/81)\" once in the HDOS part. Whether the 1981 string belongs to a live file or to leftover data was not determined. The disk also holds the string \"Space Pirates 1.0, 16 Jun 1981\" with \"(c) 1981 Dr. Jim Gillogly\", probably leftover data from another Toolworks disk (inferred). The source page lists C8, C5, H5 and O5 (Osborne) formats as \"Not Available\"; only D5 is imaged.\n\nFeature values are taken from the scripts' text in the image and from the Toolworks manual (see the PC record): keystack priorities, NEWKEY and MEMORY with period 5; ODOCTOR.SCR has the XFREMD rule; \"APOLOGIZE\" is spelled correctly; BUT appears only inside replies.\n\nSource: Mark Garlanger, Classic Heathkit Computers, heathkit.garlanger.com (page last modified 25 February 2024). The site publishes no checksums. The matching manual, 220_Eliza.pdf, was not downloaded.",
+   "description": "Heath's catalogue disk 220-D5 of The Software Toolworks' ELIZA by Walt Bilofsky, a combined CP/M and HDOS 5.25-inch disk, imaged by Mark Garlanger. The boot area carries \"220-D5 ELIZA Conversation Program - (c) 1981 Walt Bilofsky\". The CP/M directory lists ELIZA.COM (89 records), ODOCTOR.SCR (72 records) and DOCTOR.SCR (82 records), with two deleted entries, PIRATES.SCR and BETA.VII; an HDOS directory lists ELIZA, ODOCTOR and DOCTOR. The scripts appear twice in the image, once for each system.\n\nTwo interpreter banners are present: \"ELIZA 1.0 (1/23/82)\" twice, once in each part of the disk, and \"ELIZA 1.0 (9/24/81)\" once in the HDOS part. Whether the 1981 string belongs to a live file or to leftover data was not determined. The disk also holds the string \"Space Pirates 1.0, 16 Jun 1981\" with \"(c) 1981 Dr. Jim Gillogly\", probably leftover data from another Toolworks disk (inferred). The source page lists C8, C5, H5 and O5 (Osborne) formats as \"Not Available\"; only D5 is imaged.\n\nFeature values are taken from the scripts' text in the image and from the Toolworks manual (see the PC record): keystack priorities, NEWKEY and MEMORY with period 5; ODOCTOR.SCR has the XFREMD rule; \"APOLOGIZE\" is spelled correctly; BUT appears only inside replies.\n\nWalt Bilofsky released his ELIZA files under Creative Commons BY 4.0 in January 2025 (see I-BLFSC). This disk image is held privately because it also carries Heath’s HDOS system files (\"Copyright (C) HEATH CO., 1980\").\n\nSource: Mark Garlanger, Classic Heathkit Computers, heathkit.garlanger.com (page last modified 25 February 2024). The site publishes no checksums. The matching manual, 220_Eliza.pdf, was not downloaded.",
    "language": "en",
    "progLanguage": "8080 executables (ELIZA.COM for CP/M, ELIZA.ABS for HDOS); scripts in Weizenbaum's list notation",
    "machine": "Heath/Zenith H8, H89, Z-89, Z-90 (CP/M and HDOS), 5.25-inch hard-sectored disk",
@@ -7091,6 +7106,13 @@
    "archiveUrl": "https://heathkit.garlanger.com/software/library/TheSoftwareToolworks/software/eliza/",
    "parents": [
     {
+     "code": "I-BLFSC",
+     "relation": "copy",
+     "via": "disk",
+     "confidence": "established",
+     "evidence": "A compiled build of this source (banner and change history agree)."
+    },
+    {
      "code": "v:1966",
      "relation": "reimplementation",
      "via": "publication",
@@ -7109,7 +7131,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-IR0YF",
    "children": [
     "I-2D9J7"
    ]
@@ -7121,7 +7143,7 @@
    "contributor": "",
    "date": "1982-10-08",
    "dateBasis": "Banner in ELIZA.COM \"ELIZA 1.0 (10/8/82) - (c) 1981 The Software Toolworks\" (US date, 8 October 1982); directory dates on the disk 1982-10-11 for all three files. The manual's title page reads \"Version 1.0 - September 1981\".",
-   "description": "The Software Toolworks' ELIZA, written by Walt Bilofsky, is an interpreter for Weizenbaum's script language that reads rule lists from a script file. This IBM PC disk holds the interpreter ELIZA.COM, with the banner \"ELIZA 1.0 (10/8/82)\", and two scripts: ODOCTOR.SCR, \"the original DOCTOR script\", and DOCTOR.SCR, \"the current DOCTOR script\", in the manual's words. The manual calls the program \"a faithful recreation of Dr. Weizenbaum's original script interpreter\".\n\nThe manual describes keyword priorities with a keystack (a keyword of higher priority \"is placed on top of the stack. Otherwise, it is placed on the bottom\"), NEWKEY, PRE, DLIST and NONE, and MEMORY rules recalled \"When five responses have passed\" since the last MEMORY use. Input is split into sentences at \"any punctuation such as period, comma, dash\"; BUT appears in the scripts only inside replies. ODOCTOR.SCR keeps the XFREMD rule (\"(DEUTSCH (=XFREMD))\" and the reply \"I AM SORRY, I SPEAK ONLY ENGLISH\"); DOCTOR.SCR removes it, splits NONE replies by input length and adds MEMORY patterns. Both spell \"APOLOGIZE\" correctly. ELIZA.COM also contains the string \"(c) J Gillogly\", probably a shared Toolworks code credit (inferred).\n\nThe user manual, from the vgmuseum \"firstera\" collection, is held as an alternate. It is undated beyond its title page and may have been written for the 1981 CP/M and HDOS release.\n\nSource: archive.org items 20240820_20240820_0628 (\"The Software Toolworks PC Image Collection\") and vgmuseum_firstera_eliza-manual. The disk zip and the manual PDF match the archive.org md5 and sha1. A KryoFlux flux dump of the same disk (11.5 MB) is in the item and was not downloaded.",
+   "description": "The Software Toolworks' ELIZA, written by Walt Bilofsky, is an interpreter for Weizenbaum's script language that reads rule lists from a script file. This IBM PC disk holds the interpreter ELIZA.COM, with the banner \"ELIZA 1.0 (10/8/82)\", and two scripts: ODOCTOR.SCR, \"the original DOCTOR script\", and DOCTOR.SCR, \"the current DOCTOR script\", in the manual's words. The manual calls the program \"a faithful recreation of Dr. Weizenbaum's original script interpreter\".\n\nThe manual describes keyword priorities with a keystack (a keyword of higher priority \"is placed on top of the stack. Otherwise, it is placed on the bottom\"), NEWKEY, PRE, DLIST and NONE, and MEMORY rules recalled \"When five responses have passed\" since the last MEMORY use. Input is split into sentences at \"any punctuation such as period, comma, dash\"; BUT appears in the scripts only inside replies. ODOCTOR.SCR keeps the XFREMD rule (\"(DEUTSCH (=XFREMD))\" and the reply \"I AM SORRY, I SPEAK ONLY ENGLISH\"); DOCTOR.SCR removes it, splits NONE replies by input length and adds MEMORY patterns. Both spell \"APOLOGIZE\" correctly. ELIZA.COM also contains the string \"(c) J Gillogly\", probably a shared Toolworks code credit (inferred).\n\nThe user manual, from the vgmuseum \"firstera\" collection, is held privately: Bilofsky’s licence of 2025 covers his ELIZA files, and the manual is not among them. It is undated beyond its title page and may have been written for the 1981 CP/M and HDOS release.\n\nSource: archive.org items 20240820_20240820_0628 (\"The Software Toolworks PC Image Collection\") and vgmuseum_firstera_eliza-manual. The disk zip and the manual PDF match the archive.org md5 and sha1. A KryoFlux flux dump of the same disk (11.5 MB) is in the item and was not downloaded.",
    "language": "en",
    "progLanguage": "8086 executable (ELIZA.COM); scripts in Weizenbaum's list notation",
    "machine": "IBM Personal Computer (PC-DOS, 160K single-sided disk)",
@@ -7137,11 +7159,18 @@
     "apoligize": false,
     "scriptSeparate": null
    },
-   "rights": "\"(c) 1981 The Software Toolworks\" in the program. The manual: \"Copyright (c) 1981 Walter Bilofsky. Sale of this software conveys a license for its use on a single computer\"; the CACM paper and original DOCTOR script \"copyright (c) 1966 Association for Computing Machinery, Inc., reprinted by permission\".",
+   "rights": "Creative Commons BY 4.0, with attribution to Walt Bilofsky (his release of January 2025). The program carries \"(c) 1981 The Software Toolworks\"; the original DOCTOR script on the disk is from the CACM appendix (1966). The user manual, held privately, is not covered.",
    "source": "https://archive.org/details/20240820_20240820_0628; https://archive.org/metadata/20240820_20240820_0628",
    "archive": "",
    "archiveUrl": "https://archive.org/details/20240820_20240820_0628",
    "parents": [
+    {
+     "code": "I-BLFSC",
+     "relation": "copy",
+     "via": "disk",
+     "confidence": "established",
+     "evidence": "A compiled build of this source (banner and change history agree)."
+    },
     {
      "code": "I-YHTTF",
      "relation": "port",
@@ -7153,16 +7182,48 @@
    "paratexts": [],
    "genre": "software",
    "type": "Software",
-   "tags": [],
+   "tags": [
+    "CC BY 4.0"
+   ],
    "accessioned": "2026-10-19",
    "added": "2026-10-19T00:00:00Z",
    "addedBy": "DMB",
    "updated": "2026-10-19T00:00:00Z",
    "updatedBy": "DMB",
    "kind": "software",
-   "publish": "entry",
-   "heldAt": "private",
-   "children": []
+   "publish": "files",
+   "heldAt": "P-5NM54",
+   "children": [],
+   "clearance": {
+    "basis": "licence",
+    "by": "DMB",
+    "date": "2026-10-19",
+    "evidence": "Walt Bilofsky agreed in January 2025 to make his ELIZA files available under Creative Commons BY 4.0, with attribution to him; the licence is stated in the header of the released ELIZA.C and in the reconstruction card (David M. Berry, 18 January 2025).",
+    "note": "CC BY 4.0, attribution to Walt Bilofsky. The licence covers Bilofsky’s ELIZA files only."
+   },
+   "file": "files/I-2D9J7.ima",
+   "name": "Eliza (1982) (v1.0) (The Software Toolworks, Inc.) (160K) [!].ima",
+   "mime": "application/octet-stream",
+   "size": 163840,
+   "sha1": "dd704ca3d84733ac0011718c2e96bf05bc4456cc",
+   "alts": [
+    {
+     "lang": "en",
+     "label": "The two scripts, extracted (DOCTOR.SCR and ODOCTOR.SCR)",
+     "file": "files/I-2D9J7.alt1.zip",
+     "mime": "application/zip",
+     "size": 6539,
+     "sha1": "fc2d373851113a6697539519482f32604356a55e"
+    },
+    {
+     "lang": "en",
+     "label": "Manifest of the extracted scripts",
+     "file": "files/I-2D9J7.alt2.txt",
+     "mime": "text/plain",
+     "size": 1126,
+     "sha1": "19ea2c5c0e5410b830c788a2768845aaf9b3794c"
+    }
+   ]
   },
   {
    "code": "I-SB0Y5",
@@ -7192,7 +7253,9 @@
    "archive": "",
    "archiveUrl": "https://archive.org/details/Eliza_3.0",
    "parents": [],
-   "paratexts": [],
+   "paratexts": [
+    "P-ZXPXS"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -7203,7 +7266,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-C69OL",
    "children": [
     "I-2TS6T"
    ]
@@ -7255,7 +7318,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-99OA1",
    "children": []
   },
   {
@@ -7294,7 +7357,9 @@
      "evidence": "Keyword values taken from the CACM ranks."
     }
    ],
-   "paratexts": [],
+   "paratexts": [
+    "P-IFHKY"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -7345,7 +7410,9 @@
      "evidence": "Sato: \"an adaptation of a microcomputer version of Eliza written in Lisp\"."
     }
    ],
-   "paratexts": [],
+   "paratexts": [
+    "P-XCWML"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -7386,7 +7453,9 @@
    "archive": "",
    "archiveUrl": "https://archive.org/details/smart-apples",
    "parents": [],
-   "paratexts": [],
+   "paratexts": [
+    "P-EK9B2"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -7435,7 +7504,9 @@
      "evidence": "It reuses the Creative Computing conjugation idea."
     }
    ],
-   "paratexts": [],
+   "paratexts": [
+    "P-WLH0E"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -7476,7 +7547,10 @@
    "archive": "",
    "archiveUrl": "https://archive.org/details/The_Atari_Book_of_Games",
    "parents": [],
-   "paratexts": [],
+   "paratexts": [
+    "P-A1VMK",
+    "P-GW5L7"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -7527,7 +7601,9 @@
      "evidence": "The Oric version of the same program."
     }
    ],
-   "paratexts": [],
+   "paratexts": [
+    "P-XAZZ6"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -7576,7 +7652,9 @@
      "evidence": "Keyword patterns and replies follow the CACM DOCTOR script."
     }
    ],
-   "paratexts": [],
+   "paratexts": [
+    "P-RHDMR"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -7636,7 +7714,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-X5UJQ",
    "children": []
   },
   {
@@ -7686,7 +7764,7 @@
    "updatedBy": "DMB",
    "kind": "software",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-IC9Z2",
    "children": []
   },
   {
@@ -7799,7 +7877,7 @@
    "updatedBy": "DMB",
    "kind": "file",
    "publish": "entry",
-   "heldAt": "private",
+   "heldAt": "P-3FP21",
    "children": []
   },
   {
@@ -7830,7 +7908,9 @@
    "archive": "",
    "archiveUrl": "https://drive.google.com/file/d/132z7x3RfnBSOtGod4mfhSHdziqgOK9VU/view",
    "parents": [],
-   "paratexts": [],
+   "paratexts": [
+    "P-PWIK1"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -7871,7 +7951,9 @@
    "archive": "",
    "archiveUrl": "https://purl.stanford.edu/hk334rq4790",
    "parents": [],
-   "paratexts": [],
+   "paratexts": [
+    "P-KXQJH"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -7920,7 +8002,9 @@
      "evidence": "ELIZA’s keyword, decomposition and reassembly scheme, with TRAC."
     }
    ],
-   "paratexts": [],
+   "paratexts": [
+    "P-MO06M"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -7969,7 +8053,9 @@
      "evidence": "Modelled on ELIZA, cited from the CACM paper."
     }
    ],
-   "paratexts": [],
+   "paratexts": [
+    "P-317KJ"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -8018,7 +8104,9 @@
      "evidence": "ELIZA’s exchangeable scripts, with Polish morphology."
     }
    ],
-   "paratexts": [],
+   "paratexts": [
+    "P-SNFBP"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -8059,7 +8147,9 @@
    "archive": "",
    "archiveUrl": "https://archive.org/details/Kilobaud197908",
    "parents": [],
-   "paratexts": [],
+   "paratexts": [
+    "P-METE3"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -8100,7 +8190,9 @@
    "archive": "",
    "archiveUrl": "https://archive.org/details/terry-apx",
    "parents": [],
-   "paratexts": [],
+   "paratexts": [
+    "P-S8Q0P"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -8141,7 +8233,9 @@
    "archive": "",
    "archiveUrl": "https://archive.org/details/PersonalComputerWorld1979-05",
    "parents": [],
-   "paratexts": [],
+   "paratexts": [
+    "P-L2HPP"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -8182,7 +8276,9 @@
    "archive": "",
    "archiveUrl": "https://archive.org/details/InterfaceAge198104",
    "parents": [],
-   "paratexts": [],
+   "paratexts": [
+    "P-ROPRJ"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -8223,7 +8319,9 @@
    "archive": "",
    "archiveUrl": "https://archive.org/details/PersonalComputing197901",
    "parents": [],
-   "paratexts": [],
+   "paratexts": [
+    "P-CECSY"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -8264,7 +8362,9 @@
    "archive": "",
    "archiveUrl": "https://archive.org/details/apple_contact_thebestof1978",
    "parents": [],
-   "paratexts": [],
+   "paratexts": [
+    "P-ZFCZ4"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -8305,7 +8405,9 @@
    "archive": "",
    "archiveUrl": "https://archive.org/details/Micro7-02",
    "parents": [],
-   "paratexts": [],
+   "paratexts": [
+    "P-9WKQQ"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -8346,7 +8448,9 @@
    "archive": "",
    "archiveUrl": "https://archive.org/details/micom-1985-01",
    "parents": [],
-   "paratexts": [],
+   "paratexts": [
+    "P-DEFFA"
+   ],
    "genre": "software",
    "type": "Software",
    "tags": [],
@@ -8358,6 +8462,169 @@
    "kind": "missing",
    "publish": "entry",
    "children": []
+  },
+  {
+   "code": "I-BLFSC",
+   "title": "ELIZA in C for MS-DOS, versions 1.0 (1984) and 1.1 (1985), source released under CC BY 4.0 (Bilofsky, The Software Toolworks)",
+   "creator": "Bilofsky, Walt (The Software Toolworks)",
+   "contributor": "Berry, David M. (assembled the 2025 release)",
+   "date": "1985-09-16",
+   "dateBasis": "The source's change history: \"1.0 9/24/81 Original release\", \"1.0 10/8/82 ZDOS/PCDOS version\", \"1.0 2/7/84 Better line length routine for PCjr\", \"1.1 2/26/85 Add GOLDEN version to preload script\", \"1.1 9/16/85 Add TRIMMED version\"; banners \"ELIZA 1.0 (2/7/84)\" and \"ELIZA 1.1 (9/16/85)\".",
+   "language": "en",
+   "progLanguage": "C (Toolworks C)",
+   "machine": "IBM PC and compatibles (MS-DOS); the source also builds for CP/M and HDOS",
+   "family": "other",
+   "status": "held",
+   "features": {
+    "delimit": null,
+    "newkey": true,
+    "stack": true,
+    "memory": true,
+    "memoryPeriod": 5,
+    "xfremd": null,
+    "apoligize": null,
+    "scriptSeparate": true
+   },
+   "rights": "Creative Commons BY 4.0, with attribution to Walt Bilofsky (\"These files are openly licensed via Creative Commons BY 4.0 for use with attribution to Walt Bilofsky\", header of ELIZA.C). The source keeps its original line \"(c) 1981 The Software Toolworks, Ltd.\".",
+   "source": "Walt Bilofsky, by way of David M. Berry for the ELIZA Archaeology Project, January 2025",
+   "archive": "ELIZA Archaeology Project",
+   "archiveUrl": "https://sites.google.com/view/elizaarchaeology/blog/9-guest-post-the-software-toolworks-eliza",
+   "parents": [
+    {
+     "code": "v:1966",
+     "relation": "reimplementation",
+     "via": "publication",
+     "confidence": "established",
+     "evidence": "The source: \"Based on ELIZA by Joseph Weisenbaum, Comm. ACM V.9 no.1 January 1966\"."
+    }
+   ],
+   "runsOn": [],
+   "paratexts": [
+    "P-ALW7I",
+    "P-JQAZX",
+    "P-6RVCS"
+   ],
+   "genre": "software",
+   "type": "Software",
+   "tags": [
+    "CC BY 4.0",
+    "Toolworks",
+    "C"
+   ],
+   "accessioned": "2026-10-19",
+   "added": "2026-10-19T12:00:00Z",
+   "addedBy": "DMB",
+   "updated": "2026-10-19T12:00:00Z",
+   "updatedBy": "DMB",
+   "kind": "software",
+   "publish": "files",
+   "clearance": {
+    "basis": "licence",
+    "by": "DMB",
+    "date": "2026-10-19",
+    "evidence": "Walt Bilofsky agreed in January 2025 to make his ELIZA files available under Creative Commons BY 4.0, with attribution to him; the licence is stated in the header of the released ELIZA.C and in the reconstruction card (David M. Berry, 18 January 2025).",
+    "note": "CC BY 4.0, attribution to Walt Bilofsky. The licence covers Bilofsky’s ELIZA files only."
+   },
+   "children": [
+    "I-2D9J7",
+    "I-YHTTF"
+   ],
+   "description": "The C source of The Software Toolworks' ELIZA, Walt Bilofsky's interpreter for Weizenbaum's script language, released by Bilofsky under Creative Commons BY 4.0 in January 2025. ELIZA.C is version 1.1 (16 September 1985), with the licence header added for the release; ELIZA1.0.C is version 1.0 as of 7 February 1984. The change history in the source runs from the original release of 24 September 1981 (CP/M and HDOS) through the IBM PC version of 8 October 1982 to the preloaded \"GOLDEN\" and \"TRIMMED\" builds of 1985. ELIZAD1.C and ELIZAD2.C hold a script compiled into data for the preloaded build.\n\nThe compiled programs are held as I-2D9J7 (IBM PC, 1982) and I-YHTTF (Heath H8 and H89, 1982). The reconstruction card describes rebuilding ELIZA 1.0 with the Toolworks C compiler under DOSBox. The compiler, its libraries and the Microsoft linker used in that rebuild are described here and not held in this entry.\n\nSource: the files Walt Bilofsky made available to the ELIZA Archaeology Project, assembled by David M. Berry in January 2025 (README and reconstruction card of 18 January 2025).",
+   "file": "files/I-BLFSC.c",
+   "name": "ELIZA.C",
+   "mime": "text/plain",
+   "size": 36244,
+   "sha1": "82ba1be5d9b28e95cecb003ef5e332b4d60305ac",
+   "alts": [
+    {
+     "lang": "en",
+     "label": "ELIZA 1.0 (7 February 1984), C source",
+     "file": "files/I-BLFSC.1-0.c",
+     "mime": "text/plain",
+     "size": 30619,
+     "sha1": "b556aae48787727dc51eb933ffcf8a805180f576"
+    },
+    {
+     "lang": "en",
+     "label": "ELIZAD1.C, the preloaded-script data module, part 1",
+     "file": "files/I-BLFSC.d1.c",
+     "mime": "text/plain",
+     "size": 2560,
+     "sha1": "11ff3d1264b18e9b7b64baa39c35a92a201b9da5"
+    },
+    {
+     "lang": "en",
+     "label": "ELIZAD2.C, the preloaded-script data module, part 2",
+     "file": "files/I-BLFSC.d2.c",
+     "mime": "text/plain",
+     "size": 106614,
+     "sha1": "be30c71a5b5ffee70cae3b5bfa6408f788445b33"
+    },
+    {
+     "lang": "en",
+     "label": "ELIZAWID.C, the line-width utility",
+     "file": "files/I-BLFSC.wid.c",
+     "mime": "text/plain",
+     "size": 1776,
+     "sha1": "f5a3fb6d208290fa4596c4a184d19ca5abf2d673"
+    },
+    {
+     "lang": "en",
+     "label": "DOCTOR.SCR, Bilofsky’s DOCTOR script",
+     "file": "files/I-BLFSC.doctor.txt",
+     "mime": "text/plain",
+     "size": 10256,
+     "sha1": "ba6655f1d6bf236a80357a5460a2f01556e2421c"
+    },
+    {
+     "lang": "en",
+     "label": "ELIZA.LNK, the link file",
+     "file": "files/I-BLFSC.lnk.txt",
+     "mime": "text/plain",
+     "size": 58,
+     "sha1": "7407e1c9b471c7ec639f6104baf89f36340218c6"
+    },
+    {
+     "lang": "en",
+     "label": "E.BAT, build batch file",
+     "file": "files/I-BLFSC.e.bat.txt",
+     "mime": "text/plain",
+     "size": 708,
+     "sha1": "211662831249e30e12c144c841be5f1a1509df89"
+    },
+    {
+     "lang": "en",
+     "label": "E1.BAT, build batch file",
+     "file": "files/I-BLFSC.e1.bat.txt",
+     "mime": "text/plain",
+     "size": 759,
+     "sha1": "7ca27b5fc2e45133100383406a84a3e4fc9634d5"
+    },
+    {
+     "lang": "en",
+     "label": "E2.BAT, build batch file",
+     "file": "files/I-BLFSC.e2.bat.txt",
+     "mime": "text/plain",
+     "size": 875,
+     "sha1": "192fe66dcacd6553f2b0ba181b15cfdb4ced0b4d"
+    },
+    {
+     "lang": "en",
+     "label": "README of the 2025 release",
+     "file": "files/I-BLFSC.readme.txt",
+     "mime": "text/plain",
+     "size": 3013,
+     "sha1": "4eaa660881ffe2a3cb2064ad09240682eb82d118"
+    },
+    {
+     "lang": "en",
+     "label": "Reconstruction card: building ELIZA 1.0 under DOSBox (David M. Berry, 18 January 2025)",
+     "file": "files/I-BLFSC.rc.txt",
+     "mime": "text/plain",
+     "size": 1449,
+     "sha1": "1ecc629969c0810cccf47239f3df5be2c731e6d1"
+    }
+   ]
   }
  ],
  "statuses": [

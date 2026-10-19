@@ -1,0 +1,41 @@
+
+
+Software Toolworks' ELIZA Reconstruction Card
+---------------------------------------------
+
+Description: This RC describes the work required to restore "Software Toolworks' ELIZA" into a form that could be run on an emulator. See also the blog post that details its history https://sites.google.com/view/elizaarchaeology/blog/9-guest-post-the-software-toolworks-eliza  
+
+Date: 18 Jan 2025
+
+Version History: Created 18 Jan 2025
+
+Card Author: David M. Berry, d.m.berry@sussex.ac.uk
+
+Comments: None
+
+-------------------------------------------------------------------------------
+
+This zip contains the distribution disks for ELIZA and MSDOS C/80 (integer version only), and a folder:
+
+"Recreate Eliza 1.0 Here" containing most files from both of those.
+
+To compile ELIZA 1.0:
+
+Download the appropriate DOSBox installer here: https://www.dosbox.com/download.php?main=1
+
+Following the instructions here for Installation and Running a game:
+
+https://www.dosbox.com/wiki/Basic_Setup_and_Installation_of_DosBox
+
+Then mount "Recreate Eliza 1.0 Here" on C: and type:
+
+run ELAZARUN.bat
+
+-------------------------------------------------------------------------------
+
+(CC) All files in this zip are openly licensed via Creative Commons BY 4.0 for use with attribution to Walt Bilofsky   
+See https://creativecommons.org/licenses/by/4.0/ 
+
+Originally written in 1981 by Walt Bilofsky   
+
+Based on ELIZA by Joseph Weizenbaum, Comm. ACM V.9 no.1 January 1966
