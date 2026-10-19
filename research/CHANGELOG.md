@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.83 (2026-10-19)
+
+- Implementations: the catalogue names its variorum roots (`variorum`: v:1965b, v:1966, v:doctor, each with its label and the bench version it opens), for the kit's Implementations view.
+
 ## 0.1.82 (2026-10-19)
 
 - Implementations: an alternate held privately (a carrier with other programs on it, such as FREUD's Dallas Assortment disk) is named in the source bar, with a link to the paratext holding it.

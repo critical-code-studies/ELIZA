@@ -8820,5 +8820,22 @@
    "id": "lost",
    "note": "Known to have existed; no copy and no complete text survives."
   }
- ]
+ ],
+ "variorum": {
+  "v:1965b": {
+   "label": "ELIZA 1965b, the MAD-SLIP source",
+   "version": "1965b",
+   "note": "Weizenbaum’s MAD-SLIP source as recovered from his papers at MIT"
+  },
+  "v:1966": {
+   "label": "ELIZA as described in CACM, January 1966",
+   "version": "1966",
+   "note": "the program as Weizenbaum’s paper describes it"
+  },
+  "v:doctor": {
+   "label": "DOCTOR, the script printed in CACM, 1966",
+   "version": "doctor",
+   "note": "the script in the paper’s appendix"
+  }
+ }
 }
