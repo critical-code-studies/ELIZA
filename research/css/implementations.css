@@ -100,4 +100,4 @@
 #view-implementations .iv-head .iv-title { font-weight:600 }
 #view-implementations .iv-credit { padding:4px 20px 24px; max-width:1600px }
 
-#view-implementations #iv-tree svg { font-family: var(--sans); }
+#view-implementations #iv-tree svg, #view-implementations #iv-tree svg text { font-family: var(--sans); }
