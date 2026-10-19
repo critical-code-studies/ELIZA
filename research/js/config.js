@@ -151,7 +151,18 @@
     comparePrefix: 'ELIZA: ',
     genealogy: { set: ['1965b'], line: 'doctor', lineNames: { doctor: 'DOCTOR, 1965–66', figure: 'F29 and FIGURE, 1967–68', eliza: 'ELIZA, 1965–68' } },
     figureNum: { print: '#b0401d', paper: '#b0401d', phosphor: '#f0a83a' },
-    paratexts: { org: 'critical-code-studies', repo: 'eliza_paratexts', cache: 'eliza-paratexts', tokenName: 'ELIZA research bench' },   // the private repository of scans and documents
+    paratexts: { org: 'critical-code-studies', repo: 'eliza_paratexts', cache: 'eliza-paratexts', tokenName: 'ELIZA research bench' },
+    // the Implementations tab (kit/implementations.js): its catalogue, the credit at its foot, and the one
+    // feature that needs more than yes or no: the delimiters, compared on whether BUT is one of them
+    implementations: {
+      url: 'implementations/catalogue.json',
+      credit: 'Many of the implementations here were collected and shared by <a href="http://shrager.org/" target="_blank" rel="noopener">Jeff Shrager</a> at <a href="https://elizagen.org/" target="_blank" rel="noopener">ELIZAGEN</a>, and are held with his permission.',
+      feature: {
+        cell: function (k, v) { if (k !== 'delimit' || v == null) return null; var e = root.SW.esc; return v === 'no BUT' ? '<td class="c no">no BUT</td>' : /BUT/.test(v) ? '<td class="c yes">' + e(v) + '</td>' : '<td class="c">' + e(v) + '</td>'; },
+        cls: function (v) { return v === 'no BUT' ? 'no' : null; },
+        key: function (k, v) { return k === 'delimit' && v != null ? (/(^|[^O] )BUT|^BUT/.test(String(v)) && String(v) !== 'no BUT' ? 'BUT' : 'no BUT') : String(v); }
+      }
+    },   // the private repository of scans and documents
     examples: { date: 'e.g. 1966-01, or 1965', archive: 'e.g. MIT Libraries, Weizenbaum papers', versions: 'e.g. 1965b, doctor',
                 refs: 'e.g. [REF: EL65B, ELIZA-1965b.mad:248]', publisher: 'e.g. Communications of the ACM', finding: 'F1' },
     // the first version is lost, and the tree grows from it
