@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.66 (2026-10-19)
+
+- The kit at 0.64.0: every paratext type and medium mapped to a standard term (Library of Congress Genre/Form Terms, the Getty AAT, RDA carrier types), shown in the item's box and carried in the Dublin Core export.
+
 ## 0.1.65 (2026-10-19)
 
 - About: the later implementations among the paratexts credited to Jeff Shrager and ELIZAGEN, who collected and shared them, with links to shrager.org and elizagen.org.
