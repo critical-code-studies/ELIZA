@@ -759,7 +759,7 @@ h3 { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: var(
 .talklist .meta a:hover { color: var(--beam); }
 
 /* photographs attached to a talk entry: a small contact sheet under the listing */
-.talk-shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0.9rem; margin: 1rem 0 0.3rem; align-items: start; }
+.talk-shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; margin: 1rem 0 0.3rem; align-items: start; }
 .talk-shots figure { margin: 0; }
 .talk-shots img { width: 100%; height: auto; display: block; border: 1px solid var(--line-soft); border-radius: 4px; opacity: 0.92; transition: opacity 0.2s ease; }
 .talk-shots a:hover img { opacity: 1; }
