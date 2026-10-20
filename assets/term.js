@@ -42,6 +42,7 @@
      '*savetrace   - save current conversation and trace to a text file',
      '*setup       - Set-Up mode, as on a VT220 (also the F3 key or the',
      '               Set-Up key under the screen)',
+     '*tty, *vt220 - switch to a Teletype Model 33 ASR or back to the VT220',
      '*traceauto   - turn on tracing; trace shown for every exchange',
      "*traceon     - turn on tracing; enter '*' after an exchange to see trace",
      '*tracepre    - show only input sentence and currently active keyword',
@@ -86,9 +87,31 @@
     setupKey.type = 'button'; setupKey.title = 'Set-Up (F3)';
     var chinR = el('span', 'vt-chin-r'); chinR.appendChild(setupKey); chinR.appendChild(el('span', 'vt-led'));
     chin.appendChild(chinR);
+    // in Teletype mode the chin carries the machine's nameplate in place of the logo and Set-Up key
+    var plate = el('span', 'tty-plate', 'TELETYPE  MODEL 33 ASR');
+    chinL.appendChild(plate);
     vt.appendChild(chin);
+    // the switch between the two machines: the VT220 video terminal (1983) and the Teletype Model 33
+    // ASR (1963), the kind of printing terminal on which ELIZA's conversations were typed
+    var sw = el('div', 'term-switch'); sw.setAttribute('role', 'group'); sw.setAttribute('aria-label', 'Terminal');
+    var bVT = el('button', '', 'VT220 video terminal, 1983'), bTTY = el('button', '', 'Teletype Model 33 ASR, 1963');
+    bVT.type = bTTY.type = 'button'; sw.appendChild(bVT); sw.appendChild(bTTY);
+    container.appendChild(sw);
     container.appendChild(vt);
-    container.appendChild(el('div', 'vt-stand'));
+    var stand = el('div', 'vt-stand'); container.appendChild(stand);
+    var device = 'vt220';
+    function setDevice(d) {
+      device = d === 'tty' ? 'tty' : 'vt220';
+      vt.classList.toggle('tty', device === 'tty'); stand.hidden = device === 'tty';
+      bVT.classList.toggle('on', device === 'vt220'); bTTY.classList.toggle('on', device === 'tty');
+      bVT.setAttribute('aria-pressed', device === 'vt220'); bTTY.setAttribute('aria-pressed', device === 'tty');
+      if (device === 'tty' && typeof ST !== 'undefined' && ST.open) leave();
+      input.placeholder = device === 'tty' ? '' : 'type and press enter…';
+      try { localStorage.setItem('eliza.terminal', device); } catch (e) {}
+      log.scrollTop = log.scrollHeight;
+    }
+    bVT.addEventListener('click', function () { setDevice('vt220'); input.focus({ preventScroll: true }); });
+    bTTY.addEventListener('click', function () { setDevice('tty'); input.focus({ preventScroll: true }); });
 
     function add(cls, text) { var l = el('div', 'l ' + cls, text); log.appendChild(l); log.scrollTop = log.scrollHeight; return l; }
     function bot(text) { add('bot', text); }
@@ -135,7 +158,9 @@
       var parts = text.trim().split(/\s+/), cmd = parts[0].toUpperCase();
       if (THEMES[cmd]) { term.className = term.className.replace(/theme-\w+/, THEMES[cmd]); return; }
       switch (cmd) {
-        case '*SETUP': enter(); return;
+        case '*SETUP': if (device === 'tty') sys('A Teletype Model 33 has no Set-Up.'); else enter(); return;
+        case '*TTY': setDevice('tty'); return;
+        case '*VT220': setDevice('vt220'); return;
         case '*CACM':
           sys("Replaying conversation from Weizenbaum's January 1966 CACM paper.\nPress Enter to see each exchange. Press Escape to exit replay mode.\n(Use * or *traceauto to see trace, ** to see transformation rules.)");
           cacm = 0; return;
@@ -230,7 +255,7 @@
     }
     // the speed at which ELIZA's replies arrive, in characters a second: a tenth of the receive rate
     // (ten bits a character with start and stop bits); Receive=Transmit takes the transmit rate
-    function cps() { var r = P.rx.k === 0 ? SPEEDS[P.tx.k] : SPEEDS[P.rx.k - 1]; return (+r) / 10; }
+    function cps() { if (device === 'tty') return 10; var r = P.rx.k === 0 ? SPEEDS[P.tx.k] : SPEEDS[P.rx.k - 1]; return (+r) / 10; }
     function store() { var o = {}; for (var n in P) if (P[n] && P[n].list) o[n] = P[n].k; o.tabs = P.tabs; o.phosphor = phosphor(); o.crt = term.classList.contains('crt'); return o; }
     function restore(o) { if (!o) return false; P = DEF(); for (var n in o) if (P[n] && P[n].list && o[n] < P[n].list.length) P[n].k = o[n]; if (o.tabs) P.tabs = o.tabs; if (o.phosphor) setPhosphor(o.phosphor); term.classList.toggle('crt', o.crt !== false); effects(); return true; }
     try { restore(JSON.parse(localStorage.getItem(KEY) || 'null')); } catch (e) {}
@@ -297,6 +322,9 @@
     setPhosphor(phosphor());
     var online = function () { return P.online.k === 0; };
 
+    var savedDevice = null; try { savedDevice = localStorage.getItem('eliza.terminal'); } catch (e) {}
+    setDevice(savedDevice === 'tty' ? 'tty' : 'vt220');
+
     function handle(raw) {
       if (busy) return;
       var text = raw.trim();
@@ -323,7 +351,7 @@
 
     input.addEventListener('keydown', function (e) {
       if (ST.open) { setupKeys(e); return; }
-      if (e.key === 'F3') { e.preventDefault(); enter(); return; }
+      if (e.key === 'F3') { e.preventDefault(); if (device !== 'tty') enter(); return; }
       if (e.key === 'Enter') { var v = input.value; input.value = ''; handle(v); }
       else if (e.key === 'Escape') {
         C.interrupt();
