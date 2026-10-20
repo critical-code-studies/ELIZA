@@ -802,9 +802,9 @@ write('try.html', page({
       <span class="kicker">Try ELIZA</span>
       <h1 class="page">Talk to ELIZA</h1>
       <div class="lede"><p>A faithful re-creation of the 1966 ELIZA, running the genuine DOCTOR script in your browser. Type a sentence and press enter; nothing you type leaves your browser.</p></div>
-      <p>The replies come from Anthony Hay&rsquo;s exact re-creation of the engine. A few of the original asterisk commands work, type <code>*help</code>. For the full version, with the CACM replay and custom scripts, open Hay&rsquo;s ELIZA <a href="https://anthay.github.io/eliza.html">full screen</a>.</p>
       <div id="try-eliza-mount"></div>
-      <p class="post-meta" style="margin-top:0.8rem">Engine: Anthony Hay&rsquo;s CC0 re-creation (<a href="https://github.com/anthay/ELIZA">github.com/anthay/ELIZA</a>), the same one behind the <a href="how.html">step-by-step demo</a>.</p>
+      <template id="tty-paper-template">${fanfold(['R ELIZA', 'W 1631.2'], '<div class="tty-feed"></div>', { sprockets: false })}</template>
+      <p class="post-meta" style="margin-top:0.8rem">Engine: Anthony Hay&rsquo;s CC0 re-creation (<a href="https://github.com/anthay/ELIZA">github.com/anthay/ELIZA</a>), the code also runs the <a href="how.html">step-by-step demo</a>. <code>*cacm</code> replays the conversation printed in Weizenbaum&rsquo;s 1966 paper.</p>
 `}));
 
 // ---------------------------------------------------------------------------
@@ -863,13 +863,25 @@ write('people.html', page({
 // ---------------------------------------------------------------------------
 write('talks.html', page({
   title: 'Talks', desc: 'Talks and code critiques on ELIZA by the project team.',
+  scripts: ['lightbox.js'],
   body: `
       <span class="kicker">Talks</span>
       <h1 class="page">Talks &amp; code critiques</h1>
 
       <h2 class="yeargroup">2026</h2>
       <ul class="talklist">
-        <li><span class="when">15 October 2026</span><span class="who">Berry, D. M.</span><span class="ttl">&ldquo;Inventing ELIZA: How the First Chatbot Shaped the Future of AI&rdquo;</span><span class="meta">Book talk, with respondents <a href="https://profiles.sussex.ac.uk/p129458-michael-jonik">Michael Jonik</a> and <a href="https://www.ids.ac.uk/people/moinul-zaber/">Moinul Zaber</a>, chaired by <a href="https://profiles.sussex.ac.uk/p174167-tanya-kant">Tanya Kant</a>, <a href="https://www.sussex.ac.uk/research/centres/sussex-humanities-lab/news-and-events/events?id=71183">Sussex Digital Humanities Lab</a>, University of Sussex</span></li>
+        <li>
+          <div class="talk-shots talk-side">
+            <figure><a target="_blank" rel="noopener" href="assets/images/mitpress-bookstore-poster.jpg"><img src="assets/images/mitpress-bookstore-poster.jpg" alt="MIT Press Bookstore notice: author meeting with Peggy Weil, coauthor of Inventing ELIZA, Thursday 22 October at 3pm" loading="lazy"></a><figcaption>The MIT Press Bookstore&rsquo;s notice.</figcaption></figure>
+          </div>
+          <span class="when">22 October 2026</span><span class="who">Weil, P.</span><span class="ttl">&ldquo;Inventing ELIZA: How the First Chatbot Shaped the Future of AI&rdquo;</span><span class="meta">Author meeting, MIT Press Bookstore, 314 Main Street, Kendall Square, Cambridge, Massachusetts, 3pm, with ELIZA running for visitors to try</span>
+        </li>
+        <li>
+          <div class="talk-shots talk-side">
+            <figure><a target="_blank" rel="noopener" href="assets/images/sussex-shl-booktalk-notice.jpg"><img src="assets/images/sussex-shl-booktalk-notice.jpg" alt="Sussex Digital Humanities Lab notice: Book Talk, Inventing ELIZA, David M. Berry, 15 October 2026, 4pm to 5:30pm, with respondents Michael Jonik and Moinul Zaber, chaired by Tanya Kant" loading="lazy"></a><figcaption>The Sussex Digital Humanities Lab&rsquo;s notice.</figcaption></figure>
+          </div>
+          <span class="when">15 October 2026</span><span class="who">Berry, D. M., Marino, M. C., Shrager, J. &amp; Schwarz, A. I.</span><span class="ttl">&ldquo;Inventing ELIZA: How the First Chatbot Shaped the Future of AI&rdquo;</span><span class="meta">Book talk, with respondents <a href="https://profiles.sussex.ac.uk/p129458-michael-jonik">Michael Jonik</a> and <a href="https://www.ids.ac.uk/people/moinul-zaber/">Moinul Zaber</a>, chaired by <a href="https://profiles.sussex.ac.uk/p174167-tanya-kant">Tanya Kant</a>, <a href="https://www.sussex.ac.uk/research/centres/sussex-humanities-lab/news-and-events/events?id=71183">Sussex Digital Humanities Lab</a>, Silverstone Building, University of Sussex, 4pm</span>
+        </li>
         <li><span class="when">8 October 2026</span><span class="who">Marino, M. C., Berry, D. M., Schwarz, A. I. &amp; Shrager, J.</span><span class="ttl">&ldquo;Inventing ELIZA&rdquo;</span><span class="meta">Book talk, Marino in person with Berry, Schwarz and Shrager joining online, Digital Humanities Center, San Diego State University</span></li>
         <li><span class="when">3 September 2026</span><span class="who">Ciston, S. &amp; Berry, D. M.</span><span class="ttl">&ldquo;Inventing ELIZA: How the First Chatbot Shaped the Future of AI&rdquo;</span><span class="meta">Book presentation and panel discussion, Weizenbaum Institute, Berlin</span></li>
         <li><span class="when">31 July 2026</span><span class="who">Berry, D. M.</span><span class="ttl">&ldquo;Retro-duction AI: (re)reading, (re)constructing and (re)running AI&rdquo;</span><span class="meta">Keynote, <a href="https://calendar.usc.edu/event/retro-ai-symposium">Retro AI: Archaeologies of A.I. symposium</a>, USC, USA</span></li>

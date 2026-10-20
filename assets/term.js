@@ -75,8 +75,16 @@
       o.connect(g); g.connect(c.destination); o.start(t); o.stop(t + dur + 0.02);
     }
     return {
-      // one character printed: the typebox strikes the paper
-      strike: function () { if (!ac()) return; var t = ctx.currentTime; burst(t, 0.035, 2200 + Math.random() * 1600, 1.4, 0.22); thump(t, 140 + Math.random() * 30, 0.04, 0.18); },
+      // one character printed: the recorded keypress from ELIZA33 (Shrager, Hay and Armel), else a synthesized strike
+      sample: null,
+      load: function (url) {
+        var self = this; if (self.sample || !ac() || !window.fetch) return;
+        fetch(url).then(function (r) { return r.arrayBuffer(); }).then(function (b) { return ctx.decodeAudioData(b); }).then(function (buf) { self.sample = buf; }, function () {});
+      },
+      strike: function () {
+        if (!ac()) return;
+        if (this.sample) { var src = ctx.createBufferSource(), g = ctx.createGain(); src.buffer = this.sample; src.playbackRate.value = 0.94 + Math.random() * 0.12; g.gain.value = 0.55; src.connect(g); g.connect(ctx.destination); src.start(); return; }
+        var t = ctx.currentTime; burst(t, 0.035, 2200 + Math.random() * 1600, 1.4, 0.22); thump(t, 140 + Math.random() * 30, 0.04, 0.18); },
       // end of a line: the carriage runs back and the platen ratchets the paper up a line
       newline: function () { if (!ac()) return; var t = ctx.currentTime; burst(t, 0.22, 500, 0.9, 0.12, 1600); thump(t + 0.2, 90, 0.08, 0.28); burst(t + 0.24, 0.05, 1200, 2, 0.12); },
       // the VT220's keyclick
@@ -147,15 +155,85 @@
       sound = !!on; bSnd.textContent = sound ? 'Sound on' : 'Sound off'; bSnd.classList.toggle('on', sound); bSnd.setAttribute('aria-pressed', sound);
       try { localStorage.setItem('eliza.sound', sound ? 'on' : 'off'); } catch (e) {}
       Sound.hum(sound && device === 'tty');
+      if (sound && device === 'tty') Sound.load(base + 'assets/audio/asr33keypress.wav');
     }
     bSnd.addEventListener('click', function () { setSound(!sound); input.focus({ preventScroll: true }); });
     container.appendChild(sw);
     container.appendChild(vt);
     var stand = el('div', 'vt-stand'); container.appendChild(stand);
+    // ---- the Teletype Model 33 ASR: Anthony Hay's photograph of the machine (from ELIZA33, by Jeff
+    // Shrager, Anthony Hay and Leo Armel), the paper rising out of it (the site's fanfold plate, without
+    // sprocket holes: the Model 33 printed on friction-fed roll paper), and its keyboard, every key live
+    var base = opts.base || '';
+    var tty = el('div', 'tty33'); tty.hidden = true;
+    var photo = el('div', 'tty-photo');
+    var img = el('img'); img.src = base + 'assets/images/asr33-hay.jpg'; img.alt = 'A Teletype Model 33 ASR seen from above: the printer under its cover, the keyboard, and the paper tape reader and punch on the left (photograph by Anthony Hay)'; img.loading = 'lazy';
+    var paper = el('div', 'tty-paper'), glass = el('div', 'tty-window'), keys = el('div', 'tty-keys');
+    var tpl = document.getElementById('tty-paper-template'), feed;
+    if (tpl && tpl.content) { paper.appendChild(tpl.content.cloneNode(true)); feed = paper.querySelector('.tty-feed'); }
+    if (!feed) { var ff = el('div', 'fanfold no-sprockets'); feed = el('div', 'tty-feed'); ff.appendChild(feed); paper.appendChild(ff); }
+    photo.appendChild(img); photo.appendChild(paper); photo.appendChild(glass); photo.appendChild(keys);
+    tty.appendChild(photo);
+    tty.appendChild(el('p', 'tty-credit', 'Photograph of a Teletype Model 33 ASR by Anthony Hay, from ELIZA33 (Jeff Shrager, Anthony Hay and Leo Armel).'));
+    container.appendChild(tty);
+    // the keys as they sit in the photograph (centres, as fractions of its width and height), with
+    // their legends: [label, unshifted, shifted, x, y]; the four rows and the space bar
+    var KEYMAP = [
+      [['!', '1', '!'], ['"', '2', '"'], ['#', '3', '#'], ['$', '4', '$'], ['%', '5', '%'], ['&', '6', '&'], ["'", '7', "'"], ['(', '8', '('], [')', '9', ')'], ['0', '0', '0'], ['*', ':', '*'], ['=', '-', '='], ['HERE IS', 'HEREIS']],
+      [['ESC', 'ESC'], ['Q'], ['W'], ['E'], ['R'], ['T'], ['Y'], ['U'], ['I'], ['O'], ['P', 'P', '@'], ['LINE FEED', 'LF'], ['RETURN', 'RETURN']],
+      [['CTRL', 'CTRL'], ['A'], ['S'], ['D'], ['F'], ['G'], ['H'], ['J'], ['K', 'K', '['], ['L', 'L', '\\'], ['+', ';', '+'], ['RUB OUT', 'RUBOUT'], ['REPT', 'REPT'], ['BREAK', 'BREAK']],
+      [['SHIFT', 'SHIFT'], ['Z'], ['X'], ['C'], ['V'], ['B'], ['N', 'N', '^'], ['M', 'M', ']'], ['<', ',', '<'], ['>', '.', '>'], ['?', '/', '?'], ['SHIFT', 'SHIFT']]
+    ];
+    var KX = [[427, 491, 555, 618, 682, 746, 810, 874, 938, 1001, 1066, 1130, 1196],
+              [385, 450, 515, 580, 647, 712, 778, 843, 908, 973, 1040, 1105, 1170],
+              [382, 460, 525, 592, 660, 727, 793, 858, 925, 993, 1062, 1130, 1213, 1278],
+              [405, 480, 550, 620, 690, 760, 828, 898, 966, 1034, 1103, 1175]];
+    var KY = [742, 810, 880, 952], keyEls = {}, shiftOn = false, ctrlOn = false, lastKey = null;
+    KEYMAP.forEach(function (row, r) {
+      row.forEach(function (k, c) {
+        var b = el('button', 'tk'); b.type = 'button';
+        b.style.left = (KX[r][c] / 16) + '%'; b.style.top = (KY[r] / 12.04) + '%';
+        b.setAttribute('aria-label', k[0].length > 1 ? k[0] : 'Key ' + k[0]);
+        b.dataset.k = k[1] || k[0]; if (k[2]) b.dataset.s = k[2];
+        keys.appendChild(b);
+        (keyEls[b.dataset.k] = keyEls[b.dataset.k] || []).push(b);
+        if (b.dataset.s) (keyEls[b.dataset.s] = keyEls[b.dataset.s] || []).push(b);
+      });
+    });
+    var space = el('button', 'tk tk-space'); space.type = 'button'; space.setAttribute('aria-label', 'Space bar'); space.dataset.k = ' ';
+    space.style.left = '50.6%'; space.style.top = '86.8%'; keys.appendChild(space); keyEls[' '] = [space];
+    function flash(k) { (keyEls[k] || []).forEach(function (b) { b.classList.add('down'); setTimeout(function () { b.classList.remove('down'); }, 110); }); }
+    function press(code, shifted) {
+      if (code === 'SHIFT') { shiftOn = !shiftOn; (keyEls.SHIFT || []).forEach(function (b) { b.classList.toggle('held', shiftOn); }); return; }
+      if (code === 'CTRL') { ctrlOn = !ctrlOn; (keyEls.CTRL || []).forEach(function (b) { b.classList.toggle('held', ctrlOn); }); return; }
+      if (code === 'REPT') { if (lastKey) press(lastKey[0], lastKey[1]); return; }
+      lastKey = [code, shifted];
+      if (sound) { if (code === 'RETURN') Sound.newline(); else if (code !== 'LF') Sound.strike(); }
+      if (code === 'RETURN') { var v = input.value; input.value = ''; handle(v); }
+      else if (code === 'RUBOUT') input.value = input.value.slice(0, -1);
+      else if (code === 'ESC' || code === 'BREAK') { C.interrupt(); if (cacm >= 0) { cacm = -1; sys('-- CACM conversation interrupted --'); } }
+      else if (code === 'LF' || code === 'HEREIS') { /* no line of its own here */ }
+      else if (ctrlOn) { ctrlOn = false; (keyEls.CTRL || []).forEach(function (b) { b.classList.remove('held'); }); }   // a control character prints nothing
+      else input.value += shifted && shifted !== code ? shifted : code;
+      if (shiftOn && code !== 'SHIFT') { shiftOn = false; (keyEls.SHIFT || []).forEach(function (b) { b.classList.remove('held'); }); }
+    }
+    keys.addEventListener('click', function (e) {
+      var b = e.target.closest('.tk'); if (!b) return; e.stopPropagation();
+      flash(b.dataset.k); press(b.dataset.k, shiftOn ? b.dataset.s : null);
+      try { input.focus({ preventScroll: true }); } catch (x) {}
+    });
+    photo.addEventListener('click', function (e) { if (!e.target.closest('.tk')) try { input.focus({ preventScroll: true }); } catch (x) {} });
+    // the type is sized to the paper: a Model 33 line holds 72 characters; set to 64 here (the width of
+    // Hay's banner) so that the print can be read at the size of the photograph
+    function fitPaper() { var w = paper.clientWidth; if (w) paper.style.fontSize = Math.max(6, (w * 0.86) / 64 / 0.6) + 'px'; }
+    window.addEventListener('resize', fitPaper);
+    if ('ResizeObserver' in window) new ResizeObserver(fitPaper).observe(paper);
     var device = 'vt220';
     function setDevice(d) {
       device = d === 'tty' ? 'tty' : 'vt220';
-      vt.classList.toggle('tty', device === 'tty'); stand.hidden = device === 'tty';
+      vt.hidden = device === 'tty'; stand.hidden = device === 'tty'; tty.hidden = device !== 'tty';
+      if (device === 'tty') { feed.appendChild(log); feed.appendChild(inputWrap); fitPaper(); if (sound) Sound.load(base + 'assets/audio/asr33keypress.wav'); }
+      else { term.insertBefore(log, term.firstChild); term.appendChild(inputWrap); }
       bVT.classList.toggle('on', device === 'vt220'); bTTY.classList.toggle('on', device === 'tty');
       bVT.setAttribute('aria-pressed', device === 'vt220'); bTTY.setAttribute('aria-pressed', device === 'tty');
       if (device === 'tty' && typeof ST !== 'undefined' && ST.open) leave();
@@ -412,6 +490,10 @@
       if (sound && !ST.open && !e.metaKey && !e.ctrlKey) {
         if (device === 'tty') { if (e.key.length === 1 && e.key !== ' ') Sound.strike(); else if (e.key === 'Enter') Sound.newline(); }
         else if (P.click.k === 0 && (e.key.length === 1 || e.key === 'Enter' || e.key === 'Backspace')) Sound.click();
+      }
+      if (device === 'tty' && !e.metaKey && !e.ctrlKey) {
+        var kk = e.key === 'Enter' ? 'RETURN' : e.key === 'Backspace' ? 'RUBOUT' : e.key === 'Escape' ? 'ESC' : e.key.length === 1 ? e.key.toUpperCase() : null;
+        if (kk) flash(kk);
       }
       if (ST.open) { setupKeys(e); return; }
       if (e.key === 'F3') { e.preventDefault(); if (device !== 'tty') enter(); return; }

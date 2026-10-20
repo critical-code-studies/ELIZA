@@ -9,17 +9,17 @@
   <meta property="og:site_name" content="ELIZA Archaeology Project">
   <meta property="og:title" content="Try ELIZA · ELIZA (1966)">
   <meta property="og:description" content="Talk to a faithful re-creation of the 1966 ELIZA, running the genuine DOCTOR script in your browser.">
-  <meta property="og:image" content="https://findingeliza.org/assets/images/share-card.png?v=202610201300">
+  <meta property="og:image" content="https://findingeliza.org/assets/images/share-card.png?v=202610201046">
   <meta property="og:url" content="https://findingeliza.org/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Try ELIZA · ELIZA (1966)">
   <meta name="twitter:description" content="Talk to a faithful re-creation of the 1966 ELIZA, running the genuine DOCTOR script in your browser.">
-  <meta name="twitter:image" content="https://findingeliza.org/assets/images/share-card.png?v=202610201300">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=202610201300">
-  <link rel="stylesheet" href="assets/css/site.css?v=202610201300">
-  <script src="assets/nav.js?v=202610201300" defer></script>
-  <script src="assets/term.js?v=202610201300" defer></script>
-  <script src="assets/eliza-hay.js?v=202610201300" defer></script>
+  <meta name="twitter:image" content="https://findingeliza.org/assets/images/share-card.png?v=202610201046">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=202610201046">
+  <link rel="stylesheet" href="assets/css/site.css?v=202610201046">
+  <script src="assets/nav.js?v=202610201046" defer></script>
+  <script src="assets/term.js?v=202610201046" defer></script>
+  <script src="assets/eliza-hay.js?v=202610201046" defer></script>
 </head>
 <body>
 
@@ -63,6 +63,10 @@
       <h1 class="page">Talk to ELIZA</h1>
       <div class="lede"><p>A faithful re-creation of the 1966 ELIZA, running the genuine DOCTOR script in your browser. Type a sentence and press enter; nothing you type leaves your browser.</p></div>
       <div id="try-eliza-mount"></div>
+      <template id="tty-paper-template"><div class="fanfold no-sprockets">
+        <div class="fanfold-cmd"><div class="cmd-line">R ELIZA</div><div class="cmd-line">W 1631.2</div></div>
+<div class="tty-feed"></div>
+      </div></template>
       <p class="post-meta" style="margin-top:0.8rem">Engine: Anthony Hay&rsquo;s CC0 re-creation (<a target="_blank" rel="noopener" href="https://github.com/anthay/ELIZA">github.com/anthay/ELIZA</a>), the code also runs the <a href="how.html">step-by-step demo</a>. <code>*cacm</code> replays the conversation printed in Weizenbaum&rsquo;s 1966 paper.</p>
 
     </article>

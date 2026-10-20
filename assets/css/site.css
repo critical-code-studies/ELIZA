@@ -1106,23 +1106,33 @@ dialog.lightbox figcaption { font-family: var(--mono); font-size: 0.72rem; color
 .term-switch + .vt220 { margin-top: 0.8rem; }
 .vt-stand[hidden] { display: none; }
 .tty-plate { display: none; }
-/* Teletype Model 33 ASR: roll paper rising out of the machine over a black platen, printed in capitals
-   (the Model 33 has no lower case) at ten characters a second */
-.vt220.tty { max-width: 820px; padding: 18px 26px 0; border-radius: 14px 14px 10px 10px; background: linear-gradient(180deg, #d8d3c3 0%, #c9c3b1 60%, #b3ac98 100%); }
-.vt220.tty::before { inset: 8px 12px 50px; border-radius: 6px; background: linear-gradient(180deg, #a8a18c, #bdb6a2); }
-.vt220.tty .eliza-term { aspect-ratio: auto; height: min(30rem, 62vh); border-radius: 3px; box-shadow: 0 0 0 2px #8e8772, inset 0 10px 18px -10px rgba(0,0,0,0.35);
-  background: linear-gradient(90deg, rgba(0,0,0,0.035), transparent 6%, transparent 94%, rgba(0,0,0,0.035)), #f2ecd7; color: #262321; font-size: 0.95rem; }
-.vt220.tty .eliza-term::before { background: linear-gradient(180deg, rgba(185,178,158,0.95) 0%, rgba(242,236,215,0) 16%); z-index: 3; }
-.vt220.tty .eliza-term::after { display: none; }
-.vt220.tty .eliza-log { padding: 3.4rem 2.2rem 0.4rem; scrollbar-color: #b9b29e transparent; }
-.vt220.tty .eliza-log .l, .vt220.tty .eliza-log .l.bot, .vt220.tty .eliza-log .l.usr, .vt220.tty .eliza-log .l.sys { color: #262321; text-transform: uppercase; letter-spacing: 0.04em; text-shadow: 0 0 0.6px rgba(20,18,16,0.85), 0.4px 0.2px 0 rgba(40,36,32,0.25); }
-.vt220.tty .eliza-log .l.sys { color: #4a4540; }
-.vt220.tty .eliza-input { padding: 0.2rem 1.2rem 0.6rem; border-bottom: 16px solid #1d1c1a; box-shadow: inset 0 -4px 6px -4px rgba(0,0,0,0.4); }
-.vt220.tty .eliza-input .prompt { color: #262321; }
-.vt220.tty .eliza-input input { color: #262321; caret-color: #262321; text-transform: uppercase; letter-spacing: 0.04em; }
-.vt220.tty .vt-logo, .vt220.tty .vt-model, .vt220.tty .vt-key { display: none; }
-.vt220.tty .tty-plate { display: inline-block; font: 700 0.66rem Helvetica, Arial, sans-serif; letter-spacing: 2px; color: #e8e3d4; background: #3b3732; padding: 4px 10px; border-radius: 2px; }
-.vt220.tty .vt-led { background: #f0b13a; box-shadow: 0 0 6px rgba(240,177,58,0.9), inset 0 -1px 1px rgba(0,0,0,0.3); }
+/* Teletype Model 33 ASR: Anthony Hay's photograph of the machine, with the paper (the site's fanfold
+   plate, no sprocket holes: the Model 33 printed on friction-fed roll paper) rising out from under the
+   cover, printed at the platen behind the plastic window, and every key of the keyboard live */
+.vt220[hidden], .tty33[hidden] { display: none; }
+.tty33 { position: relative; max-width: 900px; margin: 0.8rem auto 1.6rem; padding-top: 25%; }
+.tty-photo { position: relative; }
+.tty-photo img { display: block; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 18px 46px rgba(0,0,0,0.55); }
+.tty-paper { position: absolute; left: 31.1%; right: 29.9%; top: -33%; bottom: 70.5%; overflow-y: auto; scrollbar-width: none; display: flex; flex-direction: column; font-family: var(--mono); line-height: 1.35; }
+.tty-paper::-webkit-scrollbar { display: none; }
+.tty-paper .fanfold { margin: 0; min-height: 100%; display: flex; flex-direction: column; justify-content: flex-end; padding: 1.4em 1.3em 0.5em; border-radius: 2px 2px 0 0; box-shadow: 0 -6px 18px rgba(0,0,0,0.25); }
+.tty-paper .fanfold-cmd { margin-top: 0; }
+.tty-paper .fanfold-cmd { font-size: 1em; letter-spacing: 0; margin-bottom: 0.7em; color: #2c2318; }
+.tty-feed .eliza-log { padding: 0; min-height: 0; max-height: none; overflow: visible; flex: none; }
+.tty-feed .eliza-log .l, .tty-feed .eliza-log .l.bot, .tty-feed .eliza-log .l.usr, .tty-feed .eliza-log .l.sys { color: #2c2318; font-size: 1em; text-transform: uppercase; text-shadow: 0 0 0.5px rgba(30,22,14,0.8); margin: 0; }
+.tty-feed .eliza-log .l.pre { white-space: pre-wrap; }
+.tty-feed .eliza-input { padding: 0; }
+.tty-feed .eliza-input .prompt { display: none; }
+.tty-feed .eliza-input input { padding: 0; font: inherit; color: #2c2318; caret-color: #2c2318; text-transform: uppercase; }
+.tty-window { position: absolute; left: 27%; right: 26.6%; top: 22.3%; height: 13.6%; pointer-events: none; border-radius: 4px; background: linear-gradient(180deg, rgba(40,40,46,0.06), rgba(40,40,46,0.24)); box-shadow: inset 0 1px 0 rgba(255,255,255,0.3); }
+.tty-keys { position: absolute; inset: 0; }
+.tk { position: absolute; width: 3.6%; height: 4.9%; transform: translate(-50%, -50%); border: 0; padding: 0; border-radius: 50%; background: transparent; cursor: pointer; }
+.tk:hover { background: rgba(255,255,255,0.14); }
+.tk.down, .tk:active { background: rgba(0,0,0,0.3); box-shadow: inset 0 3px 6px rgba(0,0,0,0.45); }
+.tk.held { background: rgba(240,177,58,0.4); }
+.tk-space { width: 17.5%; height: 5%; border-radius: 10px; }
+.tty-credit { font: 0.6rem var(--mono); letter-spacing: 0.5px; color: var(--ink-dim); margin: 0.5rem 0 0; text-align: right; }
+@media (max-width: 640px) { .tty33 { padding-top: 30%; } }
 .vt220:fullscreen { display: flex; flex-direction: column; padding: 2vh 2vw 0; border-radius: 0; }
 .vt220:fullscreen .eliza-term { flex: 1; aspect-ratio: auto; }
 .vt220:fullscreen .eliza-log { max-height: none; flex: 1; }
