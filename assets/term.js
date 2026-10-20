@@ -155,7 +155,7 @@
       { id: 'dos', short: 'IBM PC', year: '1991', name: 'IBM PC, MS-DOS', prompt: '>', label: 'PC  MS-DOS 5.00', note: 'Eighty columns of grey on black. The Software Toolworks\u2019 ELIZA, by Walt Bilofsky, ran on the IBM PC from 1982.' },
       { id: 'imac', short: 'iMac G3', year: '1998', name: 'Apple iMac G3', placeholder: '', note: 'A Mac OS 8 desktop on the iMac\u2019s fifteen-inch screen, with ELIZA as a HyperCard stack. ELIZAs ran on Macs as HyperCard stacks (HyperCard came with every Mac); the Implementations archive lists one by Bellina, undated.' },
       { id: 'im', short: 'Messenger', year: '2001', name: 'Instant messenger', title: 'ELIZA - Instant Message', placeholder: 'Type a message', note: 'Chatbots such as SmarterChild answered on AOL Instant Messenger and MSN Messenger from 2001.' },
-      { id: 'web', short: 'Web chat', year: '2016', name: 'Web chat', title: 'ELIZA', placeholder: 'Write a message\u2026', note: 'The chatbot in the corner of a web page, the year Facebook opened Messenger to bots.' },
+      { id: 'web', short: 'Twitter', year: '2016', name: 'Twitter', placeholder: 'What\u2019s happening?', note: 'A timeline of tweets, newest first, 140 characters at most. In March 2016 Microsoft\u2019s chatbot Tay answered people on Twitter and was taken offline within a day, after users taught it to post offensive tweets.' },
       { id: 'llm', short: 'AI chat', year: '2023', name: 'AI chat', title: 'ELIZA', placeholder: '\u21b5 to send', note: 'The chat window of the large language model, after ChatGPT (November 2022).' }
     ];
     var DEV = {}, devBtns = {}, tl = el('div', 'tl'); sw.appendChild(tl);
@@ -263,6 +263,11 @@
     var llmPlus = el('span', 'llm-plus', '+'), llmIcons = el('span', 'llm-icons'); llmIcons.innerHTML = '<span class="llm-stop"></span><span class="llm-mic"></span>';
     var llmFoot = el('div', 'llm-foot'); llmFoot.innerHTML = '<span>Auto</span><span class="llm-model"><b>ELIZA 1966</b> High <span class="llm-ring"></span></span>';
     inputWrap.insertBefore(llmPlus, inputWrap.firstChild); inputWrap.appendChild(llmIcons); term.appendChild(llmFoot);
+    var twBar = el('div', 'tw-bar'); twBar.innerHTML = '<span>Home</span><span>Moments</span><span>Notifications</span><span>Messages</span><span class="tw-search">Search</span><span class="tw-tweet">Tweet</span>';
+    var twProfile = el('div', 'tw-profile'); twProfile.innerHTML = '<div class="tw-cover"></div><div class="tw-av">E</div><div class="tw-id"><b>ELIZA</b><span>@ELIZA_1966</span><p>Psychotherapist, of a kind. Mostly I ask questions. MIT, 1966.</p></div>';
+    var twCount = el('span', 'tw-count', '140');
+    term.insertBefore(twProfile, term.firstChild); term.insertBefore(twBar, twProfile); inputWrap.appendChild(twCount);
+    input.addEventListener('input', function () { twCount.textContent = String(140 - input.value.length); twCount.classList.toggle('over', input.value.length > 140); });
     var hcCard = el('div', 'hc-card');
     var hcHead = el('div', 'hc-head'); hcHead.innerHTML = '<span class="hc-title">ELIZA</span><span class="hc-sub">a conversation with the DOCTOR</span>';
     var hcField = el('div', 'hc-field'), hcRow = el('div', 'hc-row');
@@ -296,22 +301,24 @@
       winBar.textContent = D.title || ''; devLabel.textContent = D.label || '';
       if (promptEl) promptEl.textContent = D.prompt || '';
       input.placeholder = D.placeholder || (device === 'vt220' ? 'type and press enter\u2026' : '');
+      input.maxLength = device === 'web' ? 140 : 524288; twCount.textContent = String(140 - input.value.length);
       devNote.innerHTML = '<b>' + D.year + ', ' + D.name + '.</b> ' + D.note + ' The replies on every machine here are Weizenbaum\u2019s 1966 DOCTOR, through Anthony Hay\u2019s engine.';
       try { localStorage.setItem('eliza.terminal', device); } catch (e) {}
       if (typeof setSound === 'function') Sound.hum(sound && device === 'tty');
-      log.scrollTop = log.scrollHeight;
+      toEnd();
     }
 
+    function toEnd() { if (device === 'web') log.scrollTop = -log.scrollHeight; else log.scrollTop = log.scrollHeight; }
     function add(cls, text) {
       var l = el('div', 'l ' + cls, text);
-      if (/\b(usr|bot)\b/.test(cls)) { var t = new Date(); l.dataset.who = /usr/.test(cls) ? 'You' : 'ELIZA'; l.dataset.time = t.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', second: '2-digit' }); }
-      log.appendChild(l); log.scrollTop = log.scrollHeight; return l;
+      if (/\b(usr|bot)\b/.test(cls)) { var t = new Date(); l.dataset.who = /usr/.test(cls) ? 'You' : 'ELIZA'; l.dataset.handle = /usr/.test(cls) ? '@you' : '@ELIZA_1966 \u00b7 Replying to @you'; l.dataset.av = /usr/.test(cls) ? 'Y' : 'E'; l.dataset.time = t.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', second: '2-digit' }); }
+      log.appendChild(l); toEnd(); return l;
     }
     function bot(text) { add('bot', text); }
     // a reply arrives a character at a time at the receive speed (Comm Set-Up), as down a serial line
     function arrive(text, done) {
-      if (device === 'im' || device === 'web') {   // the other side is "typing", then the message lands whole
-        var w = add('sys typing', device === 'im' ? 'ELIZA is typing a message.' : ''); w.innerHTML = device === 'web' ? '<span></span><span></span><span></span>' : w.textContent;
+      if (device === 'im' || device === 'web') {   // the other side is "typing" (on Twitter, a pause), then the message lands whole
+        var w = add('sys typing', device === 'im' ? 'ELIZA is typing a message.' : 'ELIZA is replying\u2026');
         setTimeout(function () { w.remove(); var m = add('bot', text); done(); }, 700 + Math.min(1800, text.length * 18));
         return;
       }
@@ -320,20 +327,20 @@
         th.innerHTML = '<span class="dots"><span></span><span></span><span></span></span><span class="tmeta"></span>';
         var tm = th.querySelector('.tmeta');
         function meta() { tm.textContent = Math.max(1, Math.round((performance.now() - t0t) / 1000)) + 's \u00b7 ' + ntok + ' tokens \u00b7 Thinking'; }
-        meta(); log.scrollTop = log.scrollHeight; var tick = setInterval(function () { meta(); log.scrollTop = log.scrollHeight; }, 250);
+        meta(); toEnd(); var tick = setInterval(function () { meta(); toEnd(); }, 250);
         var lm, words = text.split(' '), wi = 0;
         setTimeout(function () { clearInterval(tick); th.remove(); lm = add('bot', ''); more(); }, 1200 + Math.random() * 1000);
         return;
-        function more() { wi = Math.min(words.length, wi + 1 + Math.floor(Math.random() * 2)); lm.textContent = words.slice(0, wi).join(' '); log.scrollTop = log.scrollHeight; if (wi < words.length) setTimeout(more, 45 + Math.random() * 60); else done(); }
+        function more() { wi = Math.min(words.length, wi + 1 + Math.floor(Math.random() * 2)); lm.textContent = words.slice(0, wi).join(' '); toEnd(); if (wi < words.length) setTimeout(more, 45 + Math.random() * 60); else done(); }
         return;
       }
       var l = add('bot', ''), k = 0, rate = device === 'pet' ? 600 : (device === 'dos' || device === 'imac') ? 5000 : (typeof cps === 'function' ? cps() : 480), t0 = performance.now();
-      if (rate >= 960 || !text) { l.textContent = text; log.scrollTop = log.scrollHeight; done(); return; }
+      if (rate >= 960 || !text) { l.textContent = text; toEnd(); done(); return; }
       (function tick() {
         var n = Math.min(text.length, Math.floor((performance.now() - t0) / 1000 * rate) + 1);
         if (n !== k) {
           if (sound && device === 'tty') { for (var q = k; q < n; q++) if (text.charAt(q) !== ' ') { Sound.strike(); break; } }
-          k = n; l.textContent = text.slice(0, k); log.scrollTop = log.scrollHeight;
+          k = n; l.textContent = text.slice(0, k); toEnd();
         }
         if (k < text.length) requestAnimationFrame(tick);
         else { if (sound && device === 'tty') Sound.newline(); done(); }
@@ -517,7 +524,7 @@
     function leave() {
       ST.open = false; setup.hidden = true; log.classList.remove('vt-blank'); inputWrap.classList.remove('vt-hidden'); term.classList.remove('in-setup');
       if (clearOnExit) { log.innerHTML = ''; clearOnExit = false; }
-      log.scrollTop = log.scrollHeight; try { input.focus({ preventScroll: true }); } catch (e) {}
+      toEnd(); try { input.focus({ preventScroll: true }); } catch (e) {}
     }
     function move(dr, dc) {
       var rows = SCREENS[ST.sc].rows;
@@ -545,6 +552,7 @@
     setSound(sound);
 
     function handle(raw) {
+      twCount.textContent = String(140 - input.value.length); twCount.classList.remove('over');
       if (busy) return;
       var text = raw.trim();
       if (!text) {
