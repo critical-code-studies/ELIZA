@@ -1096,13 +1096,20 @@ dialog.lightbox figcaption { font-family: var(--mono); font-size: 0.72rem; color
 .vt-stand { position: relative; width: 34%; max-width: 260px; height: 42px; margin: 0 auto 1.4rem; }
 .vt-stand::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 30px; background: linear-gradient(180deg, #a99f87, #c9c1ab 40%, #b7ae97); clip-path: polygon(14% 0, 86% 0, 100% 100%, 0 100%); }
 .vt-stand::after { content: ""; position: absolute; left: -22%; right: -22%; top: 30px; height: 12px; border-radius: 3px 3px 10px 10px; background: linear-gradient(180deg, #d3cbb6, #a9a089); box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 12px 24px rgba(0,0,0,0.5); }
-/* the machine switch above the terminal */
-.term-switch { display: flex; justify-content: center; gap: 0; margin: 1.6rem auto 0; max-width: 780px; }
-.term-switch button { font: 0.8rem var(--mono); letter-spacing: 0.2px; color: var(--ink); background: rgba(255,255,255,0.04); border: 1px solid var(--line); padding: 7px 14px; cursor: pointer; }
-.term-switch button:hover { background: rgba(255,255,255,0.09); }
-.term-switch button:first-child { border-radius: 4px 0 0 4px; } .term-switch button:nth-child(2) { border-radius: 0 4px 4px 0; border-left: 0; }
-.term-switch button.on { color: var(--bg); background: var(--ink); border-color: var(--ink); }
-.term-switch button.snd { margin-left: 0.8rem; border-radius: 4px; border-left: 1px solid var(--line); }
+/* the machine switch above the terminal: a timeline of the machines, oldest first, and the sound */
+.term-switch { display: flex; align-items: flex-start; justify-content: center; gap: 0.8rem; max-width: 900px; margin: 1.8rem auto 0; }
+.term-switch .tl { position: relative; display: flex; overflow-x: auto; scrollbar-width: none; padding: 0 0.4rem; }
+.term-switch .tl::-webkit-scrollbar { display: none; }
+.term-switch .tl::before { content: ""; position: absolute; left: 3.6rem; right: 3.6rem; top: 9px; height: 2px; background: var(--line); }
+.term-switch .tl-stop { position: relative; flex: 0 0 auto; width: 6.4rem; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 24px 2px 4px; border: 0; background: none; cursor: pointer; color: var(--ink-dim); font: 0.74rem var(--mono); }
+.term-switch .tl-stop::before { content: ""; position: absolute; top: 3px; left: 50%; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; background: var(--bg); border: 2px solid var(--ink-dim); box-sizing: border-box; }
+.term-switch .tl-stop b { font-size: 0.86rem; font-weight: 700; color: var(--ink); }
+.term-switch .tl-stop span { white-space: nowrap; }
+.term-switch .tl-stop:hover { color: var(--ink); }
+.term-switch .tl-stop:hover::before { border-color: var(--ink); }
+.term-switch .tl-stop.on { color: var(--ink); }
+.term-switch .tl-stop.on::before { background: var(--lamp-amber); border-color: var(--lamp-amber); box-shadow: 0 0 8px rgba(239,111,68,0.6); }
+.term-switch button.snd { flex: 0 0 auto; align-self: center; font: 0.72rem var(--mono); color: var(--ink); background: rgba(255,255,255,0.04); border: 1px solid var(--line); border-radius: 4px; padding: 6px 10px; cursor: pointer; }
 .term-switch button.snd.on { border-color: var(--ink); }
 .term-switch + .vt220 { margin-top: 0.8rem; }
 .vt-stand[hidden] { display: none; }
@@ -1143,16 +1150,13 @@ dialog.lightbox figcaption { font-family: var(--mono); font-size: 0.72rem; color
 .win-bar, .dev-label { display: none; }
 .dev-note { max-width: 780px; margin: 0.2rem auto 1.4rem; font-size: 0.82rem; color: var(--ink-dim); }
 .dev-note b { color: var(--ink); font-weight: 600; }
-.term-switch { flex-wrap: wrap; gap: 6px; }
-.term-switch button, .term-switch button:first-child, .term-switch button:nth-child(2) { border-radius: 4px; border-left: 1px solid var(--line); }
-.term-switch button b { font-weight: 700; margin-right: 0.3em; }
-.term-switch button.snd { margin-left: 0.6rem; }
 .eliza-term { container-type: inline-size; }
 .vt220:not(.dev-vt220) .vt-logo, .vt220:not(.dev-vt220) .vt-model, .vt220:not(.dev-vt220) .vt-key { display: none; }
 .vt220.dev-pet .dev-label, .vt220.dev-dos .dev-label { display: inline-block; }
 /* 1977, Commodore PET 2001: a one-piece cabinet, forty columns of capitals, white on black */
-.vt220.dev-pet { max-width: 720px; background: linear-gradient(180deg, #e9e6dd, #d6d1c4); border-radius: 26px 26px 10px 10px; padding: 44px 120px 0; }
-.vt220.dev-pet::before { inset: 16px 40px 58px; border-radius: 10px; background: #141414; box-shadow: inset 0 2px 10px rgba(0,0,0,0.7); }
+.vt220.dev-pet { max-width: 620px; background: linear-gradient(180deg, #e9e6dd, #d6d1c4); border-radius: 26px 26px 10px 10px; padding: 46px 64px 0; }
+.vt220.dev-pet .vt-chin { height: 66px; }
+.vt220.dev-pet::before { inset: 18px 30px 46px; border-radius: 10px; background: #141414; box-shadow: inset 0 2px 10px rgba(0,0,0,0.7); }
 .vt220.dev-pet .eliza-term { --ph: #e2ecf8; --ph-hi: #f4f8ff; --ph-dim: #9fb0c4; --ph-bg: #0a0c0f; --ph-glow: rgba(220,232,255,0.35); border-radius: 18px / 22px; }
 .vt220.dev-pet .eliza-log, .vt220.dev-pet .eliza-input { font-family: "Pet Me", var(--mono); font-weight: 400; font-size: calc((100cqw - 1.8rem) / 40); line-height: 1.3; letter-spacing: 0; text-transform: uppercase; }
 .vt220.dev-pet .eliza-log .l { margin: 0; }

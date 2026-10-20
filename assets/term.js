@@ -149,21 +149,22 @@
     // the machines, oldest first, each with a kind of ELIZA that ran on such a machine; the replies on
     // every one are Weizenbaum's 1966 DOCTOR, through Hay's engine
     var DEVICES = [
-      { id: 'tty', year: '1963', name: 'Teletype Model 33 ASR', note: 'A printing terminal of the kind on which ELIZA was used at MIT on the CTSS time-sharing system, ten characters a second on roll paper.' },
-      { id: 'pet', year: '1977', name: 'Commodore PET 2001', prompt: '?', label: 'PET 2001', note: 'Forty columns in capitals and graphics. Creative Computing sold its BASIC ELIZA, by Jeff Shrager and Steve North, for the PET on cassette (CS-1006).' },
-      { id: 'vt220', year: '1983', name: 'DEC VT220', prompt: '>', note: 'A video terminal of the time-sharing years, when DOCTOR ran in Maclisp, Franz Lisp and GNU Emacs on PDP-10s and VAXes.' },
-      { id: 'dos', year: '1991', name: 'IBM PC, MS-DOS', prompt: '>', label: 'PC  MS-DOS 5.00', note: 'Eighty columns of grey on black. The Software Toolworks\u2019 ELIZA, by Walt Bilofsky, ran on the IBM PC from 1982.' },
-      { id: 'imac', year: '1998', name: 'Apple iMac G3', placeholder: '', note: 'A Mac OS 8 desktop on the iMac\u2019s fifteen-inch screen, with ELIZA as a HyperCard stack. ELIZAs ran on Macs as HyperCard stacks (HyperCard came with every Mac); the Implementations archive lists one by Bellina, undated.' },
-      { id: 'im', year: '2001', name: 'Instant messenger', title: 'ELIZA - Instant Message', placeholder: 'Type a message', note: 'Chatbots such as SmarterChild answered on AOL Instant Messenger and MSN Messenger from 2001.' },
-      { id: 'web', year: '2016', name: 'Web chat', title: 'ELIZA', placeholder: 'Write a message\u2026', note: 'The chatbot in the corner of a web page, the year Facebook opened Messenger to bots.' },
-      { id: 'llm', year: '2023', name: 'AI chat', title: 'ELIZA', placeholder: '\u21b5 to send', note: 'The chat window of the large language model, after ChatGPT (November 2022).' }
+      { id: 'tty', short: 'Teletype 33', year: '1963', name: 'Teletype Model 33 ASR', note: 'A printing terminal of the kind on which ELIZA was used at MIT on the CTSS time-sharing system, ten characters a second on roll paper.' },
+      { id: 'pet', short: 'PET 2001', year: '1977', name: 'Commodore PET 2001', prompt: '?', label: 'PET 2001', note: 'Forty columns in capitals and graphics. Creative Computing sold its BASIC ELIZA, by Jeff Shrager and Steve North, for the PET on cassette (CS-1006).' },
+      { id: 'vt220', short: 'VT220', year: '1983', name: 'DEC VT220', prompt: '>', note: 'A video terminal of the time-sharing years, when DOCTOR ran in Maclisp, Franz Lisp and GNU Emacs on PDP-10s and VAXes.' },
+      { id: 'dos', short: 'IBM PC', year: '1991', name: 'IBM PC, MS-DOS', prompt: '>', label: 'PC  MS-DOS 5.00', note: 'Eighty columns of grey on black. The Software Toolworks\u2019 ELIZA, by Walt Bilofsky, ran on the IBM PC from 1982.' },
+      { id: 'imac', short: 'iMac G3', year: '1998', name: 'Apple iMac G3', placeholder: '', note: 'A Mac OS 8 desktop on the iMac\u2019s fifteen-inch screen, with ELIZA as a HyperCard stack. ELIZAs ran on Macs as HyperCard stacks (HyperCard came with every Mac); the Implementations archive lists one by Bellina, undated.' },
+      { id: 'im', short: 'Messenger', year: '2001', name: 'Instant messenger', title: 'ELIZA - Instant Message', placeholder: 'Type a message', note: 'Chatbots such as SmarterChild answered on AOL Instant Messenger and MSN Messenger from 2001.' },
+      { id: 'web', short: 'Web chat', year: '2016', name: 'Web chat', title: 'ELIZA', placeholder: 'Write a message\u2026', note: 'The chatbot in the corner of a web page, the year Facebook opened Messenger to bots.' },
+      { id: 'llm', short: 'AI chat', year: '2023', name: 'AI chat', title: 'ELIZA', placeholder: '\u21b5 to send', note: 'The chat window of the large language model, after ChatGPT (November 2022).' }
     ];
-    var DEV = {}, devBtns = {};
+    var DEV = {}, devBtns = {}, tl = el('div', 'tl'); sw.appendChild(tl);
     DEVICES.forEach(function (d) {
       DEV[d.id] = d;
-      var b = el('button'); b.type = 'button'; b.innerHTML = '<b>' + d.year + '</b> ' + d.name.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+      var b = el('button', 'tl-stop'); b.type = 'button'; b.title = d.year + ', ' + d.name;
+      b.innerHTML = '<b>' + d.year + '</b><span>' + d.short + '</span>';
       b.addEventListener('click', function () { setDevice(d.id); try { input.focus({ preventScroll: true }); } catch (e) {} });
-      sw.appendChild(b); devBtns[d.id] = b;
+      tl.appendChild(b); devBtns[d.id] = b;
     });
     var bSnd = el('button', 'snd', 'Sound off'); bSnd.type = 'button'; bSnd.title = 'The Teletype\u2019s strike, carriage return and motor; the VT220\u2019s keyclick';
     sw.appendChild(bSnd);
@@ -289,6 +290,8 @@
       else { term.insertBefore(log, setup); term.appendChild(inputWrap); term.appendChild(llmFoot); }
       var ck0 = macMenu.querySelector('.mac-clock'); if (ck0) ck0.textContent = new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
       DEVICES.forEach(function (x) { devBtns[x.id].classList.toggle('on', x.id === device); devBtns[x.id].setAttribute('aria-pressed', x.id === device); });
+      try { var sb = devBtns[device]; tl.scrollLeft = sb.offsetLeft - (tl.clientWidth - sb.offsetWidth) / 2; } catch (e) {}
+      log.style.scrollBehavior = device === 'vt220' && P.scroll.k === 0 ? 'smooth' : 'auto';
       if (device !== 'vt220' && typeof ST !== 'undefined' && ST.open) leave();
       winBar.textContent = D.title || ''; devLabel.textContent = D.label || '';
       if (promptEl) promptEl.textContent = D.prompt || '';
@@ -317,7 +320,7 @@
         th.innerHTML = '<span class="dots"><span></span><span></span><span></span></span><span class="tmeta"></span>';
         var tm = th.querySelector('.tmeta');
         function meta() { tm.textContent = Math.max(1, Math.round((performance.now() - t0t) / 1000)) + 's \u00b7 ' + ntok + ' tokens \u00b7 Thinking'; }
-        meta(); var tick = setInterval(meta, 250);
+        meta(); log.scrollTop = log.scrollHeight; var tick = setInterval(function () { meta(); log.scrollTop = log.scrollHeight; }, 250);
         var lm, words = text.split(' '), wi = 0;
         setTimeout(function () { clearInterval(tick); th.remove(); lm = add('bot', ''); more(); }, 1200 + Math.random() * 1000);
         return;
@@ -465,7 +468,7 @@
       term.classList.toggle('vt-light', P.screen.k === 1);
       term.classList.toggle('vt-nocursor', P.cursor.k === 1);
       term.classList.toggle('vt-ucursor', P.cstyle.k === 1);
-      log.style.scrollBehavior = P.scroll.k === 0 ? 'smooth' : 'auto';
+      log.style.scrollBehavior = (typeof device === 'undefined' || device === 'vt220') && P.scroll.k === 0 ? 'smooth' : 'auto';
     }
     // the speed at which ELIZA's replies arrive, in characters a second: a tenth of the receive rate
     // (ten bits a character with start and stop bits); Receive=Transmit takes the transmit rate
