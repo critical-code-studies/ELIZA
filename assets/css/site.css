@@ -1099,8 +1099,10 @@ dialog.lightbox figcaption { font-family: var(--mono); font-size: 0.72rem; color
 /* the machine switch above the terminal */
 .term-switch { display: flex; justify-content: center; gap: 0; margin: 1.6rem auto 0; max-width: 780px; }
 .term-switch button { font: 0.66rem var(--mono); letter-spacing: 1px; text-transform: uppercase; color: var(--ink-dim); background: transparent; border: 1px solid var(--line); padding: 6px 12px; cursor: pointer; }
-.term-switch button:first-child { border-radius: 4px 0 0 4px; } .term-switch button:last-child { border-radius: 0 4px 4px 0; border-left: 0; }
+.term-switch button:first-child { border-radius: 4px 0 0 4px; } .term-switch button:nth-child(2) { border-radius: 0 4px 4px 0; border-left: 0; }
 .term-switch button.on { color: var(--bg); background: var(--ink); border-color: var(--ink); }
+.term-switch button.snd { margin-left: 0.8rem; border-radius: 4px; border-left: 1px solid var(--line); }
+.term-switch button.snd.on { border-color: var(--ink); }
 .term-switch + .vt220 { margin-top: 0.8rem; }
 .vt-stand[hidden] { display: none; }
 .tty-plate { display: none; }

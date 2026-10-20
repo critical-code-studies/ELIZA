@@ -50,6 +50,50 @@
      '*traceoff    - turn off tracing',
      '*version     - show the version number of this implementation'].join('\n')];
 
+  // ---- sound, synthesized (Web Audio; no recordings): a Teletype Model 33's typebar strike for each
+  // character, the carriage return and line feed at each line's end, and the motor's hum while it runs;
+  // the VT220 keyboard's click. Off until asked for, and only after a click or key (browsers require it).
+  var Sound = (function () {
+    var ctx = null, noise = null, hum = null;
+    function ac() {
+      if (!ctx) { var A = window.AudioContext || window.webkitAudioContext; if (!A) return null; ctx = new A(); }
+      if (ctx.state === 'suspended') ctx.resume();
+      if (!noise) { var n = ctx.sampleRate * 0.5, b = ctx.createBuffer(1, n, ctx.sampleRate), d = b.getChannelData(0); for (var i = 0; i < n; i++) d[i] = Math.random() * 2 - 1; noise = b; }
+      return ctx;
+    }
+    function burst(t, dur, f, q, vol, sweepTo) {
+      var c = ctx, src = c.createBufferSource(), bp = c.createBiquadFilter(), g = c.createGain();
+      src.buffer = noise; bp.type = 'bandpass'; bp.frequency.setValueAtTime(f, t); bp.Q.value = q;
+      if (sweepTo) bp.frequency.exponentialRampToValueAtTime(sweepTo, t + dur);
+      g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(vol, t + 0.002); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+      src.connect(bp); bp.connect(g); g.connect(c.destination); src.start(t, Math.random() * 0.3); src.stop(t + dur + 0.02);
+    }
+    function thump(t, f, dur, vol) {
+      var c = ctx, o = c.createOscillator(), g = c.createGain();
+      o.type = 'sine'; o.frequency.setValueAtTime(f, t); o.frequency.exponentialRampToValueAtTime(f * 0.6, t + dur);
+      g.gain.setValueAtTime(vol, t); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+      o.connect(g); g.connect(c.destination); o.start(t); o.stop(t + dur + 0.02);
+    }
+    return {
+      // one character printed: the typebox strikes the paper
+      strike: function () { if (!ac()) return; var t = ctx.currentTime; burst(t, 0.035, 2200 + Math.random() * 1600, 1.4, 0.22); thump(t, 140 + Math.random() * 30, 0.04, 0.18); },
+      // end of a line: the carriage runs back and the platen ratchets the paper up a line
+      newline: function () { if (!ac()) return; var t = ctx.currentTime; burst(t, 0.22, 500, 0.9, 0.12, 1600); thump(t + 0.2, 90, 0.08, 0.28); burst(t + 0.24, 0.05, 1200, 2, 0.12); },
+      // the VT220's keyclick
+      click: function () { if (!ac()) return; var t = ctx.currentTime; burst(t, 0.012, 3800, 3, 0.12); },
+      hum: function (on) {
+        if (!on) { if (hum) { try { hum.stop(); } catch (e) {} hum = null; } return; }
+        if (hum || !ac()) return;
+        var src = ctx.createBufferSource(), lp = ctx.createBiquadFilter(), g = ctx.createGain(), o = ctx.createOscillator(), og = ctx.createGain();
+        src.buffer = noise; src.loop = true; lp.type = 'lowpass'; lp.frequency.value = 220; g.gain.value = 0.035;
+        o.type = 'triangle'; o.frequency.value = 58; og.gain.value = 0.012;
+        src.connect(lp); lp.connect(g); g.connect(ctx.destination); o.connect(og); og.connect(ctx.destination);
+        src.start(); o.start();
+        hum = { stop: function () { src.stop(); o.stop(); } };
+      }
+    };
+  })();
+
   // a terminal on the page, after Anthony and Max Hay's (anthay.github.io/eliza.html, CC0):
   // the same banner, replies and asterisk commands, in a VT220-style housing
   function buildTerm(container, opts) {
@@ -96,6 +140,15 @@
     var sw = el('div', 'term-switch'); sw.setAttribute('role', 'group'); sw.setAttribute('aria-label', 'Terminal');
     var bVT = el('button', '', 'VT220 video terminal, 1983'), bTTY = el('button', '', 'Teletype Model 33 ASR, 1963');
     bVT.type = bTTY.type = 'button'; sw.appendChild(bVT); sw.appendChild(bTTY);
+    var bSnd = el('button', 'snd', 'Sound off'); bSnd.type = 'button'; bSnd.title = 'The Teletype\u2019s strike, carriage return and motor; the VT220\u2019s keyclick';
+    sw.appendChild(bSnd);
+    var sound = false; try { sound = localStorage.getItem('eliza.sound') === 'on'; } catch (e) {}
+    function setSound(on) {
+      sound = !!on; bSnd.textContent = sound ? 'Sound on' : 'Sound off'; bSnd.classList.toggle('on', sound); bSnd.setAttribute('aria-pressed', sound);
+      try { localStorage.setItem('eliza.sound', sound ? 'on' : 'off'); } catch (e) {}
+      Sound.hum(sound && device === 'tty');
+    }
+    bSnd.addEventListener('click', function () { setSound(!sound); input.focus({ preventScroll: true }); });
     container.appendChild(sw);
     container.appendChild(vt);
     var stand = el('div', 'vt-stand'); container.appendChild(stand);
@@ -108,6 +161,7 @@
       if (device === 'tty' && typeof ST !== 'undefined' && ST.open) leave();
       input.placeholder = device === 'tty' ? '' : 'type and press enter…';
       try { localStorage.setItem('eliza.terminal', device); } catch (e) {}
+      if (typeof setSound === 'function') Sound.hum(sound && device === 'tty');
       log.scrollTop = log.scrollHeight;
     }
     bVT.addEventListener('click', function () { setDevice('vt220'); input.focus({ preventScroll: true }); });
@@ -121,8 +175,12 @@
       if (rate >= 960 || !text) { l.textContent = text; log.scrollTop = log.scrollHeight; done(); return; }
       (function tick() {
         var n = Math.min(text.length, Math.floor((performance.now() - t0) / 1000 * rate) + 1);
-        if (n !== k) { k = n; l.textContent = text.slice(0, k); log.scrollTop = log.scrollHeight; }
-        if (k < text.length) requestAnimationFrame(tick); else done();
+        if (n !== k) {
+          if (sound && device === 'tty') { for (var q = k; q < n; q++) if (text.charAt(q) !== ' ') { Sound.strike(); break; } }
+          k = n; l.textContent = text.slice(0, k); log.scrollTop = log.scrollHeight;
+        }
+        if (k < text.length) requestAnimationFrame(tick);
+        else { if (sound && device === 'tty') Sound.newline(); done(); }
       })();
     }
     function usr(text) { add('usr', text); }
@@ -324,6 +382,7 @@
 
     var savedDevice = null; try { savedDevice = localStorage.getItem('eliza.terminal'); } catch (e) {}
     setDevice(savedDevice === 'tty' ? 'tty' : 'vt220');
+    setSound(sound);
 
     function handle(raw) {
       if (busy) return;
@@ -350,6 +409,10 @@
     }
 
     input.addEventListener('keydown', function (e) {
+      if (sound && !ST.open && !e.metaKey && !e.ctrlKey) {
+        if (device === 'tty') { if (e.key.length === 1 && e.key !== ' ') Sound.strike(); else if (e.key === 'Enter') Sound.newline(); }
+        else if (P.click.k === 0 && (e.key.length === 1 || e.key === 'Enter' || e.key === 'Backspace')) Sound.click();
+      }
       if (ST.open) { setupKeys(e); return; }
       if (e.key === 'F3') { e.preventDefault(); if (device !== 'tty') enter(); return; }
       if (e.key === 'Enter') { var v = input.value; input.value = ''; handle(v); }
