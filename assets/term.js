@@ -147,7 +147,7 @@
     // ASR (1963), the kind of printing terminal on which ELIZA's conversations were typed
     var sw = el('div', 'term-switch'); sw.setAttribute('role', 'group'); sw.setAttribute('aria-label', 'Terminal');
     var bVT = el('button', '', 'VT220 video terminal, 1983'), bTTY = el('button', '', 'Teletype Model 33 ASR, 1963');
-    bVT.type = bTTY.type = 'button'; sw.appendChild(bVT); sw.appendChild(bTTY);
+    bVT.type = bTTY.type = 'button'; sw.appendChild(bTTY); sw.appendChild(bVT);   // oldest first
     var bSnd = el('button', 'snd', 'Sound off'); bSnd.type = 'button'; bSnd.title = 'The Teletype\u2019s strike, carriage return and motor; the VT220\u2019s keyclick';
     sw.appendChild(bSnd);
     var sound = false; try { sound = localStorage.getItem('eliza.sound') === 'on'; } catch (e) {}
