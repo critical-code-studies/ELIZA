@@ -40,6 +40,8 @@
      '*save        - save the current conversation to a text file',
      "*savedoc     - save Weizenbaum's 1966 DOCTOR script to a text file",
      '*savetrace   - save current conversation and trace to a text file',
+     '*setup       - Set-Up mode, as on a VT220 (also the F3 key or the',
+     '               Set-Up key under the screen)',
      '*traceauto   - turn on tracing; trace shown for every exchange',
      "*traceon     - turn on tracing; enter '*' after an exchange to see trace",
      '*tracepre    - show only input sentence and currently active keyword',
@@ -54,6 +56,10 @@
     var C = window.ElizaHay.console(), CACM = window.ElizaHay.conversation;
     var vt = el('div', 'vt220');
     var term = el('div', 'eliza-term theme-green crt');
+    var PHOSPHORS = ['green', 'amber', 'white'];
+    function phosphor() { var m = term.className.match(/theme-(\w+)/); return m ? m[1] : 'green'; }
+    function setPhosphor(p) { term.className = term.className.replace(/theme-\w+/, 'theme-' + p); if (logo) logo.title = 'VT220, ' + p + ' screen (click to change)'; }
+    var logo = null;
     var log = el('div', 'eliza-log');
     log.setAttribute('aria-live', 'polite');
     term.appendChild(log);
@@ -70,14 +76,32 @@
     term.appendChild(inputWrap);
     vt.appendChild(term);
     var chin = el('div', 'vt-chin');
-    chin.appendChild(el('span', 'vt-badge', opts.title || 'ELIZA · DOCTOR · 1966'));
-    chin.appendChild(el('span', 'vt-led'));
+    // the chin: the maker's logo (a click changes the phosphor, as DEC sold the VT220 with a white,
+    // green or amber screen), the model, the Set-Up key and the power lamp
+    logo = el('button', 'vt-logo'); logo.type = 'button';
+    'digital'.split('').forEach(function (ch) { logo.appendChild(el('span', '', ch)); });
+    var chinL = el('span', 'vt-chin-l'); chinL.appendChild(logo); chinL.appendChild(el('span', 'vt-model', 'VT220'));
+    chin.appendChild(chinL);
+    var setupKey = el('button', 'vt-key', 'Set-Up');
+    setupKey.type = 'button'; setupKey.title = 'Set-Up (F3)';
+    var chinR = el('span', 'vt-chin-r'); chinR.appendChild(setupKey); chinR.appendChild(el('span', 'vt-led'));
+    chin.appendChild(chinR);
     vt.appendChild(chin);
     container.appendChild(vt);
     container.appendChild(el('div', 'vt-stand'));
 
     function add(cls, text) { var l = el('div', 'l ' + cls, text); log.appendChild(l); log.scrollTop = log.scrollHeight; return l; }
     function bot(text) { add('bot', text); }
+    // a reply arrives a character at a time at the receive speed (Comm Set-Up), as down a serial line
+    function arrive(text, done) {
+      var l = add('bot', ''), k = 0, rate = typeof cps === 'function' ? cps() : 480, t0 = performance.now();
+      if (rate >= 960 || !text) { l.textContent = text; log.scrollTop = log.scrollHeight; done(); return; }
+      (function tick() {
+        var n = Math.min(text.length, Math.floor((performance.now() - t0) / 1000 * rate) + 1);
+        if (n !== k) { k = n; l.textContent = text.slice(0, k); log.scrollTop = log.scrollHeight; }
+        if (k < text.length) requestAnimationFrame(tick); else done();
+      })();
+    }
     function usr(text) { add('usr', text); }
     function sys(text) { add('sys', text); }
     function pre(text) { add('sys pre', text); }
@@ -111,6 +135,7 @@
       var parts = text.trim().split(/\s+/), cmd = parts[0].toUpperCase();
       if (THEMES[cmd]) { term.className = term.className.replace(/theme-\w+/, THEMES[cmd]); return; }
       switch (cmd) {
+        case '*SETUP': enter(); return;
         case '*CACM':
           sys("Replaying conversation from Weizenbaum's January 1966 CACM paper.\nPress Enter to see each exchange. Press Escape to exit replay mode.\n(Use * or *traceauto to see trace, ** to see transformation rules.)");
           cacm = 0; return;
@@ -164,6 +189,114 @@
       sys('Unknown command - type *help to see commands');
     }
 
+    // ---- Set-Up, after the VT220 Owner's Manual (DEC EK-VT220-UG-003, 1984, chapter 4). The Set-Up key
+    // (F3 on the LK201 keyboard, or the key under this screen) puts the terminal in set-up: the screen's
+    // text is hidden and a set-up screen takes the bottom third. Arrow keys move the reverse-video field
+    // cursor, Enter performs an action field or steps a parameter field to its next value, Set-Up again
+    // leaves. Fields that bear on this page take effect (On Line/Local, Clear Display, columns, wrap,
+    // scroll, light or dark screen, cursor, the receive speed at which replies arrive, Save, Recall,
+    // Default); the rest step through the manual's values as on the terminal.
+    var setup = el('div', 'vt-setup'); setup.hidden = true; term.insertBefore(setup, inputWrap);
+    function V(list, k) { return { list: list, k: k || 0 }; }
+    var SPEEDS = ['75', '110', '150', '300', '600', '1200', '2400', '4800', '9600', '19200'];
+    var DEF = function () { return {
+      online: V(['On Line', 'Local']), lang: V(['Set-Up=English', 'Set-Up=Francais', 'Set-Up=Deutsch']),
+      kbd: V(['North American Keyboard', 'British Keyboard', 'Flemish Keyboard', 'Canadian (French) Keyboard', 'Danish Keyboard', 'Finnish Keyboard', 'German Keyboard', 'Dutch Keyboard', 'Italian Keyboard', 'Swiss (French) Keyboard', 'Swiss (German) Keyboard', 'Swedish Keyboard', 'Norwegian Keyboard', 'French/Belgian Keyboard', 'Spanish Keyboard']),
+      cols: V(['80 Columns', '132 Columns']), ctrl: V(['Interpret Controls', 'Display Controls']), wrap: V(['No Auto Wrap', 'Auto Wrap'], 1),
+      scroll: V(['Smooth Scroll', 'Jump Scroll']), screen: V(['Light Text, Dark Screen', 'Dark Text, Light Screen']), cursor: V(['Cursor', 'No Cursor']), cstyle: V(['Block Cursor Style', 'Underline Cursor Style']),
+      mode: V(['VT200 Mode, 7 Bit Controls', 'VT200 Mode, 8 Bit Controls', 'VT100 Mode', 'VT52 Mode']), id: V(['VT220 ID', 'VT100 ID', 'VT101 ID', 'VT102 ID']),
+      udk: V(['User Defined Keys Unlocked', 'User Defined Keys Locked']), uf: V(['User Features Unlocked', 'User Features Locked']), cset: V(['Multinational', 'National']),
+      keypad: V(['Numeric Keypad', 'Application Keypad']), ckeys: V(['Normal Cursor Keys', 'Application Cursor Keys']), nl: V(['No New Line', 'New Line']),
+      tx: V(SPEEDS.map(function (x) { return 'Transmit=' + x; }), 7), rx: V(['Receive=Transmit'].concat(SPEEDS.map(function (x) { return 'Receive=' + x; }))),
+      xoff: V(['XOFF at 64', 'XOFF at 128', 'No XOFF']), bits: V(['8 Bits, No Parity', '8 Bits, Even Parity', '8 Bits, Odd Parity', '7 Bits, Even Parity', '7 Bits, Odd Parity', '7 Bits, Mark Parity', '7 Bits, Space Parity']),
+      stop: V(['1 Stop Bit', '2 Stop Bits']), echo: V(['No Local Echo', 'Local Echo']), port: V(['EIA Port, Data Leads Only', 'EIA Port, Modem Control', '20 mA Port']),
+      disc: V(['Disconnect, 2 s Delay', 'Disconnect, 60 ms Delay']), limit: V(['Limited Transmit', 'Unlimited Transmit']),
+      pspeed: V(SPEEDS.map(function (x) { return 'Speed=' + x; }), 7), pmode: V(['Normal Print Mode', 'Auto Print Mode', 'Printer Controller Mode']), pbits: V(['8 Bits, No Parity', '8 Bits, Even Parity', '8 Bits, Odd Parity', '7 Bits, Even Parity', '7 Bits, Odd Parity']),
+      pstop: V(['1 Stop Bit', '2 Stop Bits']), ppage: V(['Print Full Page', 'Print Scrolling Region']), pnat: V(['Print National Only', 'Print All Characters']), pterm: V(['No Terminator', 'Terminator=FF']),
+      keys: V(['Typewriter Keys', 'Data Processing Keys']), lock: V(['Caps Lock', 'Shift Lock']), rep: V(['Auto Repeat', 'No Auto Repeat']), click: V(['Keyclick', 'No Keyclick']),
+      mbell: V(['Margin Bell', 'No Margin Bell']), wbell: V(['Warning Bell', 'No Warning Bell']), brk: V(['Break', 'No Break']), aab: V(['No Auto Answerback', 'Auto Answerback']), conceal: V(['Not Concealed', 'Concealed']),
+      tabs: 8
+    }; };
+    var P = DEF(), KEY = 'eliza.vt220.setup', clearOnExit = false;
+    function val(n) { return P[n].list[P[n].k]; }
+    function step(n) { P[n].k = (P[n].k + 1) % P[n].list.length; effects(); }
+    function effects() {
+      term.classList.toggle('vt-132', P.cols.k === 1);
+      term.classList.toggle('vt-wrap', P.wrap.k === 1);
+      term.classList.toggle('vt-light', P.screen.k === 1);
+      term.classList.toggle('vt-nocursor', P.cursor.k === 1);
+      term.classList.toggle('vt-ucursor', P.cstyle.k === 1);
+      log.style.scrollBehavior = P.scroll.k === 0 ? 'smooth' : 'auto';
+    }
+    // the speed at which ELIZA's replies arrive, in characters a second: a tenth of the receive rate
+    // (ten bits a character with start and stop bits); Receive=Transmit takes the transmit rate
+    function cps() { var r = P.rx.k === 0 ? SPEEDS[P.tx.k] : SPEEDS[P.rx.k - 1]; return (+r) / 10; }
+    function store() { var o = {}; for (var n in P) if (P[n] && P[n].list) o[n] = P[n].k; o.tabs = P.tabs; o.phosphor = phosphor(); o.crt = term.classList.contains('crt'); return o; }
+    function restore(o) { if (!o) return false; P = DEF(); for (var n in o) if (P[n] && P[n].list && o[n] < P[n].list.length) P[n].k = o[n]; if (o.tabs) P.tabs = o.tabs; if (o.phosphor) setPhosphor(o.phosphor); term.classList.toggle('crt', o.crt !== false); effects(); return true; }
+    try { restore(JSON.parse(localStorage.getItem(KEY) || 'null')); } catch (e) {}
+    function F(name, label, act) { return { name: name, label: label, act: act }; }
+    function par(n) { return F(n, function () { return val(n); }, function () { step(n); }); }
+    function to(sc) { return function () { go(sc); }; }
+    var ORDER = ['display', 'general', 'comm', 'printer', 'keyboard', 'tab'];
+    function next(sc) { return F('next', 'To Next Set-Up', function () { go(ORDER[(ORDER.indexOf(sc) + 1) % ORDER.length]); }); }
+    var TODIR = F('dir', 'To Directory', to('dir'));
+    var SCREENS = {
+      dir: { title: 'Set-Up Directory', rows: [
+        [F('d', 'Display', to('display')), F('g', 'General', to('general')), F('c', 'Comm', to('comm')), F('p', 'Printer', to('printer')), F('k', 'Keyboard', to('keyboard')), F('t', 'Tab', to('tab'))],
+        [par('online'), F('cd', 'Clear Display', function () { clearOnExit = true; msg('Done'); }), F('cc', 'Clear Comm', function () { C.interrupt(); cacm = -1; msg('Done'); }),
+         F('rt', 'Reset Terminal', function () { C.reset(); conversation = ''; traceText = ''; cacm = -1; msg('Done'); }),
+         F('rc', 'Recall', function () { var o = null; try { o = JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) {} if (restore(o)) { clearOnExit = true; msg('Done'); } else msg('Nothing saved'); }),
+         F('sv', 'Save', function () { try { localStorage.setItem(KEY, JSON.stringify(store())); msg('Done'); } catch (e) { msg('Not saved'); } })],
+        [par('lang'), par('kbd'), F('df', 'Default', function () { var ph = 'green'; P = DEF(); setPhosphor(ph); term.classList.add('crt'); effects(); clearOnExit = true; msg('Done'); }), F('x', 'Exit', function () { leave(); })]] },
+      display: { title: 'Display Set-Up', rows: [[next('display'), TODIR, par('cols'), par('ctrl')], [par('wrap'), par('scroll'), par('screen')], [par('cursor'), par('cstyle')]] },
+      general: { title: 'General Set-Up', rows: [[next('general'), TODIR, par('mode'), par('id')], [par('udk'), par('uf'), par('cset')], [par('keypad'), par('ckeys'), par('nl')]] },
+      comm: { title: 'Communications Set-Up', rows: [[next('comm'), TODIR, par('tx'), par('rx')], [par('xoff'), par('bits'), par('stop'), par('echo')], [par('port'), par('disc'), par('limit')]] },
+      printer: { title: 'Printer Set-Up', rows: [[next('printer'), TODIR, par('pspeed')], [par('pmode'), par('pbits'), par('pstop')], [par('ppage'), par('pnat'), par('pterm')]] },
+      keyboard: { title: 'Keyboard Set-Up', rows: [[next('keyboard'), TODIR, par('keys'), par('lock')], [par('rep'), par('click'), par('mbell'), par('wbell'), par('brk')], [par('aab'), F('ab', 'Answerback=', function () {}), par('conceal')]] },
+      tab: { title: 'Tab Set-Up', rows: [[next('tab'), TODIR, F('ca', 'Clear All Tabs', function () { P.tabs = 0; }), F('s8', 'Set 8 Column Tabs', function () { P.tabs = 8; })]] }
+    };
+    var ST = { open: false, sc: 'dir', r: 0, c: 0 }, note = '';
+    function msg(t) { note = t; if (ST.open) draw(); setTimeout(function () { if (note === t) { note = ''; if (ST.open) draw(); } }, 1500); }
+    function lab(f) { return typeof f.label === 'function' ? f.label() : f.label; }
+    function esc(t) { return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
+    function draw() {
+      var S = SCREENS[ST.sc], h = '<div class="vt-hd"><span>' + esc(S.title) + '</span><span>VT220 V2.0</span></div>';
+      S.rows.forEach(function (row, r) {
+        h += '<div class="vt-row">' + row.map(function (f, c) { return '<span class="vt-f' + (r === ST.r && c === ST.c ? ' rev' : '') + '" data-r="' + r + '" data-c="' + c + '">' + esc(lab(f)) + '</span>'; }).join('') + '</div>';
+      });
+      if (ST.sc === 'tab') { var ruler = ''; for (var k = 1; k <= 80; k++) ruler += (P.tabs && k > 1 && (k - 1) % P.tabs === 0) ? 'T' : (k % 10 === 0 ? String(k / 10 % 10) : '.'); h += '<div class="vt-row vt-ruler">' + ruler + '</div>'; }
+      var status = note || ('Replace Mode  Printer: None' + (P.port.k === 1 ? '  Modem: DSR, Connected' : '') + (P.online.k === 1 ? '  Local' : ''));
+      h += '<div class="vt-status">' + esc(status) + '</div>';
+      setup.innerHTML = h;
+    }
+    function go(sc) { ST.sc = sc; ST.r = 0; ST.c = 0; draw(); }
+    function enter() { ST.open = true; ST.sc = 'dir'; ST.r = 0; ST.c = 0; setup.hidden = false; log.classList.add('vt-blank'); inputWrap.classList.add('vt-hidden'); term.classList.add('in-setup'); draw(); try { input.focus({ preventScroll: true }); } catch (e) {} }
+    function leave() {
+      ST.open = false; setup.hidden = true; log.classList.remove('vt-blank'); inputWrap.classList.remove('vt-hidden'); term.classList.remove('in-setup');
+      if (clearOnExit) { log.innerHTML = ''; clearOnExit = false; }
+      log.scrollTop = log.scrollHeight; try { input.focus({ preventScroll: true }); } catch (e) {}
+    }
+    function move(dr, dc) {
+      var rows = SCREENS[ST.sc].rows;
+      if (dc) { var n = rows[ST.r].length; ST.c += dc; if (ST.c >= n) { ST.r = (ST.r + 1) % rows.length; ST.c = 0; } else if (ST.c < 0) { ST.r = (ST.r + rows.length - 1) % rows.length; ST.c = rows[ST.r].length - 1; } }
+      if (dr) { var x = (setup.querySelector('.vt-f.rev') || {}).offsetLeft || 0; ST.r = (ST.r + dr + rows.length) % rows.length; var best = 0, bd = 1e9; setup.querySelectorAll('.vt-f[data-r="' + ST.r + '"]').forEach(function (e) { var d = Math.abs(e.offsetLeft - x); if (d < bd) { bd = d; best = +e.dataset.c; } }); ST.c = best; }
+    }
+    function setupKeys(e) {
+      if (e.key === 'F3' || e.key === 'Escape') leave();
+      else if (e.key === 'ArrowRight' || e.key === 'Tab') move(0, 1);
+      else if (e.key === 'ArrowLeft') move(0, -1);
+      else if (e.key === 'ArrowDown') move(1, 0);
+      else if (e.key === 'ArrowUp') move(-1, 0);
+      else if (e.key === 'Enter') SCREENS[ST.sc].rows[ST.r][ST.c].act();
+      else { e.preventDefault(); return; }   // in set-up the keyboard drives the fields only
+      e.preventDefault(); if (ST.open) draw();
+    }
+    setup.addEventListener('click', function (e) { var f = e.target.closest('.vt-f'); e.stopPropagation(); if (!f) return; ST.r = +f.dataset.r; ST.c = +f.dataset.c; SCREENS[ST.sc].rows[ST.r][ST.c].act(); if (ST.open) draw(); });
+    setupKey.addEventListener('click', function (e) { e.stopPropagation(); if (ST.open) leave(); else enter(); });
+    logo.addEventListener('click', function (e) { e.stopPropagation(); var p = phosphor(), i = PHOSPHORS.indexOf(p); setPhosphor(PHOSPHORS[(i + 1) % PHOSPHORS.length]); });
+    setPhosphor(phosphor());
+    var online = function () { return P.online.k === 0; };
+
     function handle(raw) {
       if (busy) return;
       var text = raw.trim();
@@ -173,18 +306,24 @@
       }
       usr(text);
       if (text.charAt(0) === '*') { command(text); return; }
+      if (!online()) return;   // Local: what is typed goes to the screen only
       conversation += text + '\n'; traceText += text + '\n';
       busy = true;
       C.response(text).then(function (reply) {
         busy = false;
         traceText += C.traceText() + reply + '\n\n'; conversation += reply + '\n\n';
         if (C.traceMode() === 'auto') pre(C.traceText());
-        bot(reply);
-        if (cacm >= CACM.length) { sys('-- end of CACM conversation --'); cacm = -1; }
+        busy = true;
+        arrive(reply, function () {
+          busy = false;
+          if (cacm >= CACM.length) { sys('-- end of CACM conversation --'); cacm = -1; }
+        });
       }, function () { busy = false; });
     }
 
     input.addEventListener('keydown', function (e) {
+      if (ST.open) { setupKeys(e); return; }
+      if (e.key === 'F3') { e.preventDefault(); enter(); return; }
       if (e.key === 'Enter') { var v = input.value; input.value = ''; handle(v); }
       else if (e.key === 'Escape') {
         C.interrupt();

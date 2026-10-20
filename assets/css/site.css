@@ -1062,8 +1062,36 @@ dialog.lightbox figcaption { font-family: var(--mono); font-size: 0.72rem; color
 }
 .eliza-input input::placeholder { color: var(--ph-dim); }
 .vt-chin { position: relative; display: flex; align-items: center; justify-content: space-between; height: 54px; padding: 0 0.4rem; }
-.vt-badge { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 2px; text-transform: uppercase; color: #6d6552; text-shadow: 0 1px 0 rgba(255,255,255,0.5); }
+.vt-chin-l, .vt-chin-r { display: flex; align-items: center; gap: 0.9rem; }
+/* the maker's logo: seven blocks, a letter in each; a click changes the phosphor */
+.vt-logo { display: inline-flex; gap: 2px; padding: 0; border: 0; background: none; cursor: pointer; }
+.vt-logo span { display: inline-block; width: 1.05em; height: 1.35em; line-height: 1.3em; text-align: center; background: #2f2b26; color: #e9e3d3; font: 700 0.78rem/1.35em Helvetica, Arial, sans-serif; text-transform: lowercase; border-radius: 1px; }
+.vt-logo:hover span, .vt-logo:focus-visible span { background: #4a443b; }
+.vt-model { font: 700 0.86rem Helvetica, Arial, sans-serif; letter-spacing: 1px; color: #5d5646; text-shadow: 0 1px 0 rgba(255,255,255,0.5); }
+.vt-key { font: 600 0.6rem var(--mono); letter-spacing: 1px; text-transform: uppercase; color: #4d4638; background: linear-gradient(180deg, #ece6d6, #cfc6b0); border: 1px solid #a69d86; border-radius: 3px; padding: 4px 8px; cursor: pointer; box-shadow: 0 2px 0 #9c937c; }
+.vt-key:active { transform: translateY(1px); box-shadow: 0 1px 0 #9c937c; }
 .vt-led { width: 9px; height: 9px; border-radius: 50%; background: #5cf08a; box-shadow: 0 0 6px rgba(92,240,138,0.9), inset 0 -1px 1px rgba(0,0,0,0.3); }
+/* Set-Up: the screen's text is hidden and the set-up screen takes the bottom third (the Owner's Manual,
+   figure 4-2): a title with the terminal and firmware, rows of fields, the field cursor in reverse video,
+   a status line */
+.eliza-log.vt-blank { visibility: hidden; }
+.eliza-input.vt-hidden { visibility: hidden; }
+.vt-setup { position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; height: 36%; padding: 0.4rem 1.6rem 1rem; display: flex; flex-direction: column; gap: 0.45rem; white-space: pre; overflow: hidden; color: var(--ph); }
+.vt-setup .vt-hd { display: flex; justify-content: space-between; color: var(--ph-hi); }
+.vt-setup .vt-row { display: flex; flex-wrap: wrap; gap: 0.3rem 1.6em; }
+.vt-setup .vt-f { cursor: pointer; padding: 0 0.15em; }
+.vt-setup .vt-f.rev { background: var(--ph); color: var(--ph-bg); text-shadow: none; }
+.vt-setup .vt-ruler { letter-spacing: 0; opacity: 0.85; overflow: hidden; }
+.vt-setup .vt-status { margin-top: auto; color: var(--ph-dim); }
+.eliza-term.crt .vt-setup { text-shadow: 0 0 3px var(--ph-glow); }
+/* Display Set-Up */
+.eliza-term.vt-132 { font-size: 0.62rem; }
+.eliza-term:not(.vt-wrap) .eliza-log .l { white-space: pre; overflow: hidden; text-overflow: clip; }
+.eliza-term.vt-light { --ph-bg-was: var(--ph-bg); background: var(--ph); }
+.eliza-term.vt-light .eliza-log .l, .eliza-term.vt-light .eliza-input input, .eliza-term.vt-light .eliza-input .prompt, .eliza-term.vt-light .vt-setup { color: var(--ph-bg); text-shadow: none; }
+.eliza-term.vt-light .vt-setup .vt-f.rev { background: var(--ph-bg); color: var(--ph); }
+.eliza-term.vt-nocursor .eliza-input input { caret-color: transparent; }
+.eliza-term.vt-ucursor .eliza-input input { caret-shape: underscore; }
 .vt-stand { position: relative; width: 34%; max-width: 260px; height: 42px; margin: 0 auto 1.4rem; }
 .vt-stand::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 30px; background: linear-gradient(180deg, #a99f87, #c9c1ab 40%, #b7ae97); clip-path: polygon(14% 0, 86% 0, 100% 100%, 0 100%); }
 .vt-stand::after { content: ""; position: absolute; left: -22%; right: -22%; top: 30px; height: 12px; border-radius: 3px 3px 10px 10px; background: linear-gradient(180deg, #d3cbb6, #a9a089); box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 12px 24px rgba(0,0,0,0.5); }
