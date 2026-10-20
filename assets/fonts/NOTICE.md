@@ -18,3 +18,12 @@ Oldschool PC Font Pack v2.2 (2020-11-21), https://int10h.org/oldschool-pc-fonts/
 
 - Licence: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0), by VileR
 - Used on the Try ELIZA page for the 1991 IBM PC (MS-DOS) screen.
+
+# Pet Me (Commodore PET character set)
+
+`PetMe.ttf` is Pet Me by Kreative Software (Kreative Korporation), a font of the Commodore PET 2001's
+character set, https://www.kreativekorp.com/software/fonts/c64/ . It is served unmodified.
+
+- Licence: Kreative Software Relay Fonts Free Use License, version 1.2f, included verbatim as
+  `PetMe-FreeLicense.txt`. Credit: Kreative Software.
+- Used on the Try ELIZA page for the 1977 Commodore PET 2001 screen.
