@@ -1111,7 +1111,8 @@ dialog.lightbox figcaption { font-family: var(--mono); font-size: 0.72rem; color
 .term-switch .tl-stop.on::before { background: var(--lamp-amber); border-color: var(--lamp-amber); box-shadow: 0 0 8px rgba(239,111,68,0.6); }
 .term-switch button.snd { flex: 0 0 auto; align-self: center; font: 0.72rem var(--mono); color: var(--ink); background: rgba(255,255,255,0.04); border: 1px solid var(--line); border-radius: 4px; padding: 6px 10px; cursor: pointer; }
 .term-switch button.snd.on { border-color: var(--ink); }
-.term-switch + .vt220 { margin-top: 0.8rem; }
+.term-switch + .vt220, .term-switch ~ .tty33 { margin-top: 2.4rem; }
+.term-switch { margin-bottom: 0.6rem; }
 .vt-stand[hidden] { display: none; }
 .tty-plate { display: none; }
 /* Teletype Model 33 ASR: Anthony Hay's photograph of the machine, with the paper (the site's fanfold
@@ -1345,4 +1346,27 @@ dialog.lightbox figcaption { font-family: var(--mono); font-size: 0.72rem; color
   .listing { font-size: 0.6rem; padding: 1rem 1.9rem; }
   .fanfold { padding-left: 1.9rem; padding-right: 1.9rem; }
   .fanfold-listing { font-size: 0.6rem; }
+}
+
+/* Try ELIZA on a phone: the timeline full width and swiped, Sound on its own line, slimmer cabinets, the
+   Teletype seen closer with forty columns on its paper */
+@media (max-width: 640px) {
+  .term-switch { flex-direction: column; align-items: stretch; gap: 0.6rem; margin-top: 1.2rem; }
+  .term-switch .tl { justify-content: flex-start; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+  .term-switch .tl-stop { width: 5.2rem; font-size: 0.66rem; }
+  .term-switch .tl-stop b { font-size: 0.8rem; }
+  .term-switch .tl::before { left: 3rem; right: 3rem; }
+  .term-switch button.snd { align-self: flex-end; }
+  .term-switch + .vt220, .term-switch ~ .tty33 { margin-top: 1.6rem; }
+  .vt220.dev-pet, .vt220.dev-dos, .vt220.dev-imac { padding: 18px 14px 0; border-radius: 16px; }
+  .vt220.dev-pet::before, .vt220.dev-dos::before, .vt220.dev-imac::before { inset: 8px 6px 50px; }
+  .vt220.dev-imac .mac-title { margin: 10px 8px 0; }
+  .vt220.dev-imac .hc-card { margin: 0 8px; padding: 10px; }
+  .vt220.dev-imac .hc-title { font-size: 19px; }
+  .vt220.dev-imac .hc-sub { display: none; }
+  .vt220.dev-imac .mac-menu span:nth-child(n+5):not(.mac-clock) { display: none; }
+  .tty33.zoom .tty-photo { width: 220%; margin-left: -60%; }
+  .tty-zoom { bottom: 0.6rem; top: auto; }
+  .tty-credit { text-align: left; }
+  .vt220.dev-web .tw-bar span:nth-child(2), .vt220.dev-web .tw-bar span:nth-child(3) { display: none; }
 }

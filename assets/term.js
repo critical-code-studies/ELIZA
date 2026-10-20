@@ -249,7 +249,7 @@
     photo.addEventListener('click', function (e) { if (!e.target.closest('.tk')) try { input.focus({ preventScroll: true }); } catch (x) {} });
     // the type is sized to the paper: a Model 33 line holds 72 characters; set to 64 here (the width of
     // Hay's banner) so that the print can be read at the size of the photograph
-    function fitPaper() { var w = paper.clientWidth; if (w) paper.style.fontSize = Math.max(6, (w * 0.86) / 64 / 0.6) + 'px'; }
+    function fitPaper() { var w = paper.clientWidth, cols = window.innerWidth < 640 ? 40 : 64; if (w) paper.style.fontSize = Math.max(6, (w * 0.86) / cols / 0.6) + 'px'; }
     window.addEventListener('resize', fitPaper);
     setZoom(zoomed);
     if ('ResizeObserver' in window) new ResizeObserver(fitPaper).observe(paper);
