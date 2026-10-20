@@ -146,8 +146,24 @@
     // the switch between the two machines: the VT220 video terminal (1983) and the Teletype Model 33
     // ASR (1963), the kind of printing terminal on which ELIZA's conversations were typed
     var sw = el('div', 'term-switch'); sw.setAttribute('role', 'group'); sw.setAttribute('aria-label', 'Terminal');
-    var bVT = el('button', '', 'VT220 video terminal, 1983'), bTTY = el('button', '', 'Teletype Model 33 ASR, 1963');
-    bVT.type = bTTY.type = 'button'; sw.appendChild(bTTY); sw.appendChild(bVT);   // oldest first
+    // the machines, oldest first, each with a kind of ELIZA that ran on such a machine; the replies on
+    // every one are Weizenbaum's 1966 DOCTOR, through Hay's engine
+    var DEVICES = [
+      { id: 'tty', year: '1963', name: 'Teletype Model 33 ASR', note: 'A printing terminal of the kind on which ELIZA was used at MIT on the CTSS time-sharing system, ten characters a second on roll paper.' },
+      { id: 'pet', year: '1977', name: 'Commodore PET 2001', prompt: '?', label: 'PET 2001', note: 'Forty columns in capitals and graphics. Creative Computing sold its BASIC ELIZA, by Jeff Shrager and Steve North, for the PET on cassette (CS-1006).' },
+      { id: 'vt220', year: '1983', name: 'DEC VT220', prompt: '>', note: 'A video terminal of the time-sharing years, when DOCTOR ran in Maclisp, Franz Lisp and GNU Emacs on PDP-10s and VAXes.' },
+      { id: 'dos', year: '1991', name: 'IBM PC, MS-DOS', prompt: '>', label: 'PC  MS-DOS 5.00', note: 'Eighty columns of grey on black. The Software Toolworks\u2019 ELIZA, by Walt Bilofsky, ran on the IBM PC from 1982.' },
+      { id: 'im', year: '2001', name: 'Instant messenger', title: 'ELIZA - Instant Message', placeholder: 'Type a message', note: 'Chatbots such as SmarterChild answered on AOL Instant Messenger and MSN Messenger from 2001.' },
+      { id: 'web', year: '2016', name: 'Web chat', title: 'ELIZA', placeholder: 'Write a message\u2026', note: 'The chatbot in the corner of a web page, the year Facebook opened Messenger to bots.' },
+      { id: 'llm', year: '2023', name: 'AI chat', title: 'ELIZA', placeholder: 'Message ELIZA', note: 'The chat window of the large language model, after ChatGPT (November 2022).' }
+    ];
+    var DEV = {}, devBtns = {};
+    DEVICES.forEach(function (d) {
+      DEV[d.id] = d;
+      var b = el('button'); b.type = 'button'; b.innerHTML = '<b>' + d.year + '</b> ' + d.name.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+      b.addEventListener('click', function () { setDevice(d.id); try { input.focus({ preventScroll: true }); } catch (e) {} });
+      sw.appendChild(b); devBtns[d.id] = b;
+    });
     var bSnd = el('button', 'snd', 'Sound off'); bSnd.type = 'button'; bSnd.title = 'The Teletype\u2019s strike, carriage return and motor; the VT220\u2019s keyclick';
     sw.appendChild(bSnd);
     var sound = false; try { sound = localStorage.getItem('eliza.sound') === 'on'; } catch (e) {}
@@ -236,27 +252,48 @@
     setZoom(zoomed);
     if ('ResizeObserver' in window) new ResizeObserver(fitPaper).observe(paper);
     var device = 'vt220';
+    var winBar = el('div', 'win-bar'); vt.insertBefore(winBar, vt.firstChild);
+    var devLabel = el('span', 'dev-label'); chinL.appendChild(devLabel);
+    var devNote = el('p', 'dev-note'); container.appendChild(devNote);
+    var promptEl = inputWrap.querySelector('.prompt');
     function setDevice(d) {
-      device = d === 'tty' ? 'tty' : 'vt220';
-      vt.hidden = device === 'tty'; stand.hidden = device === 'tty'; tty.hidden = device !== 'tty';
+      device = DEV[d] ? d : 'vt220';
+      var D = DEV[device];
+      vt.hidden = device === 'tty'; tty.hidden = device !== 'tty';
+      stand.hidden = !(device === 'vt220' || device === 'dos');
+      vt.className = 'vt220 dev-' + device;
       if (device === 'tty') { feed.appendChild(log); feed.appendChild(inputWrap); fitPaper(); if (sound) Sound.load(base + 'assets/audio/asr33keypress.wav'); }
       else { term.insertBefore(log, term.firstChild); term.appendChild(inputWrap); }
-      bVT.classList.toggle('on', device === 'vt220'); bTTY.classList.toggle('on', device === 'tty');
-      bVT.setAttribute('aria-pressed', device === 'vt220'); bTTY.setAttribute('aria-pressed', device === 'tty');
-      if (device === 'tty' && typeof ST !== 'undefined' && ST.open) leave();
-      input.placeholder = device === 'tty' ? '' : 'type and press enter…';
+      DEVICES.forEach(function (x) { devBtns[x.id].classList.toggle('on', x.id === device); devBtns[x.id].setAttribute('aria-pressed', x.id === device); });
+      if (device !== 'vt220' && typeof ST !== 'undefined' && ST.open) leave();
+      winBar.textContent = D.title || ''; devLabel.textContent = D.label || '';
+      if (promptEl) promptEl.textContent = D.prompt || '';
+      input.placeholder = D.placeholder || (device === 'vt220' ? 'type and press enter\u2026' : '');
+      devNote.innerHTML = '<b>' + D.year + ', ' + D.name + '.</b> ' + D.note + ' The replies on every machine here are Weizenbaum\u2019s 1966 DOCTOR, through Anthony Hay\u2019s engine.';
       try { localStorage.setItem('eliza.terminal', device); } catch (e) {}
       if (typeof setSound === 'function') Sound.hum(sound && device === 'tty');
       log.scrollTop = log.scrollHeight;
     }
-    bVT.addEventListener('click', function () { setDevice('vt220'); input.focus({ preventScroll: true }); });
-    bTTY.addEventListener('click', function () { setDevice('tty'); input.focus({ preventScroll: true }); });
 
-    function add(cls, text) { var l = el('div', 'l ' + cls, text); log.appendChild(l); log.scrollTop = log.scrollHeight; return l; }
+    function add(cls, text) {
+      var l = el('div', 'l ' + cls, text);
+      if (/\b(usr|bot)\b/.test(cls)) { var t = new Date(); l.dataset.who = /usr/.test(cls) ? 'You' : 'ELIZA'; l.dataset.time = t.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', second: '2-digit' }); }
+      log.appendChild(l); log.scrollTop = log.scrollHeight; return l;
+    }
     function bot(text) { add('bot', text); }
     // a reply arrives a character at a time at the receive speed (Comm Set-Up), as down a serial line
     function arrive(text, done) {
-      var l = add('bot', ''), k = 0, rate = typeof cps === 'function' ? cps() : 480, t0 = performance.now();
+      if (device === 'im' || device === 'web') {   // the other side is "typing", then the message lands whole
+        var w = add('sys typing', device === 'im' ? 'ELIZA is typing a message.' : ''); w.innerHTML = device === 'web' ? '<span></span><span></span><span></span>' : w.textContent;
+        setTimeout(function () { w.remove(); var m = add('bot', text); done(); }, 700 + Math.min(1800, text.length * 18));
+        return;
+      }
+      if (device === 'llm') {   // streamed, a few words at a time
+        var lm = add('bot', ''), words = text.split(' '), wi = 0;
+        (function more() { wi = Math.min(words.length, wi + 1 + Math.floor(Math.random() * 2)); lm.textContent = words.slice(0, wi).join(' '); log.scrollTop = log.scrollHeight; if (wi < words.length) setTimeout(more, 45 + Math.random() * 60); else done(); })();
+        return;
+      }
+      var l = add('bot', ''), k = 0, rate = device === 'pet' ? 600 : device === 'dos' ? 5000 : (typeof cps === 'function' ? cps() : 480), t0 = performance.now();
       if (rate >= 960 || !text) { l.textContent = text; log.scrollTop = log.scrollHeight; done(); return; }
       (function tick() {
         var n = Math.min(text.length, Math.floor((performance.now() - t0) / 1000 * rate) + 1);
@@ -301,9 +338,11 @@
       var parts = text.trim().split(/\s+/), cmd = parts[0].toUpperCase();
       if (THEMES[cmd]) { term.className = term.className.replace(/theme-\w+/, THEMES[cmd]); return; }
       switch (cmd) {
-        case '*SETUP': if (device === 'tty') sys('A Teletype Model 33 has no Set-Up.'); else enter(); return;
+        case '*SETUP': if (device !== 'vt220') sys('Set-Up is a VT220\'s; switch to the VT220 (*vt220).'); else enter(); return;
         case '*TTY': setDevice('tty'); return;
         case '*VT220': setDevice('vt220'); return;
+        case '*PET': setDevice('pet'); return;
+        case '*DOS': setDevice('dos'); return;
         case '*CACM':
           sys("Replaying conversation from Weizenbaum's January 1966 CACM paper.\nPress Enter to see each exchange. Press Escape to exit replay mode.\n(Use * or *traceauto to see trace, ** to see transformation rules.)");
           cacm = 0; return;
@@ -401,6 +440,7 @@
     function cps() { if (device === 'tty') return 10; var r = P.rx.k === 0 ? SPEEDS[P.tx.k] : SPEEDS[P.rx.k - 1]; return (+r) / 10; }
     function store() { var o = {}; for (var n in P) if (P[n] && P[n].list) o[n] = P[n].k; o.tabs = P.tabs; o.phosphor = phosphor(); o.crt = term.classList.contains('crt'); return o; }
     function restore(o) { if (!o) return false; P = DEF(); for (var n in o) if (P[n] && P[n].list && o[n] < P[n].list.length) P[n].k = o[n]; if (o.tabs) P.tabs = o.tabs; if (o.phosphor) setPhosphor(o.phosphor); term.classList.toggle('crt', o.crt !== false); effects(); return true; }
+    effects();   // the factory settings, until a saved set is recalled
     try { restore(JSON.parse(localStorage.getItem(KEY) || 'null')); } catch (e) {}
     function F(name, label, act) { return { name: name, label: label, act: act }; }
     function par(n) { return F(n, function () { return val(n); }, function () { step(n); }); }
@@ -466,7 +506,7 @@
     var online = function () { return P.online.k === 0; };
 
     var savedDevice = null; try { savedDevice = localStorage.getItem('eliza.terminal'); } catch (e) {}
-    setDevice(savedDevice === 'tty' ? 'tty' : 'vt220');
+    setDevice(DEV[savedDevice] ? savedDevice : 'vt220');
     setSound(sound);
 
     function handle(raw) {
@@ -503,7 +543,7 @@
         if (kk) flash(kk);
       }
       if (ST.open) { setupKeys(e); return; }
-      if (e.key === 'F3') { e.preventDefault(); if (device !== 'tty') enter(); return; }
+      if (e.key === 'F3') { e.preventDefault(); if (device === 'vt220') enter(); return; }
       if (e.key === 'Enter') { var v = input.value; input.value = ''; handle(v); }
       else if (e.key === 'Escape') {
         C.interrupt();

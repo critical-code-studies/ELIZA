@@ -1139,6 +1139,78 @@ dialog.lightbox figcaption { font-family: var(--mono); font-size: 0.72rem; color
 .tk-space { width: 17.5%; height: 5%; border-radius: 10px; }
 .tty-credit { font: 0.6rem var(--mono); letter-spacing: 0.5px; color: var(--ink-dim); margin: 0.5rem 0 0; text-align: right; }
 @media (max-width: 640px) { .tty33 { padding-top: 9%; } .tty33.zoom { padding-top: 14%; } }
+/* ---- the other machines (a class dev-<id> on the case) ---- */
+.win-bar, .dev-label { display: none; }
+.dev-note { max-width: 780px; margin: 0.2rem auto 1.4rem; font-size: 0.82rem; color: var(--ink-dim); }
+.dev-note b { color: var(--ink); font-weight: 600; }
+.term-switch { flex-wrap: wrap; gap: 6px; }
+.term-switch button, .term-switch button:first-child, .term-switch button:nth-child(2) { border-radius: 4px; border-left: 1px solid var(--line); }
+.term-switch button b { font-weight: 700; margin-right: 0.3em; }
+.term-switch button.snd { margin-left: 0.6rem; }
+.eliza-term { container-type: inline-size; }
+.vt220:not(.dev-vt220) .vt-logo, .vt220:not(.dev-vt220) .vt-model, .vt220:not(.dev-vt220) .vt-key { display: none; }
+.vt220.dev-pet .dev-label, .vt220.dev-dos .dev-label { display: inline-block; }
+/* 1977, Commodore PET 2001: a one-piece cabinet, forty columns of capitals, white on black */
+.vt220.dev-pet { max-width: 700px; background: linear-gradient(180deg, #e9e6dd, #d6d1c4); border-radius: 26px 26px 10px 10px; padding: 30px 46px 0; }
+.vt220.dev-pet::before { inset: 14px 30px 56px; border-radius: 14px; background: #1a1a1a; box-shadow: inset 0 2px 8px rgba(0,0,0,0.6); }
+.vt220.dev-pet .eliza-term { --ph: #e2ecf8; --ph-hi: #f4f8ff; --ph-dim: #9fb0c4; --ph-bg: #0a0c0f; --ph-glow: rgba(220,232,255,0.35); border-radius: 18px / 22px; }
+.vt220.dev-pet .eliza-log, .vt220.dev-pet .eliza-input { font-size: calc(100cqw / 40 / 0.62); text-transform: uppercase; }
+.vt220.dev-pet .eliza-input input { text-transform: uppercase; }
+.vt220.dev-pet .eliza-log .l.pre { white-space: pre-wrap; word-break: break-all; overflow: visible; }
+.vt220.dev-web .eliza-log .l.pre { font-size: 0.5em; max-width: 100%; white-space: pre; overflow: hidden; align-self: center; background: none; padding: 0; }
+.vt220.dev-pet .dev-label { font: 700 0.8rem Helvetica, Arial, sans-serif; letter-spacing: 1px; color: #222; background: #b7b2a5; padding: 3px 9px; border-radius: 2px; }
+/* 1991, IBM PC under MS-DOS: eighty columns of light grey on black, in a beige monitor */
+.vt220.dev-dos { background: linear-gradient(180deg, #e3dccb, #cdc4ad); border-radius: 12px; }
+.vt220.dev-dos::before { border-radius: 8px; background: linear-gradient(180deg, #b9b19a, #cbc3ae); }
+.vt220.dev-dos .eliza-term { --ph: #aaaaaa; --ph-hi: #dddddd; --ph-dim: #8a8a8a; --ph-bg: #050505; --ph-glow: rgba(200,200,200,0.25); border-radius: 10px / 12px; }
+.vt220.dev-dos .eliza-log, .vt220.dev-dos .eliza-input { font-size: calc(100cqw / 80 / 0.62); }
+.vt220.dev-dos .eliza-term::before { background: repeating-linear-gradient(rgba(0,0,0,0) 0 2px, rgba(0,0,0,0.06) 2px 3px); }
+.vt220.dev-dos .dev-label { font: 600 0.7rem Helvetica, Arial, sans-serif; letter-spacing: 1px; color: #4a4536; }
+/* the windows: no cabinet, no glass, no stand */
+.vt220.dev-im, .vt220.dev-web, .vt220.dev-llm { background: none; box-shadow: none; padding: 0; border-radius: 0; }
+.vt220.dev-im::before, .vt220.dev-web::before, .vt220.dev-llm::before, .vt220.dev-im .vt-chin, .vt220.dev-web .vt-chin, .vt220.dev-llm .vt-chin { display: none; }
+.vt220.dev-im .eliza-term::before, .vt220.dev-im .eliza-term::after, .vt220.dev-web .eliza-term::before, .vt220.dev-web .eliza-term::after, .vt220.dev-llm .eliza-term::before, .vt220.dev-llm .eliza-term::after { display: none; }
+.vt220.dev-im .eliza-term, .vt220.dev-web .eliza-term, .vt220.dev-llm .eliza-term { aspect-ratio: auto; height: min(34rem, 70vh); box-shadow: none; text-shadow: none; }
+.vt220.dev-im .eliza-log .l, .vt220.dev-web .eliza-log .l, .vt220.dev-llm .eliza-log .l, .vt220.dev-im .eliza-input, .vt220.dev-web .eliza-input, .vt220.dev-llm .eliza-input { text-shadow: none !important; }
+.vt220.dev-im .eliza-log .l.pre, .vt220.dev-web .eliza-log .l.pre, .vt220.dev-llm .eliza-log .l.pre { font-family: var(--mono); font-size: 0.78em; }
+/* 2001, an instant messenger window */
+.vt220.dev-im { max-width: 620px; border: 1px solid #0a246a; border-radius: 8px 8px 3px 3px; box-shadow: 0 14px 40px rgba(0,0,0,0.5); overflow: hidden; }
+.vt220.dev-im .win-bar { display: block; font: 700 13px Tahoma, Verdana, Arial, sans-serif; color: #fff; padding: 6px 10px; background: linear-gradient(180deg, #3d8af7, #0a5be0 45%, #0545c4); }
+.vt220.dev-im .eliza-term { background: #fff; color: #000; border-radius: 0; font: 13px Arial, Helvetica, sans-serif; }
+.vt220.dev-im .eliza-log { padding: 10px 12px; }
+.vt220.dev-im .eliza-log .l { color: #000; text-transform: none; margin: 2px 0; }
+.vt220.dev-im .eliza-log .l.usr::before { content: attr(data-who) " (" attr(data-time) "): "; color: #e00; font-weight: 700; }
+.vt220.dev-im .eliza-log .l.bot::before { content: attr(data-who) " (" attr(data-time) "): "; color: #00f; font-weight: 700; }
+.vt220.dev-im .eliza-log .l.sys { color: #666; font-style: italic; font-size: 12px; }
+.vt220.dev-im .eliza-input { border-top: 1px solid #9ab; background: #ece9d8; padding: 8px; }
+.vt220.dev-im .eliza-input input { background: #fff; border: 1px solid #7f9db9; color: #000; caret-color: #000; font: 13px Arial, sans-serif; padding: 6px; }
+/* 2016, a chat window in the corner of a web page */
+.vt220.dev-web { max-width: 400px; border-radius: 16px; overflow: hidden; box-shadow: 0 16px 44px rgba(0,0,0,0.5); }
+.vt220.dev-web .win-bar { display: block; font: 600 15px -apple-system, system-ui, sans-serif; color: #fff; padding: 14px 16px; background: #0b7a6f; }
+.vt220.dev-web .win-bar::after { content: "Typically replies instantly"; display: block; font-weight: 400; font-size: 12px; opacity: 0.85; }
+.vt220.dev-web .eliza-term { background: #f4f5f7; color: #111; border-radius: 0; font: 14px/1.4 -apple-system, system-ui, sans-serif; }
+.vt220.dev-web .eliza-log { padding: 12px; display: flex; flex-direction: column; gap: 6px; }
+.vt220.dev-web .eliza-log .l { max-width: 80%; padding: 8px 12px; border-radius: 16px; text-transform: none; margin: 0; }
+.vt220.dev-web .eliza-log .l.bot { align-self: flex-start; background: #fff; color: #111; border-bottom-left-radius: 4px; box-shadow: 0 1px 1px rgba(0,0,0,0.08); }
+.vt220.dev-web .eliza-log .l.usr { align-self: flex-end; background: #0b7a6f; color: #fff; border-bottom-right-radius: 4px; }
+.vt220.dev-web .eliza-log .l.sys { align-self: center; max-width: 100%; color: #667; background: none; font-size: 12px; }
+.vt220.dev-web .eliza-log .l.typing { align-self: flex-start; background: #fff; padding: 10px 12px; }
+.vt220.dev-web .eliza-log .l.typing span { display: inline-block; width: 6px; height: 6px; margin: 0 2px; border-radius: 50%; background: #999; animation: dot 1s infinite; }
+.vt220.dev-web .eliza-log .l.typing span:nth-child(2) { animation-delay: 0.15s; } .vt220.dev-web .eliza-log .l.typing span:nth-child(3) { animation-delay: 0.3s; }
+@keyframes dot { 0%, 60%, 100% { opacity: 0.3; } 30% { opacity: 1; } }
+.vt220.dev-web .eliza-input { background: #fff; border-top: 1px solid #e3e5e8; padding: 10px; }
+.vt220.dev-web .eliza-input input { color: #111; caret-color: #0b7a6f; font: 14px -apple-system, system-ui, sans-serif; background: #f1f2f4; border-radius: 20px; padding: 9px 14px; }
+/* 2023, an AI chat window */
+.vt220.dev-llm { max-width: 760px; border-radius: 14px; overflow: hidden; box-shadow: 0 16px 44px rgba(0,0,0,0.45); }
+.vt220.dev-llm .eliza-term { background: #ffffff; color: #1f1f1f; border-radius: 0; font: 15px/1.6 -apple-system, system-ui, "Segoe UI", sans-serif; }
+.vt220.dev-llm .eliza-log { padding: 20px 28px; display: flex; flex-direction: column; gap: 14px; }
+.vt220.dev-llm .eliza-log .l { text-transform: none; margin: 0; color: #1f1f1f; }
+.vt220.dev-llm .eliza-log .l.usr { align-self: flex-end; max-width: 75%; background: #f0f0f0; padding: 8px 14px; border-radius: 18px; }
+.vt220.dev-llm .eliza-log .l.bot { padding-left: 34px; position: relative; }
+.vt220.dev-llm .eliza-log .l.bot::before { content: "E"; position: absolute; left: 0; top: 0.1em; width: 24px; height: 24px; border-radius: 50%; background: #1f1f1f; color: #fff; font: 600 12px/24px system-ui, sans-serif; text-align: center; }
+.vt220.dev-llm .eliza-log .l.sys { color: #777; font-size: 13px; }
+.vt220.dev-llm .eliza-input { margin: 0 20px 18px; border: 1px solid #d9d9d9; border-radius: 26px; padding: 4px 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.vt220.dev-llm .eliza-input input { color: #1f1f1f; caret-color: #1f1f1f; font: 15px system-ui, sans-serif; padding: 10px 8px; }
 .vt220:fullscreen { display: flex; flex-direction: column; padding: 2vh 2vw 0; border-radius: 0; }
 .vt220:fullscreen .eliza-term { flex: 1; aspect-ratio: auto; }
 .vt220:fullscreen .eliza-log { max-height: none; flex: 1; }
