@@ -1077,6 +1077,7 @@ dialog.lightbox figcaption { font-family: var(--mono); font-size: 0.72rem; color
 .eliza-log.vt-blank { visibility: hidden; }
 .eliza-input.vt-hidden { visibility: hidden; }
 .vt-setup { position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; height: 36%; padding: 0.4rem 1.6rem 1rem; display: flex; flex-direction: column; gap: 0.45rem; white-space: pre; overflow: hidden; color: var(--ph); }
+.vt-setup[hidden] { display: none; }
 .vt-setup .vt-hd { display: flex; justify-content: space-between; color: var(--ph-hi); }
 .vt-setup .vt-row { display: flex; flex-wrap: wrap; gap: 0.3rem 1.6em; }
 .vt-setup .vt-f { cursor: pointer; padding: 0 0.15em; }
