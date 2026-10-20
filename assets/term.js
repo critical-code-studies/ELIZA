@@ -74,6 +74,7 @@
     chin.appendChild(el('span', 'vt-led'));
     vt.appendChild(chin);
     container.appendChild(vt);
+    container.appendChild(el('div', 'vt-stand'));
 
     function add(cls, text) { var l = el('div', 'l ' + cls, text); log.appendChild(l); log.scrollTop = log.scrollHeight; return l; }
     function bot(text) { add('bot', text); }

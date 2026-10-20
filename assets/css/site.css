@@ -1026,7 +1026,7 @@ dialog.lightbox figcaption { font-family: var(--mono); font-size: 0.72rem; color
    with a label and a power lamp. The screen takes Anthony Hay's four colours (*green, *amber,
    *white, *black) and his "Cathode-Ray Tube" glow (*crt). */
 .vt220 {
-  position: relative; margin-top: 1.6rem; padding: 26px 30px 0; border-radius: 22px 22px 14px 14px;
+  position: relative; max-width: 780px; margin: 1.6rem auto 0; padding: 26px 30px 0; border-radius: 22px 22px 14px 14px;
   background: linear-gradient(180deg, #ddd6c4 0%, #cfc7b2 55%, #bdb49d 100%);
   box-shadow: inset 0 2px 0 rgba(255,255,255,0.55), inset 0 -3px 0 rgba(0,0,0,0.12), 0 2px 0 #a39a83, 0 18px 46px rgba(0,0,0,0.55);
 }
@@ -1036,7 +1036,7 @@ dialog.lightbox figcaption { font-family: var(--mono); font-size: 0.72rem; color
   --ph: #5cf08a; --ph-hi: #7bf59b; --ph-dim: #3f7a55; --ph-bg: #03140b; --ph-glow: rgba(95,240,138,0.45);
   position: relative; z-index: 1; font-family: var(--mono); font-size: 0.9rem; line-height: 1.5;
   background: var(--ph-bg); color: var(--ph); border-radius: 26px / 30px; overflow: hidden;
-  display: flex; flex-direction: column; box-shadow: 0 0 0 3px #1b1d1a, 0 0 0 5px #8f876f, inset 0 0 50px rgba(0,0,0,0.75);
+  display: flex; flex-direction: column; aspect-ratio: 4 / 3; box-shadow: 0 0 0 3px #1b1d1a, 0 0 0 5px #8f876f, inset 0 0 50px rgba(0,0,0,0.75);
 }
 .eliza-term.theme-amber { --ph: #ffb000; --ph-hi: #ffc533; --ph-dim: #a8741a; --ph-bg: #1a0e00; --ph-glow: rgba(255,176,0,0.45); }
 .eliza-term.theme-white { --ph: #e8e8e2; --ph-hi: #ffffff; --ph-dim: #8d8d88; --ph-bg: #0b0b0c; --ph-glow: rgba(240,240,235,0.35); }
@@ -1047,7 +1047,7 @@ dialog.lightbox figcaption { font-family: var(--mono); font-size: 0.72rem; color
 /* the curve of the glass: a bloom at the centre and darker corners */
 .eliza-term::after { content: ""; position: absolute; inset: 0; z-index: 3; pointer-events: none; border-radius: inherit; background: radial-gradient(130% 115% at 50% 42%, rgba(255,255,255,0.04) 0%, transparent 44%, rgba(0,0,0,0.45) 100%); }
 .eliza-term.theme-black::after { background: radial-gradient(130% 115% at 50% 42%, transparent 50%, rgba(0,0,0,0.12) 100%); }
-.eliza-log { position: relative; z-index: 2; padding: 1.3rem 1.6rem 0.6rem; min-height: 18rem; max-height: 52vh; overflow-y: auto; scrollbar-color: var(--ph-dim) transparent; }
+.eliza-log { position: relative; z-index: 2; padding: 1.3rem 1.6rem 0.6rem; flex: 1; min-height: 0; overflow-y: auto; scrollbar-color: var(--ph-dim) transparent; }
 .eliza-log .l { margin: 0.15rem 0; white-space: pre-wrap; word-break: break-word; }
 .eliza-log .l.bot { color: var(--ph-hi); text-transform: uppercase; }
 .eliza-log .l.usr { color: var(--ph); }
@@ -1064,10 +1064,13 @@ dialog.lightbox figcaption { font-family: var(--mono); font-size: 0.72rem; color
 .vt-chin { position: relative; display: flex; align-items: center; justify-content: space-between; height: 54px; padding: 0 0.4rem; }
 .vt-badge { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 2px; text-transform: uppercase; color: #6d6552; text-shadow: 0 1px 0 rgba(255,255,255,0.5); }
 .vt-led { width: 9px; height: 9px; border-radius: 50%; background: #5cf08a; box-shadow: 0 0 6px rgba(92,240,138,0.9), inset 0 -1px 1px rgba(0,0,0,0.3); }
+.vt-stand { position: relative; width: 34%; max-width: 260px; height: 42px; margin: 0 auto 1.4rem; }
+.vt-stand::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 30px; background: linear-gradient(180deg, #a99f87, #c9c1ab 40%, #b7ae97); clip-path: polygon(14% 0, 86% 0, 100% 100%, 0 100%); }
+.vt-stand::after { content: ""; position: absolute; left: -22%; right: -22%; top: 30px; height: 12px; border-radius: 3px 3px 10px 10px; background: linear-gradient(180deg, #d3cbb6, #a9a089); box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 12px 24px rgba(0,0,0,0.5); }
 .vt220:fullscreen { display: flex; flex-direction: column; padding: 2vh 2vw 0; border-radius: 0; }
-.vt220:fullscreen .eliza-term { flex: 1; }
+.vt220:fullscreen .eliza-term { flex: 1; aspect-ratio: auto; }
 .vt220:fullscreen .eliza-log { max-height: none; flex: 1; }
-@media (max-width: 640px) { .vt220 { padding: 14px 12px 0; border-radius: 14px; } .vt220::before { inset: 6px 6px 46px; } .vt-chin { height: 46px; } .eliza-log { padding: 1rem 1rem 0.4rem; min-height: 14rem; } .eliza-term { font-size: 0.82rem; border-radius: 16px / 20px; } }
+@media (max-width: 640px) { .vt220 { padding: 14px 12px 0; border-radius: 14px; } .vt220::before { inset: 6px 6px 46px; } .vt-chin { height: 46px; } .eliza-log { padding: 1rem 1rem 0.4rem; min-height: 14rem; } .eliza-term { font-size: 0.82rem; border-radius: 16px / 20px; aspect-ratio: auto; } .eliza-log { min-height: 18rem; max-height: 60vh; } }
 
 /* easter-egg overlay */
 .egg-overlay { position: fixed; inset: 0; z-index: 12000; background: rgba(8,9,12,0.92); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; padding: 4vh 4vw; }
