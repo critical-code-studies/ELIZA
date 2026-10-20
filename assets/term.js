@@ -89,16 +89,25 @@
       newline: function () { if (!ac()) return; var t = ctx.currentTime; burst(t, 0.22, 500, 0.9, 0.12, 1600); thump(t + 0.2, 90, 0.08, 0.28); burst(t + 0.24, 0.05, 1200, 2, 0.12); },
       // the VT220's keyclick
       click: function () { if (!ac()) return; var t = ctx.currentTime; burst(t, 0.012, 3800, 3, 0.12); },
+      // the motor, faded in and out; the terminal runs it only while the Teletype is in use (see motor())
       hum: function (on) {
         if (!on) { if (hum) { try { hum.stop(); } catch (e) {} hum = null; } return; }
         if (hum || !ac()) return;
-        var src = ctx.createBufferSource(), lp = ctx.createBiquadFilter(), g = ctx.createGain(), o = ctx.createOscillator(), og = ctx.createGain();
-        src.buffer = noise; src.loop = true; lp.type = 'lowpass'; lp.frequency.value = 220; g.gain.value = 0.035;
-        o.type = 'triangle'; o.frequency.value = 58; og.gain.value = 0.012;
+        var src = ctx.createBufferSource(), lp = ctx.createBiquadFilter(), g = ctx.createGain(), o = ctx.createOscillator(), og = ctx.createGain(), t = ctx.currentTime;
+        src.buffer = noise; src.loop = true; lp.type = 'lowpass'; lp.frequency.value = 220;
+        g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.035, t + 0.6);
+        o.type = 'triangle'; o.frequency.value = 58;
+        og.gain.setValueAtTime(0.0001, t); og.gain.exponentialRampToValueAtTime(0.012, t + 0.6);
         src.connect(lp); lp.connect(g); g.connect(ctx.destination); o.connect(og); og.connect(ctx.destination);
-        src.start(); o.start();
-        hum = { stop: function () { src.stop(); o.stop(); } };
-      }
+        src.start(t); o.start(t);
+        hum = { stop: function () {
+          var e = ctx.currentTime;
+          [g, og].forEach(function (x) { x.gain.cancelScheduledValues(e); x.gain.setValueAtTime(x.gain.value, e); x.gain.exponentialRampToValueAtTime(0.0001, e + 0.8); });
+          src.stop(e + 0.85); o.stop(e + 0.85);
+        } };
+      },
+      // a hidden tab: the motor off and the audio clock suspended until the next sound
+      quiet: function () { this.hum(false); if (ctx && ctx.state === 'running') setTimeout(function () { if (document.hidden) ctx.suspend(); }, 1000); }
     };
   })();
 
@@ -172,10 +181,20 @@
     function setSound(on) {
       sound = !!on; bSnd.textContent = sound ? 'Sound on' : 'Sound off'; bSnd.classList.toggle('on', sound); bSnd.setAttribute('aria-pressed', sound);
       try { localStorage.setItem('eliza.sound', sound ? 'on' : 'off'); } catch (e) {}
-      Sound.hum(sound && device === 'tty');
+      motor();
       if (sound && device === 'tty') Sound.load(base + 'assets/audio/asr33keypress.wav');
     }
     bSnd.addEventListener('click', function () { setSound(!sound); input.focus({ preventScroll: true }); });
+    // the Teletype's motor runs while the machine is being used and stops after a minute idle, or when
+    // the tab is hidden; a key or a printed character starts it again
+    var motorIdle = null;
+    function motor() {
+      clearTimeout(motorIdle);
+      if (!(sound && device === 'tty') || document.hidden) { Sound.hum(false); return; }
+      Sound.hum(true);
+      motorIdle = setTimeout(function () { Sound.hum(false); }, 60000);
+    }
+    document.addEventListener('visibilitychange', function () { if (document.hidden) { clearTimeout(motorIdle); Sound.quiet(); } });
     container.appendChild(sw);
     container.appendChild(vt);
     var stand = el('div', 'vt-stand'); container.appendChild(stand);
@@ -228,7 +247,7 @@
     });
     var space = el('button', 'tk tk-space'); space.type = 'button'; space.setAttribute('aria-label', 'Space bar'); space.dataset.k = ' ';
     space.style.left = '50.6%'; space.style.top = '86.8%'; keys.appendChild(space); keyEls[' '] = [space];
-    function flash(k) { (keyEls[k] || []).forEach(function (b) { b.classList.add('down'); setTimeout(function () { b.classList.remove('down'); }, 110); }); }
+    function flash(k) { motor(); (keyEls[k] || []).forEach(function (b) { b.classList.add('down'); setTimeout(function () { b.classList.remove('down'); }, 110); }); }
     function press(code, shifted) {
       if (code === 'SHIFT') { shiftOn = !shiftOn; (keyEls.SHIFT || []).forEach(function (b) { b.classList.toggle('held', shiftOn); }); return; }
       if (code === 'CTRL') { ctrlOn = !ctrlOn; (keyEls.CTRL || []).forEach(function (b) { b.classList.toggle('held', ctrlOn); }); return; }
@@ -306,7 +325,7 @@
       input.maxLength = device === 'web' ? 140 : 524288; twCount.textContent = String(140 - input.value.length);
       devNote.innerHTML = '<b>' + D.year + ', ' + D.name + '.</b> ' + D.note + ' The replies on every machine here are Weizenbaum\u2019s 1966 DOCTOR, through Anthony Hay\u2019s engine.';
       try { localStorage.setItem('eliza.terminal', device); } catch (e) {}
-      if (typeof setSound === 'function') Sound.hum(sound && device === 'tty');
+      if (typeof setSound === 'function') motor();
       toEnd();
     }
 
@@ -347,7 +366,7 @@
       (function tick() {
         var n = Math.min(text.length, Math.floor((performance.now() - t0) / 1000 * rate) + 1);
         if (n !== k) {
-          if (sound && device === 'tty') { for (var q = k; q < n; q++) if (text.charAt(q) !== ' ') { Sound.strike(); break; } }
+          if (sound && device === 'tty') { motor(); for (var q = k; q < n; q++) if (text.charAt(q) !== ' ') { Sound.strike(); break; } }
           k = n; l.textContent = text.slice(0, k); toEnd();
         }
         if (k < text.length) requestAnimationFrame(tick);
