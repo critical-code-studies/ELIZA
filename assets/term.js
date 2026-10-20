@@ -191,7 +191,9 @@
     if (tpl && tpl.content) { paper.appendChild(tpl.content.cloneNode(true)); feed = paper.querySelector('.tty-feed'); }
     if (!feed) { var ff = el('div', 'fanfold no-sprockets'); feed = el('div', 'tty-feed'); ff.appendChild(feed); paper.appendChild(ff); }
     photo.appendChild(img); photo.appendChild(paper); photo.appendChild(glass); photo.appendChild(keys);
-    var view = el('div', 'tty-view'); view.appendChild(photo); tty.appendChild(view);
+    var view = el('div', 'tty-view'); view.appendChild(photo);
+    // the shadow sits on a wrapper so that it follows the photograph and the rising paper together
+    var body = el('div', 'tty-body'); body.appendChild(view); tty.appendChild(body);
     // a closer view (the photograph at 1.6 times, the paper and keyboard filling the width) or the whole machine
     var zoomBtn = el('button', 'tty-zoom'); zoomBtn.type = 'button';
     var zoomed = true; try { zoomed = localStorage.getItem('eliza.tty.zoom') !== 'out'; } catch (e) {}
