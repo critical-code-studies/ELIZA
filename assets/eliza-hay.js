@@ -2,7 +2,9 @@
    running as Weizenbaum's 1966 program would have). Vendored verbatim from
    https://anthay.github.io/eliza.html (engine only; DOM UI removed), which is
    released CC0 1.0 (public domain) by Anthony Hay and Max Hay. We add a
-   structured tracer + window.ElizaHay.trace() at the end to drive the demo. */
+   structured tracer + window.ElizaHay.trace() at the end to drive the demo, the
+   CACM 1966 conversation from the same page (for *cacm), and window.ElizaHay.console(),
+   the state behind Hay's asterisk commands, for the Try ELIZA terminal (assets/term.js). */
 (function () {
 
 
@@ -2053,6 +2055,58 @@ class HayTrace extends nullTracer {
   }
 }
 
+const CACM_1966_CONVERSATION = [
+
+    // --- exact conversation quoted in Weizenbaum's 1966 CACM paper ---
+
+    "Men are all alike.",
+    "IN WHAT WAY",
+
+    "They're always bugging us about something or other.",
+    "CAN YOU THINK OF A SPECIFIC EXAMPLE",
+
+    "Well, my boyfriend made me come here.",
+    "YOUR BOYFRIEND MADE YOU COME HERE",
+
+    "He says I'm depressed much of the time.",
+    "I AM SORRY TO HEAR YOU ARE DEPRESSED",
+
+    "It's true. I am unhappy.",
+    "DO YOU THINK COMING HERE WILL HELP YOU NOT TO BE UNHAPPY",
+
+    "I need some help, that much seems certain.",
+    "WHAT WOULD IT MEAN TO YOU IF YOU GOT SOME HELP",
+
+    "Perhaps I could learn to get along with my mother.",
+    "TELL ME MORE ABOUT YOUR FAMILY",
+
+    "My mother takes care of me.",
+    "WHO ELSE IN YOUR FAMILY TAKES CARE OF YOU",
+
+    "My father.",
+    "YOUR FATHER",
+
+    "You are like my father in some ways.",
+    "WHAT RESEMBLANCE DO YOU SEE",
+
+    "You are not very aggressive but I think you don't want me to notice that.",
+    "WHAT MAKES YOU THINK I AM NOT VERY AGGRESSIVE",
+
+    "You don't argue with me.",
+    "WHY DO YOU THINK I DON'T ARGUE WITH YOU",
+
+    "You are afraid of me.",
+    "DOES IT PLEASE YOU TO BELIEVE I AM AFRAID OF YOU",
+
+    "My father is afraid of everybody.",
+    "WHAT ELSE COMES TO MIND WHEN YOU THINK OF YOUR FATHER",
+
+    "Bullies.",
+    "DOES THAT HAVE ANYTHING TO DO WITH THE FACT THAT YOUR BOYFRIEND MADE YOU COME HERE"
+
+    // --- end of 1966 CACM paper conversation ---
+];
+
 function buildScriptOrThrow() {
   var r = readScript(CACM_1966_01_DOCTOR_SCRIPT);
   if (r[0] !== 'success') throw new Error('ELIZA script error: ' + r[0]);
@@ -2104,6 +2158,52 @@ window.ElizaHay = {
   },
   // single-shot trace in a fresh conversation
   trace: function (text) { return window.ElizaHay.make().trace(text); },
+
+  // the state behind Hay's asterisk commands (his page's handleCommand), for a
+  // terminal: the engine with its tracer, script and transformation limit
+  VERSION: VERSION,
+  conversation: CACM_1966_CONVERSATION,
+  console: function () {
+    var scriptText = CACM_1966_01_DOCTOR_SCRIPT;
+    var script = buildScriptOrThrow();
+    var limit = 500, tracer = new Tracer(), mode = 'on', write = function () {};
+    var eliza = new Eliza(script.rules, script.memoryRule, tracer, limit);
+    function unhtml(s) { return String(s).split('&lt;').join('<').split('&gt;').join('>'); }
+    function fresh() { tracer = mode === 'off' ? new nullTracer() : mode === 'pre' ? new preTracer(function (t) { write(t); }) : new Tracer(); eliza.tracer = tracer; }
+    return {
+      hello: function () { return join(script.helloMessage); },
+      response: function (text) { return eliza.response(text); },
+      interrupt: function () { globalInterruptElizaResponse = true; },
+      traceText: function () { return unhtml(tracer.text()); },
+      traceScript: function () { return unhtml(tracer.script()); },
+      traceMode: function () { return mode; },
+      // mode: 'on' (trace kept, shown with *), 'auto' (shown every exchange), 'off', 'pre' (input and keyword only, written as it runs)
+      setTrace: function (m, writer) { mode = m; if (writer) write = writer; fresh(); },
+      maxtran: function (n) { if (n != null) { limit = n; eliza.transformationLimit = n; } return limit; },
+      keys: function () {
+        return Array.from(script.rules.entries()).filter(function (e) { return e[0] !== SPECIAL_RULE_NONE; })
+          .sort(function (a, b) { return a[1].getPrecedence() !== b[1].getPrecedence() ? b[1].getPrecedence() - a[1].getPrecedence() : a[0].localeCompare(b[0]); })
+          .map(function (e) { return [e[1].precedence, e[0]]; });
+      },
+      key: function (k) {
+        k = String(k).toUpperCase(); if (k === 'NONE') k = SPECIAL_RULE_NONE;
+        if (k === 'MEMORY') return script.memoryRule.toString();
+        return script.rules.has(k) ? script.rules.get(k).toString() : null;
+      },
+      // a new script (the text of a script file); returns 'success' or the reader's message
+      load: function (text) {
+        var r = readScript(text);
+        if (r[0] === 'success') { scriptText = text; script = r[1]; eliza = new Eliza(script.rules, script.memoryRule, tracer, limit); }
+        return r[0];
+      },
+      reset: function () {
+        var r = readScript(scriptText);
+        if (r[0] === 'success') { script = r[1]; mode = 'on'; tracer = new Tracer(); eliza = new Eliza(script.rules, script.memoryRule, tracer, limit); }
+        return r[0];
+      },
+      doctorText: function () { return CACM_1966_01_DOCTOR_SCRIPT; }
+    };
+  },
 
   // the raw 1966 DOCTOR script as Hay transcribed it (CACM appendix), for listing
   scriptText: CACM_1966_01_DOCTOR_SCRIPT,
