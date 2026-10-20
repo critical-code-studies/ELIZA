@@ -153,9 +153,10 @@
       { id: 'pet', year: '1977', name: 'Commodore PET 2001', prompt: '?', label: 'PET 2001', note: 'Forty columns in capitals and graphics. Creative Computing sold its BASIC ELIZA, by Jeff Shrager and Steve North, for the PET on cassette (CS-1006).' },
       { id: 'vt220', year: '1983', name: 'DEC VT220', prompt: '>', note: 'A video terminal of the time-sharing years, when DOCTOR ran in Maclisp, Franz Lisp and GNU Emacs on PDP-10s and VAXes.' },
       { id: 'dos', year: '1991', name: 'IBM PC, MS-DOS', prompt: '>', label: 'PC  MS-DOS 5.00', note: 'Eighty columns of grey on black. The Software Toolworks\u2019 ELIZA, by Walt Bilofsky, ran on the IBM PC from 1982.' },
+      { id: 'imac', year: '1998', name: 'Apple iMac G3', placeholder: '', note: 'A Mac OS 8 desktop on the iMac\u2019s fifteen-inch screen, with ELIZA as a HyperCard stack. ELIZAs ran on Macs as HyperCard stacks (HyperCard came with every Mac); the Implementations archive lists one by Bellina, undated.' },
       { id: 'im', year: '2001', name: 'Instant messenger', title: 'ELIZA - Instant Message', placeholder: 'Type a message', note: 'Chatbots such as SmarterChild answered on AOL Instant Messenger and MSN Messenger from 2001.' },
       { id: 'web', year: '2016', name: 'Web chat', title: 'ELIZA', placeholder: 'Write a message\u2026', note: 'The chatbot in the corner of a web page, the year Facebook opened Messenger to bots.' },
-      { id: 'llm', year: '2023', name: 'AI chat', title: 'ELIZA', placeholder: 'Message ELIZA', note: 'The chat window of the large language model, after ChatGPT (November 2022).' }
+      { id: 'llm', year: '2023', name: 'AI chat', title: 'ELIZA', placeholder: '\u21b5 to send', note: 'The chat window of the large language model, after ChatGPT (November 2022).' }
     ];
     var DEV = {}, devBtns = {};
     DEVICES.forEach(function (d) {
@@ -253,8 +254,29 @@
     if ('ResizeObserver' in window) new ResizeObserver(fitPaper).observe(paper);
     var device = 'vt220';
     var winBar = el('div', 'win-bar'); vt.insertBefore(winBar, vt.firstChild);
+    var macMenu = el('div', 'mac-menu'); macMenu.innerHTML = '<span class="mac-apple" aria-hidden="true"></span><span>File</span><span>Edit</span><span>View</span><span>Special</span><span>Help</span><span class="mac-clock"></span>';
+    var macTitle = el('div', 'mac-title'); macTitle.innerHTML = '<span class="mac-box"></span><span class="mac-name">ELIZA</span><span class="mac-box"></span>';
+    term.insertBefore(macTitle, term.firstChild); term.insertBefore(macMenu, macTitle);
+    // the iMac runs ELIZA as a HyperCard stack: a black-and-white card with a title, a scrolling field
+    // for the conversation, a field to type in and a round-rect button
+    var llmPlus = el('span', 'llm-plus', '+'), llmIcons = el('span', 'llm-icons'); llmIcons.innerHTML = '<span class="llm-stop"></span><span class="llm-mic"></span>';
+    var llmFoot = el('div', 'llm-foot'); llmFoot.innerHTML = '<span>Auto</span><span class="llm-model"><b>ELIZA 1966</b> High <span class="llm-ring"></span></span>';
+    inputWrap.insertBefore(llmPlus, inputWrap.firstChild); inputWrap.appendChild(llmIcons); term.appendChild(llmFoot);
+    var hcCard = el('div', 'hc-card');
+    var hcHead = el('div', 'hc-head'); hcHead.innerHTML = '<span class="hc-title">ELIZA</span><span class="hc-sub">a conversation with the DOCTOR</span>';
+    var hcField = el('div', 'hc-field'), hcRow = el('div', 'hc-row');
+    var hcLabel = el('span', 'hc-label', 'You say:');
+    var hcReply = el('button', 'hc-btn', 'Reply'); hcReply.type = 'button';
+    var hcNav = el('div', 'hc-nav'); hcNav.innerHTML = '<span class="hc-arrow">&#9664;</span><span class="hc-arrow">&#9654;</span>';
+    hcCard.appendChild(hcHead); hcCard.appendChild(hcField); hcCard.appendChild(hcRow); hcCard.appendChild(hcNav);
+    term.insertBefore(hcCard, macTitle.nextSibling);
+    hcReply.addEventListener('click', function (e) { e.stopPropagation(); var v = input.value; input.value = ''; handle(v); try { input.focus({ preventScroll: true }); } catch (x) {} });
+    var macChin = el('span', 'mac-chin'); macChin.innerHTML = '<span class="mac-grille"></span><span class="mac-word">iMac</span><span class="mac-grille"></span>'; chin.appendChild(macChin);
+    setInterval(function () { var ck = macMenu.querySelector('.mac-clock'); if (ck && device === 'imac') ck.textContent = new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }); }, 10000);
     var devLabel = el('span', 'dev-label'); chinL.appendChild(devLabel);
     var devNote = el('p', 'dev-note'); container.appendChild(devNote);
+    // Hay's banner, with the script's copyright and the engine's licence, in small type under the machine
+    container.appendChild(el('div', 'term-banner', BANNER));
     var promptEl = inputWrap.querySelector('.prompt');
     function setDevice(d) {
       device = DEV[d] ? d : 'vt220';
@@ -263,7 +285,9 @@
       stand.hidden = !(device === 'vt220' || device === 'dos');
       vt.className = 'vt220 dev-' + device;
       if (device === 'tty') { feed.appendChild(log); feed.appendChild(inputWrap); fitPaper(); if (sound) Sound.load(base + 'assets/audio/asr33keypress.wav'); }
-      else { term.insertBefore(log, term.firstChild); term.appendChild(inputWrap); }
+      else if (device === 'imac') { hcField.appendChild(log); hcRow.appendChild(hcLabel); hcRow.appendChild(inputWrap); hcRow.appendChild(hcReply); }
+      else { term.insertBefore(log, setup); term.appendChild(inputWrap); term.appendChild(llmFoot); }
+      var ck0 = macMenu.querySelector('.mac-clock'); if (ck0) ck0.textContent = new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
       DEVICES.forEach(function (x) { devBtns[x.id].classList.toggle('on', x.id === device); devBtns[x.id].setAttribute('aria-pressed', x.id === device); });
       if (device !== 'vt220' && typeof ST !== 'undefined' && ST.open) leave();
       winBar.textContent = D.title || ''; devLabel.textContent = D.label || '';
@@ -288,12 +312,19 @@
         setTimeout(function () { w.remove(); var m = add('bot', text); done(); }, 700 + Math.min(1800, text.length * 18));
         return;
       }
-      if (device === 'llm') {   // streamed, a few words at a time
-        var lm = add('bot', ''), words = text.split(' '), wi = 0;
-        (function more() { wi = Math.min(words.length, wi + 1 + Math.floor(Math.random() * 2)); lm.textContent = words.slice(0, wi).join(' '); log.scrollTop = log.scrollHeight; if (wi < words.length) setTimeout(more, 45 + Math.random() * 60); else done(); })();
+      if (device === 'llm') {   // a moment's "thinking", then streamed a few words at a time
+        var th = add('sys thinking', ''), t0t = performance.now(), ntok = (lastInput.match(/\S+/g) || []).length;
+        th.innerHTML = '<span class="dots"><span></span><span></span><span></span></span><span class="tmeta"></span>';
+        var tm = th.querySelector('.tmeta');
+        function meta() { tm.textContent = Math.max(1, Math.round((performance.now() - t0t) / 1000)) + 's \u00b7 ' + ntok + ' tokens \u00b7 Thinking'; }
+        meta(); var tick = setInterval(meta, 250);
+        var lm, words = text.split(' '), wi = 0;
+        setTimeout(function () { clearInterval(tick); th.remove(); lm = add('bot', ''); more(); }, 1200 + Math.random() * 1000);
+        return;
+        function more() { wi = Math.min(words.length, wi + 1 + Math.floor(Math.random() * 2)); lm.textContent = words.slice(0, wi).join(' '); log.scrollTop = log.scrollHeight; if (wi < words.length) setTimeout(more, 45 + Math.random() * 60); else done(); }
         return;
       }
-      var l = add('bot', ''), k = 0, rate = device === 'pet' ? 600 : device === 'dos' ? 5000 : (typeof cps === 'function' ? cps() : 480), t0 = performance.now();
+      var l = add('bot', ''), k = 0, rate = device === 'pet' ? 600 : (device === 'dos' || device === 'imac') ? 5000 : (typeof cps === 'function' ? cps() : 480), t0 = performance.now();
       if (rate >= 960 || !text) { l.textContent = text; log.scrollTop = log.scrollHeight; done(); return; }
       (function tick() {
         var n = Math.min(text.length, Math.floor((performance.now() - t0) / 1000 * rate) + 1);
@@ -309,8 +340,8 @@
     function sys(text) { add('sys', text); }
     function pre(text) { add('sys pre', text); }
 
-    var conversation = '', traceText = '', cacm = -1, busy = false;
-    function start() { var h = C.hello(); pre(BANNER); bot(h); conversation = h + '\n\n'; traceText = conversation; }
+    var conversation = '', traceText = '', cacm = -1, busy = false, lastInput = '';
+    function start() { var h = C.hello(); bot(h); conversation = h + '\n\n'; traceText = conversation; }
     start();
     C.setTrace('on', function (t) { sys(t); });
 
@@ -342,6 +373,7 @@
         case '*TTY': setDevice('tty'); return;
         case '*VT220': setDevice('vt220'); return;
         case '*PET': setDevice('pet'); return;
+        case '*IMAC': setDevice('imac'); return;
         case '*DOS': setDevice('dos'); return;
         case '*CACM':
           sys("Replaying conversation from Weizenbaum's January 1966 CACM paper.\nPress Enter to see each exchange. Press Escape to exit replay mode.\n(Use * or *traceauto to see trace, ** to see transformation rules.)");
@@ -519,6 +551,7 @@
       usr(text);
       if (text.charAt(0) === '*') { command(text); return; }
       if (!online()) return;   // Local: what is typed goes to the screen only
+      lastInput = text;
       conversation += text + '\n'; traceText += text + '\n';
       busy = true;
       C.response(text).then(function (reply) {
