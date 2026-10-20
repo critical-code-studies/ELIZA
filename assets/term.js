@@ -149,14 +149,14 @@
     // the machines, oldest first, each with a kind of ELIZA that ran on such a machine; the replies on
     // every one are Weizenbaum's 1966 DOCTOR, through Hay's engine
     var DEVICES = [
-      { id: 'tty', short: 'Teletype 33', year: '1963', name: 'Teletype Model 33 ASR', note: 'A printing terminal of the kind on which ELIZA was used at MIT on the CTSS time-sharing system, ten characters a second on roll paper.' },
-      { id: 'pet', short: 'PET 2001', year: '1977', name: 'Commodore PET 2001', prompt: '?', label: 'PET 2001', note: 'Forty columns in capitals and graphics. Creative Computing sold its BASIC ELIZA, by Jeff Shrager and Steve North, for the PET on cassette (CS-1006).' },
-      { id: 'vt220', short: 'VT220', year: '1983', name: 'DEC VT220', prompt: '>', note: 'A video terminal of the time-sharing years, when DOCTOR ran in Maclisp, Franz Lisp and GNU Emacs on PDP-10s and VAXes.' },
-      { id: 'dos', short: 'IBM PC', year: '1991', name: 'IBM PC, MS-DOS', prompt: '>', label: 'PC  MS-DOS 5.00', note: 'Eighty columns of grey on black. The Software Toolworks\u2019 ELIZA, by Walt Bilofsky, ran on the IBM PC from 1982.' },
-      { id: 'imac', short: 'iMac G3', year: '1998', name: 'Apple iMac G3', placeholder: '', note: 'A Mac OS 8 desktop on the iMac\u2019s fifteen-inch screen, with ELIZA as a HyperCard stack. ELIZAs ran on Macs as HyperCard stacks (HyperCard came with every Mac); the Implementations archive lists one by Bellina, undated.' },
-      { id: 'im', short: 'Messenger', year: '2001', name: 'Instant messenger', title: 'ELIZA - Instant Message', placeholder: 'Type a message', note: 'Chatbots such as SmarterChild answered on AOL Instant Messenger and MSN Messenger from 2001.' },
-      { id: 'web', short: 'Twitter', year: '2016', name: 'Twitter', placeholder: 'What\u2019s happening?', note: 'A timeline of tweets, newest first, 140 characters at most. In March 2016 Microsoft\u2019s chatbot Tay answered people on Twitter and was taken offline within a day, after users taught it to post offensive tweets.' },
-      { id: 'llm', short: 'AI chat', year: '2023', name: 'AI chat', title: 'ELIZA', placeholder: '\u21b5 to send', note: 'The chat window of the large language model, after ChatGPT (November 2022).' }
+      { id: 'tty', short: 'Teletype 33', year: '1966', name: 'Teletype Model 33 ASR', note: 'A printing terminal of the kind on which ELIZA was used at MIT on the CTSS time-sharing system, ten characters a second on roll paper.' },
+      { id: 'pet', short: 'PET 2001', year: '1976', name: 'Commodore PET 2001', prompt: '?', label: 'PET 2001', note: 'Forty columns in capitals and graphics. Creative Computing sold its BASIC ELIZA, by Jeff Shrager and Steve North, for the PET on cassette (CS-1006).' },
+      { id: 'vt220', short: 'VT220', year: '1986a', name: 'DEC VT220', prompt: '>', note: 'A video terminal of the time-sharing years, when DOCTOR ran in Maclisp, Franz Lisp and GNU Emacs on PDP-10s and VAXes.' },
+      { id: 'dos', short: 'IBM PC', year: '1986b', name: 'IBM PC, MS-DOS', prompt: '>', label: 'PC  MS-DOS 5.00', note: 'Eighty columns of grey on black. The Software Toolworks\u2019 ELIZA, by Walt Bilofsky, ran on the IBM PC from 1982.' },
+      { id: 'imac', short: 'iMac G3', year: '1996', name: 'Apple iMac G3', placeholder: '', note: 'A Mac OS 8 desktop on the iMac\u2019s fifteen-inch screen, with ELIZA as a HyperCard stack. ELIZAs ran on Macs as HyperCard stacks (HyperCard came with every Mac); the Implementations archive lists one by Bellina, undated.' },
+      { id: 'im', short: 'Messenger', year: '2006', name: 'Instant messenger', title: 'ELIZA - Instant Message', placeholder: 'Type a message', note: 'Chatbots such as SmarterChild answered on AOL Instant Messenger and MSN Messenger from 2001.' },
+      { id: 'web', short: 'Twitter', year: '2016', name: 'Twitter', placeholder: 'What\u2019s happening?', note: 'A timeline of tweets, newest first, 140 characters at most; ELIZA\u2019s picture and cover are cut from Weizenbaum\u2019s 1965 printout of the program (MIT Distinctive Collections, CC0). In March 2016 Microsoft\u2019s chatbot Tay answered people on Twitter and was taken offline within a day, after users taught it to post offensive tweets.' },
+      { id: 'llm', short: 'AI chat', year: '2026', name: 'AI chat', title: 'ELIZA', placeholder: '\u21b5 to send', note: 'The chat window of the large language model, after ChatGPT (November 2022).' }
     ];
     var DEV = {}, devBtns = {}, tl = el('div', 'tl'); sw.appendChild(tl);
     DEVICES.forEach(function (d) {
@@ -264,7 +264,7 @@
     var llmFoot = el('div', 'llm-foot'); llmFoot.innerHTML = '<span>Auto</span><span class="llm-model"><b>ELIZA 1966</b> High <span class="llm-ring"></span></span>';
     inputWrap.insertBefore(llmPlus, inputWrap.firstChild); inputWrap.appendChild(llmIcons); term.appendChild(llmFoot);
     var twBar = el('div', 'tw-bar'); twBar.innerHTML = '<span>Home</span><span>Moments</span><span>Notifications</span><span>Messages</span><span class="tw-search">Search</span><span class="tw-tweet">Tweet</span>';
-    var twProfile = el('div', 'tw-profile'); twProfile.innerHTML = '<div class="tw-cover"></div><div class="tw-av">E</div><div class="tw-id"><b>ELIZA</b><span>@ELIZA_1966</span><p>Psychotherapist, of a kind. Mostly I ask questions. MIT, 1966.</p></div>';
+    var twProfile = el('div', 'tw-profile'); twProfile.innerHTML = '<div class="tw-cover"></div><div class="tw-av" role="img" aria-label="ELIZA\u2019s picture: the head of the 1965 MAD-SLIP program"></div><div class="tw-id"><b>ELIZA</b><span>@ELIZA_1966</span><p>Psychotherapist, of a kind. Mostly I ask questions. MIT, 1966.</p></div>';
     var twCount = el('span', 'tw-count', '140');
     term.insertBefore(twProfile, term.firstChild); term.insertBefore(twBar, twProfile); inputWrap.appendChild(twCount);
     input.addEventListener('input', function () { twCount.textContent = String(140 - input.value.length); twCount.classList.toggle('over', input.value.length > 140); });
@@ -334,7 +334,13 @@
         function more() { wi = Math.min(words.length, wi + 1 + Math.floor(Math.random() * 2)); lm.textContent = words.slice(0, wi).join(' '); toEnd(); if (wi < words.length) setTimeout(more, 45 + Math.random() * 60); else done(); }
         return;
       }
-      var l = add('bot', ''), k = 0, rate = device === 'pet' ? 600 : (device === 'dos' || device === 'imac') ? 5000 : (typeof cps === 'function' ? cps() : 480), t0 = performance.now();
+      if (device === 'pet' && !text.__petWaited) {   // BASIC scanning for keywords: a pause, the cursor blinking
+        var cur = add('sys pet-wait', '\u2588'), wait = Math.min(9000, 2500 + lastInput.length * 70);
+        setTimeout(function () { cur.remove(); var t2 = new String(text); t2.__petWaited = true; arrive(t2, done); }, wait);
+        return;
+      }
+      text = String(text);
+      var l = add('bot', ''), k = 0, rate = device === 'pet' ? 200 : (device === 'dos' || device === 'imac') ? 5000 : (typeof cps === 'function' ? cps() : 480), t0 = performance.now();
       if (rate >= 960 || !text) { l.textContent = text; toEnd(); done(); return; }
       (function tick() {
         var n = Math.min(text.length, Math.floor((performance.now() - t0) / 1000 * rate) + 1);

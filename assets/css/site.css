@@ -1160,6 +1160,8 @@ dialog.lightbox figcaption { font-family: var(--mono); font-size: 0.72rem; color
 .vt220.dev-pet .eliza-term { --ph: #e2ecf8; --ph-hi: #f4f8ff; --ph-dim: #9fb0c4; --ph-bg: #0a0c0f; --ph-glow: rgba(220,232,255,0.35); border-radius: 18px / 22px; }
 .vt220.dev-pet .eliza-log, .vt220.dev-pet .eliza-input { font-family: "Pet Me", var(--mono); font-weight: 400; font-size: calc((100cqw - 1.8rem) / 40); line-height: 1.3; letter-spacing: 0; text-transform: uppercase; }
 .vt220.dev-pet .eliza-log .l { margin: 0; }
+.vt220.dev-pet .eliza-log .l.pet-wait { animation: petblink 1s steps(1) infinite; }
+@keyframes petblink { 50% { opacity: 0; } }
 .vt220.dev-pet .eliza-input input { font: inherit; }
 .vt220.dev-pet .eliza-log { padding: 0.9rem 0.9rem 0.3rem; }
 .vt220.dev-pet .eliza-input { padding: 0 0.3rem 0.7rem; }
@@ -1263,8 +1265,8 @@ dialog.lightbox figcaption { font-family: var(--mono); font-size: 0.72rem; color
 .vt220.dev-web .tw-search { margin-left: auto; font-weight: 400; color: #8899a6; background: #f5f8fa; border: 1px solid #e1e8ed; border-radius: 14px; padding: 3px 12px; }
 .vt220.dev-web .tw-tweet { color: #fff; background: #1da1f2; border-radius: 14px; padding: 5px 14px; }
 .vt220.dev-web .tw-profile { display: block; position: relative; background: #fff; border-bottom: 1px solid #e1e8ed; padding-bottom: 10px; }
-.vt220.dev-web .tw-cover { height: 86px; background: linear-gradient(120deg, #0b3d5c, #1da1f2 55%, #8ad0f8); }
-.vt220.dev-web .tw-av { position: absolute; left: 16px; top: 46px; width: 72px; height: 72px; border-radius: 50%; border: 4px solid #fff; background: #14171a; color: #fff; font: 700 30px/64px "Helvetica Neue", Helvetica, Arial, sans-serif; text-align: center; }
+.vt220.dev-web .tw-cover { height: 86px; background: #e9e1c8 url(../images/eliza-1965-printout-cover.jpg) center 30% / cover no-repeat; }
+.vt220.dev-web .tw-av { position: absolute; left: 16px; top: 46px; width: 72px; height: 72px; border-radius: 50%; border: 4px solid #fff; background: #f1ead3 url(../images/eliza-1965-printout-avatar.jpg) center / cover no-repeat; }
 .vt220.dev-web .tw-id { margin: 8px 16px 0 104px; }
 .vt220.dev-web .tw-id b { font-size: 18px; display: block; }
 .vt220.dev-web .tw-id span { color: #657786; }
@@ -1279,6 +1281,7 @@ dialog.lightbox figcaption { font-family: var(--mono); font-size: 0.72rem; color
 .vt220.dev-web .eliza-log .l { position: relative; margin: 0; padding: 30px 14px 12px 70px; border-bottom: 1px solid #e6ecf0; text-transform: none; color: #14171a; min-height: 64px; }
 .vt220.dev-web .eliza-log .l[data-who]::before { content: attr(data-av); position: absolute; left: 14px; top: 12px; width: 44px; height: 44px; border-radius: 50%; background: #14171a; color: #fff; font: 700 18px/44px "Helvetica Neue", Helvetica, Arial, sans-serif; text-align: center; }
 .vt220.dev-web .eliza-log .l.usr[data-who]::before { background: #aab8c2; }
+.vt220.dev-web .eliza-log .l.bot[data-who]::before { content: ""; background: #f1ead3 url(../images/eliza-1965-printout-avatar.jpg) center / cover no-repeat; }
 .vt220.dev-web .eliza-log .l[data-who]::after { content: attr(data-who) "  " attr(data-handle); white-space: pre; position: absolute; left: 70px; top: 10px; font-size: 13px; color: #657786; }
 .vt220.dev-web .eliza-log .l.sys { padding: 10px 14px; min-height: 0; color: #657786; font-size: 13px; }
 .vt220.dev-web .eliza-log .l.pre { font-size: 0.6em; white-space: pre; overflow: hidden; }
