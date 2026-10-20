@@ -173,7 +173,13 @@
     if (tpl && tpl.content) { paper.appendChild(tpl.content.cloneNode(true)); feed = paper.querySelector('.tty-feed'); }
     if (!feed) { var ff = el('div', 'fanfold no-sprockets'); feed = el('div', 'tty-feed'); ff.appendChild(feed); paper.appendChild(ff); }
     photo.appendChild(img); photo.appendChild(paper); photo.appendChild(glass); photo.appendChild(keys);
-    tty.appendChild(photo);
+    var view = el('div', 'tty-view'); view.appendChild(photo); tty.appendChild(view);
+    // a closer view (the photograph at 1.6 times, the paper and keyboard filling the width) or the whole machine
+    var zoomBtn = el('button', 'tty-zoom'); zoomBtn.type = 'button';
+    var zoomed = true; try { zoomed = localStorage.getItem('eliza.tty.zoom') !== 'out'; } catch (e) {}
+    function setZoom(z) { zoomed = z; tty.classList.toggle('zoom', z); zoomBtn.textContent = z ? 'Whole machine' : 'Closer'; try { localStorage.setItem('eliza.tty.zoom', z ? 'in' : 'out'); } catch (e) {} setTimeout(fitPaper, 0); }
+    zoomBtn.addEventListener('click', function (e) { e.stopPropagation(); setZoom(!zoomed); });
+    tty.appendChild(zoomBtn);
     tty.appendChild(el('p', 'tty-credit', 'Photograph of a Teletype Model 33 ASR by Anthony Hay, from ELIZA33 (Jeff Shrager, Anthony Hay and Leo Armel).'));
     container.appendChild(tty);
     // the keys as they sit in the photograph (centres, as fractions of its width and height), with
@@ -227,6 +233,7 @@
     // Hay's banner) so that the print can be read at the size of the photograph
     function fitPaper() { var w = paper.clientWidth; if (w) paper.style.fontSize = Math.max(6, (w * 0.86) / 64 / 0.6) + 'px'; }
     window.addEventListener('resize', fitPaper);
+    setZoom(zoomed);
     if ('ResizeObserver' in window) new ResizeObserver(fitPaper).observe(paper);
     var device = 'vt220';
     function setDevice(d) {

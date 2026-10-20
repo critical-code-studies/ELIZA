@@ -1110,10 +1110,15 @@ dialog.lightbox figcaption { font-family: var(--mono); font-size: 0.72rem; color
    plate, no sprocket holes: the Model 33 printed on friction-fed roll paper) rising out from under the
    cover, printed at the platen behind the plastic window, and every key of the keyboard live */
 .vt220[hidden], .tty33[hidden] { display: none; }
-.tty33 { position: relative; max-width: 900px; margin: 0.8rem auto 1.6rem; padding-top: 25%; }
+.tty33 { position: relative; max-width: 900px; margin: 0.8rem auto 1.6rem; padding-top: 7%; }
+.tty-view { position: relative; overflow-x: clip; border-radius: 8px; }
+.tty33.zoom .tty-photo { width: 160%; margin-left: -30%; }
+.tty33.zoom { padding-top: 11%; }
+.tty-zoom { position: absolute; z-index: 4; right: 0.6rem; bottom: 0.6rem; font: 0.6rem var(--mono); letter-spacing: 1px; text-transform: uppercase; color: #2c2318; background: rgba(240,234,218,0.9); border: 1px solid rgba(0,0,0,0.25); border-radius: 3px; padding: 5px 9px; cursor: pointer; }
 .tty-photo { position: relative; }
-.tty-photo img { display: block; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 18px 46px rgba(0,0,0,0.55); }
-.tty-paper { position: absolute; left: 31.1%; right: 29.9%; top: -33%; bottom: 70.5%; overflow-y: auto; scrollbar-width: none; display: flex; flex-direction: column; font-family: var(--mono); line-height: 1.35; }
+.tty-photo img { display: block; width: 100%; height: auto; }
+.tty-view { box-shadow: 0 18px 46px rgba(0,0,0,0.55); }
+.tty-paper { position: absolute; left: 31.1%; right: 29.9%; top: -9%; bottom: 70.5%; overflow-y: auto; scrollbar-width: none; display: flex; flex-direction: column; font-family: var(--mono); line-height: 1.35; }
 .tty-paper::-webkit-scrollbar { display: none; }
 .tty-paper .fanfold { margin: 0; min-height: 100%; display: flex; flex-direction: column; justify-content: flex-end; padding: 1.4em 1.3em 0.5em; border-radius: 2px 2px 0 0; box-shadow: 0 -6px 18px rgba(0,0,0,0.25); }
 .tty-paper .fanfold-cmd { margin-top: 0; }
@@ -1132,7 +1137,7 @@ dialog.lightbox figcaption { font-family: var(--mono); font-size: 0.72rem; color
 .tk.held { background: rgba(240,177,58,0.4); }
 .tk-space { width: 17.5%; height: 5%; border-radius: 10px; }
 .tty-credit { font: 0.6rem var(--mono); letter-spacing: 0.5px; color: var(--ink-dim); margin: 0.5rem 0 0; text-align: right; }
-@media (max-width: 640px) { .tty33 { padding-top: 30%; } }
+@media (max-width: 640px) { .tty33 { padding-top: 9%; } .tty33.zoom { padding-top: 14%; } }
 .vt220:fullscreen { display: flex; flex-direction: column; padding: 2vh 2vw 0; border-radius: 0; }
 .vt220:fullscreen .eliza-term { flex: 1; aspect-ratio: auto; }
 .vt220:fullscreen .eliza-log { max-height: none; flex: 1; }
