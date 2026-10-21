@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.92 (2026-10-21)
+
+- About: the Project row names the ELIZA Archaeology Project and TEAM-ELIZA, the whole team in alphabetical order, and Cite as cites the team in the same order.
+
 ## 0.1.91 (2026-10-21)
 
 - The kit at 0.69.0: the About box has no Author row and ends with "A Bench Kit project"; Cite as can name the project (about.cite).
