@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.93 (2026-10-21)
+
+- The kit at 0.71.0: the Book view for benches with documents (none here); Read's 📖 Book only where a version has a document.
+
 ## 0.1.92 (2026-10-21)
 
 - About: the Project row names the ELIZA Archaeology Project and TEAM-ELIZA, the whole team in alphabetical order, and Cite as cites the team in the same order.
