@@ -17,7 +17,7 @@ ITS at the MIT AI Lab.
 Oldschool PC Font Pack v2.2 (2020-11-21), https://int10h.org/oldschool-pc-fonts/
 
 - Licence: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0), by VileR
-- Used on the Try ELIZA page for the 1991 IBM PC (MS-DOS) screen.
+- Used on the Try ELIZA page for the IBM PC (MS-DOS) screen, 1986b on the timeline.
 
 # Pet Me (Commodore PET character set)
 
