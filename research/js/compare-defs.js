@@ -1,5 +1,5 @@
 /*
- * compare-defs.js - the ELIZA bench's second mode in Compare (bench-kit's kit/compare.js): the
+ * compare-defs.js - the ELIZA bench's second mode in Collate (bench-kit's kit/compare.js): the
  * decks, functions and script keywords each version defines (core.js indexes them), and
  * whether each one's code is the same.
  */

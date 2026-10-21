@@ -125,7 +125,7 @@
     // the default colour theme's name, and the accent of figures exported on black and on white
     theme: { label: '7094', note: 'line-printer white on the console’s charcoal, coral lamps (the default)' },
     accent: { dark: '#ec6a42', light: '#b0401d' },
-    // the people whose initials or names are written into the text (Compare marks them)
+    // the people whose initials or names are written into the text (Collate marks them)
     hands: [],
     group: 'vZePbqDz',                                     // the project's Hypothesis group (hypothes.is/groups/vZePbqDz/eliza)
     relation: 'ELIZA, ',

@@ -8,7 +8,7 @@
   var B = root.SW.BENCH;
 
   // Evidence is a line, found by pattern in a version's text (so it survives renumbering),
-  // or a view (tab, b: Compare's other version).
+  // or a view (tab, b: Collate's other version).
   B.findings = [
     { no: 'F1', kind: 'Version', cat: 'versions', level: 'key', title: 'ELIZA 1965b breaks its input at “but” as well as at “.” and “,”',
       text: 'In the recovered source, a word ends the part of the input being read when it is a full stop, a comma or BUT. Inventing ELIZA (Table 1.1) dates the “but” delimiter to 1965b: the flowcharts of 1965a show “.” and “,” only.',

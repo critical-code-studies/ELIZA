@@ -2,7 +2,7 @@
  * tour.js - this bench's guided tour: its stops, and the offer made on a first visit. The
  * tour itself is bench-kit's (kit/tours.js), which reads them from SW.BENCH. A stop: title,
  * text, and where to go: v (version), tab, find (a pattern for the line to select in Read),
- * b (Compare's other version), focus (a selector to outline).
+ * b (Collate's other version), focus (a selector to outline).
  */
 (function (root) {
   'use strict';
