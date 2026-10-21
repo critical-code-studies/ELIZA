@@ -149,6 +149,8 @@
       tryText: 'Each word is looked up with `HASH.(WORD,5)`', code: '`HASH.(WORD,5)`',
       caption: 'A link from an annotation on the DOCTOR script to one on the 1965b source. The 1965b annotation lists it under Linked from'
     },
+    // Collate's line in Versions ▾: the versions here are MAD-SLIP and scripts, so no Lisp mode
+    words: { collate: 'Two versions collated: line by line, and by routine (decks, functions and script keywords)' },
     compare: { comment: 'R', normalised: false, reading: 'Reading',
                supplied: ['support files', 'Include the support files, not only the program files'] },
     comparePrefix: 'ELIZA: ',
