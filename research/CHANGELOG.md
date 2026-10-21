@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.98 (2026-10-22)
+
+- The kit at 0.74.3: Collate's generated line names By function only where a version held is Lisp (ELIZA keeps its own words.collate).
+
 ## 0.1.97 (2026-10-22)
 
 - The kit at 0.74.2: Collate's line in Versions ▾ names the modes the bench offers. ELIZA sets its own (words.collate): line by line, and by routine (decks, functions and script keywords), since none of its versions is Lisp.
