@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.94 (2026-10-21)
+
+- The kit at 0.72.0: ◐ goes to a remembered theme of the other kind only if it is still of that kind, else to the bench's first theme of that kind.
+
 ## 0.1.93 (2026-10-21)
 
 - The kit at 0.71.0: the Book view for benches with documents (none here); Read's 📖 Book only where a version has a document.
