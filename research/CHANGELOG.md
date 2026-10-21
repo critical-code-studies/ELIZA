@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.87 (2026-10-21)
+
+- The kit at 0.66.3: a submenu opens as soon as the pointer reaches it; the list the pointer is heading into stays open while it crosses other items.
+
 ## 0.1.86 (2026-10-19)
 
 - The kit at 0.66.2: Interlisp read by definition with ' as QUOTE only at an atom's start, its font codes stripped, and PUTPROPS and RPLQQ read as properties; an Implementations entry can name its Lisp reader.
