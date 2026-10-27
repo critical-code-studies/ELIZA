@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.104 (2026-10-27)
+
+- The kit at 0.83.0 (project files and CCS Workbench sessions, for editable benches; nothing changes here).
+
 ## 0.1.103 (2026-10-27)
 
 - The kit at 0.82.0 (versions built from files, for editable benches; nothing changes here).
