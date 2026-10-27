@@ -133,7 +133,7 @@
       var i = posts.findIndex(function (x) { return x.slug === slug; });
       if (i < 0) { art.innerHTML = '<p>Post not found. <a href="../blog.html">All posts &rarr;</a></p>'; return; }
       var p = posts[i], prev = posts[i - 1], next = posts[i + 1];
-      document.title = p.title + ' · ELIZA (1966)';
+      document.title = p.title + ' · ELIZA (1964–68)';
       fetch('posts/' + slug + '.md', { cache: 'no-cache' }).then(function (r) { return r.text(); }).then(function (text) {
         var fm = parseFrontMatter(text);
         var nav = '<div class="post-nav"><span>' +

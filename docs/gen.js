@@ -71,16 +71,16 @@ function page(opts) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>${opts.title} · ELIZA (1966)</title>
+  <title>${opts.title} · ELIZA (1964–68)</title>
   <meta name="description" content="${opts.desc}">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="ELIZA Archaeology Project">
-  <meta property="og:title" content="${opts.title} · ELIZA (1966)">
+  <meta property="og:title" content="${opts.title} · ELIZA (1964–68)">
   <meta property="og:description" content="${opts.desc}">
   <meta property="og:image" content="${SITE}/assets/images/share-card.png?v=${V}">
   <meta property="og:url" content="${SITE}/">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="${opts.title} · ELIZA (1966)">
+  <meta name="twitter:title" content="${opts.title} · ELIZA (1964–68)">
   <meta name="twitter:description" content="${opts.desc}">
   <meta name="twitter:image" content="${SITE}/assets/images/share-card.png?v=${V}">
   <link rel="icon" type="image/svg+xml" href="${p}assets/favicon.svg?v=${V}">
@@ -760,7 +760,7 @@ write('dictionary.html', `<!DOCTYPE html>
   <meta charset="utf-8">
   <meta http-equiv="refresh" content="0; url=doctor.html#dictionary">
   <link rel="canonical" href="${SITE}/doctor.html">
-  <title>The DOCTOR dictionary &middot; ELIZA (1966)</title>
+  <title>The DOCTOR dictionary &middot; ELIZA (1964–68)</title>
 </head>
 <body>
   <p>The DOCTOR dictionary is now part of <a href="doctor.html#dictionary">the DOCTOR script page</a>. Redirecting&hellip;</p>
