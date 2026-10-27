@@ -21,15 +21,15 @@ text, and a bank of indicator lamps in the 7094 palette (the lamp red is the cor
 of the *Inventing ELIZA* book cover). The person types lower case; ELIZA answers in
 CAPITALS.
 
-- **Hero console** (`console.js`) — the hero panel is a working IBM 7094 console:
+- **Hero console** (`console.js`): the hero panel is a working IBM 7094 console:
   a beige chassis with a steel face, nameplate, live blinking indicator-register
   lamps, rocker toggle switches, and a recessed CRT readout. The recovered
   ELIZA-1965b.mad source lists faintly on a fanfold sheet behind it.
-- **Power down** (`console.js`) — the lit red POWER button runs a 7094 shutdown:
+- **Power down** (`console.js`): the lit red POWER button runs a 7094 shutdown:
   the lamps flurry and cut out as a Web Audio synth sings *Daisy Bell*, slowing and
   deepening like HAL 9000. A WHAT IS THIS? control opens a modal on the 1961 Bell
   Labs 7094 recording the scene alludes to.
-- **Easter egg** (`term.js`) — type the letters `e‑l‑i‑z‑a` anywhere and the
+- **Easter egg** (`term.js`): type the letters `e‑l‑i‑z‑a` anywhere and the
   DOCTOR wakes in an overlay, running the genuine 1966 script. Esc closes it.
 
 ## The site
@@ -98,9 +98,9 @@ see Anthony Hay's [C++ ELIZA](https://github.com/anthay/ELIZA).
 
 ## Sources
 
-- `sources/ELIZA-1965b.mad` — the recovered MAD-SLIP source.
-- `sources/DOCTOR.txt` — the 1966 CACM DOCTOR script (Anthony Hay transcription).
-- `docs/annotations.md` — close-reading annotations on the source.
+- `sources/ELIZA-1965b.mad`: the recovered MAD-SLIP source.
+- `sources/DOCTOR.txt`: the 1966 CACM DOCTOR script (Anthony Hay transcription).
+- `docs/annotations.md`: close-reading annotations on the source.
 
 ## Adding a blog post (for co-authors)
 
