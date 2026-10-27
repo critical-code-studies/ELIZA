@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Using the ELIZA Research Bench</title>
+  <meta name="description" content="How to use the ELIZA Research Bench: reading Weizenbaum's ELIZA in its versions, collating them, running the bench locally, and setting up the Hypothesis and GitHub tokens for annotation and the paratext archive.">
+  <meta name="theme-color" content="#14161b">
+  <meta property="og:title" content="Using the ELIZA Research Bench">
+  <meta property="og:description" content="Reading, collating and annotating ELIZA's versions in the browser: quick start, examples, tokens and troubleshooting.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://findingeliza.org/research/usage.html">
+  <meta property="og:image" content="https://findingeliza.org/research/docs/usage/cover-square.jpg">
+  <link rel="icon" type="image/svg+xml" href="img/icon.svg">
+
+  <!-- the theme before first paint: a stored choice, else dark -->
+  <script>
+    (function () {
+      var s = null;
+      try { s = localStorage.getItem('eliza-usage-theme'); } catch (e) {}
+      document.documentElement.setAttribute('data-theme', s === 'light' ? 'light' : 'dark');
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+
+  <style>
+    /* dark is the default; light by the toggle, or by the system where scripts do not run */
+    :root, :root[data-theme="dark"] {
+      --bg: #14161b; --surface: #1b1e25; --surface-alt: #22262f; --ink: #e8e3d7; --muted: #9a9c95;
+      --accent: #ef6f44; --accent-hover: #ff8a62; --on-accent: #14161b; --rule: #2c3038; --code-bg: #0f1115;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.35);
+      --serif: "Source Serif 4", Georgia, "Iowan Old Style", serif;
+      --mono: "IBM Plex Mono", "SF Mono", Menlo, Consolas, monospace;
+      color-scheme: dark;
+    }
+    @media (prefers-color-scheme: light) {
+      :root:not([data-theme]) {
+        --bg: #f6f2e9; --surface: #fffdf8; --surface-alt: #efe7d8; --ink: #141518; --muted: #5b5d66;
+        --accent: #b8431f; --accent-hover: #93351a; --on-accent: #fff; --rule: #e2d9c8; --code-bg: #f1ebdf;
+        --shadow: 0 1px 2px rgba(20,21,24,.04), 0 8px 28px rgba(20,21,24,.06);
+        color-scheme: light;
+      }
+    }
+    :root[data-theme="light"] {
+      --bg: #f6f2e9; --surface: #fffdf8; --surface-alt: #efe7d8; --ink: #141518; --muted: #5b5d66;
+      --accent: #b8431f; --accent-hover: #93351a; --on-accent: #fff; --rule: #e2d9c8; --code-bg: #f1ebdf;
+      --shadow: 0 1px 2px rgba(20,21,24,.04), 0 8px 28px rgba(20,21,24,.06);
+      color-scheme: light;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); font-size: 18px; line-height: 1.65; -webkit-font-smoothing: antialiased; transition: background-color .25s ease, color .25s ease; }
+    a { color: var(--accent); text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent); text-underline-offset: 3px; }
+    a:hover { color: var(--accent-hover); text-decoration-color: currentColor; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+
+    .site-header { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 85%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--rule); }
+    .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 64px; }
+    .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; }
+    .brand img { width: 30px; height: 30px; border-radius: 6px; }
+    .brand span { font-family: var(--mono); font-size: .86rem; letter-spacing: .14em; text-transform: uppercase; }
+    .site-nav { display: flex; align-items: center; gap: 22px; font-size: .92rem; }
+    .site-nav a { color: var(--muted); text-decoration: none; }
+    .site-nav a:hover { color: var(--ink); }
+    .theme-toggle { background: none; border: 1px solid var(--rule); border-radius: 999px; color: var(--muted); width: 34px; height: 34px; display: grid; place-items: center; cursor: pointer; }
+    .theme-toggle:hover { color: var(--ink); border-color: var(--muted); }
+    .theme-toggle svg { width: 16px; height: 16px; }
+    .icon-moon { display: none; }
+    :root[data-theme="light"] .icon-moon { display: block; }
+    :root[data-theme="light"] .icon-sun { display: none; }
+
+    .intro { padding: 88px 0 64px; border-bottom: 1px solid var(--rule); }
+    .eyebrow { font-family: var(--mono); font-size: .74rem; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin: 0 0 18px; }
+    h1 { font-weight: 600; font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.05; margin: 0 0 22px; letter-spacing: -.01em; }
+    .lede { max-width: 40rem; font-size: 1.12rem; color: var(--muted); margin: 0 0 30px; }
+    .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 20px; border-radius: 999px; font-family: var(--mono); font-size: .8rem; letter-spacing: .04em; text-decoration: none; border: 1px solid var(--ink); color: var(--ink); background: transparent; transition: all .2s ease; }
+    .btn:hover { background: var(--ink); color: var(--bg); }
+    .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+    .btn.primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: var(--on-accent); }
+
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px 18px; margin: 44px 0 0; padding: 20px 0 0; border-top: 1px solid var(--rule); }
+    .stats div { display: flex; flex-direction: column; }
+    .stats b { font-variant-numeric: lining-nums; font-weight: 600; font-size: 2rem; line-height: 1; color: var(--accent); }
+    .stats span { font-family: var(--mono); font-size: .68rem; letter-spacing: .05em; color: var(--muted); margin-top: 6px; line-height: 1.4; }
+
+    section { padding: 88px 0; }
+    section + section { border-top: 1px solid var(--rule); }
+    .section-head { display: grid; grid-template-columns: 180px 1fr; gap: 32px; margin-bottom: 36px; }
+    .section-head .num { font-family: var(--mono); font-size: .74rem; letter-spacing: .2em; color: var(--accent); padding-top: 12px; text-transform: uppercase; }
+    h2 { font-weight: 600; font-size: clamp(1.8rem, 3.6vw, 2.5rem); line-height: 1.1; margin: 0; }
+    h3 { font-weight: 600; font-size: 1.3rem; line-height: 1.25; margin: 0 0 10px; }
+    h4 { font-family: var(--mono); font-weight: 500; font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 22px 0 8px; }
+    .indent { margin-left: 212px; }
+    .prose { max-width: 42rem; }
+    .prose p, .card p { margin: 0 0 1em; }
+    ol.steps, ul.plain { margin: 0 0 1em; padding-left: 1.3em; }
+    ol.steps li, ul.plain li { margin-bottom: .45em; }
+    code { font-family: var(--mono); font-size: .86em; background: var(--code-bg); border: 1px solid var(--rule); border-radius: 4px; padding: 1px 5px; }
+    .kbd { font-family: var(--mono); font-size: .86em; }
+
+    .cmd { position: relative; margin: 0 0 1.2em; }
+    .cmd pre { margin: 0; background: var(--code-bg); border: 1px solid var(--rule); border-radius: 10px; padding: 16px 18px; padding-right: 76px; overflow-x: auto; font-family: var(--mono); font-size: .84rem; line-height: 1.6; color: var(--ink); }
+    .cmd .copy { position: absolute; top: 10px; right: 10px; font-family: var(--mono); font-size: .68rem; letter-spacing: .06em; background: var(--surface); color: var(--muted); border: 1px solid var(--rule); border-radius: 6px; padding: 4px 9px; cursor: pointer; }
+    .cmd .copy:hover { color: var(--ink); border-color: var(--muted); }
+    .out { margin: 0 0 1.2em; background: transparent; border-left: 3px solid var(--accent); padding: 4px 0 4px 16px; font-family: var(--mono); font-size: .82rem; line-height: 1.6; color: var(--muted); white-space: pre-wrap; overflow-wrap: anywhere; }
+    .label { font-family: var(--mono); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 6px; }
+
+    .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .card { background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; padding: 26px 28px; box-shadow: var(--shadow); }
+    .card.wide { grid-column: 1 / -1; }
+    .card, .cards > * { min-width: 0; }
+    .card code, table.errs td, .card dd { overflow-wrap: anywhere; }
+    .card dl { display: grid; grid-template-columns: 1fr; gap: 2px; margin: 0; font-size: .95rem; }
+    .card dd { margin: 0 0 12px; }
+    .card dt { font-family: var(--mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding-top: 4px; }
+    .example + .example { margin-top: 56px; }
+
+    figure { margin: 0; }
+    figure img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 10px; }
+    figcaption { font-family: var(--mono); font-size: .74rem; line-height: 1.5; color: var(--muted); margin-top: 10px; }
+    .shots { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px 24px; }
+
+    table.errs { width: 100%; border-collapse: collapse; font-size: .92rem; margin: 6px 0 0; }
+    table.errs th, table.errs td { text-align: left; vertical-align: top; padding: 10px 12px; border-top: 1px solid var(--rule); }
+    table.errs th { font-family: var(--mono); font-weight: 500; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); border-top: none; }
+    table.errs td:first-child { font-family: var(--mono); font-size: .8rem; width: 46%; }
+
+    .trouble { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 48px; }
+    .trouble li { padding: 22px 0; border-top: 1px solid var(--rule); }
+    .trouble b { display: block; font-size: 1.08rem; font-weight: 600; margin-bottom: 6px; }
+    .trouble span { color: var(--muted); font-size: .96rem; }
+
+    .related { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .related a { display: block; padding: 24px; border: 1px solid var(--rule); border-radius: 14px; text-decoration: none; color: var(--ink); background: var(--surface); transition: border-color .2s ease; }
+    .related a:hover { border-color: var(--accent); color: var(--ink); }
+    .related b { font-size: 1.2rem; font-weight: 600; display: block; margin-bottom: 4px; }
+    .related span { color: var(--muted); font-size: .93rem; }
+    .related .url { display: block; margin-top: 12px; font-family: var(--mono); font-size: .7rem; color: var(--accent); }
+
+    .site-footer { border-top: 1px solid var(--rule); padding: 40px 0 56px; font-size: .9rem; color: var(--muted); }
+    .site-footer .wrap { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .site-footer p { margin: 0; }
+
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+    :target { scroll-margin-top: 84px; }
+
+    @media (max-width: 900px) {
+      .section-head { grid-template-columns: 1fr; gap: 10px; }
+      .section-head .num { padding-top: 0; }
+      .indent { margin-left: 0; }
+      .cards, .shots, .trouble, .related { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      body { font-size: 17px; }
+      .wrap { padding: 0 16px; }
+      .site-nav { gap: 14px; }
+      .site-nav .hide-sm { display: none; }
+      section { padding: 64px 0; }
+      .intro { padding: 56px 0 48px; }
+      .card { padding: 22px; }
+      table.errs td:first-child { width: auto; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Open the ELIZA Research Bench">
+      <img src="img/icon.svg" alt="">
+      <span>ELIZA Research Bench</span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#quick-start">Quick start</a>
+      <a class="hide-sm" href="#credentials">Tokens</a>
+      <a class="hide-sm" href="#troubleshooting">Troubleshooting</a>
+      <a href="./">Open the bench</a>
+      <button class="theme-toggle" type="button" aria-label="Switch between light and dark" title="Switch between light and dark">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <div class="intro">
+    <div class="wrap">
+      <p class="eyebrow">Usage · bench 0.1.102 · bench-kit 0.80.0</p>
+      <h1>Using the ELIZA Research Bench</h1>
+      <p class="lede">The bench reads Joseph Weizenbaum’s ELIZA (MIT, 1964–68) in its surviving versions, in the browser, with nothing to install. This page covers the steps, three worked examples, the two optional tokens, and the problems people meet.</p>
+      <div class="cta">
+        <a class="btn primary" href="./">Open the bench</a>
+        <a class="btn" href="https://github.com/critical-code-studies/ELIZA">Source on GitHub</a>
+      </div>
+      <div class="stats">
+        <div><b>409</b><span>lines of MAD-SLIP in the 1965b source</span></div>
+        <div><b>21</b><span>versions, scripts and conversations on the bench</span></div>
+        <div><b>139</b><span>later implementations catalogued</span></div>
+        <div><b>142</b><span>tests passing</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="what">
+    <div class="wrap">
+      <div class="section-head reveal"><div class="num">01 · What it is</div><h2>A bench for reading ELIZA’s code</h2></div>
+      <div class="prose indent reveal">
+        <p>The ELIZA Research Bench presents the texts of ELIZA as they survive: the 1965 MAD-SLIP source recovered from Weizenbaum’s papers at MIT, its SLIP library, the DOCTOR scripts of 1965 and 1966, and the conversations printed from them. It links every name in the code to where it is defined and used, collates any two versions line by line or by routine, and shares annotations through a private Hypothesis group, alongside a catalogue of 139 later implementations of ELIZA.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="quick-start">
+    <div class="wrap">
+      <div class="section-head reveal"><div class="num">02 · Quick start</div><h2>Using the bench</h2></div>
+      <div class="indent reveal">
+        <h3>In the browser</h3>
+        <p class="prose">Prerequisite: a current desktop browser. Reading, collating, citing and exporting need no account and no token.</p>
+        <ol class="steps prose">
+          <li>Open <a href="https://findingeliza.org/research/">findingeliza.org/research/</a>. It opens on ELIZA 1965b, the MAD-SLIP source.</li>
+          <li>Choose a text in the <b>Version</b> menu at the top: the program, a DOCTOR script, a conversation or the SLIP library.</li>
+          <li>In <b>Read</b>, click a name in the code for where it is defined and used. Type in <b>Find</b> for text or a <span class="kbd">/regex/</span>.</li>
+          <li>Click a line (shift-click for a range) to select it. The bar at the foot cites it, copies a link to it, exports it to Word or Markdown, or makes a figure of it.</li>
+          <li>Open <b>Versions ▾ ▸ Collate</b> to set two texts side by side, line by line or by routine.</li>
+          <li>Open <b>Implementations</b> for the catalogue of later ELIZAs: a list, a family tree, a feature matrix and a comparison of any two.</li>
+        </ol>
+
+        <h3 style="margin-top:36px">On your own machine</h3>
+        <p class="prose">Prerequisites: <code>git</code> and Python 3. To run the tests as well: Node 22 and Google Chrome or Chromium (no packages to install). The clone is about 76 MB. The bench’s shared code, bench-kit, is a git submodule, hence <code>--recurse-submodules</code>.</p>
+        <div class="cmd"><pre>git clone --recurse-submodules https://github.com/critical-code-studies/ELIZA.git
+cd ELIZA
+python3 -m http.server 8000</pre><button class="copy" type="button">Copy</button></div>
+        <p class="prose">Then open <code>http://localhost:8000/research/</code>. The bench has to be served over HTTP; opened as a file it stops at “Could not load” (see <a href="#troubleshooting">Troubleshooting</a>). To run the tests, from the same folder:</p>
+        <div class="cmd"><pre>node research/kit/tools/test.js</pre><button class="copy" type="button">Copy</button></div>
+        <p class="label">Output, 27 October 2026</p>
+        <div class="out">tests/annotations.html: 142 passed</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="examples">
+    <div class="wrap">
+      <div class="section-head reveal"><div class="num">03 · Examples</div><h2>Three worked examples</h2></div>
+      <div class="indent">
+        <div class="example reveal">
+          <h3>A line by its link: the BUT test in the 1965 source</h3>
+          <p class="prose">The parameter <code>l=0:267</code> selects line 267 of the version’s first file. This is the line where ELIZA treats a full stop, a comma and the word BUT as places to cut the input.</p>
+          <p class="label">Input</p>
+          <div class="cmd"><pre>https://findingeliza.org/research/?v=1965b&amp;l=0:267</pre><button class="copy" type="button">Copy</button></div>
+          <p class="label">Output: the selected line and the selection bar</p>
+          <div class="out">267  W'R WORD .E. $.$ .OR. WORD .E. $,$ .OR. WORD .E. $BUT$   000660
+[REF: EL65B, ELIZA-1965b.mad:267]  ✎ Annotate  ❝ Copy citation  🔗 Copy link  ⤓ Word  ⤓ Markdown  ▣ Figure  ★ Finding  ＋ My notes</div>
+          <figure><img src="docs/usage/ex1-line-267-dark.jpg" alt="The bench in Read view with line 267 of ELIZA 1965b highlighted and the selection bar at the foot" loading="lazy" width="1920" height="1200"><figcaption>Read view, ELIZA 1965b, line 267 selected. Bench 0.1.102, 27 October 2026.</figcaption></figure>
+        </div>
+
+        <div class="example reveal">
+          <h3>Collate: DOCTOR on TAPE 100 (1965) against DOCTOR in CACM (1966)</h3>
+          <p class="prose"><code>tab=compare</code> opens Collate; <code>v</code> and <code>b</code> name the two texts.</p>
+          <p class="label">Input</p>
+          <div class="cmd"><pre>https://findingeliza.org/research/?v=doctor65t100&amp;tab=compare&amp;b=doctor</pre><button class="copy" type="button">Copy</button></div>
+          <p class="label">Output: the summary line</p>
+          <div class="out">only in DOCTOR 1965 (TAPE 100) [REF: DOC65-T100] (12)  only in DOCTOR 1966 (CACM) [REF: DOC66] (191)  changed (37)  unchanged 193  58% of lines shared</div>
+          <figure><img src="docs/usage/ex2-collate-dark.jpg" alt="Collate view with DOCTOR 1965 (TAPE 100) on the left and DOCTOR 1966 (CACM) on the right, removed lines in red and added lines in green" loading="lazy" width="1920" height="1200"><figcaption>Collate, Text mode, unchanged lines folded. Bench 0.1.102, 27 October 2026.</figcaption></figure>
+        </div>
+
+        <div class="example reveal">
+          <h3>Implementations: two of Cosell’s DOCTOR scripts compared by function</h3>
+          <p class="prose"><code>iv=compare</code> opens the Implementations comparison; <code>ia</code> and <code>ib</code> are the two entries’ I-codes. Here, SCRIP 4 of 16 June 1966 against an earlier state of the same script, both from Peter Samson’s DECtape.</p>
+          <p class="label">Input</p>
+          <div class="cmd"><pre>https://findingeliza.org/research/?tab=implementations&amp;iv=compare&amp;ia=I-UM0AG&amp;ib=I-HDTE9</pre><button class="copy" type="button">Copy</button></div>
+          <p class="label">Output: the two summaries</p>
+          <div class="out">I-UM0AG.txt against I-HDTE9.txt: 226 lines in common, 100 only in A, 23 only in B; similarity 79% (lines compared without case or spacing).
+
+By function
+123 definitions in common, 115 identical as token sequences (DEFINEQ, DEFPROP and DEFUN read alike, parentheses ignored); 14 only in A, 1 only in B.</div>
+          <figure><img src="docs/usage/ex3-implementations-compare-dark.jpg" alt="The Implementations tab comparing I-UM0AG and I-HDTE9, with a feature table and the line and function summaries" loading="lazy" width="1920" height="1200"><figcaption>Implementations ▸ Compare, I-UM0AG against I-HDTE9. Bench 0.1.102, 27 October 2026.</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="screenshots">
+    <div class="wrap">
+      <div class="section-head reveal"><div class="num">04 · Screenshots</div><h2>The bench, dark and light</h2></div>
+      <div class="indent reveal">
+        <p class="prose">The bench opens in its dark 7094 theme. ◐ in the top bar switches to your last light theme; ⚙ Settings ▸ Display chooses among seven.</p>
+        <div class="shots">
+          <figure><img src="docs/usage/ex1-line-267-dark.jpg" alt="Read view in the dark 7094 theme" loading="lazy" width="1920" height="1200"><figcaption>Read view, dark (7094 theme). Bench 0.1.102.</figcaption></figure>
+          <figure><img src="docs/usage/ex1-line-267-light.jpg" alt="Read view in the light Listing paper theme, line 267 selected" loading="lazy" width="1920" height="1200"><figcaption>Read view, light (Listing paper theme). Bench 0.1.102.</figcaption></figure>
+          <figure><img src="docs/usage/settings-annotations-dark.jpg" alt="Settings dialog, Annotations pane, with the group ID and an empty API token field" loading="lazy" width="1920" height="1200"><figcaption>⚙ Settings ▸ Annotations: the Hypothesis token. Bench 0.1.102.</figcaption></figure>
+          <figure><img src="docs/usage/settings-paratexts-dark.jpg" alt="Settings dialog, Paratexts pane, with an empty GitHub token field and the token form link" loading="lazy" width="1920" height="1200"><figcaption>⚙ Settings ▸ Paratexts: the GitHub token. Bench 0.1.102.</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="credentials">
+    <div class="wrap">
+      <div class="section-head reveal"><div class="num">05 · Configuration and tokens</div><h2>The two tokens, and what they unlock</h2></div>
+      <div class="indent">
+        <div class="prose reveal">
+          <p>Reading, collating, citing, exporting and the Implementations catalogue need no token. Two optional tokens add the shared parts: a Hypothesis token for annotations, and a GitHub token for the paratext archive, which is open to the project team only. There are no API keys for a model or service to buy.</p>
+          <p>Both tokens are pasted into ⚙ Settings and kept in your browser’s local storage, for that browser and that address only. The bench is static files on GitHub Pages: there is nothing to configure on a server and no secret in the deployment, so the steps are the same on findingeliza.org and on <code>localhost</code>, but a token saved on one is not seen on the other.</p>
+        </div>
+        <div class="cards" style="margin-top:28px">
+          <div class="card reveal">
+            <h3>Hypothesis API token</h3>
+            <dl>
+              <dt>Provider</dt><dd>Hypothesis (hypothes.is). Free.</dd>
+              <dt>Unlocks</dt><dd>Publishing and reading annotations in the project’s private group. Without it, annotations are kept as drafts in this browser and can be exported or published later.</dd>
+              <dt>Get it</dt><dd>
+                <ol class="steps">
+                  <li>Make an account at <a href="https://hypothes.is/signup">hypothes.is/signup</a>.</li>
+                  <li>Ask the project for an invitation to the group, and open the link you are sent.</li>
+                  <li>Generate a token at <a href="https://hypothes.is/account/developer">hypothes.is/account/developer</a>.</li>
+                </ol></dd>
+              <dt>Where it goes</dt><dd>⚙ Settings ▸ Annotations ▸ <b>API token</b>. The group is filled in already. Then <b>Save</b>.</dd>
+              <dt>Check it</dt><dd><b>Test connection</b> answers “Connected as <i>your account</i>; group “<i>name</i>” found.”</dd>
+              <dt>Help in the bench</dt><dd>“New to this? How to join the group” and “Copy the steps to send”, in the same pane.</dd>
+            </dl>
+          </div>
+          <div class="card reveal">
+            <h3>GitHub fine-grained token</h3>
+            <dl>
+              <dt>Provider</dt><dd>GitHub. Free.</dd>
+              <dt>Unlocks</dt><dd>The Paratexts tab: the private archive of documents about ELIZA, in the repository <code>critical-code-studies/eliza_paratexts</code>, read and write.</dd>
+              <dt>Before you start</dt><dd>Accept the invitation to the <code>critical-code-studies</code> organisation (sent by email). GitHub does not let fine-grained tokens reach an organisation’s repositories for people added only as outside collaborators.</dd>
+              <dt>Get it</dt><dd>
+                <ol class="steps">
+                  <li>⚙ Settings ▸ Paratexts ▸ <b>Open the token form</b>. Its name, owner, a year’s expiry and Contents read and write are filled in.</li>
+                  <li>Under Repository access choose <b>Only select repositories</b>, then <b>eliza_paratexts</b>.</li>
+                  <li>Generate the token and copy it (it begins <code>github_pat_</code>).</li>
+                </ol></dd>
+              <dt>Where it goes</dt><dd>⚙ Settings ▸ Paratexts ▸ <b>GitHub token</b>. Then <b>Save</b>.</dd>
+              <dt>Check it</dt><dd>Open the <b>Paratexts</b> tab: the catalogue loads (415 items on 27 October 2026).</dd>
+              <dt>Rate limit</dt><dd>GitHub allows 5,000 API requests an hour for a signed-in user; the 403 message below names it.</dd>
+            </dl>
+          </div>
+          <div class="card wide reveal">
+            <h3>What the error messages mean</h3>
+            <table class="errs">
+              <thead><tr><th>The bench says</th><th>Meaning and fix</th></tr></thead>
+              <tbody>
+                <tr><td>The token was not accepted.</td><td>Hypothesis did not recognise the token: it was mistyped, revoked or regenerated. Hypothesis answers such a token as an anonymous visitor (checked with an invalid token). Paste the current one from the developer page.</td></tr>
+                <tr><td>Connected as … ; but that group was not found for this account.</td><td>The token works, but this account has not joined the group. Open the invitation link while signed in to that account.</td></tr>
+                <tr><td>Hypothesis <i>status</i>: …</td><td>Any other answer from Hypothesis, with its status code and the start of its message.</td></tr>
+                <tr><td>The GitHub token was refused: check it in ⚙ Settings.</td><td>GitHub answered 401 (“Bad credentials”, checked with an invalid token): the token is wrong, deleted or expired. Make a new one from the token form.</td></tr>
+                <tr><td>GitHub refused: the token may lack write access to critical-code-studies/eliza_paratexts, or the rate limit is reached.</td><td>A 403. Check that the token has Contents read and write, or wait for the hourly limit to reset.</td></tr>
+                <tr><td>Not found: the token may not reach critical-code-studies/eliza_paratexts (ask to be added to the crew).</td><td>A 404: GitHub hides a private repository from anyone it does not admit (an unauthenticated request gets 404, checked). The token was made without choosing eliza_paratexts, or your organisation invitation is not yet accepted.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="troubleshooting">
+    <div class="wrap">
+      <div class="section-head reveal"><div class="num">06 · Troubleshooting</div><h2>Symptom, then fix</h2></div>
+      <ul class="trouble indent reveal">
+        <li><b>The page says “Could not load” and shows no code</b><span>The bench was opened as a file (<code>file://…/research/index.html</code>). Browsers block a file page from fetching the texts (the console shows “blocked by CORS policy”). Serve the folder with <code>python3 -m http.server 8000</code> and open <code>http://localhost:8000/research/</code>.</span></li>
+        <li><b>The bench does not start after cloning</b><span>The clone was made without <code>--recurse-submodules</code>, so <code>research/kit</code> is empty. In the repository run <code>git submodule update --init</code>.</span></li>
+        <li><b>“Address already in use” when starting the server</b><span>Another program has port 8000. Start on another port, for example <code>python3 -m http.server 8080</code>, and open <code>http://localhost:8080/research/</code>.</span></li>
+        <li><b>The bench looks out of date after a release</b><span>The browser is showing a cached copy. Reload the page, bypassing the cache (Shift with Reload). ⚙ Settings ▸ You ▸ “Tell me when a newer release is live” puts a bar at the foot of the page when one is.</span></li>
+        <li><b>A token that worked has gone</b><span>Tokens are kept per browser and per address: another browser, another computer, or <code>localhost</code> instead of findingeliza.org has none. Safari clears a site’s stored data after seven days without a visit. GitHub tokens from the form expire after a year. Paste the token again, or make a new one.</span></li>
+        <li><b>Annotations stay as drafts</b><span>No Hypothesis token, or the account has not joined the group. Run <b>Test connection</b> in ⚙ Settings ▸ Annotations and follow its message (table above).</span></li>
+        <li><b>The tests do not run</b><span><code>research/kit/tools/test.js</code> drives headless Chrome and needs Node 22 and Google Chrome or Chromium. Run it from the repository’s top folder.</span></li>
+        <li><b>Paratexts asks for a token you cannot get</b><span>The archive is for the project team. The rest of the bench, including the Implementations catalogue and its public files, works without it.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="links">
+    <div class="wrap">
+      <div class="section-head reveal"><div class="num">07 · Links</div><h2>Source, licence and the wider project</h2></div>
+      <div class="indent">
+        <div class="related reveal">
+          <a href="./"><b>The bench</b><span>Open the ELIZA Research Bench.</span><span class="url">findingeliza.org/research/</span></a>
+          <a href="https://findingeliza.org/"><b>Finding ELIZA</b><span>The project’s site: the program, the people, the book and Try ELIZA.</span><span class="url">findingeliza.org</span></a>
+          <a href="https://github.com/critical-code-studies/ELIZA"><b>Source</b><span>The site and the bench. The repository has no licence file; the texts carry their own rights, given in the bench’s About box.</span><span class="url">github.com/critical-code-studies/ELIZA</span></a>
+          <a href="https://github.com/critical-code-studies/bench-kit"><b>bench-kit</b><span>The shared code of the research benches. GNU General Public License v3.0.</span><span class="url">github.com/critical-code-studies/bench-kit</span></a>
+          <a href="https://critical-code-studies.github.io/"><b>Critical Code Studies</b><span>Readings of ELIZA, Spacewar! and SHRDLU, and the method behind them.</span><span class="url">critical-code-studies.github.io</span></a>
+          <a href="https://vector-humanities.github.io/"><b>Vector Humanities</b><span>The research projects and instruments this bench belongs to.</span><span class="url">vector-humanities.github.io</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>The ELIZA Archaeology Project: David M. Berry, Sarah Ciston, Anthony C. Hay, Mark C. Marino, Peter Millican, Arthur I. Schwarz, Jeff Shrager, Peggy Weil.</p>
+    <p><a href="https://findingeliza.org/">findingeliza.org</a></p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    document.querySelector('.theme-toggle').addEventListener('click', function () {
+      var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('eliza-usage-theme', next); } catch (e) {}
+    });
+    document.querySelectorAll('.cmd .copy').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var t = b.parentNode.querySelector('pre').textContent;
+        var done = function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1400); };
+        if (navigator.clipboard) navigator.clipboard.writeText(t).then(done, function () {}); else done();
+      });
+    });
+    var els = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -8% 0px' });
+      els.forEach(function (el) { io.observe(el); });
+    } else {
+      els.forEach(function (el) { el.classList.add('in'); });
+    }
+  })();
+</script>
+</body>
+</html>
