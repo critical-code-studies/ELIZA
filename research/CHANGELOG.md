@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.102 (2026-10-27)
+
+- Implementations: I-MQ4XE, ELIZA in APL at IBM Israel, c. 1973, the program of David Avidan's My Electronic Psychiatrist (1974), attested; evidence P-R4LPT.
+
 ## 0.1.101 (2026-10-27)
 
 - The kit at 0.80.0 (Book work for prose benches; nothing changes here).

@@ -8797,6 +8797,61 @@
      "sha1": "1ecc629969c0810cccf47239f3df5be2c731e6d1"
     }
    ]
+  },
+  {
+   "code": "I-MQ4XE",
+   "title": "ELIZA in APL at IBM Israel, Tel Aviv, c. 1973: the program of David Avidan’s My Electronic Psychiatrist (1974)",
+   "creator": "",
+   "contributor": "",
+   "date": "c. 1973",
+   "dateBasis": "Hazman Hazeh (Boaz Lavi) dates Avidan’s conversations to 1973; the book was published in 1974. A LiveJournal review of 2001 says the 1960s.",
+   "description": "Known only from David Avidan’s My Electronic Psychiatrist (1974), eight conversations with ELIZA running DOCTOR, in English with his Hebrew translation. Wikipedia’s ELIZA article calls the program an APL implementation of ELIZA, citing Avidan’s Collected Poems, vol. 3 (2010). The program is not held and its author is not known. The sessions were at IBM Israel; an account whose source is still to be confirmed names the machine as an IBM System/370 Model 145 in Tel Aviv, with access arranged by IBM Israel’s spokesman Zvi Yanai. APL ran on the System/370 under IBM’s APL.SV, and APL has no list processing of SLIP’s kind, so an APL ELIZA would have been written anew rather than translated from the MAD-SLIP source; this is inferred. Eran Hadas (Utopia, 2022) compared ELIZA’s code with the transcripts. Leads: the book’s foreword; Mahshavot, IBM Israel’s magazine, edited by Yanai; Hadas.",
+   "language": "en",
+   "progLanguage": "APL",
+   "machine": "IBM System/370 (Model 145 as reported), IBM Israel, Tel Aviv",
+   "family": "other",
+   "status": "attested",
+   "features": {
+    "delimit": null,
+    "newkey": null,
+    "stack": null,
+    "memory": null,
+    "memoryPeriod": null,
+    "xfremd": null,
+    "apoligize": null,
+    "scriptSeparate": null
+   },
+   "rights": "Program not held.",
+   "source": "Avidan, My Electronic Psychiatrist (1974): paratext P-R4LPT",
+   "archive": "",
+   "archiveUrl": "",
+   "parents": [
+    {
+     "code": "v:1966",
+     "relation": "reimplementation",
+     "via": null,
+     "confidence": "probable",
+     "evidence": "ELIZA with DOCTOR, in APL; the conversations follow DOCTOR’s replies (Hadas, 2022)."
+    }
+   ],
+   "paratexts": [
+    "P-R4LPT"
+   ],
+   "genre": "software",
+   "type": "Software",
+   "tags": [
+    "APL",
+    "IBM Israel",
+    "Avidan"
+   ],
+   "accessioned": "2026-10-27",
+   "added": "2026-10-27T00:00:00Z",
+   "addedBy": "DMB",
+   "updated": "2026-10-27T00:00:00Z",
+   "updatedBy": "DMB",
+   "kind": "missing",
+   "publish": "entry",
+   "children": []
   }
  ],
  "statuses": [
