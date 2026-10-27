@@ -78,7 +78,7 @@ Tests (Node 22 and Google Chrome or Chromium; no packages): `node research/kit/t
 
 **Releasing the bench:** `node research/kit/tools/release.js <version> "<changelog line>" [--kit <tag>]` sets the `?v=` on every script and stylesheet, adds the line to `research/CHANGELOG.md`, and with `--kit` moves the submodule to that bench-kit release.
 
-**Licence.** bench-kit is GPL-3.0. This repository has no licence file; the texts carry their own rights, given in the bench's About box.
+**Licence.** The site and the bench are under the GNU General Public License v3.0 (see [`LICENSE`](LICENSE)), as is bench-kit. The texts they present carry their own rights, given in the bench's About box.
 
 ## The ELIZA engine
 
