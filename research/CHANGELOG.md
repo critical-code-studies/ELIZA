@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.106 (2026-10-28)
+
+- The kit at 0.84.1 (an optional DOI row in the About box; ELIZA sets none yet).
+
 ## 0.1.105 (2026-10-27)
 
 - The kit at 0.84.0: Read's Beside menu sets two files of a version side by side, each scrolling on its own.
