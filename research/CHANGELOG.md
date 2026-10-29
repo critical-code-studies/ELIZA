@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.108 (2026-10-29)
+
+- The kit at 0.84.4 (the README's DOI badge placed at each release).
+
 ## 0.1.107 (2026-10-29)
 
 - The kit at 0.84.2; the bench's Zenodo DOI (10.5281/zenodo.23762620) and badge in the About box, and Cite as ends with the DOI.
