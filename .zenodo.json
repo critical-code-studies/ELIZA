@@ -1,0 +1,19 @@
+{
+  "title": "ELIZA: findingeliza.org and the ELIZA Research Bench",
+  "upload_type": "software",
+  "description": "The website of the ELIZA Archaeology Project (findingeliza.org) and the ELIZA Research Bench, which reads Joseph Weizenbaum's ELIZA (MIT, 1964–68) in its surviving versions: the 1965 MAD-SLIP source, its SLIP library, the DOCTOR scripts of 1965 and 1966, and the conversations printed from them. It includes a JavaScript ELIZA running the 1966 DOCTOR script and the Implementations catalogue of later ELIZAs.",
+  "creators": [
+    {"name": "Berry, David M."},
+    {"name": "Ciston, Sarah"},
+    {"name": "Hay, Anthony C."},
+    {"name": "Marino, Mark C."},
+    {"name": "Millican, Peter"},
+    {"name": "Schwarz, Arthur I."},
+    {"name": "Shrager, Jeff"},
+    {"name": "Weil, Peggy"}
+  ],
+  "keywords": ["ELIZA", "Joseph Weizenbaum", "critical code studies", "MAD-SLIP", "DOCTOR", "chatbot", "software history"],
+  "related_identifiers": [
+    {"identifier": "https://findingeliza.org/", "relation": "isDocumentedBy", "resource_type": "publication-other"}
+  ]
+}
