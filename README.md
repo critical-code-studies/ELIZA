@@ -121,3 +121,9 @@ build): `docs/gen.js`. Edit it and run `node docs/gen.js` to rebuild Home, Overv
 Code, DOCTOR, Versions, Try, People, Talks, Book, Bibliography, About, Links and the
 Blog shells. Editing the emitted HTML directly is also fine. `docs/gen-md.js` only
 seeded the initial 11 Markdown posts; do not re-run it once co-authors edit posts.
+
+## DOI
+
+The site and the bench are archived on Zenodo from each GitHub Release, under one DOI for every version: [10.5281/zenodo.23762620](https://doi.org/10.5281/zenodo.23762620).
+
+[![DOI](https://zenodo.org/badge/1277075263.svg)](https://doi.org/10.5281/zenodo.23762620)

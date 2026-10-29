@@ -1018,6 +1018,8 @@ write('about.html', page({
         <img src="assets/images/weizenbaum-mit-80s.jpg" alt="Joseph Weizenbaum at MIT in the 1980s" loading="lazy">
         <figcaption>Joseph Weizenbaum at MIT in the 1980s.</figcaption>
       </figure>
+      <p>The site and the <a href="research/">ELIZA Research Bench</a> are archived on Zenodo from each release of the <a href="https://github.com/critical-code-studies/ELIZA">repository</a>, under one DOI for every version: <a href="https://doi.org/10.5281/zenodo.23762620">doi.org/10.5281/zenodo.23762620</a>.</p>
+      <p><a href="https://doi.org/10.5281/zenodo.23762620"><img src="https://zenodo.org/badge/1277075263.svg" alt="DOI 10.5281/zenodo.23762620" height="20"></a></p>
 `}));
 
 // ---------------------------------------------------------------------------
