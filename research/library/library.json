@@ -7178,7 +7178,8 @@
    "lang": "en",
    "publisher": "Little Compton, RI : J.W. Lorbek Press",
    "url": "https://archive.org/details/offtopofmyheadal0000lorc",
-   "note": "Memoir in which the author recalls working with Weizenbaum on the development of ELIZA."
+   "note": "Memoir in which the author recalls working with Weizenbaum on the development of ELIZA.",
+   "thumb": "library/thumbs/L-N3RNC.jpg"
   },
   {
    "id": "L-N3UX6",
@@ -7200,7 +7201,8 @@
    "lang": "en",
    "publisher": "Springfield, Ill. : Thomas",
    "url": "https://archive.org/details/useofalternative0000lest",
-   "note": "Psychotherapy book that reviews Eliza or Doctor and studies of users' experiences, including the secretary story."
+   "note": "Psychotherapy book that reviews Eliza or Doctor and studies of users' experiences, including the secretary story.",
+   "thumb": "library/thumbs/L-N3YSE.jpg"
   },
   {
    "id": "L-N4TSO",
@@ -7223,7 +7225,8 @@
    "lang": "en",
    "publisher": "New York, Wiley-Interscience",
    "url": "https://archive.org/details/manmachinecommun00mead",
-   "note": "1970 book on man-machine communication that describes the Eliza program in chapter 5 as an example of natural language dialogue."
+   "note": "1970 book on man-machine communication that describes the Eliza program in chapter 5 as an example of natural language dialogue.",
+   "thumb": "library/thumbs/L-N5ZV7.jpg"
   },
   {
    "id": "L-N6PIO",
@@ -7234,7 +7237,8 @@
    "lang": "en",
    "publisher": "Cambridge [Cambridgeshire] ; New York : Cambridge University Press",
    "url": "https://archive.org/details/artificialintell0000hand",
-   "note": "Book on AI in psychiatry that takes ELIZA as its first case of computers in therapy and quotes Weizenbaum on the name."
+   "note": "Book on AI in psychiatry that takes ELIZA as its first case of computers in therapy and quotes Weizenbaum on the name.",
+   "thumb": "library/thumbs/L-N6PIO.jpg"
   },
   {
    "id": "L-NAJFC",
@@ -7357,7 +7361,8 @@
    "lang": "en",
    "publisher": "New York : Little, Brown and Company",
    "url": "https://archive.org/details/seventhsensepowe0000ramo",
-   "note": "Book on networks that recounts Weizenbaum writing DOCTOR and ELIZA and prints a discussion with the program."
+   "note": "Book on networks that recounts Weizenbaum writing DOCTOR and ELIZA and prints a discussion with the program.",
+   "thumb": "library/thumbs/L-NIGW5.jpg"
   },
   {
    "id": "L-NILSR",
@@ -7472,7 +7477,8 @@
    "lang": "en",
    "publisher": "Blue Ridge Summit, PA : TAB Books",
    "url": "https://archive.org/details/artificialintell0000brul",
-   "note": "AI textbook describing Eliza's mimicry of Rogerian conversation in its treatment of the Turing test."
+   "note": "AI textbook describing Eliza's mimicry of Rogerian conversation in its treatment of the Turing test.",
+   "thumb": "library/thumbs/L-NPN73.jpg"
   },
   {
    "id": "L-NPQOK",
@@ -11822,6 +11828,16 @@
    "in": "ELIZA Archaeology Project blog (guest post)",
    "url": "https://findingeliza.org/blog/post.html?p=9-guest-post-the-software-toolworks-eliza",
    "note": "The company's founder recounts ELIZA's part in the growth of The Software Toolworks from 1980."
+  },
+  {
+   "id": "L-ZMT4E",
+   "title": "[Report on the simulated schizophrenic patient Chris]",
+   "date": "1981-05-04",
+   "kind": "news",
+   "lang": "en",
+   "in": "Computerworld, v. 15 no. 18",
+   "url": "https://archive.org/details/sim_computerworld_1981-05-04_15_18",
+   "note": "Report on a teaching simulation describing how researchers connected Eliza, a simulated psychiatrist program from MIT, to it and watched the two converse."
   },
   {
    "id": "L-ZMT7K",
