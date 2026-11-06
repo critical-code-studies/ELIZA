@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.118 (2026-11-06)
+
+- The Library: duplicate records merged; further works.
+
 ## 0.1.117 (2026-11-06)
 
 - The Library: a link to the work's own page wherever one could be found.
