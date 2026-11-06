@@ -26,7 +26,7 @@
   {
    "id": "L-24NXF",
    "title": "Computer therapy",
-   "author": "Rosen, R. D.",
+   "author": "Rosen, Richard Dean",
    "date": "1976-05-28",
    "kind": "magazine",
    "lang": "en",
@@ -108,7 +108,7 @@
    "title": "Tekst maksymalnie ergodyczny",
    "author": "Borowiec, Łukasz",
    "kind": "thesis",
-   "lang": "po",
+   "lang": "pl",
    "url": "https://ruj.uj.edu.pl/xmlui/handle/item/192214",
    "note": "Thesis on ergodic text that discusses the ELIZA program among its examples, with Cortazar and Multi-User Dungeon games."
   },
@@ -597,7 +597,7 @@
   {
    "id": "L-3OFV3",
    "title": "A response to Donald Michie",
-   "author": "Weizenbaum, J.",
+   "author": "Weizenbaum, Joseph",
    "date": "1977",
    "kind": "article",
    "lang": "en",
@@ -620,7 +620,7 @@
   {
    "id": "L-3OUWP",
    "title": "Weizenbaum's Performance and Theory Modes: Lessons for Critical Engagement with Large Language Model Chatbots",
-   "author": "Salzano, Matthew; Yang, Misti",
+   "author": "Salzano, Matthew; Yang, Misti Hewatt",
    "date": "2023",
    "kind": "article",
    "lang": "en",
@@ -1056,7 +1056,7 @@
   {
    "id": "L-4VOAL",
    "title": "Inventing Eliza (panel)",
-   "author": "Weil, Peggy; Marino, Mark; Schwarz, Arthur I.; Evans, Claire",
+   "author": "Weil, Peggy; Marino, Mark C.; Schwarz, Arthur I.; Evans, Claire",
    "date": "2026-07-19",
    "kind": "talk",
    "lang": "en",
@@ -1167,7 +1167,7 @@
   {
    "id": "L-53C2Q",
    "title": "Artificial intelligence and natural man",
-   "author": "Boden, Margaret A",
+   "author": "Boden, Margaret A.",
    "date": "1977",
    "kind": "book",
    "lang": "en",
@@ -1188,7 +1188,7 @@
   {
    "id": "L-56BNA",
    "title": "Five Lectures on Artificial Intelligence",
-   "author": "Winograd, Terry",
+   "author": "Winograd, Terry A.",
    "date": "1974-09",
    "kind": "report",
    "lang": "en",
@@ -1326,7 +1326,7 @@
   {
    "id": "L-5LORJ",
    "title": "A Simulation in C++ of Joseph Weizenbaum’s 1966 ELIZA",
-   "author": "Hay, Anthony",
+   "author": "Hay, Anthony C.",
    "date": "2022",
    "kind": "web page",
    "url": "https://github.com/anthay/ELIZA",
@@ -1721,7 +1721,7 @@
   {
    "id": "L-6QGBY",
    "title": "Computerized Psychotherapy",
-   "author": "Suler, John",
+   "author": "Suler, John R.",
    "date": "1999-08",
    "kind": "web page",
    "lang": "en",
@@ -1757,7 +1757,7 @@
   {
    "id": "L-6SQYE",
    "title": "Talking to ELIZA on an ASR 33 Teletype",
-   "author": "Hay, Anthony",
+   "author": "Hay, Anthony C.",
    "date": "2024-03-15",
    "kind": "web page",
    "lang": "en",
@@ -1909,7 +1909,7 @@
   {
    "id": "L-76O5N",
    "title": "Painful conversations: Therapeutic chatbots and public capacities",
-   "author": "Yang, Misti",
+   "author": "Yang, Misti Hewatt",
    "date": "2020-03",
    "kind": "article",
    "lang": "en",
@@ -2151,7 +2151,7 @@
   {
    "id": "L-7UZIH",
    "title": "Computer Power and Human Reason (review)",
-   "author": "Smith, Alfred G.",
+   "author": "Smith, Alfred Glaze",
    "date": "1977",
    "kind": "review",
    "lang": "en",
@@ -3166,7 +3166,7 @@
   {
    "id": "L-CIXOK",
    "title": "ELIZA scriptwriter's manual: a manual for the use of the ELIZA conversational computer system",
-   "author": "Hayward, Paul R.",
+   "author": "Hayward, Paul Raymond",
    "date": "1968",
    "kind": "report",
    "lang": "en",
@@ -3969,7 +3969,7 @@
   {
    "id": "L-EF67V",
    "title": "Computer power and human reason",
-   "author": "Weizenbaum, J.",
+   "author": "Weizenbaum, Joseph",
    "date": "1976",
    "kind": "book",
    "lang": "en",
@@ -4069,7 +4069,7 @@
   {
    "id": "L-EODUR",
    "title": "A certain counting mechanism",
-   "author": "Hay, Anthony",
+   "author": "Hay, Anthony C.",
    "date": "2024-01-11",
    "kind": "web page",
    "lang": "en",
@@ -4090,7 +4090,7 @@
   {
    "id": "L-EQCYA",
    "title": "OUTLINE OF PAPER TO ACCOMPANY PROF. WEISENBAUM'S [sic] PAPER ON ELIZA",
-   "author": "Weizenbaum, J.",
+   "author": "Weizenbaum, Joseph",
    "kind": "report",
    "url": "https://sites.google.com/view/elizagen-org/news#h.ykbzq5nuiccs"
   },
@@ -4350,7 +4350,7 @@
   {
    "id": "L-FIMEE",
    "title": "Autonomous actors in networked collaborative virtual environments",
-   "author": "Pandzic, I.S.; Capin, T.K.; Lee, E.; Magnenat‐Thalmann, Nadia",
+   "author": "Pandzic, I.S.; Capin, T.K.; Lee, Edward Ashford; Magnenat‐Thalmann, Nadia",
    "date": "2002-11-27",
    "kind": "article",
    "lang": "en",
@@ -4480,7 +4480,7 @@
   {
    "id": "L-G2A5L",
    "title": "The SLIP API and ELIZA",
-   "author": "Schwarz, Arthur",
+   "author": "Schwarz, Arthur I.",
    "date": "2026-08-31",
    "kind": "web page",
    "lang": "en",
@@ -4491,7 +4491,7 @@
   {
    "id": "L-G32XD",
    "title": "Interactive consulting via natural language",
-   "author": "Shapiro, Stuart C.; Kwasny, S. C.",
+   "author": "Shapiro, Stuart C.; Kwasny, Stanley C.",
    "date": "1975",
    "kind": "article",
    "lang": "en",
@@ -4514,7 +4514,7 @@
   {
    "id": "L-G6BFA",
    "title": "Finding ELIZA: Rediscovering Weizenbaum's Source Code, Comments and Faksimiles",
-   "author": "Berry, David M.; Hay, Anthony; Millican, Peter; Shrager, Jeff",
+   "author": "Berry, David M.; Hay, Anthony C.; Millican, Peter; Shrager, Jeff",
    "date": "2023",
    "kind": "chapter",
    "lang": "en",
@@ -5116,7 +5116,7 @@
   {
    "id": "L-HUNVU",
    "title": "ELIZA is Turing Complete",
-   "author": "Hay, Anthony; Millican, Peter",
+   "author": "Hay, Anthony C.; Millican, Peter",
    "date": "2022-11-12",
    "kind": "web page",
    "lang": "en",
@@ -5392,7 +5392,7 @@
   {
    "id": "L-IJ4UN",
    "title": "ELIZA: A Simulation in C++ of Joseph Weizenbaum's 1966 ELIZA",
-   "author": "Hay, Anthony",
+   "author": "Hay, Anthony C.",
    "date": "2021-02-11",
    "kind": "web page",
    "lang": "en",
@@ -5510,7 +5510,7 @@
   {
    "id": "L-INE3C",
    "title": "Conversations about conversational code: on the collaborative critical code studies reading of ELIZA",
-   "author": "Marino, Mark C.; Weil, Peggy; Shrager, Jeff; Schwarz, Arthur I.; Hay, Anthony; Ciston, Sarah; Berry, David M.; Millican, Peter",
+   "author": "Marino, Mark C.; Weil, Peggy; Shrager, Jeff; Schwarz, Arthur I.; Hay, Anthony C.; Ciston, Sarah; Berry, David M.; Millican, Peter",
    "date": "2026-06-11",
    "kind": "article",
    "lang": "en",
@@ -5691,7 +5691,7 @@
   {
    "id": "L-J6QVU",
    "title": "Computer Power and Human Reason. From Judgment to Calculation. Joseph Weizenbaum",
-   "author": "Hunt, Earl",
+   "author": "Hunt, Earl B.",
    "date": "1977",
    "kind": "review",
    "lang": "en",
@@ -5792,7 +5792,7 @@
   {
    "id": "L-JIS5I",
    "title": "The Image of Man in Artificial Intelligence: A Conversation with Joseph Weizenbaum",
-   "author": "Porksen, Bernhard",
+   "author": "Pörksen, Bernhard",
    "date": "2023-10-23",
    "kind": "interview",
    "lang": "en",
@@ -6389,7 +6389,7 @@
   {
    "id": "L-KR3JK",
    "title": "ELIZA Reanimated: The world's first chatbot restored on the world's first time sharing system",
-   "author": "Lane, Rupert; Hay, Anthony; Schwarz, Arthur; Berry, David M.; Shrager, Jeff",
+   "author": "Lane, Rupert; Hay, Anthony C.; Schwarz, Arthur I.; Berry, David M.; Shrager, Jeff",
    "date": "2025-01-12",
    "kind": "preprint",
    "lang": "en",
@@ -7024,7 +7024,7 @@
   {
    "id": "L-MNO6O",
    "title": "Pygmalion Displacement: When Humanising AI Dehumanises Women",
-   "author": "Erscoi, Lelia; Kleinherenbrink, Annelies; Guest, Olivia",
+   "author": "Erscoi, Lelia A.; Kleinherenbrink, Annelies; Guest, Olivia",
    "date": "2023-02",
    "kind": "preprint",
    "lang": "en",
@@ -7145,7 +7145,7 @@
   {
    "id": "L-MWUYA",
    "title": "ELIZA Reanimated! The Original 1965 Chatbot Restored On An Emulated IBM 7094 Running MIT's CTSS",
-   "author": "Lane, Rupert; Hay, Anthony; Schwarz, Arthur; Shrager, Jeff",
+   "author": "Lane, Rupert; Hay, Anthony C.; Schwarz, Arthur I.; Shrager, Jeff",
    "date": "2024-12-25",
    "kind": "web page",
    "lang": "en",
@@ -7679,7 +7679,7 @@
   {
    "id": "L-NXVJA",
    "title": "Reading ELIZA: Understanding Weizenbaum through his code",
-   "author": "Shrager, Jeff; Schwarz, Arthur; Weil, Peggy; Marino, Mark; Berry, David; Ciston, Sarah; Hay, Anthony; Millican, Peter",
+   "author": "Shrager, Jeff; Schwarz, Arthur I.; Weil, Peggy; Marino, Mark C.; Berry, David M.; Ciston, Sarah; Hay, Anthony C.; Millican, Peter",
    "date": "2023-11-03",
    "kind": "talk",
    "lang": "en",
@@ -7755,7 +7755,7 @@
   {
    "id": "L-O5XLB",
    "title": "Chatter, with David M. Berry, Peggy Weil, Arthur Schwarz, Mark Marino and Jeff Shrager",
-   "author": "Hogan, Mél; Berry, David M.; Weil, Peggy; Schwarz, Arthur; Marino, Mark; Shrager, Jeff",
+   "author": "Hogan, Mél; Berry, David M.; Weil, Peggy; Schwarz, Arthur I.; Marino, Mark C.; Shrager, Jeff",
    "date": "2023-05-20",
    "kind": "podcast",
    "lang": "en",
@@ -7869,7 +7869,7 @@
   {
    "id": "L-OKOPZ",
    "title": "Computers: Is Life Just Another Program?",
-   "author": "Rosen, R. D.",
+   "author": "Rosen, Richard Dean",
    "date": "1976-02-03",
    "kind": "review",
    "lang": "en",
@@ -8058,7 +8058,7 @@
   {
    "id": "L-P4ITQ",
    "title": "Sesso, simulazioni e tecnologia: una prospettiva sociologica sulle relazioni sessuali digitalmente mediate",
-   "author": "Bennato, D.",
+   "author": "Bennato, Davide",
    "date": "2024-01-01",
    "kind": "article",
    "lang": "it",
@@ -8347,7 +8347,7 @@
   {
    "id": "L-PQJFI",
    "title": "Inventing Eliza: The First Chatbot’s Hidden Code",
-   "author": "Ciston, Sarah; Berry, David M.; Hay, Anthony; Marino, Mark C.; Millican, Peter; Schwarz, Arthur; Shrager, Jeff; Weil, Peggy",
+   "author": "Ciston, Sarah; Berry, David M.; Hay, Anthony C.; Marino, Mark C.; Millican, Peter; Schwarz, Arthur I.; Shrager, Jeff; Weil, Peggy",
    "date": "2026",
    "kind": "web page",
    "lang": "en",
@@ -8641,7 +8641,8 @@
    "lang": "en",
    "publisher": "London ; New York : Routledge",
    "url": "https://archive.org/details/truthliestruston0000whit",
-   "note": "Book on online deception that describes Weizenbaum's interactive program and its naming."
+   "note": "Book on online deception that describes Weizenbaum's interactive program and its naming.",
+   "thumb": "library/thumbs/L-QJRGH.jpg"
   },
   {
    "id": "L-QK7N5",
@@ -8676,7 +8677,8 @@
    "lang": "en",
    "publisher": "New York : OR Books",
    "url": "https://archive.org/details/technocreepsurre0000keen_n7o8",
-   "note": "Book on privacy and technology that describes Weizenbaum releasing ELIZA and its faking of a psychotherapist's style."
+   "note": "Book on privacy and technology that describes Weizenbaum releasing ELIZA and its faking of a psychotherapist's style.",
+   "thumb": "library/thumbs/L-QOTMS.jpg"
   },
   {
    "id": "L-QOTOL",
@@ -8708,14 +8710,14 @@
    "lang": "en",
    "publisher": "HardWired",
    "url": "https://archive.org/details/botsoriginofnews00leon",
-   "note": "Popular history of software bots that recounts Weizenbaum's naming of Eliza, the DOCTOR script and its notoriety as a psychoanalytic therapist."
+   "note": "Popular history of software bots that recounts Weizenbaum's naming of Eliza, the DOCTOR script and its notoriety as a psychoanalytic therapist.",
+   "thumb": "library/thumbs/L-QQP2B.jpg"
   },
   {
    "id": "L-QRIBC",
    "title": "Joseph Weizenbaum - Computerfachmann der ersten Stunde und Gesellschaftskritiker",
    "author": "Herczeg, Petra",
    "kind": "article",
-   "lang": "un",
    "url": "https://ucrisportal.univie.ac.at/de/publications/d5847768-7a4e-448b-9d1f-261c42096143",
    "note": "Piece on Weizenbaum as an early computer specialist and social critic; the index gives no abstract."
   },
@@ -8736,7 +8738,8 @@
    "lang": "en",
    "publisher": "Oxford, UK ; Cambridge, Mass. : Blackwell",
    "url": "https://archive.org/details/artificialintell0000cope",
-   "note": "Philosophical introduction to AI that treats ELIZA at several points, indexed for pp. 32 to 44 and later pages, and warns about the Eliza effect."
+   "note": "Philosophical introduction to AI that treats ELIZA at several points, indexed for pp. 32 to 44 and later pages, and warns about the Eliza effect.",
+   "thumb": "library/thumbs/L-QWEQ5.jpg"
   },
   {
    "id": "L-QWKQK",
@@ -8755,7 +8758,8 @@
    "date": "2006",
    "kind": "book",
    "lang": "en",
-   "publisher": "Clarendon"
+   "publisher": "Clarendon",
+   "thumb": "library/thumbs/L-QWYUS.jpg"
   },
   {
    "id": "L-QXXLY",
@@ -8766,7 +8770,8 @@
    "lang": "en",
    "publisher": "MIT Press",
    "url": "https://archive.org/details/mit_press_book_9780262341202",
-   "note": "Book on humans and technology in which the author prints his conversation with the elizabot implementation and discusses Weizenbaum's program."
+   "note": "Book on humans and technology in which the author prints his conversation with the elizabot implementation and discusses Weizenbaum's program.",
+   "thumb": "library/thumbs/L-QXXLY.jpg"
   },
   {
    "id": "L-QZ7JK",
@@ -9212,7 +9217,7 @@
   {
    "id": "L-S6ASD",
    "title": "Week 2: Introduction and Background",
-   "author": "Berry, David",
+   "author": "Berry, David M.",
    "date": "2016-02-10",
    "kind": "web page",
    "lang": "en",
@@ -9318,7 +9323,7 @@
   {
    "id": "L-SH2NW",
    "title": "Understanding computers and cognition: a new foundation for design",
-   "author": "Winograd, Terry; Flores, Fernando",
+   "author": "Winograd, Terry A.; Flores, Fernando",
    "date": "1990",
    "kind": "book",
    "lang": "en",
@@ -9457,7 +9462,7 @@
   {
    "id": "L-SUOPC",
    "title": "Computer Power and Human Reason (review)",
-   "author": "Hunt, Earl",
+   "author": "Hunt, Earl B.",
    "date": "1977",
    "kind": "review",
    "lang": "en",
@@ -9577,7 +9582,7 @@
   {
    "id": "L-T46XC",
    "title": "Why Computers Still Can't Chat",
-   "author": "Suchman, Lucy",
+   "author": "Suchman, Lucy A.",
    "date": "2026-10-19",
    "kind": "article",
    "lang": "en",
@@ -10061,7 +10066,7 @@
   {
    "id": "L-UK7G5",
    "title": "Reactions to Weizenbaum's Book",
-   "author": "Kuipers, Benjamin",
+   "author": "Kuipers, Benjamin J.",
    "date": "1976-04-24",
    "kind": "web page",
    "lang": "en",
@@ -10257,7 +10262,7 @@
   {
    "id": "L-UYZKZ",
    "title": "Inventing ELIZA: an exploration of the first chatbot",
-   "author": "Marino, Mark; Ciston, Sarah; Berry, David; Hay, Anthony; Shrager, Jeff; Schwarz, Arthur; Millican, Peter",
+   "author": "Marino, Mark C.; Ciston, Sarah; Berry, David M.; Hay, Anthony C.; Shrager, Jeff; Schwarz, Arthur I.; Millican, Peter",
    "date": "2026-07-17",
    "kind": "talk",
    "lang": "en",
@@ -10477,7 +10482,7 @@
   {
    "id": "L-VO6VD",
    "title": "The DOCTOR script: a work in progress",
-   "author": "Hay, Anthony",
+   "author": "Hay, Anthony C.",
    "date": "2024-12-09",
    "kind": "web page",
    "lang": "en",
@@ -10544,7 +10549,7 @@
   {
    "id": "L-VRI3V",
    "title": "Lessons from the very first chatbot",
-   "author": "Berry, David M.; Marino, Mark",
+   "author": "Berry, David M.; Marino, Mark C.",
    "date": "2026-08-11",
    "kind": "podcast",
    "lang": "en",
@@ -10896,7 +10901,7 @@
   {
    "id": "L-WQK6Z",
    "title": "Can machines talk? Comparison of Eliza with modern dialogue systems",
-   "author": "Shah, Huma; Warwick, Kevin; Vallverdu, Jordi; Wu, Defeng",
+   "author": "Shah, Huma; Warwick, Kevin; Vallverdú, Jordi; Wu, Defeng",
    "date": "2016-01-19",
    "kind": "article",
    "lang": "en",
@@ -11031,7 +11036,7 @@
   {
    "id": "L-WX4YU",
    "title": "The Plurality of ELIZA: Code, History, and Computing's Amnesia",
-   "author": "Berry, David M.; Ciston, Sarah; Hay, Anthony; Marino, Mark C.; Schwarz, Arthur; Shrager, Jeff; Weil, Peggy; Millican, Peter",
+   "author": "Berry, David M.; Ciston, Sarah; Hay, Anthony C.; Marino, Mark C.; Schwarz, Arthur I.; Shrager, Jeff; Weil, Peggy; Millican, Peter",
    "date": "2025-12-08",
    "kind": "web page",
    "lang": "en",
@@ -11468,7 +11473,7 @@
   {
    "id": "L-Y3DEL",
    "title": "The practical intellect: computers and skills",
-   "author": "Göranzon, Bo",
+   "author": "Göranzon, Bo",
    "date": "1993",
    "kind": "book",
    "lang": "en",
@@ -11479,7 +11484,7 @@
   {
    "id": "L-Y4GXU",
    "title": "Another Program? (review of Computer Power and Human Reason)",
-   "author": "Rosen, R. D.",
+   "author": "Rosen, Richard Dean",
    "date": "1976-02-03",
    "kind": "review",
    "lang": "en",
@@ -11829,7 +11834,7 @@
   {
    "id": "L-Z7H4J",
    "title": "ELIZA Reanimated: Restoring the Mother of All Chatbots to One of the World's First Time-Sharing Systems",
-   "author": "Lane, Rupert; Hay, Anthony; Schwarz, Arthur; Berry, David M.; Shrager, Jeff",
+   "author": "Lane, Rupert; Hay, Anthony C.; Schwarz, Arthur I.; Berry, David M.; Shrager, Jeff",
    "date": "2025-04",
    "kind": "article",
    "lang": "en",
@@ -11897,7 +11902,7 @@
   {
    "id": "L-ZEAUM",
    "title": "After the internet: alien intelligence",
-   "author": "Martin, James",
+   "author": "Martin, James H.",
    "date": "2000",
    "kind": "book",
    "lang": "en",
