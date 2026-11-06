@@ -30,7 +30,8 @@
    "date": "1976-04",
    "kind": "review",
    "lang": "en",
-   "in": "Datamation, April 1976, p. 27"
+   "in": "Datamation, April 1976, p. 27",
+   "url": "https://archive.org/details/bitsavers_datamation_28911734"
   },
   {
    "id": "L-2E7KQ",
@@ -138,6 +139,7 @@
    "kind": "book",
    "lang": "en",
    "publisher": "Brunner/Mazel",
+   "url": "https://openlibrary.org/works/OL19195519W",
    "note": "Tristate symposium papers including a section on Eliza as a formal model of the therapist, the 24-subject pilot and its weaknesses in transformation rules."
   },
   {
@@ -179,7 +181,8 @@
    "date": "1978-08-06",
    "kind": "review",
    "lang": "de",
-   "in": "DER SPIEGEL"
+   "in": "DER SPIEGEL",
+   "url": "https://www.spiegel.de/"
   },
   {
    "id": "L-2RP6C",
@@ -234,7 +237,8 @@
    "date": "2003-03",
    "kind": "report",
    "lang": "de",
-   "publisher": "Universität Hamburg, Fachbereich Informatik, Mitteilung 323"
+   "publisher": "Universität Hamburg, Fachbereich Informatik, Mitteilung 323",
+   "url": "https://www.inf.uni-hamburg.de/home/about/honors/weizenbaum.pdf"
   },
   {
    "id": "L-2UOF2",
@@ -409,6 +413,16 @@
    "note": "Radio essay on ELIZA's Rogerian design, users who believed they were talking to a human and Weizenbaum's turn to criticising AI."
   },
   {
+   "id": "L-3OUWP",
+   "title": "Weizenbaum's Performance and Theory Modes: Lessons for Critical Engagement with Large Language Model Chatbots",
+   "author": "Salzano, Matthew; Yang, Misti",
+   "date": "2023",
+   "kind": "article",
+   "lang": "en",
+   "in": "AoIR Selected Papers of Internet Research",
+   "url": "https://spir.aoir.org/ojs/index.php/spir/article/view/13518"
+  },
+  {
    "id": "L-3QJIH",
    "title": "De mens is niet te reduceren tot een stukje code, aldus AI-pionier Joseph Weizenbaum. Ontmenselijking is nabij",
    "author": "Grosfeld, Tom",
@@ -427,6 +441,17 @@
    "lang": "en",
    "in": "Columbia Records",
    "url": "https://en.wikipedia.org/wiki/I_Think_We%27re_All_Bozos_on_This_Bus"
+  },
+  {
+   "id": "L-3TAUF",
+   "title": "The Computerization of Human Service Agencies: A Critical Appraisal",
+   "author": "Murphy, John W.; Pardeck, John T.",
+   "date": "1991",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Auburn House",
+   "url": "https://archive.org/details/computerizationo0000murp",
+   "note": "Discusses belief in ELIZA and DOCTOR's capacity for semantic analysis and the differing responses of Colby and Weizenbaum in a critique of computers in human services."
   },
   {
    "id": "L-3TZCJ",
@@ -552,6 +577,17 @@
    "in": "der Freitag",
    "url": "https://www.freitag.de/autoren/ulrike-baureithel/ein-haretiker-im-tempel-der-hightech-glaubigen",
    "note": "Portrait of Weizenbaum at 83 that treats the mid-1960s language program ELIZA and its reception as the reason he moved away from his profession."
+  },
+  {
+   "id": "L-4DSH4",
+   "title": "Tools for Thought: The History and Future of Mind-Expanding Technology",
+   "author": "Rheingold, Howard",
+   "date": "1985",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Simon and Schuster; MIT Press edition 2000",
+   "url": "https://archive.org/details/toolsforthoughtp0000rhei",
+   "note": "History of computing that recounts Colby helping Weizenbaum create DOCTOR and the unveiling of ELIZA, which Weizenbaum later regretted."
   },
   {
    "id": "L-4ECYA",
@@ -742,7 +778,8 @@
    "date": "1982-07",
    "kind": "magazine",
    "lang": "en",
-   "in": "BYTE 7(7), pp. 306-310"
+   "in": "BYTE 7(7), pp. 306-310",
+   "url": "https://archive.org/details/byte-magazine-1982-07"
   },
   {
    "id": "L-4XI6T",
@@ -751,7 +788,8 @@
    "date": "1979-09",
    "kind": "magazine",
    "lang": "en",
-   "in": "Creative Computing 5(9), pp. 103-108"
+   "in": "Creative Computing 5(9), pp. 103-108",
+   "url": "https://archive.org/details/creativecomputing-1979-09"
   },
   {
    "id": "L-4YO7W",
@@ -796,7 +834,8 @@
    "date": "1984-10-14",
    "kind": "review",
    "lang": "de",
-   "in": "DER SPIEGEL"
+   "in": "DER SPIEGEL",
+   "url": "https://www.spiegel.de/"
   },
   {
    "id": "L-55LNU",
@@ -965,6 +1004,17 @@
    "note": "Essay on the institute's Weizenbaum site explaining how the DOCTOR script took shape between 1964 and 1967 and how users' responses turned Weizenbaum into a skeptic."
   },
   {
+   "id": "L-5ZS5M",
+   "title": "The Quest for Artificial Intelligence",
+   "author": "Patent, Dorothy Hinshaw",
+   "date": "1986",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Harcourt Brace Jovanovich",
+   "url": "https://archive.org/details/questforartifici0000pate",
+   "note": "Young readers' survey that explains ELIZA's keyword analysis and the therapist version called DOCTOR."
+  },
+  {
    "id": "L-62QK6",
    "title": "Inventing ELIZA: how the first chatbot transforms perceptions of AI",
    "kind": "news",
@@ -1001,7 +1051,8 @@
    "date": "1982-04",
    "kind": "magazine",
    "lang": "en",
-   "in": "Microcomputing, April 1982, pp. 32-42"
+   "in": "Microcomputing, April 1982, pp. 32-42",
+   "url": "https://archive.org/details/kilobaudmagazine-1982-04"
   },
   {
    "id": "L-6GTL2",
@@ -1100,6 +1151,17 @@
    "publisher": "Defense Technical Information Center ADA037925",
    "url": "https://apps.dtic.mil/sti/citations/ADA037925",
    "note": "Comments on Weizenbaum's book by way of ELIZA, asking who the joke was on once the program's creator had written about it."
+  },
+  {
+   "id": "L-6QGBY",
+   "title": "Computerized Psychotherapy",
+   "author": "Suler, John",
+   "date": "1999-08",
+   "kind": "web page",
+   "lang": "en",
+   "in": "The Psychology of Cyberspace",
+   "url": "https://psicopolis.com/psicopedia/Psychology%20of%20Cyberspace/psycyber/eliza.html",
+   "note": "Has a section on Eliza as poor therapy but useful teaching device, reporting students' use of the program in a clinical psychology course."
   },
   {
    "id": "L-6QGFV",
@@ -1218,6 +1280,19 @@
    "note": "Radio obituary built around ELIZA as a program that users treated as a good listener and around the controversy it caused."
   },
   {
+   "id": "L-7C5MY",
+   "title": "To chat or bot to chat: Ethical issues with using chatbots in mental health",
+   "author": "Coghlan, Simon; Leins, Kobi; Sheldrick, Susie; Cheong, Marc; Gooding, Piers; D'Alfonso, Simon",
+   "date": "2023",
+   "kind": "article",
+   "lang": "en",
+   "in": "Digital Health",
+   "doi": "10.1177/20552076231183542",
+   "url": "https://journals.sagepub.com/doi/10.1177/20552076231183542",
+   "note": "Opens its ethics review with Weizenbaum's ELIZA, users' disclosure to it and his warning about engagement with limited technologies, and compares its limits with contemporary mental health chatbots.",
+   "licence": "CC BY"
+  },
+  {
    "id": "L-7E27U",
    "title": "Experts Argue Whether Computers Could Reason, and if They Should",
    "author": "Dembart, Lee",
@@ -1244,7 +1319,8 @@
    "date": "1978-01",
    "kind": "magazine",
    "lang": "en",
-   "in": "Creative Computing 4(1), p. 95"
+   "in": "Creative Computing 4(1), p. 95",
+   "url": "https://archive.org/details/creativecomputing-1978-01"
   },
   {
    "id": "L-7KTEN",
@@ -1528,7 +1604,8 @@
    "date": "2001-02-14",
    "kind": "news",
    "lang": "de",
-   "in": "DER SPIEGEL"
+   "in": "DER SPIEGEL",
+   "url": "https://www.spiegel.de/"
   },
   {
    "id": "L-AIFQD",
@@ -1537,7 +1614,8 @@
    "date": "1976-09",
    "kind": "review",
    "lang": "en",
-   "in": "Creative Computing 2(5), pp. 83-90"
+   "in": "Creative Computing 2(5), pp. 83-90",
+   "url": "https://archive.org/details/CreativeComputingV02n05SepOct1976"
   },
   {
    "id": "L-AINBN",
@@ -1927,7 +2005,19 @@
    "date": "2022-06-14",
    "kind": "news",
    "lang": "de",
-   "in": "DER SPIEGEL"
+   "in": "DER SPIEGEL",
+   "url": "https://www.spiegel.de/"
+  },
+  {
+   "id": "L-BX7UT",
+   "title": "Experiments in Artificial Intelligence for Small Computers",
+   "author": "Krutch, John",
+   "date": "1981",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Howard W. Sams",
+   "url": "https://archive.org/details/experimentsinart0000krut",
+   "note": "Hobbyist book with a section on Eliza and Doctor that explains how DOCTOR generates replies and lists a version, and touches on the controversy over the program."
   },
   {
    "id": "L-BY2PO",
@@ -2086,6 +2176,16 @@
    "note": "Account of the Radio Shack TRS-80 version of ELIZA, catalog number 26-1908, including its press reception in the home computer period."
   },
   {
+   "id": "L-CIR5U",
+   "title": "Programme ELIZA : ma langue au chatbot",
+   "date": "2026-07-03",
+   "kind": "podcast",
+   "lang": "fr",
+   "in": "France Culture, Sciences chrono",
+   "url": "https://www.radiofrance.fr/franceculture/podcasts/sciences-chrono/programme-eliza-ma-langue-au-chatbot-3733530",
+   "note": "Fifty-nine minute radio programme on Weizenbaum's 1966 ELIZA, its natural-language replies and users' rapid anthropomorphising of it."
+  },
+  {
    "id": "L-CIXOK",
    "title": "ELIZA scriptwriter's manual: a manual for the use of the ELIZA conversational computer system",
    "author": "Hayward, Paul R.",
@@ -2174,6 +2274,7 @@
    "kind": "book",
    "lang": "en",
    "publisher": "New York: Simon & Schuster; ISBN 978-0-671-46848-4",
+   "url": "https://doi.org/10.7551/mitpress/6115.001.0001",
    "note": "Book cited at p. 40 in the Wikipedia article on the ELIZA effect."
   },
   {
@@ -2187,6 +2288,17 @@
    "doi": "10.1017/s1352465817000820",
    "url": "https://www.cambridge.org/core/journals/behavioural-and-cognitive-psychotherapy/article/abs/10.1017/S1352465817000820",
    "note": "Randomized trial of 213 participants comparing MYLO with ELIZA, with MYLO rated more helpful but no difference in problem resolution or clinical outcomes."
+  },
+  {
+   "id": "L-CVSGI",
+   "title": "The Robot that Changed my Life: Eliza by Joseph Weizenbaum",
+   "author": "Hadas, Eran",
+   "date": "2022-06-16",
+   "kind": "magazine",
+   "lang": "en",
+   "in": "Utopia, Future/s Project (Israel)",
+   "url": "https://futures.utopiafest.org.il/en/eliza/",
+   "note": "Israeli poet and programmer on Avidan's reported weekly calls to MIT from 1966 as told by Giora Leshem, and on his own Hebrew Eliza and use of the source code to test Avidan's transcripts; Hebrew site version exists."
   },
   {
    "id": "L-CW7MV",
@@ -2353,12 +2465,24 @@
    "source": "https://www.triple-c.at/index.php/tripleC/article/download/1479/1502, 2026-11-06"
   },
   {
+   "id": "L-DFLFT",
+   "title": "Exploring Artificial Intelligence on Your IBM PC",
+   "author": "Hartnell, Tim",
+   "date": "1986",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Bantam",
+   "url": "https://archive.org/details/exploringartific00hart",
+   "note": "Hobbyist programming book whose chapter 8, The Doctor Is In, covers Weizenbaum and ELIZA and gives a version of the program; parallel editions exist for the Apple II and Spectrum."
+  },
+  {
    "id": "L-DFRMT",
    "title": "Zum Tode von Joseph Weizenbaum / Der Kritiker geht, die Kritik bleibt bestehen",
    "date": "2008-03-07",
    "kind": "news",
    "lang": "de",
-   "in": "DER SPIEGEL"
+   "in": "DER SPIEGEL",
+   "url": "https://www.spiegel.de/"
   },
   {
    "id": "L-DG7JI",
@@ -2418,6 +2542,17 @@
    "note": "Biographical dictionary entry that lists the 1966 ELIZA paper among Weizenbaum's works and gives a bibliography of press and film sources on him."
   },
   {
+   "id": "L-DL336",
+   "title": "Are Computers Alive? Evolution and New Life Forms",
+   "author": "Simons, Geoff L.",
+   "date": "1983",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Birkhäuser",
+   "url": "https://archive.org/details/isbn_0817631429",
+   "note": "Discusses computer conversation and therapy programs, comparing dialogues with ELIZA, named for Shaw's character."
+  },
+  {
    "id": "L-DMI5K",
    "title": "The ELIZA Effect",
    "author": "Mind Foundry",
@@ -2460,6 +2595,16 @@
    "url": "https://doi.org/10.2307/2062802"
   },
   {
+   "id": "L-DSG52",
+   "title": "No. 2902: ELIZA",
+   "author": "Boyd, Andrew",
+   "kind": "podcast",
+   "lang": "en",
+   "in": "The Engines of Our Ingenuity, University of Houston",
+   "url": "https://engines.egr.uh.edu/episode/2902",
+   "note": "Radio episode with transcript on ELIZA as a program that held therapy-style typed conversations."
+  },
+  {
    "id": "L-DTIDM",
    "title": "Melbourne Theatre Company presents Eliza",
    "author": "Morel, Carter",
@@ -2477,7 +2622,8 @@
    "date": "1983-08",
    "kind": "magazine",
    "lang": "en",
-   "in": "Creative Computing 9(8), pp. 127-128"
+   "in": "Creative Computing 9(8), pp. 127-128",
+   "url": "https://archive.org/details/creativecomputing-1983-08"
   },
   {
    "id": "L-DX2YK",
@@ -2553,7 +2699,8 @@
    "author": "Wiley, Robin",
    "date": "2024",
    "kind": "article",
-   "lang": "en"
+   "lang": "en",
+   "url": "https://doi.org/10.1080/00332925.2024.2350342"
   },
   {
    "id": "L-E5OMW",
@@ -2779,6 +2926,17 @@
    "note": "Episode on the MIT professor who created human-machine conversation with ELIZA, in which a host tries the program. 75 minutes."
   },
   {
+   "id": "L-EYUJX",
+   "title": "Hamlet on the Holodeck: The Future of Narrative in Cyberspace",
+   "author": "Murray, Janet H.",
+   "date": "1997",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Free Press / Simon and Schuster; updated edition MIT Press, 2017",
+   "url": "https://archive.org/details/hamletonholodeck00murr_0",
+   "note": "Reads Eliza as an early model of a computer-based character and of the rules that create the illusion of understanding, with transcript excerpts."
+  },
+  {
    "id": "L-F2V7K",
    "title": "Artificial Intelligence and CALL",
    "author": "Underwood, John H.",
@@ -2890,7 +3048,8 @@
    "date": "1980-12-05",
    "kind": "news",
    "lang": "de",
-   "in": "DIE ZEIT"
+   "in": "DIE ZEIT",
+   "url": "https://www.zeit.de/1980/50/die-maschine-denkt-der-mensche-lenkt"
   },
   {
    "id": "L-FIMEE",
@@ -2932,7 +3091,18 @@
    "date": "1983-02",
    "kind": "magazine",
    "lang": "fr",
-   "in": "Micro 7 no. 2, February 1983, p. 18"
+   "in": "Micro 7 no. 2, February 1983, p. 18",
+   "url": "https://archive.org/details/Micro7-02"
+  },
+  {
+   "id": "L-FOKA6",
+   "title": "The Long, Tangled History of Teletherapy",
+   "date": "2022-06-14",
+   "kind": "review",
+   "lang": "en",
+   "in": "The Nation",
+   "url": "https://www.thenation.com/article/society/hannah-zeavin-distance-cure/",
+   "note": "Reviews Zeavin's The Distance Cure, describing ELIZA as built to show how little responsiveness people need to feel a meaningful interaction, with imitators such as SHRINK."
   },
   {
    "id": "L-FQXJ4",
@@ -3048,13 +3218,24 @@
    "id": "L-GAZ7A",
    "title": "Computer-Simulated Psychotherapy as an Aid in Teaching Clinical Psychology",
    "author": "Suler, John R.",
-   "date": "1987",
+   "date": "1987-02",
    "kind": "article",
    "lang": "en",
-   "in": "Teaching of Psychology 14(1)",
+   "in": "Teaching of Psychology 14(1), 37-39",
    "doi": "10.1207/s15328023top1401_10",
    "url": "https://doi.org/10.1207/s15328023top1401_10",
-   "note": "Describes the use of Eliza as a teaching aid in undergraduate clinical psychology courses."
+   "note": "Describes ELIZA adapted for IBM microcomputers in an undergraduate clinical psychology course, with students experimenting with it before class discussion."
+  },
+  {
+   "id": "L-GC6TV",
+   "title": "Can a 1960s Therapy Bot Help Us Navigate AI Mental Health?",
+   "author": "Mansky, Jackie",
+   "date": "2026-02-27",
+   "kind": "magazine",
+   "lang": "en",
+   "in": "Zocalo Public Square",
+   "url": "https://www.zocalopublicsquare.org/can-a-1960s-therapy-bot-help-us-navigate-ai-mental-health/",
+   "note": "Column on what ELIZA, as the original therapy chatbot, and Weizenbaum's aims offer for discussion of chatbots in mental health."
   },
   {
    "id": "L-GD64V",
@@ -3062,7 +3243,8 @@
    "date": "2000-08-28",
    "kind": "news",
    "lang": "de",
-   "in": "DER SPIEGEL"
+   "in": "DER SPIEGEL",
+   "url": "https://www.spiegel.de/"
   },
   {
    "id": "L-GHAWP",
@@ -3071,7 +3253,8 @@
    "date": "1973",
    "kind": "article",
    "lang": "en",
-   "in": "COLING 1973"
+   "in": "COLING 1973",
+   "url": "https://aclanthology.org/C73-2015.pdf"
   },
   {
    "id": "L-GJDDU",
@@ -3144,7 +3327,8 @@
    "date": "1969-12",
    "kind": "magazine",
    "lang": "en",
-   "in": "Computers and Automation, December 1969"
+   "in": "Computers and Automation, December 1969",
+   "url": "https://archive.org/details/bitsavers_computersA_6997965"
   },
   {
    "id": "L-GT7PY",
@@ -3232,7 +3416,8 @@
    "date": "1979-04-22",
    "kind": "news",
    "lang": "de",
-   "in": "DER SPIEGEL"
+   "in": "DER SPIEGEL",
+   "url": "https://www.spiegel.de/"
   },
   {
    "id": "L-HDO45",
@@ -3584,7 +3769,8 @@
    "date": "1984-04",
    "kind": "article",
    "lang": "ja",
-   "in": "bit, April 1984"
+   "in": "bit, April 1984",
+   "url": "https://archive.org/details/micom-1985-01"
   },
   {
    "id": "L-IEZ3L",
@@ -3592,6 +3778,7 @@
    "author": "Hayward, P.",
    "date": "1967",
    "kind": "thesis",
+   "url": "https://dspace.mit.edu/handle/1721.1/142746",
    "note": "Describes discussion units for the ELIZA program in a tutorial, under student control."
   },
   {
@@ -3667,6 +3854,17 @@
    "note": "Describes an MIT teaching experiment on 4-vectors in special relativity using a computer tutorial, listed by ELIZAGEN among the educational applications of ELIZA."
   },
   {
+   "id": "L-ILENI",
+   "title": "The Intimate Machine: Close Encounters with Computers and Robots",
+   "author": "Frude, Neil",
+   "date": "1983",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Century / New American Library",
+   "url": "https://archive.org/details/intimatemachinec0000frud",
+   "note": "Psychologist's book on attachment to machines that prints and discusses the author's own conversation with ELIZA."
+  },
+  {
    "id": "L-ILONO",
    "title": "ELIZA: Die Mutter aller Chatbots",
    "date": "2025-11-10",
@@ -3680,13 +3878,13 @@
    "id": "L-ILY53",
    "title": "When Students Confide in AI: Navigating the ELIZA Effect of Social Presence Through Pedagogical Boundaries in Gen-AI Mediated Education",
    "author": "Olivier, Corna; Weilbach, Lizette",
-   "date": "2026-07-17",
+   "date": "2027",
    "kind": "chapter",
    "lang": "en",
-   "in": "Lecture notes in computer science",
+   "in": "Innovative Technologies and Learning (conference paper), Springer",
    "doi": "10.1007/978-3-032-32112-1_13",
-   "url": "https://doi.org/10.1007/978-3-032-32112-1_13",
-   "note": "Book part on students confiding in generative AI and the ELIZA effect of social presence in education; the index gives no abstract."
+   "url": "https://link.springer.com/chapter/10.1007/978-3-032-32112-1_13",
+   "note": "Traces spontaneous emotional disclosure from Weizenbaum's ELIZA effect to generative AI in a study of distance-learning students, arguing for pedagogical boundaries on social presence."
   },
   {
    "id": "L-IMGGO",
@@ -3773,6 +3971,7 @@
    "kind": "talk",
    "lang": "en",
    "in": "Wilshire Online, Los Angeles (moderator Claire L. Evans)",
+   "url": "https://doi.org/10.7551/mitpress/15790.001.0001",
    "note": "Public conversation between three of the book's authors on ELIZA."
   },
   {
@@ -3840,7 +4039,8 @@
    "date": "1980-07",
    "kind": "magazine",
    "lang": "en",
-   "in": "Creative Computing 6(7), pp. 42-47"
+   "in": "Creative Computing 6(7), pp. 42-47",
+   "url": "https://archive.org/details/creativecomputing-1980-07"
   },
   {
    "id": "L-J3ZXV",
@@ -3871,7 +4071,8 @@
    "date": "2005-01-20",
    "kind": "news",
    "lang": "de",
-   "in": "DER SPIEGEL"
+   "in": "DER SPIEGEL",
+   "url": "https://www.spiegel.de/"
   },
   {
    "id": "L-J6QVU",
@@ -3909,7 +4110,7 @@
    "lang": "en",
    "in": "Nielsen Norman Group",
    "url": "https://www.nngroup.com/articles/eliza-effect-ai/",
-   "note": "Usability article explaining why users attribute human qualities to AI, starting from ELIZA."
+   "note": "UX article describing users' attribution of human traits to conversational AI as the ELIZA effect."
   },
   {
    "id": "L-JDYIL",
@@ -3930,6 +4131,17 @@
    "kind": "article",
    "url": "https://www.semanticscholar.org/paper/fbdbd17927114d6d53652f2231b39766643567ac",
    "note": "Paper on conversations with Eliza concerning gender and artificial intelligence; the index gives no abstract."
+  },
+  {
+   "id": "L-JFMRZ",
+   "title": "Regulating Bot Speech",
+   "author": "Lamo, Madeline; Calo, Ryan",
+   "date": "2019",
+   "kind": "article",
+   "lang": "en",
+   "in": "UCLA Law Review 66, 988",
+   "doi": "10.2139/ssrn.3214572",
+   "url": "https://www.uclalawreview.org/regulating-bot-speech/"
   },
   {
    "id": "L-JFXJQ",
@@ -4019,7 +4231,8 @@
    "date": "1982-11-08",
    "kind": "news",
    "lang": "en",
-   "in": "Computerworld 16(45), In Depth/9 to In Depth/28"
+   "in": "Computerworld 16(45), In Depth/9 to In Depth/28",
+   "url": "https://archive.org/details/computerworld1636unse_0"
   },
   {
    "id": "L-JT2QC",
@@ -4028,7 +4241,8 @@
    "date": "1980-01",
    "kind": "magazine",
    "lang": "en",
-   "in": "Creative Computing 6(1), pp. 62-67"
+   "in": "Creative Computing 6(1), pp. 62-67",
+   "url": "https://archive.org/details/creativecomputing-1980-01"
   },
   {
    "id": "L-JT2QL",
@@ -4081,6 +4295,17 @@
    "lang": "en",
    "publisher": "Basic Books",
    "note": "Defines the ELIZA effect as reading more understanding than is warranted into strings of symbols from computers."
+  },
+  {
+   "id": "L-JVOK6",
+   "title": "Reading Machines: Toward an Algorithmic Criticism",
+   "author": "Ramsay, Stephen",
+   "date": "2011",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "University of Illinois Press",
+   "url": "https://archive.org/details/readingmachinest0000rams",
+   "note": "Treats ELIZA and DOCTOR in its chapter The Turing Text, discussing how the engine Weizenbaum built was used to imitate a therapist."
   },
   {
    "id": "L-JX5YB",
@@ -4167,7 +4392,8 @@
    "date": "1966-07",
    "kind": "magazine",
    "lang": "en",
-   "in": "Computers and Automation, July 1966, pp. 34-37"
+   "in": "Computers and Automation, July 1966, pp. 34-37",
+   "url": "https://archive.org/details/bitsavers_computersA_8245117"
   },
   {
    "id": "L-KC3UN",
@@ -4251,7 +4477,8 @@
    "date": "1983",
    "kind": "chapter",
    "lang": "en",
-   "in": "Tim Hartnell’s Giant Book of Computer Games, UK edition, pp. 212-223"
+   "in": "Tim Hartnell’s Giant Book of Computer Games, UK edition, pp. 212-223",
+   "url": "https://archive.org/details/tim-hartnells-giant-book-of-computer-games-uk-edition-1983_202502"
   },
   {
    "id": "L-KJVY6",
@@ -4321,6 +4548,28 @@
    "doi": "10.1007/978-3-662-69321-6_4",
    "url": "https://link.springer.com/chapter/10.1007/978-3-662-69321-6_4",
    "note": "Programming textbook chapter implementing an Eliza therapy simulation in Java using linked lists."
+  },
+  {
+   "id": "L-KOORF",
+   "title": "Eliza Re-Examined",
+   "author": "Cai, Alice",
+   "date": "2016-01-05",
+   "kind": "web page",
+   "lang": "en",
+   "in": "Confluence, NYU Gallatin student publication",
+   "url": "https://confluence.gallatin.nyu.edu/sections/research/eliza-re-examined",
+   "note": "Student research essay on ELIZA and what it shows of relations between humans and programs and between people themselves."
+  },
+  {
+   "id": "L-KPLDI",
+   "title": "Computer Psychotherapy Systems: Theory and Research Foundations",
+   "author": "Wagman, Morton",
+   "date": "1988",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Gordon and Breach",
+   "url": "https://archive.org/details/computerpsychoth0000wagm",
+   "note": "Psychology monograph that reviews perceptions of and reactions to the ELIZA program as part of its account of computer psychotherapy."
   },
   {
    "id": "L-KQPAJ",
@@ -4422,6 +4671,17 @@
    "in": "Live Science",
    "url": "https://www.livescience.com/technology/eliza-the-worlds-1st-chatbot-was-just-resurrected-from-60-year-old-computer-code",
    "note": "Report on the recovery of the code from Weizenbaum's papers and its revival on an emulated IBM 7094."
+  },
+  {
+   "id": "L-L4FCZ",
+   "title": "Psychobabble: Fast Talk and Quick Cure in the Era of Feeling",
+   "author": "Rosen, Richard Dean",
+   "date": "1977",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Atheneum",
+   "url": "https://archive.org/details/psychobabblefast0000rose_f8c0",
+   "note": "Chapter titled Computer Therapy reports on Weizenbaum's ELIZA and DOCTOR work and reprints the author's own exchange with DOCTOR."
   },
   {
    "id": "L-L4QZH",
@@ -4571,6 +4831,17 @@
    "note": "Book on building chatbots with Python and Telegram that discusses ELIZA, PARRY, Racter and A.L.I.C.E as bots developed since 1966."
   },
   {
+   "id": "L-LTAMU",
+   "title": "Chatbots – Teil 2 und Schluss: Der Turing-Test und die Folgen – Zur Geschichte der symbolischen KI im Informatikunterricht",
+   "author": "Witten, Helmut; Hornung, Malte",
+   "date": "2009",
+   "kind": "article",
+   "lang": "de",
+   "in": "LOG IN 29 (157/158), 63-74",
+   "url": "https://medienwissenschaft.uni-bayreuth.de/inik/material/chatbots/LOG_IN_157-158_063-074_P&M_Witten+Hornung_Chatbots-2.PDF",
+   "note": "Second part of a school teaching series on chatbots covering the Turing test and the history of symbolic AI; Biblionetz indexes it under Eliza."
+  },
+  {
    "id": "L-LTXUX",
    "title": "Matter: Creating an action loop of mindfulness",
    "author": "Gupta, Mriganka",
@@ -4654,7 +4925,8 @@
    "date": "1994-09-04",
    "kind": "news",
    "lang": "de",
-   "in": "DER SPIEGEL"
+   "in": "DER SPIEGEL",
+   "url": "https://www.spiegel.de/"
   },
   {
    "id": "L-MATNB",
@@ -4809,7 +5081,8 @@
    "date": "1996-08-16",
    "kind": "news",
    "lang": "de",
-   "in": "DIE ZEIT"
+   "in": "DIE ZEIT",
+   "url": "https://www.zeit.de/1996/34/eliza.txt.19960816.xml"
   },
   {
    "id": "L-MQ2A6",
@@ -4828,7 +5101,8 @@
    "date": "2023-01-08",
    "kind": "documentary",
    "lang": "de",
-   "publisher": "Deutschlandfunk Kultur"
+   "publisher": "Deutschlandfunk Kultur",
+   "url": "https://archive.org/"
   },
   {
    "id": "L-MUEHI",
@@ -4977,6 +5251,17 @@
    "doi": "10.1353/pmc.2010.0015",
    "url": "https://www.pomoculture.org/2013/09/03/misidentifications-promise-the-turing-test-in-weizenbaum-powers-and-short/#f1",
    "note": "Reads ELIZA with Powers and Short to argue that the interest of the Turing test lies in misidentification between human and machine."
+  },
+  {
+   "id": "L-NCQRL",
+   "title": "The Distance Cure: A History of Teletherapy",
+   "author": "Zeavin, Hannah",
+   "date": "2021",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "MIT Press",
+   "url": "https://mitpress.mit.edu/9780262045926/the-distance-cure/",
+   "note": "Treats ELIZA and SHRINK as computerised therapists in a chapter sequence including Auto Intimacy, linking them to corporate wellness software; read through reviews and the catalogue contents, not the book."
   },
   {
    "id": "L-NCWJ2",
@@ -5166,6 +5451,16 @@
    "licence": "CC BY-SA"
   },
   {
+   "id": "L-NXKER",
+   "title": "60 Jahre ELIZA: Wie der erste Chatbot die KI bis heute prägt",
+   "date": "2026-08-18",
+   "kind": "news",
+   "lang": "de",
+   "in": "idw Informationsdienst Wissenschaft; Weizenbaum-Institut press release",
+   "url": "https://idw-online.de/de/news876044",
+   "note": "Press release marking sixty years of ELIZA and how the first chatbot still shapes AI."
+  },
+  {
    "id": "L-NXVJA",
    "title": "Reading ELIZA: Understanding Weizenbaum through his code",
    "author": "Shrager, Jeff; Schwarz, Arthur; Weil, Peggy; Marino, Mark; Berry, David; Ciston, Sarah; Hay, Anthony; Millican, Peter",
@@ -5287,7 +5582,8 @@
    "date": "2016-01-07",
    "kind": "news",
    "lang": "de",
-   "in": "DIE ZEIT"
+   "in": "DIE ZEIT",
+   "url": "https://www.zeit.de/2016/02/eliza-software-computer-konversation"
   },
   {
    "id": "L-OGBRE",
@@ -5441,7 +5737,8 @@
    "date": "1982-07",
    "kind": "review",
    "lang": "en",
-   "in": "BYTE 7(7), pp. 402-404"
+   "in": "BYTE 7(7), pp. 402-404",
+   "url": "https://archive.org/details/byte-magazine-1982-07"
   },
   {
    "id": "L-P4ITQ",
@@ -5738,6 +6035,17 @@
    "note": "Fifth episode of Effetto Eliza, in which ChatGPT, Claude and Gemini are asked about Weizenbaum's concerns. 3 minutes."
   },
   {
+   "id": "L-QD2JF",
+   "title": "Machinery of the Mind: Inside the New Science of Artificial Intelligence",
+   "author": "Johnson, George",
+   "date": "1986",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Times Books",
+   "url": "https://archive.org/details/machineryofmindi00john",
+   "note": "Science journalism on AI that describes Eliza as a parody of a therapist, named for Eliza Doolittle, within its account of natural language programs."
+  },
+  {
    "id": "L-QEENT",
    "title": "Künstliche Intelligenz zwischen Mythos und Kritik: Joseph Weizenbaum (1923–2008)",
    "author": "Strippel, Christian",
@@ -5812,6 +6120,17 @@
    "publisher": "eScholarship, University of California",
    "url": "https://core.ac.uk/download/680427796.pdf",
    "note": "Traces connections from Eliza Doolittle to ELIZA the chatbot and current language models within the Pygmalion paradigm."
+  },
+  {
+   "id": "L-QQP2B",
+   "title": "Bots: The Origin of New Species",
+   "author": "Leonard, Andrew",
+   "date": "1997",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "HardWired",
+   "url": "https://archive.org/details/botsoriginofnews00leon",
+   "note": "Popular history of software bots that recounts Weizenbaum's naming of Eliza, the DOCTOR script and its notoriety as a psychoanalytic therapist."
   },
   {
    "id": "L-QRIBC",
@@ -5929,13 +6248,13 @@
    "id": "L-REDKT",
    "title": "Re-reading ELIZA: Human–machine Interaction as Cognitive Sense-ability",
    "author": "Treusch, Pat",
-   "date": "2017-10-02",
-   "kind": "article",
+   "date": "2017",
+   "kind": "chapter",
    "lang": "en",
-   "in": "Australian Feminist Studies",
-   "doi": "10.1080/08164649.2017.1466647",
-   "url": "https://doi.org/10.1080/08164649.2017.1466647",
-   "note": "Rereads ELIZA to treat human-machine interaction as cognitive sense-ability; the index gives no abstract."
+   "in": "Routledge",
+   "doi": "10.4324/9780429320156-5",
+   "url": "https://doi.org/10.4324/9780429320156-5",
+   "note": "Re-reads Weizenbaum's ELIZA as a case for understanding human-machine interaction as cognitive sense-ability."
   },
   {
    "id": "L-RF2DO",
@@ -6064,7 +6383,8 @@
    "date": "1977-05-20",
    "kind": "review",
    "lang": "de",
-   "in": "DIE ZEIT"
+   "in": "DIE ZEIT",
+   "url": "https://www.zeit.de/1977/22/elektronendiener"
   },
   {
    "id": "L-RQODQ",
@@ -6111,6 +6431,7 @@
    "date": "1976",
    "kind": "book",
    "publisher": "W.H. Freeman and Co.",
+   "url": "https://doi.org/10.1145/1045264.1045265",
    "note": "Weizenbaum's book on the limits of computer reason, which recounts the reception of ELIZA."
   },
   {
@@ -6131,7 +6452,8 @@
    "date": "1979",
    "kind": "chapter",
    "lang": "en",
-   "in": "More BASIC Computer Games, Creative Computing Press / Workman, pp. 55-58"
+   "in": "More BASIC Computer Games, Creative Computing Press / Workman, pp. 55-58",
+   "url": "https://archive.org/details/More_BASIC_Computer_Games"
   },
   {
    "id": "L-RXLQS",
@@ -6637,15 +6959,15 @@
   },
   {
    "id": "L-TRP65",
-   "title": "Chatbot Theory: A naïve and elementary theory for dialogue management",
-   "author": "Marcondes, Francisco Supino; Almeida, José João; Nováis, Paulo",
-   "date": "2018-01-01",
-   "kind": "article",
+   "title": "Chatbot Theory",
+   "author": "Marcondes, Francisco Supino; Almeida, José João",
+   "date": "2018",
+   "kind": "chapter",
    "lang": "en",
-   "in": "Lecture notes in computer science",
+   "in": "Springer",
    "doi": "10.1007/978-3-030-03493-1_40",
    "url": "https://doi.org/10.1007/978-3-030-03493-1_40",
-   "note": "Proposes an elementary theory of dialogue management, discussed mostly through ELIZA as a reference chatbot."
+   "note": "Conference chapter on composing and discussing chatbots, with most of its discussion conducted on ELIZA as a reference case."
   },
   {
    "id": "L-TSVEX",
@@ -6693,6 +7015,16 @@
    "doi": "10.48550/arxiv.2202.03164",
    "url": "https://arxiv.org/abs/2202.03164",
    "note": "Handbook overview with subsections describing ELIZA and DOCTOR as the first pattern-based chatbot and the deflection that gave ELIZA and PARRY their semblance of intelligence."
+  },
+  {
+   "id": "L-U2DKA",
+   "title": "Gefangen im Eliza-Effekt",
+   "date": "2017-12-01",
+   "kind": "news",
+   "lang": "de",
+   "in": "Österreichische Akademie der Wissenschaften",
+   "url": "https://www.oeaw.ac.at/detail/news/gefangen-im-eliza-effekt/",
+   "note": "Report of Douglas Hofstadter's lecture at the Austrian academy on why AI is less intelligent than it appears and why the Eliza effect leads people to believe otherwise."
   },
   {
    "id": "L-U2SJV",
@@ -6782,7 +7114,8 @@
    "date": "1979-12",
    "kind": "magazine",
    "lang": "en",
-   "in": "Interface Age, December 1979, pp. 42-43"
+   "in": "Interface Age, December 1979, pp. 42-43",
+   "url": "https://archive.org/details/InterfaceAge197912"
   },
   {
    "id": "L-UJ7LP",
@@ -6821,13 +7154,13 @@
    "id": "L-UMA2D",
    "title": "Eliza as a \"therapeutic\" tool",
    "author": "O'Dell, Jerry W.; Dickson, James",
-   "date": "1984",
+   "date": "1984-07",
    "kind": "article",
    "lang": "en",
-   "in": "Journal of Clinical Psychology 40(4): 942-945",
+   "in": "Journal of Clinical Psychology 40(4), 942-945",
    "doi": "10.1002/1097-4679(198407)40:4<942::aid-jclp2270400412>3.0.co;2-d",
-   "url": "https://doi.org/10.1002/1097-4679(198407)40:4<942::aid-jclp2270400412>3.0.co;2-d",
-   "note": "Clinical psychology study of Eliza used as a therapeutic tool."
+   "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/1097-4679(198407)40:4%3C942::AID-JCLP2270400412%3E3.0.CO;2-D",
+   "note": "Has 70 undergraduates interact with ELIZA for 44 minutes and compares their responses across the two halves of the session."
   },
   {
    "id": "L-UMDZX",
@@ -6847,6 +7180,16 @@
    "lang": "ja",
    "in": "バイオメディカル・ファジィ・システム学会大会講演論文集",
    "note": "Conference paper on putting the psychotherapist ELIZA into Japanese with spoken dialogue."
+  },
+  {
+   "id": "L-UMRPS",
+   "title": "Co przyniesie jutro? Potencjalne zastosowanie technologii w działaniach terapeutycznych na przykładzie filmów science fiction",
+   "author": "Olszak, Nikola; Dunin, Tobiasz",
+   "kind": "article",
+   "lang": "pl",
+   "in": "Annales Universitatis Paedagogicae Cracoviensis (as cited on Polish Wikipedia)",
+   "url": "https://ceeol.com/search/article-detail?id=933203",
+   "note": "Article on technology as a support tool in crisis situations through science fiction films, cited by Polish Wikipedia for its account of ELIZA."
   },
   {
    "id": "L-UNIQA",
@@ -6881,6 +7224,16 @@
    "url": "https://doi.org/10.5281/zenodo.17976157",
    "note": "Self-published paper challenging the ELIZA effect as an explanation for signs observed in language models.",
    "licence": "CC BY-NC-SA"
+  },
+  {
+   "id": "L-UV4BX",
+   "title": "Eliza: Everything You've Always Wanted a Therapist To Be",
+   "date": "2001",
+   "kind": "web page",
+   "lang": "en",
+   "in": "University of British Columbia, CPSC 101 lab",
+   "url": "https://www.cs.ubc.ca/~hoos/Courses/CPSC101-05/Labs/Eliza/",
+   "note": "Course lab in which students observe a working model of ELIZA and build their own version."
   },
   {
    "id": "L-UXCHT",
@@ -7056,7 +7409,8 @@
    "author": "McCarthy, John",
    "date": "1976",
    "kind": "review",
-   "lang": "en"
+   "lang": "en",
+   "url": "https://collections.nlm.nih.gov/"
   },
   {
    "id": "L-VKVUR",
@@ -7155,6 +7509,7 @@
    "kind": "talk",
    "lang": "en",
    "in": "MIT Press Bookstore, Cambridge, Massachusetts",
+   "url": "https://doi.org/10.7551/mitpress/15790.001.0001",
    "note": "Author event at the MIT Press Bookstore with ELIZA running for visitors."
   },
   {
@@ -7264,9 +7619,9 @@
    "date": "2024-06-03",
    "kind": "magazine",
    "lang": "en",
-   "in": "BRG Insights, Nervous System column",
+   "in": "Legaltech News (republished by BRG)",
    "url": "https://www.thinkbrg.com/insights/publications/nervous-system-eliza-effect/",
-   "note": "Column on the first chatbot and on natural language communication with machines."
+   "note": "Column for a legal technology audience on Weizenbaum's creation of ELIZA as a Rogerian psychotherapist and the effect named after it."
   },
   {
    "id": "L-W7SMP",
@@ -7276,7 +7631,8 @@
    "kind": "article",
    "lang": "en",
    "in": "Interdisciplinary Science Reviews 46(1-2), pp. 36-52",
-   "doi": "10.1080/03080188.2020.1840219"
+   "doi": "10.1080/03080188.2020.1840219",
+   "url": "https://doi.org/10.1080/03080188.2020.1840219"
   },
   {
    "id": "L-WBCVW",
@@ -7289,6 +7645,17 @@
    "doi": "10.1145/367593.367617",
    "url": "https://doi.org/10.1145/367593.367617",
    "note": "Weizenbaum's description of the SLIP list processing system with forward and backward links; the abstract does not mention ELIZA."
+  },
+  {
+   "id": "L-WFM4X",
+   "title": "AI: The Tumultuous History of the Search for Artificial Intelligence",
+   "author": "Crevier, Daniel",
+   "date": "1993",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Basic Books",
+   "url": "https://archive.org/details/aitumultuoushist00crev",
+   "note": "History of AI that narrates Weizenbaum's work on ELIZA at MIT, Colby's clinical interest in DOCTOR and Weizenbaum's later attack on AI in Computer Power and Human Reason."
   },
   {
    "id": "L-WGJJ6",
@@ -7324,6 +7691,16 @@
    "in": "Журнал «Код»",
    "url": "https://thecode.media/read-chat-bot/",
    "note": "Russian retelling of a Guardian feature on the origins of chatbots, the Eliza effect and why Weizenbaum opposed artificial intelligence."
+  },
+  {
+   "id": "L-WIDE2",
+   "title": "Weizenbaum auf der Spur",
+   "date": "2024",
+   "kind": "podcast",
+   "lang": "de",
+   "in": "Weizenbaum-Institut",
+   "url": "https://www.weizenbaum-institut.de/w-100/weizenbaum-auf-der-spur/",
+   "note": "Four-part audio feature on Weizenbaum's work and influence, published by the institute named after him."
   },
   {
    "id": "L-WL3PT",
@@ -7376,7 +7753,8 @@
    "author": "Gill, Karamjit S.",
    "date": "2019",
    "kind": "article",
-   "lang": "en"
+   "lang": "en",
+   "url": "https://doi.org/10.1007/s00146-019-00884-0"
   },
   {
    "id": "L-WSOVE",
@@ -7519,6 +7897,17 @@
    "note": "Analyses the chatbot systems ELIZA and ALICE and concludes that bots are easier to build with ALICE's pattern matching than with ELIZA's rules."
   },
   {
+   "id": "L-X2Z7M",
+   "title": "À l'origine : avant ChatGPT et Siri, qui étaient les premiers chatbots ?",
+   "author": "Piasecki, Marion",
+   "date": "2023-04-04",
+   "kind": "magazine",
+   "lang": "fr",
+   "in": "L'Éclaireur Fnac",
+   "url": "https://leclaireur.fnac.com/article/269626-a-lorigine-avant-chatgpt-et-siri-qui-etaient-les-premiers-chatbots/",
+   "note": "History of chatbots with a section on Eliza the psychologist, its keyword method and users' unexpectedly long conversations, and the Eliza effect."
+  },
+  {
    "id": "L-X3NO3",
    "title": "Computer Applications in Assessment and Counseling",
    "author": "Veldman, Donald J.; Menaker, Shirley L.",
@@ -7542,16 +7931,27 @@
   },
   {
    "id": "L-X5X5T",
-   "title": "Wie hätte Joseph Weizenbaum die aktuellen Entwicklungen kommentiert?",
-   "author": "Martens, Alke; Düwel, Yvonne; Dellwing, Fabian",
-   "date": "2025-01-01",
+   "title": "Wie hatte Joseph Weizenbaum die aktuellen Entwicklungen kommentiert?",
+   "author": "Martens, Alke; Duwel, Yvonne; Dellwing, Fabian",
+   "date": "2025",
    "kind": "chapter",
    "lang": "de",
-   "in": "Ars digitalis",
+   "in": "Schreibende KI: ein interdisziplinarer Diskurs, Springer Vieweg, Wiesbaden",
    "doi": "10.1007/978-3-658-45839-3_4",
-   "url": "https://doi.org/10.1007/978-3-658-45839-3_4",
-   "note": "Asks how Weizenbaum would have commented on current developments, opening with the 1964 attempt to make the IBM 7094 talk.",
-   "licence": "CC BY"
+   "url": "https://link.springer.com/chapter/10.1007/978-3-658-45839-3_4",
+   "note": "Asks how Weizenbaum would have commented on generative AI, retelling ELIZA, its naming after Shaw's Eliza and the effect on those who interacted with it.",
+   "licence": "CC BY 4.0"
+  },
+  {
+   "id": "L-X6MBM",
+   "title": "The Electronic Sweatshop: How Computers Are Transforming the Office of the Future into the Factory of the Past",
+   "author": "Garson, Barbara",
+   "date": "1988",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Simon and Schuster",
+   "url": "https://archive.org/details/electronicsweats00gars",
+   "note": "Contains a section headed Joseph Weizenbaum and ELIZA on the 1966 demonstration and its relevance to replacing skilled work."
   },
   {
    "id": "L-X6QJN",
@@ -7600,6 +8000,17 @@
    "note": "Edited German collection on fifty years of conversations with computers, taking its title from ELIZA."
   },
   {
+   "id": "L-XDTL3",
+   "title": "The Know-It-Alls: The Rise of Silicon Valley as a Political Powerhouse and Social Wrecking Ball",
+   "author": "Cohen, Noam",
+   "date": "2017",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "The New Press",
+   "url": "https://archive.org/details/knowitallsriseof0000cohe",
+   "note": "Journalistic history that describes the Eliza project, the Doolittle naming and a 1966 exchange between Weizenbaum and the program."
+  },
+  {
    "id": "L-XENH5",
    "title": "The Myth of the Last Metaphor",
    "author": "Weizenbaum, Joseph",
@@ -7643,6 +8054,17 @@
    "in": "Joshua Lederberg Papers, Profiles in Science, US National Library of Medicine",
    "url": "https://profiles.nlm.nih.gov/ps/retrieve/ResourceMetadata/BBGFZQ",
    "note": "Electronic mail from Weizenbaum to Buchanan in the exchange around the book; metadata only read."
+  },
+  {
+   "id": "L-XLG42",
+   "title": "The Tomorrow Makers: A Brave New World of Living-Brain Machines",
+   "author": "Fjermedal, Grant",
+   "date": "1986",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Macmillan",
+   "url": "https://archive.org/details/tomorrowmakersbr00fjer",
+   "note": "Reportage in which the author meets Weizenbaum several times and describes a boy being taught to write an ELIZA program in Logo."
   },
   {
    "id": "L-XMHHS",
@@ -7827,17 +8249,20 @@
    "date": "2008-01-08",
    "kind": "news",
    "lang": "de",
-   "in": "DER SPIEGEL"
+   "in": "DER SPIEGEL",
+   "url": "https://www.spiegel.de/"
   },
   {
    "id": "L-YC64M",
    "title": "Eliza Redux",
-   "author": "Wortzel, Adrianne; StudioBlue",
-   "date": "2005",
-   "kind": "web page",
+   "author": "Wortzel, Adrianne",
+   "date": "2008-04-18",
+   "kind": "article",
    "lang": "en",
-   "in": "Turbulence Spotlight; ARTPORT, Whitney Museum; installation at New York City College of Technology, 2008",
-   "url": "https://turbulence.org/spotlight/eliza/index.htm"
+   "in": "Electronic Book Review",
+   "url": "http://electronicbookreview.com/publications/eliza-redux/",
+   "note": "Explains an artwork that reworks the 1960s therapist program with graphics, robotics and a growing vocabulary.",
+   "licence": "CC BY-ND 4.0"
   },
   {
    "id": "L-YDCED",
@@ -7965,7 +8390,8 @@
    "date": "1978-02",
    "kind": "interview",
    "lang": "en",
-   "in": "Personal Computing, February 1978, pp. 21-28"
+   "in": "Personal Computing, February 1978, pp. 21-28",
+   "url": "https://archive.org/details/197802"
   },
   {
    "id": "L-Z5QPH",
@@ -8127,15 +8553,15 @@
   },
   {
    "id": "L-ZNG6W",
-   "title": "Eliza in the uncanny valley : anthropomorphizing consumer robots increases their perceived warmth but decreases liking",
-   "author": "Kim, Seo Young; Schmitt, Bernd H.; Magnenat‐Thalmann, Nadia",
-   "date": "2019-03-01",
+   "title": "Eliza in the uncanny valley: anthropomorphizing consumer robots increases their perceived warmth but decreases liking",
+   "author": "Kim, Seo Young; Schmitt, Bernd H.; Thalmann, Nadia M.",
+   "date": "2019",
    "kind": "article",
    "lang": "en",
    "in": "Marketing Letters",
    "doi": "10.1007/s11002-019-09485-9",
-   "url": "https://doi.org/10.1007/s11002-019-09485-9",
-   "note": "Reports four experiments on the Eliza effect in consumer robots, finding that anthropomorphism increases warmth but lowers attitudes through uncanniness."
+   "url": "https://link.springer.com/article/10.1007/s11002-019-09485-9",
+   "note": "Four experiments on consumer robots framed as the Eliza effect of attributing human traits; ELIZA itself is not tested."
   },
   {
    "id": "L-ZODKP",
@@ -8199,6 +8625,17 @@
    "note": "History of generative AI chatbots that names ELIZA and ALICE among the early chatbots it traces to current conversational agents."
   },
   {
+   "id": "L-ZTGQK",
+   "title": "Artificial Intelligence (Understanding Computers series)",
+   "author": "Time-Life Books",
+   "date": "1986",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Time-Life Books",
+   "url": "https://archive.org/details/artificialilifel00time",
+   "note": "Illustrated popular volume recounting how Weizenbaum christened ELIZA and the responses to the program."
+  },
+  {
    "id": "L-ZTSZT",
    "title": "Joseph Weizenbaum - Das Internet",
    "author": "Weizenbaum, Joseph; Zoellner, Michael",
@@ -8249,7 +8686,8 @@
    "date": "1980-04",
    "kind": "magazine",
    "lang": "en",
-   "in": "80 Microcomputing, April 1980"
+   "in": "80 Microcomputing, April 1980",
+   "url": "https://archive.org/details/80-microcomputing-magazine-1980-04"
   },
   {
    "id": "L-ZV6XV",
@@ -8279,7 +8717,8 @@
    "date": "1981-10",
    "kind": "review",
    "lang": "en",
-   "in": "Creative Computing 7(10), p. 59"
+   "in": "Creative Computing 7(10), p. 59",
+   "url": "https://archive.org/details/creativecomputing-1981-10"
   }
  ]
 }
