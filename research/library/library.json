@@ -158,6 +158,18 @@
    "note": "2-minute clip from the 1983 television series starring Luba Goy and Billy Van demonstrating a simplified Eliza on a Commodore PET."
   },
   {
+   "id": "L-2KJK5",
+   "title": "Natural language processing (NLP) to Normalization",
+   "author": "Plant, Robert; Murrell, Stephen J.",
+   "date": "2010-06-02",
+   "kind": "chapter",
+   "lang": "en",
+   "in": "Cambridge University Press eBooks",
+   "doi": "10.1017/cbo9780511543449.012",
+   "url": "https://doi.org/10.1017/cbo9780511543449.012",
+   "note": "Discusses Eliza as a system pretending to be a psychologist, with an example dialogue."
+  },
+  {
    "id": "L-2L5PM",
    "title": "イライザ効果（ELIZA effect）とは？",
    "date": "2023-04-17",
@@ -339,6 +351,18 @@
    "note": "Introductory book describing ELIZA alongside the Turing test."
   },
   {
+   "id": "L-2TZFV",
+   "title": "Chatbots: Cybernetic Psychology and the Future of Conversation",
+   "author": "Slater, Avery",
+   "date": "2022-06-01",
+   "kind": "article",
+   "lang": "en",
+   "in": "Journal of cinema and media studies",
+   "doi": "10.1353/cj.2022.0036",
+   "url": "https://doi.org/10.1353/cj.2022.0036",
+   "note": "Discusses ELIZA, named after Eliza Doolittle, in an account of chatbots, cybernetic psychology and conversation."
+  },
+  {
    "id": "L-2UD4D",
    "title": "Ehrendoktor Joseph Weizenbaum: Dokumentation des Festkolloquiums",
    "author": "Oberquelle, Horst",
@@ -440,14 +464,15 @@
   },
   {
    "id": "L-3CDS4",
-   "title": "Eliza, a theatrical thriller about the first chatbot, feels emotionally distant. That's the point",
+   "title": "Eliza, a theatrical thriller about the first chatbot, feels emotionally distant. That’s the point",
    "author": "Henry, Kat",
-   "date": "2026-10-07",
+   "date": "2026-10-06",
    "kind": "review",
    "lang": "en",
    "in": "The Conversation",
-   "url": "https://theconversation.com/eliza-a-theatrical-thriller-about-the-first-chatbot-feels-emotionally-distant-thats-the-point-293226",
-   "note": "Review of Holloway's play arguing that its emotional distance is deliberate, because Eliza simulates empathy without feeling it."
+   "doi": "10.64628/aa.qmayuejtd",
+   "url": "https://doi.org/10.64628/aa.qmayuejtd",
+   "note": "Review of Eliza, a theatrical thriller about the first chatbot; the index gives no abstract."
   },
   {
    "id": "L-3DUEP",
@@ -539,6 +564,21 @@
    "url": "https://archive.org/details/usemisuseofcompu0000elli",
    "note": "Book on educational computing that examines ELIZA and its language handling with a transcript.",
    "thumb": "library/thumbs/L-3GWJ3.jpg"
+  },
+  {
+   "id": "L-3HQRI",
+   "title": "The Model-Infrastructure Co-Evolution in Conversational NLU: From ELIZA to Large Language Models",
+   "author": "Vedurupaka, Naveen Kumar",
+   "date": "2026-10-07",
+   "kind": "article",
+   "lang": "en",
+   "in": "East African Journal of Information Technology",
+   "doi": "10.37284/eajit.9.2.5954",
+   "url": "https://doi.org/10.37284/eajit.9.2.5954",
+   "note": "Traces conversational language understanding through five technological eras, from ELIZA's rule-based parsing to large language models.",
+   "licence": "CC BY",
+   "file": "library/files/L-3HQRI.pdf",
+   "source": "https://journals.eanso.org/index.php/eajit/article/download/5954/6273, 2026-11-07"
   },
   {
    "id": "L-3ID42",
@@ -740,6 +780,19 @@
    "note": "5-minute German demonstration of the Eliza program from the book BASIC-Computer-Spiele with speech output."
   },
   {
+   "id": "L-3XFVC",
+   "title": "The Talk That Plays: A Narrative Review of Game Dialogue Systems from ELIZA to Personalized Agents",
+   "author": "Revista, Zen; GAME, 10",
+   "date": "2026-08-31",
+   "kind": "review",
+   "lang": "en",
+   "in": "Zenodo (CERN European Organization for Nuclear Research)",
+   "doi": "10.5281/zenodo.22182257",
+   "url": "https://doi.org/10.5281/zenodo.22182257",
+   "note": "Narrative review of game dialogue systems moving from Weizenbaum's 1966 ELIZA through later narrative engines to personalised agents.",
+   "licence": "CC BY"
+  },
+  {
    "id": "L-3XGBW",
    "title": "[Show report on the Sigmund program]",
    "date": "1979-01",
@@ -772,6 +825,19 @@
    "doi": "10.1007/978-3-658-23715-8_11-1",
    "url": "https://doi.org/10.1007/978-3-658-23715-8_11-1",
    "note": "Reference chapter tracing the path from philosophy of language to ELIZA; the index gives no abstract."
+  },
+  {
+   "id": "L-3ZQWL",
+   "title": "Eliza's lesson (which we didn't learn): Reflections on sentimental chatbots and major threats to data protection and digital policy",
+   "author": "Scorza, Guido",
+   "date": "2026-01-01",
+   "kind": "chapter",
+   "lang": "en",
+   "in": "Nomos Verlagsgesellschaft mbH & Co. KG eBooks",
+   "doi": "10.5771/9783748966432-27",
+   "url": "https://doi.org/10.5771/9783748966432-27",
+   "note": "Reflections on Eliza's lesson for sentimental chatbots, data protection and digital policy; the index gives no abstract.",
+   "licence": "CC BY"
   },
   {
    "id": "L-44GVS",
@@ -1077,6 +1143,16 @@
    "thumb": "library/thumbs/L-4WOEU.jpg"
   },
   {
+   "id": "L-4XA7X",
+   "title": "Hacking Say and Reviving ELIZA: Lessons from Virtual Environments",
+   "author": "Mazar, Rochelle; Nolan, Jason",
+   "date": "2009-01-01",
+   "kind": "article",
+   "lang": "en",
+   "url": "http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.186.4615",
+   "note": "Discusses reviving ELIZA in virtual environments such as Second Life and lessons from MUDs."
+  },
+  {
    "id": "L-4XC76",
    "title": "Eliza Grows Up (User’s Column)",
    "author": "Pournelle, Jerry",
@@ -1345,6 +1421,16 @@
    "doi": "10.1145/1045270.1045271",
    "url": "https://doi.org/10.1145/1045270.1045271",
    "note": "Schank enters the debate after Weizenbaum's reply to McCarthy's SIGART review, responding to the use of his name and research in it."
+  },
+  {
+   "id": "L-5MAUA",
+   "title": "My Computer, My Friend, My Therapist: Exploring and questioning the theories and methodologies that guide the design of empathic agents",
+   "author": "Voisen, Sean E.",
+   "date": "2009-01-01",
+   "kind": "article",
+   "lang": "en",
+   "url": "https://www.semanticscholar.org/paper/ba2efd2bb09e0aca2a93526f17f10e14a41f5ed6",
+   "note": "Takes a critical look at the tendency to overanthropomorphise computer behaviour, in a paper on the design of empathic agents."
   },
   {
    "id": "L-5MICH",
@@ -1968,6 +2054,19 @@
    "note": "Press report of the dispute over computer intelligence after Weizenbaum's book, describing ELIZA as his 1965 program."
   },
   {
+   "id": "L-7JDQ6",
+   "title": "The Uses of Belief: A Psychoanalytic-Feminist Critique of ‘AI Ethics'",
+   "author": "Jeon, Won",
+   "date": "2026-04-25",
+   "kind": "article",
+   "lang": "en",
+   "in": "Australian Feminist Studies",
+   "doi": "10.1080/08164649.2026.2658028",
+   "url": "https://doi.org/10.1080/08164649.2026.2658028",
+   "note": "Psychoanalytic-feminist critique of AI ethics through a close reading of ELIZA and Weizenbaum's On the Impact of the Computer on Society.",
+   "licence": "CC BY-NC-ND"
+  },
+  {
    "id": "L-7JKET",
    "title": "Folge 22 (11.2) - Wie die Ethik in die Informatik kam - Joseph Weizenbaum, Informatikpionier und Computerkritiker",
    "date": "2024-09-18",
@@ -2083,6 +2182,19 @@
    "in": "heise online",
    "url": "https://www.heise.de/hintergrund/Zahlen-bitte-RFC-439-und-ein-Geburtstagsstaendchen-fuer-das-Arpanet-9548721.html",
    "note": "Background piece on Eliza covering surviving MAD-SLIP fragments, the 1972 PARRY and DOCTOR exchange in RFC 439, and Thomas von Randow's 1965 report and German version of the script."
+  },
+  {
+   "id": "L-7PUMY",
+   "title": "The ELIZA Effect: Why Machines That Talk Like People Should Still Be Treated as Machines",
+   "author": "Da Silva, Sergio",
+   "date": "2026-10-19",
+   "kind": "preprint",
+   "lang": "en",
+   "in": "Zenodo (CERN European Organization for Nuclear Research)",
+   "doi": "10.5281/zenodo.23483845",
+   "url": "https://doi.org/10.5281/zenodo.23483845",
+   "note": "Describes the ELIZA effect as the tendency to attribute understanding, emotion and consciousness to a computer and argues talking machines should be treated as machines.",
+   "licence": "CC BY"
   },
   {
    "id": "L-7QD3T",
@@ -2232,6 +2344,7 @@
    "kind": "chapter",
    "lang": "en",
    "in": "Anti-Computing: Dissent and the Machine, Manchester University Press",
+   "doi": "10.7765/9781526160720.00012",
    "url": "https://library.oapen.org/bitstream/20.500.12657/54468/1/external_content.pdf",
    "note": "Chapter on ELIZA as a therapist program within a book on histories of dissent against computing; only the chapter title and book description were read.",
    "licence": "CC BY-NC-ND"
@@ -3526,6 +3639,18 @@
    "note": "German article on ELIZA as the forefather of conversation programs."
   },
   {
+   "id": "L-DDENO",
+   "title": "ELIZA2GPT: A Controlled Study of End-to-End Latency Across Generations of Dialogue Systems From ELIZA (1966) to ChatGPT (2020)",
+   "author": "Chang, Alexander; Shokeen, Nikhil; Vijayakumar, Rohit",
+   "date": "2025-01-01",
+   "kind": "preprint",
+   "lang": "en",
+   "in": "SSRN Electronic Journal",
+   "doi": "10.2139/ssrn.5514139",
+   "url": "https://doi.org/10.2139/ssrn.5514139",
+   "note": "Controlled study of end-to-end latency across dialogue systems from ELIZA in 1966 to ChatGPT; the index gives no abstract."
+  },
+  {
    "id": "L-DETGC",
    "title": "Compute s Guide to Adventure Games",
    "kind": "book",
@@ -3947,6 +4072,16 @@
    "url": "https://shs.cairn.info/revue-reseaux-2018-6-page-207?lang=fr"
   },
   {
+   "id": "L-EC3LC",
+   "title": "A Python Pattern Matcher Project for an Introduction to Artificial Intelligence Course",
+   "author": "Martincic, Cynthia J.",
+   "date": "2012-01-01",
+   "kind": "article",
+   "lang": "en",
+   "url": "https://www.semanticscholar.org/paper/19dff8e490dccec521b4862e2b6acc7ff3a0055a",
+   "note": "Describes a Python pattern matcher project for an introductory course whose result is a rudimentary version of Eliza."
+  },
+  {
    "id": "L-ECJCN",
    "title": "Da ist kein Ich : Joseph Weizenbaum im Gesprächmit Thomas J. Schult",
    "author": "Schult, Thomas J.",
@@ -4320,6 +4455,18 @@
    "note": "Examines the effect of a common-sense network on responses from a chatterbot based on the ELIZA program."
   },
   {
+   "id": "L-FG3OW",
+   "title": "Ghosts of the Hidden Layer",
+   "author": "Walshe, Jennifer",
+   "date": "2023-12-04",
+   "kind": "chapter",
+   "lang": "en",
+   "in": "Chapman & Hall/CRC eBooks",
+   "doi": "10.1201/9781003312338-29",
+   "url": "https://doi.org/10.1201/9781003312338-29",
+   "note": "Links Pygmalion's statue, Eliza Doolittle, Weizenbaum's ELIZA program and other figures of the human and non-human."
+  },
+  {
    "id": "L-FGF7N",
    "title": "ELIZA",
    "author": "Berry, David M.",
@@ -4327,6 +4474,7 @@
    "kind": "web page",
    "lang": "en",
    "in": "Stunlaw",
+   "doi": "10.5281/zenodo.23762620",
    "url": "https://stunlaw.blogspot.com/2016/01/eliza.html",
    "note": "Blog post describing ELIZA's pattern matching and its simulation of a Rogerian psychotherapist."
   },
@@ -4607,6 +4755,18 @@
    "in": "Zocalo Public Square",
    "url": "https://www.zocalopublicsquare.org/can-a-1960s-therapy-bot-help-us-navigate-ai-mental-health/",
    "note": "Column on what ELIZA, as the original therapy chatbot, and Weizenbaum's aims offer for discussion of chatbots in mental health."
+  },
+  {
+   "id": "L-GC7LG",
+   "title": "AI, Robot Shaw ( Bernard Shaw, Automata, Robots, and Artificial Intelligence )",
+   "author": "Martín, Rodríguez",
+   "date": "2025-06-01",
+   "kind": "article",
+   "lang": "en",
+   "in": "Shaw",
+   "doi": "10.5325/shaw.45.1.0113",
+   "url": "https://doi.org/10.5325/shaw.45.1.0113",
+   "note": "Discusses Shaw's influence on robots and artificial intelligence, including the naming of the first chatterbot ELIZA."
   },
   {
    "id": "L-GD64V",
@@ -5630,6 +5790,19 @@
    "note": "Report on the Vienna premiere of Rebel at Work, mentioning ELIZA as his 1960s therapist simulation and his later criticism of technology."
   },
   {
+   "id": "L-J3MX6",
+   "title": "Book Review: Natale, Simone. Deceitful Media: Artificial Intelligence and Social Life after the Turing Test (New York: Oxford University Press, 2021)",
+   "author": "Narain, Mansa",
+   "date": "2024-04-09",
+   "kind": "review",
+   "lang": "en",
+   "in": "Media Industries",
+   "doi": "10.3998/mij.5768",
+   "url": "https://doi.org/10.3998/mij.5768",
+   "note": "Review of Natale's Deceitful Media, noting its historical account of AI including Weizenbaum.",
+   "licence": "CC BY-NC-ND"
+  },
+  {
    "id": "L-J3TSA",
    "title": "Computer Mechanisms for Man-Machine Dialogues",
    "author": "Branchek, Robert",
@@ -5760,6 +5933,18 @@
    "kind": "article",
    "url": "https://www.semanticscholar.org/paper/fbdbd17927114d6d53652f2231b39766643567ac",
    "note": "Paper on conversations with Eliza concerning gender and artificial intelligence; the index gives no abstract."
+  },
+  {
+   "id": "L-JEPEI",
+   "title": "A Historical Analysis of Chatbots from Eliza to Google Bard",
+   "author": "Singh, Ravinder; Thakur, Jawahar; Mohan, Yogesh",
+   "date": "2024-01-01",
+   "kind": "article",
+   "lang": "en",
+   "in": "Lecture notes in networks and systems",
+   "doi": "10.1007/978-981-97-6726-7_2",
+   "url": "https://doi.org/10.1007/978-981-97-6726-7_2",
+   "note": "Historical analysis of chatbots from Eliza to Google Bard; the index gives no abstract."
   },
   {
    "id": "L-JFMRZ",
@@ -6203,6 +6388,17 @@
    "publisher": "Cambridge, Mass. : MIT Press",
    "url": "https://archive.org/details/newmediareader0000unse",
    "note": "Anthology whose editorial material and companion disc cover Eliza and the Doctor script, and which reprints Suchman's explication of the ELIZA programs."
+  },
+  {
+   "id": "L-KE7SV",
+   "title": "The Elizas:Assistive Automatons and Gendered Labour",
+   "author": "Lushetich, Natasha",
+   "date": "2023-06-15",
+   "kind": "article",
+   "lang": "en",
+   "in": "Discovery Research Portal (University of Dundee)",
+   "url": "https://discovery.dundee.ac.uk/en/publications/27b25020-1412-4f5f-8ccb-62f517931f96",
+   "note": "Critical history of automated female assistants beginning with Weizenbaum's Eliza."
   },
   {
    "id": "L-KEDKG",
@@ -6829,6 +7025,7 @@
    "id": "L-M3UDO",
    "title": "Aesthetics and Rhetorics of AI Anthropomorphization: The Eliza Effect vs. the Character Effect",
    "author": "Wilde, Lukas R.A.",
+   "date": "2025-08-29",
    "kind": "chapter",
    "lang": "en",
    "in": "AI Aesthetics, Routledge",
@@ -6869,6 +7066,18 @@
    "lang": "de",
    "in": "DER SPIEGEL",
    "url": "https://www.spiegel.de/"
+  },
+  {
+   "id": "L-M7VFM",
+   "title": "Therapy with a Human Face",
+   "author": "Zeavin, Hannah",
+   "date": "2022-01-01",
+   "kind": "article",
+   "lang": "en",
+   "in": "Dissent",
+   "doi": "10.1353/dss.2022.0002",
+   "url": "https://doi.org/10.1353/dss.2022.0002",
+   "note": "Discusses the video game Eliza and its naming after Weizenbaum's program in an essay on therapy."
   },
   {
    "id": "L-MATNB",
@@ -6934,6 +7143,18 @@
    "url": "https://doi.org/10.33011/tf.v18i1.4579",
    "note": "Starts from human-computer conversation in the work of Turing and Weizenbaum before theorising the transmission of affect with voice assistants.",
    "licence": "CC BY"
+  },
+  {
+   "id": "L-MG3ZN",
+   "title": "Reading the Human through Robots",
+   "author": "Heffernan, Teresa",
+   "date": "2021-05-01",
+   "kind": "review",
+   "lang": "en",
+   "in": "NOVEL A Forum on Fiction",
+   "doi": "10.1215/00295132-8868941",
+   "url": "https://doi.org/10.1215/00295132-8868941",
+   "note": "Review of Rhee's The Robotic Imaginary, reporting that its first chapter considers ELIZA and how care labour is integral to AI."
   },
   {
    "id": "L-MGQ53",
@@ -7274,6 +7495,18 @@
    "note": "Course material built around a demonstration called Meet Eliza using a Kaypro disk of the program."
   },
   {
+   "id": "L-N5VAQ",
+   "title": "Synthetic Therapy",
+   "author": "Łabuz, Mateusz",
+   "date": "2026-10-23",
+   "kind": "chapter",
+   "lang": "en",
+   "in": "CRC Press eBooks",
+   "doi": "10.1201/9781042034529-17",
+   "url": "https://doi.org/10.1201/9781042034529-17",
+   "note": "Chapter on synthetic therapy discussing Weizenbaum's research and how ELIZA made users trust a simple script."
+  },
+  {
    "id": "L-N5ZV7",
    "title": "Man-machine communication",
    "author": "Meadow, Charles T",
@@ -7284,6 +7517,17 @@
    "url": "https://archive.org/details/manmachinecommun00mead",
    "note": "1970 book on man-machine communication that describes the Eliza program in chapter 5 as an example of natural language dialogue.",
    "thumb": "library/thumbs/L-N5ZV7.jpg"
+  },
+  {
+   "id": "L-N63JU",
+   "title": "De Eliza a Siri: La evolución",
+   "author": "Martín, Pedro Jiménez; Allende, Jesús Sánchez",
+   "date": "2015-02-05",
+   "kind": "article",
+   "lang": "es",
+   "in": "Tecnología y desarrollo",
+   "url": "https://www.semanticscholar.org/paper/ba25ca4fd1ad407ad224d1ea4dd628ec3e220eba",
+   "note": "Overview of intelligent conversational agents known as chatterbots, titled from Eliza to Siri."
   },
   {
    "id": "L-N6PIO",
@@ -8463,6 +8707,17 @@
    "publisher": "MIT Sloan working paper 605-72"
   },
   {
+   "id": "L-Q73UH",
+   "title": "(Un)easily Writing the Future",
+   "author": "Moulthrop, Stuart; Pintar, Judith; McDaid, John G",
+   "date": "2026-07-16",
+   "kind": "article",
+   "lang": "en",
+   "in": "Journal of International Crisis and Risk Communication Research",
+   "url": "https://stars.library.ucf.edu/elo2026/algorithmsandimaginaries/schedule/1",
+   "note": "Includes Pintar's account of facilitating Gemini AI in a Rogerian therapy session with an Eliza bot written in Inform."
+  },
+  {
    "id": "L-Q74RJ",
    "title": "Il mio nome è Eliza",
    "date": "1979-09",
@@ -8491,6 +8746,16 @@
    "publisher": "MIT Project MAC",
    "url": "https://apps.dtic.mil/sti/pdfs/AD0629494.pdf",
    "note": "Annual report noting ELIZA's use for experiments on two-person conversational interaction at Massachusetts General Hospital."
+  },
+  {
+   "id": "L-QATPP",
+   "title": "Computer Game Fictions",
+   "author": "Wardrip-Fruin, Noah",
+   "date": "2009-01-01",
+   "kind": "chapter",
+   "lang": "en",
+   "url": "https://www.semanticscholar.org/paper/e735fd5a90face117f3a5b539724b75062f5bf5f",
+   "note": "Chapter with a section on digital fictions and the Eliza effect."
   },
   {
    "id": "L-QBEHI",
@@ -8538,14 +8803,14 @@
   },
   {
    "id": "L-QEENT",
-   "title": "Künstliche Intelligenz zwischen Mythos und Kritik: Joseph Weizenbaum (1923–2008)",
+   "title": "Künstliche Intelligenz zwischen Mythos und Kritik Joseph Weizenbaum (1923-2008)",
    "author": "Strippel, Christian",
    "date": "2024-09",
-   "kind": "book",
+   "kind": "article",
    "lang": "de",
-   "publisher": "Weizenbaum-Institut; Berliner Landeszentrale für politische Bildung",
-   "url": "https://www.weizenbaum-institut.de/media/Publikationen/Einzelpublikationen/Broschuere_ki-mythos-kritik.pdf",
-   "note": "Brochure with a section titled Der ELIZA-Effekt (from p. 14) explaining the program, the therapy setting and its users' attributions, with a 1965 photo of a demonstration to the ZEIT editor Thomas von Randow."
+   "in": "Weizenbaum-Institut; Berliner Landeszentrale für politische Bildung",
+   "url": "https://bvbr.bib-bvb.de:443/F?func=service&doc_library=BVB01&local_base=BVB01&doc_number=035927734&sequence=000001&line_number=0001&func_code=DB_RECORDS&service_type=MEDIA",
+   "note": "Piece on Joseph Weizenbaum and artificial intelligence between myth and critique; the index gives no abstract."
   },
   {
    "id": "L-QEHOQ",
@@ -8884,6 +9149,17 @@
    "url": "https://archive.org/details/reengineeringhum0000spen",
    "note": "Human resources book with a section on Eliza, the Computer Expert System Psychotherapist, around p. 31.",
    "thumb": "library/thumbs/L-R7BBL.jpg"
+  },
+  {
+   "id": "L-RBDMF",
+   "title": "Islands in the Cyberstream: Seeking Havens of Reason in a Programmed Society",
+   "author": "Weizenbaum, Joseph; Wendt, Gunna",
+   "date": "2015-10-16",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "CERN Document Server (European Organization for Nuclear Research)",
+   "url": "https://www.semanticscholar.org/paper/104f5f87bac27ac8baf973d313f65dbd26a823fa",
+   "note": "Weizenbaum's conversation book with Gunna Wendt, Islands in the Cyberstream; the abstract introduces him through Computer Power and Human Reason."
   },
   {
    "id": "L-RBJ6Z",
@@ -9768,6 +10044,18 @@
    "note": "Technical report on the natural language system ELIZA and mental care."
   },
   {
+   "id": "L-TK37T",
+   "title": "Review: The Robotic Imaginary: The Human and the Price of Dehumanized Labor , by Jennifer Rhee",
+   "author": "Bellamy, Brent Ryan",
+   "date": "2019-11-01",
+   "kind": "review",
+   "lang": "en",
+   "in": "Science Fiction Studies",
+   "doi": "10.1353/sfs.2019.0061",
+   "url": "https://doi.org/10.1353/sfs.2019.0061",
+   "note": "Review of Rhee's The Robotic Imaginary, noting that readers meet ELIZA, designed by Weizenbaum to emulate a therapist."
+  },
+  {
    "id": "L-TKV5C",
    "title": "World's first chatbot restored on the world's first time-sharing system",
    "date": "2024-12-28",
@@ -10086,6 +10374,18 @@
    "in": "Oxford : Oxford University Press",
    "url": "https://archive.org/details/talltalesaboutmi0000unse",
    "note": "Essay in a collection on mind and brain describing how Weizenbaum devised ELIZA and how the human played the patient by Teletype."
+  },
+  {
+   "id": "L-UJKVB",
+   "title": "Authenticity in the Age of Digital Companions",
+   "author": "Turkle, Sherry",
+   "date": "2011-05-09",
+   "kind": "chapter",
+   "lang": "en",
+   "in": "Cambridge University Press eBooks",
+   "doi": "10.1017/cbo9780511978036.008",
+   "url": "https://doi.org/10.1017/cbo9780511978036.008",
+   "note": "Chapter with a section on Eliza and the crisis of authenticity, arguing that the program prefigured contemporary robotics culture."
   },
   {
    "id": "L-UK7G5",
@@ -10496,15 +10796,15 @@
   },
   {
    "id": "L-VL5WY",
-   "title": "Computermacht und Gesellschaft: Freie Reden",
-   "author": "Weizenbaum, Joseph; Wendt, Gunna; Klug, Franz",
-   "date": "2001",
+   "title": "Computermacht und Gesellschaft",
+   "author": "Wendt, Gunna; Klug, Franz; Weizenbaum, Joseph",
+   "date": "2001-01-01",
    "kind": "book",
    "lang": "de",
    "publisher": "Suhrkamp",
    "doi": "10.5771/9783518772027",
    "url": "https://doi.org/10.5771/9783518772027",
-   "note": "Collected essays and speeches by the author described on the record as the man who made computer history with Eliza, on the military contexts of computing and the fantasies of AI theory.",
+   "note": "Book of conversations on computer power and society, introducing Weizenbaum through his program Eliza as a critic of computer euphoria.",
    "thumb": "library/thumbs/L-VL5WY.jpg"
   },
   {
@@ -11453,6 +11753,18 @@
    "note": "Book of Apple II AI experiments with a section on ELIZA as the most famous AI program and its scripts."
   },
   {
+   "id": "L-XSN4D",
+   "title": "A Linguistic Anthropological Study on Artificial Intelligence Based Chatbots and Bernard Shaws Drama \"Pygmalion\"",
+   "author": "Park, Hwan-Young",
+   "date": "2021-07-30",
+   "kind": "article",
+   "lang": "en",
+   "in": "The Korean Society of Culture and Convergence",
+   "doi": "10.33645/cnc.2021.07.43.7.491",
+   "url": "https://doi.org/10.33645/cnc.2021.07.43.7.491",
+   "note": "Korean study relating AI chatbots to Shaw's Pygmalion, starting from the first chatbot Eliza in 1966."
+  },
+  {
    "id": "L-XTLTF",
    "title": "Drunk Eliza",
    "author": "Temkin, Daniel",
@@ -11461,6 +11773,19 @@
    "lang": "en",
    "in": "Entropy language site",
    "url": "https://entropy-lang.org/#elizaBack"
+  },
+  {
+   "id": "L-XXL2L",
+   "title": "AI, the ELIZA Effect and Emotional Well-Being: An Easy-to-Understand Research Review",
+   "author": "Kamran, Shafaque",
+   "date": "2026-10-19",
+   "kind": "article",
+   "lang": "en",
+   "in": "Zenodo (CERN European Organization for Nuclear Research)",
+   "doi": "10.5281/zenodo.23469522",
+   "url": "https://doi.org/10.5281/zenodo.23469522",
+   "note": "Educational review of AI and emotional well-being covering the ELIZA effect, the attribution of human-like understanding to a computer.",
+   "licence": "CC BY"
   },
   {
    "id": "L-XXYP7",
