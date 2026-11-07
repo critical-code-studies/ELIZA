@@ -6540,7 +6540,7 @@
    "title": "From Eliza to XiaoIce: challenges and opportunities with social chatbots",
    "author": "Shum, Heung-yeung; He, Xiao-dong; Li, Di",
    "date": "2018-01",
-   "kind": "article",
+   "kind": "preprint",
    "lang": "en",
    "in": "Frontiers of Information Technology & Electronic Engineering 19(1), 10-26",
    "doi": "10.1631/fitee.1700826",
@@ -7424,7 +7424,7 @@
    "in": "arXiv",
    "doi": "10.48550/arxiv.2501.06707",
    "url": "https://arxiv.org/abs/2501.06707",
-   "note": "Reports the discovery of an ELIZA printout in Weizenbaum's MIT archives and the rebuilding of the program to run on restored CTSS on an emulated IBM 7094.",
+   "note": "Reports the discovery of an ELIZA printout in Weizenbaum's MIT archives and the rebuilding of the program to run on restored CTSS on an emulated IBM 7094. Published version: \"ELIZA Reanimated: Restoring the Mother of All Chatbots to One of the First Time-Sharing Systems\", IEEE Annals of the History of Computing (2025), doi:10.1109/MAHC.2025.3564095.",
    "licence": "CC BY 4.0",
    "file": "library/files/L-KR3JK.pdf",
    "source": "https://arxiv.org/pdf/2501.06707, 2026-11-06"
@@ -8751,7 +8751,7 @@
    "in": "Proceedings of the National Academy of Sciences",
    "doi": "10.1073/pnas.2524472123",
    "url": "https://www.pnas.org/doi/10.1073/pnas.2524472123",
-   "note": "Uses an ELIZA implementation as a baseline witness in randomized three-party Turing tests, where ELIZA has a 23% win rate, below chance, and describes the ELIZA effect.",
+   "note": "Uses an ELIZA implementation as a baseline witness in randomized three-party Turing tests, where ELIZA has a 23% win rate, below chance, and describes the ELIZA effect. Preprint: Jones and Bergen, \"Large Language Models Pass the Turing Test\", arXiv:2503.23674.",
    "licence": "CC BY 4.0"
   },
   {
@@ -9939,12 +9939,12 @@
    "title": "Large Language Models Pass the Turing Test",
    "author": "Jones, Cameron R.; Bergen, Benjamin K.",
    "date": "2026-05-19",
-   "kind": "article",
+   "kind": "preprint",
    "lang": "en",
    "in": "Proceedings of the National Academy of Sciences",
    "doi": "10.48550/arxiv.2503.23674",
    "url": "https://doi.org/10.48550/arxiv.2503.23674",
-   "note": "Evaluates ELIZA alongside GPT-4o, LLaMa-3.1 and GPT-4.5 in two randomised, pre-registered Turing tests.",
+   "note": "Evaluates ELIZA alongside GPT-4o, LLaMa-3.1 and GPT-4.5 in two randomised, pre-registered Turing tests. Published version: Jones and Bergen, \"Large language models pass a standard three-party Turing test\", PNAS (2026).",
    "tags": [
     "passage not checked"
    ],
@@ -13650,7 +13650,7 @@
    "in": "IEEE Annals of the History of Computing",
    "doi": "10.1109/mahc.2025.3564095",
    "url": "https://doi.org/10.1109/MAHC.2025.3564095",
-   "note": "Journal version of the account of restoring ELIZA in MAD-SLIP to CTSS on an emulated IBM 7094 from the archival printout."
+   "note": "Journal version of the account of restoring ELIZA in MAD-SLIP to CTSS on an emulated IBM 7094 from the archival printout. Preprint: arXiv:2501.06707."
   },
   {
    "id": "L-Z7S26",
