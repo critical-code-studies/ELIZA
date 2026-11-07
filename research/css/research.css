@@ -49,7 +49,17 @@
 }
 
 /* the accent in the light themes: a deeper coral (the rest of each theme is kit/themes.css) */
-:root[data-theme="paper"] { --amber: #b0401d; --hl: rgba(176, 64, 29, 0.10); --noted-bg: rgba(176, 64, 29, 0.06); }
+/* Listing paper: warm ivory, the book cover's coral, the 7094 lamps' teal and blue */
+:root[data-theme="paper"] {
+  --bg: #f7f2e9; --bg-2: #f0e9db; --surface: #fffdf9; --surface-2: #efe8da; --code-bg: #fffdf9;
+  --line: #d9cfbc; --line-soft: #e9e2d3;
+  --text: #211c17; --text-dim: #5b5348; --text-faint: #6f665a;
+  --amber: #bb3f1b; --beam: #17666e; --violet: #2f5ea6; --green: #27733f; --red: #b3261e;
+  --hl: rgba(187, 63, 27, 0.10); --sel: rgba(23, 102, 110, 0.11); --noted-bg: rgba(187, 63, 27, 0.06);
+  --bar-1: #fbf6ed; --bar-2: #f3ebdc; --bar-fg: #211c17; --bar-line: #d9cfbc;
+  --pick-bg: #fffdf9; --pick-fg: #211c17; --pick-line: #cfc4ae;
+  --plate-line: #d9cfbc; --g-box: #e9e2d3;
+}
 :root[data-theme="white"] { --amber: #a83c1b; --hl: rgba(168, 60, 27, 0.09); --noted-bg: rgba(168, 60, 27, 0.05); }
 :root[data-theme="sepia"] { --amber: #a3401f; --hl: rgba(163, 64, 31, 0.11); --noted-bg: rgba(163, 64, 31, 0.06); }
 :root[data-theme="contrast"] { --amber: #ff7a4d; --hl: rgba(255, 122, 77, 0.20); --noted-bg: rgba(255, 122, 77, 0.10); }
