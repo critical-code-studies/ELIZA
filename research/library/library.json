@@ -1060,6 +1060,20 @@
    ]
   },
   {
+   "id": "L-4HT4C",
+   "title": "Artificial Intelligence: A Knowledge-Based Approach",
+   "author": "Firebaugh, Morris W.",
+   "date": "1988",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Boston : Boyd & Fraser",
+   "url": "https://archive.org/details/artificialintell00fire",
+   "note": "Prints a session with a microcomputer ELIZA and contrasts it with SIR among early application programs.",
+   "tags": [
+    "passage not checked"
+   ]
+  },
+  {
    "id": "L-4IDA6",
    "title": "研究小组复活1966年全球首个聊天机器人ELIZA 竟然来自MIT教授之手！",
    "author": "李鑫",
@@ -1778,6 +1792,18 @@
    "publisher": "Cambridge, Mass. : Winthrop Publishers",
    "url": "https://archive.org/details/softwarepsycholo00shne",
    "note": "Reports a visit with DOCTOR and the underlying ELIZA system in a discussion of natural language; page from an index line."
+  },
+  {
+   "id": "L-6BXJM",
+   "title": "Looking at Lisp",
+   "author": "Hasemer, Tony",
+   "date": "1984",
+   "kind": "book",
+   "lang": "en",
+   "pages": "153-",
+   "publisher": "Reading, Mass. : Addison-Wesley",
+   "url": "https://archive.org/details/lookingatlisp0000hase",
+   "note": "Chapter 7 on pattern matching opens with section 7.1, Eliza, and has the reader write a MICRO-ELIZA in Lisp."
   },
   {
    "id": "L-6C33F",
@@ -3475,6 +3501,19 @@
    "note": "Obituary of Weizenbaum as creator of ELIZA who became a self-described heretic in the AI community."
   },
   {
+   "id": "L-BZV6A",
+   "title": "Encyclopedia of Artificial Intelligence",
+   "date": "1987",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "New York : Wiley",
+   "url": "https://archive.org/details/encyclopediaofar0002unse_j3d8",
+   "note": "Has an entry on ELIZA and calls it the most famous pattern-matching program, with an excerpt of a typical conversation; seen in the 1987 and 1990 printings.",
+   "tags": [
+    "passage not checked"
+   ]
+  },
+  {
    "id": "L-C43MW",
    "title": "Man-machine natural language exchanges based on selected features of unrestricted input, I. The development of the time-shared computer as a research tool in studying dyadic communication",
    "author": "Quarton, Gardner C.; McGuire, Michael T.; Lorch, Stephen",
@@ -4174,6 +4213,20 @@
    ]
   },
   {
+   "id": "L-DK3IG",
+   "title": "The Social Impact of Computers",
+   "author": "Rosenberg, Richard S.",
+   "date": "1992",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Boston : Academic Press",
+   "url": "https://archive.org/details/socialimpactofco0000rose",
+   "note": "Describes ELIZA or DOCTOR as a program for a kind of therapy and quotes Colby on the ELIZA method.",
+   "tags": [
+    "passage not checked"
+   ]
+  },
+  {
    "id": "L-DKCDP",
    "title": "The Mad Doctor, in Smart Apples: 31 Artificial Intelligence Experiments with the Apple II",
    "author": "Horn, Delton T.",
@@ -4301,6 +4354,18 @@
    "note": "Review of Holloway's play in which Weizenbaum sets out to undermine the Turing Test, shares his childhood trauma with the program and is drawn in, with Minsky among the characters."
   },
   {
+   "id": "L-DU2IP",
+   "title": "Paradigms of Artificial Intelligence Programming: Case Studies in Common Lisp, Chapter 5: ELIZA: Dialog with a Machine",
+   "author": "Norvig, Peter",
+   "date": "1992",
+   "kind": "chapter",
+   "lang": "en",
+   "pages": "ch. 5",
+   "in": "Morgan Kaufmann",
+   "url": "https://github.com/norvig/paip-lisp/blob/main/docs/chapter5.md",
+   "note": "Chapter that rebuilds ELIZA in Lisp as a Rogerian pattern matcher whose apparent understanding is an illusion; passage read on the author's repository."
+  },
+  {
    "id": "L-DUF34",
    "title": "[Article on computers and natural language, discussing ELIZA and PARRY]",
    "date": "1979-07-09",
@@ -4403,6 +4468,20 @@
    "in": "Retro AI: Archaeologies of A.I. symposium, USC",
    "url": "https://calendar.usc.edu/event/retro-ai-symposium",
    "note": "Keynote on rereading and rerunning historical AI systems, delivered by an ELIZA project member at an archaeology of AI symposium."
+  },
+  {
+   "id": "L-DZFGX",
+   "title": "Algorithms in SNOBOL4",
+   "author": "Gimpel, James F.",
+   "date": "1976",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "New York : Wiley",
+   "url": "https://archive.org/details/algorithmsinsnob00gimp",
+   "note": "Describes Weizenbaum's ELIZA, its psychiatrist script and the Duquet SNOBOL4 version in a section on conversational programs.",
+   "tags": [
+    "passage not checked"
+   ]
   },
   {
    "id": "L-E3T7P",
@@ -5339,6 +5418,20 @@
    "in": "Exame",
    "url": "https://exame.com/inteligencia-artificial/o-primeiro-chatbot-do-mundo-tem-60-anos-e-assustou-seu-criador/",
    "note": "Brazilian magazine feature at sixty years on the secretary scene and how reactions to the therapist program made Weizenbaum an early AI critic."
+  },
+  {
+   "id": "L-GLY7O",
+   "title": "The Art of Prolog: Advanced Programming Techniques",
+   "author": "Sterling, Leon; Shapiro, Ehud",
+   "date": "1986",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Cambridge, Mass. : MIT Press",
+   "url": "https://archive.org/details/artofprologadvan00ster",
+   "note": "Presents a simplified ELIZA as an AI classic with its Prolog program and a sample conversation.",
+   "tags": [
+    "passage not checked"
+   ]
   },
   {
    "id": "L-GMOJ6",
@@ -7009,6 +7102,20 @@
    "note": "Podcast episode on Weizenbaum's creation of ELIZA in 1966 and the reactions that troubled him."
   },
   {
+   "id": "L-KBCKV",
+   "title": "Matter and Consciousness: A Contemporary Introduction to the Philosophy of Mind",
+   "author": "Churchland, Paul M.",
+   "date": "1988",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Cambridge, Mass. : MIT Press",
+   "url": "https://archive.org/details/matterconsciousn0000chur",
+   "note": "Uses Weizenbaum's ELIZA with a sample conversation to argue it has no conception of what a father or brother is.",
+   "tags": [
+    "passage not checked"
+   ]
+  },
+  {
    "id": "L-KBJH7",
    "title": "ELIZA REDUX: A Mutable Iteration",
    "author": "Wortzel, Adrianne",
@@ -7882,6 +7989,18 @@
    "in": "GitHub and elizagen.org",
    "url": "https://elizagen.org/",
    "note": "Site and repository tracing ELIZA's versions and clones, with original materials, resources and a code-based phylogeny of the implementations."
+  },
+  {
+   "id": "L-MEASU",
+   "title": "Computer Ethics: Cautionary Tales and Ethical Dilemmas in Computing",
+   "author": "Forester, Tom; Morrison, Perry",
+   "date": "1994",
+   "kind": "book",
+   "lang": "en",
+   "pages": "169-170, 186",
+   "publisher": "Cambridge, Mass. : MIT Press",
+   "url": "https://archive.org/details/computerethicsca0002fore",
+   "note": "Discusses Weizenbaum's Eliza and Doctor programs and the fascination they generated; pages from an index line."
   },
   {
    "id": "L-METW2",
@@ -11394,6 +11513,20 @@
    "note": "55-minute film of an encounter with Weizenbaum; the page gives the running time only and does not state how far ELIZA is discussed."
   },
   {
+   "id": "L-UAF3D",
+   "title": "Computer Science Logo Style, Volume 2",
+   "author": "Harvey, Brian",
+   "date": "1985",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Cambridge, Mass. : MIT Press",
+   "url": "https://archive.org/details/computersciencel02harv",
+   "note": "Chapter on a Logo doctor program, explaining Weizenbaum's ELIZA, its name and a section on ELIZA and artificial intelligence.",
+   "tags": [
+    "passage not checked"
+   ]
+  },
+  {
    "id": "L-UBDZK",
    "title": "From ELIZA to Alexa: Automated Care Labour and the Otherwise of Radical Care",
    "author": "Rhee, Jennifer",
@@ -11939,6 +12072,17 @@
    "doi": "10.1007/978-3-642-58599-9_2",
    "url": "https://doi.org/10.1007/978-3-642-58599-9_2",
    "note": "Chapter on Weizenbaum in a German volume on computing pioneers."
+  },
+  {
+   "id": "L-VL2FZ",
+   "title": "Artificial Intelligence",
+   "author": "Schalkoff, Robert J.",
+   "date": "1990",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "McGraw-Hill",
+   "url": "https://archive.org/details/artificialintell00scha",
+   "note": "Chapter 7 presents Weizenbaum's ELIZA as natural language analysis with a sample conversation in Figure 7.1."
   },
   {
    "id": "L-VL5WY",
