@@ -932,7 +932,7 @@
    "publisher": "MIT Distinctive Collections, Dome, Weizenbaum personal archives",
    "url": "https://hdl.handle.net/1721.3/201703",
    "note": "Digitised conversation printout dated 22 March 1965 in the set that holds the ELIZA listing.",
-   "licence": "CC BY-NC 4.0"
+   "licence": "CC0"
   },
   {
    "id": "L-3ZF6E",
@@ -3952,7 +3952,8 @@
    "publisher": "MIT Distinctive Collections, Dome, Weizenbaum personal archives",
    "url": "https://hdl.handle.net/1721.3/201701",
    "note": "Digitised conversation printout in the Weizenbaum personal archives set that holds the ELIZA listing.",
-   "licence": "CC BY-NC 4.0"
+   "licence": "CC BY-NC 4.0",
+   "date": "1964-10-01"
   },
   {
    "id": "L-D4BVS",
@@ -5214,7 +5215,7 @@
    "publisher": "MIT Distinctive Collections, Dome, Weizenbaum personal archives",
    "url": "https://hdl.handle.net/1721.3/201702",
    "note": "Digitised conversation printout dated 5 March 1965 in the set that holds the ELIZA listing.",
-   "licence": "CC BY-NC 4.0"
+   "licence": "CC0"
   },
   {
    "id": "L-FTRYK",
@@ -8792,13 +8793,13 @@
    "id": "L-NSQTM",
    "title": "\"Doctor I have terrible news...\"",
    "author": "Weizenbaum, Joseph",
-   "date": "2025-08-20",
+   "date": "1965",
    "kind": "report",
    "lang": "en",
    "publisher": "MIT Distinctive Collections, Dome, Weizenbaum personal archives",
    "url": "https://hdl.handle.net/1721.3/201700",
    "note": "Digitised conversation printout from Weizenbaum's papers, cited in Inventing ELIZA.",
-   "licence": "CC BY-NC 4.0"
+   "licence": "CC0"
   },
   {
    "id": "L-NSYDP",

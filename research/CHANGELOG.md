@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.143 (2026-11-07)
+
+- The Library: the 1965 conversations are CC0; two dates corrected.
+
 ## 0.1.142 (2026-11-07)
 
 - The Library: corrections to two records.
