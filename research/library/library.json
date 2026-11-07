@@ -329,7 +329,6 @@
    "kind": "review",
    "lang": "de",
    "in": "DER SPIEGEL",
-   "url": "https://www.spiegel.de/",
    "tags": [
     "passage not checked"
    ]
@@ -1056,16 +1055,6 @@
    ]
   },
   {
-   "id": "L-4HCUF",
-   "title": "[Article on Weizenbaum's ELIZA and DOCTOR]",
-   "date": "1976-05-28",
-   "kind": "magazine",
-   "lang": "en",
-   "in": "New Times 6(11)",
-   "url": "https://archive.org/details/sim_new-times_1976-05-28_6_11",
-   "note": "Article on Weizenbaum explaining why his natural language programs took the name ELIZA and how the psychiatric script became known as DOCTOR."
-  },
-  {
    "id": "L-4IDA6",
    "title": "研究小组复活1966年全球首个聊天机器人ELIZA 竟然来自MIT教授之手！",
    "author": "李鑫",
@@ -1246,17 +1235,6 @@
    "licence": "CC BY-NC-SA"
   },
   {
-   "id": "L-4RWLH",
-   "title": "Inventing ELIZA: How the First Chatbot Shaped the Future of AI (book presentation and panel)",
-   "author": "Ciston, Sarah; Berry, David M.",
-   "date": "2026-09-03",
-   "kind": "talk",
-   "lang": "en",
-   "in": "Weizenbaum Institute, Berlin, series 60 years of ELIZA, 50 years of computer criticism",
-   "url": "https://www.weizenbaum-institut.de/en/news/detail/sarah-ciston-david-m-berry-und-team-inventing-eliza-how-the-first-chatbot-shaped-the-future-of-ai/",
-   "note": "Book talk and panel discussion with the authors in the institute's ELIZA anniversary series."
-  },
-  {
    "id": "L-4U3XC",
    "title": "Computer power and human reason",
    "author": "Shotwell, D. A.",
@@ -1375,7 +1353,6 @@
    "kind": "review",
    "lang": "de",
    "in": "DER SPIEGEL",
-   "url": "https://www.spiegel.de/",
    "tags": [
     "passage not checked"
    ]
@@ -1587,15 +1564,6 @@
    "tags": [
     "passage not checked"
    ]
-  },
-  {
-   "id": "L-5LORJ",
-   "title": "A Simulation in C++ of Joseph Weizenbaum’s 1966 ELIZA",
-   "author": "Hay, Anthony C.",
-   "date": "2022",
-   "kind": "web page",
-   "url": "https://github.com/anthay/ELIZA",
-   "note": "Simulation of the 1966 ELIZA in C++."
   },
   {
    "id": "L-5LRNW",
@@ -1909,21 +1877,6 @@
     "passage not checked"
    ],
    "licence": "CC BY"
-  },
-  {
-   "id": "L-6IWTE",
-   "title": "Tools for thought: the people and ideas behind the next computer revolution",
-   "author": "Rheingold, Howard",
-   "date": "1985",
-   "kind": "book",
-   "lang": "en",
-   "publisher": "Simon & Schuster",
-   "url": "https://archive.org/details/toolsforthought00howa",
-   "note": "Tells of Weizenbaum unveiling ELIZA at Project MAC and of his later regret.",
-   "thumb": "library/thumbs/L-6IWTE.jpg",
-   "tags": [
-    "passage not checked"
-   ]
   },
   {
    "id": "L-6IYLM",
@@ -2877,7 +2830,6 @@
    "kind": "news",
    "lang": "de",
    "in": "DER SPIEGEL",
-   "url": "https://www.spiegel.de/",
    "tags": [
     "passage not checked"
    ]
@@ -2921,17 +2873,6 @@
    "licence": "CC BY"
   },
   {
-   "id": "L-AK5SW",
-   "title": "The ELIZA Effect",
-   "author": "Mars, Roman",
-   "date": "2019-12-11",
-   "kind": "podcast",
-   "lang": "en",
-   "in": "99% Invisible, episode 382",
-   "url": "https://99percentinvisible.org/episode/the-eliza-effect/",
-   "note": "Episode with published text telling the story of ELIZA at MIT, the responses of its users, and Weizenbaum's turn against the AI field."
-  },
-  {
    "id": "L-AKRVE",
    "title": "'The Ineradicable Eliza Effect and Its Dangers': Weizenbaum, Pygmalion and the implications of gendering AI",
    "author": "Dillon, Sarah",
@@ -2941,16 +2882,6 @@
    "in": "University of Cambridge talk",
    "url": "https://talks.cam.ac.uk/talk/index/132031/",
    "note": "Talk abstract addressing Hofstadter's account of the Eliza effect, its naming after Shaw's heroine, and the gendering of AI."
-  },
-  {
-   "id": "L-ALAGT",
-   "title": "«Effetto Eliza»: un podcast per scoprire come nacque il primo chatbot e perché il suo inventore ci mise in guardia",
-   "date": "2026-09-26",
-   "kind": "news",
-   "lang": "it",
-   "in": "Bresciaoggi",
-   "url": "https://www.bresciaoggi.it/rubriche/scienza-tecnologia/effetto-eliza-il-podcast-sulla-storia-dei-chatbot-e-sull-illusione-dell-intelligenza-artificiale-1.13135877",
-   "note": "Announcement of a Festival del Futuro podcast telling the story of ELIZA and Weizenbaum's warning."
   },
   {
    "id": "L-ALUTE",
@@ -3451,8 +3382,7 @@
    "date": "2022-06-14",
    "kind": "news",
    "lang": "de",
-   "in": "DER SPIEGEL",
-   "url": "https://www.spiegel.de/"
+   "in": "DER SPIEGEL"
   },
   {
    "id": "L-BWCHS",
@@ -4129,7 +4059,6 @@
    "kind": "news",
    "lang": "de",
    "in": "DER SPIEGEL",
-   "url": "https://www.spiegel.de/",
    "tags": [
     "passage not checked"
    ]
@@ -4337,16 +4266,6 @@
    "tags": [
     "passage not checked"
    ]
-  },
-  {
-   "id": "L-DSG52",
-   "title": "No. 2902: ELIZA",
-   "author": "Boyd, Andrew",
-   "kind": "podcast",
-   "lang": "en",
-   "in": "The Engines of Our Ingenuity, University of Houston",
-   "url": "https://engines.egr.uh.edu/episode/2902",
-   "note": "Radio episode with transcript on ELIZA as a program that held therapy-style typed conversations."
   },
   {
    "id": "L-DTIDM",
@@ -5375,8 +5294,7 @@
    "date": "2000-08-28",
    "kind": "news",
    "lang": "de",
-   "in": "DER SPIEGEL",
-   "url": "https://www.spiegel.de/"
+   "in": "DER SPIEGEL"
   },
   {
    "id": "L-GHAWP",
@@ -5648,7 +5566,6 @@
    "kind": "news",
    "lang": "de",
    "in": "DER SPIEGEL",
-   "url": "https://www.spiegel.de/",
    "tags": [
     "passage not checked"
    ]
@@ -6019,7 +5936,8 @@
    "in": "Paradigms of Artificial Intelligence Programming, Morgan Kaufmann, pp. 151-174",
    "doi": "10.1016/b978-0-08-057115-7.50005-4",
    "url": "https://doi.org/10.1016/B978-0-08-057115-7.50005-4",
-   "note": "Textbook chapter implementing an ELIZA-style program in Common Lisp."
+   "note": "Textbook chapter implementing an ELIZA-style program in Common Lisp.",
+   "publisher": "San Francisco: Morgan Kaufmann; ISBN 978-1-55860-191-8"
   },
   {
    "id": "L-I42UG",
@@ -6198,19 +6116,6 @@
    "in": "Tech Xplore",
    "url": "https://techxplore.com/news/2025-01-world-chatbot-eliza-resurrected-year.html",
    "note": "Report on the recovery of Weizenbaum's code by an MIT archivist and on the team's arXiv paper describing the resurrection."
-  },
-  {
-   "id": "L-IG62B",
-   "title": "[Supplement article on artificial language experiments]",
-   "date": "1985-09-24",
-   "kind": "news",
-   "lang": "en",
-   "in": "The Boston Phoenix 14, supplement",
-   "url": "https://archive.org/details/sim_boston-phoenix_1985-09-24_14_supplement",
-   "note": "Newspaper supplement explaining Eliza as a conversational program, its limits, and Weizenbaum's embarrassment at claims of therapeutic value.",
-   "tags": [
-    "passage not checked"
-   ]
   },
   {
    "id": "L-II3SC",
@@ -6527,7 +6432,6 @@
    "kind": "news",
    "lang": "de",
    "in": "DER SPIEGEL",
-   "url": "https://www.spiegel.de/",
    "tags": [
     "passage not checked"
    ]
@@ -7475,18 +7379,6 @@
    ]
   },
   {
-   "id": "L-L424K",
-   "title": "Analysis: Bob's blog (ELIZA chatbot)",
-   "author": "McDonald, Bob",
-   "kind": "news",
-   "lang": "en",
-   "in": "Quirks and Quarks, CBC Radio",
-   "url": "https://www.cbc.ca/radio/quirks/eliza-chatbot-1.7459487",
-   "tags": [
-    "passage not checked"
-   ]
-  },
-  {
    "id": "L-L46NB",
    "title": "'ELIZA,' the world's 1st chatbot, was just resurrected from 60-year-old computer code",
    "author": "Killgrove, Kristina",
@@ -7898,7 +7790,6 @@
    "kind": "news",
    "lang": "de",
    "in": "DER SPIEGEL",
-   "url": "https://www.spiegel.de/",
    "tags": [
     "passage not checked"
    ]
@@ -8109,7 +8000,7 @@
   {
    "id": "L-MNO6O",
    "title": "Pygmalion Displacement: When Humanising AI Dehumanises Women",
-   "author": "Erscoi, Lelia A.; Kleinherenbrink, Annelies; Guest, Olivia",
+   "author": "Erscoi, Lelia; Kleinherenbrink, Annelies; Guest, Olivia",
    "date": "2023-02",
    "kind": "preprint",
    "lang": "en",
@@ -8203,8 +8094,7 @@
    "date": "2023-01-08",
    "kind": "documentary",
    "lang": "de",
-   "publisher": "Deutschlandfunk Kultur",
-   "url": "https://archive.org/"
+   "publisher": "Deutschlandfunk Kultur"
   },
   {
    "id": "L-MUEHI",
@@ -10085,17 +9975,6 @@
    "note": "Piece on Weizenbaum as an early computer specialist and social critic; the index gives no abstract."
   },
   {
-   "id": "L-QSR37",
-   "title": "Pygmalion Displacement",
-   "author": "Erscoi, Lelia A.; Kleinherenbrink, Annelies; Guest, Olivia",
-   "date": "2023",
-   "kind": "article",
-   "lang": "en",
-   "tags": [
-    "passage not checked"
-   ]
-  },
-  {
    "id": "L-QWEQ5",
    "title": "Artificial intelligence: a philosophical introduction ",
    "author": "Copeland, B. Jack",
@@ -10277,17 +10156,6 @@
    "in": "80 Microcomputing, January 1980",
    "url": "https://archive.org/details/80-microcomputing-magazine-1980-01",
    "note": "Notes a Doctor program based on Eliza by Weizenbaum that takes the part of a psychiatrist."
-  },
-  {
-   "id": "L-RC3WN",
-   "title": "Chapter 5: ELIZA: Dialog with a Machine",
-   "author": "Norvig, Peter",
-   "date": "1992",
-   "kind": "chapter",
-   "lang": "en",
-   "in": "Paradigms of Artificial Intelligence Programming: Case Studies in Common Lisp",
-   "url": "https://github.com/norvig/paip-lisp/blob/main/docs/chapter5.md",
-   "note": "Textbook chapter that writes a version of ELIZA in Common Lisp and explains its pattern matching."
   },
   {
    "id": "L-RD4SA",
@@ -10553,15 +10421,6 @@
    "publisher": "Reading, Mass. : Addison Wesley Pub. Co.",
    "url": "https://archive.org/details/languageascognit00terr",
    "note": "Chapter 2 on word patterns explains ELIZA's dialogue from Weizenbaum 1966, its blunders and how variables match in its patterns; pages from an index line and a running head."
-  },
-  {
-   "id": "L-RS53J",
-   "title": "The Genealogy of ELIZA",
-   "author": "Shrager, Jeff",
-   "kind": "web page",
-   "lang": "en",
-   "in": "ELIZAGEN",
-   "url": "https://elizagen.org/"
   },
   {
    "id": "L-RT5VD",
@@ -11140,16 +10999,6 @@
    "note": "2:28 video with the playwright and director on what drew them to the story of the play."
   },
   {
-   "id": "L-TBLXE",
-   "title": "rupertl/eliza-ctss",
-   "author": "Lane, Rupert",
-   "date": "2025-04-29",
-   "kind": "web page",
-   "lang": "en",
-   "in": "GitHub",
-   "url": "https://github.com/rupertl/eliza-ctss"
-  },
-  {
    "id": "L-TC4M4",
    "title": "The Circle Of Light We Search Within, Joseph Weizenbaum, in: Computer Power and Human Reason. W. H. Freeman, San Francisco (1976), 300 pp., $9.95",
    "author": "Smith, Alfred Glaze",
@@ -11535,17 +11384,6 @@
    "note": "Reports on a middle school class that chatted with ELIZA and then coded therapist-style bots in MIT App Inventor, with students finding ELIZA limited yet still trusting ChatGPT."
   },
   {
-   "id": "L-UDXJB",
-   "title": "Paradigms of Artificial Intelligence Programming",
-   "author": "Norvig, Peter",
-   "date": "1992",
-   "kind": "book",
-   "lang": "en",
-   "publisher": "San Francisco: Morgan Kaufmann; ISBN 978-1-55860-191-8",
-   "url": "https://github.com/norvig/paip-lisp/blob/main/docs/chapter5.md",
-   "note": "Textbook with an ELIZA implementation discussion at pp. 151-154, 159, 163-169, 175 and 181."
-  },
-  {
    "id": "L-UEQBS",
    "title": "The Mind's New Science: A History of the Cognitive Revolution",
    "author": "Gardner, Howard",
@@ -11900,17 +11738,6 @@
    "note": "Company blog history of Eliza as the first chatbot to hold a dialogue with a person."
   },
   {
-   "id": "L-V5L2V",
-   "title": "ELIZA: Dialog with a Machine (chapter 5)",
-   "author": "Norvig, Peter",
-   "date": "1992",
-   "kind": "chapter",
-   "lang": "en",
-   "in": "Paradigms of Artificial Intelligence Programming: Case Studies in Common Lisp, Morgan Kaufmann",
-   "url": "https://github.com/norvig/paip-lisp/blob/main/docs/chapter5.md",
-   "note": "Textbook chapter that teaches pattern matching by building an ELIZA in Common Lisp, using a dialogue from Weizenbaum's article, and describes its intelligence as largely an illusion."
-  },
-  {
    "id": "L-V63FA",
    "title": "[Article on experts and information technology]",
    "date": "1987-08",
@@ -12026,15 +11853,6 @@
    "note": "Magazine feature on Weizenbaum and the difference between deciding and choosing; the index gives no abstract."
   },
   {
-   "id": "L-VJ2QK",
-   "title": "Hour of Code: Eliza the Chatterbot on Grok Academy",
-   "kind": "web page",
-   "lang": "en",
-   "in": "Grok Academy",
-   "url": "https://grokacademy.org/hoc/activity/eliza/",
-   "note": "Lesson plan for a school coding activity based on Weizenbaum's chatbot and its simulated Rogerian therapist."
-  },
-  {
    "id": "L-VJ3ZS",
    "title": "MIT Professor's Work Led Him to Preach the Evils of Computers",
    "author": "Miller, Stephen",
@@ -12051,7 +11869,6 @@
    "date": "1976",
    "kind": "review",
    "lang": "en",
-   "url": "https://collections.nlm.nih.gov/",
    "tags": [
     "passage not checked"
    ]
@@ -12535,16 +12352,6 @@
    "note": "Russian retelling of a Guardian feature on the origins of chatbots, the Eliza effect and why Weizenbaum opposed artificial intelligence."
   },
   {
-   "id": "L-WIDE2",
-   "title": "Weizenbaum auf der Spur",
-   "date": "2024",
-   "kind": "podcast",
-   "lang": "de",
-   "in": "Weizenbaum-Institut",
-   "url": "https://www.weizenbaum-institut.de/w-100/weizenbaum-auf-der-spur/",
-   "note": "Four-part audio feature on Weizenbaum's work and influence, published by the institute named after him."
-  },
-  {
    "id": "L-WL3PT",
    "title": "Joseph Weizenbaum warned us about AI 50 years ago (feat. Faine Greenwood) from Sep 15, 2025",
    "author": "Hurst, Mark; Greenwood, Faine",
@@ -12554,18 +12361,6 @@
    "in": "Techtonic with Mark Hurst | WFMU",
    "url": "https://podcasts.apple.com/us/podcast/joseph-weizenbaum-warned-us-about-ai-50-years-ago-feat/id1285537944?i=1000726976744",
    "note": "WFMU radio show interview on Weizenbaum's warnings about AI, broadcast 15 September 2025; the listing gives no total running time."
-  },
-  {
-   "id": "L-WLBNA",
-   "title": "Book Talk: Inventing ELIZA: How the First Chatbot Shaped the Future of AI",
-   "author": "Berry, David M.",
-   "date": "2026-10-15",
-   "kind": "talk",
-   "lang": "en",
-   "in": "Sussex Digital Humanities Lab Seminars, University of Sussex",
-   "tags": [
-    "passage not checked"
-   ]
   },
   {
    "id": "L-WLIZH",
@@ -13163,18 +12958,6 @@
    "note": "Author has her four year old child converse with an Eliza chatbot and reports the exchanges."
   },
   {
-   "id": "L-XSLMX",
-   "title": "Smart Apples: 31 Artificial Intelligence Experiments with the Apple II, II+, //e, //c, IIGS",
-   "author": "Delton T. Horn",
-   "kind": "book",
-   "lang": "en",
-   "url": "https://archive.org/details/smart-apples",
-   "note": "Book of Apple II AI experiments with a section on ELIZA as the most famous AI program and its scripts.",
-   "tags": [
-    "passage not checked"
-   ]
-  },
-  {
    "id": "L-XSN4D",
    "title": "A Linguistic Anthropological Study on Artificial Intelligence Based Chatbots and Bernard Shaws Drama \"Pygmalion\"",
    "author": "Park, Hwan-Young",
@@ -13280,20 +13063,6 @@
    ]
   },
   {
-   "id": "L-Y4GXU",
-   "title": "Another Program? (review of Computer Power and Human Reason)",
-   "author": "Rosen, Richard Dean",
-   "date": "1976-02-03",
-   "kind": "review",
-   "lang": "en",
-   "in": "The Boston Phoenix 5(5)",
-   "url": "https://archive.org/details/sim_boston-phoenix_1976-02-03_5_5",
-   "note": "Newspaper review of Weizenbaum's book, which it treats at length in relation to the conflict around computing in the middle 1960s.",
-   "tags": [
-    "passage not checked"
-   ]
-  },
-  {
    "id": "L-Y4JPD",
    "title": "The Thrill — And The Mystery — Of A 1970s Bell Labs AI Chatbot Known As 'Red Father'",
    "author": "Feldman, Amy",
@@ -13319,17 +13088,6 @@
     "passage not checked"
    ],
    "licence": "CC BY-NC-ND 3.0"
-  },
-  {
-   "id": "L-Y5BWT",
-   "title": "Talk to It",
-   "author": "Gleick, James",
-   "date": "2026-11-05",
-   "kind": "review",
-   "lang": "en",
-   "in": "The New York Review of Books",
-   "url": "https://www.nybooks.com/articles/2026/11/05/talk-to-it-chatbots-artificial-intimacy-inventing-eliza/",
-   "note": "Reviews Inventing ELIZA with Turkle's Artificial Intimacy, presenting ELIZA as forerunner of modern chatbots and recounting Weizenbaum's later warning about its power to deceive."
   },
   {
    "id": "L-Y64OE",
@@ -13389,7 +13147,6 @@
    "kind": "news",
    "lang": "de",
    "in": "DER SPIEGEL",
-   "url": "https://www.spiegel.de/",
    "note": "Portrait for Weizenbaum's 85th birthday describing his horror at the effects of his software and the belief in technology among colleagues."
   },
   {
@@ -13693,16 +13450,6 @@
    "in": "Der Weg der Stoa",
    "url": "https://podcasts.apple.com/us/podcast/episode-108-der-eliza-effekt/id1683417145?i=1000792683365",
    "note": "German episode explaining the ELIZA effect from Weizenbaum's chatbot and relating it to Stoicism and modern language models. 54 minutes."
-  },
-  {
-   "id": "L-ZBYYH",
-   "title": "[Review and excerpt: Computer Power and Human Reason]",
-   "date": "1977",
-   "kind": "review",
-   "lang": "en",
-   "in": "CoEvolution Quarterly 13 (Spring 1977)",
-   "url": "https://archive.org/details/sim_whole-earth_coevolution-quarterly_spring-1977_13",
-   "note": "Notice of the book with an excerpt in which Weizenbaum describes giving ELIZA its first script."
   },
   {
    "id": "L-ZD5WJ",
@@ -14092,15 +13839,6 @@
    "url": "https://doi.org/10.1177/09727531231221612",
    "note": "Review that tabulates the MYLO and ELIZA trials among its included studies and reports MYLO rated more helpful than ELIZA without being more effective.",
    "licence": "CC BY-NC"
-  },
-  {
-   "id": "L-ZXFYZ",
-   "title": "Continuous Paper (History of Material Texts Workshop)",
-   "author": "Montfort, Nick",
-   "date": "2004-02-23",
-   "kind": "talk",
-   "url": "https://nickm.com/writing/essays/continuous_paper_homt.html",
-   "note": "Workshop paper with a section on ELIZA and DOCTOR as printed on teletype paper rather than screens."
   },
   {
    "id": "L-ZXYVU",
