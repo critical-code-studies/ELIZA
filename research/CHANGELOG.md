@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.159 (2026-11-07)
+
+- The kit at 1.8.6: the snapshot job on current GitHub Actions.
+
 ## 0.1.158 (2026-11-07)
 
 - The Library shows the group's ratings, Key work marks and tags to every reader, from a daily snapshot.
