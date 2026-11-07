@@ -1,0 +1,32 @@
+# Copy to .github/workflows/library-snapshot.yml in a bench's repository to publish the group's ratings, Key work
+# marks and tags for readers with no token, once a day (docs/library.md, "For readers with no token"). No note text
+# is published. It needs a repository secret HYPOTHESIS_TOKEN, from a Hypothesis account in the group. Where the kit
+# is not at research/kit, change the path below.
+name: Library snapshot
+on:
+  schedule:
+    - cron: '17 5 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node research/kit/tools/library-snapshot.js
+        env:
+          HYPOTHESIS_TOKEN: ${{ secrets.HYPOTHESIS_TOKEN }}
+      - name: Commit if it changed
+        run: |
+          git add -A -- '*library/group.json'
+          git diff --cached --quiet && exit 0
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m "The group's ratings, marks and tags, for readers with no token"
+          git push
