@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.153 (2026-11-07)
+
+- The kit at 1.8.2: stars, emoji, tags and a Key work badge in the Library, and six levels of relevance.
+
 ## 0.1.152 (2026-11-07)
 
 - The kit at 1.8.1: key works first in the Library.
