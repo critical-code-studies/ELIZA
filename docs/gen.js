@@ -870,7 +870,7 @@ write('talks.html', page({
 
       <h2 class="yeargroup">2026</h2>
       <ul class="talklist">
-        <li><span class="when">9 November 2026</span><span class="who">Marino, M. C. &amp; Weil, P.</span><span class="ttl"><a href="https://la.re-publica.com/de/session/inventing-eliza-how-first-chatbot-shaped-future-ai" target="_blank" rel="noopener">&ldquo;Inventing ELIZA: How the First Chatbot Shaped the Future of AI&rdquo;</a></span><span class="meta">Talk, re:publica Los Angeles, Democracy &amp; Innovation track, Sand &amp; Sea Room, 15:30&ndash;15:50</span></li>
+        <li><span class="when">9 November 2026</span><span class="who">Marino, M. C. &amp; Weil, P.</span><span class="ttl"><a href="https://la.re-publica.com/de/session/inventing-eliza-how-first-chatbot-shaped-future-ai" target="_blank" rel="noopener">&ldquo;Inventing ELIZA: How the First Chatbot Shaped the Future of AI&rdquo;</a></span><span class="meta">Talk, re:publica Los Angeles, Democracy &amp; Innovation track, 15:30&ndash;15:50</span></li>
         <li>
           <div class="talk-shots talk-side">
             <figure><a target="_blank" rel="noopener" href="assets/images/mitpress-bookstore-poster.jpg"><img src="assets/images/mitpress-bookstore-poster.jpg" alt="MIT Press Bookstore notice: author meeting with Peggy Weil, coauthor of Inventing ELIZA, Thursday 22 October at 3pm" loading="lazy"></a><figcaption>The MIT Press Bookstore&rsquo;s notice.</figcaption></figure>
