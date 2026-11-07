@@ -135,7 +135,8 @@
    "url": "https://doi.org/10.1007/s00146-018-0825-9",
    "note": "Explores the history of ELIZA as an approximated Rogerian therapist and how its reception led Weizenbaum to reappraise computer power and human reason.",
    "relevance": "about",
-   "licence": "CC BY"
+   "licence": "CC BY",
+   "key": 11
   },
   {
    "id": "L-7ZGOK",
@@ -288,7 +289,8 @@
    "relevance": "about",
    "licence": "CC BY",
    "file": "library/files/L-E5OMW.pdf",
-   "source": "https://ojs.weizenbaum-institut.de/index.php/wjds/article/download/106/3_3_2, 2026-11-06"
+   "source": "https://ojs.weizenbaum-institut.de/index.php/wjds/article/download/106/3_3_2, 2026-11-06",
+   "key": 10
   },
   {
    "id": "L-G6BFA",
@@ -300,7 +302,8 @@
    "in": "Hello, I'm Eliza. 50 Jahre Gesprache mit Computern (Computerarchaologie, Bd. 5), 2nd edn, ed. Baranovska and Holtgen, Bochum: Projektverlag, pp. 247-248",
    "url": "https://web.archive.org/web/20231001150701/https://www.projektverlag.de/Hello_I_am-Eliza",
    "note": "Short chapter reporting the rediscovery of Weizenbaum's ELIZA source code, comments and facsimiles.",
-   "relevance": "about"
+   "relevance": "about",
+   "key": 8
   },
   {
    "id": "L-AU4L2",
@@ -362,7 +365,8 @@
    "url": "https://electronicbookreview.com/essay/reading-eliza-critical-code-studies-in-action/",
    "note": "Uses critical code studies to read the recovered 1966 ELIZA source, its editable script design and its development context against the familiar account of the program.",
    "relevance": "about",
-   "licence": "CC BY-ND 4.0"
+   "licence": "CC BY-ND 4.0",
+   "key": 9
   },
   {
    "id": "L-VWB7S",
@@ -760,7 +764,8 @@
    "relevance": "about",
    "licence": "CC BY-NC-ND 4.0",
    "file": "library/files/L-CXKF4.pdf",
-   "source": "MIT Press Direct, open-access PDF (ISBN 9780262052504), 2026-11-07"
+   "source": "MIT Press Direct, open-access PDF (ISBN 9780262052504), 2026-11-07",
+   "key": 2
   },
   {
    "id": "L-SH37Z",
@@ -810,7 +815,8 @@
    "doi": "10.1097/00005053-196602000-00005",
    "url": "https://doi.org/10.1097/00005053-196602000-00005",
    "note": "Colby's report on computer psychotherapy, the claim Weizenbaum later contested in relation to ELIZA.",
-   "relevance": "about"
+   "relevance": "about",
+   "key": 5
   },
   {
    "id": "L-V5F73",
@@ -1636,7 +1642,8 @@
    "in": "Fluid Concepts and Creative Analogies, New York: Basic Books; ISBN 978-0-465-02475-9",
    "url": "https://archive.org/details/fluidconceptscre0000hofs_w7o9",
    "note": "Preface in which Hofstadter treats the Eliza effect and its dangers for reading AI programs.",
-   "relevance": "about"
+   "relevance": "about",
+   "key": 13
   },
   {
    "id": "L-THWNG",
@@ -2077,7 +2084,8 @@
    "doi": "10.1109/mahc.2025.3564095",
    "url": "https://doi.org/10.1109/MAHC.2025.3564095",
    "note": "Journal version of the account of restoring ELIZA in MAD-SLIP to CTSS on an emulated IBM 7094 from the archival printout. Preprint: arXiv:2501.06707.",
-   "relevance": "about"
+   "relevance": "about",
+   "key": 7
   },
   {
    "id": "L-LZGR6",
@@ -2457,7 +2465,8 @@
    "doi": "10.1093/oso/9780190080365.003.0004",
    "url": "https://doi.org/10.1093/oso/9780190080365.003.0004",
    "note": "Chapter on ELIZA, the MAC time-sharing setting and how audiences responded to the program's alleged capacity for conversation.",
-   "relevance": "about"
+   "relevance": "about",
+   "key": 12
   },
   {
    "id": "L-I3JCA",
@@ -3176,7 +3185,8 @@
    "in": "GitHub and elizagen.org",
    "url": "https://elizagen.org/",
    "note": "Site and repository tracing ELIZA's versions and clones, with original materials, resources and a code-based phylogeny of the implementations.",
-   "relevance": "about"
+   "relevance": "about",
+   "key": 14
   },
   {
    "id": "L-Z3G3L",
@@ -3276,7 +3286,8 @@
    "relevance": "about",
    "licence": "CC BY 4.0",
    "file": "library/files/L-WGOAP.pdf",
-   "source": "https://arxiv.org/pdf/2406.17650, 2026-11-06"
+   "source": "https://arxiv.org/pdf/2406.17650, 2026-11-06",
+   "key": 6
   },
   {
    "id": "L-7Y7HI",
@@ -3894,7 +3905,8 @@
    "doi": "10.1145/365153.365168",
    "url": "https://doi.org/10.1145/365153.365168",
    "note": "The founding description of ELIZA, its keyword and decomposition rules, its scripts and the DOCTOR dialogue on the MAC time-sharing system at MIT.",
-   "relevance": "about"
+   "relevance": "about",
+   "key": 1
   },
   {
    "id": "L-HPLRO",
@@ -3907,7 +3919,8 @@
    "doi": "10.1145/363534.363545",
    "url": "https://doi.org/10.1145/363534.363545",
    "note": "Discusses further development of ELIZA and argues for the importance of context to human and machine understanding.",
-   "relevance": "about"
+   "relevance": "about",
+   "key": 3
   },
   {
    "id": "L-SWH6Y",
@@ -7825,7 +7838,8 @@
    "url": "https://archive.org/details/computerpowerhum0000weiz_v0i3",
    "note": "Weizenbaum's own account: the Introduction on naming ELIZA and the reception of DOCTOR, and the chapters on computer models and on natural language; pages from the book's index, passages read.",
    "thumb": "library/thumbs/L-EF67V.jpg",
-   "relevance": "section"
+   "relevance": "section",
+   "key": 4
   },
   {
    "id": "L-YNIDV",
