@@ -1,6 +1,6 @@
 {
  "title": "Library",
- "intro": "Work on ELIZA, Joseph Weizenbaum and the ELIZA effect, being added to. Works about ELIZA come first, then works with a section on it; works whose passage has not been checked come last. A work is held here where its licence allows, and otherwise linked to where it is published or cited.",
+ "intro": "Work on ELIZA, Joseph Weizenbaum and the ELIZA effect, being added to. Works about ELIZA come first, then works with a section on it, then passing mentions; works whose passage has not been checked come last. A work is held here where its licence allows, and otherwise linked to where it is published or cited.",
  "items": [
   {
    "id": "L-6WVN5",
@@ -5282,7 +5282,8 @@
    "pages": "169-170, 186",
    "publisher": "Cambridge, Mass. : MIT Press",
    "url": "https://archive.org/details/computerethicsca0002fore",
-   "note": "Discusses Weizenbaum's Eliza and Doctor programs and the fascination they generated; pages from an index line."
+   "note": "Discusses Weizenbaum's Eliza and Doctor programs and the fascination they generated; pages from an index line.",
+   "thumb": "library/thumbs/L-MEASU.jpg"
   },
   {
    "id": "L-EASYU",
@@ -5473,7 +5474,8 @@
    "pages": "153-",
    "publisher": "Reading, Mass. : Addison-Wesley",
    "url": "https://archive.org/details/lookingatlisp0000hase",
-   "note": "Chapter 7 on pattern matching opens with section 7.1, Eliza, and has the reader write a MICRO-ELIZA in Lisp."
+   "note": "Chapter 7 on pattern matching opens with section 7.1, Eliza, and has the reader write a MICRO-ELIZA in Lisp.",
+   "thumb": "library/thumbs/L-6BXJM.jpg"
   },
   {
    "id": "L-AVCQY",
@@ -6300,7 +6302,8 @@
    "pages": "334",
    "publisher": "Englewood Cliffs, N.J. : Prentice-Hall",
    "url": "https://archive.org/details/perspectivesonco0000pyly",
-   "note": "Reprints Weizenbaum's Contextual Understanding by Computers at p. 334, on ELIZA's name, Rogerian script and the script as a program, with an account of how ELIZA passed the Turing test."
+   "note": "Reprints Weizenbaum's Contextual Understanding by Computers at p. 334, on ELIZA's name, Rogerian script and the script as a program, with an account of how ELIZA passed the Turing test.",
+   "thumb": "library/thumbs/L-7GKHE.jpg"
   },
   {
    "id": "L-XKPSZ",
@@ -6661,7 +6664,8 @@
    "pages": "205",
    "publisher": "Cambridge, Mass. : Winthrop Publishers",
    "url": "https://archive.org/details/softwarepsycholo00shne",
-   "note": "Reports a visit with DOCTOR and the underlying ELIZA system in a discussion of natural language; page from an index line."
+   "note": "Reports a visit with DOCTOR and the underlying ELIZA system in a discussion of natural language; page from an index line.",
+   "thumb": "library/thumbs/L-6BC3R.jpg"
   },
   {
    "id": "L-PE3FU",
@@ -6853,7 +6857,8 @@
    "pages": "65, 82",
    "publisher": "Computer Science Press",
    "url": "https://archive.org/details/isbn_9780808175148",
-   "note": "Chapter 3 builds a LISP program SHRINK inspired by ELIZA; pages from an index line."
+   "note": "Chapter 3 builds a LISP program SHRINK inspired by ELIZA; pages from an index line.",
+   "thumb": "library/thumbs/L-DW25F.jpg"
   },
   {
    "id": "L-QAHAI",
@@ -7375,7 +7380,8 @@
    "pages": "6-7",
    "publisher": "London : Routledge and K. Paul",
    "url": "https://archive.org/details/grammarmeaningma0000wilk",
-   "note": "Gives a sample of ELIZA output, how its general rule works, and says Weizenbaum's work passed Turing's test and shows how easy that is; pages from an index line."
+   "note": "Gives a sample of ELIZA output, how its general rule works, and says Weizenbaum's work passed Turing's test and shows how easy that is; pages from an index line.",
+   "thumb": "library/thumbs/L-H3777.jpg"
   },
   {
    "id": "L-VRB3D",
@@ -7877,6 +7883,169 @@
    "in": "Logic(s), Care issue",
    "url": "https://logicmag.io/care/when-you-say-one-thing-but-mean-your-motherboard/",
    "note": "Essay on computerized therapy with a sustained section on ELIZA's design around the psychotherapist's habit of turning statements into questions."
+  },
+  {
+   "id": "L-OBYYP",
+   "title": "Minds and mechanisms: philosophical psychology and computational models",
+   "author": "Boden, Margaret A.",
+   "date": "1981",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Cornell University Press",
+   "url": "https://archive.org/details/mindsmechanismsp0000bode",
+   "note": "One sentence compares a program with ELIZA, with a footnote.",
+   "thumb": "library/thumbs/L-OBYYP.jpg",
+   "tags": [
+    "passing mention"
+   ]
+  },
+  {
+   "id": "L-4OEKS",
+   "title": "Artificial intelligence: an introductory course",
+   "author": "Bundy, Alan",
+   "date": "1978",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Edinburgh University Press",
+   "url": "https://archive.org/details/artificialintell00bund",
+   "note": "ELIZA named in a list of projects.",
+   "thumb": "library/thumbs/L-4OEKS.jpg",
+   "tags": [
+    "passing mention"
+   ]
+  },
+  {
+   "id": "L-2EOTF",
+   "title": "What computers can't do: the limits of artificial intelligence",
+   "author": "Dreyfus, Hubert L.",
+   "date": "1979",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Harper & Row",
+   "url": "https://archive.org/details/whatcomputerscan00hube",
+   "note": "One sentence pairs ELIZA with STUDENT.",
+   "tags": [
+    "passing mention"
+   ]
+  },
+  {
+   "id": "L-4K4F4",
+   "title": "Introduction to artificial intelligence",
+   "author": "Jackson, Philip C.",
+   "date": "1974",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Petrocelli Books",
+   "url": "https://archive.org/details/introductiontoar0000jack",
+   "note": "Reference entry only.",
+   "thumb": "library/thumbs/L-4K4F4.jpg",
+   "tags": [
+    "passing mention"
+   ]
+  },
+  {
+   "id": "L-NQBOP",
+   "title": "Computer models of personality",
+   "author": "Loehlin, John C.",
+   "date": "1968",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Random House",
+   "url": "https://archive.org/details/computermodelsof0000loeh",
+   "note": "Index entry at p. 148 and a reference.",
+   "thumb": "library/thumbs/L-NQBOP.jpg",
+   "tags": [
+    "passing mention"
+   ]
+  },
+  {
+   "id": "L-YRXKQ",
+   "title": "Using computers: the human factors of information systems",
+   "author": "Nickerson, Raymond S.",
+   "date": "1986",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "MIT Press",
+   "url": "https://archive.org/details/usingcomputershu0000nick",
+   "note": "One parenthesis names Eliza as the classic illustration, with a reference.",
+   "tags": [
+    "passing mention"
+   ]
+  },
+  {
+   "id": "L-YZME5",
+   "title": "Artificial Intelligence: A Modern Approach",
+   "author": "Russell, Stuart; Norvig, Peter",
+   "date": "2003",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Pearson",
+   "url": "https://archive.org/details/isbn_9788177583670",
+   "note": "Short mention with the Turing test and Weizenbaum's book; index, pp. 976, 989.",
+   "thumb": "library/thumbs/L-YZME5.jpg",
+   "tags": [
+    "passing mention"
+   ]
+  },
+  {
+   "id": "L-HHXWX",
+   "title": "Computer models of thought and language",
+   "author": "Schank, Roger C.; Colby, Kenneth Mark",
+   "date": "1973",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "W.H. Freeman",
+   "url": "https://archive.org/details/computermodelsof0000scha",
+   "note": "One sentence pairs ELIZA with STUDENT, with a reference entry.",
+   "thumb": "library/thumbs/L-HHXWX.jpg",
+   "tags": [
+    "passing mention"
+   ]
+  },
+  {
+   "id": "L-ZXATH",
+   "title": "Conceptual structures: information processing in mind and machine",
+   "author": "Sowa, John F.",
+   "date": "1984",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Addison-Wesley",
+   "url": "https://archive.org/details/conceptualstruct0000sowa",
+   "note": "Reference entry only.",
+   "thumb": "library/thumbs/L-ZXATH.jpg",
+   "tags": [
+    "passing mention"
+   ]
+  },
+  {
+   "id": "L-IQZ5H",
+   "title": "Understanding natural language",
+   "author": "Winograd, Terry A.",
+   "date": "1972",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Academic Press",
+   "url": "https://archive.org/details/understandingnat0000wino",
+   "note": "ELIZA named in lists of earlier systems and in one sentence on Weizenbaum 1967.",
+   "thumb": "library/thumbs/L-IQZ5H.jpg",
+   "tags": [
+    "passing mention"
+   ]
+  },
+  {
+   "id": "L-ALYF3",
+   "title": "LISP",
+   "author": "Winston, Patrick Henry; Horn, Berthold K. P.",
+   "date": "1981",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Addison-Wesley Pub. Co.",
+   "url": "https://archive.org/details/lisp-1981-addison-wesley",
+   "note": "Reference entry only.",
+   "thumb": "library/thumbs/L-ALYF3.jpg",
+   "tags": [
+    "passing mention"
+   ]
   },
   {
    "id": "L-MPCJ7",
@@ -8397,6 +8566,7 @@
    "publisher": "Englewood Cliffs, NJ : Prentice-Hall International",
    "url": "https://archive.org/details/artificialintell00bonn",
    "note": "Presents ELIZA as a typical pattern-matching program of historical interest that gives an illusion of understanding, and compares PARRY.",
+   "thumb": "library/thumbs/L-ETVGI.jpg",
    "tags": [
     "passage not checked"
    ]
@@ -8615,6 +8785,7 @@
    "publisher": "Cambridge, Mass. : MIT Press",
    "url": "https://archive.org/details/matterconsciousn0000chur",
    "note": "Uses Weizenbaum's ELIZA with a sample conversation to argue it has no conception of what a father or brother is.",
+   "thumb": "library/thumbs/L-KBCKV.jpg",
    "tags": [
     "passage not checked"
    ]
@@ -9100,6 +9271,7 @@
    "publisher": "Boston : Boyd & Fraser",
    "url": "https://archive.org/details/artificialintell00fire",
    "note": "Prints a session with a microcomputer ELIZA and contrasts it with SIR among early application programs.",
+   "thumb": "library/thumbs/L-4HT4C.jpg",
    "tags": [
     "passage not checked"
    ]
@@ -9114,6 +9286,7 @@
    "publisher": "Reading, Mass. : Addison-Wesley",
    "url": "https://archive.org/details/intelligenceeyeb00fisc",
    "note": "Calls Weizenbaum's ELIZA a classic example and explains its stored word patterns and canned responses.",
+   "thumb": "library/thumbs/L-JTJSP.jpg",
    "tags": [
     "passage not checked"
    ]
@@ -9265,6 +9438,7 @@
    "publisher": "New York : Basic Books",
    "url": "https://archive.org/details/mindsnewscienceh0000gard",
    "note": "Explains ELIZA's pattern matching and content-free formulas and Weizenbaum's attack on artificial intelligence enthusiasts.",
+   "thumb": "library/thumbs/L-UEQBS.jpg",
    "tags": [
     "passage not checked"
    ]
@@ -9396,6 +9570,7 @@
    "publisher": "New York : Wiley",
    "url": "https://archive.org/details/algorithmsinsnob00gimp",
    "note": "Describes Weizenbaum's ELIZA, its psychiatrist script and the Duquet SNOBOL4 version in a section on conversational programs.",
+   "thumb": "library/thumbs/L-DZFGX.jpg",
    "tags": [
     "passage not checked"
    ]
@@ -11953,6 +12128,7 @@
    "publisher": "Boston : Academic Press",
    "url": "https://archive.org/details/socialimpactofco0000rose",
    "note": "Describes ELIZA or DOCTOR as a program for a kind of therapy and quotes Colby on the ELIZA method.",
+   "thumb": "library/thumbs/L-DK3IG.jpg",
    "tags": [
     "passage not checked"
    ]
@@ -12316,6 +12492,7 @@
    "publisher": "Cambridge, Mass. : MIT Press",
    "url": "https://archive.org/details/artofprologadvan00ster",
    "note": "Presents a simplified ELIZA as an AI classic with its Prolog program and a sample conversation.",
+   "thumb": "library/thumbs/L-GLY7O.jpg",
    "tags": [
     "passage not checked"
    ]
