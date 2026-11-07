@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.135 (2026-11-07)
+
+- The Library: works whose passage on ELIZA has not been located are tagged passage not checked.
+
 ## 0.1.134 (2026-11-07)
 
 - The Library: dead links replaced by the DOI or an archived copy.
