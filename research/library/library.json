@@ -1341,7 +1341,7 @@
    "lang": "de",
    "publisher": "transcript Verlag",
    "doi": "10.14361/9783839430538",
-   "url": "https://www.transcript-verlag.de/doi/10.14361/9783839430538",
+   "url": "https://doi.org/10.14361/9783839430538",
    "note": "Teaching book with a passage on Weizenbaum's ELIZA, its naming and a printed client dialogue, for use in school media classes.",
    "licence": "CC BY 4.0"
   },
@@ -2393,7 +2393,7 @@
    "lang": "en",
    "in": "Anti-Computing: Dissent and the Machine, Manchester University Press",
    "doi": "10.7765/9781526160720.00012",
-   "url": "https://library.oapen.org/bitstream/20.500.12657/54468/1/external_content.pdf",
+   "url": "https://doi.org/10.7765/9781526160720.00012",
    "note": "Chapter on ELIZA as a therapist program within a book on histories of dissent against computing; only the chapter title and book description were read.",
    "licence": "CC BY-NC-ND"
   },
@@ -3111,7 +3111,7 @@
    "lang": "de",
    "publisher": "transcript Verlag",
    "doi": "10.14361/9783839457566",
-   "url": "https://www.transcript-verlag.de/doi/10.14361/9783839457566",
+   "url": "https://doi.org/10.14361/9783839457566",
    "note": "Passage on ELIZA and its Doctor variant as Turing test simulation and Weizenbaum's surprise, in the context of mathematising perception.",
    "licence": "CC BY 4.0"
   },
@@ -3475,7 +3475,7 @@
    "lang": "en",
    "in": "Behavioural and Cognitive Psychotherapy 46(5), 570-582",
    "doi": "10.1017/s1352465817000820",
-   "url": "https://www.cambridge.org/core/journals/behavioural-and-cognitive-psychotherapy/article/abs/10.1017/S1352465817000820",
+   "url": "https://doi.org/10.1017/s1352465817000820",
    "note": "Randomized trial of 213 participants comparing MYLO with ELIZA, with MYLO rated more helpful but no difference in problem resolution or clinical outcomes."
   },
   {
@@ -4230,7 +4230,6 @@
    "kind": "talk",
    "lang": "en",
    "in": "Sussex Digital Humanities Lab, University of Sussex (respondents Michael Jonik, Moinul Zaber; chair Tanya Kant)",
-   "url": "https://www.sussex.ac.uk/research/centres/sussex-humanities-lab/news-and-events/events?id=71183",
    "note": "Book talk with respondents on Inventing ELIZA."
   },
   {
@@ -4479,7 +4478,7 @@
    "lang": "en",
    "in": "Behavioural and Cognitive Psychotherapy 42(6), 731-746",
    "doi": "10.1017/s135246581300060x",
-   "url": "https://www.cambridge.org/core/journals/behavioural-and-cognitive-psychotherapy/article/abs/10.1017/S135246581300060X",
+   "url": "https://doi.org/10.1017/s135246581300060x",
    "note": "Randomly assigns 48 students to MYLO or ELIZA as the comparison program; MYLO is rated more helpful with greater problem resolution, and both are associated with lower distress."
   },
   {
@@ -4744,7 +4743,7 @@
    "kind": "chapter",
    "lang": "en",
    "in": "Hello, I'm Eliza. 50 Jahre Gesprache mit Computern (Computerarchaologie, Bd. 5), 2nd edn, ed. Baranovska and Holtgen, Bochum: Projektverlag, pp. 247-248",
-   "url": "https://www.projektverlag.de/Hello_I_am-Eliza",
+   "url": "https://web.archive.org/web/20231001150701/https://www.projektverlag.de/Hello_I_am-Eliza",
    "note": "Short chapter reporting the rediscovery of Weizenbaum's ELIZA source code, comments and facsimiles."
   },
   {
@@ -5280,7 +5279,7 @@
    "kind": "web page",
    "lang": "en",
    "in": "BBC Blogs",
-   "url": "https://www.bbc.co.uk/blogs/adamcurtis/posts/NO-FUTURE",
+   "url": "https://web.archive.org/web/20141223104227/http://www.bbc.co.uk:80/blogs/adamcurtis/posts/NO-FUTURE",
    "note": "Blog essay with a section on Weizenbaum modelling ELIZA on Carl Rogers and his alarm at how users responded."
   },
   {
@@ -7024,7 +7023,7 @@
    "lang": "en",
    "publisher": "transcript Verlag",
    "doi": "10.14361/9783839437629",
-   "url": "https://www.transcript-verlag.de/doi/10.14361/9783839437629",
+   "url": "https://doi.org/10.14361/9783839437629",
    "note": "Edited volume in which Daniel Becker's contribution discusses ELIZA and DOCTOR, with a figure of Weizenbaum acting out Eliza at a terminal, around pp. 211 to 212.",
    "thumb": "library/thumbs/L-LP56Y.jpg",
    "licence": "CC BY-NC-ND 4.0"
@@ -11172,7 +11171,7 @@
    "kind": "article",
    "lang": "en",
    "in": "Stanford Humanities Review (SEHR) 4(2), Constructions of the Mind",
-   "url": "http://www.stanford.edu/group/SHR/4-2/text/dialogues.html",
+   "url": "https://web.archive.org/web/20130704143834/http://www.stanford.edu/group/SHR/4-2/text/dialogues.html",
    "note": "Presents and discusses dialogues with early AI programs among them ELIZA and PARRY."
   },
   {
@@ -11429,8 +11428,7 @@
    "date": "2026-10-15",
    "kind": "talk",
    "lang": "en",
-   "in": "Sussex Digital Humanities Lab Seminars, University of Sussex",
-   "url": "https://www.sussex.ac.uk/ei/internal/newsandevents/events?id=71183"
+   "in": "Sussex Digital Humanities Lab Seminars, University of Sussex"
   },
   {
    "id": "L-WLIZH",
