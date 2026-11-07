@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.142 (2026-11-07)
+
+- The Library: corrections to two records.
+
 ## 0.1.141 (2026-11-07)
 
 - The kit at 1.5.1: the Library's Order menu offers Rating only with the group's Hypothesis token.

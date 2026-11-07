@@ -269,7 +269,7 @@
    "publisher": "MIT Distinctive Collections, Dome",
    "url": "https://hdl.handle.net/1721.3/201699",
    "note": "Archival record of the complete printout of ELIZA's MAD-SLIP source with the DOCTOR script attached.",
-   "licence": "CC BY-NC 4.0"
+   "licence": "CC0"
   },
   {
    "id": "L-2OUJR",
@@ -2193,7 +2193,7 @@
    "id": "L-6Y7KN",
    "title": "Hello, I'm Eliza: Fünfzig Jahre Gespräche mit Computern",
    "author": "Baranovska, Marianna; Höltgen, Stefan",
-   "date": "2018",
+   "date": "2023",
    "kind": "book",
    "lang": "de",
    "publisher": "Projekt Verlag",
