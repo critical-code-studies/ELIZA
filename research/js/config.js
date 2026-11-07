@@ -158,7 +158,7 @@
     comparePrefix: 'ELIZA: ',
     genealogy: { set: ['1965b'], line: 'doctor', lineNames: { doctor: 'DOCTOR, 1965–66', figure: 'F29 and FIGURE, 1967–68', eliza: 'ELIZA, 1965–68' } },
     figureNum: { print: '#b0401d', paper: '#b0401d', phosphor: '#f0a83a' },
-    library: true,                                // the Library tab (kit/library.js, library/library.json)
+    library: { order: 'listed', card: { description: 'Work on ELIZA, Joseph Weizenbaum and the ELIZA effect: books, articles, press, talks and films, held or linked.' } },                                // the Library tab (kit/library.js, library/library.json)
     paratexts: { org: 'critical-code-studies', repo: 'eliza_paratexts', cache: 'eliza-paratexts', tokenName: 'ELIZA research bench' },
     // the Implementations tab (kit/implementations.js): its catalogue, the credit at its foot, and the one
     // feature that needs more than yes or no: the delimiters, compared on whether BUT is one of them

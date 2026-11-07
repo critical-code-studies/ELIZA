@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.147 (2026-11-07)
+
+- The kit at 1.7.0; the Library's shelf ordered with works about ELIZA first, then sections, with unread works last.
+
 ## 0.1.146 (2026-11-07)
 
 - The kit at 1.6.0: Share in a Library entry's box, and a preview card for the Library.
