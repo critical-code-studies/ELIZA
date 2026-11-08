@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.169 (2026-11-08)
+
+- The kit at 1.8.15: the current menu item marked, no repeated view headings.
+
 ## 0.1.168 (2026-11-08)
 
 - The kit at 1.8.14: no doubled lines on a To read card.
