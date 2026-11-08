@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.165 (2026-11-08)
+
+- The kit at 1.8.11: Library and To read as tabs, and a Show menu.
+
 ## 0.1.164 (2026-11-08)
 
 - The Library: the passage not checked tag dropped; Relevance Not Checked marks those works.
