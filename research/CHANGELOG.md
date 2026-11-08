@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.173 (2026-11-08)
+
+- The kit at 1.8.17: works with no author cited and sorted by Cite Them Right Harvard.
+
 ## 0.1.172 (2026-11-08)
 
 - The Library: page numbers, places and report numbers taken out of the fields that lead an unsigned work's citation.
