@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.181 (2026-11-08)
+
+- The kit at 1.8.25: the To read shelf draws with older loans, book cards turn over again, and a reader can wipe their loan history.
+
 ## 0.1.180 (2026-11-08)
 
 - The kit at 1.8.24: a work's notes panel shows only when it has notes; a smaller library card.
