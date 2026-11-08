@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.2.2 (2026-11-08)
+
+- The kit at 1.8.27: a tidier To read toolbar, and reactions shown as the annotations show them.
+
 ## 0.2.1 (2026-11-08)
 
 - The kit at 1.8.26: book card backs use the card's own paper, and the Renew menu is a light slip in every theme.
