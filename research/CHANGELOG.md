@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.168 (2026-11-08)
+
+- The kit at 1.8.14: no doubled lines on a To read card.
+
 ## 0.1.167 (2026-11-08)
 
 - The kit at 1.8.13: To read due dates in What's new, and export to Zotero from a work's box.
