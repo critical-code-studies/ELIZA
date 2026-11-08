@@ -45,9 +45,10 @@
    "date": "1979",
    "kind": "chapter",
    "lang": "en",
-   "in": "More BASIC Computer Games, Creative Computing Press / Workman, pp. 55-58",
+   "in": "More BASIC Computer Games, Creative Computing Press / Workman",
    "url": "https://archive.org/details/More_BASIC_Computer_Games",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "55-58"
   },
   {
    "id": "L-WUQOA",
@@ -94,10 +95,11 @@
    "date": "1977-03",
    "kind": "letter",
    "lang": "en",
-   "in": "BYTE, March 1977, pp. 16-17",
+   "in": "BYTE, March 1977",
    "url": "https://archive.org/details/byte-march-1977",
    "note": "Altair owner asks readers for a version of ELIZA for small machines.",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "16-17"
   },
   {
    "id": "L-73ZAR",
@@ -130,13 +132,14 @@
    "date": "2018-02-21",
    "kind": "article",
    "lang": "en",
-   "in": "AI & Society 34(4), pp. 803-812",
+   "in": "AI & Society 34(4)",
    "doi": "10.1007/s00146-018-0825-9",
    "url": "https://doi.org/10.1007/s00146-018-0825-9",
    "note": "Explores the history of ELIZA as an approximated Rogerian therapist and how its reception led Weizenbaum to reappraise computer power and human reason.",
    "relevance": "about",
    "licence": "CC BY",
-   "key": 11
+   "key": 11,
+   "pages": "803-812"
   },
   {
    "id": "L-7ZGOK",
@@ -145,12 +148,12 @@
    "date": "2022",
    "kind": "chapter",
    "lang": "en",
-   "in": "Anti-Computing: Dissent and the Machine, Manchester University Press",
    "doi": "10.7765/9781526160720.00012",
    "url": "https://doi.org/10.7765/9781526160720.00012",
    "note": "Chapter on ELIZA as a therapist program within a book on histories of dissent against computing; only the chapter title and book description were read.",
    "relevance": "about",
-   "licence": "CC BY-NC-ND"
+   "licence": "CC BY-NC-ND",
+   "publisher": "Dissent and the Machine, Manchester University Press"
   },
   {
    "id": "L-DXAK4",
@@ -270,10 +273,11 @@
    "date": "2018",
    "kind": "chapter",
    "lang": "en",
-   "in": "Hello, I'm Eliza: Funfzig Jahre Gesprache mit Computern, 1st edn, ed. Baranovska and Holtgen, Bochum: Projektverlag, pp. 53-70",
    "url": "https://sussex.figshare.com/articles/chapter/Weizenbaum_ELIZA_and_the_end_of_human_reason/23466656",
    "note": "Chapter on Weizenbaum, ELIZA and the critique of human reason.",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "53-70",
+   "publisher": "Funfzig Jahre Gesprache mit Computern, 1st edn, ed. Baranovska and Holtgen, Bochum: Projektverlag"
   },
   {
    "id": "L-E5OMW",
@@ -299,11 +303,12 @@
    "date": "2023",
    "kind": "chapter",
    "lang": "en",
-   "in": "Hello, I'm Eliza. 50 Jahre Gesprache mit Computern (Computerarchaologie, Bd. 5), 2nd edn, ed. Baranovska and Holtgen, Bochum: Projektverlag, pp. 247-248",
    "url": "https://web.archive.org/web/20231001150701/https://www.projektverlag.de/Hello_I_am-Eliza",
    "note": "Short chapter reporting the rediscovery of Weizenbaum's ELIZA source code, comments and facsimiles.",
    "relevance": "about",
-   "key": 8
+   "key": 8,
+   "pages": "247-248",
+   "publisher": "Projektverlag"
   },
   {
    "id": "L-AU4L2",
@@ -577,9 +582,10 @@
    "date": "1980-07",
    "kind": "magazine",
    "lang": "en",
-   "in": "Creative Computing 6(7), pp. 42-47",
+   "in": "Creative Computing 6(7)",
    "url": "https://archive.org/details/creativecomputing-1980-07",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "42-47"
   },
   {
    "id": "L-A3NXA",
@@ -588,9 +594,9 @@
    "date": "1976-11",
    "kind": "report",
    "lang": "en",
-   "publisher": "Stanford Artificial Intelligence Laboratory Memo AIM-291 / STAN-CS-76-577; DTIC ADA044713",
+   "publisher": "Stanford Artificial Intelligence Laboratory Memo AIM-291 / STAN-CS-76-577",
    "url": "https://apps.dtic.mil/sti/citations/ADA044713",
-   "note": "Reprints reviews of the book by Buchanan, Lederberg and McCarthy together with Weizenbaum's reply to McCarthy.",
+   "note": "Reprints reviews of the book by Buchanan, Lederberg and McCarthy together with Weizenbaum's reply to McCarthy. Report DTIC ADA044713.",
    "relevance": "about"
   },
   {
@@ -709,10 +715,11 @@
    "date": "1990-09",
    "kind": "magazine",
    "lang": "cs",
-   "in": "Elektronika (Prague) 9/1990, pp. 28-29",
+   "in": "Elektronika (Prague) 9/1990",
    "url": "https://archive.org/details/elektronika_cs",
    "note": "Czech article with an English ELIZA and a Czech translation LÍZA in GW-BASIC.",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "28-29"
   },
   {
    "id": "L-JIZ3Z",
@@ -721,10 +728,10 @@
    "date": "2013",
    "kind": "chapter",
    "lang": "en",
-   "in": "London : Quercus",
    "url": "https://archive.org/details/netymologyfromap0000chat_o6n4",
    "note": "Etymological book with an entry on the ELIZA effect.",
-   "relevance": "about"
+   "relevance": "about",
+   "publisher": "Quercus"
   },
   {
    "id": "L-6CN6W",
@@ -733,10 +740,11 @@
    "date": "1985",
    "kind": "magazine",
    "lang": "da",
-   "in": "SOFT (Denmark) 1985(2), Soft Special, p. 32",
+   "in": "SOFT (Denmark) 1985(2), Soft Special",
    "url": "https://archive.org/details/mag_SOFT_1985-02",
    "note": "Danish magazine listing of Eliza in COMAL.",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "32"
   },
   {
    "id": "L-PQJFI",
@@ -799,7 +807,7 @@
    "date": "1999",
    "kind": "book",
    "lang": "en",
-   "publisher": "London ; New York : Routledge",
+   "publisher": "Routledge",
    "url": "https://archive.org/details/101philosophypro0000cohe_n9d3",
    "note": "Philosophy problem book with an entry built around a long ELIZA and patient dialogue.",
    "thumb": "library/thumbs/L-6C33F.jpg",
@@ -812,12 +820,13 @@
    "date": "1966-02",
    "kind": "article",
    "lang": "en",
-   "in": "Journal of Nervous and Mental Disease 142(2), pp. 148-152",
+   "in": "Journal of Nervous and Mental Disease 142(2)",
    "doi": "10.1097/00005053-196602000-00005",
    "url": "https://doi.org/10.1097/00005053-196602000-00005",
    "note": "Colby's report on computer psychotherapy, the claim Weizenbaum later contested in relation to ELIZA.",
    "relevance": "about",
-   "key": 5
+   "key": 5,
+   "pages": "148-152"
   },
   {
    "id": "L-V5F73",
@@ -911,9 +920,10 @@
    "date": "1982-08-15",
    "kind": "news",
    "lang": "en",
-   "in": "The Observer, p. 22",
+   "in": "The Observer",
    "note": "Newspaper profile of Weizenbaum, cited by Natale in a study of ELIZA's biographies.",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "22"
   },
   {
    "id": "L-7E27U",
@@ -1058,10 +1068,11 @@
    "date": "1978-07",
    "kind": "magazine",
    "lang": "en",
-   "in": "ACG-NJ News (Amateur Computer Group of New Jersey), July 1978, p. 12",
+   "in": "ACG-NJ News (Amateur Computer Group of New Jersey), July 1978",
    "url": "https://archive.org/details/acgnj-news-1978-07",
    "note": "Listing of the Creative Computing BASIC ELIZA ported to Processor Technology Extended Cassette BASIC.",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "12"
   },
   {
    "id": "L-57TMW",
@@ -1082,10 +1093,11 @@
    "date": "1981",
    "kind": "magazine",
    "lang": "de",
-   "in": "CHIP-Special Programme II (2/81), pp. 72-76",
+   "in": "CHIP-Special Programme II (2/81)",
    "url": "https://archive.org/details/chip-special-programme-ii-2-1981",
    "note": "German article giving a 6502 machine-code ELIZA for a 4K Superboard, derived from the Creative Computing version.",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "72-76"
   },
   {
    "id": "L-MPHAD",
@@ -1094,7 +1106,7 @@
    "date": "1996-08-16",
    "kind": "news",
    "lang": "de",
-   "in": "DIE ZEIT",
+   "in": "Die Zeit",
    "url": "https://www.zeit.de/1996/34/eliza.txt.19960816.xml",
    "relevance": "about"
   },
@@ -1105,11 +1117,11 @@
    "date": "2020-08-11",
    "kind": "chapter",
    "lang": "en",
-   "in": "Tactics of Interfacing: Encoding Affect in Art and Technology, The MIT Press",
    "doi": "10.7551/mitpress/12544.003.0006",
    "url": "https://direct.mit.edu/books/book/4863/chapter/617705/Mixed-Reality-Interfaces-and-the-ELIZA-Effect",
    "note": "Chapter, pp. 143-190, applying the ELIZA effect to mixed-reality interfaces in art and technology.",
-   "relevance": "about"
+   "relevance": "about",
+   "publisher": "Encoding Affect in Art and Technology, The MIT Press"
   },
   {
    "id": "L-XIAVQ",
@@ -1207,11 +1219,12 @@
    "date": "2026-06-18",
    "kind": "review",
    "lang": "en",
-   "in": "Science 392(6804), p. 1249",
+   "in": "Science 392(6804)",
    "doi": "10.1126/science.aeh9238",
    "url": "https://doi.org/10.1126/science.aeh9238",
    "note": "Review of Inventing ELIZA describing the team's reconstruction and historical placement of the program, its transcripts and later chatbots.",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "1249"
   },
   {
    "id": "L-3GOP3",
@@ -1243,11 +1256,12 @@
    "date": "2024-01-28",
    "kind": "article",
    "lang": "en",
-   "in": "AI & Society 39(1), pp. 1-3",
+   "in": "AI & Society 39(1)",
    "doi": "10.1007/s00146-024-01868-5",
    "url": "https://doi.org/10.1007/s00146-024-01868-5",
    "note": "Journal editorial on ELIZA and Weizenbaum in relation to current AI.",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "1-3"
   },
   {
    "id": "L-G7CJK",
@@ -1510,7 +1524,7 @@
    "date": "2022-11-12",
    "kind": "web page",
    "lang": "en",
-   "in": "ELIZAGEN",
+   "in": "Elizagen",
    "url": "https://elizagen.org/blog/eliza-is-turing-complete.html",
    "note": "Shows that any Turing machine program can be implemented by an ELIZA script conforming to Weizenbaum's 1966 specification.",
    "relevance": "about"
@@ -1629,11 +1643,11 @@
    "date": "1995",
    "kind": "chapter",
    "lang": "en",
-   "in": "Fluid Concepts and Creative Analogies, New York: Basic Books; ISBN 978-0-465-02475-9",
    "url": "https://archive.org/details/fluidconceptscre0000hofs_w7o9",
    "note": "Preface in which Hofstadter treats the Eliza effect and its dangers for reading AI programs.",
    "relevance": "about",
-   "key": 13
+   "key": 13,
+   "publisher": "Basic Books"
   },
   {
    "id": "L-THWNG",
@@ -1852,10 +1866,11 @@
    "date": "1983-06",
    "kind": "magazine",
    "lang": "en",
-   "in": "Personal Computer World, June 1983, pp. 148-150",
+   "in": "Personal Computer World, June 1983",
    "url": "https://archive.org/details/PersonalComputerWorld1983-06",
    "note": "Second part of a Lisp series that examines Eliza and gives a program small enough for a modest Lisp system.",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "148-150"
   },
   {
    "id": "L-COOBR",
@@ -1955,10 +1970,11 @@
    "date": "1978-10",
    "kind": "magazine",
    "lang": "de",
-   "in": "Hobbycomputer 1 (Funkschau special), pp. 95-96",
+   "in": "Hobbycomputer 1 (Funkschau special)",
    "url": "https://archive.org/details/hobbycomputer-1",
    "note": "German article and listing of a modified Creative Computing ELIZA in Zapple BASIC for a Z80 system, with a sample session.",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "95-96"
   },
   {
    "id": "L-KJVY6",
@@ -2030,7 +2046,7 @@
    "date": "2024-12-25",
    "kind": "web page",
    "lang": "en",
-   "in": "ELIZAGEN",
+   "in": "Elizagen",
    "url": "https://elizagen.org/blog/eliza-reanimated.html",
    "note": "Blog announcement of the original MAD-SLIP ELIZA running again on a reconstructed CTSS.",
    "relevance": "about"
@@ -2171,9 +2187,10 @@
    "date": "1985-12",
    "kind": "magazine",
    "lang": "en",
-   "in": "New Age Journal, pp. 47-51",
+   "in": "New Age Journal",
    "note": "Profile of Weizenbaum as a critic of computing who built ELIZA and was disturbed by how people responded to it.",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "47-51"
   },
   {
    "id": "L-JHZQN",
@@ -2293,12 +2310,13 @@
    "date": "2026-06-11",
    "kind": "article",
    "lang": "en",
-   "in": "AI & Society 41(8), pp. 7129-7142",
+   "in": "AI & Society 41(8)",
    "doi": "10.1007/s00146-026-03086-7",
    "url": "https://doi.org/10.1007/s00146-026-03086-7",
    "note": "Describes how an eight-person team spent about four years reading the ELIZA source recovered from the MIT archives in 2021 through collaborative critical code studies.",
    "relevance": "about",
-   "licence": "CC BY 4.0"
+   "licence": "CC BY 4.0",
+   "pages": "7129-7142"
   },
   {
    "id": "L-UYZKZ",
@@ -2345,9 +2363,10 @@
    "date": "1966-07",
    "kind": "magazine",
    "lang": "en",
-   "in": "Computers and Automation, July 1966, pp. 34-37",
+   "in": "Computers and Automation, July 1966",
    "url": "https://archive.org/details/bitsavers_computersA_8245117",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "34-37"
   },
   {
    "id": "L-4XA7X",
@@ -2367,11 +2386,12 @@
    "date": "1967-06",
    "kind": "article",
    "lang": "en",
-   "in": "Journal of Psychiatric Research 5(2), pp. 179-191",
+   "in": "Journal of Psychiatric Research 5(2)",
    "doi": "10.1016/0022-3956(67)90030-1",
    "url": "https://doi.org/10.1016/0022-3956(67)90030-1",
    "note": "Second part of the Quarton, McGuire and Lorch report on experiments with ELIZA as a tool for studying dyadic communication.",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "179-191"
   },
   {
    "id": "L-VJ3ZS",
@@ -2380,9 +2400,10 @@
    "date": "2008-03-15",
    "kind": "news",
    "lang": "en",
-   "in": "The Wall Street Journal, 15-16 March 2008, p. 6",
+   "in": "The Wall Street Journal, 15-16 March 2008",
    "note": "Obituary of Weizenbaum, listed in the Wikipedia article references.",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "6"
   },
   {
    "id": "L-DTIDM",
@@ -2477,10 +2498,11 @@
    "date": "1977-08",
    "kind": "magazine",
    "lang": "en",
-   "in": "Creative Computing 3(4), pp. 100-103",
+   "in": "Creative Computing 3(4)",
    "url": "https://archive.org/details/CreativeComputingv03n04JulyAug1977/page/n105/mode/2up",
    "note": "Creative Computing magazine article on a computer psychoanalysis program, listed in the ELIZA bibliography of Berry and Marino.",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "100-103"
   },
   {
    "id": "L-DU2IP",
@@ -2526,11 +2548,12 @@
    "date": "2013",
    "kind": "chapter",
    "lang": "en",
-   "in": "Giants of Computing, Springer, pp. 263-266",
+   "in": "Giants of Computing, Springer",
    "doi": "10.1007/978-1-4471-5340-5_56",
    "url": "https://doi.org/10.1007/978-1-4471-5340-5_56",
    "note": "Short biographical chapter on Weizenbaum in a survey of computing pioneers.",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "263-266"
   },
   {
    "id": "L-ABWUS",
@@ -2565,10 +2588,10 @@
    "date": "2014",
    "kind": "chapter",
    "lang": "en",
-   "in": "Robotics in Germany and Japan: Philosophical and Technical Perspectives",
    "url": "https://archive.org/details/oapen-20.500.12657-25252",
    "note": "Chapter on Weizenbaum's views of responsibility applied to humanoid robots, with reference to the ELIZA script opportunity and Weizenbaum and Wendt 2006.",
-   "relevance": "about"
+   "relevance": "about",
+   "publisher": "Philosophical and Technical Perspectives"
   },
   {
    "id": "L-KNDNN",
@@ -2638,9 +2661,10 @@
    "date": "1982-07",
    "kind": "magazine",
    "lang": "en",
-   "in": "BYTE 7(7), pp. 306-310",
+   "in": "BYTE 7(7)",
    "url": "https://archive.org/details/byte-magazine-1982-07",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "306-310"
   },
   {
    "id": "L-HSR25",
@@ -2698,11 +2722,12 @@
    "date": "1967-06",
    "kind": "article",
    "lang": "en",
-   "in": "Journal of Psychiatric Research 5(2), pp. 165-177",
+   "in": "Journal of Psychiatric Research 5(2)",
    "doi": "10.1016/0022-3956(67)90029-5",
    "url": "https://doi.org/10.1016/0022-3956(67)90029-5",
    "note": "Reports a Harvard research use of ELIZA on a time-shared computer to study dyadic communication with human subjects.",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "165-177"
   },
   {
    "id": "L-TN4P7",
@@ -2760,7 +2785,7 @@
    "date": "1965-02-26",
    "kind": "news",
    "lang": "de",
-   "in": "DIE ZEIT",
+   "in": "Die Zeit",
    "url": "https://web.archive.org/web/20241224200614/https://www.zeit.de/1965/09/logik-aus-der-telephonleitung",
    "relevance": "about"
   },
@@ -2785,10 +2810,10 @@
    "date": "1991",
    "kind": "chapter",
    "lang": "en",
-   "in": "Cambridge, Mass. : MIT Press",
    "url": "https://archive.org/details/newhackersdictio00raym",
    "note": "Dictionary of hacker slang with an entry defining the ELIZA effect in AI community usage.",
-   "relevance": "about"
+   "relevance": "about",
+   "publisher": "MIT Press"
   },
   {
    "id": "L-WET33",
@@ -2991,10 +3016,11 @@
    "date": "1983-12-15",
    "kind": "magazine",
    "lang": "en",
-   "in": "Personal Computer News 41, pp. 22-26",
+   "in": "Personal Computer News 41",
    "url": "https://archive.org/details/mag_PersonalComputerNews041-21Dec1983",
    "note": "Article on Eliza as written in Lisp by Weizenbaum in 1966, with a BBC Micro BASIC version and the Men are all alike dialogue.",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "22-26"
   },
   {
    "id": "L-5LRNW",
@@ -3087,12 +3113,13 @@
    "date": "2016-01-19",
    "kind": "article",
    "lang": "en",
-   "in": "Computers in Human Behavior 58, pp. 278-295",
+   "in": "Computers in Human Behavior 58",
    "doi": "10.1016/j.chb.2016.01.004",
    "url": "https://doi.org/10.1016/j.chb.2016.01.004",
    "note": "Compares ELIZA with modern dialogue systems as conversational programs.",
    "relevance": "about",
-   "licence": "CC BY-NC-ND 4.0"
+   "licence": "CC BY-NC-ND 4.0",
+   "pages": "278-295"
   },
   {
    "id": "L-CLXT6",
@@ -3148,7 +3175,7 @@
    "author": "Shrager, Jeff",
    "kind": "web page",
    "lang": "en",
-   "in": "ELIZAGEN",
+   "in": "Elizagen",
    "url": "https://elizagen.org/blog/the-mystery-of-elizas-teachability.html",
    "note": "Notes that the original code had a section for users to teach it new patterns and that this did not reach later clones.",
    "relevance": "about"
@@ -3159,7 +3186,7 @@
    "author": "Shrager, Jeff",
    "kind": "web page",
    "lang": "en",
-   "in": "ELIZAGEN",
+   "in": "Elizagen",
    "url": "https://elizagen.org/blog/a-code-based-eliza-phylogeny.html",
    "note": "Outlines a project to build a phylogenetic tree of ELIZA programs from their source code.",
    "relevance": "about"
@@ -3184,7 +3211,7 @@
    "date": "2021-05-23",
    "kind": "web page",
    "lang": "en",
-   "in": "ELIZAGEN",
+   "in": "Elizagen",
    "url": "https://elizagen.org/original-eliza.html",
    "note": "Announces the finding of the MAD-SLIP ELIZA listing in Weizenbaum's MIT archive and gives reading notes, references and historical notes on the code.",
    "relevance": "about"
@@ -3208,10 +3235,11 @@
    "date": "2023",
    "kind": "chapter",
    "lang": "en",
-   "in": "Hello, I'm ELIZA, ed. Baranovska-Bolter and Holtgen, 2nd edn, Bochum: Projektverlag, pp. 95-102",
    "url": "https://d-nb.info/1302198149",
    "note": "Chapter by the author of the BASIC ELIZA on that version of the program.",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "95-102",
+   "publisher": "Projektverlag"
   },
   {
    "id": "L-NXVJA",
@@ -3297,7 +3325,7 @@
    "date": "2026-04-26",
    "kind": "web page",
    "lang": "en",
-   "in": "ELIZAGEN",
+   "in": "Elizagen",
    "url": "https://elizagen.org/blog/parry-parries-again.html",
    "note": "Reports PARRY being run again and talking to the original ELIZA in a partial replication of the RFC 439 conversation.",
    "relevance": "about"
@@ -3442,10 +3470,11 @@
    "date": "1978-03",
    "kind": "letter",
    "lang": "en",
-   "in": "Creative Computing, March-April 1978, p. 8",
+   "in": "Creative Computing, March-April 1978",
    "url": "https://archive.org/details/creativecomputing-1978-03",
    "note": "Reader reports running the magazine's ELIZA in SWTPC 8K BASIC.",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "8"
   },
   {
    "id": "L-6QGFV",
@@ -3558,9 +3587,10 @@
    "date": "1967",
    "kind": "article",
    "lang": "en",
-   "in": "IEEE International Convention Record, Vol. 5, Part 10, p. 8",
+   "in": "IEEE International Convention Record, Vol. 5, Part 10",
    "note": "Early account of ELIZA used as a conversational tutorial at MIT.",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "8"
   },
   {
    "id": "L-ZK6Q7",
@@ -3580,11 +3610,12 @@
    "date": "1968-06",
    "kind": "article",
    "lang": "en",
-   "in": "American Journal of Physics 36, p. 496",
+   "in": "American Journal of Physics 36",
    "doi": "10.1119/1.1974953",
    "url": "https://doi.org/10.1119/1.1974953",
    "note": "Describes an MIT teaching experiment on 4-vectors in special relativity using a computer tutorial, listed by ELIZAGEN among the educational applications of ELIZA.",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "496"
   },
   {
    "id": "L-IV3W7",
@@ -3708,10 +3739,10 @@
    "date": "2009",
    "kind": "chapter",
    "lang": "en",
-   "in": "Expressive Processing: Digital Fictions, Computer Games, and Software Studies, MIT Press",
    "url": "https://grandtextauto.soe.ucsc.edu/2008/02/04/ep-meta-chapter-two/",
    "note": "Analyses how Eliza/Doctor works from Weizenbaum's 1966 article and revises the Eliza effect to include the breakdown of the illusion and the authorial choices that follow it.",
-   "relevance": "about"
+   "relevance": "about",
+   "publisher": "Digital Fictions, Computer Games, and Software Studies, MIT Press"
   },
   {
    "id": "L-2OUJR",
@@ -3758,9 +3789,10 @@
    "date": "1965",
    "kind": "article",
    "lang": "en",
-   "in": "Harvard Review 3(2), pp. 68-73",
+   "in": "Harvard Review 3(2)",
    "note": "Spring 1965 article in which the editor talks to the computer, listed in Inventing ELIZA's table of surviving conversations.",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "68-73"
   },
   {
    "id": "L-IUZ6I",
@@ -3992,10 +4024,11 @@
    "date": "1978-01",
    "kind": "magazine",
    "lang": "en",
-   "in": "ROM 7, from p. 64",
+   "in": "ROM 7",
    "url": "https://archive.org/details/ROM07_201806",
    "note": "Reprint from Computer Power and Human Reason telling how ELIZA got its name and how its first script parodied a nondirective psychotherapist.",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "64"
   },
   {
    "id": "L-S45YT",
@@ -4077,9 +4110,10 @@
    "date": "1968-06-15",
    "kind": "news",
    "lang": "en",
-   "in": "The New York Times, p. 58",
+   "in": "The New York Times",
    "note": "Report on Weizenbaum's project Eliza at MIT and its demonstration through a psychiatric interview.",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "58"
   },
   {
    "id": "L-OFYQP",
@@ -4088,7 +4122,7 @@
    "date": "2016-01-07",
    "kind": "news",
    "lang": "de",
-   "in": "DIE ZEIT",
+   "in": "Die Zeit",
    "url": "https://www.zeit.de/2016/02/eliza-software-computer-konversation",
    "relevance": "about"
   },
@@ -4111,12 +4145,13 @@
    "date": "2007",
    "kind": "article",
    "lang": "en",
-   "in": "Leonardo 40(1), pp. 31-36",
+   "in": "Leonardo 40(1)",
    "doi": "10.1162/leon.2007.40.1.31",
    "url": "https://doi.org/10.1162/leon.2007.40.1.31",
    "note": "The artist discusses her online telerobotic work ELIZA REDUX, its sources and its use of the analyst and analysand relationship.",
    "relevance": "about",
-   "licence": "CC BY-ND 4.0"
+   "licence": "CC BY-ND 4.0",
+   "pages": "31-36"
   },
   {
    "id": "L-CDECQ",
@@ -4353,10 +4388,11 @@
    "date": "1989",
    "kind": "magazine",
    "lang": "it",
-   "in": "Quaderni di informatica 36 (Bull Italia), from p. 40",
+   "in": "Quaderni di informatica 36 (Bull Italia)",
    "url": "https://archive.org/details/quaderni-informatica-36",
    "note": "Italian article on ELIZA, its Pygmalion name, the psychotherapist setting as parody and people confiding in the program.",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "40"
   },
   {
    "id": "L-VTWVM",
@@ -4364,10 +4400,10 @@
    "date": "2004",
    "kind": "chapter",
    "lang": "en",
-   "in": "Great Barrington, Mass. : Berkshire Pub. Group",
    "url": "https://archive.org/details/berkshireencyclo0000unse_w4h4",
    "note": "Encyclopedia of human-computer interaction with an entry on Eliza and a sidebar Talking with ELIZA reprinting Weizenbaum's typical conversation.",
-   "relevance": "about"
+   "relevance": "about",
+   "publisher": "Berkshire Pub. Group"
   },
   {
    "id": "L-J6XJH",
@@ -4384,7 +4420,7 @@
    "date": "2000-08-28",
    "kind": "news",
    "lang": "de",
-   "in": "DER SPIEGEL",
+   "in": "Der Spiegel",
    "relevance": "about"
   },
   {
@@ -4508,7 +4544,7 @@
    "date": "2022-06-14",
    "kind": "news",
    "lang": "de",
-   "in": "DER SPIEGEL",
+   "in": "Der Spiegel",
    "relevance": "about"
   },
   {
@@ -4582,10 +4618,11 @@
    "date": "1977-06",
    "kind": "letter",
    "lang": "en",
-   "in": "BYTE, June 1977, p. 123",
+   "in": "BYTE, June 1977",
    "url": "https://archive.org/details/byte-magazine-1977-06",
    "note": "Reader reply about planning a SNOBOL ELIZA for a small computer.",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "123"
   },
   {
    "id": "L-4P4NA",
@@ -4615,9 +4652,10 @@
    "date": "1978-01",
    "kind": "magazine",
    "lang": "en",
-   "in": "Creative Computing 4(1), p. 95",
+   "in": "Creative Computing 4(1)",
    "url": "https://archive.org/details/creativecomputing-1978-01",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "95"
   },
   {
    "id": "L-YPMYF",
@@ -4796,9 +4834,10 @@
    "date": "2008-03-25",
    "kind": "news",
    "lang": "en",
-   "in": "The Times (London), p. 56",
+   "in": "The Times (London)",
    "note": "Obituary listed in the Contemporary Authors entry for Weizenbaum.",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "56"
   },
   {
    "id": "L-FLKF7",
@@ -4806,10 +4845,11 @@
    "date": "1983",
    "kind": "magazine",
    "lang": "en",
-   "in": "Oric Owner 2, pp. 20-21",
+   "in": "Oric Owner 2",
    "url": "https://archive.org/details/Oric_Owner_Issue_02.pdf",
    "note": "Type-in listing of Eliza for the Oric-1.",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "20-21"
   },
   {
    "id": "L-FO6ZN",
@@ -4817,9 +4857,10 @@
    "date": "1983-02",
    "kind": "magazine",
    "lang": "fr",
-   "in": "Micro 7 no. 2, February 1983, p. 18",
+   "in": "Micro 7 no. 2, February 1983",
    "url": "https://archive.org/details/Micro7-02",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "18"
   },
   {
    "id": "L-CIR5U",
@@ -4870,9 +4911,10 @@
    "date": "1981-10",
    "kind": "review",
    "lang": "en",
-   "in": "Creative Computing 7(10), p. 59",
+   "in": "Creative Computing 7(10)",
    "url": "https://archive.org/details/creativecomputing-1981-10",
-   "relevance": "about"
+   "relevance": "about",
+   "pages": "59"
   },
   {
    "id": "L-EGDIG",
@@ -4891,10 +4933,10 @@
    "date": "1983",
    "kind": "chapter",
    "lang": "en",
-   "in": "Chicago : Science Research Associates",
    "url": "https://archive.org/details/isbn_0574214151",
    "note": "Reader on computing that includes Weizenbaum's text on ELIZA from Contextual Understanding by Computers.",
-   "relevance": "about"
+   "relevance": "about",
+   "publisher": "Science Research Associates"
   },
   {
    "id": "L-BNBVZ",
@@ -5055,7 +5097,7 @@
    "date": "2024-10-13",
    "kind": "news",
    "lang": "ja",
-   "in": "GIGAZINE",
+   "in": "Gigazine",
    "url": "https://gigazine.net/news/20241013-chatbot-eliza-secretary/",
    "note": "Japanese report on Rebecca Roach's research into the unidentified secretary who contributed to ELIZA's development.",
    "relevance": "about"
@@ -5203,9 +5245,10 @@
    "date": "1978-02",
    "kind": "interview",
    "lang": "en",
-   "in": "Personal Computing, February 1978, pp. 21-28",
+   "in": "Personal Computing, February 1978",
    "url": "https://archive.org/details/197802",
-   "relevance": "section"
+   "relevance": "section",
+   "pages": "21-28"
   },
   {
    "id": "L-TH7PA",
@@ -5305,7 +5348,7 @@
    "kind": "book",
    "lang": "en",
    "pages": "96-97, 106-111",
-   "publisher": "New York : Basic Books",
+   "publisher": "Basic Books",
    "url": "https://archive.org/details/artificialintell0000bode_e5y7",
    "note": "Philosophical survey of AI with a section headed How Eliza Differs From Eliza, comparing the program's data base and responses with PARRY.",
    "relevance": "section"
@@ -5428,7 +5471,7 @@
    "date": "1996",
    "kind": "book",
    "lang": "en",
-   "publisher": "Indianapolis, Ind. : New Riders",
+   "publisher": "New Riders",
    "url": "https://archive.org/details/internetagentssp00cheo",
    "note": "Guide to internet agents with a section Eliza: The Mother of All Chatterbots, a sample conversation and Eliza Internals, around pp. 250 to 252.",
    "thumb": "library/thumbs/L-52IE4.jpg",
@@ -5529,7 +5572,7 @@
    "date": "1993",
    "kind": "book",
    "lang": "en",
-   "publisher": "Oxford, UK ; Cambridge, Mass. : Blackwell",
+   "publisher": "Blackwell",
    "url": "https://archive.org/details/artificialintell0000cope",
    "note": "Philosophical introduction to AI that treats ELIZA at several points, indexed for pp. 32 to 44 and later pages, and warns about the Eliza effect.",
    "thumb": "library/thumbs/L-QWEQ5.jpg",
@@ -5542,7 +5585,7 @@
    "date": "1994",
    "kind": "book",
    "lang": "en",
-   "publisher": "Englewood Cliffs, N.J. : Prentice Hall",
+   "publisher": "Prentice Hall",
    "url": "https://archive.org/details/naturallanguagep0000covi",
    "note": "Textbook whose chapter 2 on templates and keywords presents ELIZA-style template matching and how to program it in Prolog.",
    "thumb": "library/thumbs/L-5CS6L.jpg",
@@ -5668,11 +5711,12 @@
    "date": "2001-05",
    "kind": "article",
    "lang": "en",
-   "in": "Computers in Human Behavior 17(3), pp. 295-314",
+   "in": "Computers in Human Behavior 17(3)",
    "doi": "10.1016/s0747-5632(01)00004-8",
    "url": "https://doi.org/10.1016/S0747-5632(01)00004-8",
    "note": "Traces computerized psychological assessment, taking ELIZA as its starting point.",
-   "relevance": "section"
+   "relevance": "section",
+   "pages": "295-314"
   },
   {
    "id": "L-GT7PY",
@@ -5752,7 +5796,7 @@
    "kind": "book",
    "lang": "en",
    "pages": "169-170, 186",
-   "publisher": "Cambridge, Mass. : MIT Press",
+   "publisher": "MIT Press",
    "url": "https://archive.org/details/computerethicsca0002fore",
    "note": "Discusses Weizenbaum's Eliza and Doctor programs and the fascination they generated; pages from an index line.",
    "thumb": "library/thumbs/L-MEASU.jpg",
@@ -5811,7 +5855,7 @@
    "kind": "book",
    "lang": "en",
    "pages": "148",
-   "publisher": "London ; New York : Routledge & Kegan Paul",
+   "publisher": "Routledge & Kegan Paul",
    "url": "https://archive.org/details/artificialintell0000garn",
    "note": "Introduction to AI with a passage on ELIZA in its language chapter, around p. 148, and Weizenbaum's own realisation about understanding.",
    "thumb": "library/thumbs/L-O4GEG.jpg",
@@ -5921,7 +5965,7 @@
    "date": "2024-04-11",
    "kind": "article",
    "lang": "en",
-   "in": "PLOS ONE",
+   "in": "Plos One",
    "doi": "10.1371/journal.pone.0301382",
    "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0301382",
    "note": "Introduces its experiments with ELIZA and DOCTOR as a parody of Rogerian therapy and the ELIZA effect, tracing a line from ELIZA to GPT-4.",
@@ -5935,9 +5979,10 @@
    "date": "1983",
    "kind": "chapter",
    "lang": "en",
-   "in": "Tim Hartnell’s Giant Book of Computer Games, UK edition, pp. 212-223",
+   "in": "Tim Hartnell’s Giant Book of Computer Games, UK edition",
    "url": "https://archive.org/details/tim-hartnells-giant-book-of-computer-games-uk-edition-1983_202502",
-   "relevance": "section"
+   "relevance": "section",
+   "pages": "212-223"
   },
   {
    "id": "L-DFLFT",
@@ -5959,7 +6004,7 @@
    "date": "1984",
    "kind": "book",
    "lang": "en",
-   "publisher": "Reading, Mass. : Addison-Wesley",
+   "publisher": "Addison-Wesley",
    "url": "https://archive.org/details/lookingatlisp0000hase",
    "note": "153-. Chapter 7 on pattern matching opens with section 7.1, Eliza, and has the reader write a MICRO-ELIZA in Lisp.",
    "thumb": "library/thumbs/L-6BXJM.jpg",
@@ -6139,10 +6184,10 @@
    "date": "1977-12",
    "kind": "report",
    "lang": "en",
-   "publisher": "DTIC ADA055863",
+   "publisher": "Defense Technical Information Center",
    "doi": "10.21236/ada055863",
    "url": "https://archive.org/details/DTIC_ADA055863",
-   "note": "Has a section 2.2.1 on ELIZA among pattern matching systems.",
+   "note": "Has a section 2.2.1 on ELIZA among pattern matching systems. Report DTIC ADA055863.",
    "relevance": "section"
   },
   {
@@ -6189,10 +6234,10 @@
    "date": "1982",
    "kind": "chapter",
    "lang": "de",
-   "in": "pp. 125-126",
    "url": "https://archive.org/details/basic-interpreter-ocr",
    "note": "Reprints the author's ELIZA as a worked example program for a BASIC interpreter.",
-   "relevance": "section"
+   "relevance": "section",
+   "pages": "125-126"
   },
   {
    "id": "L-XXYP7",
@@ -6277,10 +6322,10 @@
    "date": "2018",
    "kind": "chapter",
    "lang": "en",
-   "in": "Hello, I'm Eliza. Funfzig Jahre Gesprache mit Computern, ed. Baranovska and Holtgen, Bochum/Freiburg: Projektverlag",
    "url": "http://florianleitner.de/archives/408",
    "note": "Chapter in the ELIZA anniversary volume on technology and reason in media performance.",
-   "relevance": "section"
+   "relevance": "section",
+   "publisher": "Projektverlag"
   },
   {
    "id": "L-K7K6K",
@@ -6289,10 +6334,11 @@
    "date": "1971-10-29",
    "kind": "news",
    "lang": "en",
-   "in": "The Tech (MIT), v. 91 no. 43, p. 8",
+   "in": "The Tech (MIT), v. 91 no. 43",
    "url": "https://archive.org/details/mit_the_tech_newspaper-v91-i43",
    "note": "Printed text of a UNESCO symposium paper with a passage on Weizenbaum's automatic non-directive psychiatrist program, saying he built it to show how little content the therapy had.",
-   "relevance": "section"
+   "relevance": "section",
+   "pages": "8"
   },
   {
    "id": "L-3ANN3",
@@ -6390,7 +6436,7 @@
    "date": "2015",
    "kind": "book",
    "lang": "en",
-   "publisher": "[New York] : Ecco Press",
+   "publisher": "Ecco Press",
    "url": "https://archive.org/details/machinesofloving0000mark_b8r2",
    "note": "Passage around p. 173 on Eliza as a parrot of a Rogerian therapist and Weizenbaum's shock at how engrossed users became.",
    "thumb": "library/thumbs/L-2FB32.jpg",
@@ -6485,7 +6531,7 @@
    "date": "1979",
    "kind": "book",
    "lang": "en",
-   "publisher": "W. H. Freeman; 2nd edn Natick: A. K. Peters, 2004",
+   "publisher": "A. K. Peters, 2004",
    "url": "https://archive.org/details/machineswhothink0000pame",
    "note": "History of AI listed as further reading on ELIZA and cited in Shrager's account of its origins.",
    "thumb": "library/thumbs/L-HSJIO.jpg",
@@ -6536,7 +6582,7 @@
    "date": "2008-01-08",
    "kind": "news",
    "lang": "de",
-   "in": "DER SPIEGEL",
+   "in": "Der Spiegel",
    "note": "Portrait for Weizenbaum's 85th birthday describing his horror at the effects of his software and the belief in technology among colleagues.",
    "relevance": "section"
   },
@@ -6573,7 +6619,7 @@
    "kind": "book",
    "lang": "en",
    "pages": "28, 88",
-   "publisher": "Dallas, Tex. : Texas Instruments",
+   "publisher": "Texas Instruments",
    "url": "https://archive.org/details/understandingart00mish",
    "note": "Explains ELIZA as a simulated Rogerian therapist with sample exchanges and its relation to the Turing test; pages from an index line.",
    "thumb": "library/thumbs/L-VMJPT.jpg",
@@ -6598,7 +6644,7 @@
    "date": "2005",
    "kind": "book",
    "lang": "en",
-   "publisher": "Cambridge, Mass. : MIT Press",
+   "publisher": "MIT Press",
    "url": "https://archive.org/details/twistylittlepass0000mont",
    "note": "History of interactive fiction with a section in chapter 4 on ELIZA/DOCTOR and computer conversation as ancestors of Adventure.",
    "thumb": "library/thumbs/L-6U2M7.jpg",
@@ -6611,11 +6657,12 @@
    "date": "2008-07",
    "kind": "article",
    "lang": "en",
-   "in": "IEEE Intelligent Systems 23(4), pp. 8-9",
+   "in": "IEEE Intelligent Systems 23(4)",
    "doi": "10.1109/mis.2008.70",
    "url": "https://doi.org/10.1109/MIS.2008.70",
    "note": "Obituary of Weizenbaum by MIT colleagues in an AI journal; no abstract available in Crossref.",
-   "relevance": "section"
+   "relevance": "section",
+   "pages": "8-9"
   },
   {
    "id": "L-S2EHH",
@@ -6624,10 +6671,10 @@
    "date": "1997",
    "kind": "chapter",
    "lang": "en",
-   "in": "Hamlet on the Holodeck: The Future of Narrative in Cyberspace, MIT Press",
    "url": "https://archive.org/details/hamletonholodeck00murr",
    "note": "Book chapter named after ELIZA within a study of cyberdrama; only the table of contents and reviews were read, and Wardrip-Fruin's record reports that Murray names Weizenbaum a premier electronic literature author.",
-   "relevance": "section"
+   "relevance": "section",
+   "publisher": "The Future of Narrative in Cyberspace, MIT Press"
   },
   {
    "id": "L-W4VAX",
@@ -6649,9 +6696,10 @@
    "date": "1982-04",
    "kind": "magazine",
    "lang": "en",
-   "in": "Microcomputing, April 1982, pp. 32-42",
+   "in": "Microcomputing, April 1982",
    "url": "https://archive.org/details/kilobaudmagazine-1982-04",
-   "relevance": "section"
+   "relevance": "section",
+   "pages": "32-42"
   },
   {
    "id": "L-I3NUT",
@@ -6660,12 +6708,13 @@
    "date": "1992",
    "kind": "chapter",
    "lang": "en",
-   "in": "Paradigms of Artificial Intelligence Programming, Morgan Kaufmann, pp. 151-174",
+   "in": "Paradigms of Artificial Intelligence Programming, Morgan Kaufmann",
    "doi": "10.1016/b978-0-08-057115-7.50005-4",
    "url": "https://doi.org/10.1016/B978-0-08-057115-7.50005-4",
    "note": "Textbook chapter implementing an ELIZA-style program in Common Lisp.",
    "relevance": "about",
-   "publisher": "San Francisco: Morgan Kaufmann; ISBN 978-1-55860-191-8"
+   "publisher": "Morgan Kaufmann",
+   "pages": "151-174"
   },
   {
    "id": "L-2UD4D",
@@ -6774,7 +6823,7 @@
    "date": "1981",
    "kind": "book",
    "lang": "en",
-   "publisher": "Potomac, MD : Computer Science Press",
+   "publisher": "Computer Science Press",
    "url": "https://archive.org/details/natureofcomputat0000pohl",
    "note": "Computer science text with a section ELIZA: An Attempt to Pass the Turing Test, around p. 334, including its decomposition rules.",
    "thumb": "library/thumbs/L-G7SJ7.jpg",
@@ -6870,7 +6919,7 @@
    "kind": "book",
    "lang": "en",
    "pages": "197",
-   "publisher": "San Francisco : W. H. Freeman",
+   "publisher": "W. H. Freeman",
    "url": "https://archive.org/details/thinkingcomputer00raph",
    "note": "Describes ELIZA as an extreme example of keyword response with a printed conversation in Table 6.4 and contrasts it with Colby's program; page from an index line.",
    "thumb": "library/thumbs/L-OIISM.jpg",
@@ -6906,10 +6955,11 @@
    "date": "2020",
    "kind": "chapter",
    "lang": "de",
-   "in": "Neue Deutsche Biographie 27, pp. 711-713",
+   "in": "Neue Deutsche Biographie 27",
    "url": "https://www.deutsche-biographie.de/gnd118820591.html#ndbcontent",
    "note": "Biographical entry stating that Weizenbaum saw ELIZA as a kind of parody demonstrating a threatened human dependence on machines.",
-   "relevance": "section"
+   "relevance": "section",
+   "pages": "711-713"
   },
   {
    "id": "L-MATNB",
@@ -6943,11 +6993,11 @@
    "date": "2018",
    "kind": "chapter",
    "lang": "en",
-   "in": "The Robotic Imaginary: The Human and the Price of Dehumanized Labor, University of Minnesota Press",
    "doi": "10.5749/j.ctv62hh4x.4",
    "url": "https://www.jstor.org/stable/10.5749/j.ctv62hh4x.4",
    "note": "Chapter 1, pp. 31-66, takes Weizenbaum's therapist ELIZA as the first of three cases of AI-based caring labor, alongside Helen in Galatea 2.2 and Samantha in Her.",
-   "relevance": "section"
+   "relevance": "section",
+   "publisher": "The Human and the Price of Dehumanized Labor, University of Minnesota Press"
   },
   {
    "id": "L-UBDZK",
@@ -6956,12 +7006,12 @@
    "date": "2023",
    "kind": "chapter",
    "lang": "en",
-   "in": "Feminist AI: Critical Perspectives on Algorithms, Data, and Intelligent Machines, Oxford University Press",
    "doi": "10.1093/oso/9780192889898.003.0010",
    "url": "https://doi.org/10.1093/oso/9780192889898.003.0010",
    "note": "Chapter, pp. 155-173, tracing automated care labour from ELIZA to Alexa.",
    "relevance": "section",
-   "licence": "CC BY-NC-ND 4.0"
+   "licence": "CC BY-NC-ND 4.0",
+   "publisher": "Critical Perspectives on Algorithms, Data, and Intelligent Machines, Oxford University Press"
   },
   {
    "id": "L-Z2KZB",
@@ -6995,10 +7045,11 @@
    "date": "1976-02-03",
    "kind": "review",
    "lang": "en",
-   "in": "The Boston Phoenix, section two, p. 9",
+   "in": "The Boston Phoenix, section two",
    "url": "https://archive.org/details/sim_boston-phoenix_1976-02-03_5_5",
    "note": "Review of Computer Power and Human Reason covering Weizenbaum's account of his mid-1960s program and its reception.",
-   "relevance": "section"
+   "relevance": "section",
+   "pages": "9"
   },
   {
    "id": "L-5CTKA",
@@ -7067,14 +7118,15 @@
    "date": "2022",
    "kind": "review",
    "lang": "de",
-   "in": "Zeithistorische Forschungen / Studies in Contemporary History 19, pp. 402-410",
+   "in": "Zeithistorische Forschungen / Studies in Contemporary History 19",
    "doi": "10.14765/zzf.dok-2429",
    "url": "https://doi.org/10.14765/zzf.dok-2429",
    "note": "Rereads Weizenbaum's Die Macht der Computer und die Ohnmacht der Vernunft and argues that it has aged badly.",
    "relevance": "section",
    "licence": "CC BY-SA 4.0",
    "file": "library/files/L-NL7YL.pdf",
-   "source": "https://zeitgeschichte-digital.de/doks/files/2429/ZF_2_2022_402_410_Sarasin.pdf, 2026-11-06"
+   "source": "https://zeitgeschichte-digital.de/doks/files/2429/ZF_2_2022_402_410_Sarasin.pdf, 2026-11-06",
+   "pages": "402-410"
   },
   {
    "id": "L-VL2FZ",
@@ -7223,7 +7275,7 @@
    "kind": "book",
    "lang": "en",
    "pages": "205",
-   "publisher": "Cambridge, Mass. : Winthrop Publishers",
+   "publisher": "Winthrop Publishers",
    "url": "https://archive.org/details/softwarepsycholo00shne",
    "note": "Reports a visit with DOCTOR and the underlying ELIZA system in a discussion of natural language; page from an index line.",
    "thumb": "library/thumbs/L-6BC3R.jpg",
@@ -7261,11 +7313,12 @@
    "date": "1999",
    "kind": "chapter",
    "lang": "de",
-   "in": "Pioniere der Informatik, Springer, pp. 31-59",
+   "in": "Pioniere der Informatik, Springer",
    "doi": "10.1007/978-3-642-58599-9_2",
    "url": "https://doi.org/10.1007/978-3-642-58599-9_2",
    "note": "Chapter on Weizenbaum in a German volume on computing pioneers.",
-   "relevance": "section"
+   "relevance": "section",
+   "pages": "31-59"
   },
   {
    "id": "L-JEPEI",
@@ -7325,7 +7378,7 @@
    "date": "1995",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York : John Wiley & Sons",
+   "publisher": "John Wiley & Sons",
    "url": "https://archive.org/details/reengineeringhum0000spen",
    "note": "Human resources book with a section on Eliza, the Computer Expert System Psychotherapist, around p. 31.",
    "thumb": "library/thumbs/L-R7BBL.jpg",
@@ -7406,7 +7459,7 @@
    "date": "2016",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York, NY : Cambridge University Press",
+   "publisher": "Cambridge University Press",
    "url": "https://archive.org/details/psychologyofdigi0000sule",
    "note": "Textbook on digital psychology with a passage on Eliza and the Eliza effect in its section on therapeutics, pp. 406 to 407.",
    "thumb": "library/thumbs/L-HCO7H.jpg",
@@ -7494,7 +7547,7 @@
    "kind": "book",
    "lang": "en",
    "pages": "40, 48",
-   "publisher": "New York : PBI",
+   "publisher": "PBI",
    "url": "https://archive.org/details/naturallanguagep0000tenn",
    "note": "Section 2.7, Case Study: DOCTOR, treats the DOCTOR program, also called ELIZA, with reference to Weizenbaum 1966 and 1976; pages from index lines.",
    "thumb": "library/thumbs/L-V7QEG.jpg",
@@ -7545,7 +7598,7 @@
    "date": "1984",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York: Simon & Schuster; ISBN 978-0-671-46848-4",
+   "publisher": "Simon & Schuster",
    "url": "https://archive.org/details/secondself00sher",
    "note": "Book cited at p. 40 in the Wikipedia article on the ELIZA effect.",
    "thumb": "library/thumbs/L-CUHBO.jpg",
@@ -7558,7 +7611,7 @@
    "date": "1997",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York: Touchstone; London: Phoenix",
+   "publisher": "Touchstone; Phoenix",
    "url": "https://archive.org/details/lifeonscreeniden0000turk_d3y8",
    "note": "Book with a section on the Eliza effect, defined there as the tendency to accept computer responses as more intelligent than they are.",
    "thumb": "library/thumbs/L-5UNCE.jpg",
@@ -7571,10 +7624,11 @@
    "date": "1984-09",
    "kind": "magazine",
    "lang": "en",
-   "in": "PROFILES (Kaypro) 2(2), p. 50",
+   "in": "PROFILES (Kaypro) 2(2)",
    "url": "https://archive.org/details/PROFILES_Volume_2_Number_2_1984-09_Kaypro_Corp_US",
    "note": "Includes ELIZA.PLT, an Eliza written in COMMON PILOT for CP/M.",
-   "relevance": "section"
+   "relevance": "section",
+   "pages": "50"
   },
   {
    "id": "L-ME2QG",
@@ -7583,7 +7637,7 @@
    "date": "1984",
    "kind": "book",
    "lang": "en",
-   "publisher": "Rowley, Mass. : Newbury House Publishers",
+   "publisher": "Newbury House Publishers",
    "url": "https://archive.org/details/linguisticscompu0000unde",
    "note": "Language-teaching book with chapter 7 sections on a Spanish ELIZA and FAMILIA, ELIZA as tutor.",
    "thumb": "library/thumbs/L-ME2QG.jpg",
@@ -7693,7 +7747,7 @@
    "date": "2009",
    "kind": "book",
    "lang": "en",
-   "publisher": "Cambridge, MA: MIT Press; ISBN 978-0-262-01343-7",
+   "publisher": "MIT Press",
    "url": "https://archive.org/details/expressiveproces0000ward",
    "note": "Book with a chapter on ELIZA and the Eliza effect, pp. 24-36 in the 2014 printing cited by Wikipedia.",
    "thumb": "library/thumbs/L-OPCZO.jpg",
@@ -7789,7 +7843,7 @@
    "kind": "book",
    "lang": "en",
    "pages": "3-7, 161, 166-191, 199, 232",
-   "publisher": "San Francisco : W. H. Freeman",
+   "publisher": "W. H. Freeman",
    "url": "https://archive.org/details/computerpowerhum0000weiz_v0i3",
    "note": "Weizenbaum's own account: the Introduction on naming ELIZA and the reception of DOCTOR, and the chapters on computer models and on natural language; pages from the book's index, passages read.",
    "thumb": "library/thumbs/L-EF67V.jpg",
@@ -7853,7 +7907,7 @@
    "date": "2002",
    "kind": "book",
    "lang": "cs",
-   "publisher": "Praha: Moraviapress, 182 pp. ISBN 80-86181-55-3",
+   "publisher": "Moraviapress, 182 pp. ISBN 80-86181-55-3",
    "url": "https://cpk-front.mzk.cz/Record/kkkv.2494485",
    "note": "Czech collection of Weizenbaum's writing, cited by Czech Wikipedia's ELIZA article for the chapter Moc počítačů (pp. 7-22).",
    "relevance": "section"
@@ -7975,7 +8029,7 @@
    "date": "2023",
    "kind": "book",
    "lang": "de",
-   "publisher": "Innsbruck: Limbus Verlag; ISBN 978-3-99039-232-4",
+   "publisher": "Limbus Verlag",
    "url": "https://d-nb.info/1274356229",
    "note": "Book-length homage to Weizenbaum; listed in the German Wikipedia literature on him.",
    "thumb": "library/thumbs/L-DO7GT.jpg",
@@ -8001,7 +8055,7 @@
    "kind": "book",
    "lang": "en",
    "pages": "6-7",
-   "publisher": "London : Routledge and K. Paul",
+   "publisher": "Routledge and K. Paul",
    "url": "https://archive.org/details/grammarmeaningma0000wilk",
    "note": "Gives a sample of ELIZA output, how its general rule works, and says Weizenbaum's work passed Turing's test and shows how easy that is; pages from an index line.",
    "thumb": "library/thumbs/L-H3777.jpg",
@@ -8028,7 +8082,7 @@
    "kind": "book",
    "lang": "en",
    "pages": "45-46",
-   "publisher": "Reading, Mass. : Addison Wesley Pub. Co.",
+   "publisher": "Addison Wesley Pub. Co.",
    "url": "https://archive.org/details/languageascognit00terr",
    "note": "Chapter 2 on word patterns explains ELIZA's dialogue from Weizenbaum 1966, its blunders and how variables match in its patterns; pages from an index line and a running head.",
    "relevance": "section"
@@ -8040,10 +8094,11 @@
    "date": "1982",
    "kind": "chapter",
    "lang": "nl",
-   "in": "Academic Service, pp. 76-79",
+   "in": "Academic Service",
    "url": "https://archive.org/details/De_tekstmachine",
    "note": "Dutch book on text processing with a BASIC adaptation of ELIZA.",
-   "relevance": "section"
+   "relevance": "section",
+   "pages": "76-79"
   },
   {
    "id": "L-76O5N",
@@ -8302,7 +8357,7 @@
    "date": "1989",
    "kind": "book",
    "lang": "en",
-   "publisher": "Cambridge, Mass. : MIT Press",
+   "publisher": "MIT Press",
    "url": "https://archive.org/details/computersthought0000unse",
    "note": "Practical introduction to AI whose chapter 2 is built around Eliza: analysing its behaviour, its patterns and choices, what it lacks and what use it is.",
    "thumb": "library/thumbs/L-I4YSK.jpg",
@@ -8325,9 +8380,10 @@
    "date": "1979-12",
    "kind": "magazine",
    "lang": "en",
-   "in": "Interface Age, December 1979, pp. 42-43",
+   "in": "Interface Age, December 1979",
    "url": "https://archive.org/details/InterfaceAge197912",
-   "relevance": "section"
+   "relevance": "section",
+   "pages": "42-43"
   },
   {
    "id": "L-6NIIJ",
@@ -8455,7 +8511,7 @@
    "kind": "book",
    "lang": "en",
    "pages": "334",
-   "publisher": "Englewood Cliffs, N.J. : Prentice-Hall",
+   "publisher": "Prentice-Hall",
    "url": "https://archive.org/details/perspectivesonco0000pyly",
    "note": "Reprints Weizenbaum's Contextual Understanding by Computers at p. 334, on ELIZA's name, Rogerian script and the script as a program, with an account of how ELIZA passed the Turing test.",
    "thumb": "library/thumbs/L-7GKHE.jpg",
@@ -8513,7 +8569,7 @@
    "kind": "book",
    "lang": "en",
    "pages": "7, 32",
-   "publisher": "Hillsdale, N.J. : L. Erlbaum Associates",
+   "publisher": "L. Erlbaum Associates",
    "url": "https://archive.org/details/strategiesfornat00lehn",
    "note": "Opening chapter explains ELIZA and DOCTOR through a simplified figure of keyword patterns and responses; pages from an index line.",
    "thumb": "library/thumbs/L-XDSHH.jpg",
@@ -8549,7 +8605,7 @@
    "kind": "book",
    "lang": "en",
    "pages": "227-228, 257, 260, 285-287",
-   "publisher": "Stanford, Calif.: HeurisTech Press ; Los Altos, Calif. : William Kaufmann",
+   "publisher": "HeurisTech Press; William Kaufmann",
    "url": "https://archive.org/details/handbookofartific01barr",
    "note": "Article IV.F1 on pp. 285-287 presents ELIZA as the most famous pattern-matching program, covering the Rogerian role, SLIP, key lists and reassembly rules; passages read by search inside.",
    "thumb": "library/thumbs/L-6EYKJ.jpg",
@@ -8748,7 +8804,7 @@
    "date": "1997",
    "kind": "book",
    "lang": "en",
-   "publisher": "Baltimore, Md. : Johns Hopkins University Press",
+   "publisher": "Johns Hopkins University Press",
    "url": "https://archive.org/details/cybertextperspec0000aars",
    "note": "Theory of ergodic literature that includes Eliza in its typology of cybertexts, positions it statistically against adventure games and treats later conversation programs as in Weizenbaum's tradition.",
    "thumb": "library/thumbs/L-MPCJ7.jpg",
@@ -8774,7 +8830,7 @@
    "date": "1976",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York : Wiley",
+   "publisher": "Wiley",
    "url": "https://archive.org/details/socialeffectsofc0000adam",
    "note": "1976 textbook on computers and society that explains the ELIZA procedure, the VP anecdote and claims that it passed a form of the Turing test.",
    "thumb": "library/thumbs/L-SDWAC.jpg",
@@ -8810,7 +8866,7 @@
    "date": "2001",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York : At Random",
+   "publisher": "At Random",
    "url": "https://archive.org/details/outthereonemanss0000alfo",
    "note": "Comic reportage in which the author tries Eliza, explaining its 1966 origin and Rogerian mode.",
    "thumb": "library/thumbs/L-LOJ4N.jpg",
@@ -8823,9 +8879,10 @@
    "date": "1983-08",
    "kind": "magazine",
    "lang": "en",
-   "in": "Creative Computing 9(8), pp. 127-128",
+   "in": "Creative Computing 9(8)",
    "url": "https://archive.org/details/creativecomputing-1983-08",
-   "relevance": "unread"
+   "relevance": "unread",
+   "pages": "127-128"
   },
   {
    "id": "L-XMHHS",
@@ -8846,7 +8903,7 @@
    "date": "2010",
    "kind": "book",
    "lang": "en",
-   "publisher": "Los Angeles : SAGE",
+   "publisher": "SAGE",
    "url": "https://archive.org/details/therapyonlinepra0000anth",
    "note": "Practical guide that opens its history with ELIZA and PARRY and states their importance for online therapy.",
    "thumb": "library/thumbs/L-P3FIA.jpg",
@@ -8902,9 +8959,9 @@
    "date": "1985-05",
    "kind": "report",
    "lang": "en",
-   "publisher": "ERIC ED261671",
+   "publisher": "ERIC",
    "url": "https://archive.org/details/ERIC_ED261671",
-   "note": "Course assignment in which students use a BASIC version of Weizenbaum's ELIZA for the IBM PC.",
+   "note": "Course assignment in which students use a BASIC version of Weizenbaum's ELIZA for the IBM PC. Report ERIC ED261671.",
    "relevance": "unread"
   },
   {
@@ -8940,7 +8997,7 @@
    "date": "2001",
    "kind": "book",
    "lang": "en",
-   "publisher": "Creskill, N.J. : Hampton Press",
+   "publisher": "Hampton Press",
    "url": "https://archive.org/details/onlineconnection0000barn",
    "note": "Textbook on internet relations that describes ELIZA's conversational technique and reactions reported by Weizenbaum, with an excerpt.",
    "thumb": "library/thumbs/L-DHMRF.jpg",
@@ -8953,7 +9010,7 @@
    "date": "2015",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York : Routledge, Taylor & Francis Group",
+   "publisher": "Routledge, Taylor & Francis Group",
    "url": "https://archive.org/details/atomsbytesgenesp0000baue",
    "note": "Study of public resistance to technology that recounts ELIZA as a programmer's joke that raised alarm when therapists welcomed it.",
    "relevance": "unread"
@@ -9041,7 +9098,7 @@
    "date": "2010",
    "kind": "book",
    "lang": "en",
-   "publisher": "Nijmegen : Wolf Legal Publishers",
+   "publisher": "Wolf Legal Publishers",
    "url": "https://archive.org/details/situatedselfiden0000berg",
    "note": "Study of identity and ambient technology that discusses people's engagement with ELIZA and Weizenbaum's turn to criticism.",
    "relevance": "unread"
@@ -9087,7 +9144,7 @@
    "date": "2004",
    "kind": "book",
    "lang": "en",
-   "publisher": "Oxford : Oxford University Press, UK",
+   "publisher": "Oxford University Press, UK",
    "url": "https://archive.org/details/modelingrealityh0000biay",
    "note": "Book on computer modelling that presents ELIZA as the first chatterbot and reports Weizenbaum's dismay at its popularity, with a dialogue.",
    "thumb": "library/thumbs/L-2ENN6.jpg",
@@ -9164,7 +9221,7 @@
    "date": "2006",
    "kind": "book",
    "lang": "en",
-   "publisher": "Cambridge, Mass. : MIT Press",
+   "publisher": "MIT Press",
    "url": "https://archive.org/details/unitoperationsap0000bogo",
    "note": "Videogame criticism book that discusses Weizenbaum's Eliza agent as a computational representation of a Rogerian psychologist.",
    "thumb": "library/thumbs/L-PEKG6.jpg",
@@ -9177,7 +9234,7 @@
    "date": "1985",
    "kind": "book",
    "lang": "en",
-   "publisher": "Englewood Cliffs, NJ : Prentice-Hall International",
+   "publisher": "Prentice-Hall International",
    "url": "https://archive.org/details/artificialintell00bonn",
    "note": "Presents ELIZA as a typical pattern-matching program of historical interest that gives an illusion of understanding, and compares PARRY.",
    "thumb": "library/thumbs/L-ETVGI.jpg",
@@ -9203,9 +9260,9 @@
    "date": "1971",
    "kind": "report",
    "lang": "en",
-   "publisher": "ERIC ED049623",
+   "publisher": "ERIC",
    "url": "https://eric.ed.gov/?id=ED049623",
-   "note": "Describes the ARIS system, which uses a verbal communication simulator similar to Weizenbaum's ELIZA.",
+   "note": "Describes the ARIS system, which uses a verbal communication simulator similar to Weizenbaum's ELIZA. Report ERIC ED049623.",
    "relevance": "unread"
   },
   {
@@ -9237,7 +9294,7 @@
    "date": "2018",
    "kind": "book",
    "lang": "en",
-   "publisher": "Cambridge, Massachusetts : The MIT Press",
+   "publisher": "The MIT Press",
    "url": "https://archive.org/details/artificialuninte0000brou",
    "note": "Critique of AI that describes Eliza as a 1966 text bot in the manner of a Rogerian therapist and the conversational software it pioneered.",
    "thumb": "library/thumbs/L-WEV5B.jpg",
@@ -9250,7 +9307,7 @@
    "date": "2002",
    "kind": "book",
    "lang": "en",
-   "publisher": "Boston : Harvard Business School Press",
+   "publisher": "Harvard Business School Press",
    "url": "https://archive.org/details/sociallifeofinfo0000brow_n9b2",
    "note": "Critique of information technology that retells the folklore of Eliza and how the software later developed.",
    "thumb": "library/thumbs/L-UOELJ.jpg",
@@ -9276,7 +9333,7 @@
    "date": "1986",
    "kind": "book",
    "lang": "en",
-   "publisher": "Blue Ridge Summit, PA : TAB Books",
+   "publisher": "TAB Books",
    "url": "https://archive.org/details/artificialintell0000brul",
    "note": "AI textbook describing Eliza's mimicry of Rogerian conversation in its treatment of the Turing test.",
    "thumb": "library/thumbs/L-NPN73.jpg",
@@ -9289,7 +9346,7 @@
    "date": "1983",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York : Random House",
+   "publisher": "Random House",
    "url": "https://archive.org/details/riseofcomputer00burn",
    "note": "Book on computing and government that recounts Weizenbaum's first ELIZA experiment, quoting Computer Power and Human Reason.",
    "thumb": "library/thumbs/L-FWHGT.jpg",
@@ -9314,7 +9371,7 @@
    "date": "2010",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York : W.W. Norton",
+   "publisher": "W.W. Norton",
    "url": "https://archive.org/details/shallowswhatinte0000carr_r4d5",
    "note": "Chapter section retelling Weizenbaum's creation of ELIZA and users' wish to treat it as a thinking machine, used to frame the book's argument about computers and thought.",
    "thumb": "library/thumbs/L-W62YD.jpg",
@@ -9327,7 +9384,7 @@
    "date": "1991",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York : Oxford University Press",
+   "publisher": "Oxford University Press",
    "url": "https://archive.org/details/vitalmachinestud0000chan",
    "note": "History of ideas of technology and organism with a passage on ELIZA and Weizenbaum's admissions alongside SHRDLU.",
    "thumb": "library/thumbs/L-2PEQH.jpg",
@@ -9340,7 +9397,7 @@
    "date": "1989",
    "kind": "book",
    "lang": "en",
-   "publisher": "Tuscaloosa : University of Alabama Press",
+   "publisher": "University of Alabama Press",
    "url": "https://archive.org/details/computermediated00ches",
    "note": "Communication volume with a passage on Eliza as therapeutic program and on therapists' differing views, including that of Carl Rogers.",
    "thumb": "library/thumbs/L-SZF67.jpg",
@@ -9353,7 +9410,7 @@
    "date": "2011",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York : Doubleday",
+   "publisher": "Doubleday",
    "url": "https://archive.org/details/mosthumanhumanwh0000chri",
    "note": "Account of the Loebner Prize that discusses ELIZA and the DOCTOR script in a section on site-specificity and pure technique, with sample dialogue.",
    "thumb": "library/thumbs/L-7WUEM.jpg",
@@ -9366,7 +9423,7 @@
    "date": "1988",
    "kind": "book",
    "lang": "en",
-   "publisher": "Cambridge, Mass. : MIT Press",
+   "publisher": "MIT Press",
    "url": "https://archive.org/details/matterconsciousn0000chur",
    "note": "Uses Weizenbaum's ELIZA with a sample conversation to argue it has no conception of what a father or brother is.",
    "thumb": "library/thumbs/L-KBCKV.jpg",
@@ -9392,7 +9449,7 @@
    "date": "1990",
    "kind": "book",
    "lang": "en",
-   "publisher": "Cambridge, Mass. : MIT Press",
+   "publisher": "MIT Press",
    "url": "https://archive.org/details/artificialexpert0000coll",
    "note": "Sociological study of AI that uses ELIZA to explain how users supply the competence that programs appear to show.",
    "thumb": "library/thumbs/L-DKD6C.jpg",
@@ -9405,7 +9462,7 @@
    "date": "2012",
    "kind": "book",
    "lang": "en",
-   "publisher": "Oxford : Oxford University Press",
+   "publisher": "Oxford University Press",
    "url": "https://archive.org/details/turingpioneerofi0000cope_h3d8",
    "note": "Biography-based account of Turing's legacy with a passage on Eliza, the emotional bond users formed and the secretary who asked for privacy.",
    "thumb": "library/thumbs/L-Q5SWZ.jpg",
@@ -9418,7 +9475,7 @@
    "date": "1985",
    "kind": "book",
    "lang": "en",
-   "publisher": "Ottawa, Ont. : Science Council of Canada ; Hull, Quebec, Canada : Available by mail from Canadian Govt. Pub. Centre, Supply and Services Canada",
+   "publisher": "Science Council of Canada; Available by mail from Canadian Govt. Pub. Centre, Supply and Services Canada",
    "url": "https://archive.org/details/uneasyeightiestr0000cord",
    "note": "Canadian policy study discussing issues Weizenbaum raised from the ELIZA program, with a transcript.",
    "thumb": "library/thumbs/L-4KHVI.jpg",
@@ -9460,7 +9517,7 @@
    "date": "1994",
    "kind": "book",
    "lang": "en",
-   "publisher": "Norwood, N.J. : Ablex Pub. Corp.",
+   "publisher": "Ablex Pub. Corp.",
    "url": "https://archive.org/details/turingtestframep0000croc",
    "note": "Philosophical book on the Turing test that argues with Gunderson and Winograd over assessments of ELIZA and ELIZA-like programs.",
    "thumb": "library/thumbs/L-O7FWE.jpg",
@@ -9473,7 +9530,7 @@
    "date": "2020",
    "kind": "book",
    "lang": "en",
-   "publisher": "Oxford : Oxford University Press",
+   "publisher": "Oxford University Press",
    "url": "https://archive.org/details/letstalkhowengli0000crys",
    "note": "Book on English conversation that examines an interaction with Eliza and its limits as a simulation of talk.",
    "thumb": "library/thumbs/L-QI6WJ.jpg",
@@ -9499,7 +9556,7 @@
    "date": "1985",
    "kind": "book",
    "lang": "en",
-   "publisher": "Reading, Mass. : Addison-Wesley Pub. Co.",
+   "publisher": "Addison-Wesley Pub. Co.",
    "url": "https://archive.org/details/writingcomputers0000daiu",
    "note": "Book on writing with computers that treats ELIZA as a classic prompting program and describes its psychiatrist script.",
    "thumb": "library/thumbs/L-FTRYK.jpg",
@@ -9525,7 +9582,7 @@
    "date": "1985",
    "kind": "book",
    "lang": "en",
-   "publisher": "London : Centre for Information on Language Teaching and Research",
+   "publisher": "Centre for Information on Language Teaching and Research",
    "url": "https://archive.org/details/usingcomputersin0000davi",
    "note": "Language-teaching guide that explains ELIZA's parsing, the DOCTOR script and why it can be made to talk nonsense.",
    "thumb": "library/thumbs/L-FI72Q.jpg",
@@ -9538,9 +9595,9 @@
    "date": "1987",
    "kind": "report",
    "lang": "en",
-   "publisher": "ERIC ED294562",
+   "publisher": "ERIC",
    "url": "https://eric.ed.gov/?id=ED294562",
-   "note": "Teaching strategies for computer ethics in schools, among them the Eliza software program.",
+   "note": "Teaching strategies for computer ethics in schools, among them the Eliza software program. Report ERIC ED294562.",
    "relevance": "unread"
   },
   {
@@ -9562,7 +9619,7 @@
    "date": "2007",
    "kind": "book",
    "lang": "en",
-   "publisher": "Cambridge, Massachusetts ; London, England : The MIT Press",
+   "publisher": "The MIT Press",
    "url": "https://archive.org/details/digitalperforman0000dixo",
    "note": "History of digital performance with a section on chatterbots that prints an Eliza dialogue and places Weizenbaum's program before Julia.",
    "thumb": "library/thumbs/L-YNFHM.jpg",
@@ -9588,7 +9645,7 @@
    "date": "2016",
    "kind": "book",
    "lang": "en",
-   "publisher": "London : WH Allen",
+   "publisher": "WH Allen",
    "url": "https://archive.org/details/thinkingmachines0000dorm",
    "note": "Popular history of AI that describes Weizenbaum's ELIZA, gives a sample conversation and relates it to later chatbots.",
    "thumb": "library/thumbs/L-P7KHK.jpg",
@@ -9601,7 +9658,7 @@
    "date": "2012",
    "kind": "book",
    "lang": "en",
-   "publisher": "Richmond : Oneworld",
+   "publisher": "Oneworld",
    "url": "https://archive.org/details/losingheadofphil0000duft",
    "note": "History of an android of Philip K. Dick that recounts Eliza's creation, popularity on campus and the typical conversation.",
    "thumb": "library/thumbs/L-EXDVQ.jpg",
@@ -9614,7 +9671,7 @@
    "date": "2002",
    "kind": "book",
    "lang": "en",
-   "publisher": "Sudbury, Mass. : Jones and Bartlett Publishers",
+   "publisher": "Jones and Bartlett Publishers",
    "url": "https://archive.org/details/moralitymachines0000edga_j2k1",
    "note": "Computer ethics text with a section on ELIZA, including the anecdote of the vice-president who thought he was contacting Weizenbaum at home.",
    "thumb": "library/thumbs/L-V3P6O.jpg",
@@ -9627,7 +9684,7 @@
    "date": "2008",
    "kind": "book",
    "lang": "en",
-   "publisher": "Cambridge ; New York : Cambridge University Press",
+   "publisher": "Cambridge University Press",
    "url": "https://archive.org/details/artificialdreams0000ekbi_q9o8",
    "note": "Critique of AI that develops a generalised Eliza effect and attribution fallacy across its case studies.",
    "thumb": "library/thumbs/L-QEHOQ.jpg",
@@ -9640,9 +9697,9 @@
    "date": "1966-09",
    "kind": "report",
    "lang": "en",
-   "publisher": "ERIC ED010432",
+   "publisher": "ERIC",
    "url": "https://archive.org/details/ERIC_ED010432",
-   "note": "Harvard ISVD paper listing ELIZA as a candidate program, abstracting the CACM paper and discussing its use for vocational guidance.",
+   "note": "Harvard ISVD paper listing ELIZA as a candidate program, abstracting the CACM paper and discussing its use for vocational guidance. Report ERIC ED010432.",
    "relevance": "unread"
   },
   {
@@ -9652,9 +9709,9 @@
    "date": "1967",
    "kind": "report",
    "lang": "en",
-   "publisher": "Harvard Graduate School of Education, Information System for Vocational Decisions; ERIC ED014110",
+   "publisher": "Harvard Graduate School of Education, Information System for Vocational Decisions",
    "url": "https://eric.ed.gov/?id=ED014110",
-   "note": "Demonstration materials with the MINORCA script language that follows ELIZA's pattern.",
+   "note": "Demonstration materials with the MINORCA script language that follows ELIZA's pattern. Report ERIC ED014110.",
    "relevance": "unread"
   },
   {
@@ -9677,10 +9734,10 @@
    "date": "1986",
    "kind": "chapter",
    "lang": "en",
-   "in": "Hillsdale, N.J. : L. Erlbaum Associates",
    "url": "https://archive.org/details/contemporaryissu00elli",
    "note": "Raskin's contribution discusses how Weizenbaum's Eliza simulated a therapist and how it would process particular input, as a case for discourse processing.",
-   "relevance": "unread"
+   "relevance": "unread",
+   "publisher": "L. Erlbaum Associates"
   },
   {
    "id": "L-ABAOX",
@@ -9725,10 +9782,11 @@
    "date": "2021",
    "kind": "article",
    "lang": "en",
-   "in": "Interdisciplinary Science Reviews 46(1-2), pp. 36-52",
+   "in": "Interdisciplinary Science Reviews 46(1-2)",
    "doi": "10.1080/03080188.2020.1840219",
    "url": "https://doi.org/10.1080/03080188.2020.1840219",
-   "relevance": "unread"
+   "relevance": "unread",
+   "pages": "36-52"
   },
   {
    "id": "L-WQLYP",
@@ -9760,7 +9818,7 @@
    "date": "1987",
    "kind": "book",
    "lang": "en",
-   "publisher": "London ; New York : Routledge & Kegan Paul",
+   "publisher": "Routledge & Kegan Paul",
    "url": "https://archive.org/details/powermaticsdiscu0000finl",
    "note": "Discursive critique of communications technology that reads Weizenbaum's demystification of Eliza as a simulacrum of Rogerian analysis.",
    "thumb": "library/thumbs/L-WB4BU.jpg",
@@ -9773,7 +9831,7 @@
    "date": "1996",
    "kind": "book",
    "lang": "en",
-   "publisher": "London : UCL Press",
+   "publisher": "UCL Press",
    "url": "https://archive.org/details/introductiontoar0000finl",
    "note": "Textbook with a section on ELIZA's method, its random choice of responses and its reception as a breakthrough.",
    "thumb": "library/thumbs/L-ANC3X.jpg",
@@ -9786,7 +9844,7 @@
    "date": "1988",
    "kind": "book",
    "lang": "en",
-   "publisher": "Boston : Boyd & Fraser",
+   "publisher": "Boyd & Fraser",
    "url": "https://archive.org/details/artificialintell00fire",
    "note": "Prints a session with a microcomputer ELIZA and contrasts it with SIR among early application programs.",
    "thumb": "library/thumbs/L-4HT4C.jpg",
@@ -9799,7 +9857,7 @@
    "date": "1987",
    "kind": "book",
    "lang": "en",
-   "publisher": "Reading, Mass. : Addison-Wesley",
+   "publisher": "Addison-Wesley",
    "url": "https://archive.org/details/intelligenceeyeb00fisc",
    "note": "Calls Weizenbaum's ELIZA a classic example and explains its stored word patterns and canned responses.",
    "thumb": "library/thumbs/L-JTJSP.jpg",
@@ -9840,7 +9898,7 @@
    "date": "1978-08-06",
    "kind": "review",
    "lang": "de",
-   "in": "DER SPIEGEL",
+   "in": "Der Spiegel",
    "relevance": "unread"
   },
   {
@@ -9850,7 +9908,7 @@
    "date": "1999",
    "kind": "book",
    "lang": "en",
-   "publisher": "London ; New York: Routledge",
+   "publisher": "Routledge",
    "url": "https://archive.org/details/philosophycomput0000flor",
    "note": "Introduction to philosophy of computing that describes the 1964 to 1967 program, the Doolittle naming and the Young Woman transcript when discussing the Turing test.",
    "thumb": "library/thumbs/L-EIDQZ.jpg",
@@ -9863,7 +9921,7 @@
    "date": "2003",
    "kind": "book",
    "lang": "en",
-   "publisher": "Amsterdam ; Boston : Morgan Kaufmann Publishers",
+   "publisher": "Morgan Kaufmann Publishers",
    "url": "https://archive.org/details/persuasivetechno0000fogg",
    "note": "Book on captology that presents ELIZA under social roles for computers, as a program people treat as a therapist.",
    "thumb": "library/thumbs/L-2SFL3.jpg",
@@ -9931,7 +9989,7 @@
    "date": "1985",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York : Basic Books",
+   "publisher": "Basic Books",
    "url": "https://archive.org/details/mindsnewscienceh0000gard",
    "note": "Explains ELIZA's pattern matching and content-free formulas and Weizenbaum's attack on artificial intelligence enthusiasts.",
    "thumb": "library/thumbs/L-UEQBS.jpg",
@@ -9980,7 +10038,7 @@
    "date": "2011",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York : New York University Press",
+   "publisher": "New York University Press",
    "url": "https://archive.org/details/ourbiometricfutu0000gate",
    "note": "Study of facial recognition that compares automated facial expression analysis with ELIZA's incarnation as DOCTOR.",
    "thumb": "library/thumbs/L-3FI56.jpg",
@@ -10006,7 +10064,7 @@
    "date": "2006",
    "kind": "book",
    "lang": "en",
-   "publisher": "Hershey, PA : Information Science Pub.",
+   "publisher": "Information Science Pub.",
    "url": "https://archive.org/details/religiontechnolo0000geor",
    "note": "Book on religion and technology that discusses Weizenbaum's motivations as shown in the title of the Eliza paper.",
    "thumb": "library/thumbs/L-E42X3.jpg",
@@ -10019,7 +10077,7 @@
    "date": "1999",
    "kind": "book",
    "lang": "en",
-   "publisher": "Cambridge ; New York : Cambridge University Press",
+   "publisher": "Cambridge University Press",
    "url": "https://archive.org/details/intentionsinexpe0000gibb",
    "note": "Book on meaning that uses ELIZA playing a therapist and Weizenbaum's anecdote about recording conversations to discuss attributed intention.",
    "thumb": "library/thumbs/L-A3TM4.jpg",
@@ -10045,7 +10103,7 @@
    "date": "1976",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York : Wiley",
+   "publisher": "Wiley",
    "url": "https://archive.org/details/algorithmsinsnob00gimp",
    "note": "Describes Weizenbaum's ELIZA, its psychiatrist script and the Duquet SNOBOL4 version in a section on conversational programs.",
    "thumb": "library/thumbs/L-DZFGX.jpg",
@@ -10094,7 +10152,7 @@
    "date": "1993",
    "kind": "book",
    "lang": "en",
-   "publisher": "London ; New York : Springer-Verlag",
+   "publisher": "Springer-Verlag",
    "url": "https://archive.org/details/practicalintelle0000gora",
    "note": "Essay on skills and the Turing test that reads Weizenbaum's Eliza through Shaw's Pygmalion and Higgins.",
    "thumb": "library/thumbs/L-Y3DEL.jpg",
@@ -10179,7 +10237,7 @@
    "date": "1985",
    "kind": "book",
    "lang": "en",
-   "publisher": "Cambridge [Cambridgeshire] ; New York : Cambridge University Press",
+   "publisher": "Cambridge University Press",
    "url": "https://archive.org/details/artificialintell0000hand",
    "note": "Book on AI in psychiatry that takes ELIZA as its first case of computers in therapy and quotes Weizenbaum on the name.",
    "thumb": "library/thumbs/L-N6PIO.jpg",
@@ -10192,7 +10250,7 @@
    "date": "1997",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York, NY : BasicBooks",
+   "publisher": "BasicBooks",
    "url": "https://archive.org/details/metaphysicsofsta0000hanl",
    "note": "Philosophy of Star Trek that uses ELIZA's mimicry of a Rogerian therapist in discussing machine conversation.",
    "thumb": "library/thumbs/L-6G35K.jpg",
@@ -10205,7 +10263,7 @@
    "date": "2003",
    "kind": "book",
    "lang": "en",
-   "publisher": "Ross-on-Wye : PCCS",
+   "publisher": "PCCS",
    "url": "https://archive.org/details/beyondhelpconsum0000hans",
    "note": "Consumer guide to psychology that describes ELIZA as a virtual therapist that fooled MIT users.",
    "thumb": "library/thumbs/L-YELI6.jpg",
@@ -10231,7 +10289,7 @@
    "date": "2014",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York : Current",
+   "publisher": "Current",
    "url": "https://archive.org/details/endofabsencerecl0000harr_r2h2",
    "note": "Book on digital life with a passage on the permissive therapist ELIZA, its naming and users' engagement.",
    "thumb": "library/thumbs/L-SXYSA.jpg",
@@ -10244,7 +10302,7 @@
    "date": "1985",
    "kind": "book",
    "lang": "en",
-   "publisher": "Cambridge, Mass. : MIT Press",
+   "publisher": "MIT Press",
    "url": "https://archive.org/details/computersciencel02harv",
    "note": "Chapter on a Logo doctor program, explaining Weizenbaum's ELIZA, its name and a section on ELIZA and artificial intelligence.",
    "relevance": "unread"
@@ -10256,7 +10314,7 @@
    "date": "2014",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York : Tarcher",
+   "publisher": "Tarcher",
    "url": "https://archive.org/details/hackinghappiness0000have_b6u0",
    "note": "Book on personal data reporting Reben and Hoff's study of the ELIZA effect with the Cubie device.",
    "thumb": "library/thumbs/L-H6WVK.jpg",
@@ -10282,10 +10340,10 @@
    "date": "2003",
    "kind": "chapter",
    "lang": "en",
-   "in": "New York : Facts On File",
    "url": "https://archive.org/details/tozofcomputersci0000hend",
    "note": "Reference entry on Weizenbaum that describes his 1966 program and the anecdote of the student who talked to ELIZA.",
-   "relevance": "unread"
+   "relevance": "unread",
+   "publisher": "Facts On File"
   },
   {
    "id": "L-5JSX2",
@@ -10307,7 +10365,7 @@
    "date": "2015",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York, NY, USA : Cambridge University Press",
+   "publisher": "Cambridge University Press",
    "url": "https://archive.org/details/computingunivers0000heya",
    "note": "History of computing that explains Weizenbaum's naming of ELIZA and prints a dialogue.",
    "thumb": "library/thumbs/L-HMGJ7.jpg",
@@ -10320,7 +10378,7 @@
    "date": "1988",
    "kind": "book",
    "lang": "en",
-   "publisher": "London ; New York : Longman",
+   "publisher": "Longman",
    "url": "https://archive.org/details/languagelearners0000higg",
    "note": "Book on computers in language learning that uses Weizenbaum's analogy between ELIZA and an actress and professional responses to DOCTOR.",
    "thumb": "library/thumbs/L-ZSU7T.jpg",
@@ -10384,7 +10442,7 @@
    "date": "1991",
    "kind": "book",
    "lang": "en",
-   "publisher": "Kensington, NSW, Australia : New South Wales University Press ; Portland, Or. : Available in North America through International Specialized Book Services",
+   "publisher": "New South Wales University Press; Available in North America through International Specialized Book Services",
    "url": "https://archive.org/details/allaboutintellig0000howa",
    "note": "Book on intelligence that describes ELIZA's simulation of a Rogerian therapist and prints the client dialogue.",
    "thumb": "library/thumbs/L-PNPKG.jpg",
@@ -10436,9 +10494,9 @@
    "date": "1973-02",
    "kind": "report",
    "lang": "en",
-   "publisher": "ERIC ED080927",
+   "publisher": "ERIC",
    "url": "https://archive.org/details/ERIC_ED080927",
-   "note": "Places ELIZA-type programs, including Colby, Watt and Gilbert, among three kinds of counselling program.",
+   "note": "Places ELIZA-type programs, including Colby, Watt and Gilbert, among three kinds of counselling program. Report ERIC ED080927.",
    "relevance": "unread"
   },
   {
@@ -10497,7 +10555,7 @@
    "date": "2001",
    "kind": "book",
    "lang": "en",
-   "publisher": "Cambridge, UK ; Malden, MA : Polity Press",
+   "publisher": "Polity Press",
    "url": "https://archive.org/details/conversationtech0000hutc",
    "note": "Sociological study of conversation with technology that analyses transcripts of ELIZA programs as talk.",
    "thumb": "library/thumbs/L-YMFFL.jpg",
@@ -10521,7 +10579,7 @@
    "date": "1994",
    "kind": "book",
    "lang": "en",
-   "publisher": "Englewood Cliffs, NJ : Prentice Hall",
+   "publisher": "Prentice Hall",
    "url": "https://archive.org/details/philosophyofmind0000jacq",
    "note": "Philosophy textbook that explains ELIZA as a Rogerian simulator working on key words and recounts Weizenbaum's report of reactions.",
    "thumb": "library/thumbs/L-TS4AG.jpg",
@@ -10534,10 +10592,11 @@
    "date": "1985",
    "kind": "chapter",
    "lang": "en",
-   "in": "Osborne McGraw-Hill, p. 147",
+   "in": "Osborne McGraw-Hill",
    "url": "https://archive.org/details/The_Atari_Book_of_Games",
    "note": "Type-in ELIZA-type conversation game; same program appears in other books of the series.",
-   "relevance": "unread"
+   "relevance": "unread",
+   "pages": "147"
   },
   {
    "id": "L-5FXDJ",
@@ -10546,7 +10605,7 @@
    "date": "1990",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York : W.W. Norton",
+   "publisher": "W.W. Norton",
    "url": "https://archive.org/details/devouringfungust00jenn",
    "note": "Book of computing lore with a passage on ELIZA, the DOCTOR script and the secretary story.",
    "thumb": "library/thumbs/L-5FXDJ.jpg",
@@ -10599,11 +10658,12 @@
    "date": "1976-05-13",
    "kind": "review",
    "lang": "en",
-   "in": "Nature 261, 13 May 1976, p. 171",
+   "in": "Nature 261, 13 May 1976",
    "doi": "10.1038/261171a0",
    "url": "https://doi.org/10.1038/261171a0",
    "note": "Nature review of Weizenbaum's book; the abstract does not mention ELIZA.",
-   "relevance": "unread"
+   "relevance": "unread",
+   "pages": "171"
   },
   {
    "id": "L-XI3NP",
@@ -10638,7 +10698,7 @@
    "date": "2000",
    "kind": "book",
    "lang": "en",
-   "publisher": "Upper Saddle River, N.J. : Prentice Hall",
+   "publisher": "Prentice Hall",
    "url": "https://archive.org/details/speechlanguagepr0000jura",
    "note": "Uses ELIZA, with its Rogerian dialogue and cascade of substitutions, to introduce regular expressions.",
    "thumb": "library/thumbs/L-NFTUZ.jpg",
@@ -10651,7 +10711,7 @@
    "date": "2013",
    "kind": "book",
    "lang": "en",
-   "publisher": "Basingstoke : Palgrave Macmillan",
+   "publisher": "Palgrave Macmillan",
    "url": "https://archive.org/details/gamingfilmhowgam0000kall",
    "note": "Book on film and games that uses ELIZA and Weizenbaum's shock at users to discuss a film's therapist chatterbot.",
    "thumb": "library/thumbs/L-GRU4P.jpg",
@@ -10692,7 +10752,7 @@
    "date": "2013",
    "kind": "book",
    "lang": "en",
-   "publisher": "Cambridge ; New York : Cambridge University Press",
+   "publisher": "Cambridge University Press",
    "url": "https://archive.org/details/democracymediade0000kean",
    "note": "Book on media and democracy with a passage on Weizenbaum's reasoning in building ELIZA and the Doolittle naming, drawing on Computer Power and Human Reason.",
    "thumb": "library/thumbs/L-7MKHW.jpg",
@@ -10705,7 +10765,7 @@
    "date": "2014",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York : OR Books",
+   "publisher": "OR Books",
    "url": "https://archive.org/details/technocreepsurre0000keen_n7o8",
    "note": "Book on privacy and technology that describes Weizenbaum releasing ELIZA and its faking of a psychotherapist's style.",
    "thumb": "library/thumbs/L-QOTMS.jpg",
@@ -10755,7 +10815,7 @@
    "date": "2011",
    "kind": "book",
    "lang": "en",
-   "publisher": "Minneapolis : University of Minnesota Press",
+   "publisher": "University of Minnesota Press",
    "url": "https://archive.org/details/noisechannelsgli0000krap",
    "note": "Chapter on error and conversation that discusses Eliza or the Doctor and its encounter with PARRY.",
    "thumb": "library/thumbs/L-X42TY.jpg",
@@ -10793,9 +10853,10 @@
    "date": "1979-09",
    "kind": "magazine",
    "lang": "en",
-   "in": "Creative Computing 5(9), pp. 103-108",
+   "in": "Creative Computing 5(9)",
    "url": "https://archive.org/details/creativecomputing-1979-09",
-   "relevance": "unread"
+   "relevance": "unread",
+   "pages": "103-108"
   },
   {
    "id": "L-3QCCS",
@@ -10804,7 +10865,7 @@
    "date": "1990",
    "kind": "book",
    "lang": "en",
-   "publisher": "Cambridge, Mass. : MIT Press",
+   "publisher": "MIT Press",
    "url": "https://archive.org/details/ageofintelligent0000kurz",
    "note": "Survey of machine intelligence that prints dialogues with DOCTOR or ELIZA and explains the program, citing Weizenbaum's 1966 account.",
    "thumb": "library/thumbs/L-3QCCS.jpg",
@@ -10843,7 +10904,7 @@
    "date": "1989",
    "kind": "book",
    "lang": "en",
-   "publisher": "Chichester, West Sussex, England : E. Horwood ; New York : Halsted Press",
+   "publisher": "E. Horwood; Halsted Press",
    "url": "https://archive.org/details/artificialintell0000last",
    "note": "Book on AI in language learning with a section on ELIZA that quotes Weizenbaum's retrospective description.",
    "thumb": "library/thumbs/L-6X37D.jpg",
@@ -10895,9 +10956,10 @@
    "date": "1976-09",
    "kind": "review",
    "lang": "en",
-   "in": "Creative Computing 2(5), pp. 83-90",
+   "in": "Creative Computing 2(5)",
    "url": "https://archive.org/details/CreativeComputingV02n05SepOct1976",
-   "relevance": "unread"
+   "relevance": "unread",
+   "pages": "83-90"
   },
   {
    "id": "L-QQP2B",
@@ -10919,7 +10981,7 @@
    "date": "1977",
    "kind": "book",
    "lang": "en",
-   "publisher": "Springfield, Ill. : Thomas",
+   "publisher": "Thomas",
    "url": "https://archive.org/details/useofalternative0000lest",
    "note": "Psychotherapy book that reviews Eliza or Doctor and studies of users' experiences, including the secretary story.",
    "thumb": "library/thumbs/L-N3YSE.jpg",
@@ -10932,7 +10994,7 @@
    "date": "2017",
    "kind": "book",
    "lang": "en",
-   "publisher": "Cambridge, Massachusetts : The MIT Press",
+   "publisher": "The MIT Press",
    "url": "https://archive.org/details/commonsenseturin0000leve",
    "note": "Book on common sense and the Turing test that gives the case of ELIZA, with a transcript and a comparison with the Eugene Goostman program.",
    "thumb": "library/thumbs/L-EMCNX.jpg",
@@ -10945,7 +11007,7 @@
    "date": "2004",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York : Russell Sage Foundation ; Princeton, N.J. : Princeton University Press",
+   "publisher": "Russell Sage Foundation; Princeton University Press",
    "url": "https://archive.org/details/newdivisionoflab00fran",
    "note": "Economics book using Eliza as a case of a program that looked thoughtful without therapeutic knowledge, and Weizenbaum's account.",
    "thumb": "library/thumbs/L-5DYOH.jpg",
@@ -10958,7 +11020,7 @@
    "date": "2005",
    "kind": "book",
    "lang": "en",
-   "publisher": "Wellesley, MA : A K Peters",
+   "publisher": "A K Peters",
    "url": "https://archive.org/details/robotsunlimitedl0000levy",
    "note": "Includes the Young Woman transcript and an explanation of ELIZA in a chapter on how computers communicate.",
    "thumb": "library/thumbs/L-YABM6.jpg",
@@ -10971,7 +11033,7 @@
    "date": "2007",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York : HarperCollins",
+   "publisher": "HarperCollins",
    "url": "https://archive.org/details/isbn_9780061359750",
    "note": "Argues for human-robot relationships using Weizenbaum's account of how readily users anthropomorphised ELIZA and the technology of chatterbots.",
    "thumb": "library/thumbs/L-KF3N2.jpg",
@@ -10984,7 +11046,7 @@
    "date": "2013",
    "kind": "book",
    "lang": "en",
-   "publisher": "London ; Boston : Nicholas Brealey Publishing",
+   "publisher": "Nicholas Brealey Publishing",
    "url": "https://archive.org/details/brainsellwhensci0000lewi",
    "note": "Book on neuromarketing with an account of Weizenbaum introducing Eliza and his recollection of reactions.",
    "thumb": "library/thumbs/L-ZROML.jpg",
@@ -10997,7 +11059,7 @@
    "date": "1987",
    "kind": "book",
    "lang": "en",
-   "publisher": "Washington, DC : American Psychiatric Press",
+   "publisher": "American Psychiatric Press",
    "url": "https://archive.org/details/computerapplicat0000lief",
    "note": "Clinical handbook that describes Eliza's simulation of nondirective Rogerian therapy and psychiatrists' responses to it.",
    "thumb": "library/thumbs/L-2AGMS.jpg",
@@ -11036,7 +11098,7 @@
    "date": "2013",
    "kind": "book",
    "lang": "en",
-   "publisher": "Little Compton, RI : J.W. Lorbek Press",
+   "publisher": "J.W. Lorbek Press",
    "url": "https://archive.org/details/offtopofmyheadal0000lorc",
    "note": "Memoir in which the author recalls working with Weizenbaum on the development of ELIZA.",
    "thumb": "library/thumbs/L-N3RNC.jpg",
@@ -11139,7 +11201,7 @@
    "date": "2004",
    "kind": "book",
    "lang": "en",
-   "publisher": "San Diego, Calif. : Blackbirch Press",
+   "publisher": "Blackbirch Press",
    "url": "https://archive.org/details/artificialintell00marg",
    "note": "Young readers' volume that describes Eliza's replies, its first reception and later chatterbots.",
    "thumb": "library/thumbs/L-G6RX7.jpg",
@@ -11152,7 +11214,7 @@
    "date": "2007",
    "kind": "book",
    "lang": "en",
-   "publisher": "Hove [England] ; New York : Psychology Press",
+   "publisher": "Psychology Press",
    "url": "https://archive.org/details/handsonhelpcompu0000mark",
    "note": "Review of computer-aided psychotherapy with a section on nonclinical studies including the classic ELIZA program.",
    "thumb": "library/thumbs/L-MOSKE.jpg",
@@ -11190,7 +11252,7 @@
    "date": "2000",
    "kind": "book",
    "lang": "en",
-   "publisher": "Washington, D.C. : Capital Press",
+   "publisher": "Capital Press",
    "url": "https://archive.org/details/afterinternet00jame",
    "note": "Book on machine intelligence recounting that Weizenbaum, cynical about shrinks, created Eliza as an automated one.",
    "thumb": "library/thumbs/L-ZEAUM.jpg",
@@ -11250,7 +11312,7 @@
    "date": "1996",
    "kind": "book",
    "lang": "en",
-   "publisher": "Stanford, Calif. : CSLI Publications",
+   "publisher": "CSLI Publications",
    "url": "https://archive.org/details/defendingairesea0000mcca",
    "note": "Collected essays including McCarthy's review of Computer Power and Human Reason, which addresses Weizenbaum's account of ELIZA.",
    "thumb": "library/thumbs/L-UNLUP.jpg",
@@ -11263,9 +11325,10 @@
    "date": "1976-04",
    "kind": "review",
    "lang": "en",
-   "in": "Datamation, April 1976, p. 27",
+   "in": "Datamation, April 1976",
    "url": "https://archive.org/details/bitsavers_datamation_28911734",
-   "relevance": "unread"
+   "relevance": "unread",
+   "pages": "27"
   },
   {
    "id": "L-ZUST6",
@@ -11286,7 +11349,7 @@
    "date": "2011",
    "kind": "book",
    "lang": "en",
-   "publisher": "Lanham : Lexington Books",
+   "publisher": "Lexington Books",
    "url": "https://archive.org/details/goodsciencepursu0000mcge",
    "note": "Book on science and knowledge that discusses ELIZA, its dialogue and Weizenbaum's admission of what it was intended to do.",
    "thumb": "library/thumbs/L-27TLS.jpg",
@@ -11312,7 +11375,7 @@
    "date": "1987",
    "kind": "book",
    "lang": "en",
-   "publisher": "Oxford, UK ; New York, NY, USA : Blackwell ; London, England : A. Deutsch",
+   "publisher": "Blackwell; A. Deutsch",
    "url": "https://archive.org/details/articulatecomput0000mcte",
    "note": "Introductory book on natural language computing that opens with ELIZA as an early system, including Weizenbaum's alarm at users' reactions.",
    "thumb": "library/thumbs/L-3W4OF.jpg",
@@ -11325,7 +11388,7 @@
    "date": "2004",
    "kind": "book",
    "lang": "en",
-   "publisher": "London ; New York : Springer",
+   "publisher": "Springer",
    "url": "https://archive.org/details/spokendialoguete0000mcte",
    "note": "Survey of dialogue technology with a section on ELIZA simulating a psychotherapist and a printed transcript.",
    "thumb": "library/thumbs/L-JM4CL.jpg",
@@ -11363,7 +11426,7 @@
    "date": "2008-03-07",
    "kind": "news",
    "lang": "de",
-   "in": "DER SPIEGEL",
+   "in": "Der Spiegel",
    "relevance": "unread"
   },
   {
@@ -11385,7 +11448,7 @@
    "date": "1984",
    "kind": "book",
    "lang": "en",
-   "publisher": "Harmondsworth, Middlesex, England : Viking",
+   "publisher": "Viking",
    "url": "https://archive.org/details/creativecomputer0000mich",
    "note": "Book on machine intelligence that calls Eliza a carefully worked-out parlour trick and explains how it works.",
    "thumb": "library/thumbs/L-JU4UW.jpg",
@@ -11398,7 +11461,7 @@
    "date": "2008",
    "kind": "book",
    "lang": "en",
-   "publisher": "Amsterdam ; Boston : Focal Press/Elsevier",
+   "publisher": "Focal Press/Elsevier",
    "url": "https://archive.org/details/digitalstorytell0000mill",
    "note": "Creator's guide with a section on ELIZA as the origin of chatterbots and on users' conviction that it understood them.",
    "thumb": "library/thumbs/L-6IYLM.jpg",
@@ -11422,7 +11485,7 @@
    "date": "2004",
    "kind": "book",
    "lang": "en",
-   "publisher": "London : Electric Book",
+   "publisher": "Electric Book",
    "url": "https://archive.org/details/googlemissiontom0000miln",
    "note": "Book on Google with a section Chatbots and WMDs describing Eliza as a simulation and pointing to current examples.",
    "thumb": "library/thumbs/L-QFLQT.jpg",
@@ -11435,7 +11498,7 @@
    "date": "1993",
    "kind": "book",
    "lang": "en",
-   "publisher": "Englewood Cliffs, N.J. : Prentice Hall",
+   "publisher": "Prentice Hall",
    "url": "https://archive.org/details/philosophyartifi0000mood",
    "note": "Textbook that describes the 1965 to 1966 ELIZA work, asks whether ELIZA is intelligent and returns to Weizenbaum's warnings later in the book.",
    "thumb": "library/thumbs/L-C5VGF.jpg",
@@ -11512,7 +11575,7 @@
    "date": "1991",
    "kind": "book",
    "lang": "en",
-   "publisher": "Chicago : Contemporary Books, Inc.",
+   "publisher": "Contemporary Books, Inc.",
    "url": "https://archive.org/details/mindmachineshuma00nade",
    "note": "Book on consciousness that describes ELIZA's responses and users relating to it as a person capable of understanding.",
    "thumb": "library/thumbs/L-JPCEW.jpg",
@@ -11563,9 +11626,10 @@
    "date": "1980-01",
    "kind": "magazine",
    "lang": "en",
-   "in": "Creative Computing 6(1), pp. 62-67",
+   "in": "Creative Computing 6(1)",
    "url": "https://archive.org/details/creativecomputing-1980-01",
-   "relevance": "unread"
+   "relevance": "unread",
+   "pages": "62-67"
   },
   {
    "id": "L-F4XWN",
@@ -11574,7 +11638,7 @@
    "date": "1987",
    "kind": "book",
    "lang": "en",
-   "publisher": "Redmond, Wash. : Tempus Books of Microsoft Press",
+   "publisher": "Tempus Books of Microsoft Press",
    "url": "https://archive.org/details/computerlibdream0000nels",
    "note": "Counterculture computing book with passages headed Eliza Will See You Now and Elizascam on how the program turns sentences around and on a game of pretending to be it.",
    "thumb": "library/thumbs/L-F4XWN.jpg",
@@ -11587,7 +11651,7 @@
    "date": "1994",
    "kind": "book",
    "lang": "en",
-   "publisher": "Indianapolis, Ind. : Sams Pub.",
+   "publisher": "Sams Pub.",
    "url": "https://archive.org/details/brainmakers0000newq",
    "note": "Journalistic history of AI that reports the falling out between Weizenbaum and Colby over ELIZA and Weizenbaum's scepticism.",
    "thumb": "library/thumbs/L-6UX75.jpg",
@@ -11612,7 +11676,7 @@
    "date": "2010",
    "kind": "book",
    "lang": "en",
-   "publisher": "Cambridge ; New York : Cambridge University Press",
+   "publisher": "Cambridge University Press",
    "url": "https://archive.org/details/questforartifici0000nils",
    "note": "History of AI that prints part of a transcript with ELIZA and explains the program in its account of early natural language work.",
    "thumb": "library/thumbs/L-DMR3E.jpg",
@@ -11625,10 +11689,10 @@
    "date": "1983",
    "kind": "chapter",
    "lang": "en",
-   "in": "London ; New York : Academic Press",
    "url": "https://archive.org/details/designingforhuma0000unse",
    "note": "Edited volume with a section titled Weizenbaum's ELIZA assessing the program as an impressive example within intelligent dialogue.",
-   "relevance": "unread"
+   "relevance": "unread",
+   "publisher": "Academic Press"
   },
   {
    "id": "L-JPYYG",
@@ -11637,10 +11701,10 @@
    "date": "1985",
    "kind": "chapter",
    "lang": "en",
-   "in": "Princeton, N.J. : Petrocelli Books",
    "url": "https://archive.org/details/applicationsinar0000unse",
    "note": "Edited volume containing a discussion of ELIZA's pretence of concern for the patient and the prerecorded character of its reactions.",
-   "relevance": "unread"
+   "relevance": "unread",
+   "publisher": "Petrocelli Books"
   },
   {
    "id": "L-TVAJE",
@@ -11649,7 +11713,7 @@
    "date": "2008",
    "kind": "book",
    "lang": "en",
-   "publisher": "Cambridge ; New York : Cambridge University Press",
+   "publisher": "Cambridge University Press",
    "url": "https://archive.org/details/cyberpsychologyi0000norm",
    "note": "Textbook on human-computer interaction that prints dialogues with Eliza and discusses the program.",
    "thumb": "library/thumbs/L-TVAJE.jpg",
@@ -11717,7 +11781,7 @@
    "date": "1995",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York : Wiley",
+   "publisher": "Wiley",
    "url": "https://archive.org/details/computertriangle0000oakm",
    "note": "Computing and society textbook that describes the ELIZA experiment as clever tricks and reports Weizenbaum's warning.",
    "thumb": "library/thumbs/L-26MWR.jpg",
@@ -11730,7 +11794,7 @@
    "date": "1989",
    "kind": "book",
    "lang": "en",
-   "publisher": "Chichester, West Sussex, England : Ellis Horwood ; New York : Halsted Press",
+   "publisher": "Ellis Horwood; Halsted Press",
    "url": "https://archive.org/details/naturallanguagep0000ober",
    "note": "Survey of natural language processing technologies with an entry on ELIZA's patterns and its Rogerian application.",
    "thumb": "library/thumbs/L-L6QG4.jpg",
@@ -11768,9 +11832,9 @@
    "date": "1969-03-31",
    "kind": "report",
    "lang": "en",
-   "publisher": "American Personnel and Guidance Association paper; ERIC ED030935",
+   "publisher": "American Personnel and Guidance Association paper",
    "url": "https://eric.ed.gov/?id=ED030935",
-   "note": "Describes Weizenbaum's MAD DOCTOR as a nondirective counsellor and retells the BBN vice-president anecdote.",
+   "note": "Describes Weizenbaum's MAD DOCTOR as a nondirective counsellor and retells the BBN vice-president anecdote. Report ERIC ED030935.",
    "relevance": "unread"
   },
   {
@@ -11793,7 +11857,7 @@
    "date": "2010",
    "kind": "book",
    "lang": "en",
-   "publisher": "Minneapolis : University of Minnesota Press",
+   "publisher": "University of Minnesota Press",
    "url": "https://archive.org/details/insectmediaarcha0000pari",
    "note": "Media archaeology book with a passage on Weizenbaum's ELIZA program as simulated analyst and its functioning.",
    "thumb": "library/thumbs/L-6PDPJ.jpg",
@@ -11819,7 +11883,7 @@
    "date": "1986",
    "kind": "book",
    "lang": "en",
-   "publisher": "Chichester, West Sussex, England : E. Horwood ; New York : Halsted Press",
+   "publisher": "E. Horwood; Halsted Press",
    "url": "https://archive.org/details/artificialintell0000part",
    "note": "Book on AI applications that warns of an ELIZA syndrome and describes the program as the most famous of its type.",
    "relevance": "unread"
@@ -11844,7 +11908,7 @@
    "date": "1982",
    "kind": "book",
    "lang": "en",
-   "publisher": "London : Century Pub. Co.",
+   "publisher": "Century Pub. Co.",
    "url": "https://archive.org/details/micromanlivinggr00pask",
    "note": "Book on living with computers that takes up Weizenbaum's example of ELIZA and interpersonal understanding, with a printed dialogue.",
    "thumb": "library/thumbs/L-LY45S.jpg",
@@ -11870,7 +11934,7 @@
    "date": "1985",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York, N.Y. : Baen Enterprises : Distributed by Simon & Schuster",
+   "publisher": "Baen Enterprises : Distributed by Simon & Schuster",
    "url": "https://archive.org/details/artificialintell0000peat",
    "note": "Popular introduction to AI with a section on ELIZA and a long dialogue with a young woman.",
    "relevance": "unread"
@@ -11895,10 +11959,10 @@
    "date": "1996",
    "kind": "chapter",
    "lang": "en",
-   "in": "Houston, Tex. : Athelstan",
    "url": "https://archive.org/details/powerofcall00mart",
    "note": "Edited volume on computer-assisted language learning that reports studies making use of ELIZA as a conversational program.",
-   "relevance": "unread"
+   "relevance": "unread",
+   "publisher": "Athelstan"
   },
   {
    "id": "L-R6ADE",
@@ -11907,7 +11971,7 @@
    "date": "1983",
    "kind": "book",
    "lang": "en",
-   "publisher": "Reston, Va. : Reston Pub. Co.",
+   "publisher": "Reston Pub. Co.",
    "url": "https://archive.org/details/genesisiicreatio0000pete",
    "note": "Interview-based study of computing that describes Eliza's naming and script and what it demonstrated about computer conversation.",
    "thumb": "library/thumbs/L-R6ADE.jpg",
@@ -11943,7 +12007,7 @@
    "date": "1992",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York : Oxford University Press",
+   "publisher": "Oxford University Press",
    "url": "https://archive.org/details/intelligenthelpc0000pilk",
    "note": "Book on knowledge-based help systems that prints an ELIZA dialogue and asks how it shows the need for a contextual dialogue framework.",
    "thumb": "library/thumbs/L-463YM.jpg",
@@ -11993,7 +12057,7 @@
    "date": "1999",
    "kind": "book",
    "lang": "en",
-   "publisher": "Mahwah, N.J. : L. Erlbaum Associates",
+   "publisher": "L. Erlbaum Associates",
    "url": "https://archive.org/details/computerscurricu0000prov_s8r6",
    "note": "Book on computers in education with a passage on ELIZA, its naming, Weizenbaum's parody and a sample run.",
    "thumb": "library/thumbs/L-HHFZL.jpg",
@@ -12006,7 +12070,7 @@
    "date": "2012",
    "kind": "book",
    "lang": "en",
-   "publisher": "Don Mills, Ont. : Oxford University Press",
+   "publisher": "Oxford University Press",
    "url": "https://archive.org/details/technologysociet0000quan",
    "note": "Textbook on technology and society explaining Weizenbaum's 1966 prototype and the premise it was designed on.",
    "thumb": "library/thumbs/L-XZK76.jpg",
@@ -12046,7 +12110,7 @@
    "date": "2016",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York : Little, Brown and Company",
+   "publisher": "Little, Brown and Company",
    "url": "https://archive.org/details/seventhsensepowe0000ramo",
    "note": "Book on networks that recounts Weizenbaum writing DOCTOR and ELIZA and prints a discussion with the program.",
    "thumb": "library/thumbs/L-NIGW5.jpg",
@@ -12132,7 +12196,7 @@
    "date": "1985",
    "kind": "book",
    "lang": "en",
-   "publisher": "Englewood Cliffs, N.J. : Prentice-Hall",
+   "publisher": "Prentice-Hall",
    "url": "https://archive.org/details/copingwithcomput0000ried",
    "note": "Book on school computing describing Weizenbaum's language called Eliza and the program's therapist script.",
    "thumb": "library/thumbs/L-I42UG.jpg",
@@ -12170,9 +12234,10 @@
    "date": "1982-07",
    "kind": "review",
    "lang": "en",
-   "in": "BYTE 7(7), pp. 402-404",
+   "in": "BYTE 7(7)",
    "url": "https://archive.org/details/byte-magazine-1982-07",
-   "relevance": "unread"
+   "relevance": "unread",
+   "pages": "402-404"
   },
   {
    "id": "L-IZNOP",
@@ -12181,9 +12246,9 @@
    "date": "1970",
    "kind": "report",
    "lang": "en",
-   "publisher": "Harvard Graduate School of Education, Information System for Vocational Decisions; ERIC ED052491",
+   "publisher": "Harvard Graduate School of Education, Information System for Vocational Decisions",
    "url": "https://eric.ed.gov/?id=ED052491",
-   "note": "Manual for the Harvard script language with ELIZA-style decomposition.",
+   "note": "Manual for the Harvard script language with ELIZA-style decomposition. Report ERIC ED052491.",
    "relevance": "unread"
   },
   {
@@ -12219,7 +12284,7 @@
    "date": "1992",
    "kind": "book",
    "lang": "en",
-   "publisher": "Boston : Academic Press",
+   "publisher": "Academic Press",
    "url": "https://archive.org/details/socialimpactofco0000rose",
    "note": "Describes ELIZA or DOCTOR as a program for a kind of therapy and quotes Colby on the ELIZA method.",
    "thumb": "library/thumbs/L-DK3IG.jpg",
@@ -12244,7 +12309,7 @@
    "date": "1986",
    "kind": "book",
    "lang": "en",
-   "publisher": "Brighton, Sussex : Harvester",
+   "publisher": "Harvester",
    "url": "https://archive.org/details/mindsovermatter0000roth_f5k5",
    "note": "Reportage on AI with a passage on ELIZA and a sample session.",
    "thumb": "library/thumbs/L-PBCOQ.jpg",
@@ -12268,7 +12333,7 @@
    "date": "1986",
    "kind": "book",
    "lang": "en",
-   "publisher": "Reading, Mass. : Addison-Wesley",
+   "publisher": "Addison-Wesley",
    "url": "https://archive.org/details/mysticalmachinei00sav_zmx",
    "note": "Computing textbook with a section Conversation with ELIZA, explaining DOCTOR and printing a dialogue.",
    "thumb": "library/thumbs/L-CQD4F.jpg",
@@ -12292,7 +12357,7 @@
    "date": "2004",
    "kind": "book",
    "lang": "en",
-   "publisher": "Dordrecht ; Boston : Kluwer Academic Publishers",
+   "publisher": "Kluwer Academic Publishers",
    "url": "https://archive.org/details/galleryofscholar0000sche",
    "note": "Philosopher's memoir that uses a hypothetical dialogue with Eliza in discussing conversation and understanding.",
    "thumb": "library/thumbs/L-6X563.jpg",
@@ -12343,7 +12408,7 @@
    "date": "1984",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York : Haworth Press",
+   "publisher": "Haworth Press",
    "url": "https://archive.org/details/usingcomputersin00schwrich",
    "note": "Clinical computing volume with a discussion of Eliza, its name and how the program responds to users.",
    "thumb": "library/thumbs/L-6EUCL.jpg",
@@ -12356,7 +12421,7 @@
    "date": "2014",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York : Viking",
+   "publisher": "Viking",
    "url": "https://archive.org/details/virtualunreality0000seif",
    "note": "Book on online falsehood that gives the history of ELIZA and prints the author's own chat with an ELIZA clone.",
    "thumb": "library/thumbs/L-4WOEU.jpg",
@@ -12369,7 +12434,7 @@
    "date": "2005",
    "kind": "book",
    "lang": "en",
-   "publisher": "Lancaster, England : Drakkar Press",
+   "publisher": "Drakkar Press",
    "url": "https://archive.org/details/whoeversaidcompu0000self",
    "note": "Popular book on machine intelligence that explains the core of the ELIZA program and asks readers to identify the human in a dialogue.",
    "thumb": "library/thumbs/L-GWGU7.jpg",
@@ -12420,7 +12485,7 @@
    "date": "1985",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York, NY : Viking",
+   "publisher": "Viking",
    "url": "https://archive.org/details/sachertortealgor0000shor",
    "note": "Popular book on computer attitudes with a section titled Eliza Does Little on the program and its Rogerian mimicry.",
    "thumb": "library/thumbs/L-HA4NQ.jpg",
@@ -12433,7 +12498,7 @@
    "date": "2001",
    "kind": "book",
    "lang": "en",
-   "publisher": "London ; New York : Routledge",
+   "publisher": "Routledge",
    "url": "https://archive.org/details/languageofictinf0000shor",
    "note": "Book on the language of ICT that discusses Eliza and an extract of dialogue between an Eliza chatterbot and a writer.",
    "thumb": "library/thumbs/L-DJYUF.jpg",
@@ -12458,7 +12523,7 @@
    "date": "2026-07-01",
    "kind": "article",
    "lang": "it",
-   "in": "PSICOTERAPIA E SCIENZE UMANE",
+   "in": "Psicoterapia E Scienze Umane",
    "doi": "10.3280/pu2026-002003",
    "url": "https://doi.org/10.3280/pu2026-002003",
    "note": "Starts from the ELIZA effect to analyse the use of AI in clinical reflection and proposes conditions for responsible use by therapists.",
@@ -12533,7 +12598,7 @@
    "date": "1986",
    "kind": "book",
    "lang": "en",
-   "publisher": "Cambridge, Mass. : MIT Press",
+   "publisher": "MIT Press",
    "url": "https://archive.org/details/artofprologadvan00ster",
    "note": "Presents a simplified ELIZA as an AI classic with its Prolog program and a sample conversation.",
    "thumb": "library/thumbs/L-GLY7O.jpg",
@@ -12546,10 +12611,10 @@
    "date": "1986-03",
    "kind": "report",
    "lang": "en",
-   "publisher": "DTIC ADA436516",
+   "publisher": "Defense Technical Information Center",
    "doi": "10.21236/ada436516",
    "url": "https://archive.org/details/DTIC_ADA436516",
-   "note": "Course material built around a demonstration called Meet Eliza using a Kaypro disk of the program.",
+   "note": "Course material built around a demonstration called Meet Eliza using a Kaypro disk of the program. Report DTIC ADA436516.",
    "relevance": "unread"
   },
   {
@@ -12599,7 +12664,7 @@
    "date": "2007",
    "kind": "book",
    "lang": "en",
-   "publisher": "Cambridge ; New York : Cambridge University Press",
+   "publisher": "Cambridge University Press",
    "url": "https://archive.org/details/humanmachinereco0000such",
    "note": "Explicates Weizenbaum's ELIZA programs and the DOCTOR script when arguing about the attribution of understanding in human-machine interaction.",
    "thumb": "library/thumbs/L-BA5BT.jpg",
@@ -12612,9 +12677,9 @@
    "date": "1970",
    "kind": "report",
    "lang": "en",
-   "publisher": "Harvard Graduate School of Education, Information System for Vocational Decisions; ERIC ED052482",
+   "publisher": "Harvard Graduate School of Education, Information System for Vocational Decisions",
    "url": "https://eric.ed.gov/?id=ED052482",
-   "note": "Harvard script language whose DECOMP statement blends ELIZA and TRAC.",
+   "note": "Harvard script language whose DECOMP statement blends ELIZA and TRAC. Report ERIC ED052482.",
    "relevance": "unread"
   },
   {
@@ -12698,7 +12763,7 @@
    "date": "1986",
    "kind": "book",
    "lang": "fr",
-   "publisher": "Paris : Deno\"el",
+   "publisher": "Deno\"el",
    "url": "https://archive.org/details/lesenfantsdelord0000turk",
    "note": "French edition of The Second Self, with its transcript and account of ELIZA.",
    "thumb": "library/thumbs/L-RN6GR.jpg",
@@ -12711,7 +12776,7 @@
    "date": "2011",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York : Basic Books",
+   "publisher": "Basic Books",
    "url": "https://archive.org/details/alonetogetherwhy0000turk_b1h7",
    "note": "Uses the ELIZA effect as a recurring frame for human complicity in digital fantasy when discussing sociable robots such as Kismet.",
    "thumb": "library/thumbs/L-PKZSU.jpg",
@@ -12737,7 +12802,7 @@
    "date": "2015",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York : Penguin Press",
+   "publisher": "Penguin Press",
    "url": "https://archive.org/details/reclaimingconver0000turk",
    "note": "Recounts ELIZA's mirroring of a psychotherapist, Weizenbaum's shock at users asking to be alone with it and the ELIZA effect.",
    "thumb": "library/thumbs/L-QK7N5.jpg",
@@ -12750,9 +12815,9 @@
    "date": "1982",
    "kind": "report",
    "lang": "en",
-   "publisher": "ERIC ED284452",
+   "publisher": "ERIC",
    "url": "https://eric.ed.gov/?id=ED284452",
-   "note": "Lists ELIZA among programs using artificial intelligence in computer-assisted language learning.",
+   "note": "Lists ELIZA among programs using artificial intelligence in computer-assisted language learning. Report ERIC ED284452.",
    "relevance": "unread"
   },
   {
@@ -12762,10 +12827,10 @@
    "date": "2011",
    "kind": "chapter",
    "lang": "en",
-   "in": "Basingstoke [England] : Palgrave Macmillan",
    "url": "https://archive.org/details/fromibmtomgmcine0000utte",
    "note": "Volume on cinema and computing that discusses ELIZA scripts and Weizenbaum's programmed therapist within early computer dialogue.",
-   "relevance": "unread"
+   "relevance": "unread",
+   "publisher": "Palgrave Macmillan"
   },
   {
    "id": "L-JSLPA",
@@ -12809,7 +12874,7 @@
    "date": "2021",
    "kind": "book",
    "lang": "en",
-   "publisher": "Cambridge : The MIT Press",
+   "publisher": "The MIT Press",
    "url": "https://archive.org/details/yourwitismycomma0000veal",
    "note": "Book on building chatbots that describes Eliza and the Doctor script in the role of a Rogerian therapist.",
    "thumb": "library/thumbs/L-I6O3R.jpg",
@@ -12822,9 +12887,9 @@
    "date": "1968",
    "kind": "report",
    "lang": "en",
-   "publisher": "University of Texas at Austin; ERIC ED058581",
+   "publisher": "University of Texas at Austin",
    "url": "https://archive.org/details/ERIC_ED058581",
-   "note": "Reproduces an ELIZA dialogue and explains its keyword rules in a review of computer use in counselling.",
+   "note": "Reproduces an ELIZA dialogue and explains its keyword rules in a review of computer use in counselling. Report ERIC ED058581.",
    "relevance": "unread"
   },
   {
@@ -12892,7 +12957,7 @@
    "date": "1987",
    "kind": "book",
    "lang": "en",
-   "publisher": "[New York] : Walker",
+   "publisher": "Walker",
    "url": "https://archive.org/details/manmademindsprom0000wald_y7r3",
    "note": "History of AI that presents Eliza's role-playing and reprints Weizenbaum material from Computer Power and Human Reason.",
    "thumb": "library/thumbs/L-W27ZX.jpg",
@@ -12905,7 +12970,7 @@
    "date": "2012",
    "kind": "book",
    "lang": "en",
-   "publisher": "Houndmills, Basingstoke, Hampshire ; New York : Palgrave Macmillan",
+   "publisher": "Palgrave Macmillan",
    "url": "https://archive.org/details/mindmachine0000walm",
    "note": "Philosophy of mind text that describes Eliza, Weizenbaum's naming and the dispelling of the illusion it created.",
    "thumb": "library/thumbs/L-J6QO6.jpg",
@@ -12931,10 +12996,11 @@
    "date": "1976",
    "kind": "chapter",
    "lang": "en",
-   "in": "Self-published, pp. 8-9",
+   "in": "Self-published",
    "url": "https://archive.org/details/secret-guide-7-2",
    "note": "Restates the DOCTOR script for hobbyists as tables of substitutions, keyword categories and replies.",
-   "relevance": "unread"
+   "relevance": "unread",
+   "pages": "8-9"
   },
   {
    "id": "L-Q2R6L",
@@ -12967,7 +13033,7 @@
    "date": "2016",
    "kind": "book",
    "lang": "en",
-   "publisher": "Cambridge ; New York, NY : Cambridge University Press",
+   "publisher": "Cambridge University Press",
    "url": "https://archive.org/details/turingsimitation0000warw",
    "note": "Chapter History of Conversation Systems: From Eliza to Eugene Goostman places Eliza first among conversation systems and includes the authors' own exchange with it.",
    "thumb": "library/thumbs/L-KU3XB.jpg",
@@ -12980,7 +13046,7 @@
    "date": "2007",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York : Springer",
+   "publisher": "Springer",
    "url": "https://archive.org/details/dialogiceducatio0000wege",
    "note": "Book on dialogic education that reads Weizenbaum's programme as a subversive demonstration and discusses it against the Turing test.",
    "thumb": "library/thumbs/L-EYJ3U.jpg",
@@ -13078,10 +13144,11 @@
    "date": "1978-03",
    "kind": "magazine",
    "lang": "en",
-   "in": "ROM 9, p. 34",
+   "in": "ROM 9",
    "url": "https://archive.org/details/ROM09",
    "note": "Reprinted chapter that names ELIZA as an example of a program of its type in a discussion of programs nobody understands.",
-   "relevance": "unread"
+   "relevance": "unread",
+   "pages": "34"
   },
   {
    "id": "L-P27YE",
@@ -13207,7 +13274,7 @@
    "date": "1990",
    "kind": "book",
    "lang": "en",
-   "publisher": "Englewood Cliffs, N.J. : Prentice Hall",
+   "publisher": "Prentice Hall",
    "url": "https://archive.org/details/computerselfsoci0000wess",
    "note": "Psychology of computing textbook with a section on ELIZA as an early script-based program and a printed dialogue.",
    "thumb": "library/thumbs/L-AOLIA.jpg",
@@ -13220,7 +13287,7 @@
    "date": "1986",
    "kind": "book",
    "lang": "en",
-   "publisher": "Westchester, Ill. : Crossway Books",
+   "publisher": "Crossway Books",
    "url": "https://archive.org/details/endofman00whit",
    "note": "Book on technology with a section titled ELIZA quoting Weizenbaum on the script and a young lady's conversation.",
    "thumb": "library/thumbs/L-6QFNO.jpg",
@@ -13233,7 +13300,7 @@
    "date": "2009",
    "kind": "book",
    "lang": "en",
-   "publisher": "London ; New York : Routledge",
+   "publisher": "Routledge",
    "url": "https://archive.org/details/truthliestruston0000whit",
    "note": "Book on online deception that describes Weizenbaum's interactive program and its naming.",
    "thumb": "library/thumbs/L-QJRGH.jpg",
@@ -13246,7 +13313,7 @@
    "date": "1993",
    "kind": "book",
    "lang": "en",
-   "publisher": "Reading, Mass. : Addison-Wesley Pub. Co.",
+   "publisher": "Addison-Wesley Pub. Co.",
    "url": "https://archive.org/details/digitalwoeswhywe0000wien_z9p4",
    "note": "Book on software failure discussing Eliza's mimicry and users' overestimation of its sophistication.",
    "thumb": "library/thumbs/L-4ETMY.jpg",
@@ -13285,7 +13352,7 @@
    "date": "2002",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York : AtRandom.com",
+   "publisher": "AtRandom.com",
    "url": "https://archive.org/details/arguingai00samw",
    "note": "Account of the early-2000s AI debates that describes ELIZA as a Rogerian impersonator that tricked users and discusses Weizenbaum's report of the experiment.",
    "thumb": "library/thumbs/L-2YYRM.jpg",
@@ -13323,10 +13390,10 @@
    "date": "1974-09",
    "kind": "report",
    "lang": "en",
-   "publisher": "Stanford AI Laboratory; DTIC ADA000085",
+   "publisher": "Stanford AI Laboratory",
    "doi": "10.21236/ada000085",
    "url": "https://archive.org/details/DTIC_ADA000085",
-   "note": "Lecture text with a section on ELIZA, framed by Weizenbaum's question of how a system could convince a person it understood.",
+   "note": "Lecture text with a section on ELIZA, framed by Weizenbaum's question of how a system could convince a person it understood. Report DTIC ADA000085.",
    "relevance": "unread"
   },
   {
@@ -13349,7 +13416,7 @@
    "date": "1990",
    "kind": "book",
    "lang": "en",
-   "publisher": "Norwood, N.J. : Ablex Pub. Corp.",
+   "publisher": "Ablex Pub. Corp.",
    "url": "https://archive.org/details/understandingcom00wino",
    "note": "Critique of AI that presents a program recognised as ELIZA, run as DOCTOR, and quotes Weizenbaum's surprise at its human-like behaviour in a section on what it means to understand.",
    "thumb": "library/thumbs/L-SH2NW.jpg",
@@ -13397,7 +13464,7 @@
    "date": "2006",
    "kind": "book",
    "lang": "en",
-   "publisher": "Oakville, Ont. : Hasley Enterprises Worldwide",
+   "publisher": "Hasley Enterprises Worldwide",
    "url": "https://archive.org/details/powerofparadoxus0000wood",
    "note": "Book on psychology of paradox that describes ELIZA's programming to play a Rogerian psychologist.",
    "thumb": "library/thumbs/L-CS3KU.jpg",
@@ -13436,7 +13503,7 @@
    "date": "1992",
    "kind": "book",
    "lang": "de",
-   "publisher": "Berlin ; New York : Springer-Verlag",
+   "publisher": "Springer-Verlag",
    "url": "https://archive.org/details/dasgeistigeumfel0000zema",
    "note": "German-language book on the intellectual setting of information technology with a passage on ELIZA and reactions to it.",
    "thumb": "library/thumbs/L-TYGH5.jpg",
@@ -13516,10 +13583,10 @@
    "date": "1993",
    "kind": "chapter",
    "lang": "en",
-   "in": "Greenwich, Conn. : JAI Press",
    "url": "https://archive.org/details/isbn_1559383925_3",
    "note": "Volume on social science and computing with a discussion of Weizenbaum's language analysis program at MIT and the DOCTOR script.",
-   "relevance": "unread"
+   "relevance": "unread",
+   "publisher": "JAI Press"
   },
   {
    "id": "L-PAIBI",
@@ -13538,7 +13605,7 @@
    "date": "2016",
    "kind": "book",
    "lang": "en",
-   "publisher": "[London] : Academic Press",
+   "publisher": "Academic Press",
    "url": "https://archive.org/details/isbn_9780124202481",
    "note": "Edited volume on AI in mental health care that treats ELIZA as a founding program and indexes the ELIZA effect.",
    "relevance": "unread"
@@ -13549,7 +13616,7 @@
    "date": "1984",
    "kind": "book",
    "lang": "en",
-   "publisher": "Cambridge ; Philadelphia : Harper & Row",
+   "publisher": "Harper & Row",
    "url": "https://archive.org/details/artificialintell00oshe",
    "note": "Prints the Men are all alike dialogue and treats the ELIZA system of Weizenbaum 1966 and 1967 as worth mentioning from its period.",
    "relevance": "unread",
@@ -13561,7 +13628,7 @@
    "date": "1984-10-14",
    "kind": "review",
    "lang": "de",
-   "in": "DER SPIEGEL",
+   "in": "Der Spiegel",
    "relevance": "unread"
   },
   {
@@ -13579,7 +13646,7 @@
    "date": "1979-04-22",
    "kind": "news",
    "lang": "de",
-   "in": "DER SPIEGEL",
+   "in": "Der Spiegel",
    "relevance": "unread"
   },
   {
@@ -13601,10 +13668,10 @@
    "date": "1992",
    "kind": "chapter",
    "lang": "en",
-   "in": "Sluice Dock, Guilford, Conn. : Duskin Pub. Group",
    "url": "https://archive.org/details/computersinsocie0000unse_f1g9",
    "note": "Reader on computers in society with a piece explaining how Eliza exploited the leeway given to therapists.",
-   "relevance": "unread"
+   "relevance": "unread",
+   "publisher": "Duskin Pub. Group"
   },
   {
    "id": "L-QHRBS",
@@ -13612,10 +13679,10 @@
    "date": "2008",
    "kind": "chapter",
    "lang": "en",
-   "in": "Toronto ; Buffalo [N.Y.] : University of Toronto Press",
    "url": "https://archive.org/details/criticaldigitals0000unse",
    "note": "Reader in critical digital studies with a discussion of Weizenbaum's ELIZA project and the machine on which it was made.",
-   "relevance": "unread"
+   "relevance": "unread",
+   "publisher": "University of Toronto Press"
   },
   {
    "id": "L-7N5Z2",
@@ -13623,10 +13690,10 @@
    "date": "1988",
    "kind": "chapter",
    "lang": "en",
-   "in": "Lanham, MD : University Press of America",
    "url": "https://archive.org/details/demonstratingphi0000unse",
    "note": "Teaching collection with a piece titled Conversation with ELIZA on using the program to teach the Turing test.",
-   "relevance": "unread"
+   "relevance": "unread",
+   "publisher": "University Press of America"
   },
   {
    "id": "L-J77LE",
@@ -13643,9 +13710,9 @@
    "date": "1980-09",
    "kind": "report",
    "lang": "en",
-   "publisher": "DTIC ADA115894",
+   "publisher": "Defense Technical Information Center",
    "url": "https://archive.org/details/DTIC_ADA115894",
-   "note": "Describes ELIZA's key word search and response rules as a practical natural query approach.",
+   "note": "Describes ELIZA's key word search and response rules as a practical natural query approach. Report DTIC ADA115894.",
    "relevance": "unread"
   },
   {
@@ -13654,7 +13721,7 @@
    "date": "1994-01-07",
    "kind": "news",
    "lang": "de",
-   "in": "DIE ZEIT",
+   "in": "Die Zeit",
    "url": "https://www.zeit.de/1994/02/die-elektronische-schwatzkiste",
    "relevance": "unread"
   },
@@ -13674,7 +13741,7 @@
    "date": "1980-12-05",
    "kind": "news",
    "lang": "de",
-   "in": "DIE ZEIT",
+   "in": "Die Zeit",
    "url": "https://www.zeit.de/1980/50/die-maschine-denkt-der-mensche-lenkt",
    "relevance": "unread"
   },
@@ -13684,7 +13751,7 @@
    "date": "1984",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York : Workman Pub.",
+   "publisher": "Workman Pub.",
    "url": "https://archive.org/details/digitaldelicompr0000unse",
    "note": "Compendium of personal computing culture with an entry on Eliza as a parody of a Rogerian therapist.",
    "thumb": "library/thumbs/L-7RYHK.jpg",
@@ -13696,7 +13763,7 @@
    "date": "1987",
    "kind": "book",
    "lang": "en",
-   "publisher": "New York : Wiley",
+   "publisher": "Wiley",
    "url": "https://archive.org/details/encyclopediaofar0002unse_j3d8",
    "note": "Has an entry on ELIZA and calls it the most famous pattern-matching program, with an excerpt of a typical conversation; seen in the 1987 and 1990 printings.",
    "relevance": "unread"
@@ -13707,10 +13774,10 @@
    "date": "1975",
    "kind": "chapter",
    "lang": "en",
-   "in": "New York : Marcel Dekker",
    "url": "https://archive.org/details/encyclopediaofco0022unse",
    "note": "Encyclopedia entry describing the ELIZA program, a human-ELIZA dialogue and the ELIZA syndrome of attributing understanding against Weizenbaum's protestations.",
-   "relevance": "unread"
+   "relevance": "unread",
+   "publisher": "Marcel Dekker"
   },
   {
    "id": "L-D6TPX",
@@ -13729,7 +13796,7 @@
    "date": "2004",
    "kind": "book",
    "lang": "en",
-   "publisher": "Cambridge, Mass. : MIT Press",
+   "publisher": "MIT Press",
    "url": "https://archive.org/details/firstpersonnewme0000unse",
    "note": "Edited volume on digital narrative in which several contributors compare characters and systems with Weizenbaum's Eliza program of 1965.",
    "thumb": "library/thumbs/L-CDSD5.jpg",
@@ -13741,10 +13808,10 @@
    "date": "2000",
    "kind": "chapter",
    "lang": "en",
-   "in": "Amsterdam ; [Great Britain] : John Benjamins",
    "url": "https://archive.org/details/humancognitionso0000unse",
    "note": "Edited volume with a section titled ELIZA that presents the program as the leading example of Turing test thinking, with a dialogue.",
-   "relevance": "unread"
+   "relevance": "unread",
+   "publisher": "John Benjamins"
   },
   {
    "id": "L-H4AIU",
@@ -13752,9 +13819,9 @@
    "date": "1968",
    "kind": "report",
    "lang": "en",
-   "publisher": "Harvard Graduate School of Education; ERIC ED062536",
+   "publisher": "Harvard Graduate School of Education",
    "url": "https://archive.org/details/ERIC_ED062536",
-   "note": "Report treating ELIZA as a scriptwriting language and adapting it for the system, across several sections.",
+   "note": "Report treating ELIZA as a scriptwriting language and adapting it for the system, across several sections. Report ERIC ED062536.",
    "relevance": "unread"
   },
   {
@@ -13763,7 +13830,7 @@
    "date": "1970-04",
    "kind": "magazine",
    "lang": "en",
-   "in": "INTERFACE",
+   "in": "Interface",
    "relevance": "unread"
   },
   {
@@ -13772,9 +13839,9 @@
    "date": "1977-06-30",
    "kind": "report",
    "lang": "en",
-   "publisher": "System Development Corporation TM-5903; DTIC ADA044883",
+   "publisher": "System Development Corporation",
    "url": "https://archive.org/details/DTIC_ADA044883",
-   "note": "Tutorial presenting pattern matching as the technique introduced in ELIZA.",
+   "note": "Tutorial presenting pattern matching as the technique introduced in ELIZA. Report TM-5903; DTIC ADA044883.",
    "relevance": "unread"
   },
   {
@@ -13783,7 +13850,7 @@
    "date": "2001-02-14",
    "kind": "news",
    "lang": "de",
-   "in": "DER SPIEGEL",
+   "in": "Der Spiegel",
    "relevance": "unread"
   },
   {
@@ -13812,7 +13879,7 @@
    "date": "1987",
    "kind": "book",
    "lang": "en",
-   "publisher": "Cambridge, Mass. : MIT Press",
+   "publisher": "MIT Press",
    "url": "https://archive.org/details/minddesignphilos00haug",
    "note": "Contributors discuss Weizenbaum's Eliza and his own later judgement of it, in several chapters.",
    "thumb": "library/thumbs/L-J7B3H.jpg",
@@ -13825,9 +13892,9 @@
    "date": "1986-08",
    "kind": "report",
    "lang": "en",
-   "publisher": "DTIC ADA173386",
+   "publisher": "Defense Technical Information Center",
    "url": "https://archive.org/details/DTIC_ADA173386",
-   "note": "Tutorial using ELIZA as its example of pattern matching and of simulating a Rogerian psychotherapist.",
+   "note": "Tutorial using ELIZA as its example of pattern matching and of simulating a Rogerian psychotherapist. Report DTIC ADA173386.",
    "relevance": "unread"
   },
   {
@@ -13836,9 +13903,9 @@
    "date": "1979-07",
    "kind": "report",
    "lang": "en",
-   "publisher": "DTIC ADA076873",
+   "publisher": "Defense Technical Information Center",
    "url": "https://archive.org/details/DTIC_ADA076873",
-   "note": "Technical survey that opens its account of natural language programs with ELIZA.",
+   "note": "Technical survey that opens its account of natural language programs with ELIZA. Report DTIC ADA076873.",
    "relevance": "unread"
   },
   {
@@ -13868,9 +13935,9 @@
    "date": "1970-10",
    "kind": "report",
    "lang": "en",
-   "publisher": "Cornell University; ERIC ED048915",
+   "publisher": "Cornell University",
    "url": "https://archive.org/details/ERIC_ED048915",
-   "note": "Survey section naming Weizenbaum's ELIZA as the most famous natural language conversational system and explaining its dialogue method.",
+   "note": "Survey section naming Weizenbaum's ELIZA as the most famous natural language conversational system and explaining its dialogue method. Report ERIC ED048915.",
    "relevance": "unread"
   },
   {
@@ -13879,7 +13946,7 @@
    "date": "2004",
    "kind": "book",
    "lang": "en",
-   "publisher": "Amsterdam ; Boston : Elsevier Academic Press",
+   "publisher": "Elsevier Academic Press",
    "url": "https://archive.org/details/onlinecounseling0000unse",
    "note": "Handbook with a passage on ELIZA and the DOCTOR, including the 1966 journal article and keyword technique.",
    "thumb": "library/thumbs/L-VV3B6.jpg",
@@ -13903,7 +13970,7 @@
    "date": "1994-09-04",
    "kind": "news",
    "lang": "de",
-   "in": "DER SPIEGEL",
+   "in": "Der Spiegel",
    "relevance": "unread"
   },
   {
@@ -13912,10 +13979,10 @@
    "date": "2012",
    "kind": "chapter",
    "lang": "en",
-   "in": "Ross-on-Wye : PCCS Books",
    "url": "https://archive.org/details/rdlaing50yearssi0000unse",
    "note": "Essay in a volume on R. D. Laing that describes Eliza as a simulation of what Weizenbaum took to be a Rogerian therapist and gives its response patterns.",
-   "relevance": "unread"
+   "relevance": "unread",
+   "publisher": "PCCS Books"
   },
   {
    "id": "L-AFWM7",
@@ -13923,7 +13990,7 @@
    "date": "2007",
    "kind": "book",
    "lang": "en",
-   "publisher": "Cambridge, Mass. : MIT Press",
+   "publisher": "MIT Press",
    "url": "https://archive.org/details/secondpersonrole0000unse",
    "note": "Edited volume including Adrianne Wortzel's Eliza Redux and a discussion of Weizenbaum's parody, the script and the role of the teacher in growing ELIZA.",
    "thumb": "library/thumbs/L-AFWM7.jpg",
@@ -13935,10 +14002,11 @@
    "date": "1979-01",
    "kind": "magazine",
    "lang": "en",
-   "in": "Personal Computing, January 1979, p. 62",
+   "in": "Personal Computing, January 1979",
    "url": "https://archive.org/details/PersonalComputing197901",
    "note": "Show report on Sigmund, a talking variation of Weizenbaum's program that drew crowds at the Digital Group booth.",
-   "relevance": "unread"
+   "relevance": "unread",
+   "pages": "62"
   },
   {
    "id": "L-EB4D3",
@@ -13967,10 +14035,10 @@
    "date": "2007",
    "kind": "chapter",
    "lang": "en",
-   "in": "Oxford : Oxford University Press",
    "url": "https://archive.org/details/talltalesaboutmi0000unse",
    "note": "Essay in a collection on mind and brain describing how Weizenbaum devised ELIZA and how the human played the patient by Teletype.",
-   "relevance": "unread"
+   "relevance": "unread",
+   "publisher": "Oxford University Press"
   },
   {
    "id": "L-J4ZMJ",
@@ -13978,7 +14046,7 @@
    "date": "2005-01-20",
    "kind": "news",
    "lang": "de",
-   "in": "DER SPIEGEL",
+   "in": "Der Spiegel",
    "relevance": "unread"
   },
   {
@@ -13987,10 +14055,10 @@
    "date": "1988",
    "kind": "chapter",
    "lang": "en",
-   "in": "New York : Haworth Press",
    "url": "https://archive.org/details/technologyhumans0000unse",
    "note": "Edited volume on technology in human services that discusses users of ELIZA in relation to the therapy component.",
-   "relevance": "unread"
+   "relevance": "unread",
+   "publisher": "Haworth Press"
   },
   {
    "id": "L-KCX3N",
@@ -13998,7 +14066,7 @@
    "date": "2003",
    "kind": "book",
    "lang": "en",
-   "publisher": "Houndmills, Basingstoke, Hampshire ; New York : Palgrave Macmillan",
+   "publisher": "Palgrave Macmillan",
    "url": "https://archive.org/details/technologyincoun0000unse",
    "note": "Practice volume that describes ELIZA's reflection technique and states that Weizenbaum never intended it as a real psychotherapist.",
    "relevance": "unread"
@@ -14009,10 +14077,10 @@
    "date": "2005",
    "kind": "chapter",
    "lang": "en",
-   "in": "Mahwah, N.J. : Lawrence Erlbaum Associates",
    "url": "https://archive.org/details/mentalhealthprof0000unse_w8a3",
    "note": "Edited volume that opens its discussion of computer therapy with a section on ELIZA and a typical dialogue.",
-   "relevance": "unread"
+   "relevance": "unread",
+   "publisher": "Lawrence Erlbaum Associates"
   },
   {
    "id": "L-KDYN2",
@@ -14020,7 +14088,7 @@
    "date": "2003",
    "kind": "book",
    "lang": "en",
-   "publisher": "Cambridge, Mass. : MIT Press",
+   "publisher": "MIT Press",
    "url": "https://archive.org/details/newmediareader0000unse",
    "note": "Anthology whose editorial material and companion disc cover Eliza and the Doctor script, and which reprints Suchman's explication of the ELIZA programs.",
    "thumb": "library/thumbs/L-KDYN2.jpg",
@@ -14032,10 +14100,10 @@
    "date": "2000",
    "kind": "chapter",
    "lang": "en",
-   "in": "Cambridge, Mass. : MIT Press",
    "url": "https://archive.org/details/robotingardentel0000unse",
    "note": "Edited volume with a chapter section Recognizing the Human on ELIZA, including a printed conversation and Weizenbaum's aims.",
-   "relevance": "unread"
+   "relevance": "unread",
+   "publisher": "MIT Press"
   },
   {
    "id": "L-7SGL5",
@@ -14043,9 +14111,9 @@
    "date": "1981-01-28",
    "kind": "report",
    "lang": "en",
-   "publisher": "DTIC ADA096544",
+   "publisher": "Defense Technical Information Center",
    "url": "https://archive.org/details/DTIC_ADA096544",
-   "note": "Survey explaining pattern matching through a simplified ELIZA figure of patterns and responses.",
+   "note": "Survey explaining pattern matching through a simplified ELIZA figure of patterns and responses. Report DTIC ADA096544.",
    "relevance": "unread"
   },
   {
@@ -14064,7 +14132,7 @@
    "date": "2003",
    "kind": "book",
    "lang": "en",
-   "publisher": "Dordrecht ; Boston : Kluwer Academic Publishers",
+   "publisher": "Kluwer Academic Publishers",
    "url": "https://archive.org/details/turingtestelusiv0000unse_p9y3",
    "note": "Edited volume on the Turing test containing a discussion of ELIZA's keyword techniques, the term ELIZA-like and how such programs fare in Loebner contests.",
    "relevance": "unread"
@@ -14075,7 +14143,7 @@
    "date": "1977-05-20",
    "kind": "review",
    "lang": "de",
-   "in": "DIE ZEIT",
+   "in": "Die Zeit",
    "url": "https://www.zeit.de/1977/22/elektronendiener",
    "relevance": "unread"
   }
