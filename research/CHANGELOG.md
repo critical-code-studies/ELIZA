@@ -2,6 +2,10 @@
 
 Changes to the ELIZA research bench (`research/`). The bench keeps its own version numbers, raised by 0.0.1 with each change (the `?v=` on every script and stylesheet in `index.html`); this file records the versions published, newest first.
 
+## 0.1.166 (2026-11-08)
+
+- The kit at 1.8.12: export the Library to Zotero as RIS or BibTeX.
+
 ## 0.1.165 (2026-11-08)
 
 - The kit at 1.8.11: Library and To read as tabs, and a Show menu.
