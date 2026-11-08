@@ -395,14 +395,15 @@
   {
    "id": "L-VZQXL",
    "title": "计算的限度 —— 魏岑鲍姆与聊天机器人ELIZA",
-   "author": "Berry, David M.; 王立秋 (translator)",
+   "author": "Berry, David M.",
    "date": "2025-04-11",
    "kind": "magazine",
    "lang": "zh",
    "in": "澎湃新闻 思想市场",
    "url": "https://www.thepaper.cn/newsDetail_forward_30435409",
    "note": "Chinese translation by Wang Liqiu of Berry's essay on Weizenbaum's ELIZA, its DOCTOR persona and his critical writing in the light of generative AI.",
-   "relevance": "about"
+   "relevance": "about",
+   "contributor": "translated by 王立秋"
   },
   {
    "id": "L-F4W7C",
@@ -997,17 +998,6 @@
    "doi": "10.1145/987452.987458",
    "url": "https://doi.org/10.1145/987452.987458",
    "note": "Reimplements ELIZA in SNOBOL4, reports it as much shorter than the original program and proposes its use in a course on artificial intelligence.",
-   "relevance": "about"
-  },
-  {
-   "id": "L-IP4IT",
-   "title": "Inventing ELIZA",
-   "author": "Editor",
-   "kind": "news",
-   "lang": "en",
-   "in": "I Programmer, Book Watch",
-   "url": "https://www.i-programmer.info/book-watch-archive/19012-inventing-eliza-inventing-eliza-mit-press.html",
-   "note": "Book notice for the MIT Press volume on the first chatbot.",
    "relevance": "about"
   },
   {
@@ -2499,10 +2489,9 @@
    "date": "1992",
    "kind": "chapter",
    "lang": "en",
-   "pages": "ch. 5",
    "in": "Morgan Kaufmann",
    "url": "https://github.com/norvig/paip-lisp/blob/main/docs/chapter5.md",
-   "note": "Chapter that rebuilds ELIZA in Lisp as a Rogerian pattern matcher whose apparent understanding is an illusion; passage read on the author's repository.",
+   "note": "Ch. 5. Chapter that rebuilds ELIZA in Lisp as a Rogerian pattern matcher whose apparent understanding is an illusion; passage read on the author's repository.",
    "relevance": "about"
   },
   {
@@ -4717,6 +4706,16 @@
    "relevance": "about"
   },
   {
+   "id": "L-IP4IT",
+   "title": "Inventing ELIZA",
+   "kind": "news",
+   "lang": "en",
+   "in": "I Programmer, Book Watch",
+   "url": "https://www.i-programmer.info/book-watch-archive/19012-inventing-eliza-inventing-eliza-mit-press.html",
+   "note": "Book notice for the MIT Press volume on the first chatbot.",
+   "relevance": "about"
+  },
+  {
    "id": "L-AAPOH",
    "title": "Inventing ELIZA (Ciston et al 2026) - Weekend Book Review",
    "date": "2026-09-05",
@@ -5123,20 +5122,6 @@
    "relevance": "section"
   },
   {
-   "id": "L-6EYKJ",
-   "title": "The Handbook of Artificial Intelligence, Volume 1",
-   "author": "Barr, Avron; Feigenbaum, Edward A., eds.",
-   "date": "1981",
-   "kind": "book",
-   "lang": "en",
-   "pages": "227-228, 257, 260, 285-287",
-   "publisher": "Stanford, Calif.: HeurisTech Press ; Los Altos, Calif. : William Kaufmann",
-   "url": "https://archive.org/details/handbookofartific01barr",
-   "note": "Article IV.F1 on pp. 285-287 presents ELIZA as the most famous pattern-matching program, covering the Rogerian role, SLIP, key lists and reassembly rules; passages read by search inside.",
-   "thumb": "library/thumbs/L-6EYKJ.jpg",
-   "relevance": "section"
-  },
-  {
    "id": "L-SHGGR",
    "title": "The Stuff Games Are Made Of",
    "author": "Barr, Pippin",
@@ -5306,11 +5291,10 @@
    "date": "2002",
    "kind": "chapter",
    "lang": "de",
-   "pages": "19ff.",
    "in": "Zu den Sachen und zurück",
    "publisher": "Suhrkamp",
    "url": "https://openlibrary.org/works/OL18696369W",
-   "note": "Blumenberg on ELIZA, p. 36: “To delimit this intervention Joseph Weizenbaum’s “Eliza” suffices, which was thought up in order to provide the counterproof for what its performance ironically proved. The patients were not fooled, but forgot the computer as quickly as they were supposed to forget the analyst according to Freud’s original notion. But the analyst for the most part cannot bear this mute role—just as little as the phenomenological subject can bear the pure role of the observer, and must instead by its very description [of the activity of consciousness] instruct, inform, form dogma, and in the end treat the Crisis.” Discussed in Weatherby, Intermittent Legitimacy (2022).",
+   "note": "19ff.. Blumenberg on ELIZA, p. 36: “To delimit this intervention Joseph Weizenbaum’s “Eliza” suffices, which was thought up in order to provide the counterproof for what its performance ironically proved. The patients were not fooled, but forgot the computer as quickly as they were supposed to forget the analyst according to Freud’s original notion. But the analyst for the most part cannot bear this mute role—just as little as the phenomenological subject can bear the pure role of the observer, and must instead by its very description [of the activity of consciousness] instruct, inform, form dogma, and in the end treat the Crisis.” Discussed in Weatherby, Intermittent Legitimacy (2022).",
    "relevance": "section"
   },
   {
@@ -5975,10 +5959,9 @@
    "date": "1984",
    "kind": "book",
    "lang": "en",
-   "pages": "153-",
    "publisher": "Reading, Mass. : Addison-Wesley",
    "url": "https://archive.org/details/lookingatlisp0000hase",
-   "note": "Chapter 7 on pattern matching opens with section 7.1, Eliza, and has the reader write a MICRO-ELIZA in Lisp.",
+   "note": "153-. Chapter 7 on pattern matching opens with section 7.1, Eliza, and has the reader write a MICRO-ELIZA in Lisp.",
    "thumb": "library/thumbs/L-6BXJM.jpg",
    "relevance": "section"
   },
@@ -6285,20 +6268,6 @@
    "in": "CoEvolution Quarterly no. 13, Spring 1977",
    "url": "https://archive.org/details/sim_whole-earth_coevolution-quarterly_spring-1977_13",
    "note": "Catalogue review of Weizenbaum's book, printing his passage on giving ELIZA a Rogerian script.",
-   "relevance": "section"
-  },
-  {
-   "id": "L-XDSHH",
-   "title": "Strategies for Natural Language Processing",
-   "author": "Lehnert, Wendy G.; Ringle, Martin H., eds.",
-   "date": "1982",
-   "kind": "book",
-   "lang": "en",
-   "pages": "7, 32",
-   "publisher": "Hillsdale, N.J. : L. Erlbaum Associates",
-   "url": "https://archive.org/details/strategiesfornat00lehn",
-   "note": "Opening chapter explains ELIZA and DOCTOR through a simplified figure of keyword patterns and responses; pages from an index line.",
-   "thumb": "library/thumbs/L-XDSHH.jpg",
    "relevance": "section"
   },
   {
@@ -6865,20 +6834,6 @@
    "in": "Psychology Today, Priceless blog",
    "url": "https://www.psychologytoday.com/us/blog/priceless/202310/reality-catches-up-to-the-turing-test",
    "note": "Blog post on the Turing test that discusses ELIZA and Weizenbaum's reaction to its reception.",
-   "relevance": "section"
-  },
-  {
-   "id": "L-7GKHE",
-   "title": "Perspectives on the Computer Revolution",
-   "author": "Pylyshyn, Zenon W., ed.",
-   "date": "1970",
-   "kind": "book",
-   "lang": "en",
-   "pages": "334",
-   "publisher": "Englewood Cliffs, N.J. : Prentice-Hall",
-   "url": "https://archive.org/details/perspectivesonco0000pyly",
-   "note": "Reprints Weizenbaum's Contextual Understanding by Computers at p. 334, on ELIZA's name, Rogerian script and the script as a program, with an account of how ELIZA passed the Turing test.",
-   "thumb": "library/thumbs/L-7GKHE.jpg",
    "relevance": "section"
   },
   {
@@ -8494,6 +8449,20 @@
    "relevance": "section"
   },
   {
+   "id": "L-7GKHE",
+   "title": "Perspectives on the Computer Revolution",
+   "date": "1970",
+   "kind": "book",
+   "lang": "en",
+   "pages": "334",
+   "publisher": "Englewood Cliffs, N.J. : Prentice-Hall",
+   "url": "https://archive.org/details/perspectivesonco0000pyly",
+   "note": "Reprints Weizenbaum's Contextual Understanding by Computers at p. 334, on ELIZA's name, Rogerian script and the script as a program, with an account of how ELIZA passed the Turing test.",
+   "thumb": "library/thumbs/L-7GKHE.jpg",
+   "relevance": "section",
+   "contributor": "eds Pylyshyn, Zenon W."
+  },
+  {
    "id": "L-RBJ6Z",
    "title": "[Report on Doctor based on Eliza]",
    "date": "1980-01",
@@ -8538,6 +8507,20 @@
    "relevance": "section"
   },
   {
+   "id": "L-XDSHH",
+   "title": "Strategies for Natural Language Processing",
+   "date": "1982",
+   "kind": "book",
+   "lang": "en",
+   "pages": "7, 32",
+   "publisher": "Hillsdale, N.J. : L. Erlbaum Associates",
+   "url": "https://archive.org/details/strategiesfornat00lehn",
+   "note": "Opening chapter explains ELIZA and DOCTOR through a simplified figure of keyword patterns and responses; pages from an index line.",
+   "thumb": "library/thumbs/L-XDSHH.jpg",
+   "relevance": "section",
+   "contributor": "eds Lehnert, Wendy G.; Ringle, Martin H."
+  },
+  {
    "id": "L-GMTR7",
    "title": "[Syndicated report on the dispute over whether computers can think]",
    "date": "1977-05-29",
@@ -8558,6 +8541,20 @@
    "url": "https://podcasts.apple.com/us/podcast/technology-and-artificial-intelligence/id634849197?i=1000672768499",
    "note": "BBC History Hour compilation with a segment in which Miriam Weizenbaum speaks about her father and the Eliza chatbot. 50 minutes.",
    "relevance": "section"
+  },
+  {
+   "id": "L-6EYKJ",
+   "title": "The Handbook of Artificial Intelligence, Volume 1",
+   "date": "1981",
+   "kind": "book",
+   "lang": "en",
+   "pages": "227-228, 257, 260, 285-287",
+   "publisher": "Stanford, Calif.: HeurisTech Press ; Los Altos, Calif. : William Kaufmann",
+   "url": "https://archive.org/details/handbookofartific01barr",
+   "note": "Article IV.F1 on pp. 285-287 presents ELIZA as the most famous pattern-matching program, covering the Rogerian role, SLIP, key lists and reassembly rules; passages read by search inside.",
+   "thumb": "library/thumbs/L-6EYKJ.jpg",
+   "relevance": "section",
+   "contributor": "eds Barr, Avron; Feigenbaum, Edward A."
   },
   {
    "id": "L-FOKA6",
@@ -8947,19 +8944,6 @@
    "url": "https://archive.org/details/onlineconnection0000barn",
    "note": "Textbook on internet relations that describes ELIZA's conversational technique and reactions reported by Weizenbaum, with an excerpt.",
    "thumb": "library/thumbs/L-DHMRF.jpg",
-   "relevance": "unread"
-  },
-  {
-   "id": "L-2OK7L",
-   "title": "Computer applications in psychiatry and psychology",
-   "author": "Baskin, ed.",
-   "date": "1990",
-   "kind": "book",
-   "lang": "en",
-   "publisher": "Brunner/Mazel",
-   "url": "https://openlibrary.org/works/OL19195519W",
-   "note": "Tristate symposium papers including a section on Eliza as a formal model of the therapist, the 24-subject pilot and its weaknesses in transformation rules.",
-   "thumb": "library/thumbs/L-2OK7L.jpg",
    "relevance": "unread"
   },
   {
@@ -10266,19 +10250,6 @@
    "relevance": "unread"
   },
   {
-   "id": "L-J7B3H",
-   "title": "Mind Design: Philosophy, Psychology, Artificial Intelligence",
-   "author": "Haugeland, John, ed.",
-   "date": "1987",
-   "kind": "book",
-   "lang": "en",
-   "publisher": "Cambridge, Mass. : MIT Press",
-   "url": "https://archive.org/details/minddesignphilos00haug",
-   "note": "Contributors discuss Weizenbaum's Eliza and his own later judgement of it, in several chapters.",
-   "thumb": "library/thumbs/L-J7B3H.jpg",
-   "relevance": "unread"
-  },
-  {
    "id": "L-H6WVK",
    "title": "Hacking h(app)iness: why your personal data counts and how tracking it can change the world",
    "author": "Havens, John C",
@@ -11561,18 +11532,6 @@
    "relevance": "unread"
   },
   {
-   "id": "L-METW2",
-   "title": "New trends in physics teaching, Volume II",
-   "author": "Nagy, E., ed.",
-   "date": "1970",
-   "kind": "book",
-   "lang": "en",
-   "publisher": "UNESCO",
-   "url": "https://eric.ed.gov/?id=ED068327",
-   "note": "Reports Taylor's use of the MIT ELIZA program for remedial tutoring in special relativity, reprinting a sample conversation, and cites Brehme on ELIZA at Wake Forest.",
-   "relevance": "unread"
-  },
-  {
    "id": "L-J3MX6",
    "title": "Book Review: Natale, Simone. Deceitful Media: Artificial Intelligence and Social Life after the Turing Test (New York: Oxford University Press, 2021)",
    "author": "Narain, Mansa",
@@ -11725,18 +11684,6 @@
    "note": "Critiques griefbots drawing on Weizenbaum's warning of powerful delusional thinking in user responses to Eliza.",
    "relevance": "unread",
    "licence": "CC BY-NC-ND"
-  },
-  {
-   "id": "L-VMWHV",
-   "title": "Artificial Intelligence: Tools, Techniques, and Applications",
-   "author": "O'Shea, Tim; Eisenstadt, Marc, eds.",
-   "date": "1984",
-   "kind": "book",
-   "lang": "en",
-   "publisher": "Cambridge ; Philadelphia : Harper & Row",
-   "url": "https://archive.org/details/artificialintell00oshe",
-   "note": "Prints the Men are all alike dialogue and treats the ELIZA system of Weizenbaum 1966 and 1967 as worth mentioning from its period.",
-   "relevance": "unread"
   },
   {
    "id": "L-Y4WAO",
@@ -13597,6 +13544,18 @@
    "relevance": "unread"
   },
   {
+   "id": "L-VMWHV",
+   "title": "Artificial Intelligence: Tools, Techniques, and Applications",
+   "date": "1984",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Cambridge ; Philadelphia : Harper & Row",
+   "url": "https://archive.org/details/artificialintell00oshe",
+   "note": "Prints the Men are all alike dialogue and treats the ELIZA system of Weizenbaum 1966 and 1967 as worth mentioning from its period.",
+   "relevance": "unread",
+   "contributor": "eds O'Shea, Tim; Eisenstadt, Marc"
+  },
+  {
    "id": "L-4ZDVU",
    "title": "BÜCHER / Warten auf Wunder",
    "date": "1984-10-14",
@@ -13622,6 +13581,19 @@
    "lang": "de",
    "in": "DER SPIEGEL",
    "relevance": "unread"
+  },
+  {
+   "id": "L-2OK7L",
+   "title": "Computer applications in psychiatry and psychology",
+   "date": "1990",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Brunner/Mazel",
+   "url": "https://openlibrary.org/works/OL19195519W",
+   "note": "Tristate symposium papers including a section on Eliza as a formal model of the therapist, the 24-subject pilot and its weaknesses in transformation rules.",
+   "thumb": "library/thumbs/L-2OK7L.jpg",
+   "relevance": "unread",
+   "contributor": "eds Baskin"
   },
   {
    "id": "L-OO56M",
@@ -13835,6 +13807,19 @@
    "relevance": "unread"
   },
   {
+   "id": "L-J7B3H",
+   "title": "Mind Design: Philosophy, Psychology, Artificial Intelligence",
+   "date": "1987",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "Cambridge, Mass. : MIT Press",
+   "url": "https://archive.org/details/minddesignphilos00haug",
+   "note": "Contributors discuss Weizenbaum's Eliza and his own later judgement of it, in several chapters.",
+   "thumb": "library/thumbs/L-J7B3H.jpg",
+   "relevance": "unread",
+   "contributor": "eds Haugeland, John"
+  },
+  {
    "id": "L-QWKQK",
    "title": "Natural Language Processing: A Tutorial",
    "date": "1986-08",
@@ -13855,6 +13840,18 @@
    "url": "https://archive.org/details/DTIC_ADA076873",
    "note": "Technical survey that opens its account of natural language programs with ELIZA.",
    "relevance": "unread"
+  },
+  {
+   "id": "L-METW2",
+   "title": "New trends in physics teaching, Volume II",
+   "date": "1970",
+   "kind": "book",
+   "lang": "en",
+   "publisher": "UNESCO",
+   "url": "https://eric.ed.gov/?id=ED068327",
+   "note": "Reports Taylor's use of the MIT ELIZA program for remedial tutoring in special relativity, reprinting a sample conversation, and cites Brehme on ELIZA at Wake Forest.",
+   "relevance": "unread",
+   "contributor": "eds Nagy, E."
   },
   {
    "id": "L-XAIRE",
