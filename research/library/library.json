@@ -273,11 +273,11 @@
    "date": "2018",
    "kind": "chapter",
    "lang": "en",
+   "in": "Hello, I'm Eliza: Funfzig Jahre Gesprache mit Computern, 1st edn, ed. Baranovska and Holtgen, Bochum: Projektverlag",
    "url": "https://sussex.figshare.com/articles/chapter/Weizenbaum_ELIZA_and_the_end_of_human_reason/23466656",
    "note": "Chapter on Weizenbaum, ELIZA and the critique of human reason.",
    "relevance": "about",
-   "pages": "53-70",
-   "publisher": "Funfzig Jahre Gesprache mit Computern, 1st edn, ed. Baranovska and Holtgen, Bochum: Projektverlag"
+   "pages": "53-70"
   },
   {
    "id": "L-E5OMW",
@@ -303,12 +303,12 @@
    "date": "2023",
    "kind": "chapter",
    "lang": "en",
+   "in": "Hello, I'm Eliza. 50 Jahre Gesprache mit Computern (Computerarchaologie, Bd. 5), 2nd edn, ed. Baranovska and Holtgen, Bochum: Projektverlag",
    "url": "https://web.archive.org/web/20231001150701/https://www.projektverlag.de/Hello_I_am-Eliza",
    "note": "Short chapter reporting the rediscovery of Weizenbaum's ELIZA source code, comments and facsimiles.",
    "relevance": "about",
    "key": 8,
-   "pages": "247-248",
-   "publisher": "Projektverlag"
+   "pages": "247-248"
   },
   {
    "id": "L-AU4L2",
@@ -1643,11 +1643,11 @@
    "date": "1995",
    "kind": "chapter",
    "lang": "en",
+   "in": "Fluid Concepts and Creative Analogies, New York: Basic Books; ISBN 978-0-465-02475-9",
    "url": "https://archive.org/details/fluidconceptscre0000hofs_w7o9",
    "note": "Preface in which Hofstadter treats the Eliza effect and its dangers for reading AI programs.",
    "relevance": "about",
-   "key": 13,
-   "publisher": "Basic Books"
+   "key": 13
   },
   {
    "id": "L-THWNG",
@@ -2349,12 +2349,12 @@
    "date": "2025",
    "kind": "chapter",
    "lang": "de",
-   "in": "Schreibende KI: ein interdisziplinarer Diskurs, Springer Vieweg, Wiesbaden",
    "doi": "10.1007/978-3-658-45839-3_4",
    "url": "https://link.springer.com/chapter/10.1007/978-3-658-45839-3_4",
    "note": "Asks how Weizenbaum would have commented on generative AI, retelling ELIZA, its naming after Shaw's Eliza and the effect on those who interacted with it.",
    "relevance": "about",
-   "licence": "CC BY 4.0"
+   "licence": "CC BY 4.0",
+   "publisher": "ein interdisziplinarer Diskurs, Springer Vieweg, Wiesbaden"
   },
   {
    "id": "L-KBOL7",
@@ -3235,11 +3235,11 @@
    "date": "2023",
    "kind": "chapter",
    "lang": "en",
+   "in": "Hello, I'm ELIZA, ed. Baranovska-Bolter and Holtgen, 2nd edn, Bochum: Projektverlag",
    "url": "https://d-nb.info/1302198149",
    "note": "Chapter by the author of the BASIC ELIZA on that version of the program.",
    "relevance": "about",
-   "pages": "95-102",
-   "publisher": "Projektverlag"
+   "pages": "95-102"
   },
   {
    "id": "L-NXVJA",
@@ -6322,10 +6322,10 @@
    "date": "2018",
    "kind": "chapter",
    "lang": "en",
+   "in": "Hello, I'm Eliza. Funfzig Jahre Gesprache mit Computern, ed. Baranovska and Holtgen, Bochum/Freiburg: Projektverlag",
    "url": "http://florianleitner.de/archives/408",
    "note": "Chapter in the ELIZA anniversary volume on technology and reason in media performance.",
-   "relevance": "section",
-   "publisher": "Projektverlag"
+   "relevance": "section"
   },
   {
    "id": "L-K7K6K",
