@@ -4388,11 +4388,11 @@
    "date": "1989",
    "kind": "magazine",
    "lang": "it",
-   "in": "Quaderni di informatica 36 (Bull Italia)",
+   "in": "Quaderni di informatica 36",
    "url": "https://archive.org/details/quaderni-informatica-36",
    "note": "Italian article on ELIZA, its Pygmalion name, the psychotherapist setting as parody and people confiding in the program.",
    "relevance": "about",
-   "pages": "40"
+   "publisher": "Bull Italia"
   },
   {
    "id": "L-VTWVM",
@@ -4738,10 +4738,11 @@
    "date": "1979-09",
    "kind": "magazine",
    "lang": "it",
-   "in": "Bit (Gruppo Editoriale Jackson) 2(4)",
+   "in": "Bit 2(4)",
    "url": "https://archive.org/details/Bit_004",
    "note": "Italian article on the conversation programs ELIZA and STUDENT, with the North and Shrager BASIC listing.",
-   "relevance": "about"
+   "relevance": "about",
+   "publisher": "Gruppo Editoriale Jackson"
   },
   {
    "id": "L-IP4IT",
