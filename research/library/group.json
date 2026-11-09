@@ -1,6 +1,10 @@
 {
- "generated": "2026-11-07",
+ "generated": "2026-11-09",
  "ratings": {
+  "L-6LYBU": {
+   "avg": 3,
+   "n": 1
+  },
   "L-CXKF4": {
    "avg": 3,
    "n": 1
@@ -17,6 +21,20 @@
   }
  },
  "tags": {
+  "L-6LYBU": {
+   "High": {
+    "on": true,
+    "date": "2026-11-08T23:52:49.272442+00:00"
+   },
+   "Important": {
+    "on": true,
+    "date": "2026-11-08T23:52:55.923357+00:00"
+   },
+   "To read": {
+    "on": true,
+    "date": "2026-11-08T23:53:02.092316+00:00"
+   }
+  },
   "L-CXKF4": {
    "Important": {
     "on": true,
